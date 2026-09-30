@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "balance_status": "prototype",
+  "resources": [
+    "res://data/resources/timber.tres",
+    "res://data/resources/stone.tres",
+    "res://data/resources/thatch.tres",
+    "res://data/resources/water.tres",
+    "res://data/resources/wild_food.tres",
+    "res://data/resources/fodder.tres",
+    "res://data/resources/milk.tres"
+  ],
+  "buildings": [
+    "res://data/buildings/dwelling.tres",
+    "res://data/buildings/stockpile.tres",
+    "res://data/buildings/timber_camp.tres",
+    "res://data/buildings/gatherer_shelter.tres",
+    "res://data/buildings/water_point.tres",
+    "res://data/buildings/cattle_shelter.tres"
+  ],
+  "zones": [
+    "res://data/zones/pasture.tres"
+  ]
+}

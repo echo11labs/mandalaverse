@@ -1,0 +1,9 @@
+.tools/
+*.zip
+game/.godot/
+game/.mcp.json
+reports/local/
+__pycache__/
+*.pyc
+.DS_Store
+

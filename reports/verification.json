@@ -1,0 +1,295 @@
+{
+  "ok": true,
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "stages": [
+    {
+      "stage": "import",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 2.45,
+      "log": "reports/local/import.log"
+    },
+    {
+      "stage": "parse-gopala_extension",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.29,
+      "log": "reports/local/parse-gopala_extension.log"
+    },
+    {
+      "stage": "parse-building_definition",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-building_definition.log"
+    },
+    {
+      "stage": "parse-content_audit",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-content_audit.log"
+    },
+    {
+      "stage": "parse-resource_definition",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-resource_definition.log"
+    },
+    {
+      "stage": "parse-zone_definition",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-zone_definition.log"
+    },
+    {
+      "stage": "parse-kathmandu_terrain",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-kathmandu_terrain.log"
+    },
+    {
+      "stage": "parse-sculpted_valley",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-sculpted_valley.log"
+    },
+    {
+      "stage": "parse-valley_terrain",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-valley_terrain.log"
+    },
+    {
+      "stage": "parse-RiverPath3D",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-RiverPath3D.log"
+    },
+    {
+      "stage": "parse-content_lab",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-content_lab.log"
+    },
+    {
+      "stage": "parse-kathmandu_camera",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-kathmandu_camera.log"
+    },
+    {
+      "stage": "parse-kathmandu_hud",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-kathmandu_hud.log"
+    },
+    {
+      "stage": "parse-kathmandu_valley",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-kathmandu_valley.log"
+    },
+    {
+      "stage": "parse-scenic_camera",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-scenic_camera.log"
+    },
+    {
+      "stage": "parse-scenic_valley",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-scenic_valley.log"
+    },
+    {
+      "stage": "parse-terrain_overlay",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-terrain_overlay.log"
+    },
+    {
+      "stage": "parse-valley",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-valley.log"
+    },
+    {
+      "stage": "parse-valley_camera",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-valley_camera.log"
+    },
+    {
+      "stage": "parse-bake_landscape",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-bake_landscape.log"
+    },
+    {
+      "stage": "parse-generate_prototypes",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-generate_prototypes.log"
+    },
+    {
+      "stage": "parse-run_content_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_content_tests.log"
+    },
+    {
+      "stage": "parse-run_kathmandu_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_kathmandu_tests.log"
+    },
+    {
+      "stage": "parse-run_landscape_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-run_landscape_tests.log"
+    },
+    {
+      "stage": "parse-run_scenic_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_scenic_tests.log"
+    },
+    {
+      "stage": "content-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.35,
+      "log": "reports/local/content-tests.log",
+      "tests": {
+        "checks": 19,
+        "content": {
+          "counts": {
+            "buildings": 6,
+            "resources": 7,
+            "zones": 1
+          },
+          "errors": [],
+          "ok": true,
+          "production_art_approved": false,
+          "prototype_assets": 20
+        },
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "landscape-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.24,
+      "log": "reports/local/landscape-tests.log",
+      "tests": {
+        "checks": 4931,
+        "failures": [],
+        "ok": true,
+        "river_cells": 192,
+        "terrain_surfaces": 8
+      }
+    },
+    {
+      "stage": "scenic-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 1.25,
+      "log": "reports/local/scenic-tests.log",
+      "tests": {
+        "checks": 3451,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "kathmandu-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 11.76,
+      "log": "reports/local/kathmandu-tests.log",
+      "tests": {
+        "checks": 30778,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "coordinate-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.46,
+      "log": "reports/local/coordinate-tests.log",
+      "tests": {
+        "ok": true,
+        "checks": 13824,
+        "failures": [],
+        "maximum_horizontal_serialization_drift_m": 7.049151491251367e-06,
+        "scope": "Projection/serialization agreement only; not absolute OSM or DEM survey accuracy"
+      }
+    },
+    {
+      "stage": "main-scene",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 12.0,
+      "log": "reports/local/main-scene.log"
+    }
+  ],
+  "scope": "Development import, authored scripts, content invariants and headless scene execution. No export, simulation, GPU performance or final art claim."
+}

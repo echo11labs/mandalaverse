@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-29",
+  "scene": "game/scenes/landscape/kathmandu_valley.tscn",
+  "renderer": "Compatibility / OpenGL 4.1 Metal",
+  "hardware": "Apple M4 Pro",
+  "captures": [
+    {
+      "image": "reports/kathmandu-overview.png",
+      "sha256": "4ae44bc09c53037203f81e809a9956b4d62843131518d7eb43097a206235b3ca",
+      "log": "reports/local/kathmandu-overview.log",
+      "log_issues": [],
+      "reviewed": true
+    },
+    {
+      "image": "reports/kathmandu-source.png",
+      "sha256": "324c20d61c504e520977a86e3ba5647103ee94e4687688ff343e1e523550b7a6",
+      "log": "reports/local/kathmandu-source.log",
+      "log_issues": [],
+      "reviewed": true
+    }
+  ],
+  "observations": [
+    "Overview shows enclosing ridges, valley floor and blue mapped river courses.",
+    "Bagdwar close-up shows the mapped landmark marker, leader label and separately dashed amber estimated headwater.",
+    "River winding corrected; visible surfaces face the camera and light."
+  ],
+  "verification_ok": true,
+  "checks": 53002,
+  "limits": [
+    "Visual review is not GPU performance or export validation.",
+    "Displayed relief is exaggerated 3x; river widths are enlarged for visibility.",
+    "Source landmark is mapped, not a spring GNSS survey; amber headwater is inferred.",
+    "Ancient river courses and exact source points beyond Bagdwar remain unverified.",
+    "Forward+ startup stall remains unresolved; Compatibility is the accepted renderer."
+  ]
+}

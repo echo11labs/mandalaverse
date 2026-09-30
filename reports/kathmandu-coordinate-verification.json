@@ -1,0 +1,7 @@
+{
+  "ok": true,
+  "checks": 13824,
+  "failures": [],
+  "maximum_horizontal_serialization_drift_m": 7.049151491251367e-06,
+  "scope": "Projection/serialization agreement only; not absolute OSM or DEM survey accuracy"
+}

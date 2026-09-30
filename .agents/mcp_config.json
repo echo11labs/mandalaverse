@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "godot": {
+      "command": "python3",
+      "args": ["/Users/devendrashahithakuri/Work/Nep-All/tools/start_mcp.py"]
+    }
+  }
+}

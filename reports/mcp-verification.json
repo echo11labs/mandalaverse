@@ -1,0 +1,100 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "test": "custom-extension-discovered",
+      "ok": true
+    },
+    {
+      "tool": "gopala_content_audit",
+      "ok": true,
+      "expected_error": false
+    },
+    {
+      "tool": "gopala_catalog",
+      "ok": true,
+      "expected_error": false
+    },
+    {
+      "tool": "discover_tools",
+      "ok": true,
+      "expected_error": false
+    },
+    {
+      "tool": "script_check",
+      "ok": true,
+      "expected_error": false
+    },
+    {
+      "tool": "script_read",
+      "ok": true,
+      "expected_error": true
+    },
+    {
+      "tool": "script_write",
+      "ok": true,
+      "expected_error": false
+    },
+    {
+      "tool": "script_write",
+      "ok": true,
+      "expected_error": false
+    },
+    {
+      "tool": "script_delete",
+      "ok": true,
+      "expected_error": false
+    },
+    {
+      "tool": "scene_create",
+      "ok": true,
+      "expected_error": false
+    },
+    {
+      "tool": "scene_open",
+      "ok": true,
+      "expected_error": false
+    },
+    {
+      "tool": "scene_create_node",
+      "ok": true,
+      "expected_error": false
+    },
+    {
+      "tool": "editor_save_scene",
+      "ok": true,
+      "expected_error": false
+    },
+    {
+      "tool": "scene_get_tree",
+      "ok": true,
+      "expected_error": false
+    },
+    {
+      "tool": "scene_delete",
+      "ok": true,
+      "expected_error": false
+    },
+    {
+      "tool": "scene_open",
+      "ok": true,
+      "expected_error": false
+    },
+    {
+      "test": "2d-groups-discovered",
+      "ok": true
+    },
+    {
+      "tool": "gopala_content_audit",
+      "ok": true,
+      "expected_error": false
+    },
+    {
+      "test": "read-only-registration",
+      "ok": true
+    }
+  ],
+  "failure": null,
+  "node": "v22.18.0",
+  "scope": "Stdio MCP handshake, custom tools, guarded paths, script diagnostics and repair, scene mutation/save/read/delete, 2D group discovery, read-only registration. No full 112-tool or runtime render coverage."
+}

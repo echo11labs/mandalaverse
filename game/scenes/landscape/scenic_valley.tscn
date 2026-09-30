@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scenes/landscape/scenic_valley.gd" id="1"]
+[ext_resource type="Script" path="res://scenes/landscape/scenic_camera.gd" id="2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="SkyMaterial"]
+sky_top_color = Color(0.30, 0.44, 0.51, 1)
+sky_horizon_color = Color(0.77, 0.80, 0.70, 1)
+ground_bottom_color = Color(0.20, 0.29, 0.24, 1)
+ground_horizon_color = Color(0.77, 0.80, 0.70, 1)
+
+[sub_resource type="Sky" id="Sky"]
+sky_material = SubResource("SkyMaterial")
+
+[sub_resource type="Environment" id="Environment"]
+background_mode = 2
+sky = SubResource("Sky")
+ambient_light_source = 3
+ambient_light_color = Color(0.72, 0.80, 0.86, 1)
+ambient_light_energy = 0.45
+reflected_light_source = 2
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.73, 0.79, 0.73, 1)
+fog_light_energy = 0.6
+fog_density = 0.0004
+
+[node name="ScenicValley" type="Node3D"]
+script = ExtResource("1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+current = true
+script = ExtResource("2")
+
+[node name="MorningSun" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-48, -32, 0)
+light_color = Color(1, 0.89, 0.70, 1)
+light_energy = 0.95
+shadow_enabled = true
+directional_shadow_max_distance = 350.0
+shadow_bias = 0.04
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment")

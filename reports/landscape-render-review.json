@@ -1,0 +1,19 @@
+{
+  "accepted_renderer": "Compatibility, OpenGL 4.1 Metal backend, Apple M4 Pro",
+  "captures": [
+    {
+      "path": "reports/landscape-3d-overview.png",
+      "sha256": "9b80130be2ea3b81dfd302b5a174bfa8c9695d52af2efe05b219a4e43d272805"
+    },
+    {
+      "path": "reports/landscape-3d-clearing.png",
+      "sha256": "eb9038539a47878cb6e9c74f0d0d3305e44eaa6bf76b2d8a8496f5da0baaf99a"
+    }
+  ],
+  "current_capture_logs": [
+    "reports/local/capture-overview.log",
+    "reports/local/capture-clearing.log"
+  ],
+  "optional_forward_plus_metal": "Unresolved: capture did not finish within approximately two minutes and was stopped. No performance comparison claimed.",
+  "performance_measured": false
+}

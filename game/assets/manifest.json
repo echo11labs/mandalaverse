@@ -1,0 +1,225 @@
+{
+	"assets": [
+		{
+			"height": 64.0,
+			"id": "terrain_meadow",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/terrain_meadow.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "269163102b4abef679a9cc662b5a3dee6dc3f33b4752e55ca8dd1beaf6a64d51",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 128.0
+		},
+		{
+			"height": 64.0,
+			"id": "terrain_earth",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/terrain_earth.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "620c93f66715f920658208d776cda90ce1323466b1f2c211c95b509b5257595a",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 128.0
+		},
+		{
+			"height": 64.0,
+			"id": "terrain_water",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/terrain_water.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "eac7d98085d4eba0a2167e5feb769a4b7c0df1b19e9d6745aad20c8b1b760820",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 128.0
+		},
+		{
+			"height": 64.0,
+			"id": "terrain_path",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/terrain_path.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "f1234aaacef54b2c55a74c35d1be742bf54be5910ca327ba7918b87b0f2605c0",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 128.0
+		},
+		{
+			"height": 48.0,
+			"id": "good_timber",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/good_timber.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "85242f4807decc8dcf5936c4734714f551d843c473af0bd139a3c2438b1c6c7a",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 48.0
+		},
+		{
+			"height": 48.0,
+			"id": "good_stone",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/good_stone.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "6d4543ec255d068656d1c22b44abe9c5f428cfe51bc7742a7a5dc26512a57be2",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 48.0
+		},
+		{
+			"height": 48.0,
+			"id": "good_thatch",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/good_thatch.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "40bd7d147926a2e7b6284afdc06b18b9a1d6d38b90b2a02fb285be9583e1e856",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 48.0
+		},
+		{
+			"height": 48.0,
+			"id": "good_water",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/good_water.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "7de106396a69847ade7118e2c11659cdae8ab699a047aa870c12ca9a3f4d9bd5",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 48.0
+		},
+		{
+			"height": 48.0,
+			"id": "good_wild_food",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/good_wild_food.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "b1f86f97c01b0a1af9fb8b854a9b55092ec65b561d567f669c3f94c84847d758",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 48.0
+		},
+		{
+			"height": 48.0,
+			"id": "good_fodder",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/good_fodder.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "c5ffcc384dfd27e7664ecea42931b8375e7f3cb0047190224ab3fc5db3edd3d0",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 48.0
+		},
+		{
+			"height": 48.0,
+			"id": "good_milk",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/good_milk.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "9332030c14b8eff385b5ea568d3045daf3226ed430a531a056040fba7760a52b",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 48.0
+		},
+		{
+			"height": 160.0,
+			"id": "building_dwelling",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/building_dwelling.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "673a431f535bfe1adfe00c8e48a803447d78c4a9710ef0b7244a13c86e25c247",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 128.0
+		},
+		{
+			"height": 160.0,
+			"id": "building_stockpile",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/building_stockpile.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "8775eeaee355c46651cf12942425fa7704bf5e8741c767509a650248adfd4d1f",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 128.0
+		},
+		{
+			"height": 160.0,
+			"id": "building_timber_camp",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/building_timber_camp.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "6574656fbaada7efe8cc28f24a945331de0025c3dce73b26002a108143ac6957",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 128.0
+		},
+		{
+			"height": 160.0,
+			"id": "building_gatherer_shelter",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/building_gatherer_shelter.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "4087f4c1c6164a2ff45bed5c7c097012e63c6c1e713c285030d9e13b707b9d47",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 128.0
+		},
+		{
+			"height": 160.0,
+			"id": "building_water_point",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/building_water_point.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "ca056d4fd2cc9fe431a575cd5d8f78e96b45b6764a8043f8bf860960556b3ca6",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 128.0
+		},
+		{
+			"height": 160.0,
+			"id": "building_cattle_shelter",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/building_cattle_shelter.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "fe20bcaf05aa91f9769432f2a3b74ada25481d9d99f8aedb974fb3640b51687b",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 128.0
+		},
+		{
+			"height": 64.0,
+			"id": "agent_villager",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/agent_villager.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "29e3e9378a7d5142342d416f7137aea36f8537a87980502e5275df752f32f837",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 48.0
+		},
+		{
+			"height": 64.0,
+			"id": "agent_cattle",
+			"origin": "original_procedural",
+			"path": "res://assets/prototype/agent_cattle.png",
+			"rights": "Original project-authored geometric placeholder; not third-party artwork.",
+			"sha256": "8468509a65fe1fa23ea9d158914aebc562c06e6ef165aa61f181d3f483b563d6",
+			"source": "res://tests/generate_prototypes.gd",
+			"status": "prototype",
+			"width": 48.0
+		},
+		{
+			"height": 512,
+			"id": "valley_atlas",
+			"origin": "original_procedural",
+			"path": "res://assets/terrain/valley_atlas.png",
+			"rights": "Original project-authored terrain texture.",
+			"sha256": "07e36179620495026bc86301b39a740d7d1edc571c29fbbed7d43384c5e9ca3a",
+			"source": "res://tests/bake_landscape.gd",
+			"status": "prototype",
+			"width": 512
+		}
+	],
+	"schema_version": 1.0
+}

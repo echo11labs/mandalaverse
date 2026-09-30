@@ -1,0 +1,16 @@
+{
+  "retrieved": "2026-09-29",
+  "osm_extract_date": "2026-09-09",
+  "osm_country_archive_sha256": "163476ee99c1b471bddce2c06214a10e11075013a92b2a1c6b0b5d5495ae6d6e",
+  "dem_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N27_00_E085_00_DEM/Copernicus_DSM_COG_10_N27_00_E085_00_DEM.tif",
+  "dem_sha256": "5a0ec09cda62bcacfccacae0724e6493bee8f3f6fe11fb0ef47ccf3fa3716194",
+  "osm_url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/NPL/waterways/hotosm_npl_waterways_osm_geojson.zip",
+  "files": {
+    "kathmandu-ground-height.f32": "fb7b4586fd2089607224e98a7b4a810a8b7a41a19d7fc0567cddc66d77375cf1",
+    "kathmandu-river-distance.f32": "85d4740226525c93d7142837cf39dfde43655cf1ee0c6fd11bc506a09b28e52c",
+    "kathmandu-source-height.f32": "bae69e79cbb321b09ce892ea9b00cc71eb5d8c49f46ce44841f2247e9da7a58d",
+    "kathmandu.json": "d8f0b6b664c24713b49db7b38dd4d67469831e38930510e9d92c67092384e305",
+    "osm-kathmandu-waterways.geojson": "60021017c7353707cd65c0e0ccd9bfb234c77d088ba2fddc7ce8a3169b3426cd",
+    "bagdwar-source.json": "dbc800a7daf1e3636cd1bff99f5171ab6ea84efbc0b466bd2350862a5d8fb712"
+  }
+}

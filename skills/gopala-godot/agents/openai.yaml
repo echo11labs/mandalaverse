@@ -1,0 +1,4 @@
+interface:
+  display_name: "GOPALA Godot Development"
+  short_description: "Build and verify GOPALA scenes, content and simulation"
+  default_prompt: "Use $gopala-godot to implement the next GOPALA milestone and verify it with the pinned Godot tools."

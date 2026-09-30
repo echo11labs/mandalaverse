@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GopalaSculptedValley" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://core/landscape/sculpted_valley.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+seed_value = 260929
+extent = 180.0
+resolution = 192
+grid_size = 48
+clearing = Vector2(-28, 18)
+

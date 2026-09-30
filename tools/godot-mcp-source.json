@@ -1,0 +1,14 @@
+{
+  "toolkit": {
+    "repository": "https://github.com/NPGameDev/godot-mcp-toolkit",
+    "revision": "7e801d7b6603eb908dfb7e58bd497daa74a6502b",
+    "destination": "game/addons/godot_mcp_toolkit",
+    "license": "MIT; preserve LICENSE and ATTRIBUTIONS.md",
+    "modifications": "No upstream gameplay modifications"
+  },
+  "server": {
+    "repository": "https://github.com/NPGameDev/godot-mcp-server",
+    "revision": "e966eba5409ca0ce7f34a084e5fbd5644183e365",
+    "destination": ".tools/research/NPGameDev--godot-mcp-server"
+  }
+}

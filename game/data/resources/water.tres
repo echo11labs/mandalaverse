@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GopalaResourceDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://core/content/resource_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/prototype/good_water.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"water"
+display_name = "Water"
+icon = ExtResource("2")
+carry_units = 5
