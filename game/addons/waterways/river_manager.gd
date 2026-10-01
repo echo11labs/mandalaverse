@@ -130,7 +130,7 @@ signal progress_notified
 #signal albedo_set
 
 # Internal Methods
-func _get_property_list() -> Array:
+func _get_property_list() -> Array[Dictionary]:
 	var props = [
 		{
 			name = "Shape",
@@ -329,7 +329,8 @@ func _get_property_list() -> Array:
 			usage = PROPERTY_USAGE_STORAGE
 		}
 	]
-	var combined_props = props + props2 + props3
+	var combined_props: Array[Dictionary] = []
+	combined_props.assign(props + props2 + props3)
 	
 	return combined_props
 

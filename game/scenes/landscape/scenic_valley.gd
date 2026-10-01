@@ -83,24 +83,33 @@ func make_ground() -> void:
 	add_child(body)
 
 func make_water() -> void:
-	var river_path := RiverPath3D.new()
+	var RiverManager = load("res://addons/waterways/river_manager.gd")
+	var river_path = RiverManager.new()
 	river_path.name = "River"
 	
 	var curve := Curve3D.new()
-	# Sample points every 10 units to make a smooth curve
-	for z in range(-240, 241, 10):
-		var pz = float(z)
-		curve.add_point(Vector3(terrain.river_center(pz), 0.28, pz))
+	var widths: Array[float] = []
+	var z_points := range(-240, 241, 10)
+	for i in range(z_points.size()):
+		var pz = float(z_points[i])
+		var p := Vector3(terrain.river_center(pz), 0.28, pz)
+		
+		var tangent := Vector3(0, 0, 1)
+		if i > 0 and i < z_points.size() - 1:
+			var prev_p := Vector3(terrain.river_center(float(z_points[i-1])), 0.28, float(z_points[i-1]))
+			var next_p := Vector3(terrain.river_center(float(z_points[i+1])), 0.28, float(z_points[i+1]))
+			tangent = (next_p - prev_p).normalized()
+			
+		var dist := 10.0
+		curve.add_point(p, -tangent * dist * 0.25, tangent * dist * 0.25)
+		var w = terrain.water_half_width(0) * 2.0
+		widths.append(w)
 		
 	river_path.curve = curve
-	river_path.river_width = terrain.water_half_width(0) * 2.0 # Approximation, since RiverPath3D uses a constant width
+	river_path.widths = widths
 	
-	var material := ShaderMaterial.new()
-	material.shader = load("res://assets/materials/valley_water.gdshader")
-	river_path.river_material = material
-	
+	# Optional: keep custom shader or use default Waterways shader. Since Waterways provides better rendering out of the box, we just use default by not overriding
 	add_child(river_path)
-	river_path._update_mesh()
 
 func foliage_mesh(variant: int) -> ArrayMesh:
 	var surface := SurfaceTool.new()

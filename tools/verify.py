@@ -28,14 +28,19 @@ def run_stage(name, arguments, timeout=60, external=False):
             code = process.wait()
     text = log.read_text(errors="replace")
     # Godot 4.7 editor import calls language-server stop even when that thread never started.
-    text = text.replace('ERROR: Condition "!thread.is_started()" is true.\n', "")
+    known_import_error = 'ERROR: Condition "!thread.is_started()" is true.\n'
+    ignored_errors = text.count(known_import_error)
+    text = text.replace(known_import_error, "")
     result = {"stage": name, "ok": code == 0 and not timed_out and not ERROR.search(text), "exit_code": code, "timed_out": timed_out, "seconds": round(time.monotonic() - started, 2), "log": str(log.relative_to(ROOT))}
+    result["warnings"] = re.findall(r"^WARNING: (.*)$", text, re.MULTILINE)
+    if ignored_errors:
+        result["known_engine_errors"] = {"language_server_stop_without_started_thread": ignored_errors}
     marker = "GOPALA_TEST_REPORT="
     for line in text.splitlines():
         if line.startswith(marker):
             result["tests"] = json.loads(line[len(marker):])
             result["ok"] = result["ok"] and result["tests"]["ok"]
-    if name in ["content-tests", "landscape-tests", "scenic-tests", "kathmandu-tests", "coordinate-tests"] and "tests" not in result:
+    if name in ["content-tests", "landscape-tests", "scenic-tests", "kathmandu-tests", "coordinate-tests", "waterways-tests", "forest-tests"] and "tests" not in result:
         result["ok"] = False
     print(f"{name}: {'PASS' if result['ok'] else 'FAIL'}", flush=True)
     return result
@@ -61,6 +66,9 @@ def main():
             stages.append(run_stage("scenic-tests", ["--script", "tests/run_scenic_tests.gd"]))
         if (ROOT / "game/scenes/landscape/kathmandu_valley.tscn").exists():
             stages.append(run_stage("kathmandu-tests", ["--script", "tests/run_kathmandu_tests.gd"]))
+            stages.append(run_stage("waterways-tests", ["--script", "tests/run_waterways_tests.gd"]))
+            # MultiMesh transform storage is unavailable through Godot's dummy renderer.
+            stages.append(run_stage("forest-tests", [str(ENGINE), "--path", str(ROOT / "game"), "--script", "tests/run_forest_tests.gd"], external=True))
         if (ROOT / "game/data/geography/kathmandu.json").exists():
             stages.append(run_stage("coordinate-tests", [str(ROOT / ".tools/python/bin/python"), str(ROOT / "tools/test_geography.py")], external=True))
         stages.append(run_stage("main-scene", ["--quit-after", "5"]))

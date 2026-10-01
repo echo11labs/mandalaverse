@@ -91,6 +91,31 @@ func run() -> void:
 	expect(camera.clamped_last, "Fit-limit pan is rejected by the terrain clamp")
 	expect(camera.target.distance_to(locked) < 2.0, "Fit-limit pan does not travel")
 	expect(absf(camera.target.x) <= 200.0 and absf(camera.target.z) <= 200.0, "Pivot stays inside the terrain")
+	camera.focus_point(camp_point, camera.management_size())
+	var span_before: float = camera.size
+	camera.zoom_step(0.84)
+	expect(camera.size < span_before - 0.1, "Zoom step draws the view closer")
+	var yaw_before: float = camera.yaw
+	camera.turn_by(45.0)
+	expect(is_equal_approx(fposmod(camera.yaw - yaw_before, 360.0), 45.0), "Turn steps by 45 degrees")
+	var drag_from: float = camera.yaw
+	var pitch_from: float = camera.pitch
+	camera.rotating = true
+	var motion := InputEventMouseMotion.new()
+	motion.relative = Vector2(80.0, -20.0)
+	camera._unhandled_input(motion)
+	expect(absf(fposmod(drag_from - camera.yaw, 360.0) - 17.6) < 1.0, "Middle-drag turns continuously with the mouse")
+	expect(camera.pitch > pitch_from, "Dragging the middle mouse upward lifts the view")
+	expect(camera.pitch >= camera.PITCH_MIN and camera.pitch <= camera.PITCH_MAX, "Tilt stays inside the Farthest Frontier style limits")
+	var forest_receipt: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/forest/bake-receipt.json"))
+	var forest_review: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/forest/review.json"))
+	if forest_review.get("status") == "accepted":
+		expect(FileAccess.get_sha256(forest_receipt.output) == forest_review.accepted_bake_sha256, "Visual review identifies the exact current forest bake")
+		expect(world.tree_population == int(forest_receipt.population) and world.has_node("ExternalForest"), "Main scene loads the visually accepted forest")
+	else:
+		expect(world.tree_population == 0 and world.sample_pine_height_m == 0.0, "Rejected tree population is removed while replacement remains incomplete")
+		expect(not world.has_node("ExternalForest"), "Rejected external forest cannot appear in the landscape")
+	expect(not world.has_node("ChirAndBluePine") and not world.has_node("BroadleafStands"), "No procedural canopy fallback restores the removed trees")
 	world.queue_free()
 	await process_frame
 	print("GOPALA_TEST_REPORT="+JSON.stringify({"ok":failures.is_empty(),"checks":checks,"failures":failures}))

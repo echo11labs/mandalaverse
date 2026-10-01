@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Kantipur",
+    "label": "Kantipur region",
+    "center": { "x": -10.0, "z": -5.0 },
+    "tint": "#d98a57",
+    "bias": "urban_core"
+  },
+  {
+    "name": "Yala",
+    "label": "Yala basin",
+    "center": { "x": 22.0, "z": 48.0 },
+    "tint": "#3fb7b2",
+    "bias": "southern_basin"
+  },
+  {
+    "name": "Khwopa",
+    "label": "Khwopa basin",
+    "center": { "x": 102.0, "z": 18.0 },
+    "tint": "#d6cd58",
+    "bias": "eastern_basin"
+  },
+  {
+    "name": "Kirtipur",
+    "label": "Kirtipur hill zone",
+    "center": { "x": -86.0, "z": 20.0 },
+    "tint": "#b37bf2",
+    "bias": "hill_fort"
+  }
+]

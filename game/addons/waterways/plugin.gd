@@ -83,6 +83,13 @@ func _exit_tree() -> void:
 	disconnect("scene_closed", Callable(self, "_on_scene_closed"));
 	_hide_river_control_panel()
 	_hide_water_system_control_panel()
+	# These instantiated controls are detached by the methods above. Explicitly
+	# free them so editor import/shutdown does not leak CanvasItems and resources.
+	_river_controls.free()
+	_water_system_controls.free()
+	_river_controls = null
+	_water_system_controls = null
+	_progress_window = null
 
 
 func _handles(node):

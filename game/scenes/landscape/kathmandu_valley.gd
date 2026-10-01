@@ -4,21 +4,44 @@ var terrain := GopalaKathmanduTerrain.new()
 var ground_mesh: ArrayMesh
 var grid_view: MeshInstance3D
 var selection: MeshInstance3D
+var ground: MeshInstance3D
 var hud: GopalaKathmanduHud
 var labels: Node3D
 var water_segments := 0
+var water_network: GopalaWaterNetwork
+var sample_pine_height_m := 0.0
+var tree_population := 0
 @onready var camera = $Camera3D
 func _ready() -> void:
 	terrain.load_data()
+	load_lakes()
 	make_ground()
+	make_fringe()
 	make_rivers()
 	make_reconstruction()
+	make_map_overlay()
 	make_labels()
 	make_grid()
+	make_lakes()
 	make_hud()
 	make_trees()
+	if not Array(OS.get_cmdline_user_args()).any(func(s: String): return s.begins_with("--capture")):
+		camera.overview()
 	if "--capture-source" in OS.get_cmdline_user_args(): focus_source()
+	if "--capture-water" in OS.get_cmdline_user_args():
+		var reach: Dictionary = terrain.metadata.rivers.filter(func(r: Dictionary): return r.name == "Bagmati" and r.points.size() > 500)[0]
+		var point: Array = reach.points[int(reach.points.size() * 0.65)]
+		camera.focus_point(Vector3(point[0], terrain.height_at(point[0], point[2]), point[2]), 14.0)
 	if "--capture-local" in OS.get_cmdline_user_args(): focus_camp()
+	if "--capture-edge" in OS.get_cmdline_user_args():
+		camera.turn_by(70.0)
+		camera.focus_point(Vector3(150.0, terrain.height_at(150.0, 10.0), 10.0), 48.0)
+	if "--capture-forest" in OS.get_cmdline_user_args():
+		camera.focus_point(Vector3(10.0, terrain.height_at(10.0, -85.0), -85.0), 14.0)
+	if "--capture-trees" in OS.get_cmdline_user_args():
+		camera.target = Vector3(10.0, terrain.height_at(10.0, -85.0), -85.0)
+		camera.size = 3.0
+		camera.aim()
 	if Array(OS.get_cmdline_user_args()).any(func(s: String): return s.begins_with("--capture")): capture.call_deferred()
 func ground_color(x: float,z: float) -> Color:
 	var elevation := terrain.elevation_at(x,z)
@@ -39,7 +62,17 @@ func make_ground() -> void:
 		for x in range(n+1):
 			var px := -200.0+x*400.0/n
 			var pz := -200.0+z*400.0/n
-			vertices.append(Vector3(px,terrain.height_at(px,pz),pz))
+			var h := terrain.height_at(px,pz)
+			
+			# Terrain deformation for lakes
+			for lake in lakes_data:
+				var d := Vector2(px, pz).distance_to(lake.center)
+				var effect_radius = maxf(lake.radius * 1.5, 1.5)
+				if d < effect_radius:
+					var blend := smoothstep(effect_radius, lake.radius * 0.5, d)
+					h = lerpf(h, lake.water_level - 0.1, blend)
+			
+			vertices.append(Vector3(px,h,pz))
 			normals.append(terrain.normal_at(px,pz))
 			colors.append(ground_color(px,pz))
 	for z in range(n):
@@ -54,7 +87,7 @@ func make_ground() -> void:
 	arrays[Mesh.ARRAY_INDEX] = indices
 	ground_mesh = ArrayMesh.new()
 	ground_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
-	var ground := MeshInstance3D.new()
+	ground = MeshInstance3D.new()
 	ground.name = "KathmanduRelief"
 	ground.mesh = ground_mesh
 	var material := ShaderMaterial.new()
@@ -67,83 +100,85 @@ func make_ground() -> void:
 	collider.shape = ground_mesh.create_trimesh_shape()
 	body.add_child(collider)
 	add_child(body)
+func fringe_height(x: float, z: float) -> float:
+	var edge := maxf(absf(x), absf(z))
+	var border := terrain.height_at(clampf(x, -200.0, 200.0), clampf(z, -200.0, 200.0))
+	if edge <= 200.0:
+		return border
+	var rise := smoothstep(200.0, 330.0, edge) * 42.0
+	return border + rise
+func make_fringe() -> void:
+	# Land past the surveyed square, so an oblique view meets hills instead of the clear color.
+	var extent := 360.0
+	var n := 72
+	var surface := SurfaceTool.new()
+	surface.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var step := extent * 2.0 / n
+	for z in range(n):
+		for x in range(n):
+			var origin := Vector2(-extent + x * step, -extent + z * step)
+			var corners := [origin, origin + Vector2(step, 0), origin + Vector2(0, step), origin + Vector2(step, step)]
+			var outside := false
+			for corner in corners:
+				if maxf(absf(corner.x), absf(corner.y)) > 198.0:
+					outside = true
+			if not outside:
+				continue
+			var positions: Array[Vector3] = []
+			for corner in corners:
+				var height := fringe_height(corner.x, corner.y)
+				positions.append(Vector3(corner.x, height, corner.y))
+			for index in [0, 1, 2, 1, 3, 2]:
+				var point: Vector3 = positions[index]
+				var inland := terrain.height_at(clampf(point.x, -199.0, 199.0), clampf(point.z, -199.0, 199.0))
+				var tint: Color = ground_color(clampf(point.x, -199.0, 199.0), clampf(point.z, -199.0, 199.0))
+				tint = tint.lerp(Color("3d5244").srgb_to_linear(), clampf((point.y - inland) / 42.0, 0.0, 1.0))
+				surface.set_color(tint)
+				surface.set_normal(Vector3.UP)
+				surface.add_vertex(point)
+	var rim := 80
+	for i in range(rim):
+		var t0 := float(i) / rim
+		var t1 := float(i + 1) / rim
+		for edge in range(4):
+			var a := rim_point(t0, edge, extent)
+			var b := rim_point(t1, edge, extent)
+			var cliff := [a, b, a + Vector3.DOWN * 80.0, b, b + Vector3.DOWN * 80.0, a + Vector3.DOWN * 80.0]
+			for point in cliff:
+				surface.set_color(Color("2c3a30").srgb_to_linear())
+				surface.set_normal(Vector3.UP)
+				surface.add_vertex(point)
+	var fringe := MeshInstance3D.new()
+	fringe.name = "TerrainFringe"
+	fringe.mesh = surface.commit()
+	var material := ShaderMaterial.new()
+	material.shader = load("res://assets/materials/valley_ground.gdshader")
+	fringe.material_override = material
+	add_child(fringe)
+func rim_point(t: float, edge: int, extent: float) -> Vector3:
+	var along := lerpf(-extent, extent, t)
+	var x := along
+	var z := -extent
+	if edge == 1:
+		x = extent
+		z = along
+	elif edge == 2:
+		x = -along
+		z = extent
+	elif edge == 3:
+		x = -extent
+		z = -along
+	return Vector3(x, fringe_height(x, z), z)
 func river_point(p: Array) -> Vector3:
 	# A geographic ribbon follows the visible terrain. This depicts direction,
 	# not simulated discharge or a surveyed water-surface elevation.
 	return Vector3(p[0],maxf(p[1]*terrain.RELIEF,terrain.height_at(p[0],p[2]))+0.10,p[2])
 func make_rivers() -> void:
-	var RiverManager = load("res://addons/waterways/river_manager.gd")
-	var arrows := SurfaceTool.new()
-	arrows.begin(Mesh.PRIMITIVE_TRIANGLES)
-	
-	var waterways_node = Node3D.new()
-	waterways_node.name = "MappedRiverCourses"
-	add_child(waterways_node)
-	
-	for river in terrain.metadata.rivers:
-		var points: Array = river.points
-		if points.size() < 2:
-			continue
-		
-		var width: float = 1.0 if river.kind == "river" else 0.35
-		if river.name == "Bagmati": width = 1.2
-		var arrow_distance: float = 0.0
-		
-		var river_node = RiverManager.new()
-		river_node.name = river.name.replace(" ", "_") if river.name != "" else "UnnamedRiver"
-		
-		var new_curve: Curve3D = Curve3D.new()
-		var new_widths: Array[float] = []
-		
-		for i in range(points.size()):
-			var p: Vector3 = river_point(points[i])
-			var tangent: Vector3
-			if i == 0:
-				tangent = (river_point(points[1]) - p).normalized()
-			elif i == points.size() - 1:
-				tangent = (p - river_point(points[i-1])).normalized()
-			else:
-				tangent = (river_point(points[i+1]) - river_point(points[i-1])).normalized()
-			
-			if tangent == Vector3.ZERO: tangent = Vector3.FORWARD
-			
-			var dist: float = 0.0
-			if i < points.size() - 1:
-				dist = p.distance_to(river_point(points[i+1]))
-			else:
-				dist = p.distance_to(river_point(points[i-1]))
-				
-			var out_dir: Vector3 = tangent * 0.25 * dist
-			var in_dir: Vector3 = -out_dir
-			
-			new_curve.add_point(p, in_dir, out_dir)
-			new_widths.append(width)
-			
-			if i < points.size() - 1:
-				water_segments += 1
-				var next_p: Vector3 = river_point(points[i+1])
-				arrow_distance += p.distance_to(next_p)
-				if river.name != "Unnamed stream" and arrow_distance > 6:
-					var delta: Vector3 = next_p - p
-					var direction: Vector3 = Vector3(delta.x, 0, delta.z).normalized()
-					var right: Vector3 = Vector3(-direction.z, 0, direction.x) * width * 0.5
-					var center: Vector3 = next_p + Vector3.UP * 0.05
-					for point in [center+direction*0.7, center-direction*0.45+right.normalized()*0.42, center-direction*0.45-right.normalized()*0.42]:
-						arrows.add_vertex(point)
-					arrow_distance = 0
-		
-		river_node.curve = new_curve
-		river_node.widths = new_widths
-		# We want a more realistic water color/material from waterways
-		# RiverManager has shape properties and material type
-		# Keep default for now (Water shader)
-		waterways_node.add_child(river_node)
-
-	var arrow_mesh := MeshInstance3D.new()
-	arrow_mesh.name = "DownstreamArrows"
-	arrow_mesh.mesh = arrows.commit()
-	arrow_mesh.material_override = line_material(Color("d2e8db"))
-	add_child(arrow_mesh)
+	var baked: PackedScene = load("res://data/geography/waterways/mapped_rivers.scn")
+	var courses := baked.instantiate()
+	add_child(courses)
+	water_segments = int(courses.get_meta("source_segments", 0))
+	water_network = GopalaWaterNetwork.new(terrain)
 func make_reconstruction() -> void:
 	var surface := SurfaceTool.new()
 	surface.begin(Mesh.PRIMITIVE_TRIANGLES)
@@ -163,6 +198,46 @@ func make_reconstruction() -> void:
 	mesh.mesh = surface.commit()
 	mesh.material_override = line_material(Color("dda961"))
 	add_child(mesh)
+
+func make_map_overlay() -> void:
+	# 1. Create a high-res SubViewport for drawing the map graphics in 2D
+	var viewport := SubViewport.new()
+	viewport.size = Vector2i(4096, 4096)
+	viewport.transparent_bg = true
+	viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+	add_child(viewport)
+	
+	# 2. Map drawer script
+	var drawer := Node2D.new()
+	drawer.set_script(load("res://scenes/landscape/map_overlay_drawer.gd"))
+	drawer.set("terrain", terrain)
+	if FileAccess.file_exists("res://data/geography/regions_gopala.json"):
+		var raw := FileAccess.get_file_as_string("res://data/geography/regions_gopala.json")
+		drawer.set("regions", JSON.parse_string(raw))
+	viewport.add_child(drawer)
+	
+	# Compatibility supports sampling the live map texture in the ground shader.
+	# A Decal cannot accept ViewportTexture and is unsupported by this renderer.
+	viewport.name = "GeographicMapOverlay"
+	if ground == null:
+		return
+	var ground_material: ShaderMaterial = ground.material_override
+	ground_material.set_shader_parameter("geographic_overlay", viewport.get_texture())
+	ground_material.set_shader_parameter("use_geographic_overlay", true)
+
+	# 4. We still place 3D labels for the regions
+	if FileAccess.file_exists("res://data/geography/regions_gopala.json"):
+		var file = FileAccess.open("res://data/geography/regions_gopala.json", FileAccess.READ)
+		var regions = JSON.parse_string(file.get_as_text())
+		if drawer.has_method("get_label_anchor"):
+			for region in regions:
+				var c = Color(region.tint)
+				var anchor: Vector3 = drawer.get_label_anchor(region.name)
+				if labels == null:
+					labels = Node3D.new()
+					labels.name = "GeographicLabels"
+					add_child(labels)
+				add_label(region.label, anchor, c, 24)
 
 func line_material(color: Color) -> StandardMaterial3D:
 	var material := StandardMaterial3D.new()
@@ -229,6 +304,98 @@ func make_labels() -> void:
 		var p: Array = river.points[int(river.points.size()*0.55)]
 		add_label(name_value,Vector3(p[0]-2,p[1],p[2]),Color("b6e1df"),17)
 	labels.visible = false
+
+var lakes_data: Array = []
+
+func load_lakes() -> void:
+	if not FileAccess.file_exists("res://data/geography/lake_polygons.json"):
+		return
+	var raw := FileAccess.get_file_as_string("res://data/geography/lake_polygons.json")
+	var lakes: Array = JSON.parse_string(raw)
+	
+	var cx := 85.375
+	var cy := 27.695
+	var m_per_deg_lon := 98565.0 / 100.0
+	var m_per_deg_lat := 111320.0 / 100.0
+	
+	for lake in lakes:
+		var center_x: float = (float(lake.lon) - cx) * m_per_deg_lon
+		var center_z: float = (cy - float(lake.lat)) * m_per_deg_lat
+		
+		var poly2d := PackedVector2Array()
+		var max_dist := 0.0
+		
+		if lake.geojson and lake.geojson.type == "Polygon":
+			var ring: Array = lake.geojson.coordinates[0]
+			for pt in ring:
+				var px: float = (float(pt[0]) - cx) * m_per_deg_lon
+				var pz: float = (cy - float(pt[1])) * m_per_deg_lat
+				var local_x := px - center_x
+				var local_z := pz - center_z
+				poly2d.append(Vector2(local_x, -local_z))
+				max_dist = maxf(max_dist, Vector2(local_x, local_z).length())
+				
+		if max_dist < 0.1: max_dist = 0.5 # fallback for Point
+		
+		var w_level := terrain.height_at(center_x, center_z) - 0.05
+		
+		lakes_data.append({
+			"name": lake.name,
+			"center": Vector2(center_x, center_z),
+			"radius": max_dist,
+			"water_level": w_level,
+			"poly": poly2d
+		})
+
+func make_lakes() -> void:
+	if lakes_data.is_empty():
+		return
+	
+	var lakes_node := Node3D.new()
+	lakes_node.name = "Ponds"
+	add_child(lakes_node)
+	
+	for lake in lakes_data:
+		var pos := Vector3(lake.center.x, lake.water_level, lake.center.y)
+		var node: Node3D = null
+		
+		if not lake.poly.is_empty():
+			var indices := Geometry2D.triangulate_polygon(lake.poly)
+			if indices.size() > 0:
+				var st := SurfaceTool.new()
+				st.begin(Mesh.PRIMITIVE_TRIANGLES)
+				st.set_normal(Vector3.UP)
+				for pt in lake.poly:
+					st.add_vertex(Vector3(pt.x, 0.0, pt.y))
+				for idx in indices:
+					st.add_index(idx)
+				var mesh_instance := MeshInstance3D.new()
+				mesh_instance.mesh = st.commit()
+				node = mesh_instance
+		
+		if not node:
+			var mesh_instance := MeshInstance3D.new()
+			var mesh := CylinderMesh.new()
+			mesh.top_radius = lake.radius
+			mesh.bottom_radius = lake.radius
+			mesh.height = 0.02
+			mesh_instance.mesh = mesh
+			node = mesh_instance
+			
+		var mat := StandardMaterial3D.new()
+		mat.cull_mode = BaseMaterial3D.CULL_DISABLED
+		mat.albedo_color = Color("2e7399")
+		mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		mat.albedo_color.a = 0.85
+		mat.roughness = 0.05
+		mat.metallic = 0.2
+		node.material_override = mat
+			
+		node.position = pos
+		lakes_node.add_child(node)
+		
+		add_label(lake.name, pos + Vector3(0, 1.5, 0), Color("a6e1ff"), 18)
+
 func make_grid() -> void:
 	grid_view = MeshInstance3D.new()
 	grid_view.name = "LocalPlanningGrid"
@@ -252,16 +419,18 @@ func make_grid() -> void:
 	selection.material_override = line_material(Color("eec979"))
 	add_child(selection)
 func make_hud() -> void:
-	var layer := CanvasLayer.new()
-	add_child(layer)
-	hud = GopalaKathmanduHud.new()
+	hud = preload("res://scenes/ui/hud.tscn").instantiate()
 	hud.terrain = terrain
-	layer.add_child(hud)
+	add_child(hud)
 	hud.valley_requested.connect(camera.overview)
 	hud.source_requested.connect(focus_source)
 	hud.camp_requested.connect(focus_camp)
 	hud.grid_changed.connect(func(on: bool) -> void: grid_view.visible = on)
 	hud.names_changed.connect(func(on: bool) -> void: labels.visible = on)
+	hud.zoom_in_requested.connect(func() -> void: camera.zoom_step(0.84))
+	hud.zoom_out_requested.connect(func() -> void: camera.zoom_step(1.0 / 0.84))
+	hud.turn_left_requested.connect(func() -> void: camera.turn_by(-15.0))
+	hud.turn_right_requested.connect(func() -> void: camera.turn_by(15.0))
 func _process(_delta: float) -> void:
 	hud.follow(camera)
 func focus_source() -> void:
@@ -298,117 +467,43 @@ func _unhandled_input(event: InputEvent) -> void:
 			title_text = "Bagdwar"
 			detail = "%d m  ·  Source of the Bagmati" % elevation
 		var cell := terrain.cell_at(p)
-		if terrain.contains(cell):
-			detail += "  ·  %s" % ["Ground will hold a camp" if terrain.is_buildable(cell) else "Too steep, or too near the water"]
-			var center := terrain.cell_position(cell)
-			var surface := SurfaceTool.new()
-			surface.begin(Mesh.PRIMITIVE_LINES)
-			var corners := [Vector2(-0.5,-0.5),Vector2(0.5,-0.5),Vector2(0.5,0.5),Vector2(-0.5,0.5)]
-			for i in range(4):
-				for corner in [corners[i],corners[(i+1)%4]]:
-					var x: float = center.x+corner.x*terrain.CELL_SIZE
-					var z: float = center.z+corner.y*terrain.CELL_SIZE
-					surface.add_vertex(Vector3(x,terrain.height_at(x,z)+0.05,z))
-			selection.mesh = surface.commit()
-		else:
-			selection.mesh = null
+		if selection != null:
+			if terrain.contains(cell):
+				detail += "  ·  %s" % ["Ground will hold a camp" if terrain.is_buildable(cell) else "Too steep, or too near the water"]
+				var center := terrain.cell_position(cell)
+				var surface := SurfaceTool.new()
+				surface.begin(Mesh.PRIMITIVE_LINES)
+				var corners := [Vector2(-0.5,-0.5),Vector2(0.5,-0.5),Vector2(0.5,0.5),Vector2(-0.5,0.5)]
+				for i in range(4):
+					for corner in [corners[i],corners[(i+1)%4]]:
+						var x: float = center.x+corner.x*terrain.CELL_SIZE
+						var z: float = center.z+corner.y*terrain.CELL_SIZE
+						surface.add_vertex(Vector3(x,terrain.height_at(x,z)+0.05,z))
+				selection.mesh = surface.commit()
+			else:
+				selection.mesh = null
 		hud.show_place(title_text, detail)
 func capture() -> void:
-	if not ("--capture-source" in OS.get_cmdline_user_args() or "--capture-local" in OS.get_cmdline_user_args()):
+	var args := OS.get_cmdline_user_args()
+	if not ("--capture-source" in args or "--capture-local" in args or "--capture-edge" in args or "--capture-forest" in args or "--capture-water" in args or "--capture-trees" in args):
 		camera.zoom_by(0.84)
 	for frame in range(20): await get_tree().process_frame
 	await RenderingServer.frame_post_draw
-	var suffix := "source" if "--capture-source" in OS.get_cmdline_user_args() else "local" if "--capture-local" in OS.get_cmdline_user_args() else "overview"
+	var suffix := "trees" if "--capture-trees" in args else "source" if "--capture-source" in args else "local" if "--capture-local" in args else "edge" if "--capture-edge" in args else "forest" if "--capture-forest" in args else "waterways" if "--capture-water" in args else "overview"
 	var path := ProjectSettings.globalize_path("res://../reports/kathmandu-"+suffix+".png")
 	var error := get_viewport().get_texture().get_image().save_png(path)
 	if error!=OK: push_error("Kathmandu capture failed: "+error_string(error))
 	get_tree().quit(0 if error==OK else 1)
 
-func get_gltf_mesh(path: String) -> Mesh:
-	var scene = load(path) as PackedScene
-	if not scene: return null
-	var node = scene.instantiate()
-	var mesh: Mesh = null
-	for child in node.get_children():
-		if child is MeshInstance3D:
-			mesh = child.mesh
-			break
-	node.queue_free()
-	return mesh
-
 func make_trees() -> void:
-	var pine_mesh = get_gltf_mesh("res://assets/models/trees/StylizedNature/Pine_1.gltf")
-	var oak_mesh = get_gltf_mesh("res://assets/models/trees/StylizedNature/CommonTree_1.gltf")
-	var small_mesh = get_gltf_mesh("res://assets/models/trees/StylizedNature/Bush_Common.gltf")
-	
-	if not pine_mesh or not oak_mesh or not small_mesh:
-		print("Warning: Tree meshes not found")
+	var review: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/forest/review.json"))
+	if review.get("status") != "accepted":
 		return
-
-	var random := RandomNumberGenerator.new()
-	random.seed = 42
-	
-	var pine_transforms: Array[Transform3D] = []
-	var oak_transforms: Array[Transform3D] = []
-	var small_transforms: Array[Transform3D] = []
-
-	var half := terrain.GRID_SIZE*terrain.CELL_SIZE*0.5
-	for i in range(15000):
-		var x := random.randf_range(-half, half)
-		var z := random.randf_range(-half, half)
-		# Convert to world coordinates matching terrain.camp offset if necessary?
-		# Actually the terrain covers -200 to 200, wait, the loop for ground is -200 to +200.
-		x = random.randf_range(-200.0, 200.0)
-		z = random.randf_range(-200.0, 200.0)
-		
-		var elevation := terrain.elevation_at(x, z)
-		var h := terrain.height_at(x, z)
-		var slope := 1.0 - terrain.normal_at(x, z, true).y
-		
-		# Trees prefer foothills and ridges (elevation > 1350) and moderate slopes
-		if elevation < 1350 and random.randf() > 0.05: continue
-		if slope > 0.6: continue # too steep
-		
-		# Keep away from rivers (basic approximation)
-		var near_river := false
-		for river in terrain.metadata.rivers:
-			for p in river.points:
-				if Vector2(p[0]-x, p[2]-z).length() < 4.0:
-					near_river = true
-					break
-			if near_river: break
-		if near_river: continue
-
-		var scale_val := random.randf_range(0.7, 1.3)
-		var t := Transform3D(Basis(Vector3.UP, random.randf() * TAU).scaled(Vector3.ONE * scale_val), Vector3(x, h, z))
-		
-		if elevation > 1800:
-			pine_transforms.append(t)
-		elif elevation > 1450:
-			if random.randf() > 0.3:
-				oak_transforms.append(t)
-			else:
-				pine_transforms.append(t)
-		else:
-			if random.randf() > 0.5:
-				oak_transforms.append(t)
-			else:
-				var bush_t = Transform3D(Basis(Vector3.UP, random.randf() * TAU).scaled(Vector3.ONE * scale_val * 1.8), Vector3(x, h, z))
-				small_transforms.append(bush_t)
-
-	instance_group("PineForest", pine_mesh, pine_transforms, null)
-	instance_group("OakForest", oak_mesh, oak_transforms, null)
-	instance_group("SmallTrees", small_mesh, small_transforms, null)
-
-func instance_group(label: String, mesh: Mesh, transforms: Array[Transform3D], material: Material) -> void:
-	if transforms.size() == 0 or not mesh: return
-	var multimesh := MultiMesh.new()
-	multimesh.transform_format = MultiMesh.TRANSFORM_3D
-	multimesh.mesh = mesh
-	multimesh.instance_count = transforms.size()
-	for i in range(transforms.size()): multimesh.set_instance_transform(i, transforms[i])
-	var group := MultiMeshInstance3D.new()
-	group.name = label
-	group.multimesh = multimesh
-	if material: group.material_override = material
-	add_child(group)
+	var forest_path := "res://data/forest/kathmandu_forest.scn"
+	if FileAccess.get_sha256(forest_path) != review.get("accepted_bake_sha256", ""):
+		push_warning("Forest bake changed since its visual review; replacement trees require review.")
+		return
+	var forest: Node3D = load(forest_path).instantiate()
+	add_child(forest)
+	tree_population = int(forest.get_meta("population"))
+	sample_pine_height_m = float(forest.get_meta("sample_pine_height_m"))

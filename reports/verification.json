@@ -7,8 +7,12 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 2.45,
-      "log": "reports/local/import.log"
+      "seconds": 4.33,
+      "log": "reports/local/import.log",
+      "warnings": [],
+      "known_engine_errors": {
+        "language_server_stop_without_started_thread": 1
+      }
     },
     {
       "stage": "parse-gopala_extension",
@@ -16,7 +20,17 @@
       "exit_code": 0,
       "timed_out": false,
       "seconds": 0.29,
-      "log": "reports/local/parse-gopala_extension.log"
+      "log": "reports/local/parse-gopala_extension.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-ui_events",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-ui_events.log",
+      "warnings": []
     },
     {
       "stage": "parse-building_definition",
@@ -24,7 +38,8 @@
       "exit_code": 0,
       "timed_out": false,
       "seconds": 0.18,
-      "log": "reports/local/parse-building_definition.log"
+      "log": "reports/local/parse-building_definition.log",
+      "warnings": []
     },
     {
       "stage": "parse-content_audit",
@@ -32,15 +47,17 @@
       "exit_code": 0,
       "timed_out": false,
       "seconds": 0.18,
-      "log": "reports/local/parse-content_audit.log"
+      "log": "reports/local/parse-content_audit.log",
+      "warnings": []
     },
     {
       "stage": "parse-resource_definition",
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
-      "log": "reports/local/parse-resource_definition.log"
+      "seconds": 0.19,
+      "log": "reports/local/parse-resource_definition.log",
+      "warnings": []
     },
     {
       "stage": "parse-zone_definition",
@@ -48,15 +65,26 @@
       "exit_code": 0,
       "timed_out": false,
       "seconds": 0.18,
-      "log": "reports/local/parse-zone_definition.log"
+      "log": "reports/local/parse-zone_definition.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-forest_rules",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-forest_rules.log",
+      "warnings": []
     },
     {
       "stage": "parse-kathmandu_terrain",
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
-      "log": "reports/local/parse-kathmandu_terrain.log"
+      "seconds": 0.18,
+      "log": "reports/local/parse-kathmandu_terrain.log",
+      "warnings": []
     },
     {
       "stage": "parse-sculpted_valley",
@@ -64,7 +92,26 @@
       "exit_code": 0,
       "timed_out": false,
       "seconds": 0.18,
-      "log": "reports/local/parse-sculpted_valley.log"
+      "log": "reports/local/parse-sculpted_valley.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-terrain_river",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-terrain_river.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-water_network",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-water_network.log",
+      "warnings": []
     },
     {
       "stage": "parse-valley_terrain",
@@ -72,15 +119,35 @@
       "exit_code": 0,
       "timed_out": false,
       "seconds": 0.18,
-      "log": "reports/local/parse-valley_terrain.log"
+      "log": "reports/local/parse-valley_terrain.log",
+      "warnings": []
     },
     {
-      "stage": "parse-RiverPath3D",
+      "stage": "parse-bake_forest",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-bake_forest.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-bake_waterways",
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
       "seconds": 0.19,
-      "log": "reports/local/parse-RiverPath3D.log"
+      "log": "reports/local/parse-bake_waterways.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-thumbnail_generator",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-thumbnail_generator.log",
+      "warnings": []
     },
     {
       "stage": "parse-content_lab",
@@ -88,15 +155,17 @@
       "exit_code": 0,
       "timed_out": false,
       "seconds": 0.18,
-      "log": "reports/local/parse-content_lab.log"
+      "log": "reports/local/parse-content_lab.log",
+      "warnings": []
     },
     {
       "stage": "parse-kathmandu_camera",
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
-      "log": "reports/local/parse-kathmandu_camera.log"
+      "seconds": 0.19,
+      "log": "reports/local/parse-kathmandu_camera.log",
+      "warnings": []
     },
     {
       "stage": "parse-kathmandu_hud",
@@ -104,7 +173,8 @@
       "exit_code": 0,
       "timed_out": false,
       "seconds": 0.18,
-      "log": "reports/local/parse-kathmandu_hud.log"
+      "log": "reports/local/parse-kathmandu_hud.log",
+      "warnings": []
     },
     {
       "stage": "parse-kathmandu_valley",
@@ -112,7 +182,17 @@
       "exit_code": 0,
       "timed_out": false,
       "seconds": 0.18,
-      "log": "reports/local/parse-kathmandu_valley.log"
+      "log": "reports/local/parse-kathmandu_valley.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-map_overlay_drawer",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-map_overlay_drawer.log",
+      "warnings": []
     },
     {
       "stage": "parse-scenic_camera",
@@ -120,15 +200,17 @@
       "exit_code": 0,
       "timed_out": false,
       "seconds": 0.18,
-      "log": "reports/local/parse-scenic_camera.log"
+      "log": "reports/local/parse-scenic_camera.log",
+      "warnings": []
     },
     {
       "stage": "parse-scenic_valley",
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
-      "log": "reports/local/parse-scenic_valley.log"
+      "seconds": 0.19,
+      "log": "reports/local/parse-scenic_valley.log",
+      "warnings": []
     },
     {
       "stage": "parse-terrain_overlay",
@@ -136,31 +218,35 @@
       "exit_code": 0,
       "timed_out": false,
       "seconds": 0.18,
-      "log": "reports/local/parse-terrain_overlay.log"
+      "log": "reports/local/parse-terrain_overlay.log",
+      "warnings": []
     },
     {
       "stage": "parse-valley",
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
-      "log": "reports/local/parse-valley.log"
+      "seconds": 0.18,
+      "log": "reports/local/parse-valley.log",
+      "warnings": []
     },
     {
       "stage": "parse-valley_camera",
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
-      "log": "reports/local/parse-valley_camera.log"
+      "seconds": 0.18,
+      "log": "reports/local/parse-valley_camera.log",
+      "warnings": []
     },
     {
       "stage": "parse-bake_landscape",
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
-      "log": "reports/local/parse-bake_landscape.log"
+      "seconds": 0.19,
+      "log": "reports/local/parse-bake_landscape.log",
+      "warnings": []
     },
     {
       "stage": "parse-generate_prototypes",
@@ -168,39 +254,62 @@
       "exit_code": 0,
       "timed_out": false,
       "seconds": 0.19,
-      "log": "reports/local/parse-generate_prototypes.log"
+      "log": "reports/local/parse-generate_prototypes.log",
+      "warnings": []
     },
     {
       "stage": "parse-run_content_tests",
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-run_content_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_forest_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
       "seconds": 0.18,
-      "log": "reports/local/parse-run_content_tests.log"
+      "log": "reports/local/parse-run_forest_tests.log",
+      "warnings": []
     },
     {
       "stage": "parse-run_kathmandu_tests",
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
-      "log": "reports/local/parse-run_kathmandu_tests.log"
+      "seconds": 0.19,
+      "log": "reports/local/parse-run_kathmandu_tests.log",
+      "warnings": []
     },
     {
       "stage": "parse-run_landscape_tests",
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
-      "log": "reports/local/parse-run_landscape_tests.log"
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_landscape_tests.log",
+      "warnings": []
     },
     {
       "stage": "parse-run_scenic_tests",
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
-      "log": "reports/local/parse-run_scenic_tests.log"
+      "seconds": 0.19,
+      "log": "reports/local/parse-run_scenic_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_waterways_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-run_waterways_tests.log",
+      "warnings": []
     },
     {
       "stage": "content-tests",
@@ -209,6 +318,7 @@
       "timed_out": false,
       "seconds": 0.35,
       "log": "reports/local/content-tests.log",
+      "warnings": [],
       "tests": {
         "checks": 19,
         "content": {
@@ -233,6 +343,7 @@
       "timed_out": false,
       "seconds": 0.24,
       "log": "reports/local/landscape-tests.log",
+      "warnings": [],
       "tests": {
         "checks": 4931,
         "failures": [],
@@ -246,8 +357,9 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 1.25,
+      "seconds": 1.14,
       "log": "reports/local/scenic-tests.log",
+      "warnings": [],
       "tests": {
         "checks": 3451,
         "failures": [],
@@ -259,12 +371,52 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 11.76,
+      "seconds": 2.66,
       "log": "reports/local/kathmandu-tests.log",
+      "warnings": [],
       "tests": {
-        "checks": 30778,
+        "checks": 30791,
         "failures": [],
         "ok": true
+      }
+    },
+    {
+      "stage": "waterways-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.73,
+      "log": "reports/local/waterways-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 20353,
+        "failures": [],
+        "ok": true,
+        "reaches": 249,
+        "vertices_sampled": 5545,
+        "visible_reaches": 203
+      }
+    },
+    {
+      "stage": "forest-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 1.54,
+      "log": "reports/local/forest-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 18542,
+        "detail_count": 8305,
+        "failures": [],
+        "ok": true,
+        "physical_height_m": [
+          14.0003790480172,
+          31.9998831419895
+        ],
+        "population": 100940,
+        "scope": "Saved-source integrity and placement checks; artistic replacement acceptance is separate.",
+        "source_review_status": "pending_replacement"
       }
     },
     {
@@ -272,8 +424,9 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.46,
+      "seconds": 0.45,
       "log": "reports/local/coordinate-tests.log",
+      "warnings": [],
       "tests": {
         "ok": true,
         "checks": 13824,
@@ -287,8 +440,9 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 12.0,
-      "log": "reports/local/main-scene.log"
+      "seconds": 2.56,
+      "log": "reports/local/main-scene.log",
+      "warnings": []
     }
   ],
   "scope": "Development import, authored scripts, content invariants and headless scene execution. No export, simulation, GPU performance or final art claim."

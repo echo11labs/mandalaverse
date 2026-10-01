@@ -1,0 +1,103 @@
+{
+  "repository": "https://github.com/Arnklit/Waterways",
+  "branch": "godot4_5_1",
+  "commit": "cd4c6330a02b0b57908c33181fd387aad53aa584",
+  "addon_version": "0.3",
+  "license": "MIT",
+  "license_path": "game/addons/waterways/LICENSE.md",
+  "files": {
+    "LICENSE.md": "8da0249fe2a334230e8c7bb633f4558e40ddafc95d30c1cfcffbf302a3f83c34",
+    "buoyant_manager.gd": "5bef55e3e459701cf43dc21bc1b89665fcc31e666c01feabaec3a95fff3d472a",
+    "editor_property.gd": "8e0b69166a1a7dde3ef339ed620462b71e1cd065a97d954b5c968ea172699516",
+    "filter_renderer.gd": "2af86683db7ab4086d4d46557ca06ae5c692ed83393b99e6e3c3577dfff38f65",
+    "filter_renderer.tscn": "a87c2344ab479a39fca83461a46de78d938091a157639f354fe0c7c1c206fd29",
+    "gui/gradient_inspector.gd": "fed70620315f82b11b83749c78da421c41bdd64611d25c2e6aee8d3b10a2601d",
+    "gui/gradient_inspector.tscn": "67cd299647ba9e604a91a76e106bfe050a451bf2cc8ed96360f86eb9bef6bd23",
+    "gui/progress_window.gd": "fc3d24812a9f572bbb830f605add0c0f816f987d265cf0059d5cae8e198c68b9",
+    "gui/progress_window.tscn": "f5ddaf464fb11a18ef396fe3c4c0096f0d0ebceaf12b7402ffaa86aec41ae4cd",
+    "gui/river_controls.gd": "b8f099760fd60ee6e4d26292ee16f4fbe03266f44df2bcd0a88b89cf7f1871d5",
+    "gui/river_controls.tscn": "4e89b02e7de2c2fc6c5334b3b99a8a0326ffacd830e119fa9e0821e8f83ba6d0",
+    "gui/river_gizmo.gd": "b358e1f8b8489a21261c63af4ae9affd0b93130436834f7505765eda5fcd1e5f",
+    "gui/river_menu.gd": "f409a577282341b8bf45d1381f6b2ecd2dacecbfb1a025b223e19ef6d8348c3d",
+    "gui/water_system_controls.gd": "fdfea27a1dd4389abf9fce7d443196420f17140520731ea1c172da99a858d6a7",
+    "gui/water_system_controls.tscn": "0ce4de5a6b6c901dd0d9a408f6029551c0c2c291da43d7b4b0a8010a8bbd56d0",
+    "gui/water_system_menu.gd": "bd756c23430a0a2e63aff65a5d2874c9ca1fe83f7a3275654471873502c143fa",
+    "gui/waterfall_gizmo.gd": "fb8c5940a79dd53b524d0ca40c14ac7a90d847c7f2c559d35f7909998c949828",
+    "icons/buoyant.svg": "e83ebe1369537219cb1a194270aba4d3983f05bce2ae16cd23a8eee5f60f5fca",
+    "icons/create.svg": "28f9a0c5fe0954d65e08b25c0eee9235ab0b6418b42bf379a3523576d1f538a2",
+    "icons/delete.svg": "9137d81ef3ccb5c412875c307bbf6e8ef3b414135f74dd833d2c6359919a121f",
+    "icons/lock_closed.svg": "6699698834e70dc4b8104fa2500af485d2033faeac8237b44976036b30c7ee30",
+    "icons/lock_open.svg": "28986385c71beeeffb80f22cf2a046aed10aed8efc88d6f251a0fabbd00428dc",
+    "icons/river.svg": "864606234896a732e900f2949938935feeab53aac79070fde5edcdb05b92ea5d",
+    "icons/select.svg": "0e700251d7ba548b2720942822d1450b86addd4475a7e3753a3d9e783965b3db",
+    "icons/system.svg": "9f2e471fa56285aa3710c7faad9ce8b6e94658d02c1dc865d98586ef51d4b573",
+    "inspector_plugin.gd": "7668750dc8f2b50ec238f54fd41f3ff5a413fcb62895bb6ee62bd73442d6d951",
+    "plugin.cfg": "66e5ba50cf65f7abedafc53fe47d3a5aae3b561d710b5813fff96ed2c9eaeeec",
+    "plugin.gd": "d1629a534be6d0034fd58b0e78be5cf049388c45ad1c3ab51d464e1ff11e8932",
+    "river_manager.gd": "b5fad23290cd28bdb39ed5a1038d80f0356be66d0a0896dd6506669b7600451d",
+    "shaders/filters/blur_pass1.gdshader": "4984bbd8b110e12a7338079deb8ce176de856800767f1f8177e0575825ddd5db",
+    "shaders/filters/blur_pass2.gdshader": "887bc813365fc57cc6a277fbc6c3301bd5104a2fae0617535e1e1e90ff9f7f2c",
+    "shaders/filters/combine_pass.gdshader": "1553d15f53e37bc8f6016e7e9af96a90c3ed5d2d45ec33d0f6c080a1033dd6f0",
+    "shaders/filters/dilate_filter_pass1.gdshader": "a245621b9fc51ccf9490cd7d73850370e4898290fc9c83235c8e8137ff4d1cbf",
+    "shaders/filters/dilate_filter_pass2.gdshader": "c2d991a780f2781bfc277383a270b048606c9c641ad0536437e6fd612d030ff7",
+    "shaders/filters/dilate_filter_pass3.gdshader": "8b50025e1e32d6984f0fbbb5678cb741331af662496439b35fd67f1e00e8bf73",
+    "shaders/filters/dotproduct.gdshader": "748337aa9a87676cd29c2f5ccde68a0348e9241fa2f8413d2227c1ae05f6a9a6",
+    "shaders/filters/flow_pressure_pass.gdshader": "e3644e59f9ef0270c2454466b5536a4144f2dc69dd8ebe63b1de77602cec0e15",
+    "shaders/filters/foam_pass.gdshader": "fea1b8fb3df00854d3c8b0fb950b6b3ae5e5eb559d361129cb5c69b289563d41",
+    "shaders/filters/normal_map_pass.gdshader": "b09c5db7fccb5b11e648d20de87fe0fd69109972b195d55eefe23c41a967aa19",
+    "shaders/filters/normal_to_flow_filter.gdshader": "2a2131c1f703a1f317de39b1be56b8ac867cf6930faef3ed195318c9e28e0bb9",
+    "shaders/gui/gradient.gdshader": "c152ac7604112bfc9de1846e34e77914fd3a607edc6460257dd6a3c17bdc264f",
+    "shaders/lava.gdshader": "d06903d40713ba287db6036f9d7607c90e4798204e315dc87f1822bd6b962249",
+    "shaders/river.gdshader": "65422f26d05970ba1c0162a99e78e999868d661ed76b19659ccf7fbe3d9c1141",
+    "shaders/river_debug.gdshader": "0de08c42dd71aa6552ee759bb7c2128dcf6041d624630fcc20aa8af072f0bcb6",
+    "shaders/system_renders/alpha.gdshader": "4c2bde79249c8fe3c36f50c4145666384f785faadb3880ed308ac383141c5d47",
+    "shaders/system_renders/system_flow.gdshader": "d068097e746469fdbab4173b53871d829bf2ab64d44ca3afb6f8d5e0fad47d56",
+    "shaders/system_renders/system_height.gdshader": "06974f20617bf568ecc1078f2728c1726ab74fbf112eb09316c98101553ad484",
+    "system_map_renderer.gd": "39659a73074211168b2f4588c4053162f131b2dad09e94785a3efd16df7a4554",
+    "system_map_renderer.tscn": "6631e171a613816b0f4eccb6961a41ca5f2dbea2a5d3acf37bf961bce3f0bbe5",
+    "textures/debug_arrow.svg": "a50339f2974178b710d07b2e96d51bfa56399ede799dfe426615a5237cee5a88",
+    "textures/debug_pattern.png": "5be9d31984c10565b099bb57b247afa8dbc4f488e2afa17f247adfcae11c5b8c",
+    "textures/flow_offset_noise.png": "8f87f7a4fb0c80272ef1bfdb8cb6030fbd35516e1e751067fcf51ee378f64f5c",
+    "textures/foam_noise.png": "888e56d7b9420ec2c5b39756b10432c4a45a6413c44d1c5f78f0047ac93224eb",
+    "textures/lava_emission.png": "ea51dd355b3700e0e12ba49b2d8e434e03282e908a64a32c973ee6d27dd32835",
+    "textures/lava_normal_bump.png": "fffcc574693bd6a2eddb9dfcb6b8d31564fa9762c836ad33f30f6feb562c2885",
+    "textures/water1_normal_bump.png": "12ba6a0e48f05847a7533b98cf7688864df228fbcf59c2f4c2599c79f1798c4e",
+    "water_helper_methods.gd": "8ebbe454b2069da17f1bbd8c0e7b6202f505bdd1e02e9c2bf3a0087abf867af6",
+    "water_system_manager.gd": "5fb2191abd62994c8bda213a8a051dbd3b5e06927a2c7dca7f138fa460c83bb7",
+    "waterfall_configuration.gd": "e50ef1bc43032c79a79af3d3f24e66cba617d7ba27de35f5a7c11e1cfa71b1d6",
+    "waterfall_manager.gd": "af1b36e5558d566b54738a2f3f11f423fe876bd15bd8b06b63ef4da072ef5e33"
+  },
+  "local_patches": {
+    "gui/progress_window.tscn": {
+      "upstream_sha256": "427f93c22ea9265fbc3a672c58bb66372efc17e2569c384b055234a600a8deba",
+      "local_sha256": "f5ddaf464fb11a18ef396fe3c4c0096f0d0ebceaf12b7402ffaa86aec41ae4cd"
+    },
+    "gui/river_gizmo.gd": {
+      "upstream_sha256": "b87e8d04b8cecc414e093115604711adeee6ad9dcb67eeedba3b297a5dfc4621",
+      "local_sha256": "b358e1f8b8489a21261c63af4ae9affd0b93130436834f7505765eda5fcd1e5f"
+    },
+    "gui/waterfall_gizmo.gd": {
+      "upstream_sha256": "f85675441e3847b59c34b956feef752660c5525deab9dfed7eec49fbf826bd4a",
+      "local_sha256": "fb8c5940a79dd53b524d0ca40c14ac7a90d847c7f2c559d35f7909998c949828"
+    },
+    "river_manager.gd": {
+      "upstream_sha256": "c92a97bda091a43138c6a2f5daf1c9b5d2713568db94a864dbaeabc6cf641fbf",
+      "local_sha256": "b5fad23290cd28bdb39ed5a1038d80f0356be66d0a0896dd6506669b7600451d"
+    },
+    "water_helper_methods.gd": {
+      "upstream_sha256": "0be209ea3bec882bb5d4120218570d7280beb2d36220688b3f8bafea0f82ae5b",
+      "local_sha256": "8ebbe454b2069da17f1bbd8c0e7b6202f505bdd1e02e9c2bf3a0087abf867af6"
+    },
+    "plugin.gd": {
+      "upstream_sha256": "96c2452e63cefc78b1e842d9e4115d944c59546b232d1319cc96b56de5201e52",
+      "local_sha256": "d1629a534be6d0034fd58b0e78be5cf049388c45ad1c3ab51d464e1ff11e8932"
+    }
+  },
+  "notes": [
+    "Existing Godot compatibility fallbacks, constant-width fast path and GUI scene changes retained.",
+    "River property-list return typed for Godot 4.7 serialization.",
+    "GOPALA mesh dressing, shader and CPU map generation live outside upstream addon.",
+    "Godot-generated UIDs/import metadata and the pre-existing backup texture are excluded from the source-byte receipt.",
+    "Free detached plugin control nodes on shutdown to prevent headless import leaks."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+	"flowmap": "CPU UV2 atlas; artistic downstream and shore masks, not collider or hydraulic simulation",
+	"inputs": {
+		"res://addons/waterways/river_manager.gd": "b5fad23290cd28bdb39ed5a1038d80f0356be66d0a0896dd6506669b7600451d",
+		"res://addons/waterways/water_helper_methods.gd": "8ebbe454b2069da17f1bbd8c0e7b6202f505bdd1e02e9c2bf3a0087abf867af6",
+		"res://assets/materials/terrain_river.gdshader": "81006f350ff420d92f9ee8d1f21b76901a55e0f4526be4377ea198dac97985e3",
+		"res://core/landscape/kathmandu_terrain.gd": "f20fd9c81848a79a887494b1436de15ff25d25a5c0324e6c76bcb7aeedacbf72",
+		"res://core/landscape/terrain_river.gd": "45aabd67efa98b5fca7683be97a5b6a497a468175af582d7efbc27a17d6c9c55",
+		"res://core/tools/bake_waterways.gd": "b298d0ef8a242fa93639f00432da6589e5473c8c60640def01c6164e4c54d2b4",
+		"res://data/geography/kathmandu-ground-height.f32": "fb7b4586fd2089607224e98a7b4a810a8b7a41a19d7fc0567cddc66d77375cf1",
+		"res://data/geography/kathmandu.json": "d8f0b6b664c24713b49db7b38dd4d67469831e38930510e9d92c67092384e305"
+	},
+	"licenses": "River geometry: ODbL; elevation: Copernicus DEM; Waterways: MIT; authored integration: project code",
+	"output": "res://data/geography/waterways/mapped_rivers.scn",
+	"output_sha256": "5c25ea98ba84510b519ced0666807c596223a44cc702a513d114e8e904ac3028",
+	"reaches": 249,
+	"segments": 13573
+}

@@ -1,13 +1,18 @@
 extends Camera3D
 ## Fixed settlement view. Pan stays on the ground; zoom cannot reveal the void past the terrain.
-const YAW := 45.0
-const PITCH := -55.0
+const PITCH_START := -55.0
+const PITCH_MIN := -75.0
+const PITCH_MAX := -32.0
+const YAW_SPEED := 80.0
 const DISTANCE := 520.0
-const MIN_SIZE := 14.0
+const MIN_SIZE := 3.0
 const MAP_LIMIT := 200.0
 const MANAGEMENT_FRACTION := 0.62
+var yaw := 45.0
+var pitch := PITCH_START
 var target := Vector3(0, 8, 0)
 var dragging := false
+var rotating := false
 var clamped_last := false
 
 func _ready() -> void:
@@ -27,8 +32,8 @@ func view_size() -> Vector2:
 	return view
 
 func aim() -> void:
-	rotation_degrees = Vector3(PITCH, YAW, 0.0)
-	position = target + basis.z * DISTANCE
+	rotation_degrees = Vector3(pitch, yaw, 0.0)
+	position = target + basis.z * minf(DISTANCE, maxf(8.0, size * 2.0))
 
 func ground_forward() -> Vector3:
 	return Vector3(-basis.z.x, 0.0, -basis.z.z).normalized()
@@ -127,6 +132,17 @@ func zoom_by(factor: float) -> void:
 	size = clampf(size * factor, MIN_SIZE, maximum_size())
 	update_view()
 
+func zoom_step(factor: float) -> void:
+	zoom_toward(view_size() * 0.5, factor)
+
+func turn_by(degrees: float) -> void:
+	yaw = fposmod(yaw + degrees, 360.0)
+	update_view()
+
+func tilt_by(degrees: float) -> void:
+	pitch = clampf(pitch + degrees, PITCH_MIN, PITCH_MAX)
+	update_view()
+
 func zoom_toward(screen: Vector2, factor: float) -> void:
 	var before := terrain_hit(screen)
 	zoom_by(factor)
@@ -162,18 +178,41 @@ func _process(delta: float) -> void:
 		direction.y += 1.0
 	if Input.is_action_pressed("camera_back"):
 		direction.y -= 1.0
+	var turned := false
+	if Input.is_action_pressed("camera_rotate_left"):
+		yaw -= YAW_SPEED * delta
+		turned = true
+	if Input.is_action_pressed("camera_rotate_right"):
+		yaw += YAW_SPEED * delta
+		turned = true
+	if turned:
+		yaw = fposmod(yaw, 360.0)
+		update_view()
 	if direction != Vector2.ZERO:
 		var step := direction.normalized() * size * delta * 0.5
 		pan_ground(step.x, step.y)
-	if dragging and not Input.is_mouse_button_pressed(MOUSE_BUTTON_MIDDLE):
+	if dragging and not Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		dragging = false
+	if rotating and not Input.is_mouse_button_pressed(MOUSE_BUTTON_MIDDLE):
+		rotating = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_MIDDLE:
+			rotating = event.pressed
+		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			dragging = event.pressed
 		elif event.pressed and event.button_index in [MOUSE_BUTTON_WHEEL_UP, MOUSE_BUTTON_WHEEL_DOWN]:
 			zoom_toward(event.position, 0.84 if event.button_index == MOUSE_BUTTON_WHEEL_UP else 1.0 / 0.84)
+	elif event is InputEventKey and event.pressed and not event.echo:
+		if event.is_action("camera_zoom_in"):
+			zoom_toward(get_viewport().get_mouse_position(), 0.84)
+		elif event.is_action("camera_zoom_out"):
+			zoom_toward(get_viewport().get_mouse_position(), 1.0 / 0.84)
+	elif event is InputEventMouseMotion and rotating:
+		yaw = fposmod(yaw - event.relative.x * 0.22, 360.0)
+		pitch = clampf(pitch - event.relative.y * 0.12, PITCH_MIN, PITCH_MAX)
+		update_view()
 	elif event is InputEventMouseMotion and dragging:
 		var scale := size / view_size().y
 		pan_ground(-event.relative.x * scale, event.relative.y * scale)

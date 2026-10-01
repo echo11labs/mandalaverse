@@ -1,0 +1,38 @@
+{
+	"chunks": 4539,
+	"inputs": {
+		"res://assets/models/trees/QuaterniusMegaKit/source-receipt.json": "5c56a90e6dca878acd34c5362f134c26db23f4de3cb5b40918ff975142c8c780",
+		"res://core/landscape/forest_rules.gd": "5b88528e9f83543f15c7262097ecba128ae3b6d9677112dd33ca6d9e740cdcce",
+		"res://core/landscape/kathmandu_terrain.gd": "f20fd9c81848a79a887494b1436de15ff25d25a5c0324e6c76bcb7aeedacbf72",
+		"res://core/tools/bake_forest.gd": "6c116eda5436437d2f3957ccac3c054bb7662b273b9c7d196b34affc5f62e022",
+		"res://data/forest/models.json": "12640b2368de3e2680edb62fa9a83c47a769f0c66cbc321fe9e2edb4d94d36d3",
+		"res://data/geography/kathmandu-ground-height.f32": "fb7b4586fd2089607224e98a7b4a810a8b7a41a19d7fc0567cddc66d77375cf1",
+		"res://data/geography/kathmandu-river-distance.f32": "85d4740226525c93d7142837cf39dfde43655cf1ee0c6fd11bc506a09b28e52c",
+		"res://data/geography/kathmandu-source-height.f32": "bae69e79cbb321b09ce892ea9b00cc71eb5d8c49f46ce44841f2247e9da7a58d",
+		"res://data/geography/kathmandu.json": "d8f0b6b664c24713b49db7b38dd4d67469831e38930510e9d92c67092384e305"
+	},
+	"ok": true,
+	"output": "res://data/forest/kathmandu_forest.scn",
+	"output_sha256": "e6a8e27eee30a6a1426f03145decadf25cb8922cd28afedca521454ca0b08774",
+	"placement_engine": "ProtonScatter 4.2.0",
+	"population": 100940,
+	"sample_pine_height_m": 24.3013343811035,
+	"scope": "Externally authored models, art-directed forest proxy; not a vegetation survey or resource inventory.",
+	"variants": {
+		"CommonTree_1": 7099,
+		"CommonTree_2": 7020,
+		"CommonTree_3": 7099,
+		"CommonTree_4": 6996,
+		"CommonTree_5": 7006,
+		"Pine_1": 6098,
+		"Pine_2": 6149,
+		"Pine_3": 6077,
+		"Pine_4": 6107,
+		"Pine_5": 6196,
+		"TwistedTree_1": 7056,
+		"TwistedTree_2": 7016,
+		"TwistedTree_3": 6973,
+		"TwistedTree_4": 7010,
+		"TwistedTree_5": 7038
+	}
+}

@@ -16,7 +16,7 @@ The HOT/HDX Nepal OSM waterways export is dated 9 September 2026. The retained r
 
 Mapped order is interpreted using OSM's downstream convention. The importer records DEM-based reversals where a reach has more than eight metres of net uphill rise. A reviewed Godawari side-channel reversal removes an 11-edge directed cycle. These changes do not alter horizontal routes. They are inferred direction repairs, not surveyed hydrology. The repair list is in `reports/kathmandu-import.json`.
 
-Profiles are conditioned to avoid downstream rises and agree at shared graph nodes. Maximum profile lowering is approximately 41.75 m. A separate visual terrain layer uses a three-sample median filter and shallow channel dressing. Source elevations remain intact. Native animated ribbons are draped over the visible terrain; their UVs follow reach direction. Arrows and animation communicate downstream travel. They do not simulate discharge, seasonal volume, flooding or water-surface hydraulics. River widths are enlarged for visibility and are not measured bank widths.
+Profiles are conditioned to avoid downstream rises and agree at shared graph nodes. Maximum profile lowering is approximately 41.75 m. A separate visual terrain layer uses a three-sample median filter and shallow channel dressing. Source elevations remain intact. Baked Waterways meshes are dressed onto the visible terrain, with animated downstream normals, shore foam and a Compatibility material. Mapped IDs and course endpoints are retained; covered/tunnel reaches stay hidden. These surfaces do not simulate discharge, seasonal volume, flooding or water-surface hydraulics. River widths are enlarged for visibility and are not measured bank widths. See [Waterways integration](GOPALA-Waterways.md) for the pinned addon, baked-asset receipt, source-query API and acceptance limits.
 
 The network is incomplete: portions of Dhobi/Tukucha are disconnected from the retained component. Bagdwar is approximately 4.4 km from the closest retained connected-network vertex, though disconnected mapped streams exist closer. These are data gaps, not evidence that the real rivers stop there.
 
@@ -46,7 +46,7 @@ The user prefers reconstruction where evidence supports it. The scene therefore 
 
 ## Interaction and acceptance
 
-Run `python3 tools/godot.py` or open `game/project.godot`. The view is a fixed 45° orthographic camera. Pan with middle-drag, WASD, or the arrow keys. Zoom with the wheel toward the cursor. Home returns to the camp. Press Build for structure groups, G for the local planning grid, and click terrain or a river to inspect.
+Run `python3 tools/godot.py` or open `game/project.godot`. The view is an orthographic camera that starts at 45° and 55° down. Pan with right-drag, WASD, or the arrow keys. Zoom with the wheel, − and +, or the view buttons. Hold the middle mouse button and drag to turn around the land in view and to tilt within a limited angle. Hold Q or E to keep turning. Home returns to the camp. Press Build for structure groups, G for the local planning grid, and click terrain or a river to inspect.
 
 The local planning area is 48 × 48 cells of 20 m, covering 960 × 960 m. It is a preliminary local prototype. Its grid shares the visible triangle surface; suitability excludes river-adjacent ground and slopes exceeding twelve degrees, calculated without the 3× display exaggeration. These coarse elevation samples do not establish building-scale survey accuracy. Detailed terrain, banks, vegetation and village placement remain subsequent work.
 

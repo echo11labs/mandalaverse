@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "godot-hud-system": {
+      "source": "bingeli1379/eli-marketplace",
+      "sourceType": "github",
+      "skillPath": "plugins/sdd-godot/skills/godot-hud-system/SKILL.md",
+      "computedHash": "68e482f19e25f3020081bf196a8ffe77a693258dd066e98c6b0c7b31b7204f3b"
+    }
+  }
+}

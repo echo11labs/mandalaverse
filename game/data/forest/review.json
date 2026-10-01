@@ -1,0 +1,9 @@
+{
+  "status": "pending_replacement",
+  "accepted_bake_sha256": "",
+  "rejected_source_pack": "Quaternius Stylized Nature MegaKit Standard",
+  "reason": "The Standard archive reuses the previous tree meshes and does not satisfy the requested Farthest Frontier visual direction.",
+  "asset_budget": "free_only",
+  "candidates_under_evaluation": ["Bentley PlantFactory / PlantCatalog", "Poly Haven authored source LODs"],
+  "acceptance": "A genuinely different externally authored tree family, complete materials, physical scale, terrain placement, management-camera visual review and measured rendering cost. No self-modelled trees."
+}

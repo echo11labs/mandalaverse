@@ -16,3 +16,5 @@ https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contrib
 https://docs.sentinel-hub.com/api/latest/static/files/data/dem/resources/license/License-COPDEM-30.pdf
 
 The source DSM, reprojected samples, median cleanup and geographic display are described in docs/GOPALA-Kathmandu-Geography.md. Relief is exaggerated and river lines are widened in the view. The amber headwater route is an unsurveyed DEM-derived estimate, not surveyed hydrography or an exact ancient channel.
+
+`waterways/mapped_rivers.scn` is a derived visualization of those same river and elevation data. Its geographic curves and CPU flow/shore textures retain this attribution. Waterways code/textures are independently MIT licensed by Kasper Arnklit Frandsen; see `addons/waterways/LICENSE.md` and `tools/waterways-source.json`. No ownership of the geographic data is implied by the addon's code licence.

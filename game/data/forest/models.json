@@ -1,0 +1,119 @@
+{
+  "source_pack": "Quaternius Stylized Nature MegaKit Standard",
+  "seed": 43129,
+  "regional_spacing_m": 70,
+  "detail_spacing_m": 18,
+  "chunk_size_units": 20,
+  "variants": [
+    {
+      "id": "Pine_1",
+      "path": "res://assets/models/trees/QuaterniusMegaKit/Pine_1.gltf",
+      "kind": "conifer",
+      "height_min_m": 20,
+      "height_max_m": 32
+    },
+    {
+      "id": "Pine_2",
+      "path": "res://assets/models/trees/QuaterniusMegaKit/Pine_2.gltf",
+      "kind": "conifer",
+      "height_min_m": 20,
+      "height_max_m": 32
+    },
+    {
+      "id": "Pine_3",
+      "path": "res://assets/models/trees/QuaterniusMegaKit/Pine_3.gltf",
+      "kind": "conifer",
+      "height_min_m": 20,
+      "height_max_m": 32
+    },
+    {
+      "id": "Pine_4",
+      "path": "res://assets/models/trees/QuaterniusMegaKit/Pine_4.gltf",
+      "kind": "conifer",
+      "height_min_m": 20,
+      "height_max_m": 32
+    },
+    {
+      "id": "Pine_5",
+      "path": "res://assets/models/trees/QuaterniusMegaKit/Pine_5.gltf",
+      "kind": "conifer",
+      "height_min_m": 20,
+      "height_max_m": 32
+    },
+    {
+      "id": "CommonTree_1",
+      "path": "res://assets/models/trees/QuaterniusMegaKit/CommonTree_1.gltf",
+      "kind": "broadleaf",
+      "height_min_m": 14,
+      "height_max_m": 24
+    },
+    {
+      "id": "CommonTree_2",
+      "path": "res://assets/models/trees/QuaterniusMegaKit/CommonTree_2.gltf",
+      "kind": "broadleaf",
+      "height_min_m": 14,
+      "height_max_m": 24
+    },
+    {
+      "id": "CommonTree_3",
+      "path": "res://assets/models/trees/QuaterniusMegaKit/CommonTree_3.gltf",
+      "kind": "broadleaf",
+      "height_min_m": 14,
+      "height_max_m": 24
+    },
+    {
+      "id": "CommonTree_4",
+      "path": "res://assets/models/trees/QuaterniusMegaKit/CommonTree_4.gltf",
+      "kind": "broadleaf",
+      "height_min_m": 14,
+      "height_max_m": 24
+    },
+    {
+      "id": "CommonTree_5",
+      "path": "res://assets/models/trees/QuaterniusMegaKit/CommonTree_5.gltf",
+      "kind": "broadleaf",
+      "height_min_m": 14,
+      "height_max_m": 24
+    },
+    {
+      "id": "TwistedTree_1",
+      "path": "res://assets/models/trees/QuaterniusMegaKit/TwistedTree_1.gltf",
+      "kind": "broadleaf",
+      "height_min_m": 14,
+      "height_max_m": 24
+    },
+    {
+      "id": "TwistedTree_2",
+      "path": "res://assets/models/trees/QuaterniusMegaKit/TwistedTree_2.gltf",
+      "kind": "broadleaf",
+      "height_min_m": 14,
+      "height_max_m": 24
+    },
+    {
+      "id": "TwistedTree_3",
+      "path": "res://assets/models/trees/QuaterniusMegaKit/TwistedTree_3.gltf",
+      "kind": "broadleaf",
+      "height_min_m": 14,
+      "height_max_m": 24
+    },
+    {
+      "id": "TwistedTree_4",
+      "path": "res://assets/models/trees/QuaterniusMegaKit/TwistedTree_4.gltf",
+      "kind": "broadleaf",
+      "height_min_m": 14,
+      "height_max_m": 24
+    },
+    {
+      "id": "TwistedTree_5",
+      "path": "res://assets/models/trees/QuaterniusMegaKit/TwistedTree_5.gltf",
+      "kind": "broadleaf",
+      "height_min_m": 14,
+      "height_max_m": 24
+    }
+  ],
+  "detail_center": [
+    10,
+    -85
+  ],
+  "detail_extent_units": 24
+}

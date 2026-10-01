@@ -1,0 +1,112 @@
+{
+  "source_pack": "Quaternius Stylized Nature MegaKit Standard",
+  "publisher": "Quaternius",
+  "source_url": "https://quaternius.itch.io/stylized-nature-megakit",
+  "license": "CC0-1.0",
+  "license_file": "License_Standard.txt",
+  "archive_name": "Stylized Nature MegaKit[Standard].zip",
+  "archive_sha256": "298f6732b872e4cf7b30e6e7abf9641c7f6dc6b326df37ac089533ed7e3d58c9",
+  "files": {
+    "License_Standard.txt": "120710e542c3ebaf83856c4eb55b4a1e680593b39302eba7fdc5d942dfe78c58",
+    "Bark_NormalTree.png": "f36e94fdd73255347325b998e02a0b2575fdf714b0315bfe5e8ff34bc8e13603",
+    "Bark_NormalTree_Normal.png": "852f6155404b8c39e100e41e26970e02a6a5c81b482d3726618dab28e3ad03a2",
+    "Bark_TwistedTree.png": "01608a96c42954eb725b32824530b51e67a2f3d85432d21a8d8adff958d2084a",
+    "Bark_TwistedTree_Normal.png": "692da2f58909263f074cb17b36defd09f56bf89ab7efda567a9a3e59261747b3",
+    "CommonTree_1.bin": "9dd689e84e1aa2f5b08db8def591254d582783c73737af54ba0d89b3e549c3ae",
+    "CommonTree_1.gltf": "b51cdea6545edb51d102dd6c27caafe62aa75e3c328ac8f9039f4e7bfd690bfa",
+    "CommonTree_2.bin": "a273d69de31a675a9d7e3eb3c43f804aef2d1b031692111b9e76eb3b0b686d0c",
+    "CommonTree_2.gltf": "67160975f0ac991b4a2ffb2add4ab4037b5e9c1bef9f66dac5235fcf0ba9bd52",
+    "CommonTree_3.bin": "24541f46fd9553e2389aba15575f2697009226e82118ed76868284114fd12b49",
+    "CommonTree_3.gltf": "17c6537aa8042bb7255fbb501bf7aeb2b6db87c16766f794f9c37be3ce70c976",
+    "CommonTree_4.bin": "4fa52cc5bb9aa42d5ce1eee6cffca0f0a7f25dd07fe4431e371548e89bc30233",
+    "CommonTree_4.gltf": "ddf0e8837705702871d3f03de8cf7aeed61ad4bf8ee92052b6f95bdd771297b6",
+    "CommonTree_5.bin": "0e617612d50e6bb2ca3c64338383f8938ce9e04d55b548ff11cec7a7b7d8f072",
+    "CommonTree_5.gltf": "fb7061f2bf9fe850870b056431f8f66cd8fdeb443c90695c5efbcf1fe6876d53",
+    "Leaf_Pine_C.png": "86f7ff7a214f5424de48d269568f36a15485e61c80677e426c7be9f45181eef9",
+    "Leaves_NormalTree_C.png": "998612bdf0b76a22f5f54d65cd7a457815d2842d89653fa4348a4ebb42933ad3",
+    "Leaves_TwistedTree_C.png": "0e459b56b14c0e81b1b7cf3d1e8c6f0bb71790eb6c46bb02a76a922d8df646ea",
+    "Pine_1.bin": "0cc0900d156359cab7028d87cd5d8897fbcb0479ddf1ddf524d5462c11e17af2",
+    "Pine_1.gltf": "adc85a72e6f46f71317ca5f7630876bfb207f687427bc9e37cd97ec4af5f2cbc",
+    "Pine_2.bin": "5ba81ed2b131243bf02f5fb18e278083205ce16b0f30c364ccbe9355e7637c60",
+    "Pine_2.gltf": "57bd4732170b6c7e51bcf78fe5adaabf142f95a50378d8d3051d1f20a04d3c2f",
+    "Pine_3.bin": "73edd69d7e789b12bfa32ab202c62d74ae98f0bba67975205211bf51906d8c82",
+    "Pine_3.gltf": "54c72a4d614f053dd4b3d4404076a361de6085ec6a34560e42a76d7e79d89830",
+    "Pine_4.bin": "0a04c88f619924d9d4df10281e994da9d8e429c1a19fae2086ed6f1ebd1ba88a",
+    "Pine_4.gltf": "d8978cfd5a29a22446b9277f1789f44c3f953fb6e29adb625a8f61c3dd032952",
+    "Pine_5.bin": "18982d7f6c430d1a42568d4ef62017398dedb1ddc60dfbab047f8cddea9cf797",
+    "Pine_5.gltf": "bb060ce1420af32dc996241078d36e4c991577397474aa64f4c691362c482cfa",
+    "TwistedTree_1.bin": "58e4c16c16e0a71051af76a37be0641ea8f7089652687f957383d3c4bd24723b",
+    "TwistedTree_1.gltf": "8544b084e1fadfbec981e964ce27463f50c39c460513e0d3442160880c5908a7",
+    "TwistedTree_2.bin": "968895bfe950e40a2a0ba82c5a7f67571a5959629ec03ad23076990280386d69",
+    "TwistedTree_2.gltf": "7d57307e4ba817e807d84cf8020693ed31a82297593cca32e1780cfcdc6397c2",
+    "TwistedTree_3.bin": "04ad394055b72a3d3717d8e3617ae733ea155580330d94d7387238928755eaca",
+    "TwistedTree_3.gltf": "c719e6f2f26bb5f4a32f92194b71f432e2444870cb0f3b41989e05c7ad3b9ecd",
+    "TwistedTree_4.bin": "4a256031f3a8da2e80dab0b92a0a3d7c7d43a2cc9c19f8fe9aec1f651d2eb6ef",
+    "TwistedTree_4.gltf": "9d39f221d991b50b2ac92089ff7db573717d4eaf756218d30b93c5e961093884",
+    "TwistedTree_5.bin": "687fe8183da031a2c6b66668081bf1bc8e5c408b49f165a2b13b45742280e07b",
+    "TwistedTree_5.gltf": "c193b23d5dc52e7b9c9d5ddda2bc0b89cd1cbbd4b8f1c08fae3216424bd1e982"
+  },
+  "models": {
+    "Pine_1": {
+      "triangles": 3947,
+      "surfaces": 2
+    },
+    "Pine_2": {
+      "triangles": 3648,
+      "surfaces": 2
+    },
+    "Pine_3": {
+      "triangles": 4964,
+      "surfaces": 2
+    },
+    "Pine_4": {
+      "triangles": 3370,
+      "surfaces": 2
+    },
+    "Pine_5": {
+      "triangles": 1646,
+      "surfaces": 2
+    },
+    "CommonTree_1": {
+      "triangles": 6265,
+      "surfaces": 2
+    },
+    "CommonTree_2": {
+      "triangles": 5648,
+      "surfaces": 2
+    },
+    "CommonTree_3": {
+      "triangles": 3505,
+      "surfaces": 2
+    },
+    "CommonTree_4": {
+      "triangles": 4066,
+      "surfaces": 2
+    },
+    "CommonTree_5": {
+      "triangles": 3182,
+      "surfaces": 2
+    },
+    "TwistedTree_1": {
+      "triangles": 9564,
+      "surfaces": 2
+    },
+    "TwistedTree_2": {
+      "triangles": 9134,
+      "surfaces": 2
+    },
+    "TwistedTree_3": {
+      "triangles": 10089,
+      "surfaces": 2
+    },
+    "TwistedTree_4": {
+      "triangles": 9600,
+      "surfaces": 2
+    },
+    "TwistedTree_5": {
+      "triangles": 10104,
+      "surfaces": 2
+    }
+  },
+  "scope": "15 externally authored tree variants and their original dependencies. No self-modelled geometry. Standard excludes the paid Source edition wind shader."
+}
