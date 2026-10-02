@@ -1,5 +1,5 @@
 {
-  "ok": true,
+  "ok": false,
   "engine": "4.7.2.stable.official.ed1daf0bf",
   "stages": [
     {
@@ -7,9 +7,14 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 4.33,
+      "seconds": 5.05,
       "log": "reports/local/import.log",
-      "warnings": [],
+      "warnings": [
+        "Instantiated TerrainNetworkConfig used as default value for TerrainStreamer's \"network\" property.",
+        "Instantiated TerrainRenderingConfig used as default value for TerrainStreamer's \"rendering\" property.",
+        "Instantiated TerrainStreamingConfig used as default value for TerrainStreamer's \"streaming\" property.",
+        "Instantiated TerrainWorldConfig used as default value for TerrainStreamer's \"world\" property."
+      ],
       "known_engine_errors": {
         "language_server_stop_without_started_thread": 1
       }
@@ -24,11 +29,20 @@
       "warnings": []
     },
     {
+      "stage": "parse-gopala_theme",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-gopala_theme.log",
+      "warnings": []
+    },
+    {
       "stage": "parse-ui_events",
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-ui_events.log",
       "warnings": []
     },
@@ -46,7 +60,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-content_audit.log",
       "warnings": []
     },
@@ -55,7 +69,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-resource_definition.log",
       "warnings": []
     },
@@ -64,7 +78,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-zone_definition.log",
       "warnings": []
     },
@@ -82,7 +96,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-kathmandu_terrain.log",
       "warnings": []
     },
@@ -91,7 +105,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-sculpted_valley.log",
       "warnings": []
     },
@@ -127,7 +141,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-bake_forest.log",
       "warnings": []
     },
@@ -154,7 +168,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-content_lab.log",
       "warnings": []
     },
@@ -172,7 +186,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-kathmandu_hud.log",
       "warnings": []
     },
@@ -181,7 +195,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.29,
       "log": "reports/local/parse-kathmandu_valley.log",
       "warnings": []
     },
@@ -190,7 +204,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-map_overlay_drawer.log",
       "warnings": []
     },
@@ -208,8 +222,17 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-scenic_valley.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-gopala_minimap",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-gopala_minimap.log",
       "warnings": []
     },
     {
@@ -226,7 +249,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-valley.log",
       "warnings": []
     },
@@ -244,7 +267,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-bake_landscape.log",
       "warnings": []
     },
@@ -253,8 +276,17 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-generate_prototypes.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-measure_ui",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-measure_ui.log",
       "warnings": []
     },
     {
@@ -262,7 +294,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-run_content_tests.log",
       "warnings": []
     },
@@ -280,7 +312,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-run_kathmandu_tests.log",
       "warnings": []
     },
@@ -298,8 +330,17 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-run_scenic_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_ui_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_ui_tests.log",
       "warnings": []
     },
     {
@@ -307,7 +348,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-run_waterways_tests.log",
       "warnings": []
     },
@@ -316,7 +357,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.35,
+      "seconds": 0.39,
       "log": "reports/local/content-tests.log",
       "warnings": [],
       "tests": {
@@ -337,11 +378,25 @@
       }
     },
     {
+      "stage": "ui-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.45,
+      "log": "reports/local/ui-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 111,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
       "stage": "landscape-tests",
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.24,
+      "seconds": 0.39,
       "log": "reports/local/landscape-tests.log",
       "warnings": [],
       "tests": {
@@ -357,7 +412,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 1.14,
+      "seconds": 1.26,
       "log": "reports/local/scenic-tests.log",
       "warnings": [],
       "tests": {
@@ -368,16 +423,78 @@
     },
     {
       "stage": "kathmandu-tests",
-      "ok": true,
-      "exit_code": 0,
+      "ok": false,
+      "exit_code": 1,
       "timed_out": false,
-      "seconds": 2.66,
+      "seconds": 4.95,
       "log": "reports/local/kathmandu-tests.log",
       "warnings": [],
       "tests": {
-        "checks": 30791,
-        "failures": [],
-        "ok": true
+        "checks": 30896,
+        "failures": [
+          "Mesh matches ground model"
+        ],
+        "ok": false,
+        "territory": {
+          "borders_on_river": {
+            "bhakata": {
+              "Bagmati": 528,
+              "Balkhu": 0,
+              "Hanumante": 237,
+              "contour_vertices": 6504
+            },
+            "kirtipur": {
+              "Bagmati": 422,
+              "Balkhu": 455,
+              "Hanumante": 0,
+              "contour_vertices": 1304
+            },
+            "lalitapur": {
+              "Bagmati": 1045,
+              "Balkhu": 64,
+              "Hanumante": 224,
+              "contour_vertices": 4664
+            },
+            "yambu": {
+              "Bagmati": 665,
+              "Balkhu": 383,
+              "Hanumante": 353,
+              "contour_vertices": 5328
+            }
+          },
+          "chiefdoms": {
+            "bhakata": {
+              "cells": 5447,
+              "fraction": 0.360656823147719,
+              "seat": "(53.2251, 26.7168)"
+            },
+            "kirtipur": {
+              "cells": 320,
+              "fraction": 0.0211878434748063,
+              "seat": "(-95.11523, 18.14516)"
+            },
+            "lalitapur": {
+              "cells": 3323,
+              "fraction": 0.220022512083692,
+              "seat": "(-49.2825, 20.5942)"
+            },
+            "yambu": {
+              "cells": 6013,
+              "fraction": 0.398132821293783,
+              "seat": "(-66.43281, -10.79804)"
+            }
+          },
+          "land_cells": 15103,
+          "mode": 2,
+          "snapped": {
+            "bagmati_core": 4,
+            "bagmati_west_reach": 3,
+            "balkhu_line": 4,
+            "chandragiri_rim": 4,
+            "hanumante_march": 2,
+            "kantipur_divide": 2
+          }
+        }
       }
     },
     {
@@ -385,7 +502,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.73,
+      "seconds": 0.77,
       "log": "reports/local/waterways-tests.log",
       "warnings": [],
       "tests": {
@@ -402,21 +519,21 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 1.54,
+      "seconds": 1.37,
       "log": "reports/local/forest-tests.log",
       "warnings": [],
       "tests": {
-        "checks": 18542,
+        "checks": 14797,
         "detail_count": 8305,
         "failures": [],
         "ok": true,
         "physical_height_m": [
-          14.0003790480172,
-          31.9998831419895
+          5.00037822528001,
+          29.9996647557334
         ],
         "population": 100940,
         "scope": "Saved-source integrity and placement checks; artistic replacement acceptance is separate.",
-        "source_review_status": "pending_replacement"
+        "source_review_status": "pending_visual_review"
       }
     },
     {
@@ -424,7 +541,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.45,
+      "seconds": 0.67,
       "log": "reports/local/coordinate-tests.log",
       "warnings": [],
       "tests": {
@@ -440,7 +557,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 2.56,
+      "seconds": 3.88,
       "log": "reports/local/main-scene.log",
       "warnings": []
     }

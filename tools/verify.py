@@ -55,11 +55,13 @@ def main():
         raise SystemExit("Unexpected engine version: " + version)
     stages = [run_stage("import", ["--editor", "--import"])]
     if stages[-1]["ok"]:
-        scripts = list((ROOT / "game/core").rglob("*.gd")) + list((ROOT / "game/scenes").rglob("*.gd")) + list((ROOT / "game/tests").rglob("*.gd")) + list((ROOT / "game/addons/gopala_mcp").rglob("*.gd"))
+        scripts = list((ROOT / "game/core").rglob("*.gd")) + list((ROOT / "game/scenes").rglob("*.gd")) + list((ROOT / "game/tests").rglob("*.gd")) + list((ROOT / "game/addons/gopala_mcp").rglob("*.gd")) + [path for path in (ROOT / "game/assets/ui").rglob("*.gd") if "generate_" not in path.name]
         for path in sorted(scripts):
             relative = path.relative_to(ROOT / "game").as_posix()
             stages.append(run_stage("parse-" + path.stem, ["--check-only", "--script", relative]))
         stages.append(run_stage("content-tests", ["--script", "tests/run_content_tests.gd"]))
+        if (ROOT / "game/scenes/ui/hud.tscn").exists():
+            stages.append(run_stage("ui-tests", ["--script", "tests/run_ui_tests.gd"]))
         if (ROOT / "game/scenes/world/valley.tscn").exists():
             stages.append(run_stage("landscape-tests", ["--script", "tests/run_landscape_tests.gd"]))
         if (ROOT / "game/scenes/landscape/scenic_valley.tscn").exists():

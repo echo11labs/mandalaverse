@@ -4,7 +4,9 @@ Companion to [2D Development Vedas](GOPALA-2D-Development-Vedas.md). Prepared 29
 
 ## Current status
 
-G-001: project and engine pinned; desktop export remains outstanding. G-002: typed content registry and rejection checks implemented. G-003: 2D coordinate tests retained; the main orthographic Kathmandu landscape has a 48 × 48 local ground grid and physics picking tests at three zoom levels. Earlier diagnostic terrain tests remain available. G-004: camera, grid and ground inspection implemented; placement cancellation waits for the placement layer. G-005: actor/building visibility is outstanding. Economy tasks G-006 onward remain unimplemented. Toolchain progress does not complete gameplay tasks.
+G-001: project and engine pinned; desktop export remains outstanding. G-002: typed content registry and rejection checks implemented. G-003: 2D coordinate tests retained; the main orthographic Kathmandu landscape has a 48 × 48 local ground grid and physics picking tests at three zoom levels. Earlier diagnostic terrain tests remain available. G-004: camera, grid and ground inspection implemented; the interface has been rebuilt as a warm editorial HUD bound to the content catalogue, with a resource rail, structure strip, inspection and chiefdom panels, a schematic survey minimap, tempo controls, and a 111-check headless interface suite. Placement cancellation and grid/name toggles now route through the HUD, but placement itself still waits for the placement layer. G-005: actor/building visibility is outstanding. Economy tasks G-006 onward remain unimplemented. Toolchain progress does not complete gameplay tasks.
+
+The interface layer is recorded in [Interface layer](GOPALA-Interface-Layer.md) and font provenance in [UI font receipt](GOPALA-UI-Font-Receipt.md). Part of G-004 is satisfied; its acceptance still requires that clicking UI does not issue world commands, which is only partly testable before placement exists.
 
 The authorized mixed 2D/3D landscape direction is recorded in [Landscape layer](GOPALA-Landscape-Layer.md). Historical timeline estimates below have not been validated as delivery commitments.
 

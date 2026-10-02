@@ -1,9 +1,21 @@
 {
-  "status": "pending_replacement",
+  "status": "pending_visual_review",
   "accepted_bake_sha256": "",
   "rejected_source_pack": "Quaternius Stylized Nature MegaKit Standard",
   "reason": "The Standard archive reuses the previous tree meshes and does not satisfy the requested Farthest Frontier visual direction.",
   "asset_budget": "free_only",
-  "candidates_under_evaluation": ["Bentley PlantFactory / PlantCatalog", "Poly Haven authored source LODs"],
-  "acceptance": "A genuinely different externally authored tree family, complete materials, physical scale, terrain placement, management-camera visual review and measured rendering cost. No self-modelled trees."
+  "submitted_candidate": "Poly Haven CC0 Tree Scans (GOPALA LOD pass) - 16 variants",
+  "submitted_bake_sha256": "606a3f39986e6f32bfc39d5abd35395b470b125ec5c8460b1b03f1ffcc6c319a",
+  "submitted_population": 100940,
+  "submitted_variants": 16,
+  "submitted_triangles_total": 82910,
+  "submission_note": "Sixteen single-surface variants derived by decimating six CC0 Poly Haven photogrammetry scans to at most 6687 triangles each and baking each into one atlas material, because Godot MultiMesh renders surface 0 only. The hash-pinned submitted bake remains visible in the running scene while human review of reports/kathmandu-forest.png and reports/kathmandu-trees.png is pending; acceptance is still withheld until accepted_bake_sha256 is set.",
+  "candidates_under_evaluation": [],
+  "acceptance": "A genuinely different externally authored tree family, complete materials, physical scale, terrain placement, management-camera visual review and measured rendering cost. No self-modelled trees.",
+  "current_implementation": {
+    "regional_forest": "ProtonScatter with PolyHavenFoliage (16 variants, 100,940 trees)",
+    "detail_forest": "ProtonScatter with same models (detail layer at 18m spacing, 8,305 trees)",
+    "hero_trees": "EZTreeDraw available for manual placement (5 species templates)"
+  },
+  "ez_tree_status": "Addon installed (ez-tree-godot-port). HeroTrees and DetailForest nodes present for manual placement. Template trees removed due to EZ-Tree library NaN quaternion bug. Detail forest uses proven ProtonScatter system."
 }

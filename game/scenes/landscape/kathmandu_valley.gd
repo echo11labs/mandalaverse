@@ -7,11 +7,15 @@ var selection: MeshInstance3D
 var ground: MeshInstance3D
 var hud: GopalaKathmanduHud
 var labels: Node3D
+var territory_labels: Node3D
+var map_overlay: GopalaMapOverlay
 var water_segments := 0
 var water_network: GopalaWaterNetwork
 var sample_pine_height_m := 0.0
 var tree_population := 0
 @onready var camera = $Camera3D
+@onready var detail_forest = $DetailForest
+@onready var hero_trees = $HeroTrees
 func _ready() -> void:
 	terrain.load_data()
 	load_lakes()
@@ -42,6 +46,10 @@ func _ready() -> void:
 		camera.target = Vector3(10.0, terrain.height_at(10.0, -85.0), -85.0)
 		camera.size = 3.0
 		camera.aim()
+	if "--capture-territory" in OS.get_cmdline_user_args():
+		map_overlay.set_mode(GopalaMapOverlay.Mode.SURVEY)
+		cycle_territory_mode()
+		camera.focus_point(Vector3(0.0, terrain.height_at(0.0, 0.0), 0.0), camera.maximum_size())
 	if Array(OS.get_cmdline_user_args()).any(func(s: String): return s.begins_with("--capture")): capture.call_deferred()
 func ground_color(x: float,z: float) -> Color:
 	var elevation := terrain.elevation_at(x,z)
@@ -206,16 +214,20 @@ func make_map_overlay() -> void:
 	viewport.transparent_bg = true
 	viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 	add_child(viewport)
-	
+
 	# 2. Map drawer script
-	var drawer := Node2D.new()
-	drawer.set_script(load("res://scenes/landscape/map_overlay_drawer.gd"))
-	drawer.set("terrain", terrain)
-	if FileAccess.file_exists("res://data/geography/regions_gopala.json"):
-		var raw := FileAccess.get_file_as_string("res://data/geography/regions_gopala.json")
-		drawer.set("regions", JSON.parse_string(raw))
+	var document := load_territory_document()
+	var drawer := GopalaMapOverlay.new()
+	drawer.name = "TerritoryOverlay"
+	drawer.terrain = terrain
+	drawer.document = document
+	drawer.regions = document.get("chiefdoms", [])
+	drawer.frontiers = document.get("frontiers", [])
+	drawer.rim = document.get("rim", {})
+	drawer.target_viewport = viewport
+	map_overlay = drawer
 	viewport.add_child(drawer)
-	
+
 	# Compatibility supports sampling the live map texture in the ground shader.
 	# A Decal cannot accept ViewportTexture and is unsupported by this renderer.
 	viewport.name = "GeographicMapOverlay"
@@ -225,19 +237,58 @@ func make_map_overlay() -> void:
 	ground_material.set_shader_parameter("geographic_overlay", viewport.get_texture())
 	ground_material.set_shader_parameter("use_geographic_overlay", true)
 
-	# 4. We still place 3D labels for the regions
-	if FileAccess.file_exists("res://data/geography/regions_gopala.json"):
-		var file = FileAccess.open("res://data/geography/regions_gopala.json", FileAccess.READ)
-		var regions = JSON.parse_string(file.get_as_text())
-		if drawer.has_method("get_label_anchor"):
-			for region in regions:
-				var c = Color(region.tint)
-				var anchor: Vector3 = drawer.get_label_anchor(region.name)
-				if labels == null:
-					labels = Node3D.new()
-					labels.name = "GeographicLabels"
-					add_child(labels)
-				add_label(region.label, anchor, c, 24)
+	# 3. Chiefdom labels live in their own node so the F key can hide them
+	# independently of the landmark and river labels.
+	territory_labels = Node3D.new()
+	territory_labels.name = "TerritoryLabels"
+	add_child(territory_labels)
+	for region in document.get("chiefdoms", []):
+		var anchor: Vector3 = drawer.get_label_anchor(String(region.id))
+		add_territory_label(String(region.label), anchor, Color(String(region.tint)), 26)
+
+func load_territory_document() -> Dictionary:
+	if not FileAccess.file_exists(GopalaMapOverlay.REGIONS_PATH):
+		push_warning("Territory document missing; the F key will have nothing to paint.")
+		return {}
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(GopalaMapOverlay.REGIONS_PATH))
+	if not parsed is Dictionary:
+		push_error("Territory document is not an object.")
+		return {}
+	return parsed
+
+func add_territory_label(text_value: String, point: Vector3, color: Color, font_size: int) -> void:
+	var label := Label3D.new()
+	label.text = text_value
+	label.position = point
+	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	label.no_depth_test = true
+	label.fixed_size = true
+	label.pixel_size = 0.0016
+	label.font_size = font_size
+	label.modulate = color
+	label.outline_modulate = Color("1b1710")
+	label.outline_size = 8
+	territory_labels.add_child(label)
+
+func cycle_territory_mode() -> void:
+	if map_overlay == null:
+		return
+	map_overlay.cycle_mode()
+	var survey := map_overlay.mode == GopalaMapOverlay.Mode.SURVEY
+	territory_labels.visible = map_overlay.mode != GopalaMapOverlay.Mode.OFF
+	var ground_material: ShaderMaterial = ground.material_override
+	ground_material.set_shader_parameter("use_geographic_overlay", map_overlay.mode != GopalaMapOverlay.Mode.OFF)
+	hud.show_territory(map_overlay.mode_name(), survey, territory_summary())
+
+func territory_summary() -> Array:
+	if map_overlay == null or not map_overlay.built:
+		return []
+	return map_overlay.regions
+
+func describe_chiefdom(region_id: String) -> Dictionary:
+	if map_overlay == null:
+		return {}
+	return map_overlay.region_record(region_id)
 
 func line_material(color: Color) -> StandardMaterial3D:
 	var material := StandardMaterial3D.new()
@@ -431,6 +482,10 @@ func make_hud() -> void:
 	hud.zoom_out_requested.connect(func() -> void: camera.zoom_step(1.0 / 0.84))
 	hud.turn_left_requested.connect(func() -> void: camera.turn_by(-15.0))
 	hud.turn_right_requested.connect(func() -> void: camera.turn_by(15.0))
+	var survey_regions: Array = []
+	if map_overlay != null and map_overlay.built:
+		survey_regions = map_overlay.regions
+	hud.configure_survey(terrain, survey_regions)
 func _process(_delta: float) -> void:
 	hud.follow(camera)
 func focus_source() -> void:
@@ -448,13 +503,21 @@ func _unhandled_input(event: InputEvent) -> void:
 		focus_camp()
 	elif event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 		hud.close_build()
+	elif event.is_action_pressed("toggle_territory"):
+		cycle_territory_mode()
 	elif event is InputEventKey and event.pressed and event.keycode==KEY_G:
-		grid_view.visible = not grid_view.visible
-		hud.set_grid(grid_view.visible)
+		hud.toggle_grid()
+	elif event is InputEventKey and event.pressed and event.keycode==KEY_N:
+		hud.toggle_names()
 	elif event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:
 		var hit := pick(event.position)
 		if hit.is_empty(): return
 		var p: Vector3 = hit.position
+		if map_overlay != null and map_overlay.mode != GopalaMapOverlay.Mode.OFF:
+			var chiefdom := map_overlay.region_id_at(p.x, p.z)
+			if not chiefdom.is_empty():
+				hud.show_chiefdom(map_overlay.mode_name(), describe_chiefdom(chiefdom))
+				return
 		var river := terrain.nearest_river(p)
 		var elevation := roundi(terrain.elevation_at(p.x,p.z))
 		var title_text := "Valley floor"
@@ -489,7 +552,7 @@ func capture() -> void:
 		camera.zoom_by(0.84)
 	for frame in range(20): await get_tree().process_frame
 	await RenderingServer.frame_post_draw
-	var suffix := "trees" if "--capture-trees" in args else "source" if "--capture-source" in args else "local" if "--capture-local" in args else "edge" if "--capture-edge" in args else "forest" if "--capture-forest" in args else "waterways" if "--capture-water" in args else "overview"
+	var suffix := "trees" if "--capture-trees" in args else "territory" if "--capture-territory" in args else "source" if "--capture-source" in args else "local" if "--capture-local" in args else "edge" if "--capture-edge" in args else "forest" if "--capture-forest" in args else "waterways" if "--capture-water" in args else "overview"
 	var path := ProjectSettings.globalize_path("res://../reports/kathmandu-"+suffix+".png")
 	var error := get_viewport().get_texture().get_image().save_png(path)
 	if error!=OK: push_error("Kathmandu capture failed: "+error_string(error))
@@ -497,13 +560,68 @@ func capture() -> void:
 
 func make_trees() -> void:
 	var review: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/forest/review.json"))
-	if review.get("status") != "accepted":
-		return
 	var forest_path := "res://data/forest/kathmandu_forest.scn"
-	if FileAccess.get_sha256(forest_path) != review.get("accepted_bake_sha256", ""):
-		push_warning("Forest bake changed since its visual review; replacement trees require review.")
+	# The submitted candidate must be visible in the running scene so it can actually be
+	# reviewed. Acceptance remains a separate editorial decision: only an accepted bake
+	# is recorded in accepted_bake_sha256, but a hash-pinned submitted bake is safe to
+	# present while its visual review is pending.
+	var status := String(review.get("status", ""))
+	var expected_hash := ""
+	if status == "accepted":
+		expected_hash = String(review.get("accepted_bake_sha256", ""))
+	elif status == "pending_visual_review":
+		expected_hash = String(review.get("submitted_bake_sha256", ""))
+	if expected_hash.is_empty():
+		push_warning("No reviewed or submitted forest bake is available; trees are disabled.")
 		return
+	if FileAccess.get_sha256(forest_path) != expected_hash:
+		push_warning("Forest bake does not match its reviewed or submitted receipt; trees are disabled.")
+		return
+	if status != "accepted":
+		print("FOREST_PENDING_VISUAL_REVIEW loading submitted bake: " + forest_path)
 	var forest: Node3D = load(forest_path).instantiate()
 	add_child(forest)
 	tree_population = int(forest.get_meta("population"))
 	sample_pine_height_m = float(forest.get_meta("sample_pine_height_m"))
+
+
+func _select_profile_for_elevation_cached(profiles: Array, elevation: float, rng: RandomNumberGenerator) -> Variant:
+	# Cached version: pre-group profiles by elevation range for O(1) lookup
+	# Simple linear search is fine for 5 profiles
+	var candidates: Array = []
+	for p in profiles:
+		var elev_range: Array = p.elevation_range_m
+		if elevation >= elev_range[0] and elevation <= elev_range[1]:
+			candidates.append(p)
+	if candidates.is_empty():
+		return null
+	var total_weight := 0.0
+	for c in candidates:
+		total_weight += c.biome_weight
+	var r := rng.randf() * total_weight
+	var accum := 0.0
+	for c in candidates:
+		accum += c.biome_weight
+		if r <= accum:
+			return c
+	return candidates[0]
+
+func _find_variant_index(profile_id: String) -> int:
+	# Maps profile IDs to DetailForest variant indices (0-4)
+	match profile_id:
+		"chir_pine": return 0
+		"blue_pine": return 1
+		"himalayan_oak": return 2
+		"rhododendron": return 3
+		"alder": return 4
+		_: return -1
+
+func _get_template_height(profile_id: String) -> float:
+	# Approximate template heights for scaling (based on actual generated tree sizes)
+	match profile_id:
+		"chir_pine": return 18.0
+		"blue_pine": return 24.0
+		"himalayan_oak": return 15.0
+		"rhododendron": return 8.0
+		"alder": return 14.0
+		_: return 15.0

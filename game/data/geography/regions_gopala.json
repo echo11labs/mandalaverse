@@ -1,30 +1,238 @@
-[
-  {
-    "name": "Kantipur",
-    "label": "Kantipur region",
-    "center": { "x": -10.0, "z": -5.0 },
-    "tint": "#d98a57",
-    "bias": "urban_core"
+{
+  "schema": 2,
+  "id": "kathmandu_valley_gopala_territories",
+  "period": "Gopal and Yakthang eras of the Kathmandu Valley, c. 900-1200 CE",
+  "framing": "The valley was one Gopal-ruled polity with a royal seat at Yambu, not four sovereign states. These four are tributary chiefdoms holding land, levies and ritual precedence under Gopal and Yakthang suzerainty. Jurisdiction follows watercourses, ridge crests and passes because those were the defensible lines of a pre-state agrarian order, and because a chief's reach was measured by which catchment his fields drained into.",
+  "coordinate_basis": "Anchor lon/lat are WGS84. World units are x = (lon - 85.375) * 985.65 and z = (27.695 - lat) * 1113.2, matching data/geography/kathmandu.json. North is negative z.",
+  "derivation": "Every anchor carrying basis river is a node of the mapped OSM watercourse of that name in data/geography/kathmandu.json, so the frontier lands on the real channel rather than near it. Every anchor carrying basis ridge is a position on the local drainage crest and is re-snapped to the crest at runtime. The survey area reaches 40 km, which is wider than the basin, so the rim is an authored chain that seals the valley floor against the surrounding hills.",
+  "evidential_note": "Seat and landmark coordinates are modern gazetteer positions used as planimetric anchors. The jurisdiction lines are a reconstruction from drainage and relief. No Gopal-period frontier is attested by a surviving boundary survey, so every frontier and chain here carries evidential_confidence of inferred and nothing in this file claims an attested border.",
+  "source_data_caveat": "The mapped OSM watercourses in data/geography/kathmandu.json are used by name, and one name is not reliable for orientation. The ways tagged Bishnumati include the reach through the core at roughly 27.692 to 27.701 N, which runs 200 m from the Yambu seat, and the ways tagged Bishnumati north of 27.739 N, which run north-east toward Shivapuri. Both follow the historic Bagmati and Bishnumati alignment respectively rather than the name alone, so no frontier here is drawn on a Bishnumati reach. Every river anchor in this file was checked against the named mapped way and lies within 6 m of it, and the Balkhu confluence anchor is stated relative to the headland rather than the confluence because the mapped confluence is 900 m away.",
+  "chain_basis": {
+    "river": "Watercourse. Snapped at runtime to the named mapped reach in the DEM; the river becomes the jurisdiction line.",
+    "ridge": "Drainage divide. Snapped at runtime to the ridge crest walked out from the anchor; the crest becomes the jurisdiction line.",
+    "pass": "Saddle or road pass. Left at the authored coordinate because passes are point features."
   },
-  {
-    "name": "Yala",
-    "label": "Yala basin",
-    "center": { "x": 22.0, "z": 48.0 },
-    "tint": "#3fb7b2",
-    "bias": "southern_basin"
+  "chiefdoms": [
+    {
+      "id": "yambu",
+      "name": "Yambu",
+      "modern": "Kathmandu Durbar Square",
+      "label": "Yambu",
+      "role": "Royal seat and suzerain domain",
+      "seat": { "lon": 85.3076, "lat": 27.7047 },
+      "tint": "#e0a24a",
+      "evidential_confidence": "inferred",
+      "summary": "The walled royal precinct that is still Kathmandu Durbar Square held the palace of the Gopal and Yakthang kings, and from it the valley's chiefs were appointed and confirmed.",
+      "jurisdiction": "The cultivated core on the west bank of the Bagmati, running from the Kathmandu bowl north to the Bishnumati headland. Its eastern line is the Bagmati itself from the core down to the Patan bend; its southern line is the drainage divide above Patan; its north-west line is the Balkhu Khola below Kirtipur.",
+      "authority": "Personal and dynastic rather than territorial in the modern sense. The Gopal king administered through kinsmen and landed chiefs, so Yambu held precedence over the other three, not exclusive sovereignty over them."
+    },
+    {
+      "id": "lalitapur",
+      "name": "Lalitapur",
+      "modern": "Patan Durbar Square",
+      "label": "Lalitapur",
+      "role": "Southern chiefdom of the royal core",
+      "seat": { "lon": 85.3250, "lat": 27.6765 },
+      "tint": "#c25a3d",
+      "evidential_confidence": "inferred",
+      "summary": "Lalitapur sat in the southern half of the royal core, below Yambu on the Bagmati, in the Patan bowl. The southern valley domains were commonly grouped as the Yamaka and held by a chief of the royal line's rank but not of its seat.",
+      "jurisdiction": "Between the divide above Patan in the north and the Chobhar outlet in the south, reaching east to the Hanumante Khola and wrapping west around Kirtipur to the Nakhu confluence. Its western edge is the Bagmati's western reach.",
+      "authority": "A chief with levies and temple patronage of his own, owing service and tribute to Yambu."
+    },
+    {
+      "id": "bhakata",
+      "name": "Bhakata",
+      "modern": "Bhaktapur Durbar Square",
+      "label": "Bhakata",
+      "role": "East-bank chiefdom",
+      "seat": { "lon": 85.4290, "lat": 27.6710 },
+      "tint": "#6fa8d6",
+      "evidential_confidence": "inferred",
+      "summary": "Bhakata held the eastern terraces, draining to the Hanumante, the Godawari and the Nagarkot slopes. Its chiefs rose to standing early, before the later city-state rivalry of the valley, and the great temple foundations on the Bhaktapur plateau stand inside this domain.",
+      "jurisdiction": "Everything east of the Bagmati in the core and east of the Hanumante Khola in the south, from the northern rim down past the Nagarkot crest to the Kasan Khola headlands.",
+      "authority": "A chief whose control ran over whole catchments and therefore over the water that fed them, which is what made the eastern terraces defensible against the Bagmati side."
+    },
+    {
+      "id": "kirtipur",
+      "name": "Kirtipur",
+      "modern": "Kirtipur Durbar Square",
+      "label": "Kirtipur",
+      "role": "Fortified western outlier",
+      "seat": { "lon": 85.2785, "lat": 27.6787 },
+      "tint": "#9a7bd4",
+      "evidential_confidence": "inferred",
+      "summary": "Kirtipur stands on the spur above the Bagmati where the river leaves the cultivated core for the Chobhar gorge. The spur position made it a fortified watch-point over the single outlet from the valley rather than a cultivable seat, and it is treated here as a dependent lordship bounded by water on two sides.",
+      "jurisdiction": "A hill block enclosed by the Balkhu Khola in the north, the Bagmati's western reach in the east, and the Chandragiri foot in the west and south. There is barely a kilometre of ground between the river and the mountain on its western side, which is why it is the smallest domain on this map.",
+      "authority": "A watch-post lordship whose value to Yambu was control of the outlet, and whose value to anyone else would have been the same."
+    }
+  ],
+  "chains": [
+    {
+      "id": "bagmati_core",
+      "name": "Bagmati, the core reach",
+      "basis": "river",
+      "river": "Bagmati",
+      "evidential_confidence": "inferred",
+      "note": "The axial watercourse through the cultivated core. It runs about four kilometres east of the royal precinct at Yambu and about a kilometre east of Lalitapur, so on this reach it divides the royal core from the eastern terraces rather than separating east from west. It is the eastern line of Yambu and, from the Patan bend down, the eastern line of Lalitapur as well.",
+      "anchors": [
+        { "name": "Bagmati below the Kathmandu core", "lon": 85.3487, "lat": 27.7082, "basis": "river", "river": "Bagmati" },
+        { "name": "Bagmati at Bagmati Bazaar", "lon": 85.3466, "lat": 27.6989, "basis": "river", "river": "Bagmati" },
+        { "name": "Bagmati above the Patan bowl", "lon": 85.3449, "lat": 27.6874, "basis": "river", "river": "Bagmati" },
+        { "name": "Bagmati at the Patan bend", "lon": 85.3331, "lat": 27.6792, "basis": "river", "river": "Bagmati" }
+      ]
+    },
+    {
+      "id": "balkhu_line",
+      "name": "Balkhu Khola",
+      "basis": "river",
+      "river": "Balkhu",
+      "evidential_confidence": "inferred",
+      "note": "Rises west of Kirtipur and runs east past the foot of the Kirtipur spur to the core. It is the northern line of Kirtipur against Yambu, which is why the spur could be held by a small force without touching the royal precinct.",
+      "anchors": [
+        { "name": "Balkhu Khola at the Kirtipur foot", "lon": 85.2656, "lat": 27.6803, "basis": "river", "river": "Balkhu" },
+        { "name": "Balkhu Khola below the spur", "lon": 85.2777, "lat": 27.6928, "basis": "river", "river": "Balkhu" },
+        { "name": "Balkhu Khola at Sundarijal", "lon": 85.2836, "lat": 27.6909, "basis": "river", "river": "Balkhu" },
+        { "name": "Balkhu Khola below the Bishnumati headland", "lon": 85.2977, "lat": 27.6855, "basis": "river", "river": "Balkhu" },
+        { "name": "The Balkhu spur head", "lon": 85.2958, "lat": 27.6815, "basis": "ridge" }
+      ]
+    },
+    {
+      "id": "kantipur_divide",
+      "name": "The divide above Patan",
+      "basis": "ridge",
+      "evidential_confidence": "inferred",
+      "note": "Yambu and Lalitapur share the west bank of the Bagmati, so their line is a drainage divide and not a watercourse. It runs west from the Patan bend, below the Balkhu Khola, to the Chandragiri foot.",
+      "anchors": [
+        { "name": "Bagmati at the Patan bend", "lon": 85.3331, "lat": 27.6792, "basis": "river", "river": "Bagmati" },
+        { "name": "Divide between the Kathmandu and Patan bowls", "lon": 85.3161, "lat": 27.6824, "basis": "ridge" },
+        { "name": "Divide above the Balkhu", "lon": 85.2978, "lat": 27.6860, "basis": "ridge" },
+        { "name": "Chandragiri foot", "lon": 85.2786, "lat": 27.6914, "basis": "ridge" }
+      ]
+    },
+    {
+      "id": "hanumante_march",
+      "name": "The Hanumante Khola",
+      "basis": "river",
+      "river": "Hanumante",
+      "evidential_confidence": "inferred",
+      "note": "The eastern march of the southern chiefdoms. The Hanumante runs west to east across the plain between the Patan and Bhaktapur bowls, so it is the one frontier in this map that is entirely a watercourse from end to end.",
+      "anchors": [
+        { "name": "Bagmati at the Patan bend", "lon": 85.3331, "lat": 27.6792, "basis": "river", "river": "Bagmati" },
+        { "name": "Hanumante below Teku", "lon": 85.3652, "lat": 27.6727, "basis": "river", "river": "Hanumante" },
+        { "name": "Hanumante at the plain", "lon": 85.3856, "lat": 27.6710, "basis": "river", "river": "Hanumante" },
+        { "name": "Hanumante above the Bhaktapur bowl", "lon": 85.4001, "lat": 27.6744, "basis": "river", "river": "Hanumante" },
+        { "name": "Hanumante head at the Bhaktapur edge", "lon": 85.4241, "lat": 27.6785, "basis": "river", "river": "Hanumante" },
+        { "name": "Kasan Khola head", "lon": 85.4525, "lat": 27.6773, "basis": "ridge" }
+      ]
+    },
+    {
+      "id": "bagmati_west_reach",
+      "name": "Bagmati, the western reach to Chobhar",
+      "basis": "river",
+      "river": "Bagmati",
+      "evidential_confidence": "inferred",
+      "note": "Below the Patan bend the Bagmati swings west below the Kirtipur spur and runs on to Chobhar. This stretch is the eastern line of Kirtipur and then of Lalitapur. The bend from the Patan bowl to below the spur is drawn straight because the mapped OSM ways break there; the real channel wraps the north side of the spur.",
+      "anchors": [
+        { "name": "Bagmati below the Kirtipur spur", "lon": 85.2980, "lat": 27.6787, "basis": "river", "river": "Bagmati" },
+        { "name": "Bagmati at the foot of the spur", "lon": 85.2915, "lat": 27.6739, "basis": "river", "river": "Bagmati" },
+        { "name": "Bagmati above the Nakhu confluence", "lon": 85.2958, "lat": 27.6654, "basis": "river", "river": "Bagmati" },
+        { "name": "Bagmati at Chobhar", "lon": 85.2936, "lat": 27.6607, "basis": "river", "river": "Bagmati" },
+        { "name": "Bagmati below the outlet", "lon": 85.2860, "lat": 27.6505, "basis": "river", "river": "Bagmati" }
+      ]
+    },
+    {
+      "id": "chandragiri_rim",
+      "name": "The Chandragiri foot",
+      "basis": "ridge",
+      "evidential_confidence": "inferred",
+      "note": "The western and southern limit of the Kirtipur spur, closing the domain against the Chandragiri massif. There is no ground of any agricultural value between this crest and the Bagmati, which is the whole reason Kirtipur is small.",
+      "anchors": [
+        { "name": "Chandragiri foot", "lon": 85.2786, "lat": 27.6914, "basis": "ridge" },
+        { "name": "Chandragiri spur", "lon": 85.2654, "lat": 27.6788, "basis": "ridge" },
+        { "name": "Southern spur above the Nagarjun", "lon": 85.2715, "lat": 27.6663, "basis": "ridge" },
+        { "name": "Crest above the Chobhar outlet", "lon": 85.2837, "lat": 27.6519, "basis": "ridge" }
+      ]
+    }
+  ],
+  "frontiers": [
+    {
+      "id": "yambu_bhakata",
+      "between": ["yambu", "bhakata"],
+      "evidential_confidence": "inferred",
+      "basis": "river",
+      "note": "The Bagmati through the core, from below the Kathmandu centre down to the Patan bend. Water supply, not distance, kept the eastern terraces and the royal core apart.",
+      "segments": [{ "chain": "bagmati_core", "from": 0, "to": 3 }]
+    },
+    {
+      "id": "lalitapur_bhakata",
+      "between": ["lalitapur", "bhakata"],
+      "evidential_confidence": "inferred",
+      "basis": "river, ridge",
+      "note": "East from the Patan bend along the Hanumante Khola to the Bhaktapur edge, then up to the Kasan Khola headlands. The longest continuous watercourse frontier in the valley.",
+      "segments": [{ "chain": "hanumante_march", "from": 0, "to": 5 }]
+    },
+    {
+      "id": "yambu_lalitapur",
+      "between": ["yambu", "lalitapur"],
+      "evidential_confidence": "inferred",
+      "basis": "ridge",
+      "note": "West from the Patan bend along the drainage divide to the Chandragiri foot, below the Balkhu Khola. A chief's fields on the wrong side of that divide paid water to the wrong lord.",
+      "segments": [{ "chain": "kantipur_divide", "from": 0, "to": 3 }]
+    },
+    {
+      "id": "yambu_kirtipur",
+      "between": ["yambu", "kirtipur"],
+      "evidential_confidence": "inferred",
+      "basis": "river, ridge",
+      "note": "The Balkhu Khola from the Kirtipur foot east to the foot of the Bishnumati headland, then the spur head. The mapped Bishnumati reach there lies about 900 m north-east of the confluence anchor, so the last anchor is carried on the Balkhu itself rather than snapped to the Bishnumati. Kirtipur's whole northern command came down to the length of this stream.",
+      "segments": [{ "chain": "balkhu_line", "from": 0, "to": 4 }]
+    },
+    {
+      "id": "lalitapur_kirtipur",
+      "between": ["lalitapur", "kirtipur"],
+      "evidential_confidence": "inferred",
+      "basis": "river, ridge",
+      "note": "The Bagmati's western reach from below the Kirtipur spur to Chobhar, closed on the west by the Chandragiri foot. Kirtipur's watch-post command over the outlet is the reason this border was worth drawing sharply.",
+      "segments": [
+        { "chain": "bagmati_west_reach", "from": 0, "to": 4 },
+        { "chain": "chandragiri_rim", "from": 0, "to": 3 }
+      ]
+    }
+  ],
+  "rim": {
+    "id": "valley_rim",
+    "name": "The rim of the Kathmandu basin",
+    "basis": "ridge",
+    "closed": true,
+    "evidential_confidence": "inferred",
+    "note": "Not a jurisdiction line between chiefdoms but the outer limit of the valley itself. The basin is closed ground: Shivapuri and the Bagmati gorge to the north, Phulchowki and the Nagarkot crest to the east, Kulekhani, Tistung and Nagarjun to the south, Chandragiri to the west. Anything outside this ring is outside the valley and outside the reach of every chiefdom here.",
+    "anchors": [
+      { "name": "The Bagmati above the survey", "lon": 85.4251, "lat": 27.7830, "basis": "river", "river": "Bagmati" },
+      { "name": "Shivapuri crest", "lon": 85.4450, "lat": 27.8300, "basis": "ridge" },
+      { "name": "Phulchowki crest", "lon": 85.4600, "lat": 27.7250, "basis": "ridge" },
+      { "name": "Nagarkot crest", "lon": 85.4700, "lat": 27.6750, "basis": "ridge" },
+      { "name": "Kulekhani rim", "lon": 85.4800, "lat": 27.6200, "basis": "ridge" },
+      { "name": "Tistung crest", "lon": 85.3900, "lat": 27.5800, "basis": "ridge" },
+      { "name": "Nagarjun crest", "lon": 85.3100, "lat": 27.6000, "basis": "ridge" },
+      { "name": "Chandragiri crest", "lon": 85.2650, "lat": 27.6800, "basis": "ridge" },
+      { "name": "Chapuri Ghat crest", "lon": 85.2800, "lat": 27.7500, "basis": "ridge" },
+      { "name": "Kakani crest", "lon": 85.3300, "lat": 27.8000, "basis": "ridge" }
+    ]
   },
-  {
-    "name": "Khwopa",
-    "label": "Khwopa basin",
-    "center": { "x": 102.0, "z": 18.0 },
-    "tint": "#d6cd58",
-    "bias": "eastern_basin"
-  },
-  {
-    "name": "Kirtipur",
-    "label": "Kirtipur hill zone",
-    "center": { "x": -86.0, "z": 20.0 },
-    "tint": "#b37bf2",
-    "bias": "hill_fort"
-  }
-]
+  "triple_points": [
+    {
+      "name": "The Patan bend",
+      "between": ["yambu", "lalitapur", "bhakata"],
+      "lon": 85.3331,
+      "lat": 27.6792,
+      "note": "Where the Bagmati's core reach ends and the Hanumante march begins, and where the divide above Patan runs away west. Three domains touch, and it is the hinge of the whole map."
+    },
+    {
+      "name": "The Chandragiri foot",
+      "between": ["yambu", "lalitapur", "kirtipur"],
+      "lon": 85.2786,
+      "lat": 27.6914,
+      "note": "Where the divide above Patan meets the Chandragiri foot and the Balkhu Khola crosses above it. Three domains touch."
+    }
+  ]
+}

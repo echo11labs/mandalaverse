@@ -1,0 +1,370 @@
+{
+ "source_pack": "Poly Haven CC0 Tree Scans (GOPALA LOD pass)",
+ "publisher": "Poly Haven",
+ "source_url": "https://polyhaven.com/models",
+ "license": "CC0-1.0",
+ "license_url": "https://polyhaven.com/license",
+ "license_note": "Poly Haven publishes every asset under CC0 1.0 Universal, which places the work in the public domain and permits commercial use without attribution. Attribution is not required; the author credits below are recorded as provenance only.",
+ "acquired": "glTF 1k variants, downloaded per-file and md5-verified against the Poly Haven files API",
+ "authoring_pipeline": "Blender 5.2.0 LTS background. Per source tree: planar dissolve then iterative collapse decimation to <=5000 triangles, trunk-base renormalisation, per-variant non-uniform proportion and lean, single UV layout, Cycles bake of diffuse/tangent-normal/roughness into one 1024px atlas, collapse to a single primitive.",
+ "single_primitive_reason": "Godot MultiMesh renders surface 0 only, so a multi-material scan would draw its first material and discard the rest. Every variant is one primitive with one baked atlas material.",
+ "triangle_budget": "Per-instance ceiling of 5000 triangles, chosen to keep 100940 instances inside the triangle load the previous pack occupied. The collapse decimator stalls on curve-derived topology, so the dissolve angle is ramped until each pass makes progress.",
+ "known_limitations": [
+  "Sixteen variants derive from six distinct scan trees (three fir, three pine, three island_tree broadleaf); silhouette variety comes from re-proportioning and lean, not from distinct source species.",
+  "tree_small_02 was rejected as a seventh source: it imports as a curve-derived mesh whose boundary loops stall collapse decimation at 42494 triangles, and a weld pass reduced it less rather than more.",
+  "Conifers are European/North American fir and pine. The locally correct Himalayan broadleaf and pine species have no CC0 realistic source in this pack.",
+  "At 5000 triangles the silhouette carries proportion and massing, not branch or needle detail. Close views at detail_spacing_m 18 will show the limit; a per-distance LOD chain is the next lever."
+ ],
+ "sources": {
+  "fir_tree_01": {
+   "title": "Fir Tree 01",
+   "authors": {
+    "photography": "Rob Tuytel",
+    "modeling": "Rico Cilliers"
+   },
+   "objects_used": "f1,2,3",
+   "polyhaven_url": "https://polyhaven.com/a/fir_tree_01"
+  },
+  "pine_sapling_medium": {
+   "title": "Pine Sapling Medium",
+   "authors": {
+    "modeling": "Poly Haven"
+   },
+   "objects_used": "a,b,c",
+   "polyhaven_url": "https://polyhaven.com/a/pine_sapling_medium"
+  },
+  "island_tree_01": {
+   "title": "Island Tree 01",
+   "authors": {
+    "modeling": "Poly Haven"
+   },
+   "objects_used": "LOD0",
+   "polyhaven_url": "https://polyhaven.com/a/island_tree_01"
+  },
+  "island_tree_02": {
+   "title": "Island Tree 02",
+   "authors": {
+    "modeling": "Poly Haven"
+   },
+   "objects_used": "LOD0",
+   "polyhaven_url": "https://polyhaven.com/a/island_tree_02"
+  },
+  "island_tree_03": {
+   "title": "Island Tree 03",
+   "authors": {
+    "modeling": "Poly Haven"
+   },
+   "objects_used": "LOD0",
+   "polyhaven_url": "https://polyhaven.com/a/island_tree_03"
+  }
+ },
+ "source_files": {
+  "fir_tree_01_1k.gltf": {
+   "sha256": "72e49eefb4ed4db6a8ca5e17fb10980f8463dd300d94589ac774cde95ade7709",
+   "bytes": 30279
+  },
+  "fir_tree_01.bin": {
+   "sha256": "ba2ef15a1061a84c73b0a74643e88c118f801ce1664ca7a25a6a79bcc2c63790",
+   "bytes": 478462204
+  },
+  "textures/fir_tree_01_bark_arm_1k.jpg": {
+   "sha256": "95d4e9e62cd309fbc38a175e2306379c76c062425b09c0fb72c5b7356a719123",
+   "bytes": 789264
+  },
+  "textures/fir_tree_01_bark_diff_1k.jpg": {
+   "sha256": "a5d25150ba1bee10008c039f98aa3c73b4477a404d6715c511ca9b5b0f4a9077",
+   "bytes": 776567
+  },
+  "textures/fir_tree_01_bark_nor_gl_1k.jpg": {
+   "sha256": "6a570ab53ab2249ecdfa93e7d3b9a8a2cb1a8ad391400e5a64c708914779b2c3",
+   "bytes": 1137533
+  },
+  "textures/fir_tree_01_trunk_a_arm_1k.jpg": {
+   "sha256": "2e439391e98f427207a7fc180eb262f4c1ab3ca0ef570785ea7352826bac342b",
+   "bytes": 788967
+  },
+  "textures/fir_tree_01_trunk_a_diff_1k.jpg": {
+   "sha256": "cfb646cbc4b6cb2db410eb4342174ebe7812a4ae03520491e788722cf1867286",
+   "bytes": 789806
+  },
+  "textures/fir_tree_01_trunk_a_nor_gl_1k.jpg": {
+   "sha256": "9d46c05be22de0dcc4af7e3703fde4c7397644b9faeff4914c0469a6bde99caf",
+   "bytes": 997355
+  },
+  "textures/fir_tree_01_trunk_b_arm_1k.jpg": {
+   "sha256": "c9e0571b2067cad25a4553119204874e6a5ea3156043cacbd5171155d856cff4",
+   "bytes": 732269
+  },
+  "textures/fir_tree_01_trunk_b_diff_1k.jpg": {
+   "sha256": "9d39263a9243a4b6cd669de5e3a504eae32d52f5ab48e471cad5f7e52e052508",
+   "bytes": 687662
+  },
+  "textures/fir_tree_01_trunk_b_nor_gl_1k.jpg": {
+   "sha256": "5e498ee6fee29437196085620c978346ba6731edad8bfc2a2642868f8bf64efe",
+   "bytes": 915273
+  },
+  "textures/fir_tree_01_twig_arm_1k.jpg": {
+   "sha256": "d66c81fc073ee7ea97a76b6da2399769f16944e50ef0e007f09c95619f597c79",
+   "bytes": 407309
+  },
+  "textures/fir_tree_01_twig_diff_1k.jpg": {
+   "sha256": "8c0833a10e4fd44498d848cf9e659fe250a3813984cbd679f42430eb98c61fb8",
+   "bytes": 371741
+  },
+  "textures/fir_tree_01_twig_nor_gl_1k.jpg": {
+   "sha256": "d470dc39b1d02bbeba06feb0ad818680ef3c24623b4db597270301a5fb8c9369",
+   "bytes": 472604
+  },
+  "pine_sapling_medium_1k.gltf": {
+   "sha256": "b08bc0f19b06b545115945164b0d3a8340c78ba86a0521ea7cfe9c2d50a83f4e",
+   "bytes": 16365
+  },
+  "pine_sapling_medium.bin": {
+   "sha256": "0a15a43c8b2ff9abfc495a3bbdbeb39d6c208e14e3095dc75c6375cd699eecc4",
+   "bytes": 263481032
+  },
+  "textures/pine_sapling_medium_bark_arm_1k.jpg": {
+   "sha256": "336a4680cd571b6076b67afee2310b290b8900d9d126eb39ec1ae92e95be2ea9",
+   "bytes": 801278
+  },
+  "textures/pine_sapling_medium_bark_diff_1k.jpg": {
+   "sha256": "5c76836b01c3536fa0e24207b67bf4f3315b53ebe2b4ecc6f08dfcf3f8d74929",
+   "bytes": 725265
+  },
+  "textures/pine_sapling_medium_bark_nor_gl_1k.jpg": {
+   "sha256": "05c46455531781b6cf18cae0648cf627f60ee942adaa8bcbfd1592fc2506a9e0",
+   "bytes": 1016849
+  },
+  "textures/pine_sapling_medium_twig_arm_1k.jpg": {
+   "sha256": "47facef9985e8c073184a64d15ea14bd2dc3b3debfb93f3671b6d5ad0dbc163d",
+   "bytes": 474787
+  },
+  "textures/pine_sapling_medium_twig_diff_1k.jpg": {
+   "sha256": "e649f0f9bc74d1af5f1a45eaf2fe7a29adaaddfab251f746b983da301e4b80e1",
+   "bytes": 510932
+  },
+  "textures/pine_sapling_medium_twig_nor_gl_1k.jpg": {
+   "sha256": "2a02a482a18d20255c800845902d5e0061d2a2d14107d7c4ed0b789414153141",
+   "bytes": 797935
+  },
+  "island_tree_01_1k.gltf": {
+   "sha256": "78e905a40670bfabb2760601d4d9a6c17193a50d68e6271c66893eb7bd75906d",
+   "bytes": 8576
+  },
+  "island_tree_01.bin": {
+   "sha256": "1faa817b46e24ed6fc90d3ec72188a0dc5ac75e82c89b3dd3c5fdaecf7cc005c",
+   "bytes": 60709812
+  },
+  "textures/island_tree_01_arm_1k.jpg": {
+   "sha256": "bf972dff0fbc71f146b4c02103fc3596477a49a9eff46b87b13c89b7b90d18ca",
+   "bytes": 727403
+  },
+  "textures/island_tree_01_branches_arm_1k.jpg": {
+   "sha256": "9e3f82263247ce4f619692cea4c4f6fe9936ff465a86623481849062642c7d05",
+   "bytes": 484806
+  },
+  "textures/island_tree_01_branches_diff_1k.jpg": {
+   "sha256": "bee5ec22196e9e31ad0c95a5a9b4636571cc0124d5bb27a92f1e307d289cc60d",
+   "bytes": 528304
+  },
+  "textures/island_tree_01_branches_nor_gl_1k.jpg": {
+   "sha256": "2d67393ba76a0f49cf965fa0c99d8c16268e71e87b1203d35539bfdb971a514e",
+   "bytes": 819101
+  },
+  "textures/island_tree_01_diff_1k.jpg": {
+   "sha256": "51bff9a3a6ed7d89ff4c73f01708b7267ed8d7a82b0cb12343741894f708218f",
+   "bytes": 791327
+  },
+  "textures/island_tree_01_leaves_arm_1k.jpg": {
+   "sha256": "90da3a072dbcb052715b1313b9dbc69a4aa8a09a31a4b3868411a2bb51d72037",
+   "bytes": 489476
+  },
+  "textures/island_tree_01_leaves_diff_1k.jpg": {
+   "sha256": "f56d762a1507754752abf164cc12acbc1e87ce87fa609ac44b98a1b0037c89d8",
+   "bytes": 191886
+  },
+  "textures/island_tree_01_leaves_nor_gl_1k.jpg": {
+   "sha256": "07ba461c0c95da4e49a42981766bdb6191d4c3c4d815796c082266dcc3cecdb8",
+   "bytes": 379443
+  },
+  "textures/island_tree_01_nor_gl_1k.jpg": {
+   "sha256": "ca22e428e1b1ebac47b2fc67ec355700c8779d6628d2fc6c3ebae9002988f63e",
+   "bytes": 1207134
+  },
+  "island_tree_02_1k.gltf": {
+   "sha256": "d8c5d9ead41cdbef91a648f40ff60470faa19eb3a7010e59e44cb1a01250f75d",
+   "bytes": 8545
+  },
+  "island_tree_02.bin": {
+   "sha256": "427d69ccc1ea12d1fb9c6af89691563b4a097f39a6f34c15be6e45ef5e5fd4ce",
+   "bytes": 40686576
+  },
+  "textures/island_tree_02_arm_1k.jpg": {
+   "sha256": "ada61dd4fad023e699b6314b8b76590017b301719bf74ffc9e20b95893ed62b6",
+   "bytes": 688305
+  },
+  "textures/island_tree_02_branches_arm_1k.jpg": {
+   "sha256": "9e3f82263247ce4f619692cea4c4f6fe9936ff465a86623481849062642c7d05",
+   "bytes": 484806
+  },
+  "textures/island_tree_02_branches_diff_1k.jpg": {
+   "sha256": "bee5ec22196e9e31ad0c95a5a9b4636571cc0124d5bb27a92f1e307d289cc60d",
+   "bytes": 528304
+  },
+  "textures/island_tree_02_branches_nor_gl_1k.jpg": {
+   "sha256": "2d67393ba76a0f49cf965fa0c99d8c16268e71e87b1203d35539bfdb971a514e",
+   "bytes": 819101
+  },
+  "textures/island_tree_02_diff_1k.jpg": {
+   "sha256": "8fc20397ab5d514c119d7a025868414d78e436138d3867a4b7ba12334a72ec3a",
+   "bytes": 738738
+  },
+  "textures/island_tree_02_leaves_arm_1k.jpg": {
+   "sha256": "90da3a072dbcb052715b1313b9dbc69a4aa8a09a31a4b3868411a2bb51d72037",
+   "bytes": 489476
+  },
+  "textures/island_tree_02_leaves_diff_1k.jpg": {
+   "sha256": "f56d762a1507754752abf164cc12acbc1e87ce87fa609ac44b98a1b0037c89d8",
+   "bytes": 191886
+  },
+  "textures/island_tree_02_leaves_nor_gl_1k.jpg": {
+   "sha256": "07ba461c0c95da4e49a42981766bdb6191d4c3c4d815796c082266dcc3cecdb8",
+   "bytes": 379443
+  },
+  "textures/island_tree_02_nor_gl_1k.jpg": {
+   "sha256": "1580d5a42d02f4ede51bfb03972ab0aef3d8acafbd3692276879171007bb70ec",
+   "bytes": 1157226
+  },
+  "island_tree_03_1k.gltf": {
+   "sha256": "5efbe24ad6fc769db55ac771eec7a2ee7aa389c5667656f279d0743e455ef04a",
+   "bytes": 8557
+  },
+  "island_tree_03.bin": {
+   "sha256": "ac0631f236502155307ac0320b53201a0d3bab6348699ad9edd3172322aaf08b",
+   "bytes": 79562548
+  },
+  "textures/island_tree_03_arm_1k.jpg": {
+   "sha256": "58e95c08ab80cf9bacdb5e1b7a89c842cdbaca68110d3d675e0e26cf835fa2fa",
+   "bytes": 611708
+  },
+  "textures/island_tree_03_branches_arm_1k.jpg": {
+   "sha256": "9e3f82263247ce4f619692cea4c4f6fe9936ff465a86623481849062642c7d05",
+   "bytes": 484806
+  },
+  "textures/island_tree_03_branches_diff_1k.jpg": {
+   "sha256": "bee5ec22196e9e31ad0c95a5a9b4636571cc0124d5bb27a92f1e307d289cc60d",
+   "bytes": 528304
+  },
+  "textures/island_tree_03_branches_nor_gl_1k.jpg": {
+   "sha256": "2d67393ba76a0f49cf965fa0c99d8c16268e71e87b1203d35539bfdb971a514e",
+   "bytes": 819101
+  },
+  "textures/island_tree_03_diff_1k.jpg": {
+   "sha256": "e7fc1f1e82cd2fb3deee5fb3ca821e8f54b3a6e5ba414a31b87692fbfc12464a",
+   "bytes": 757828
+  },
+  "textures/island_tree_03_leaves_arm_1k.jpg": {
+   "sha256": "90da3a072dbcb052715b1313b9dbc69a4aa8a09a31a4b3868411a2bb51d72037",
+   "bytes": 489476
+  },
+  "textures/island_tree_03_leaves_diff_1k.jpg": {
+   "sha256": "f56d762a1507754752abf164cc12acbc1e87ce87fa609ac44b98a1b0037c89d8",
+   "bytes": 191886
+  },
+  "textures/island_tree_03_leaves_nor_gl_1k.jpg": {
+   "sha256": "07ba461c0c95da4e49a42981766bdb6191d4c3c4d815796c082266dcc3cecdb8",
+   "bytes": 379443
+  },
+  "textures/island_tree_03_nor_gl_1k.jpg": {
+   "sha256": "c8d37a704416decd72b43b78b13ef23ffbb9f0df1db6686289784af02aff7db6",
+   "bytes": 1051809
+  }
+ },
+ "files": {
+  "Broad_Oak_A.glb": "5fb2be96ae5761a7e9741f12f948c8bdcd98df78bf1a446e5cd64ed60ea3f4c6",
+  "Broad_Oak_B.glb": "4c1fe5bd4dfb769bd9dedfd30d17de5a1019a46815d5882e9e4b127549cfde45",
+  "Broad_Oak_C.glb": "8fb62f9f3b68d069abd149419d5b08250c62f41b644153083e705f1c10cafe8a",
+  "Broad_Oak_D.glb": "9e562fad676538dafd93d627901b1adb4de3b709c1fe3e2f0db22df0ba47d216",
+  "Broad_Round_A.glb": "a4366f34b0fecc9c589d642e038294196569b56c82a22caa25715d6651ba9e6b",
+  "Broad_Round_B.glb": "cc7365d1af49baafd9cfc3971ca3566ee1cbcc321204f75e970069dd2536a21c",
+  "Broad_Round_C.glb": "a213e5f73a248b1d899aef804790adbafaf0c5b131263abe8867017afe8f0811",
+  "Broad_Scrub_A.glb": "7d962e221201f01182552799ffd31871a1a42a42a9913c4bbbf04f1e3e10761b",
+  "Broad_Scrub_B.glb": "710be60316f6d32698ed319720f07093d67fa6ad066f1985908905c1fca873e2",
+  "Broad_Scrub_C.glb": "15380f1b43a183b5737da1f3b4808f5c41ca95e59f74814df4ab76cf17328588",
+  "Fir_Tall_A.glb": "e455b7c31236025776b128efad501a898b2eeabc048b8a2598113222f322e1e5",
+  "Fir_Tall_B.glb": "71b76fbe8c3740824db8bef06788f04aef0e14f0f7e7857b0267fb606b1a4b9f",
+  "Fir_Young_C.glb": "5373a2fca960d9c3e8e7d0e87dfbbe32169670141225699ba548c6a91b428b7a",
+  "Pine_Dense_C.glb": "fb05595913fc542e8958feefa051215163af6d97fa6be5e5a9854e00ee2d9840",
+  "Pine_Open_A.glb": "517eab8d4c9d85b076c363acdd9dc4871f5ca2f2279311264a4aaefd99a48cb1",
+  "Pine_Open_B.glb": "1d7cc6e88e881c133a61807aad6fa264294e15b72c5648511e7efae822c5b81d"
+ },
+ "license_file": "CC0-1.0.txt",
+ "models": {
+  "Broad_Oak_A": {
+   "triangles": 5003,
+   "surfaces": 1
+  },
+  "Broad_Oak_B": {
+   "triangles": 5003,
+   "surfaces": 1
+  },
+  "Broad_Oak_C": {
+   "triangles": 5003,
+   "surfaces": 1
+  },
+  "Broad_Oak_D": {
+   "triangles": 5003,
+   "surfaces": 1
+  },
+  "Broad_Round_A": {
+   "triangles": 5002,
+   "surfaces": 1
+  },
+  "Broad_Round_B": {
+   "triangles": 5002,
+   "surfaces": 1
+  },
+  "Broad_Round_C": {
+   "triangles": 5002,
+   "surfaces": 1
+  },
+  "Broad_Scrub_A": {
+   "triangles": 5087,
+   "surfaces": 1
+  },
+  "Broad_Scrub_B": {
+   "triangles": 5087,
+   "surfaces": 1
+  },
+  "Broad_Scrub_C": {
+   "triangles": 5087,
+   "surfaces": 1
+  },
+  "Fir_Tall_A": {
+   "triangles": 6687,
+   "surfaces": 1
+  },
+  "Fir_Tall_B": {
+   "triangles": 5410,
+   "surfaces": 1
+  },
+  "Fir_Young_C": {
+   "triangles": 5120,
+   "surfaces": 1
+  },
+  "Pine_Dense_C": {
+   "triangles": 5025,
+   "surfaces": 1
+  },
+  "Pine_Open_A": {
+   "triangles": 5355,
+   "surfaces": 1
+  },
+  "Pine_Open_B": {
+   "triangles": 5034,
+   "surfaces": 1
+  }
+ },
+ "scope": "Sixteen single-surface tree variants derived from CC0 Poly Haven photogrammetry scans. The scans are standalone licensed source and do not enter the repository; only the decimated, atlas-baked derivatives and the checksums of the originals are retained here.",
+ "total_triangles": 82910
+}

@@ -1,0 +1,82 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://snopekgames.com/godai/default_tools.schema.json",
+	"title": "Godai Default Tools",
+	"type": "object",
+	"properties": {
+		"$schema": {
+			"type": "string"
+		},
+		"tools": {
+			"type": "object",
+			"additionalProperties": {
+				"type": "object",
+				"properties": {
+					"title": {
+						"type": "string"
+					},
+					"description": {
+						"type": ["string", "array"],
+						"items": {
+							"type": "string"
+						}
+					},
+					"annotations": {
+						"type": "object",
+						"properties": {
+							"readOnlyHint": {
+								"type": "boolean"
+							},
+							"destructiveHint": {
+								"type": "boolean"
+							},
+							"idempotentHint": {
+								"type": "boolean"
+							},
+							"openWorldHint": {
+								"type": "boolean"
+							}
+						},
+						"required": ["readOnlyHint", "openWorldHint"]
+					},
+					"inputSchema": {
+						"$ref": "https://json-schema.org/draft/2020-12/schema"
+					},
+					"outputSchema": {
+						"$ref": "https://json-schema.org/draft/2020-12/schema"
+					},
+					"doNotForward": {
+						"type": "boolean",
+						"default": "false"
+					},
+					"cliPositionalArguments": {
+						"description": "Input properties the CLI also accepts as positional arguments, in order. A list-typed property must come last and takes every remaining argument.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"minItems": 1
+					},
+					"cliResPathArguments": {
+						"description": "Input properties holding res:// paths. The CLI resolves a local file path given for one of these against the working directory and rewrites it to res://, rejecting paths outside the project.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"minItems": 1
+					},
+					"toolsets": {
+						"type": "array",
+						"items": {
+							"enum": ["project", "scene", "resource", "script", "import", "editor", "engine", "config"]
+						},
+						"minItems": 1,
+						"uniqueItems": true
+					}
+				},
+				"required": ["title", "description", "annotations", "outputSchema", "toolsets"],
+				"additionalProperties": false
+			}
+		}
+	}
+}

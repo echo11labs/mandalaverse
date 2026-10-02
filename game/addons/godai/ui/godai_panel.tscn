@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://e7j3j2cm4648"]
+
+[ext_resource type="Script" uid="uid://buj0mo4e6ylmw" path="res://addons/godai/ui/godai_panel.gd" id="1_lwv6s"]
+[ext_resource type="Texture2D" uid="uid://bhwo5we83j617" path="res://addons/godai/ui/icons/sidebar.svg" id="2_c6xdm"]
+[ext_resource type="Texture2D" uid="uid://3wbwyctm6kfs" path="res://addons/godai/ui/icons/status_info.svg" id="2_wf8qb"]
+[ext_resource type="Texture2D" uid="uid://bc8nhliixcfbd" path="res://addons/godai/ui/icons/new_clear.svg" id="3_dlplb"]
+[ext_resource type="PackedScene" uid="uid://c0jndx2bhe4e8" path="res://addons/godai/ui/chat_view.tscn" id="3_hxm2q"]
+[ext_resource type="PackedScene" uid="uid://b6m0c04phsknd" path="res://addons/godai/ui/tool_use_auth_dialog.tscn" id="4_ccki8"]
+[ext_resource type="PackedScene" uid="uid://08kn3o2qnri4" path="res://addons/godai/ui/status_message.tscn" id="4_qv8nt"]
+[ext_resource type="Texture2D" uid="uid://dlhephqijwuya" path="res://addons/godai/ui/icons/submit.svg" id="5_c6xdm"]
+[ext_resource type="Texture2D" uid="uid://3w60xyuator6" path="res://addons/godai/ui/icons/cancel.svg" id="6_xykb5"]
+[ext_resource type="PackedScene" uid="uid://xugvkqeynw3m" path="res://addons/godai/ui/settings_dialog.tscn" id="7_l9d7x"]
+
+[node name="GodaiPanel" type="HSplitContainer" unique_id=2146973585]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lwv6s")
+
+[node name="SidebarContainer" type="PanelContainer" parent="." unique_id=728896885]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SidebarContainer" unique_id=2073045544]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SidebarContainer/VBoxContainer" unique_id=379197275]
+layout_mode = 2
+text = "Sessions"
+horizontal_alignment = 1
+
+[node name="SessionList" type="ItemList" parent="SidebarContainer/VBoxContainer" unique_id=668655661]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+item_count = 1
+item_0/text = "<new>"
+
+[node name="MainContainer" type="VBoxContainer" parent="." unique_id=588651610]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="MainContainer" unique_id=205466234]
+layout_mode = 2
+
+[node name="ExpandSidebarButton" type="Button" parent="MainContainer/TopBar" unique_id=653215941]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+icon = ExtResource("2_c6xdm")
+
+[node name="Spacer1" type="Control" parent="MainContainer/TopBar" unique_id=299855230]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MCPButton" type="Button" parent="MainContainer/TopBar" unique_id=1402852937]
+unique_name_in_owner = true
+layout_mode = 2
+text = "MCP: Stopped"
+icon = ExtResource("2_wf8qb")
+
+[node name="SettingsButton" type="Button" parent="MainContainer/TopBar" unique_id=1172946333]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Settings"
+
+[node name="MCPErrorMessage" parent="MainContainer" unique_id=1764503912 instance=ExtResource("4_qv8nt")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "MCP Error Message"
+button_text = "Status"
+
+[node name="NotConfiguredMessage" parent="MainContainer" unique_id=842917365 instance=ExtResource("4_qv8nt")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "No LLM API is currently configured, so this chat cannot be continued."
+button_text = "Settings"
+
+[node name="OfflineMessage" parent="MainContainer" unique_id=1592066487 instance=ExtResource("4_qv8nt")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Offline mode is enabled, which prevents connecting to the LLM API."
+button_text = "Go Online"
+
+[node name="ChatView" parent="MainContainer" unique_id=220112840 instance=ExtResource("3_hxm2q")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PromptBar" type="HBoxContainer" parent="MainContainer" unique_id=1351267045]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ClearButton" type="Button" parent="MainContainer/PromptBar" unique_id=1214724503]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "New / Clear"
+disabled = true
+icon = ExtResource("3_dlplb")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Prompt" type="TextEdit" parent="MainContainer/PromptBar" unique_id=1818640624]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+wrap_mode = 1
+scroll_fit_content_height = true
+caret_blink = true
+caret_multiple = false
+
+[node name="SubmitButton" type="Button" parent="MainContainer/PromptBar" unique_id=2091228063]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Submit"
+disabled = true
+icon = ExtResource("5_c6xdm")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CancelButton" type="Button" parent="MainContainer/PromptBar" unique_id=2087160065]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Cancel"
+icon = ExtResource("6_xykb5")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MCPStoppingTimer" type="Timer" parent="." unique_id=1688743947]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true
+ignore_time_scale = true
+
+[node name="MCPDialog" type="AcceptDialog" parent="." unique_id=679558027]
+unique_name_in_owner = true
+title = "MCP Server Status"
+size = Vector2i(250, 100)
+ok_button_text = "Back"
+dialog_text = "MCP server stopped."
+
+[node name="ToolUseAuthDialog" parent="." unique_id=1305495561 instance=ExtResource("4_ccki8")]
+unique_name_in_owner = true
+visible = false
+
+[node name="SettingsDialog" parent="." unique_id=2046994586 instance=ExtResource("7_l9d7x")]
+unique_name_in_owner = true
+visible = false
+
+[node name="CancelChatDialog" type="ConfirmationDialog" parent="." unique_id=1471258391]
+unique_name_in_owner = true
+title = "Chat in Progress"
+ok_button_text = "Cancel Request"
+dialog_text = "The current chat is still in progress. Would you like to cancel it?"
+cancel_button_text = "Keep Going"
+
+[connection signal="item_selected" from="SidebarContainer/VBoxContainer/SessionList" to="." method="_on_session_list_item_selected"]
+[connection signal="toggled" from="MainContainer/TopBar/ExpandSidebarButton" to="." method="_on_expand_sidebar_button_toggled"]
+[connection signal="pressed" from="MainContainer/TopBar/MCPButton" to="." method="_on_mcp_button_pressed"]
+[connection signal="pressed" from="MainContainer/TopBar/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="button_pressed" from="MainContainer/MCPErrorMessage" to="." method="_on_mcp_button_pressed"]
+[connection signal="button_pressed" from="MainContainer/NotConfiguredMessage" to="." method="_on_settings_button_pressed"]
+[connection signal="button_pressed" from="MainContainer/OfflineMessage" to="." method="_on_go_online_requested"]
+[connection signal="pressed" from="MainContainer/PromptBar/ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="gui_input" from="MainContainer/PromptBar/Prompt" to="." method="_on_prompt_gui_input"]
+[connection signal="text_changed" from="MainContainer/PromptBar/Prompt" to="." method="_on_prompt_text_changed"]
+[connection signal="text_set" from="MainContainer/PromptBar/Prompt" to="." method="_on_prompt_text_changed"]
+[connection signal="pressed" from="MainContainer/PromptBar/SubmitButton" to="." method="_on_submit_button_pressed"]
+[connection signal="pressed" from="MainContainer/PromptBar/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="timeout" from="MCPStoppingTimer" to="." method="_on_mcp_stopping_timer_timeout"]
+[connection signal="canceled" from="CancelChatDialog" to="." method="_on_cancel_chat_dialog_canceled"]
+[connection signal="confirmed" from="CancelChatDialog" to="." method="_on_cancel_chat_dialog_confirmed"]
