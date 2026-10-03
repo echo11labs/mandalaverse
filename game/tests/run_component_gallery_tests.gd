@@ -5,6 +5,14 @@ extends SceneTree
 
 const GALLERY_SCENE := preload("res://scenes/ui/component_gallery.tscn")
 
+class WorldInputReceiver extends Node:
+	var left_mouse_presses := 0
+
+	func _unhandled_input(event: InputEvent) -> void:
+		var mouse_event := event as InputEventMouseButton
+		if mouse_event != null and mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.pressed:
+			left_mouse_presses += 1
+
 var failures: Array[String] = []
 var checks := 0
 var _mode_events: Array = []
@@ -22,6 +30,13 @@ func expect(condition: bool, label: String) -> void:
 	checks += 1
 	if not condition:
 		failures.append(label)
+
+func _expect_control_descendants_ignore(node: Node) -> void:
+	for child in node.get_children():
+		if child is Control:
+			expect((child as Control).mouse_filter == Control.MOUSE_FILTER_IGNORE,
+				"decorative child %s ignores the mouse" % String(child.get_path()))
+		_expect_control_descendants_ignore(child)
 
 func _initialize() -> void:
 	run.call_deferred()
@@ -561,9 +576,11 @@ func _test_components() -> void:
 	await process_frame
 
 	# Shortcut tooltip: structure, binding updates, unbound/disabled states,
-	# long text, mouse filters, focus ring and UI scaling.
+	# long text, mouse routing, focus ring and UI scaling.
 	var hint := (load("res://scenes/ui/components/shortcut_tooltip/shortcut_tooltip.tscn") as PackedScene).instantiate() as GopalaShortcutTooltip
 	expect(hint != null, "shortcut tooltip scene instantiates")
+	expect(hint.mouse_filter == Control.MOUSE_FILTER_STOP,
+		"shortcut scene serializes its root with STOP before _ready")
 	root.add_child(hint)
 	await process_frame
 	expect(hint.get_node_or_null("Body/Row/Keycap") != null
@@ -571,14 +588,51 @@ func _test_components() -> void:
 		and hint.get_node_or_null("Body/Row/Label") != null
 		and hint.get_node_or_null("Body/Description") != null,
 		"shortcut tooltip required nodes exist")
-	expect(hint.mouse_filter == Control.MOUSE_FILTER_PASS,
-		"shortcut root passes the mouse (tooltip without world-click leakage)")
-	for child in [hint.get_node("Body"), hint.get_node("Body/Row"),
-			hint.get_node("Body/Row/Keycap"), hint.get_node("Body/Row/Keycap/KeycapText"),
-			hint.get_node("Body/Row/Label"), hint.get_node("Body/Description")]:
-		expect((child as Control).mouse_filter == Control.MOUSE_FILTER_IGNORE,
-			"decorative child %s ignores the mouse" % String((child as Node).name))
+	expect(hint.mouse_filter == Control.MOUSE_FILTER_STOP,
+		"shortcut root stops the mouse to prevent world-click leakage")
+	_expect_control_descendants_ignore(hint)
 	expect(hint.focus_mode == Control.FOCUS_NONE, "passive shortcut hint is not focusable by default")
+
+	# Route two actual viewport clicks through GUI dispatch: first prove the
+	# receiver sees an unblocked click, then click the tooltip's visible area.
+	# STOP must mark that GUI event handled before world _unhandled_input runs.
+	hint.position = Vector2(64.0, 64.0)
+	hint.size = Vector2(320.0, 64.0)
+	var world_receiver := WorldInputReceiver.new()
+	root.add_child(world_receiver)
+	await process_frame
+	var outside_click := InputEventMouseButton.new()
+	outside_click.button_index = MOUSE_BUTTON_LEFT
+	outside_click.pressed = true
+	outside_click.position = Vector2(8.0, 8.0)
+	root.get_viewport().push_input(outside_click, true)
+	await process_frame
+	var outside_release := InputEventMouseButton.new()
+	outside_release.button_index = MOUSE_BUTTON_LEFT
+	outside_release.pressed = false
+	outside_release.position = outside_click.position
+	root.get_viewport().push_input(outside_release, true)
+	await process_frame
+	expect(world_receiver.left_mouse_presses == 1,
+		"world receiver observes a click outside the shortcut tooltip")
+	var tooltip_click := InputEventMouseButton.new()
+	tooltip_click.button_index = MOUSE_BUTTON_LEFT
+	tooltip_click.pressed = true
+	tooltip_click.position = hint.get_global_rect().get_center()
+	expect(hint.get_global_rect().has_point(tooltip_click.position),
+		"synthetic mouse press targets the shortcut tooltip bounds")
+	root.get_viewport().push_input(tooltip_click, true)
+	await process_frame
+	expect(world_receiver.left_mouse_presses == 1,
+		"synthetic click on shortcut tooltip does not reach world input")
+	var tooltip_release := InputEventMouseButton.new()
+	tooltip_release.button_index = MOUSE_BUTTON_LEFT
+	tooltip_release.pressed = false
+	tooltip_release.position = tooltip_click.position
+	root.get_viewport().push_input(tooltip_release, true)
+	await process_frame
+	world_receiver.queue_free()
+	await process_frame
 
 	# Binding resolves from InputMap and follows action changes.
 	var keycap_text := hint.get_node("Body/Row/Keycap/KeycapText") as Label

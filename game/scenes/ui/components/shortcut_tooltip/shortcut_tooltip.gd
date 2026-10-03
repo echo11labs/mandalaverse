@@ -3,9 +3,8 @@ extends PanelContainer
 ## Visual shortcut hint: keycap + action label + optional description line.
 ## Reuses the ShortcutTooltip InputMap formatter, so the shown binding always
 ## matches the live binding - never a hard-coded key label
-## (UI_CONTRACT.md section 10). Decorative by default: the root only passes
-## the mouse through (PASS shows the tooltip without blocking world clicks)
-## and every child ignores it outright.
+## (UI_CONTRACT.md section 10). The root stops mouse input so world clicks
+## cannot leak through, while every decorative child ignores it outright.
 
 @export var action: StringName = &""
 @export var base_label: String = ""
@@ -43,7 +42,7 @@ func _ready() -> void:
 			or _label == null or _description == null:
 		push_error("GopalaShortcutTooltip: missing children (need Body > Row > Keycap > KeycapText, Body > Row > Label, Body > Description) at %s" % get_path())
 		return
-	mouse_filter = Control.MOUSE_FILTER_PASS
+	mouse_filter = Control.MOUSE_FILTER_STOP
 	for child in [_body, _row, _keycap, _keycap_text, _label, _description]:
 		(child as Control).mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_keycap_text.clip_text = true
