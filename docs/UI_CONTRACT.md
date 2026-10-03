@@ -46,6 +46,32 @@ an unrestricted global bus.
 
 ## 2. Current real capabilities vs. unavailable simulation features
 
+### Block 1.5 implementation status (scene-scoped simulation spine)
+
+`GopalaSettlementSimulation` is now owned by each Kathmandu Valley scene instance
+and is not an autoload. Its prototype clock starts paused at tick 0, uses the
+configurable one-logical-second tick interval in `GopalaSimulationConfig`, and
+supports 1×–4× speeds, fixed-point frame accumulation, and deterministic manual
+advancement. No calendar, season, or balance cadence is implied.
+
+Typed FIFO `SET_PAUSED`, `SET_SPEED`, and `REQUEST_CONSTRUCTION` commands use
+plain-data payloads, per-session monotonic IDs, and typed results. Unsupported
+construction returns `UNSUPPORTED / PLACEMENT_UNAVAILABLE`; it does not charge,
+allocate an entity ID, or create construction state. The authoritative ledger
+starts empty and accepts only integer, catalog-keyed atomic deltas through its
+simulation-owned commit boundary. Snapshots are `RefCounted` DTOs with schema,
+sequence, clock fields, balances, and explicit capability flags; container data
+is deep-copied and getters return copies.
+
+The four supported capabilities are `simulation_clock`, `command_queue`,
+`resource_ledger`, and `snapshots`. Population, housing, weather, seasons,
+selection, placement, occupancy, construction, professions, production,
+logistics, alerts, and save/load remain explicitly unsupported. There is no
+HUD integration or fabricated gameplay data in this block. Reset starts a new
+simulation session and restarts command/entity/snapshot sequences; it restores a
+paused tick-zero clock and clears pending commands and balances.
+
+
 ### 2.1 Real, verified, UI-safe to call (Block 0 audit evidence)
 
 | Capability | Exact API / source |
@@ -65,10 +91,10 @@ an unrestricted global bus.
 
 | Feature | Status | Backlog |
 |---|---|---|
-| Tick loop, pause/speed authority, day/season/year advancement | does not exist | G-006 |
-| Inventory, transfers, reservations, stock levels | does not exist | G-007 |
+| Logical clock, pause, 1×–4× speed | implemented in Block 1.5; no calendar/season/year | G-006 |
+| Inventory transfers, reservations, logistics, and populated stock levels | do not exist; ledger is empty until authorized transactions | G-007 |
 | Population, households, needs, professions | does not exist | G-012/021 |
-| Construction lifecycle, occupancy, placement commit/charge | does not exist | G-010 |
+| Construction lifecycle, occupancy, placement validation/commit/charge | unsupported; construction command returns `PLACEMENT_UNAVAILABLE` | G-010 |
 | Production, recipes, trade, reports | does not exist | G-020/022 |
 | Alerts/notification producers, weather, events | does not exist | G-017/026 |
 | Save/load of any UI or simulation state | does not exist | G-014/028 |
@@ -263,7 +289,7 @@ in the same commit. No big-bang replacement of `hud.tscn`/`kathmandu_hud.gd`.
 |---|---|---|
 | **0** | Audit, contract (this file), attribution ledger, checkpoint branch, baseline evidence | All deliverables on disk; gate baseline recorded; approval granted |
 | **1** | CanvasLayer/full-rect root, `GopalaTheme` tokens, UIRouter, InputMap actions, reusable component gallery, UI-scale setting | Gallery renders every component state; tests at 720p/1080p/21:9/4K without clipping; router transition tests green |
-| **1.5 (new)** | **Minimal simulation spine:** snapshot DTOs + provider injection point, typed command/result types, scene-scoped selection & placement service scaffolding with `bind_world/unbind_world/reset`, notification service shell, overlay capability registry, UIRouter reset integration, mock provider (test/gallery only) | Services pass lifecycle tests (bind/unbind/reset, stale-ID resolution, no Node refs held); mock injection proven test-only; **no gameplay-visible fake data**; HUD can bind to a provider and capability-gate everywhere else |
+| **1.5 (new)** | **Minimal simulation spine:** scene-scoped clock, FIFO command queue/results, empty authoritative resource ledger, stable entity-ID allocator, defensive snapshots/capabilities, unsupported construction boundary | Clock, command, ledger, snapshot, reset, capability and scene-lifecycle tests pass; no gameplay-visible fake data; no HUD integration |
 | **2** | Top HUD, time controls, action dock, event feed, notification stack — **integrated against the 1.5 spine** | Signal-driven updates only; controls expose shortcut+tooltip; empty states shown when no provider |
 | **3** | Selection integration, context panel shell (ground first), world widgets; authorized minimal `kathmandu_valley.gd` edits | Selection changes never leave stale panels; UI clicks never reach world; deleted entities close safely |
 | **4** | Build catalog, placement ghost/HUD, structured validation, schema extension (approved in principle) | Full flow works end-to-end; **not "production-ready" until command handling, occupancy/reservation, resource authority, and construction lifecycle exist (G-006/007/010)** |

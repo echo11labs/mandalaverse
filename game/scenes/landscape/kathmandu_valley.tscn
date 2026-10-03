@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dqjbfggru8kqg" path="res://scenes/landscape/kathmandu_valley.gd" id="1"]
 [ext_resource type="Script" uid="uid://cwfl2v85k37xf" path="res://scenes/landscape/kathmandu_camera.gd" id="2"]
 [ext_resource type="Script" uid="uid://cpo4ukp4k1eg0" path="res://addons/ez-tree-godot-port/ez_tree.gd" id="3"]
+[ext_resource type="PackedScene" path="res://core/simulation/settlement_simulation.tscn" id="4_simulation"]
 
 [sub_resource type="ProceduralSkyMaterial" id="SkyMaterial"]
 sky_top_color = Color(0.3, 0.44, 0.51, 1)
@@ -28,6 +29,8 @@ fog_density = 0.00015
 
 [node name="KathmanduValley" type="Node3D" unique_id=1586659905]
 script = ExtResource("1")
+
+[node name="SettlementSimulation" parent="." instance=ExtResource("4_simulation")]
 
 [node name="DetailForest" type="Node3D" parent="." unique_id=1586659906]
 
