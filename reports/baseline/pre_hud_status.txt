@@ -1,0 +1,88 @@
+1 .M N... 100644 100644 100644 d85a926fb953f6ddcbeb6ebcf4c2990357b1a076 d85a926fb953f6ddcbeb6ebcf4c2990357b1a076 README.md
+1 .M N... 100644 100644 100644 d16feb35680d48f220d51ca0e37f5dc900c66094 d16feb35680d48f220d51ca0e37f5dc900c66094 docs/GOPALA-Implementation-Backlog.md
+1 .M N... 100644 100644 100644 b64cccec6d6b2c3d2ea114646927f11afc1d13e4 b64cccec6d6b2c3d2ea114646927f11afc1d13e4 game/assets/models/trees/QuaterniusMegaKit/Bark_NormalTree.png.import
+1 .M N... 100644 100644 100644 62467041a91b66fb568a1f8be20b265d84a036b4 62467041a91b66fb568a1f8be20b265d84a036b4 game/assets/models/trees/QuaterniusMegaKit/Bark_NormalTree_Normal.png.import
+1 .M N... 100644 100644 100644 d59df29415c3ca3048a00131bc47a9519910b74c d59df29415c3ca3048a00131bc47a9519910b74c game/assets/models/trees/QuaterniusMegaKit/Bark_TwistedTree.png.import
+1 .M N... 100644 100644 100644 af3a6b705116ad7b2b1b513ce8922c2f3870d706 af3a6b705116ad7b2b1b513ce8922c2f3870d706 game/assets/models/trees/QuaterniusMegaKit/Bark_TwistedTree_Normal.png.import
+1 .M N... 100644 100644 100644 093fbb295024656c29963ce17f1008485acec2e5 093fbb295024656c29963ce17f1008485acec2e5 game/assets/models/trees/QuaterniusMegaKit/Leaf_Pine_C.png.import
+1 .M N... 100644 100644 100644 ca4c0c2ea95b574f32d32a5c5e97c5b0e2b7fc54 ca4c0c2ea95b574f32d32a5c5e97c5b0e2b7fc54 game/assets/models/trees/QuaterniusMegaKit/Leaves_NormalTree_C.png.import
+1 .M N... 100644 100644 100644 f6de45f23cc5dbeaae568e566481d9f1d7518435 f6de45f23cc5dbeaae568e566481d9f1d7518435 game/assets/models/trees/QuaterniusMegaKit/Leaves_TwistedTree_C.png.import
+1 .D N... 100644 100644 000000 87b297a4cd06c5c9ff40e59ac9298c3e138520dd 87b297a4cd06c5c9ff40e59ac9298c3e138520dd game/assets/ui/theme/generate_theme.gd
+1 .D N... 100644 100644 000000 290a8bb65667e253dd93fd17cc90d86642bbdc5e 290a8bb65667e253dd93fd17cc90d86642bbdc5e game/assets/ui/theme/generate_theme.gd.uid
+1 .D N... 100644 100644 000000 3ad232085044c8e2048825d4793f3fd298e570ec 3ad232085044c8e2048825d4793f3fd298e570ec game/assets/ui/theme/generate_ui_scenes.gd
+1 .D N... 100644 100644 000000 f35a3e0ac3cff770a32d97bb40cb93fb6ad49860 f35a3e0ac3cff770a32d97bb40cb93fb6ad49860 game/assets/ui/theme/generate_ui_scenes.gd.uid
+1 .D N... 100644 100644 000000 dfbaa7365de5389c455cc69de63de504e85ded85 dfbaa7365de5389c455cc69de63de504e85ded85 game/assets/ui/theme/main_theme.tres
+1 .M N... 100644 100644 100644 ba27876da0b4018da5a219605073eaf7f21a5add ba27876da0b4018da5a219605073eaf7f21a5add game/core/tools/bake_forest.gd
+1 .M N... 100644 100644 100644 ceff20a39ed042493e3a854d58a05bcf1aebe186 ceff20a39ed042493e3a854d58a05bcf1aebe186 game/data/forest/bake-receipt.json
+1 .M N... 100644 100644 100644 b2864b28b1c8ff7bb67f7456900632e5c198dc77 b2864b28b1c8ff7bb67f7456900632e5c198dc77 game/data/forest/kathmandu_forest.scn
+1 .M N... 100644 100644 100644 2f81b189abba5a7e1cdcdbea80d1fe042d9b592f 2f81b189abba5a7e1cdcdbea80d1fe042d9b592f game/data/forest/models.json
+1 .M N... 100644 100644 100644 fa3e2b4b77743a7311eb64af106215531f2ce8ee fa3e2b4b77743a7311eb64af106215531f2ce8ee game/data/forest/review.json
+1 .M N... 100644 100644 100644 60bf65430bcaa287260534138a8316c8ae290a47 60bf65430bcaa287260534138a8316c8ae290a47 game/data/geography/regions_gopala.json
+1 .D N... 100644 100644 000000 48e23ed1877113d51ba6d46d9a33780a9a0378f4 48e23ed1877113d51ba6d46d9a33780a9a0378f4 game/fix_rewrite.py
+1 .M N... 100644 100644 100644 3f061f07aa7e7ae31dad6edf7a9069f1fb791e37 3f061f07aa7e7ae31dad6edf7a9069f1fb791e37 game/project.godot
+1 .D N... 100644 100644 000000 3583f640a81810a434df7a3678f2d26feb1ee4ae 3583f640a81810a434df7a3678f2d26feb1ee4ae game/rewrite_hud.py
+1 .M N... 100644 100644 100644 5032de78f4a07268a0f64000a9ba011854cdd096 5032de78f4a07268a0f64000a9ba011854cdd096 game/scenes/landscape/kathmandu_hud.gd
+1 .M N... 100644 100644 100644 b5c40e4211124ef5675d72038258b2b91c9c6691 b5c40e4211124ef5675d72038258b2b91c9c6691 game/scenes/landscape/kathmandu_valley.gd
+1 .M N... 100644 100644 100644 4d026f0cd72c091a1b530bd2ee74add1ee7d0766 4d026f0cd72c091a1b530bd2ee74add1ee7d0766 game/scenes/landscape/kathmandu_valley.tscn
+1 .M N... 100644 100644 100644 204abcd43463269d6a2e1b502a9d989503b7867d 204abcd43463269d6a2e1b502a9d989503b7867d game/scenes/landscape/map_overlay_drawer.gd
+1 .D N... 100644 100644 000000 33e0ee2c5f586e83ecaf7df6b4fe993b92c8ae0e 33e0ee2c5f586e83ecaf7df6b4fe993b92c8ae0e game/scenes/ui/build_menu.tscn
+1 .M N... 100644 100644 100644 d83171b9c8467c222444f62dfc30003cec76fe83 d83171b9c8467c222444f62dfc30003cec76fe83 game/scenes/ui/hud.tscn
+1 .D N... 100644 100644 000000 3de76d88230a518235fc6015d15105bcb38f384c 3de76d88230a518235fc6015d15105bcb38f384c game/scenes/ui/objective_tracker.tscn
+1 .D N... 100644 100644 000000 1fbc27654b19571d7c604f25ea1bff15bf2e0bdc 1fbc27654b19571d7c604f25ea1bff15bf2e0bdc game/scenes/ui/top_resource_bar.tscn
+1 .M N... 100644 100644 100644 ca0c83854248e1c059e22ec4211541712afc251e ca0c83854248e1c059e22ec4211541712afc251e game/tests/run_forest_tests.gd
+1 .M N... 100644 100644 100644 2bcb1b32f8f610df540577ffc0be0fa3274f67b3 2bcb1b32f8f610df540577ffc0be0fa3274f67b3 game/tests/run_kathmandu_tests.gd
+1 .D N... 100644 100644 000000 4f153283c43a34242bd40b5ea77996e82dd549d0 4f153283c43a34242bd40b5ea77996e82dd549d0 reports/kathmandu-local.png
+1 .M N... 100644 100644 100644 15c126a19dc81d24f4ef499276b4f0e437a67a05 15c126a19dc81d24f4ef499276b4f0e437a67a05 reports/kathmandu-trees.png
+1 .M N... 100644 100644 100644 c6b41c04bfdc70eb7a112befeba676c779c60b6c c6b41c04bfdc70eb7a112befeba676c779c60b6c reports/verification.json
+1 .M N... 100644 100644 100644 6293e894babf39df82406957ce9d6cf8f5e20c51 6293e894babf39df82406957ce9d6cf8f5e20c51 tools/verify.py
+? .freebuff/
+? .kilo/
+? "docs/Farthest Frontier\342\200\223Inspired HUD UI Blueprint for Godot.md"
+? docs/GOPALA-Interface-Layer.md
+? docs/GOPALA-UI-Font-Receipt.md
+? game/AssetsPreview_Demo/
+? game/Documentation/
+? game/EA_Shared.material
+? game/LICENSE.txt
+? game/Materials/
+? game/Meshes/
+? game/Prefabs/
+? game/README.txt
+? game/Scripts/
+? game/Shaders/
+? game/Textures/
+? game/addons/afmi_godot/
+? game/addons/ez-tree-godot-port/
+? game/addons/flatten_for_llm/
+? game/addons/godai/
+? game/addons/godotiles/
+? game/assets/fonts/
+? game/assets/models/trees/PolyHavenFoliage/
+? game/assets/ui/theme/gopala_theme.gd
+? game/assets/ui/theme/gopala_theme.gd.uid
+? game/data/forest/ez_tree_profiles.json
+? game/scenes/UI_ParameterPanel.tscn
+? game/scenes/WaterDemo.tscn
+? game/scenes/ui/gopala_minimap.gd
+? game/scenes/ui/gopala_minimap.gd.uid
+? game/test_aabb.gd
+? game/test_aabb.gd.uid
+? game/test_height.gd
+? game/test_height.gd.uid
+? game/test_mat.gd
+? game/test_mat.gd.uid
+? game/test_mat_tex.gd
+? game/test_mat_tex.gd.uid
+? game/test_trees.gd
+? game/test_trees.gd.uid
+? game/test_trees_near.gd
+? game/test_trees_near.gd.uid
+? game/tests/measure_ui.gd
+? game/tests/measure_ui.gd.uid
+? game/tests/run_ui_tests.gd
+? game/tests/run_ui_tests.gd.uid
+? reports/baseline/
+? reports/kathmandu-forest.png
+? reports/kathmandu-territory.png
+? test_height.gd
+? test_trees.gd
