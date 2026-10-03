@@ -133,8 +133,13 @@ never block the frame; simulation acknowledgements arrive by signal.
   either they are scene-scoped nodes, or autoloads expose `bind_world()`,
   `unbind_world()`, `reset()`. `unbind_world()` drops every ID and connection.
 - **UIRouter** (autoload) stores only `modes`, `entity IDs`, and plain payload
-  dictionaries — never temporary scene-node references. It exposes `reset()` and
-  must be reset on scene changes and at test setup/teardown.
+  dictionaries — never temporary scene-node references. It exposes `reset()`
+  (also reachable as `prepare_for_scene_change()`) as the authoritative
+  cleanup: autoloads persist across scene changes, so nothing resets
+  automatically and the router never listens to generic `SceneTree.tree_changed`.
+  The future scene coordinator must call it explicitly before/while changing
+  world scenes; tests call it at setup/teardown (explicit scene-transition
+  reset contract).
 - Guards: all signal connections are checked before connect
   (`is_connected`); asynchronous callbacks (tweens, awaits) revalidate their
   target handle before use.
@@ -228,9 +233,13 @@ in the same commit. No big-bang replacement of `hud.tscn`/`kathmandu_hud.gd`.
   `simulation_pause`, `simulation_speed_1..4`, `tool_select`, `tool_build`,
   `tool_road`, `tool_harvest`, `tool_clear`, `tool_zone`, `tool_terraform`,
   `tool_explore`, `overlay_cycle`, `placement_rotate_cw/ccw`,
-  `hud_toggle`, `build_menu_toggle`, `management_toggle`, `notification_next`,
+  `hud_toggle`, `management_toggle`, `notification_next`,
   `camera_focus_settlement`, `hud_grid`, `hud_names` — plus the existing nine
-  camera/territory actions. The hard-coded `KEY_G/KEY_N/KEY_HOME/KEY_ESCAPE`
+  camera/territory actions. `tool_build` (B) is the single semantic build
+  action — no other Block 1 action may share its default keyboard event; the
+  router later decides whether the press opens, focuses, switches or closes
+  `BUILD_CATALOG`. No two actions share a default keyboard event (asserted by
+  the Block 1 suite). The hard-coded `KEY_G/KEY_N/KEY_HOME/KEY_ESCAPE`
   checks in `kathmandu_valley.gd:501-510` migrate to actions in Block 3 (first
   authorized world-code edit), except `ui_cancel` handling which the router owns.
 - Tooltips display the resolved binding dynamically and refresh after rebinding.

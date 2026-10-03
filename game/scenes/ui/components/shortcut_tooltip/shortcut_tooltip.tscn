@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/components/shortcut_tooltip/shortcut_tooltip.gd" id="1_shortcut"]
+
+[node name="ShortcutTooltip" type="PanelContainer"]
+script = ExtResource("1_shortcut")
+
+[node name="Body" type="VBoxContainer" parent="."]
+mouse_filter = 2
+
+[node name="Row" type="HBoxContainer" parent="Body"]
+mouse_filter = 2
+
+[node name="Keycap" type="PanelContainer" parent="Body/Row"]
+mouse_filter = 2
+
+[node name="KeycapText" type="Label" parent="Body/Row/Keycap"]
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Body/Row"]
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="Description" type="Label" parent="Body"]
+mouse_filter = 2

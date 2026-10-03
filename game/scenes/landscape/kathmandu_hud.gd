@@ -25,6 +25,9 @@ const INK_SCRIM := Color(0.11, 0.09, 0.06, 0.93)
 
 var terrain: GopalaKathmanduTerrain
 var territory_mode := "Off"
+## Shared layout/motion tokens; values match the hand-written numbers exactly,
+## so adopting them never changes rendered appearance (Block 1).
+var _tokens: UITokens = UITokens.new()
 
 var _root: Control
 var _settlement_name: Label
@@ -215,8 +218,8 @@ func _build_top_bar() -> void:
 	margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	for side in ["left", "right"]:
 		margin.add_theme_constant_override("margin_" + side, 18)
-	margin.add_theme_constant_override("margin_top", 12)
-	margin.add_theme_constant_override("margin_bottom", 12)
+	margin.add_theme_constant_override("margin_top", _tokens.space_3)
+	margin.add_theme_constant_override("margin_bottom", _tokens.space_3)
 	plate.add_child(margin)
 
 	var row := _row(18)
@@ -320,7 +323,7 @@ func _build_status_card() -> void:
 	var margin := MarginContainer.new()
 	margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	for side in ["left", "right"]:
-		margin.add_theme_constant_override("margin_" + side, 16)
+		margin.add_theme_constant_override("margin_" + side, _tokens.space_4)
 	margin.add_theme_constant_override("margin_top", 14)
 	margin.add_theme_constant_override("margin_bottom", 14)
 	plate.add_child(margin)
@@ -406,8 +409,8 @@ func _build_inspection_panel() -> void:
 	margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	for side in ["left", "right"]:
 		margin.add_theme_constant_override("margin_" + side, 18)
-	margin.add_theme_constant_override("margin_top", 16)
-	margin.add_theme_constant_override("margin_bottom", 16)
+	margin.add_theme_constant_override("margin_top", _tokens.space_4)
+	margin.add_theme_constant_override("margin_bottom", _tokens.space_4)
 	_inspection.add_child(margin)
 
 	var column := _column(6)
@@ -415,7 +418,7 @@ func _build_inspection_panel() -> void:
 
 	# PanelContainer stretches every child, so the close control belongs in the
 	# header row rather than floating over the plate.
-	var header := _row(8)
+	var header := _row(_tokens.space_2)
 	column.add_child(header)
 	_inspect_eyebrow = _eyebrow("Inspection")
 	_inspect_eyebrow.size_flags_vertical = Control.SIZE_SHRINK_CENTER
@@ -463,9 +466,9 @@ func _build_build_bar() -> void:
 	var margin := MarginContainer.new()
 	margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	for side in ["left", "right"]:
-		margin.add_theme_constant_override("margin_" + side, 16)
-	margin.add_theme_constant_override("margin_top", 12)
-	margin.add_theme_constant_override("margin_bottom", 12)
+		margin.add_theme_constant_override("margin_" + side, _tokens.space_4)
+	margin.add_theme_constant_override("margin_top", _tokens.space_3)
+	margin.add_theme_constant_override("margin_bottom", _tokens.space_3)
 	plate.add_child(margin)
 
 	var column := _column(10)
@@ -496,7 +499,7 @@ func _build_build_bar() -> void:
 	card_row.add_child(_build_costs)
 
 	# Category tabs, then the row of placeable structures.
-	var tabs := _row(4)
+	var tabs := _row(_tokens.space_1)
 	tabs.alignment = BoxContainer.ALIGNMENT_CENTER
 	column.add_child(tabs)
 	for category in ["All", "Housing", "Storage", "Resources", "Food", "Water", "Pasture"]:
@@ -517,7 +520,7 @@ func _build_build_bar() -> void:
 		_tab_buttons.append(button)
 	_tab_buttons[0].button_pressed = true
 
-	var strip := _row(8)
+	var strip := _row(_tokens.space_2)
 	strip.name = "StructureStrip"
 	strip.alignment = BoxContainer.ALIGNMENT_CENTER
 	column.add_child(strip)
@@ -706,7 +709,7 @@ func _build_toasts() -> void:
 	_toast_stack.offset_left = 16.0
 	_toast_stack.offset_bottom = -16.0
 	_toast_stack.alignment = BoxContainer.ALIGNMENT_END
-	_toast_stack.add_theme_constant_override("separation", 8)
+	_toast_stack.add_theme_constant_override("separation", _tokens.space_2)
 	_root.add_child(_toast_stack)
 
 func notify(title: String, body: String, tone: String = "river") -> void:

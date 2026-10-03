@@ -62,6 +62,8 @@ def main():
         stages.append(run_stage("content-tests", ["--script", "tests/run_content_tests.gd"]))
         if (ROOT / "game/scenes/ui/hud.tscn").exists():
             stages.append(run_stage("ui-tests", ["--script", "tests/run_ui_tests.gd"]))
+        if (ROOT / "game/scenes/ui/component_gallery.tscn").exists():
+            stages.append(run_stage("component-gallery-tests", ["--script", "tests/run_component_gallery_tests.gd"]))
         if (ROOT / "game/scenes/world/valley.tscn").exists():
             stages.append(run_stage("landscape-tests", ["--script", "tests/run_landscape_tests.gd"]))
         if (ROOT / "game/scenes/landscape/scenic_valley.tscn").exists():

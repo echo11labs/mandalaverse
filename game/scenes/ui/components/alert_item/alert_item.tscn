@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/components/alert_item/alert_item.gd" id="1_alert"]
+
+[node name="AlertItem" type="HBoxContainer"]
+script = ExtResource("1_alert")
+
+[node name="Glyph" type="Label" parent="."]
+
+[node name="Message" type="Label" parent="."]
+
+[node name="Action" type="Button" parent="."]
+text = "Locate"
