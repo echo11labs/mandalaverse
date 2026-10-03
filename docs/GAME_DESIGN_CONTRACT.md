@@ -81,6 +81,8 @@ Three coordinate concerns remain distinct:
 2. **Settlement space:** a separate, configurable 2 m gameplay grid for building footprints, roads, occupancy, access, and navigation. At the current geographic scale, a nominal 2 m cell is 0.02 world units. Building rotation is restricted to 90-degree increments.
 3. **Conversion service:** provide the named operations `world_to_settlement_cell`, `settlement_cell_to_world`, and `regional_cell_from_world`. Define the origin, axis orientation, cell-center convention, bounds, and rounding once; use the same implementation in placement, navigation, inspection, and saving. Validate in-bounds behavior, negative coordinates, rotation, and cell-center round trips.
 
+Settlement-grid coordinates are authoritative integer logical coordinates measured in 2 m cells. The nominal 0.02 regional-world-unit conversion is for geographic mapping only. It does not lock `CharacterBody3D`, navigation, collision-margin, or visual-model scale. Block 5 must test precision and navigation at the inherited regional scale and may introduce a settlement-local presentation transform, provided all conversions remain centralized, deterministic, round-trip tested, and save data stores logical settlement coordinates rather than transformed `Node3D` positions. This prevents regional visualization scale from silently becoming the physics architecture.
+
 The conversion contract must not silently alias the coarse regional inspection cells to settlement cells. Terrain modification, bridges, walls, free rotation, and multi-level structures are outside the first playable.
 
 ## 10. Resource conservation
