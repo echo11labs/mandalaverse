@@ -271,7 +271,10 @@ func _test_ledger_and_snapshots() -> void:
 func _capabilities_are_exact(value: Dictionary) -> bool:
 	var expected := {
 		"simulation_clock": true, "command_queue": true, "resource_ledger": true, "snapshots": true,
-		"population": false, "housing": false, "weather": false, "seasons": false,
+		"entity_registry": true,
+		"population": false, "villagers": false, "households": false, "buildings": false,
+		"tasks": false, "inventory": false,
+		"housing": false, "weather": false, "seasons": false,
 		"selection": false, "placement": false, "occupancy": false, "construction": false,
 		"professions": false, "production": false, "logistics": false, "alerts": false, "save_load": false,
 	}

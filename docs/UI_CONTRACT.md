@@ -63,10 +63,13 @@ simulation-owned commit boundary. Snapshots are `RefCounted` DTOs with schema,
 sequence, clock fields, balances, and explicit capability flags; container data
 is deep-copied and getters return copies.
 
-The four supported capabilities are `simulation_clock`, `command_queue`,
-`resource_ledger`, and `snapshots`. Population, housing, weather, seasons,
-selection, placement, occupancy, construction, professions, production,
-logistics, alerts, and save/load remain explicitly unsupported. There is no
+The supported capabilities are `simulation_clock`, `command_queue`,
+`resource_ledger`, `snapshots`, and — since Block 3 — `entity_registry`: a
+scene-owned, empty authoritative registry with stable IDs, immutable snapshots,
+and no domain entities yet. Villagers, households, buildings, tasks, inventory,
+population, housing, weather, seasons, selection, placement, occupancy,
+construction, professions, production, logistics, alerts, and save/load remain
+explicitly unsupported. There is no
 HUD integration or fabricated gameplay data in this block. Reset starts a new
 simulation session and restarts command/entity/snapshot sequences; it restores a
 paused tick-zero clock and clears pending commands and balances.

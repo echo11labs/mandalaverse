@@ -6,6 +6,7 @@ signal command_processed(result: GopalaCommandResult)
 signal logical_tick_advanced(tick: int)
 signal pause_changed(paused: bool)
 signal speed_changed(speed: int)
+signal session_reset
 
 const SET_PAUSED: StringName = GopalaSimulationCommand.SET_PAUSED
 const SET_SPEED: StringName = GopalaSimulationCommand.SET_SPEED
@@ -16,10 +17,12 @@ var _clock := GopalaSimulationClock.new()
 var _queue := GopalaCommandQueue.new()
 var _ledger := GopalaResourceLedger.new()
 var _entity_ids := GopalaEntityIdAllocator.new()
+var _entity_registry: GopalaEntityRegistry
 var _capabilities: Dictionary = {}
 var _snapshot_sequence: int = 0
 var _session_epoch: int = 0
 var _processing_commands: bool = false
+var _resetting: bool = false
 
 var paused: bool:
 	get: return _clock.paused
@@ -33,6 +36,11 @@ var elapsed_logical_time: float:
 func _init() -> void:
 	_clock.configure(_config.tick_interval_nanoseconds())
 	_capabilities = _make_capabilities()
+	_entity_registry = GopalaEntityRegistry.new()
+	_entity_registry.name = "EntityRegistry"
+	_entity_registry.configure(_entity_ids)
+	_entity_registry.transaction_committed.connect(_on_registry_transaction_committed)
+	add_child(_entity_registry)
 
 func _ready() -> void:
 	_commit_snapshot()
@@ -111,6 +119,9 @@ func snapshot() -> GopalaSettlementSnapshot:
 func capabilities() -> Dictionary:
 	return GopalaSimulationCommand.copy_plain_dictionary(_capabilities)
 
+func entity_registry() -> GopalaEntityRegistry:
+	return _entity_registry
+
 func elapsed_logical_nanoseconds() -> int:
 	return _clock.elapsed_logical_nanoseconds
 
@@ -132,20 +143,31 @@ func apply_authorized_transaction(delta: Variant) -> bool:
 	_commit_snapshot()
 	return true
 
-func reset() -> void:
+func reset() -> bool:
+	# Existing policy: a reset from a snapshot/command listener is allowed and
+	# stops the enclosing drain via the session epoch. Only a nested reset during
+	# an already-running reset is rejected.
+	if _resetting:
+		return false
+	_resetting = true
 	var was_paused := paused
 	var old_speed := speed
 	_session_epoch += 1
 	_queue.reset_new_session()
+	if _entity_registry != null:
+		_entity_registry.reset()
+	_entity_ids.reset_new_session()
 	_clock.reset()
 	_ledger.reset()
-	_entity_ids.reset_new_session()
 	_snapshot_sequence = 0
 	if not was_paused:
 		pause_changed.emit(true)
 	if old_speed != 1:
 		speed_changed.emit(1)
+	session_reset.emit()
 	_commit_snapshot()
+	_resetting = false
+	return true
 
 func _apply_command(command: GopalaSimulationCommand) -> GopalaCommandResult:
 	if command.command_id <= 0 or command.submitted_tick < 0:
@@ -190,16 +212,26 @@ func _make_capabilities() -> Dictionary:
 	for capability in GopalaSimulationConfig.CAPABILITY_NAMES:
 		map[capability] = capability in [
 			&"simulation_clock", &"command_queue", &"resource_ledger", &"snapshots",
+			&"entity_registry",
 		]
 	return map
 
 func _build_snapshot(sequence: int) -> GopalaSettlementSnapshot:
+	var registry_state := _entity_registry.registry_snapshot()
 	return GopalaSettlementSnapshot.new(sequence, logical_tick, paused, speed,
-		elapsed_logical_time, _ledger.balances_snapshot(), _capabilities)
+		elapsed_logical_time, _ledger.balances_snapshot(), _capabilities,
+		registry_state.entity_count, registry_state.counts_by_kind,
+		registry_state.registry_sequence, registry_state.counts_by_kind_array)
 
 func _commit_snapshot() -> void:
 	_snapshot_sequence += 1
 	snapshot_committed.emit(_build_snapshot(_snapshot_sequence))
+
+func _on_registry_transaction_committed(_snapshot: GopalaEntityRegistrySnapshot) -> void:
+	# The final reset-state snapshot is committed after clock/ledger/sequence reset.
+	if _resetting:
+		return
+	_commit_snapshot()
 
 func _snapshot_sequence_for_tests() -> int:
 	return _snapshot_sequence
@@ -221,6 +253,9 @@ func _queue_pending_count_for_tests() -> int:
 
 func _next_entity_id_for_tests() -> int:
 	return _entity_ids._next_for_tests()
+
+func _entity_allocator_for_tests() -> GopalaEntityIdAllocator:
+	return _entity_ids
 
 func _advance_runtime_delta_for_tests(delta: float) -> void:
 	_physics_process(delta)

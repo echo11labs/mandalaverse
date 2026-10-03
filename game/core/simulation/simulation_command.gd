@@ -31,47 +31,8 @@ static func _from_queue(id: int, type: StringName, tick: int, data: Dictionary, 
 	command._source_id = source
 	return command
 
-static func validate_plain_data(value: Variant, depth: int = 0) -> bool:
-	if depth > GopalaSimulationConfig.MAX_PAYLOAD_DEPTH:
-		return false
-	if value == null or typeof(value) in [TYPE_BOOL, TYPE_INT, TYPE_STRING, TYPE_STRING_NAME]:
-		return true
-	if typeof(value) == TYPE_OBJECT:
-		return false
-	if typeof(value) == TYPE_RID:
-		return false
-	if typeof(value) == TYPE_SIGNAL:
-		return false
-	if typeof(value) == TYPE_CALLABLE:
-		return false
-	if typeof(value) == TYPE_FLOAT:
-		return is_finite(float(value))
-	if value is Array:
-		for item in value:
-			if not validate_plain_data(item, depth + 1):
-				return false
-		return true
-	if value is Dictionary:
-		for key in value:
-			if typeof(key) not in [TYPE_STRING, TYPE_STRING_NAME, TYPE_INT]:
-				return false
-			if not validate_plain_data(value[key], depth + 1):
-				return false
-		return true
-	return false
+static func validate_plain_data(value: Variant) -> bool:
+	return GopalaPlainData.validate(value, GopalaSimulationConfig.MAX_PAYLOAD_DEPTH)
 
 static func copy_plain_dictionary(value: Dictionary) -> Dictionary:
-	return _copy_plain(value) as Dictionary
-
-static func _copy_plain(value: Variant) -> Variant:
-	if value is Dictionary:
-		var copied: Dictionary = {}
-		for key in value:
-			copied[key] = _copy_plain(value[key])
-		return copied
-	if value is Array:
-		var copied: Array = []
-		for item in value:
-			copied.append(_copy_plain(item))
-		return copied
-	return value
+	return GopalaPlainData.copy_dictionary(value)

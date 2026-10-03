@@ -6,16 +6,21 @@ extends RefCounted
 ## deliberately a configurable prototype value; the backlog does not prescribe
 ## a tick duration, and the value is not duplicated at call sites.
 const DEFAULT_TICK_INTERVAL_SECONDS: float = 1.0
+## General schema marker retained for pre-registry config compatibility.
+## Settlement snapshots carry SNAPSHOT_SCHEMA_VERSION and bumped it for the
+## registry summary fields added in Block 3.
 const SCHEMA_VERSION: int = 1
+const SNAPSHOT_SCHEMA_VERSION: int = 2
 const MAX_BALANCE: int = 1_000_000_000_000_000
 const MAX_SEQUENCE: int = 2_000_000_000
 const MAX_ELAPSED_NANOSECONDS: int = 9_000_000_000_000_000
 const MAX_PAYLOAD_DEPTH: int = 32
 const CAPABILITY_NAMES: Array[StringName] = [
 	&"simulation_clock", &"command_queue", &"resource_ledger", &"snapshots",
-	&"population", &"housing", &"weather", &"seasons", &"selection", &"placement",
-	&"occupancy", &"construction", &"professions", &"production", &"logistics",
-	&"alerts", &"save_load",
+	&"entity_registry", &"population", &"villagers", &"households", &"housing",
+	&"buildings", &"tasks", &"inventory", &"weather", &"seasons", &"selection",
+	&"placement", &"occupancy", &"construction", &"professions", &"production",
+	&"logistics", &"alerts", &"save_load",
 ]
 const MAX_RUNTIME_FRAME_SECONDS: float = 86_400.0
 const MAX_MANUAL_TICK_ADVANCE: int = 100_000
