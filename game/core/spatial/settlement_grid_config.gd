@@ -16,7 +16,7 @@ func _init(p_origin_xz: Vector2, p_bounds: Rect2i, p_meters_per_cell: float, p_r
 	bounds = p_bounds
 	meters_per_cell = p_meters_per_cell
 	regional_meters_per_world_unit = p_regional_meters
-	
+
 	if regional_meters_per_world_unit > 0.0:
 		world_units_per_cell = meters_per_cell / regional_meters_per_world_unit
 	else:

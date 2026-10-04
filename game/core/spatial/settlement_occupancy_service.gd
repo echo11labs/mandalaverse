@@ -43,13 +43,13 @@ func probe_cells(cells: Array[Vector2i], ignored_owner_id: int = 0) -> GopalaOcc
 		return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.REJECTED, GopalaOccupancyOperationResult.GRID_UNCONFIGURED)
 	if cells.is_empty():
 		return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.REJECTED, GopalaOccupancyOperationResult.EMPTY_CELLS)
-		
+
 	var out_of_bounds: Array[Vector2i] = []
 	var conflicting_cells: Array[Vector2i] = []
 	var conflicting_owners: Dictionary = {}
 	var normalized: Array[Vector2i] = []
 	var seen: Dictionary = {}
-	
+
 	for cell in cells:
 		if seen.has(cell):
 			continue
@@ -62,7 +62,7 @@ func probe_cells(cells: Array[Vector2i], ignored_owner_id: int = 0) -> GopalaOcc
 			if owner != ignored_owner_id:
 				conflicting_cells.append(cell)
 				conflicting_owners[owner] = true
-				
+
 	if not out_of_bounds.is_empty():
 		var owner_ids: Array[int] = []
 		owner_ids.assign(conflicting_owners.keys())
@@ -72,7 +72,7 @@ func probe_cells(cells: Array[Vector2i], ignored_owner_id: int = 0) -> GopalaOcc
 		owner_ids.assign(conflicting_owners.keys())
 		owner_ids.sort()
 		return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.REJECTED, GopalaOccupancyOperationResult.OCCUPIED, false, [] as Array[Vector2i], conflicting_cells, owner_ids, normalized)
-		
+
 	normalized.sort_custom(func(a,b):
 		if a.x != b.x: return a.x < b.x
 		return a.y < b.y
@@ -86,11 +86,11 @@ func reserve_cells(owner_entity_id: int, cells: Array[Vector2i], tick: int) -> G
 		return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.REJECTED, GopalaOccupancyOperationResult.INVALID_OWNER)
 	if _claims.has(owner_entity_id):
 		return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.REJECTED, GopalaOccupancyOperationResult.ALREADY_RESERVED)
-		
+
 	var probe = probe_cells(cells)
 	if not probe.valid:
 		return probe
-		
+
 	_sequence += 1
 	var claim = _ClaimData.new()
 	claim.owner_entity_id = owner_entity_id
@@ -100,10 +100,10 @@ func reserve_cells(owner_entity_id: int, cells: Array[Vector2i], tick: int) -> G
 	claim.created_tick = tick
 	claim.updated_tick = tick
 	_claims[owner_entity_id] = claim
-	
+
 	for cell in claim.cells:
 		_cells[cell] = owner_entity_id
-		
+
 	_emit_changes(claim)
 	return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.APPLIED, GopalaOccupancyState.RESERVED)
 
@@ -112,16 +112,16 @@ func commit_reservation(owner_entity_id: int, tick: int) -> GopalaOccupancyOpera
 		return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.REJECTED, GopalaOccupancyOperationResult.REENTRANT_MUTATION)
 	if not _claims.has(owner_entity_id):
 		return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.REJECTED, GopalaOccupancyOperationResult.NOT_RESERVED)
-	
+
 	var claim: _ClaimData = _claims[owner_entity_id]
 	if claim.state == GopalaOccupancyState.OCCUPIED:
 		return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.REJECTED, GopalaOccupancyOperationResult.INVALID_STATE)
-		
+
 	_sequence += 1
 	claim.state = GopalaOccupancyState.OCCUPIED
 	claim.revision += 1
 	claim.updated_tick = tick
-	
+
 	_emit_changes(claim)
 	return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.APPLIED, GopalaOccupancyState.OCCUPIED)
 
@@ -132,22 +132,22 @@ func replace_claim(owner_entity_id: int, state: StringName, cells: Array[Vector2
 		return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.REJECTED, GopalaOccupancyOperationResult.INVALID_OWNER)
 	if not GopalaOccupancyState.is_valid(state):
 		return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.REJECTED, GopalaOccupancyOperationResult.INVALID_STATE)
-		
+
 	var probe = probe_cells(cells, owner_entity_id)
 	if not probe.valid:
 		return probe
-		
+
 	var old_claim: _ClaimData = _claims.get(owner_entity_id)
 	if old_claim != null:
 		for cell in old_claim.cells:
 			_cells.erase(cell)
-			
+
 	var rev = 1
 	var created = tick
 	if old_claim != null:
 		rev = old_claim.revision + 1
 		created = old_claim.created_tick
-		
+
 	_sequence += 1
 	var claim = _ClaimData.new()
 	claim.owner_entity_id = owner_entity_id
@@ -157,10 +157,10 @@ func replace_claim(owner_entity_id: int, state: StringName, cells: Array[Vector2
 	claim.created_tick = created
 	claim.updated_tick = tick
 	_claims[owner_entity_id] = claim
-	
+
 	for cell in claim.cells:
 		_cells[cell] = owner_entity_id
-		
+
 	_emit_changes(claim)
 	return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.APPLIED, GopalaOccupancyOperationResult.REPLACED)
 
@@ -169,20 +169,20 @@ func release_claim(owner_entity_id: int, reason: StringName, tick: int) -> Gopal
 		return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.REJECTED, GopalaOccupancyOperationResult.REENTRANT_MUTATION)
 	if not _claims.has(owner_entity_id):
 		return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.REJECTED, GopalaOccupancyOperationResult.NOT_FOUND)
-		
+
 	var claim: _ClaimData = _claims[owner_entity_id]
 	var snapshot = _make_snapshot(claim)
-	
+
 	_sequence += 1
 	for cell in claim.cells:
 		_cells.erase(cell)
 	_claims.erase(owner_entity_id)
-	
+
 	_emission_depth += 1
 	claim_released.emit(owner_entity_id, snapshot, reason)
 	occupancy_changed.emit(grid_snapshot())
 	_emission_depth -= 1
-	
+
 	return GopalaOccupancyOperationResult.new(GopalaOccupancyOperationResult.Status.APPLIED, GopalaOccupancyOperationResult.RELEASED)
 
 func claim_for_owner(owner_entity_id: int) -> GopalaOccupancyClaimSnapshot:
@@ -202,6 +202,26 @@ func is_blocked(cell: Vector2i) -> bool:
 		return true
 	return _cells.has(cell)
 
+func grid_summary() -> Dictionary:
+	var conf = _coordinate.is_configured() if _coordinate != null else false
+	var b_summary = _coordinate.config_snapshot() if conf else {}
+	var c_count = _claims.size()
+	var r_count = 0
+	var o_count = 0
+	for c in _claims.values():
+		if c.state == GopalaOccupancyState.RESERVED:
+			r_count += c.cells.size()
+		elif c.state == GopalaOccupancyState.OCCUPIED:
+			o_count += c.cells.size()
+			
+	return {
+		"configured": conf,
+		"occupancy_sequence": _sequence,
+		"claim_count": c_count,
+		"reserved_cell_count": r_count,
+		"occupied_cell_count": o_count
+	}
+
 func grid_snapshot() -> GopalaOccupancyGridSnapshot:
 	var conf = _coordinate.is_configured() if _coordinate != null else false
 	var b_summary = _coordinate.config_snapshot() if conf else {}
@@ -209,7 +229,7 @@ func grid_snapshot() -> GopalaOccupancyGridSnapshot:
 	var r_count = 0
 	var o_count = 0
 	var arr: Array[Dictionary] = []
-	
+
 	var owner_ids = _claims.keys()
 	owner_ids.sort()
 	for id in owner_ids:
@@ -219,7 +239,7 @@ func grid_snapshot() -> GopalaOccupancyGridSnapshot:
 		elif c.state == GopalaOccupancyState.OCCUPIED:
 			o_count += c.cells.size()
 		arr.append(_make_snapshot(c).to_plain_data())
-		
+
 	return GopalaOccupancyGridSnapshot.new(conf, _sequence, b_summary, c_count, r_count, o_count, arr)
 
 func reset(reason: StringName) -> GopalaOccupancyOperationResult:

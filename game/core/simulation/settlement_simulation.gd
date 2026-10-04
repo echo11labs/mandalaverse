@@ -258,15 +258,15 @@ func _make_capabilities() -> Dictionary:
 
 func _build_snapshot(sequence: int) -> GopalaSettlementSnapshot:
 	var registry_state := _entity_registry.registry_snapshot()
-	var occupancy_state = _occupancy_service.grid_snapshot() if _occupancy_service != null else null
+	var occupancy_state = _occupancy_service.grid_summary() if _occupancy_service != null else null
 	var occ_seq = occupancy_state.occupancy_sequence if occupancy_state != null else 0
 	var grid_configured = occupancy_state.configured if occupancy_state != null else false
 	var claim_count = occupancy_state.claim_count if occupancy_state != null else 0
 	var reserved = occupancy_state.reserved_cell_count if occupancy_state != null else 0
 	var occupied = occupancy_state.occupied_cell_count if occupancy_state != null else 0
-	
+
 	var caps = _capabilities.duplicate()
-	
+
 	return GopalaSettlementSnapshot.new(sequence, logical_tick, paused, speed,
 		elapsed_logical_time, _ledger.balances_snapshot(), caps,
 		registry_state.entity_count, registry_state.counts_by_kind,
