@@ -186,13 +186,13 @@ func _test_commands() -> void:
 	var pending_before := sim._queue_pending_count_for_tests()
 	sim.process_pending_commands()
 	var construction_result: GopalaCommandResult = _results.back()
-	expect(construction_id > 0 and construction_result.status == GopalaCommandResult.Status.UNSUPPORTED
-		and construction_result.reason_code == GopalaCommandResult.REASON_PLACEMENT_UNAVAILABLE,
-		"construction command returns UNSUPPORTED / PLACEMENT_UNAVAILABLE")
+	expect(construction_id > 0 and construction_result.status == GopalaCommandResult.Status.REJECTED
+		and construction_result.reason_code == &"OUT_OF_BOUNDS",
+		"construction command returns REJECTED / OUT_OF_BOUNDS (no grid initialized)")
 	expect(sim.resource_balances_snapshot() == starting_balances
 		and sim._next_entity_id_for_tests() == starting_id
 		and sim._queue_pending_count_for_tests() == 0 and pending_before == 1,
-		"unsupported construction charges nothing, allocates no entity, and retains no construction state")
+		"rejected construction charges nothing, allocates no entity, and retains no construction state")
 	sim.queue_free()
 	await process_frame
 	await process_frame
@@ -275,7 +275,7 @@ func _capabilities_are_exact(value: Dictionary) -> bool:
 		"population": false, "villagers": false, "households": false, "buildings": false,
 		"tasks": false, "inventory": false,
 		"housing": false, "weather": false, "seasons": false,
-		"selection": false, "placement": false, "occupancy": false, "construction": false,
+		"selection": true, "placement": true, "occupancy": true, "construction": true,
 		"professions": false, "production": false, "logistics": false, "alerts": false, "save_load": false,
 	}
 	return value == expected
@@ -339,8 +339,8 @@ func _test_scene_integration() -> void:
 	if not matches.is_empty():
 		var simulation := matches[0] as GopalaSettlementSimulation
 		expect(simulation.paused and simulation.logical_tick == 0
-			and simulation.resource_balances_snapshot().is_empty(),
-			"scene-scoped main simulation starts paused, empty, and at tick zero")
+			and not simulation.resource_balances_snapshot().is_empty(),
+			"scene-scoped main simulation starts paused, bootstrapped, and at tick zero")
 		var freed: WeakRef = weakref(simulation)
 		main.queue_free()
 		await process_frame

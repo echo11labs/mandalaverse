@@ -22,6 +22,7 @@ var _entity_queries: GopalaEntityQueryService
 var _selection_service: GopalaSelectionService
 var _coordinate_service: GopalaSettlementCoordinateService
 var _occupancy_service: GopalaSettlementOccupancyService
+var _placement_service: GopalaConstructionPlacementService
 var _capabilities: Dictionary = {}
 var _snapshot_sequence: int = 0
 var _session_epoch: int = 0
@@ -61,6 +62,21 @@ func _init() -> void:
 	_occupancy_service.configure(_entity_queries, _entity_registry, _coordinate_service)
 	_occupancy_service.occupancy_changed.connect(_on_occupancy_changed)
 	add_child(_occupancy_service)
+	_placement_service = GopalaConstructionPlacementService.new()
+	_placement_service.name = "ConstructionPlacementService"
+	_placement_service.configure(_ledger, _occupancy_service, _entity_registry, _coordinate_service)
+	add_child(_placement_service)
+
+func bootstrap_session() -> bool:
+	if _session_epoch > 0 or _ledger.amount(&"timber") > 0:
+		return false
+	_ledger._seed_for_tests({
+		&"timber": 100,
+		&"stone": 50,
+		&"thatch": 50
+	})
+	_commit_snapshot()
+	return true
 
 func _ready() -> void:
 	_commit_snapshot()
@@ -115,9 +131,9 @@ func set_paused(value: bool) -> int:
 func set_speed(value: int) -> int:
 	return submit_command(SET_SPEED, {"speed": value})
 
-func request_construction(building_id: StringName, cell: Vector2i) -> int:
+func request_construction(building_id: StringName, cell: Vector2i, rotation: int = 0) -> int:
 	return submit_command(REQUEST_CONSTRUCTION, {"building_id": building_id,
-		"cell_x": cell.x, "cell_y": cell.y})
+		"cell_x": cell.x, "cell_y": cell.y, "rotation": rotation})
 
 func advance_ticks(count: int) -> bool:
 	if paused and count > 0:
@@ -157,6 +173,9 @@ func coordinate_service() -> GopalaSettlementCoordinateService:
 
 func occupancy_service() -> GopalaSettlementOccupancyService:
 	return _occupancy_service
+
+func placement_service() -> GopalaConstructionPlacementService:
+	return _placement_service
 
 func elapsed_logical_nanoseconds() -> int:
 	return _clock.elapsed_logical_nanoseconds
@@ -237,8 +256,10 @@ func _apply_command(command: GopalaSimulationCommand) -> GopalaCommandResult:
 			return _result(command, GopalaCommandResult.Status.APPLIED,
 				GopalaCommandResult.REASON_APPLIED, {"changed": speed_changed_state})
 		REQUEST_CONSTRUCTION:
-			return _result(command, GopalaCommandResult.Status.UNSUPPORTED,
-				GopalaCommandResult.REASON_PLACEMENT_UNAVAILABLE)
+			var result = _placement_service.handle_request_construction(command, logical_tick)
+			if result.status == GopalaCommandResult.Status.APPLIED:
+				_commit_snapshot()
+			return result
 		_:
 			return _result(command, GopalaCommandResult.Status.REJECTED,
 				GopalaCommandResult.REASON_UNKNOWN_COMMAND)
@@ -252,7 +273,7 @@ func _make_capabilities() -> Dictionary:
 	for capability in GopalaSimulationConfig.CAPABILITY_NAMES:
 		map[capability] = capability in [
 			&"simulation_clock", &"command_queue", &"resource_ledger", &"snapshots",
-			&"entity_registry", &"occupancy_grid"
+			&"entity_registry", &"selection", &"placement", &"occupancy", &"construction"
 		]
 	return map
 

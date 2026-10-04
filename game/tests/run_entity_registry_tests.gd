@@ -77,9 +77,7 @@ func _test_ownership_and_fresh_state() -> void:
 	expect(not settlement.capabilities["population"] and not settlement.capabilities["villagers"]
 		and not settlement.capabilities["households"] and not settlement.capabilities["buildings"]
 		and not settlement.capabilities["tasks"]
-		and not settlement.capabilities["inventory"] and not settlement.capabilities["save_load"]
-		and not settlement.capabilities["selection"] and not settlement.capabilities["placement"]
-		and not settlement.capabilities["construction"],
+		and not settlement.capabilities["inventory"] and not settlement.capabilities["save_load"],
 		"domain gameplay capabilities remain unsupported")
 	await _free_simulation(simulation)
 

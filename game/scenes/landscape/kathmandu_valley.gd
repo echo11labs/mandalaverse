@@ -14,8 +14,15 @@ var water_network: GopalaWaterNetwork
 var sample_pine_height_m := 0.0
 var tree_population := 0
 @onready var camera = $Camera3D
+@onready var simulation: GopalaSettlementSimulation = $SettlementSimulation
 @onready var detail_forest = $DetailForest
 @onready var hero_trees = $HeroTrees
+
+var _placement_ghost: MeshInstance3D
+var _placement_rotation := 0
+var _placement_valid := false
+var _placement_cell := Vector2i.ZERO
+var _built_views := {}
 func _ready() -> void:
 	terrain.load_data()
 	load_lakes()
@@ -28,6 +35,19 @@ func _ready() -> void:
 	make_grid()
 	make_lakes()
 	make_hud()
+	
+	_placement_ghost = MeshInstance3D.new()
+	_placement_ghost.visible = false
+	add_child(_placement_ghost)
+	
+	# Configure grid around existing camp
+	var grid_config = GopalaSettlementGridConfig.new(terrain.camp, Rect2i(-24, -24, 48, 48), 2.0, 100.0)
+	simulation.coordinate_service().configure(grid_config)
+	simulation.bootstrap_session()
+	
+	simulation.command_processed.connect(_on_command_processed)
+	simulation.snapshot_committed.connect(_on_snapshot_committed)
+	
 	make_trees()
 	if not Array(OS.get_cmdline_user_args()).any(func(s: String): return s.begins_with("--capture")):
 		camera.overview()
@@ -476,6 +496,7 @@ func make_hud() -> void:
 	hud.valley_requested.connect(camera.overview)
 	hud.source_requested.connect(focus_source)
 	hud.camp_requested.connect(focus_camp)
+	hud.build_selected.connect(_on_build_selected)
 	hud.grid_changed.connect(func(on: bool) -> void: grid_view.visible = on)
 	hud.names_changed.connect(func(on: bool) -> void: labels.visible = on)
 	hud.zoom_in_requested.connect(func() -> void: camera.zoom_step(0.84))
@@ -502,14 +523,28 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and event.keycode == KEY_HOME:
 		focus_camp()
 	elif event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-		hud.close_build()
+		if hud._placement_active:
+			hud.close_build()
+			_placement_ghost.visible = false
+			hud.notify("Placement cancelled", "")
+		else:
+			hud.close_build()
 	elif event.is_action_pressed("toggle_territory"):
 		cycle_territory_mode()
-	elif event is InputEventKey and event.pressed and event.keycode==KEY_G:
-		hud.toggle_grid()
-	elif event is InputEventKey and event.pressed and event.keycode==KEY_N:
-		hud.toggle_names()
-	elif event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:
+	elif hud._placement_active and event.is_action_pressed("placement_rotate_cw"):
+		_placement_rotation = (_placement_rotation + 1) % 4
+		_update_ghost(get_viewport().get_mouse_position())
+	elif hud._placement_active and event.is_action_pressed("placement_rotate_ccw"):
+		_placement_rotation = (_placement_rotation + 3) % 4
+		_update_ghost(get_viewport().get_mouse_position())
+	elif hud._placement_active and event is InputEventMouseMotion:
+		_update_ghost(event.position)
+	elif hud._placement_active and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if _placement_valid:
+			simulation.request_construction(hud._selected_build, _placement_cell, _placement_rotation)
+		else:
+			hud.notify("Cannot place", "Invalid or occupied terrain", "terra")
+	elif not hud._placement_active and event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:
 		var hit := pick(event.position)
 		if hit.is_empty(): return
 		var p: Vector3 = hit.position
@@ -546,6 +581,139 @@ func _unhandled_input(event: InputEvent) -> void:
 			else:
 				selection.mesh = null
 		hud.show_place(title_text, detail)
+
+func _on_build_selected(id: StringName) -> void:
+	_placement_rotation = 0
+	_update_ghost(get_viewport().get_mouse_position())
+
+func _update_ghost(screen: Vector2) -> void:
+	if not hud._placement_active or hud._selected_build == StringName(""):
+		_placement_ghost.visible = false
+		return
+	var hit := pick(screen)
+	if hit.is_empty():
+		_placement_ghost.visible = false
+		return
+	var p: Vector3 = hit.position
+	_placement_cell = simulation.coordinate_service().world_to_settlement_cell(Vector2(p.x, p.z))
+	var validation = simulation.placement_service().validate_placement(hud._selected_build, _placement_cell, _placement_rotation)
+	
+	_placement_valid = validation.valid
+	
+	# Terrain height check manually since simulation doesn't know terrain
+	if _placement_valid:
+		for cell in validation.transformed_cells:
+			var center = simulation.coordinate_service().settlement_cell_to_world_xz(cell)
+			var elevation = terrain.height_at(center.x, center.y)
+			var cell_local = terrain.cell_at(Vector3(center.x, elevation, center.y))
+			if not terrain.is_buildable(cell_local):
+				_placement_valid = false
+				break
+	
+	_placement_ghost.visible = true
+	var mat := StandardMaterial3D.new()
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.albedo_color = Color(0.2, 0.8, 0.2, 0.5) if _placement_valid else Color(0.8, 0.2, 0.2, 0.5)
+	
+	var def = simulation.placement_service().get_building(hud._selected_build)
+	var size_x = def.footprint.x * 2.0 * simulation.coordinate_service()._config.world_units_per_cell
+	var size_y = def.footprint.y * 2.0 * simulation.coordinate_service()._config.world_units_per_cell
+	if _placement_rotation == 1 or _placement_rotation == 3:
+		var temp = size_x
+		size_x = size_y
+		size_y = temp
+		
+	var box = BoxMesh.new()
+	box.size = Vector3(size_x, 2.0, size_y)
+	_placement_ghost.mesh = box
+	_placement_ghost.material_override = mat
+	
+	# Position at center of transformed cells footprint
+	var min_x = INF
+	var max_x = -INF
+	var min_z = INF
+	var max_z = -INF
+	for cell in validation.transformed_cells:
+		var center = simulation.coordinate_service().settlement_cell_to_world_xz(cell)
+		min_x = min(min_x, center.x)
+		max_x = max(max_x, center.x)
+		min_z = min(min_z, center.y)
+		max_z = max(max_z, center.y)
+	
+	var cell_size = 2.0 * simulation.coordinate_service()._config.world_units_per_cell
+	var center_x = (min_x + max_x) / 2.0
+	var center_z = (min_z + max_z) / 2.0
+	var h = terrain.height_at(center_x, center_z)
+	_placement_ghost.position = Vector3(center_x, h + 1.0, center_z)
+
+func _on_command_processed(result: GopalaCommandResult) -> void:
+	if result.command_type() == GopalaSimulationCommand.REQUEST_CONSTRUCTION:
+		if result.status == GopalaCommandResult.Status.REJECTED:
+			hud.notify("Placement failed", result.reason, "terra")
+		else:
+			hud.notify("Construction started", "Dwelling placed successfully", "forest")
+			hud.close_build()
+			_placement_ghost.visible = false
+
+func _on_snapshot_committed(snapshot: GopalaSettlementSnapshot) -> void:
+	var balances = snapshot.resource_balances
+	for res_id in balances:
+		hud.set_resource(res_id, balances[res_id])
+		
+	var registry_snap = simulation.entity_registry().registry_snapshot()
+	# Spawn primitive views for buildings
+	for entity_id in registry_snap.entities:
+		if not _built_views.has(entity_id):
+			var record = simulation.entity_registry()._entities[entity_id]
+			if record.kind == &"building":
+				_spawn_primitive_building(record, entity_id)
+
+func _spawn_primitive_building(record, entity_id: int) -> void:
+	var def = simulation.placement_service().get_building(record.attributes["definition_id"])
+	var cells = record.attributes["footprint_cells"]
+	var min_x = INF
+	var max_x = -INF
+	var min_z = INF
+	var max_z = -INF
+	for cell in cells:
+		var center = simulation.coordinate_service().settlement_cell_to_world_xz(Vector2i(cell.x, cell.y))
+		min_x = min(min_x, center.x)
+		max_x = max(max_x, center.x)
+		min_z = min(min_z, center.y)
+		max_z = max(max_z, center.y)
+		
+	var center_x = (min_x + max_x) / 2.0
+	var center_z = (min_z + max_z) / 2.0
+	var h = terrain.height_at(center_x, center_z)
+	
+	var view = MeshInstance3D.new()
+	var box = BoxMesh.new()
+	var size_x = def.footprint.x * 2.0 * simulation.coordinate_service()._config.world_units_per_cell
+	var size_y = def.footprint.y * 2.0 * simulation.coordinate_service()._config.world_units_per_cell
+	if record.attributes["rotation"] == 1 or record.attributes["rotation"] == 3:
+		var temp = size_x
+		size_x = size_y
+		size_y = temp
+	box.size = Vector3(size_x, 2.0, size_y)
+	view.mesh = box
+	view.position = Vector3(center_x, h + 1.0, center_z)
+	var mat = StandardMaterial3D.new()
+	mat.albedo_color = Color(0.6, 0.4, 0.2)
+	view.material_override = mat
+	add_child(view)
+	
+	var body = StaticBody3D.new()
+	var col = CollisionShape3D.new()
+	col.shape = box.create_trimesh_shape()
+	body.add_child(col)
+	view.add_child(body)
+	
+	var adapter = GopalaEntityViewAdapter3D.new()
+	adapter.configure(simulation.entity_queries())
+	adapter.bind_entity(entity_id)
+	body.add_child(adapter)
+	_built_views[entity_id] = view
+
 func capture() -> void:
 	var args := OS.get_cmdline_user_args()
 	if not ("--capture-source" in args or "--capture-local" in args or "--capture-edge" in args or "--capture-forest" in args or "--capture-water" in args or "--capture-trees" in args):
