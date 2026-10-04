@@ -23,6 +23,7 @@ var _placement_rotation := 0
 var _placement_valid := false
 var _placement_cell := Vector2i.ZERO
 var _built_views := {}
+var _picker: GopalaEntityPickResolver3D
 func _ready() -> void:
 	terrain.load_data()
 	load_lakes()
@@ -44,6 +45,9 @@ func _ready() -> void:
 	var grid_config = GopalaSettlementGridConfig.new(terrain.camp, Rect2i(-24, -24, 48, 48), 2.0, 100.0)
 	simulation.coordinate_service().configure(grid_config)
 	simulation.bootstrap_session()
+	
+	_picker = GopalaEntityPickResolver3D.new()
+	_picker.configure(simulation.entity_queries())
 	
 	simulation.command_processed.connect(_on_command_processed)
 	simulation.snapshot_committed.connect(_on_snapshot_committed)
@@ -553,6 +557,16 @@ func _unhandled_input(event: InputEvent) -> void:
 			if not chiefdom.is_empty():
 				hud.show_chiefdom(map_overlay.mode_name(), describe_chiefdom(chiefdom))
 				return
+		var entity_id := _picker.resolve_collider(hit.collider)
+		if entity_id != 0:
+			simulation.selection_service().select_entity(entity_id)
+			var selected = simulation.selection_service().snapshot()
+			var attrs = ""
+			for key in selected.entity.attributes:
+				attrs += "[data]" + str(key) + "[/data]  " + str(selected.entity.attributes[key]) + "\n"
+			hud._show_inspection("Building", String(selected.entity.kind).capitalize(), "Entity ID %d" % entity_id, attrs)
+			return
+		
 		var river := terrain.nearest_river(p)
 		var elevation := roundi(terrain.elevation_at(p.x,p.z))
 		var title_text := "Valley floor"
@@ -702,16 +716,17 @@ func _spawn_primitive_building(record, entity_id: int) -> void:
 	view.material_override = mat
 	add_child(view)
 	
+	var adapter = GopalaEntityViewAdapter3D.new()
+	adapter.configure(simulation.entity_queries())
+	adapter.bind_entity(entity_id)
+	view.add_child(adapter)
+	
 	var body = StaticBody3D.new()
 	var col = CollisionShape3D.new()
 	col.shape = box.create_trimesh_shape()
 	body.add_child(col)
-	view.add_child(body)
+	adapter.add_child(body)
 	
-	var adapter = GopalaEntityViewAdapter3D.new()
-	adapter.configure(simulation.entity_queries())
-	adapter.bind_entity(entity_id)
-	body.add_child(adapter)
 	_built_views[entity_id] = view
 
 func capture() -> void:
