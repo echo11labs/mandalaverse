@@ -20,6 +20,8 @@ var _entity_ids := GopalaEntityIdAllocator.new()
 var _entity_registry: GopalaEntityRegistry
 var _entity_queries: GopalaEntityQueryService
 var _selection_service: GopalaSelectionService
+var _coordinate_service: GopalaSettlementCoordinateService
+var _occupancy_service: GopalaSettlementOccupancyService
 var _capabilities: Dictionary = {}
 var _snapshot_sequence: int = 0
 var _session_epoch: int = 0
@@ -51,6 +53,14 @@ func _init() -> void:
 	_selection_service.name = "SelectionService"
 	_selection_service.configure(_entity_queries, _entity_registry)
 	add_child(_selection_service)
+	_coordinate_service = GopalaSettlementCoordinateService.new()
+	_coordinate_service.name = "SettlementCoordinateService"
+	add_child(_coordinate_service)
+	_occupancy_service = GopalaSettlementOccupancyService.new()
+	_occupancy_service.name = "SettlementOccupancyService"
+	_occupancy_service.configure(_entity_queries, _entity_registry, _coordinate_service)
+	_occupancy_service.occupancy_changed.connect(_on_occupancy_changed)
+	add_child(_occupancy_service)
 
 func _ready() -> void:
 	_commit_snapshot()
@@ -142,6 +152,12 @@ func entity_queries() -> GopalaEntityQueryService:
 func selection_service() -> GopalaSelectionService:
 	return _selection_service
 
+func coordinate_service() -> GopalaSettlementCoordinateService:
+	return _coordinate_service
+
+func occupancy_service() -> GopalaSettlementOccupancyService:
+	return _occupancy_service
+
 func elapsed_logical_nanoseconds() -> int:
 	return _clock.elapsed_logical_nanoseconds
 
@@ -176,6 +192,8 @@ func reset() -> bool:
 	_queue.reset_new_session()
 	if _selection_service != null:
 		_selection_service.reset(GopalaSelectionResult.SESSION_RESET)
+	if _occupancy_service != null:
+		_occupancy_service.reset(GopalaOccupancyOperationResult.SESSION_RESET)
 	if _entity_registry != null:
 		_entity_registry.reset()
 	_entity_ids.reset_new_session()
@@ -234,16 +252,26 @@ func _make_capabilities() -> Dictionary:
 	for capability in GopalaSimulationConfig.CAPABILITY_NAMES:
 		map[capability] = capability in [
 			&"simulation_clock", &"command_queue", &"resource_ledger", &"snapshots",
-			&"entity_registry",
+			&"entity_registry", &"occupancy_grid"
 		]
 	return map
 
 func _build_snapshot(sequence: int) -> GopalaSettlementSnapshot:
 	var registry_state := _entity_registry.registry_snapshot()
+	var occupancy_state = _occupancy_service.grid_snapshot() if _occupancy_service != null else null
+	var occ_seq = occupancy_state.occupancy_sequence if occupancy_state != null else 0
+	var grid_configured = occupancy_state.configured if occupancy_state != null else false
+	var claim_count = occupancy_state.claim_count if occupancy_state != null else 0
+	var reserved = occupancy_state.reserved_cell_count if occupancy_state != null else 0
+	var occupied = occupancy_state.occupied_cell_count if occupancy_state != null else 0
+	
+	var caps = _capabilities.duplicate()
+	
 	return GopalaSettlementSnapshot.new(sequence, logical_tick, paused, speed,
-		elapsed_logical_time, _ledger.balances_snapshot(), _capabilities,
+		elapsed_logical_time, _ledger.balances_snapshot(), caps,
 		registry_state.entity_count, registry_state.counts_by_kind,
-		registry_state.registry_sequence, registry_state.counts_by_kind_array)
+		registry_state.registry_sequence, registry_state.counts_by_kind_array,
+		grid_configured, occ_seq, claim_count, reserved, occupied)
 
 func _commit_snapshot() -> void:
 	_snapshot_sequence += 1
@@ -251,6 +279,11 @@ func _commit_snapshot() -> void:
 
 func _on_registry_transaction_committed(_snapshot: GopalaEntityRegistrySnapshot) -> void:
 	# The final reset-state snapshot is committed after clock/ledger/sequence reset.
+	if _resetting:
+		return
+	_commit_snapshot()
+
+func _on_occupancy_changed(_grid_snapshot: GopalaOccupancyGridSnapshot) -> void:
 	if _resetting:
 		return
 	_commit_snapshot()

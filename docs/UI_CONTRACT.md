@@ -72,9 +72,11 @@ are **WORKING FOUNDATION** (read-only query facade; scene-owned, ID-only
 single-entity selection with immutable snapshots; presentation binding and
 collider picking). `player-visible entity selection` and the `entity context
 panel` remain **ABSENT** — no adapter is attached to Kathmandu objects, no HUD
-reads selection, and terrain/region inspection is unchanged. Villagers,
-households, buildings, tasks, inventory,
-population, housing, weather, seasons, placement, occupancy,
+reads selection, and terrain/region inspection is unchanged. Block 5A adds
+`settlement_coordinate_service` and `settlement_occupancy_service` as a
+**WORKING FOUNDATION**. Production settlement grid bounds are **UNCONFIGURED**.
+Villagers, households, buildings, tasks, inventory, population, housing,
+weather, seasons, player-visible placement, terrain placement validation, roads,
 construction, professions, production, logistics, alerts, and save/load remain
 explicitly unsupported. There is no
 HUD integration or fabricated gameplay data in this block. Reset starts a new
@@ -104,7 +106,7 @@ paused tick-zero clock and clears pending commands and balances.
 | Logical clock, pause, 1×–4× speed | implemented in Block 1.5; no calendar/season/year | G-006 |
 | Inventory transfers, reservations, logistics, and populated stock levels | do not exist; ledger is empty until authorized transactions | G-007 |
 | Population, households, needs, professions | does not exist | G-012/021 |
-| Construction lifecycle, occupancy, placement validation/commit/charge | unsupported; construction command returns `PLACEMENT_UNAVAILABLE` | G-010 |
+| Construction lifecycle, player-visible placement validation/commit/charge | unsupported; construction command returns `PLACEMENT_UNAVAILABLE`. Occupancy is a **WORKING FOUNDATION** without production bounds. | G-010 |
 | Production, recipes, trade, reports | does not exist | G-020/022 |
 | Alerts/notification producers, weather, events | does not exist | G-017/026 |
 | Save/load of any UI or simulation state | does not exist | G-014/028 |
