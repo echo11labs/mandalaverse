@@ -18,6 +18,8 @@ var _queue := GopalaCommandQueue.new()
 var _ledger := GopalaResourceLedger.new()
 var _entity_ids := GopalaEntityIdAllocator.new()
 var _entity_registry: GopalaEntityRegistry
+var _entity_queries: GopalaEntityQueryService
+var _selection_service: GopalaSelectionService
 var _capabilities: Dictionary = {}
 var _snapshot_sequence: int = 0
 var _session_epoch: int = 0
@@ -41,6 +43,14 @@ func _init() -> void:
 	_entity_registry.configure(_entity_ids)
 	_entity_registry.transaction_committed.connect(_on_registry_transaction_committed)
 	add_child(_entity_registry)
+	_entity_queries = GopalaEntityQueryService.new()
+	_entity_queries.name = "EntityQueryService"
+	_entity_queries.configure(_entity_registry)
+	add_child(_entity_queries)
+	_selection_service = GopalaSelectionService.new()
+	_selection_service.name = "SelectionService"
+	_selection_service.configure(_entity_queries, _entity_registry)
+	add_child(_selection_service)
 
 func _ready() -> void:
 	_commit_snapshot()
@@ -119,8 +129,18 @@ func snapshot() -> GopalaSettlementSnapshot:
 func capabilities() -> Dictionary:
 	return GopalaSimulationCommand.copy_plain_dictionary(_capabilities)
 
+## Domain-system access to the authoritative registry (mutation stays behind
+## this session boundary). Presentation/query consumers must use entity_queries.
 func entity_registry() -> GopalaEntityRegistry:
 	return _entity_registry
+
+## Read-only query facade for presentation and inspection consumers.
+func entity_queries() -> GopalaEntityQueryService:
+	return _entity_queries
+
+## Scene-owned single-entity selection service (foundation only).
+func selection_service() -> GopalaSelectionService:
+	return _selection_service
 
 func elapsed_logical_nanoseconds() -> int:
 	return _clock.elapsed_logical_nanoseconds
@@ -154,6 +174,8 @@ func reset() -> bool:
 	var old_speed := speed
 	_session_epoch += 1
 	_queue.reset_new_session()
+	if _selection_service != null:
+		_selection_service.reset(GopalaSelectionResult.SESSION_RESET)
 	if _entity_registry != null:
 		_entity_registry.reset()
 	_entity_ids.reset_new_session()

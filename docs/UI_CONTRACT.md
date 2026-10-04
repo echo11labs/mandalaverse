@@ -66,8 +66,15 @@ is deep-copied and getters return copies.
 The supported capabilities are `simulation_clock`, `command_queue`,
 `resource_ledger`, `snapshots`, and — since Block 3 — `entity_registry`: a
 scene-owned, empty authoritative registry with stable IDs, immutable snapshots,
-and no domain entities yet. Villagers, households, buildings, tasks, inventory,
-population, housing, weather, seasons, selection, placement, occupancy,
+and no domain entities yet. Block 4 adds selection *infrastructure* only:
+`entity_query_service`, `entity_selection_service`, and `entity_view_adapter`
+are **WORKING FOUNDATION** (read-only query facade; scene-owned, ID-only
+single-entity selection with immutable snapshots; presentation binding and
+collider picking). `player-visible entity selection` and the `entity context
+panel` remain **ABSENT** — no adapter is attached to Kathmandu objects, no HUD
+reads selection, and terrain/region inspection is unchanged. Villagers,
+households, buildings, tasks, inventory,
+population, housing, weather, seasons, placement, occupancy,
 construction, professions, production, logistics, alerts, and save/load remain
 explicitly unsupported. There is no
 HUD integration or fabricated gameplay data in this block. Reset starts a new
@@ -101,7 +108,7 @@ paused tick-zero clock and clears pending commands and balances.
 | Production, recipes, trade, reports | does not exist | G-020/022 |
 | Alerts/notification producers, weather, events | does not exist | G-017/026 |
 | Save/load of any UI or simulation state | does not exist | G-014/028 |
-| Selection service, entity registry | does not exist (ad-hoc pick only) | G-004/G-010 |
+| Player-visible entity selection, entity context panel | **ABSENT**; foundation only — `entity_registry` (Block 3), `entity_query_service` / `entity_selection_service` / `entity_view_adapter` (Block 4, WORKING FOUNDATION, no HUD or world integration) | G-004/G-010 |
 | Fertility/desirability/water/logistics/pollution/coverage data | does not exist | G-017/018 |
 
 Rule: a HUD region whose data source is unavailable renders an explicit
@@ -284,7 +291,10 @@ in the same commit. No big-bang replacement of `hud.tscn`/`kathmandu_hud.gd`.
   2560×1080, 3440×1440/2560×1080, 3840×2160.
 - Performance: signals/snapshots drive updates; no `_process()` polling for data;
   no repeated `get_node` in per-frame code; no whole-panel rebuilds for single
-  value changes; world widgets pool/cull by distance/zoom/importance.
+  value changes; world widgets pool/cull by distance/zoom/importance. Block 4
+  records a **mandatory performance/caching gate** for entity snapshot
+  materialization and per-entity inspection before Block 6 creates
+  population-scale entities.
 
 ## 11. Revised roadmap (Block 0 → 6, with Block 1.5)
 

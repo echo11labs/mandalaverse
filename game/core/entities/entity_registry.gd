@@ -258,6 +258,14 @@ func registry_snapshot() -> GopalaEntityRegistrySnapshot:
 		snapshots.append((_records[entity_id] as GopalaEntityRecord).snapshot(_sequence))
 	return GopalaEntityRegistrySnapshot.new(SCHEMA_VERSION, _sequence, snapshots)
 
+## Lightweight summary for read facades: no EntitySnapshot objects are built.
+func registry_summary() -> Dictionary:
+	var counts: Dictionary = {}
+	for kind in _kind_ids:
+		counts[kind] = _kind_ids[kind].size()
+	return {"registry_sequence": _sequence, "entity_count": _records.size(),
+		"counts_by_kind": GopalaPlainData.copy_dictionary(counts)}
+
 func reset() -> bool:
 	if _reject_mutation():
 		return false
