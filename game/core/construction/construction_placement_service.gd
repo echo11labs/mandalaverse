@@ -63,7 +63,7 @@ func handle_request_construction(command: GopalaSimulationCommand, current_tick:
 	
 	var validation := validate_placement(building_id, anchor_cell, rotation_steps)
 	if not validation.valid:
-		return GopalaCommandResult.new(command.command_id, GopalaCommandResult.Status.REJECTED, validation.reason_code, current_tick, {})
+		return GopalaCommandResult.new(command.command_id, GopalaCommandResult.Status.REJECTED, validation.reason_code, current_tick, {"command_type": command.command_type})
 		
 	var def := get_building(building_id)
 	var costs := def.costs
@@ -73,7 +73,7 @@ func handle_request_construction(command: GopalaSimulationCommand, current_tick:
 		neg_costs[k] = -costs[k]
 		
 	if not _ledger.apply_authorized_transaction(neg_costs):
-		return GopalaCommandResult.new(command.command_id, GopalaCommandResult.Status.REJECTED, &"INSUFFICIENT_RESOURCES", current_tick, {})
+		return GopalaCommandResult.new(command.command_id, GopalaCommandResult.Status.REJECTED, &"INSUFFICIENT_RESOURCES", current_tick, {"command_type": command.command_type})
 		
 	var footprint_cells_array = []
 	for c in validation.transformed_cells:
@@ -93,15 +93,15 @@ func handle_request_construction(command: GopalaSimulationCommand, current_tick:
 	var res = _registry.create_entity(&"building", attributes, {}, current_tick)
 	if res.status != GopalaEntityOperationResult.Status.APPLIED:
 		_ledger.apply_authorized_transaction(costs)
-		return GopalaCommandResult.new(command.command_id, GopalaCommandResult.Status.REJECTED, &"ENTITY_CREATION_FAILED", current_tick, {})
+		return GopalaCommandResult.new(command.command_id, GopalaCommandResult.Status.REJECTED, &"ENTITY_CREATION_FAILED", current_tick, {"command_type": command.command_type})
 		
 	var entity_id: int = res.entity_id
 	var claim_res = _occupancy.reserve_cells(entity_id, validation.transformed_cells, current_tick)
 	if claim_res.status != GopalaOccupancyOperationResult.Status.APPLIED:
 		_registry.remove_entity(entity_id, GopalaEntityRegistry.RemovalPolicy.CLEAR_INCOMING_REFERENCES, current_tick)
 		_ledger.apply_authorized_transaction(costs)
-		return GopalaCommandResult.new(command.command_id, GopalaCommandResult.Status.REJECTED, &"OCCUPIED", current_tick, {})
+		return GopalaCommandResult.new(command.command_id, GopalaCommandResult.Status.REJECTED, &"OCCUPIED", current_tick, {"command_type": command.command_type})
 		
 	_occupancy.commit_reservation(entity_id, current_tick)
 		
-	return GopalaCommandResult.new(command.command_id, GopalaCommandResult.Status.APPLIED, &"REASON_APPLIED", current_tick, {"entity_id": entity_id, "changed": true})
+	return GopalaCommandResult.new(command.command_id, GopalaCommandResult.Status.APPLIED, &"REASON_APPLIED", current_tick, {"entity_id": entity_id, "changed": true, "command_type": command.command_type})

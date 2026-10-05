@@ -547,6 +547,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				hud.notify("Move task assigned", "")
 	elif event.is_action_pressed("toggle_territory"):
 		cycle_territory_mode()
+
 	elif hud._placement_active and event.is_action_pressed("placement_rotate_cw"):
 		_placement_rotation = (_placement_rotation + 1) % 4
 		_update_ghost(get_viewport().get_mouse_position())
@@ -673,7 +674,7 @@ func _update_ghost(screen: Vector2) -> void:
 	_placement_ghost.position = Vector3(center_x, h + 1.0, center_z)
 
 func _on_command_processed(result: GopalaCommandResult) -> void:
-	if result.command_type() == GopalaSimulationCommand.REQUEST_CONSTRUCTION:
+	if result.details().get("command_type", &"") == GopalaSimulationCommand.REQUEST_CONSTRUCTION:
 		if result.status == GopalaCommandResult.Status.REJECTED:
 			hud.notify("Placement failed", result.reason, "terra")
 		else:
@@ -688,8 +689,9 @@ func _on_snapshot_committed(snapshot: GopalaSettlementSnapshot) -> void:
 
 	var registry_snap = simulation.entity_registry().registry_snapshot()
 	# Spawn primitive views for buildings and villagers
-	for entity_id in registry_snap.entities:
-		var record = simulation.entity_registry()._entities[entity_id]
+	for entity_snapshot in registry_snap.entities:
+		var entity_id = entity_snapshot.entity_id
+		var record = entity_snapshot
 		if not _built_views.has(entity_id):
 			if record.kind == &"building":
 				_spawn_primitive_building(record, entity_id)
@@ -738,7 +740,7 @@ func _spawn_primitive_building(record, entity_id: int) -> void:
 	var min_z = INF
 	var max_z = -INF
 	for cell in cells:
-		var center = simulation.coordinate_service().settlement_cell_to_world_xz(Vector2i(cell.x, cell.y))
+		var center = simulation.coordinate_service().settlement_cell_to_world_xz(Vector2i(cell[0], cell[1]))
 		min_x = min(min_x, center.x)
 		max_x = max(max_x, center.x)
 		min_z = min(min_z, center.y)
