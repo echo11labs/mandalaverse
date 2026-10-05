@@ -24,6 +24,7 @@ var _coordinate_service: GopalaSettlementCoordinateService
 var _occupancy_service: GopalaSettlementOccupancyService
 var _placement_service: GopalaConstructionPlacementService
 var _villager_service: GopalaVillagerService
+var _gather_delivery_service: GopalaGatherDeliveryService
 var _capabilities: Dictionary = {}
 var _snapshot_sequence: int = 0
 var _session_epoch: int = 0
@@ -72,6 +73,11 @@ func _init() -> void:
 	_villager_service.name = "VillagerService"
 	_villager_service.configure(_entity_queries, _entity_registry, _coordinate_service, _config)
 	add_child(_villager_service)
+	
+	_gather_delivery_service = GopalaGatherDeliveryService.new()
+	_gather_delivery_service.name = "GatherDeliveryService"
+	_gather_delivery_service.configure(_entity_queries, _entity_registry, _ledger, _villager_service, _coordinate_service)
+	add_child(_gather_delivery_service)
 
 func bootstrap_session() -> bool:
 	if _session_epoch > 0 or _ledger.amount(&"timber") > 0:
@@ -89,9 +95,10 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var advanced := _clock.advance_frame(delta)
-	if advanced > 0:
-		logical_tick_advanced.emit(logical_tick)
-		_villager_service.tick(logical_tick)
+	for i in range(advanced):
+		logical_tick_advanced.emit(logical_tick - advanced + i + 1)
+		_villager_service.tick(logical_tick - advanced + i + 1)
+		_gather_delivery_service.tick(logical_tick - advanced + i + 1)
 		_commit_snapshot()
 	process_pending_commands()
 
@@ -187,6 +194,9 @@ func placement_service() -> GopalaConstructionPlacementService:
 func villager_service() -> GopalaVillagerService:
 	return _villager_service
 
+func gather_delivery_service() -> GopalaGatherDeliveryService:
+	return _gather_delivery_service
+
 func elapsed_logical_nanoseconds() -> int:
 	return _clock.elapsed_logical_nanoseconds
 
@@ -228,6 +238,8 @@ func reset() -> bool:
 	_entity_ids.reset_new_session()
 	_clock.reset()
 	_ledger.reset()
+	if _gather_delivery_service != null:
+		_gather_delivery_service.reset()
 	_snapshot_sequence = 0
 	if not was_paused:
 		pause_changed.emit(true)
@@ -246,6 +258,10 @@ func _apply_command(command: GopalaSimulationCommand) -> GopalaCommandResult:
 	if not GopalaSimulationCommand.validate_plain_data(payload):
 		return _result(command, GopalaCommandResult.Status.REJECTED,
 			GopalaCommandResult.REASON_INVALID_PAYLOAD)
+	
+	if command.command_type == GopalaSimulationCommand.REQUEST_GATHER_TIMBER:
+		print("Applying REQUEST_GATHER_TIMBER: ", payload)
+
 	match command.command_type:
 		SET_PAUSED:
 			if payload.size() != 1 or not payload.has("paused") or typeof(payload["paused"]) != TYPE_BOOL:
@@ -288,6 +304,11 @@ func _apply_command(command: GopalaSimulationCommand) -> GopalaCommandResult:
 				return _result(command, GopalaCommandResult.Status.APPLIED, GopalaCommandResult.REASON_APPLIED, {"changed": true})
 			else:
 				return _result(command, GopalaCommandResult.Status.REJECTED, GopalaCommandResult.REASON_INVALID_PAYLOAD)
+		GopalaSimulationCommand.REQUEST_GATHER_TIMBER:
+			var result = _gather_delivery_service.handle_request_gather_timber(command, logical_tick)
+			if result.status == GopalaCommandResult.Status.APPLIED:
+				_commit_snapshot()
+			return result
 		_:
 			return _result(command, GopalaCommandResult.Status.REJECTED,
 				GopalaCommandResult.REASON_UNKNOWN_COMMAND)

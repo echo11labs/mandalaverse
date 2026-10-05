@@ -45,6 +45,7 @@ func _ready() -> void:
 	var grid_config = GopalaSettlementGridConfig.new(terrain.camp, Rect2i(-24, -24, 48, 48), 2.0, 100.0)
 	simulation.coordinate_service().configure(grid_config)
 	simulation.bootstrap_session()
+	GopalaScenarioSetup.setup_kathmandu_scenario(simulation, terrain.camp)
 
 	_picker = GopalaEntityPickResolver3D.new()
 	_picker.configure(simulation.entity_queries())
@@ -501,6 +502,13 @@ func make_hud() -> void:
 	hud.source_requested.connect(focus_source)
 	hud.camp_requested.connect(focus_camp)
 	hud.build_selected.connect(_on_build_selected)
+	hud.speed_selected.connect(func(mult: int) -> void:
+		if mult == 0:
+			simulation.set_paused(true)
+		else:
+			simulation.set_paused(false)
+			simulation.set_speed(mult)
+	)
 	hud.grid_changed.connect(func(on: bool) -> void: grid_view.visible = on)
 	hud.names_changed.connect(func(on: bool) -> void: labels.visible = on)
 	hud.zoom_in_requested.connect(func() -> void: camera.zoom_step(0.84))
@@ -561,6 +569,22 @@ func _unhandled_input(event: InputEvent) -> void:
 			simulation.request_construction(hud._selected_build, _placement_cell, _placement_rotation)
 		else:
 			hud.notify("Cannot place", "Invalid or occupied terrain", "terra")
+	elif not hud._placement_active and event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT:
+		var hit := pick(event.position)
+		if hit.is_empty(): return
+		var selected = simulation.selection_service().snapshot()
+		if selected.state == GopalaSelectionSnapshot.State.ENTITY and selected.entity.kind == GopalaEntityKind.VILLAGER:
+			var entity_id := _picker.resolve_collider(hit.collider)
+			if entity_id != 0:
+				var target = simulation.entity_queries().snapshot(entity_id)
+				if target.kind == GopalaEntityKind.RESOURCE_SOURCE and target.attributes.get(&"resource_type", &"") == &"timber":
+					simulation.submit_command(GopalaSimulationCommand.REQUEST_GATHER_TIMBER, {
+						"villager_id": selected.entity_id,
+						"source_entity_id": entity_id,
+						"destination_entity_id": 0
+					})
+					hud.notify("Gather order issued", "")
+					return
 	elif not hud._placement_active and event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:
 		var hit := pick(event.position)
 		if hit.is_empty(): return
@@ -577,7 +601,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			var attrs = ""
 			for key in selected.entity.attributes:
 				attrs += "[data]" + str(key) + "[/data]  " + str(selected.entity.attributes[key]) + "\n"
-			hud._show_inspection("Building", String(selected.entity.kind).capitalize(), "Entity ID %d" % entity_id, attrs)
+			hud._show_inspection(String(selected.entity.kind).capitalize(), "Entity ID %d" % entity_id, "Attributes", attrs)
 			return
 
 		var river := terrain.nearest_river(p)
@@ -605,9 +629,34 @@ func _unhandled_input(event: InputEvent) -> void:
 						var z: float = center.z+corner.y*terrain.CELL_SIZE
 						surface.add_vertex(Vector3(x,terrain.height_at(x,z)+0.05,z))
 				selection.mesh = surface.commit()
-			else:
 				selection.mesh = null
 		hud.show_place(title_text, detail)
+	elif not hud._placement_active and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+		var hit := pick(event.position)
+		if hit.is_empty(): return
+		var entity_id := _picker.resolve_collider(hit.collider)
+		var selected = simulation.selection_service().snapshot()
+		
+		if selected.state == GopalaSelectionSnapshot.State.ENTITY and selected.entity.kind == GopalaEntityKind.VILLAGER:
+			if entity_id != 0:
+				var target_entity = simulation.entity_queries().snapshot(entity_id)
+				if target_entity != null and target_entity.kind == GopalaEntityKind.RESOURCE_SOURCE and target_entity.attributes.get(&"gatherable", false):
+					# Find camp destination
+					var dest_id = 0
+					for b in simulation.entity_queries().snapshots_by_kind(GopalaEntityKind.BUILDING):
+						if b.attributes.get(&"accepts_timber", false):
+							dest_id = b.entity_id
+							break
+					
+					simulation.submit_command(GopalaSimulationCommand.REQUEST_GATHER_TIMBER, {
+						"villager_id": selected.entity_id,
+						"source_entity_id": entity_id,
+						"destination_entity_id": dest_id
+					})
+					return
+			# Debug move fallback if not clicking a timber source
+			simulation.submit_command(GopalaSimulationCommand.REQUEST_MOVE_VILLAGER, {"villager_id": selected.entity_id, "x": hit.position.x, "z": hit.position.z})
+			hud.notify("Move task assigned", "")
 
 func _on_build_selected(id: StringName) -> void:
 	_placement_rotation = 0
@@ -676,7 +725,7 @@ func _update_ghost(screen: Vector2) -> void:
 func _on_command_processed(result: GopalaCommandResult) -> void:
 	if result.details().get("command_type", &"") == GopalaSimulationCommand.REQUEST_CONSTRUCTION:
 		if result.status == GopalaCommandResult.Status.REJECTED:
-			hud.notify("Placement failed", result.reason, "terra")
+			hud.notify("Placement failed", result.reason_code, "terra")
 		else:
 			hud.notify("Construction started", "Dwelling placed successfully", "forest")
 			hud.close_build()
@@ -697,12 +746,25 @@ func _on_snapshot_committed(snapshot: GopalaSettlementSnapshot) -> void:
 				_spawn_primitive_building(record, entity_id)
 			elif record.kind == &"villager":
 				_spawn_primitive_villager(record, entity_id)
+			elif record.kind == &"resource_source":
+				_spawn_primitive_source(record, entity_id)
 		else:
 			if record.kind == &"villager":
 				var px = record.attributes.get("position_x", 0.0)
 				var pz = record.attributes.get("position_z", 0.0)
 				var h = terrain.height_at(px, pz)
 				_built_views[entity_id].position = Vector3(px, h, pz)
+				var carried = record.attributes.get("carried_amount", 0)
+				_update_villager_carry_visual(_built_views[entity_id], carried)
+			elif record.kind == &"resource_source":
+				var exhausted = record.attributes.get("exhausted", false)
+				_built_views[entity_id].visible = not exhausted
+				var avail = record.attributes.get("available_amount", 5)
+				var reserved = record.attributes.get("reserved_amount", 0)
+				var scale = clamp(float(avail + reserved) / 5.0, 0.2, 1.0)
+				var mesh_child = _built_views[entity_id].get_node_or_null("MeshChild")
+				if mesh_child:
+					mesh_child.scale = Vector3(scale, scale, scale)
 
 func _spawn_primitive_villager(record, entity_id: int) -> void:
 	var view = MeshInstance3D.new()
@@ -729,41 +791,42 @@ func _spawn_primitive_villager(record, entity_id: int) -> void:
 	col.shape = box.create_trimesh_shape()
 	body.add_child(col)
 	adapter.add_child(body)
+	
+	# Carry visual
+	var carry = MeshInstance3D.new()
+	carry.name = "CarryVisual"
+	var timber_box = BoxMesh.new()
+	timber_box.size = Vector3(0.3, 0.3, 1.2)
+	carry.mesh = timber_box
+	var cmat = StandardMaterial3D.new()
+	cmat.albedo_color = Color(0.8, 0.6, 0.2)
+	carry.material_override = cmat
+	carry.position = Vector3(0, 0.5, 0.5)
+	carry.visible = false
+	view.add_child(carry)
 
 	_built_views[entity_id] = view
 
-func _spawn_primitive_building(record, entity_id: int) -> void:
-	var def = simulation.placement_service().get_building(record.attributes["definition_id"])
-	var cells = record.attributes["footprint_cells"]
-	var min_x = INF
-	var max_x = -INF
-	var min_z = INF
-	var max_z = -INF
-	for cell in cells:
-		var center = simulation.coordinate_service().settlement_cell_to_world_xz(Vector2i(cell[0], cell[1]))
-		min_x = min(min_x, center.x)
-		max_x = max(max_x, center.x)
-		min_z = min(min_z, center.y)
-		max_z = max(max_z, center.y)
+func _update_villager_carry_visual(view: Node3D, carried: int) -> void:
+	var carry = view.get_node_or_null("CarryVisual")
+	if carry != null:
+		carry.visible = (carried > 0)
 
-	var center_x = (min_x + max_x) / 2.0
-	var center_z = (min_z + max_z) / 2.0
-	var h = terrain.height_at(center_x, center_z)
-
-	var view = MeshInstance3D.new()
+func _spawn_primitive_source(record, entity_id: int) -> void:
+	var view = Node3D.new()
+	var mesh_child = MeshInstance3D.new()
+	mesh_child.name = "MeshChild"
 	var box = BoxMesh.new()
-	var size_x = def.footprint.x * 2.0 * simulation.coordinate_service()._config.world_units_per_cell
-	var size_y = def.footprint.y * 2.0 * simulation.coordinate_service()._config.world_units_per_cell
-	if record.attributes["rotation"] == 1 or record.attributes["rotation"] == 3:
-		var temp = size_x
-		size_x = size_y
-		size_y = temp
-	box.size = Vector3(size_x, 2.0, size_y)
-	view.mesh = box
-	view.position = Vector3(center_x, h + 1.0, center_z)
+	box.size = Vector3(1.5, 1.0, 1.5)
+	mesh_child.mesh = box
+	var px = record.attributes.get("position_x", 0.0)
+	var pz = record.attributes.get("position_z", 0.0)
+	var h = terrain.height_at(px, pz)
+	view.position = Vector3(px, h + 0.5, pz)
 	var mat = StandardMaterial3D.new()
-	mat.albedo_color = Color(0.6, 0.4, 0.2)
-	view.material_override = mat
+	mat.albedo_color = Color(0.1, 0.6, 0.1)
+	mesh_child.material_override = mat
+	view.add_child(mesh_child)
 	add_child(view)
 
 	var adapter = GopalaEntityViewAdapter3D.new()
@@ -775,6 +838,76 @@ func _spawn_primitive_building(record, entity_id: int) -> void:
 	var col = CollisionShape3D.new()
 	col.shape = box.create_trimesh_shape()
 	body.add_child(col)
+	adapter.add_child(body)
+
+	_built_views[entity_id] = view
+
+func _spawn_primitive_building(record, entity_id: int) -> void:
+	var def_id_attr = record.attributes.get("definition_id", "")
+	var def = simulation.placement_service().get_building(StringName(def_id_attr))
+	
+	var is_player = record.attributes.has("construction_state")
+	var size_x = 2.0
+	var size_y = 2.0
+	var col = Color(0.6, 0.4, 0.2)
+	
+	if not is_player:
+		col = Color(0.4, 0.2, 0.6) # Scenario camp is purple
+		if def != null:
+			size_x = def.footprint.x * 2.0 * simulation.coordinate_service()._config.world_units_per_cell
+			size_y = def.footprint.y * 2.0 * simulation.coordinate_service()._config.world_units_per_cell
+		else:
+			size_x = 4.0
+			size_y = 4.0
+	else:
+		if def == null:
+			push_error("No building def for: " + str(def_id_attr))
+			return
+		size_x = def.footprint.x * 2.0 * simulation.coordinate_service()._config.world_units_per_cell
+		size_y = def.footprint.y * 2.0 * simulation.coordinate_service()._config.world_units_per_cell
+
+	var cells = record.attributes.get("footprint_cells", [])
+	var center_x = record.attributes.get("position_x", 0.0)
+	var center_z = record.attributes.get("position_z", 0.0)
+	if cells.size() > 0:
+		var min_x = INF
+		var max_x = -INF
+		var min_z = INF
+		var max_z = -INF
+		for cell in cells:
+			var center = simulation.coordinate_service().settlement_cell_to_world_xz(Vector2i(cell[0], cell[1]))
+			min_x = min(min_x, center.x)
+			max_x = max(max_x, center.x)
+			min_z = min(min_z, center.y)
+			max_z = max(max_z, center.y)
+		center_x = (min_x + max_x) / 2.0
+		center_z = (min_z + max_z) / 2.0
+
+	var h = terrain.height_at(center_x, center_z)
+
+	var view = MeshInstance3D.new()
+	var box = BoxMesh.new()
+	if record.attributes.get("rotation", 0) == 1 or record.attributes.get("rotation", 0) == 3:
+		var temp = size_x
+		size_x = size_y
+		size_y = temp
+	box.size = Vector3(size_x, 2.0, size_y)
+	view.mesh = box
+	view.position = Vector3(center_x, h + 1.0, center_z)
+	var mat = StandardMaterial3D.new()
+	mat.albedo_color = col
+	view.material_override = mat
+	add_child(view)
+
+	var adapter = GopalaEntityViewAdapter3D.new()
+	adapter.configure(simulation.entity_queries())
+	adapter.bind_entity(entity_id)
+	view.add_child(adapter)
+
+	var body = StaticBody3D.new()
+	var collider = CollisionShape3D.new()
+	collider.shape = box.create_trimesh_shape()
+	body.add_child(collider)
 	adapter.add_child(body)
 
 	_built_views[entity_id] = view

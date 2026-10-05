@@ -40,7 +40,7 @@ def run_stage(name, arguments, timeout=60, external=False):
         if line.startswith(marker):
             result["tests"] = json.loads(line[len(marker):])
             result["ok"] = result["ok"] and result["tests"]["ok"]
-    if name in ["content-tests", "landscape-tests", "scenic-tests", "kathmandu-tests", "coordinate-tests", "waterways-tests", "forest-tests", "entity-registry-tests", "selection-tests", "spatial-grid-tests", "simulation-spine-tests", "ui-tests", "component-gallery-tests"] and "tests" not in result:
+    if name in ["content-tests", "landscape-tests", "scenic-tests", "kathmandu-tests", "coordinate-tests", "waterways-tests", "forest-tests", "entity-registry-tests", "selection-tests", "spatial-grid-tests", "simulation-spine-tests", "ui-tests", "component-gallery-tests", "gather-delivery-tests"] and "tests" not in result:
         result["ok"] = False
     print(f"{name}: {'PASS' if result['ok'] else 'FAIL'}", flush=True)
     return result
@@ -76,6 +76,8 @@ def main():
             stages.append(run_stage("placement-slice-tests", ["--script", "tests/run_placement_slice_tests.gd"]))
         if (ROOT / "game/tests/run_villager_movement_tests.gd").exists():
             stages.append(run_stage("villager-movement-tests", ["--script", "tests/run_villager_movement_tests.gd"]))
+        if (ROOT / "game/tests/run_gather_delivery_tests.gd").exists():
+            stages.append(run_stage("gather-delivery-tests", ["--script", "tests/run_gather_delivery_tests.gd"]))
         if (ROOT / "game/scenes/world/valley.tscn").exists():
             stages.append(run_stage("landscape-tests", ["--script", "tests/run_landscape_tests.gd"]))
         if (ROOT / "game/scenes/landscape/scenic_valley.tscn").exists():
