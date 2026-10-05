@@ -74,6 +74,8 @@ def main():
             stages.append(run_stage("spatial-grid-tests", ["--script", "tests/run_spatial_grid_tests.gd"]))
         if (ROOT / "game/tests/run_placement_slice_tests.gd").exists():
             stages.append(run_stage("placement-slice-tests", ["--script", "tests/run_placement_slice_tests.gd"]))
+        if (ROOT / "game/tests/run_villager_movement_tests.gd").exists():
+            stages.append(run_stage("villager-movement-tests", ["--script", "tests/run_villager_movement_tests.gd"]))
         if (ROOT / "game/scenes/world/valley.tscn").exists():
             stages.append(run_stage("landscape-tests", ["--script", "tests/run_landscape_tests.gd"]))
         if (ROOT / "game/scenes/landscape/scenic_valley.tscn").exists():

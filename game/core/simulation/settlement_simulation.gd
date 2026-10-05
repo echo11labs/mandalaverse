@@ -23,6 +23,7 @@ var _selection_service: GopalaSelectionService
 var _coordinate_service: GopalaSettlementCoordinateService
 var _occupancy_service: GopalaSettlementOccupancyService
 var _placement_service: GopalaConstructionPlacementService
+var _villager_service: GopalaVillagerService
 var _capabilities: Dictionary = {}
 var _snapshot_sequence: int = 0
 var _session_epoch: int = 0
@@ -67,6 +68,11 @@ func _init() -> void:
 	_placement_service.configure(_ledger, _occupancy_service, _entity_registry, _coordinate_service)
 	add_child(_placement_service)
 
+	_villager_service = GopalaVillagerService.new()
+	_villager_service.name = "VillagerService"
+	_villager_service.configure(_entity_queries, _entity_registry, _coordinate_service, _config)
+	add_child(_villager_service)
+
 func bootstrap_session() -> bool:
 	if _session_epoch > 0 or _ledger.amount(&"timber") > 0:
 		return false
@@ -85,6 +91,7 @@ func _physics_process(delta: float) -> void:
 	var advanced := _clock.advance_frame(delta)
 	if advanced > 0:
 		logical_tick_advanced.emit(logical_tick)
+		_villager_service.tick(logical_tick)
 		_commit_snapshot()
 	process_pending_commands()
 
@@ -177,6 +184,9 @@ func occupancy_service() -> GopalaSettlementOccupancyService:
 func placement_service() -> GopalaConstructionPlacementService:
 	return _placement_service
 
+func villager_service() -> GopalaVillagerService:
+	return _villager_service
+
 func elapsed_logical_nanoseconds() -> int:
 	return _clock.elapsed_logical_nanoseconds
 
@@ -260,6 +270,24 @@ func _apply_command(command: GopalaSimulationCommand) -> GopalaCommandResult:
 			if result.status == GopalaCommandResult.Status.APPLIED:
 				_commit_snapshot()
 			return result
+		GopalaSimulationCommand.REQUEST_SPAWN_VILLAGER:
+			if not payload.has("x") or not payload.has("z") or typeof(payload["x"]) != TYPE_FLOAT or typeof(payload["z"]) != TYPE_FLOAT:
+				return _result(command, GopalaCommandResult.Status.REJECTED, GopalaCommandResult.REASON_INVALID_PAYLOAD)
+			var pos := Vector2(payload["x"], payload["z"])
+			var entity_id := _villager_service.spawn_villager(pos)
+			return _result(command, GopalaCommandResult.Status.APPLIED, GopalaCommandResult.REASON_APPLIED, {"changed": true, "entity_id": entity_id})
+		GopalaSimulationCommand.REQUEST_MOVE_VILLAGER:
+			if not payload.has("villager_id") or typeof(payload["villager_id"]) != TYPE_INT:
+				return _result(command, GopalaCommandResult.Status.REJECTED, GopalaCommandResult.REASON_INVALID_PAYLOAD)
+			if not payload.has("x") or not payload.has("z") or typeof(payload["x"]) != TYPE_FLOAT or typeof(payload["z"]) != TYPE_FLOAT:
+				return _result(command, GopalaCommandResult.Status.REJECTED, GopalaCommandResult.REASON_INVALID_PAYLOAD)
+			var villager_id: int = payload["villager_id"]
+			var target := Vector2(payload["x"], payload["z"])
+			var success := _villager_service.assign_move_task(villager_id, target)
+			if success:
+				return _result(command, GopalaCommandResult.Status.APPLIED, GopalaCommandResult.REASON_APPLIED, {"changed": true})
+			else:
+				return _result(command, GopalaCommandResult.Status.REJECTED, GopalaCommandResult.REASON_INVALID_PAYLOAD)
 		_:
 			return _result(command, GopalaCommandResult.Status.REJECTED,
 				GopalaCommandResult.REASON_UNKNOWN_COMMAND)

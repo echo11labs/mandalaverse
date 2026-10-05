@@ -36,22 +36,22 @@ func _ready() -> void:
 	make_grid()
 	make_lakes()
 	make_hud()
-	
+
 	_placement_ghost = MeshInstance3D.new()
 	_placement_ghost.visible = false
 	add_child(_placement_ghost)
-	
+
 	# Configure grid around existing camp
 	var grid_config = GopalaSettlementGridConfig.new(terrain.camp, Rect2i(-24, -24, 48, 48), 2.0, 100.0)
 	simulation.coordinate_service().configure(grid_config)
 	simulation.bootstrap_session()
-	
+
 	_picker = GopalaEntityPickResolver3D.new()
 	_picker.configure(simulation.entity_queries())
-	
+
 	simulation.command_processed.connect(_on_command_processed)
 	simulation.snapshot_committed.connect(_on_snapshot_committed)
-	
+
 	make_trees()
 	if not Array(OS.get_cmdline_user_args()).any(func(s: String): return s.begins_with("--capture")):
 		camera.overview()
@@ -95,7 +95,7 @@ func make_ground() -> void:
 			var px := -200.0+x*400.0/n
 			var pz := -200.0+z*400.0/n
 			var h := terrain.height_at(px,pz)
-			
+
 			# Terrain deformation for lakes
 			for lake in lakes_data:
 				var d := Vector2(px, pz).distance_to(lake.center)
@@ -103,7 +103,7 @@ func make_ground() -> void:
 				if d < effect_radius:
 					var blend := smoothstep(effect_radius, lake.radius * 0.5, d)
 					h = lerpf(h, lake.water_level - 0.1, blend)
-			
+
 			vertices.append(Vector3(px,h,pz))
 			normals.append(terrain.normal_at(px,pz))
 			colors.append(ground_color(px,pz))
@@ -387,19 +387,19 @@ func load_lakes() -> void:
 		return
 	var raw := FileAccess.get_file_as_string("res://data/geography/lake_polygons.json")
 	var lakes: Array = JSON.parse_string(raw)
-	
+
 	var cx := 85.375
 	var cy := 27.695
 	var m_per_deg_lon := 98565.0 / 100.0
 	var m_per_deg_lat := 111320.0 / 100.0
-	
+
 	for lake in lakes:
 		var center_x: float = (float(lake.lon) - cx) * m_per_deg_lon
 		var center_z: float = (cy - float(lake.lat)) * m_per_deg_lat
-		
+
 		var poly2d := PackedVector2Array()
 		var max_dist := 0.0
-		
+
 		if lake.geojson and lake.geojson.type == "Polygon":
 			var ring: Array = lake.geojson.coordinates[0]
 			for pt in ring:
@@ -409,11 +409,11 @@ func load_lakes() -> void:
 				var local_z := pz - center_z
 				poly2d.append(Vector2(local_x, -local_z))
 				max_dist = maxf(max_dist, Vector2(local_x, local_z).length())
-				
+
 		if max_dist < 0.1: max_dist = 0.5 # fallback for Point
-		
+
 		var w_level := terrain.height_at(center_x, center_z) - 0.05
-		
+
 		lakes_data.append({
 			"name": lake.name,
 			"center": Vector2(center_x, center_z),
@@ -425,15 +425,15 @@ func load_lakes() -> void:
 func make_lakes() -> void:
 	if lakes_data.is_empty():
 		return
-	
+
 	var lakes_node := Node3D.new()
 	lakes_node.name = "Ponds"
 	add_child(lakes_node)
-	
+
 	for lake in lakes_data:
 		var pos := Vector3(lake.center.x, lake.water_level, lake.center.y)
 		var node: Node3D = null
-		
+
 		if not lake.poly.is_empty():
 			var indices := Geometry2D.triangulate_polygon(lake.poly)
 			if indices.size() > 0:
@@ -447,7 +447,7 @@ func make_lakes() -> void:
 				var mesh_instance := MeshInstance3D.new()
 				mesh_instance.mesh = st.commit()
 				node = mesh_instance
-		
+
 		if not node:
 			var mesh_instance := MeshInstance3D.new()
 			var mesh := CylinderMesh.new()
@@ -456,7 +456,7 @@ func make_lakes() -> void:
 			mesh.height = 0.02
 			mesh_instance.mesh = mesh
 			node = mesh_instance
-			
+
 		var mat := StandardMaterial3D.new()
 		mat.cull_mode = BaseMaterial3D.CULL_DISABLED
 		mat.albedo_color = Color("2e7399")
@@ -465,10 +465,10 @@ func make_lakes() -> void:
 		mat.roughness = 0.05
 		mat.metallic = 0.2
 		node.material_override = mat
-			
+
 		node.position = pos
 		lakes_node.add_child(node)
-		
+
 		add_label(lake.name, pos + Vector3(0, 1.5, 0), Color("a6e1ff"), 18)
 
 func make_grid() -> void:
@@ -533,6 +533,18 @@ func _unhandled_input(event: InputEvent) -> void:
 			hud.notify("Placement cancelled", "")
 		else:
 			hud.close_build()
+	elif event.is_action_pressed("debug_spawn_villager") and OS.is_debug_build():
+		var hit := pick(get_viewport().get_mouse_position())
+		if not hit.is_empty():
+			simulation.submit_command(GopalaSimulationCommand.REQUEST_SPAWN_VILLAGER, {"x": hit.position.x, "z": hit.position.z})
+			hud.notify("Villager spawned", "")
+	elif event.is_action_pressed("command_move_selected") and OS.is_debug_build():
+		var hit := pick(get_viewport().get_mouse_position())
+		if not hit.is_empty():
+			var selected = simulation.selection_service().snapshot()
+			if selected.state == GopalaSelectionSnapshot.State.ENTITY and selected.entity.kind == GopalaEntityKind.VILLAGER:
+				simulation.submit_command(GopalaSimulationCommand.REQUEST_MOVE_VILLAGER, {"villager_id": selected.entity_id, "x": hit.position.x, "z": hit.position.z})
+				hud.notify("Move task assigned", "")
 	elif event.is_action_pressed("toggle_territory"):
 		cycle_territory_mode()
 	elif hud._placement_active and event.is_action_pressed("placement_rotate_cw"):
@@ -566,7 +578,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				attrs += "[data]" + str(key) + "[/data]  " + str(selected.entity.attributes[key]) + "\n"
 			hud._show_inspection("Building", String(selected.entity.kind).capitalize(), "Entity ID %d" % entity_id, attrs)
 			return
-		
+
 		var river := terrain.nearest_river(p)
 		var elevation := roundi(terrain.elevation_at(p.x,p.z))
 		var title_text := "Valley floor"
@@ -611,9 +623,9 @@ func _update_ghost(screen: Vector2) -> void:
 	var p: Vector3 = hit.position
 	_placement_cell = simulation.coordinate_service().world_to_settlement_cell(Vector2(p.x, p.z))
 	var validation = simulation.placement_service().validate_placement(hud._selected_build, _placement_cell, _placement_rotation)
-	
+
 	_placement_valid = validation.valid
-	
+
 	# Terrain height check manually since simulation doesn't know terrain
 	if _placement_valid:
 		for cell in validation.transformed_cells:
@@ -623,12 +635,12 @@ func _update_ghost(screen: Vector2) -> void:
 			if not terrain.is_buildable(cell_local):
 				_placement_valid = false
 				break
-	
+
 	_placement_ghost.visible = true
 	var mat := StandardMaterial3D.new()
 	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	mat.albedo_color = Color(0.2, 0.8, 0.2, 0.5) if _placement_valid else Color(0.8, 0.2, 0.2, 0.5)
-	
+
 	var def = simulation.placement_service().get_building(hud._selected_build)
 	var size_x = def.footprint.x * 2.0 * simulation.coordinate_service()._config.world_units_per_cell
 	var size_y = def.footprint.y * 2.0 * simulation.coordinate_service()._config.world_units_per_cell
@@ -636,12 +648,12 @@ func _update_ghost(screen: Vector2) -> void:
 		var temp = size_x
 		size_x = size_y
 		size_y = temp
-		
+
 	var box = BoxMesh.new()
 	box.size = Vector3(size_x, 2.0, size_y)
 	_placement_ghost.mesh = box
 	_placement_ghost.material_override = mat
-	
+
 	# Position at center of transformed cells footprint
 	var min_x = INF
 	var max_x = -INF
@@ -653,7 +665,7 @@ func _update_ghost(screen: Vector2) -> void:
 		max_x = max(max_x, center.x)
 		min_z = min(min_z, center.y)
 		max_z = max(max_z, center.y)
-	
+
 	var cell_size = 2.0 * simulation.coordinate_service()._config.world_units_per_cell
 	var center_x = (min_x + max_x) / 2.0
 	var center_z = (min_z + max_z) / 2.0
@@ -673,14 +685,50 @@ func _on_snapshot_committed(snapshot: GopalaSettlementSnapshot) -> void:
 	var balances = snapshot.resource_balances
 	for res_id in balances:
 		hud.set_resource(res_id, balances[res_id])
-		
+
 	var registry_snap = simulation.entity_registry().registry_snapshot()
-	# Spawn primitive views for buildings
+	# Spawn primitive views for buildings and villagers
 	for entity_id in registry_snap.entities:
+		var record = simulation.entity_registry()._entities[entity_id]
 		if not _built_views.has(entity_id):
-			var record = simulation.entity_registry()._entities[entity_id]
 			if record.kind == &"building":
 				_spawn_primitive_building(record, entity_id)
+			elif record.kind == &"villager":
+				_spawn_primitive_villager(record, entity_id)
+		else:
+			if record.kind == &"villager":
+				var px = record.attributes.get("position_x", 0.0)
+				var pz = record.attributes.get("position_z", 0.0)
+				var h = terrain.height_at(px, pz)
+				_built_views[entity_id].position = Vector3(px, h, pz)
+
+func _spawn_primitive_villager(record, entity_id: int) -> void:
+	var view = MeshInstance3D.new()
+	var box = CapsuleMesh.new()
+	box.radius = 0.5
+	box.height = 2.0
+	view.mesh = box
+	var px = record.attributes.get("position_x", 0.0)
+	var pz = record.attributes.get("position_z", 0.0)
+	var h = terrain.height_at(px, pz)
+	view.position = Vector3(px, h, pz)
+	var mat = StandardMaterial3D.new()
+	mat.albedo_color = Color(0.2, 0.4, 0.8)
+	view.material_override = mat
+	add_child(view)
+
+	var adapter = GopalaEntityViewAdapter3D.new()
+	adapter.configure(simulation.entity_queries())
+	adapter.bind_entity(entity_id)
+	view.add_child(adapter)
+
+	var body = StaticBody3D.new()
+	var col = CollisionShape3D.new()
+	col.shape = box.create_trimesh_shape()
+	body.add_child(col)
+	adapter.add_child(body)
+
+	_built_views[entity_id] = view
 
 func _spawn_primitive_building(record, entity_id: int) -> void:
 	var def = simulation.placement_service().get_building(record.attributes["definition_id"])
@@ -695,11 +743,11 @@ func _spawn_primitive_building(record, entity_id: int) -> void:
 		max_x = max(max_x, center.x)
 		min_z = min(min_z, center.y)
 		max_z = max(max_z, center.y)
-		
+
 	var center_x = (min_x + max_x) / 2.0
 	var center_z = (min_z + max_z) / 2.0
 	var h = terrain.height_at(center_x, center_z)
-	
+
 	var view = MeshInstance3D.new()
 	var box = BoxMesh.new()
 	var size_x = def.footprint.x * 2.0 * simulation.coordinate_service()._config.world_units_per_cell
@@ -715,18 +763,18 @@ func _spawn_primitive_building(record, entity_id: int) -> void:
 	mat.albedo_color = Color(0.6, 0.4, 0.2)
 	view.material_override = mat
 	add_child(view)
-	
+
 	var adapter = GopalaEntityViewAdapter3D.new()
 	adapter.configure(simulation.entity_queries())
 	adapter.bind_entity(entity_id)
 	view.add_child(adapter)
-	
+
 	var body = StaticBody3D.new()
 	var col = CollisionShape3D.new()
 	col.shape = box.create_trimesh_shape()
 	body.add_child(col)
 	adapter.add_child(body)
-	
+
 	_built_views[entity_id] = view
 
 func capture() -> void:
