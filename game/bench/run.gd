@@ -81,7 +81,9 @@ func run():
 			point.y = valley.ground_height_at(point.x,point.z)
 			valley.camera.focus_point(point,0.8)
 			second_view = true
-		while float(Time.get_ticks_usec()-start)/1000000.0 >= next_tick and float(Time.get_ticks_usec()-start)/1000000.0 < warmup+duration:
+		# Freeze the due set at this frame's start, as advance_frame(delta) does.
+		# Newly overdue ticks wait for the next frame so rendering can observe stalls.
+		while elapsed >= next_tick and float(Time.get_ticks_usec()-start)/1000000.0 < warmup+duration:
 			var tick_start := Time.get_ticks_usec()
 			var tick_elapsed := float(tick_start-start)/1000000.0
 			var tick_collecting := tick_elapsed >= warmup
