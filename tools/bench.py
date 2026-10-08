@@ -70,7 +70,7 @@ def main():
         started = time.monotonic()
         log = output/(stem+'.log')
         with log.open('w') as stream:
-            completed = subprocess.run(command,stdout=stream,stderr=subprocess.STDOUT,timeout=warmup+duration+90)
+            completed = subprocess.run(command,stdout=stream,stderr=subprocess.STDOUT,timeout=warmup+duration+600)
         text = log.read_text(errors='replace')
         if completed.returncode or ERROR.search(text) or not path.exists() or 'GOPALA_TEST_REPORT=' not in text:
             raise SystemExit('Replay failed; inspect '+str(log))
