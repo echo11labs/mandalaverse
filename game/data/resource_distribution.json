@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "cross_resource_spacing_metres": 30,
+  "timber": {
+    "count": 12,
+    "seed_offset": 23117,
+    "radius_min_metres": 20,
+    "radius_max_metres": 85,
+    "spacing_metres": 12,
+    "amount_min": 15,
+    "amount_max": 30
+  },
+  "stone": {
+    "count": 24,
+    "seed_offset": 11927,
+    "radius_min_metres": 10,
+    "radius_max_metres": 95,
+    "spacing_metres": 5,
+    "amount_min": 15,
+    "amount_max": 45
+  },
+  "thatch": {
+    "count": 8,
+    "seed_offset": 33371,
+    "radius_min_metres": 12,
+    "radius_max_metres": 95,
+    "spacing_metres": 6,
+    "cross_resource_spacing_metres": 6,
+    "amount_min": 12,
+    "amount_max": 24,
+    "timber_clearance_metres": 12
+  },
+  "wild_food": {
+    "count": 8,
+    "seed_offset": 44617,
+    "radius_min_metres": 12,
+    "radius_max_metres": 95,
+    "spacing_metres": 6,
+    "cross_resource_spacing_metres": 6,
+    "amount_min": 12,
+    "amount_max": 24,
+    "timber_clearance_metres": 12
+  },
+  "fodder": {
+    "count": 8,
+    "seed_offset": 55711,
+    "radius_min_metres": 12,
+    "radius_max_metres": 95,
+    "spacing_metres": 6,
+    "cross_resource_spacing_metres": 6,
+    "amount_min": 12,
+    "amount_max": 24,
+    "timber_clearance_metres": 12
+  }
+}

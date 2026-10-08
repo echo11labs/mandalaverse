@@ -48,6 +48,9 @@ static func check_records(records: Array[Resource]) -> Array[String]:
 			for key in record.costs:
 				if not goods.has(str(key)) or record.costs[key] <= 0:
 					errors.append("Unknown good or invalid cost: " + str(record.id) + "/" + str(key))
+			for key in record.inventory_limits:
+				if not goods.has(str(key)) or record.inventory_limits[key] <= 0 or record.inventory_limits[key] > GopalaSimulationConfig.MAX_BALANCE:
+					errors.append("Unknown good or invalid storage limit: " + str(record.id) + "/" + str(key))
 		elif record is GopalaZoneDefinition and record.minimum_cells < 1:
 			errors.append("Invalid zone minimum: " + str(record.id))
 	return errors

@@ -76,12 +76,11 @@ func _test_placement_slice() -> void:
 	expect(entity_id != -1, "Success creates one building")
 
 	var after_timber = sim.resource_amount(&"timber")
-	var timber_cost = def.costs[&"timber"] if def.costs.has(&"timber") else 0
-	expect(after_timber == initial_timber - timber_cost, "Timber deducted exactly once")
+	expect(after_timber == initial_timber, "Timber not deducted immediately at placement")
 
 	# Check plain data
 	var entity = sim.entity_registry().snapshot(entity_id)
-	expect(entity != null and entity.attributes.get("construction_state") == "completed", "Entity attributes are plain data")
+	expect(entity != null and entity.attributes.get("construction_state") == "BLUEPRINT", "Entity attributes are plain data")
 	expect(entity != null and typeof(entity.attributes.get("rotation")) == TYPE_INT, "Entity rotation is int")
 
 	# Occupied
@@ -125,8 +124,7 @@ func _test_placement_slice() -> void:
 	sim_w.process_pending_commands()
 	await process_frame
 
-	var final_timber = sim_w.resource_amount(&"timber")
-	expect(final_timber < 100, "Left click in unhandled input places building")
+	expect(sim_w.entity_registry().snapshots_by_kind(&"building").size() > 0, "Left click in unhandled input places building")
 
 	# Simulate cancel
 	var esc = InputEventKey.new()

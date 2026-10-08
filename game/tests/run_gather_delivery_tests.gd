@@ -79,7 +79,7 @@ func run() -> void:
 	
 	# Move until arrival
 	for i in range(200):
-		sim._physics_process(1.0/60.0)
+		sim.advance_ticks(1)
 		v_snap = sim.entity_queries().snapshot(v_id)
 		if v_snap.attributes.get(&"task_state") == &"MOVING_TO_DROPOFF":
 			break
@@ -94,7 +94,7 @@ func run() -> void:
 	
 	# Move to camp
 	for i in range(200):
-		sim._physics_process(1.0/60.0)
+		sim.advance_ticks(1)
 		v_snap = sim.entity_queries().snapshot(v_id)
 		if v_snap.attributes.get(&"task_state") == &"NONE":
 			break

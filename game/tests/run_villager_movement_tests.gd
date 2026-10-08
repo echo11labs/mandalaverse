@@ -53,14 +53,14 @@ func _test_villager_movement() -> void:
 	
 	# 3. Debug spawn creates exactly one additional villager.
 	var pre_debug_count = villagers2.size()
-	sim.submit_command(GopalaSimulationCommand.REQUEST_SPAWN_VILLAGER, {"x": 10.0, "z": 10.0})
+	sim.submit_command(GopalaSimulationCommand.REQUEST_SPAWN_VILLAGER, {"x": 0.1, "z": 0.1})
 	sim.process_pending_commands()
 	var villagers3 = sim.entity_queries().snapshots_by_kind(GopalaEntityKind.VILLAGER)
 	expect(villagers3.size() == pre_debug_count + 1, "Debug spawn creates exactly one additional villager")
 	
 	# 4. Invalid/non-finite spawn rejects.
 	var pre_invalid_count = villagers3.size()
-	sim.submit_command(GopalaSimulationCommand.REQUEST_SPAWN_VILLAGER, {"x": INF, "z": 10.0})
+	sim.submit_command(GopalaSimulationCommand.REQUEST_SPAWN_VILLAGER, {"x": INF, "z": 0.1})
 	sim.process_pending_commands()
 	var villagers4 = sim.entity_queries().snapshots_by_kind(GopalaEntityKind.VILLAGER)
 	expect(villagers4.size() == pre_invalid_count, "Invalid/non-finite spawn rejects")
@@ -68,17 +68,18 @@ func _test_villager_movement() -> void:
 	# 5. Spawn attributes contain plain data only.
 	var test_villager = villagers3[1] # The debug spawned one
 	var attrs = test_villager.attributes
+	expect(is_equal_approx(attrs.get(&"movement_speed"), 0.014), "Default walking speed converts 1.4 m/s to world units")
 	expect(GopalaPlainData.validate(attrs), "Spawn attributes contain plain data only")
 	
 	# 6. Move accepts a live villager.
 	var v_id = test_villager.entity_id
-	sim.submit_command(GopalaSimulationCommand.REQUEST_MOVE_VILLAGER, {"villager_id": v_id, "x": 20.0, "z": 20.0})
+	sim.submit_command(GopalaSimulationCommand.REQUEST_MOVE_VILLAGER, {"villager_id": v_id, "x": 0.2, "z": 0.2})
 	sim.process_pending_commands()
 	var updated_v = sim.entity_queries().snapshot(v_id)
 	expect(updated_v.attributes.get(&"movement_state") == &"MOVING", "Move accepts a live villager")
 	
 	# 7. Move rejects an unknown ID.
-	sim.submit_command(GopalaSimulationCommand.REQUEST_MOVE_VILLAGER, {"villager_id": 999999, "x": 20.0, "z": 20.0})
+	sim.submit_command(GopalaSimulationCommand.REQUEST_MOVE_VILLAGER, {"villager_id": 999999, "x": 0.2, "z": 0.2})
 	sim.process_pending_commands()
 	var unknown_snapshot = sim.entity_queries().snapshot(999999)
 	expect(unknown_snapshot == null, "Move rejects an unknown ID")
@@ -89,7 +90,7 @@ func _test_villager_movement() -> void:
 	var buildings = sim.entity_queries().snapshots_by_kind(&"building")
 	if buildings.size() > 0:
 		var b_id = buildings[0].entity_id
-		sim.submit_command(GopalaSimulationCommand.REQUEST_MOVE_VILLAGER, {"villager_id": b_id, "x": 20.0, "z": 20.0})
+		sim.submit_command(GopalaSimulationCommand.REQUEST_MOVE_VILLAGER, {"villager_id": b_id, "x": 0.2, "z": 0.2})
 		sim.process_pending_commands()
 		var b_updated = sim.entity_queries().snapshot(b_id)
 		expect(b_updated.attributes.get(&"movement_state") == null, "Move rejects a building ID")
@@ -97,7 +98,7 @@ func _test_villager_movement() -> void:
 		expect(false, "Building could not be spawned for test 8")
 		
 	# 9. Destination is recorded.
-	expect(updated_v.attributes.get(&"destination_x") == 20.0 and updated_v.attributes.get(&"destination_z") == 20.0, "Destination is recorded")
+	expect(is_equal_approx(updated_v.attributes.get(&"destination_x"), 0.2) and is_equal_approx(updated_v.attributes.get(&"destination_z"), 0.2), "Destination is recorded")
 	
 	# 10. Paused simulation does not move.
 	var old_pos_x = updated_v.attributes.get(&"position_x")
@@ -127,21 +128,21 @@ func _test_villager_movement() -> void:
 	var arrived_v = sim.entity_queries().snapshot(v_id)
 	var arrived_pos_x = arrived_v.attributes.get(&"position_x")
 	var arrived_pos_z = arrived_v.attributes.get(&"position_z")
-	expect(arrived_pos_x == 20.0 and arrived_pos_z == 20.0, "Movement does not overshoot")
+	expect(is_equal_approx(arrived_pos_x, 0.2) and is_equal_approx(arrived_pos_z, 0.2), "Movement does not overshoot")
 	expect(arrived_v.attributes.get(&"movement_state") == &"IDLE" and arrived_v.attributes.get(&"task_kind") == &"NONE", "Arrival sets IDLE and task NONE")
 	
 	# 14. Equal tick counts produce equal positions.
 	# Reset position to 10,10 and test moving to 30,30
-	sim.entity_registry().update_entity(v_id, {&"position_x": 10.0, &"position_z": 10.0})
-	sim.submit_command(GopalaSimulationCommand.REQUEST_MOVE_VILLAGER, {"villager_id": v_id, "x": 30.0, "z": 30.0})
+	sim.entity_registry().update_entity(v_id, {&"position_x": 0.1, &"position_z": 0.1}, {}, sim.logical_tick)
+	sim.submit_command(GopalaSimulationCommand.REQUEST_MOVE_VILLAGER, {"villager_id": v_id, "x": 0.3, "z": 0.3})
 	sim.process_pending_commands()
 	for i in range(5):
 		sim._advance_runtime_delta_for_tests(1.0)
 	var test1_v = sim.entity_queries().snapshot(v_id)
 	var test1_pos = Vector2(test1_v.attributes.get(&"position_x"), test1_v.attributes.get(&"position_z"))
 	
-	sim.entity_registry().update_entity(v_id, {&"position_x": 10.0, &"position_z": 10.0})
-	sim.submit_command(GopalaSimulationCommand.REQUEST_MOVE_VILLAGER, {"villager_id": v_id, "x": 30.0, "z": 30.0})
+	sim.entity_registry().update_entity(v_id, {&"position_x": 0.1, &"position_z": 0.1}, {}, sim.logical_tick)
+	sim.submit_command(GopalaSimulationCommand.REQUEST_MOVE_VILLAGER, {"villager_id": v_id, "x": 0.3, "z": 0.3})
 	sim.process_pending_commands()
 	for i in range(10):
 		sim._advance_runtime_delta_for_tests(0.5)
@@ -164,7 +165,7 @@ func _test_villager_movement() -> void:
 	
 	# 17. Old entity snapshots remain unchanged.
 	var old_snap = sim.entity_queries().snapshot(v_id)
-	sim.submit_command(GopalaSimulationCommand.REQUEST_MOVE_VILLAGER, {"villager_id": v_id, "x": 50.0, "z": 50.0})
+	sim.submit_command(GopalaSimulationCommand.REQUEST_MOVE_VILLAGER, {"villager_id": v_id, "x": 0.5, "z": 0.5})
 	sim.process_pending_commands()
 	var new_snap = sim.entity_queries().snapshot(v_id)
 	expect(old_snap.attributes.get(&"destination_x") != new_snap.attributes.get(&"destination_x"), "Old entity snapshots remain unchanged")

@@ -11,6 +11,9 @@ const CONSTRUCTION_SITE: StringName = &"construction_site"
 const TASK: StringName = &"task"
 const INVENTORY: StringName = &"inventory"
 
+const ANIMAL: StringName = &"animal"
+const ZONE: StringName = &"zone"
+
 const ALL: Array[StringName] = [
 	SETTLEMENT,
 	VILLAGER,
@@ -21,6 +24,8 @@ const ALL: Array[StringName] = [
 	CONSTRUCTION_SITE,
 	TASK,
 	INVENTORY,
+	ANIMAL,
+	ZONE,
 ]
 
 static func is_valid(kind: StringName) -> bool:

@@ -11,4 +11,5 @@ footprint = Vector2i(2, 2)
 entrance = Vector2i(0, 2)
 costs = Dictionary[StringName, int]({&"timber": 8, &"thatch": 6, &"stone": 2})
 work_ticks = 100
+home_capacity = 4
 prototype_sprite = ExtResource("2")

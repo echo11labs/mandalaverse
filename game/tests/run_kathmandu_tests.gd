@@ -72,20 +72,18 @@ func run() -> void:
 	camera.focus_point(camp_point, camera.management_size())
 	var moved_from: Vector3 = camera.target
 	Input.action_press("camera_right")
-	for _frame in 8:
-		await process_frame
+	camera._process(0.25)
 	Input.action_release("camera_right")
-	expect(camera.target.distance_to(moved_from) > 0.5, "Camera right moves the camp view")
+	expect(camera.target.distance_to(moved_from) > camera.size * 0.05, "Camera right moves the camp view")
 	moved_from = camera.target
 	Input.action_press("camera_forward")
 	Input.action_press("camera_right")
-	for _frame in 8:
-		await process_frame
+	camera._process(0.25)
 	Input.action_release("camera_forward")
 	Input.action_release("camera_right")
 	var step: Vector3 = camera.target - moved_from
 	var ground := Vector3(step.x, 0, step.z)
-	expect(absf(ground.dot(camera.ground_right())) > 0.2 and absf(ground.dot(camera.ground_forward())) > 0.2, "Two camera keys travel diagonally")
+	expect(absf(ground.dot(camera.ground_right())) > camera.size * 0.05 and absf(ground.dot(camera.ground_forward())) > camera.size * 0.05, "Two camera keys travel diagonally")
 	camera.focus_point(Vector3(0, 8, 0), camera.maximum_size())
 	var locked: Vector3 = camera.target
 	camera.pan_ground(40.0, 0.0)
@@ -95,7 +93,7 @@ func run() -> void:
 	camera.focus_point(camp_point, camera.management_size())
 	var span_before: float = camera.size
 	camera.zoom_step(0.84)
-	expect(camera.size < span_before - 0.1, "Zoom step draws the view closer")
+	expect(camera.size < span_before * 0.9, "Zoom step draws the view closer")
 	var yaw_before: float = camera.yaw
 	camera.turn_by(45.0)
 	expect(is_equal_approx(fposmod(camera.yaw - yaw_before, 360.0), 45.0), "Turn steps by 45 degrees")
@@ -108,6 +106,66 @@ func run() -> void:
 	expect(absf(fposmod(drag_from - camera.yaw, 360.0) - 17.6) < 1.0, "Middle-drag turns continuously with the mouse")
 	expect(camera.pitch > pitch_from, "Dragging the middle mouse upward lifts the view")
 	expect(camera.pitch >= camera.PITCH_MIN and camera.pitch <= camera.PITCH_MAX, "Tilt stays inside the Farthest Frontier style limits")
+	camera.rotating = false
+	world.focus_camp()
+	expect(is_equal_approx(camera.size, 0.4), "Default settlement span is 40 metres")
+	expect(camera.position.distance_to(camera.target) < 5.0, "Default camera is close enough for physically sized resources")
+	expect(is_equal_approx(camera.target.y, world.ground_height_at(camera.target.x, camera.target.z)), "Default pivot meets terrain height")
+	camera.pan_ground(0.5, 0.3)
+	expect(is_equal_approx(camera.target.y, world.ground_height_at(camera.target.x, camera.target.z)), "Panning follows ground elevation")
+	camera.tilt_by(8.0)
+	var chosen_pitch: float = camera.pitch
+	camera.zoom_by(0.6)
+	expect(is_equal_approx(camera.pitch, chosen_pitch), "Zoom preserves chosen tilt")
+	camera.reset_focus(camp_point)
+	await physics_frame
+	var pointer: Vector2 = camera.view_size() * Vector2(0.6, 0.55)
+	var anchor: Vector3 = camera.terrain_hit(pointer)
+	camera.zoom_toward(pointer, 0.84)
+	expect(not is_inf(anchor.x) and camera.unproject_position(anchor).distance_to(pointer) < 1.0, "Zoom keeps terrain under the cursor")
+	var grabbed: Vector3 = camera.plane_hit(pointer, camera.target.y)
+	camera.drag_pan(pointer, pointer + Vector2(30.0, 10.0))
+	expect(camera.unproject_position(grabbed).distance_to(pointer + Vector2(30.0, 10.0)) < 2.0, "Ground drag follows the pointer at chosen tilt")
+	camera.focus_point(camp_point, 2.0)
+	var smooth_start: float = camera.size
+	camera.queue_zoom(camera.view_size() * 0.5, 0.84)
+	camera._process(1.0 / 60.0)
+	expect(camera.size < smooth_start and camera.size > smooth_start * 0.84, "Wheel zoom interpolates without a jump")
+	for frame in 90:
+		camera._process(1.0 / 60.0)
+	expect(absf(camera.size - smooth_start * 0.84) < 0.001, "Smooth zoom converges to wheel target")
+	var right_click := InputEventMouseButton.new()
+	right_click.button_index = MOUSE_BUTTON_RIGHT
+	right_click.pressed = true
+	camera._unhandled_input(right_click)
+	expect(not camera.dragging and not camera.rotating, "Right-click orders do not start camera dragging")
+	var middle_click := InputEventMouseButton.new()
+	middle_click.button_index = MOUSE_BUTTON_MIDDLE
+	middle_click.pressed = true
+	camera._unhandled_input(middle_click)
+	expect(camera.dragging and not camera.rotating, "Middle drag pans")
+	middle_click.shift_pressed = true
+	camera._unhandled_input(middle_click)
+	expect(camera.rotating and not camera.dragging, "Shift middle drag orbits")
+	middle_click.pressed = false
+	camera._unhandled_input(middle_click)
+	for span in [camera.MIN_SIZE, 2.0, 65.0]:
+		for tilt in [camera.PITCH_MIN, camera.PITCH_MAX]:
+			camera.pitch = tilt
+			camera.focus_point(camp_point, span)
+			expect(camera.near > 0.0 and camera.far > camera.camera_distance(), "Clipping contains target at every zoom and tilt")
+			expect(not camera.is_position_behind(camp_point), "Focused terrain stays in front of camera")
+			camera.size = camera.maximum_size()
+			camera.pan_ground(1000.0, 1000.0)
+			for corner in camera.ground_corners():
+				expect(absf(corner.x) <= 200.01 and absf(corner.z) <= 200.01, "Map boundary clamp respects tilted frustum")
+	camera.reset_focus(camp_point)
+	for layer in [world.detail_forest, world.detail_stones]:
+		for group in layer.get_children():
+			if group is MultiMeshInstance3D:
+				expect(group.visibility_range_end == 0.0, "Orthographic scenery is not culled by camera distance")
+				expect(group.custom_aabb.size.x > 0.0 and group.custom_aabb.size.y > 0.0, "Scenery frustum culling has nonempty mesh bounds")
+
 	var forest_receipt: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/forest/bake-receipt.json"))
 	var forest_review: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/forest/review.json"))
 	var approved_hash := String(forest_review.get("accepted_bake_sha256", ""))

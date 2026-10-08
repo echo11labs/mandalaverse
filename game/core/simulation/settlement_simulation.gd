@@ -23,13 +23,20 @@ var _selection_service: GopalaSelectionService
 var _coordinate_service: GopalaSettlementCoordinateService
 var _occupancy_service: GopalaSettlementOccupancyService
 var _placement_service: GopalaConstructionPlacementService
+var _route_service: GopalaSettlementRouteService
 var _villager_service: GopalaVillagerService
 var _gather_delivery_service: GopalaGatherDeliveryService
+var _construction_labor_service: GopalaConstructionLaborService
+var _storage_service: GopalaStorageService
+var _worker_job_service: GopalaWorkerJobService
+var _herd_service: GopalaHerdService
+var _survival_service: GopalaSurvivalService
 var _capabilities: Dictionary = {}
 var _snapshot_sequence: int = 0
 var _session_epoch: int = 0
 var _processing_commands: bool = false
 var _resetting: bool = false
+var _advancing_ticks := false
 
 var paused: bool:
 	get: return _clock.paused
@@ -69,15 +76,34 @@ func _init() -> void:
 	_placement_service.configure(_ledger, _occupancy_service, _entity_registry, _coordinate_service)
 	add_child(_placement_service)
 
+	_route_service = GopalaSettlementRouteService.new()
+	_route_service.name = "SettlementRoutes"
+	_route_service.configure(_coordinate_service, _occupancy_service, _entity_queries)
+	add_child(_route_service)
+	_placement_service.routes = _route_service
 	_villager_service = GopalaVillagerService.new()
 	_villager_service.name = "VillagerService"
-	_villager_service.configure(_entity_queries, _entity_registry, _coordinate_service, _config)
+	_villager_service.configure(_entity_queries, _entity_registry, _coordinate_service, _config, _route_service)
 	add_child(_villager_service)
 	
 	_gather_delivery_service = GopalaGatherDeliveryService.new()
 	_gather_delivery_service.name = "GatherDeliveryService"
 	_gather_delivery_service.configure(_entity_queries, _entity_registry, _ledger, _villager_service, _coordinate_service)
 	add_child(_gather_delivery_service)
+
+	_construction_labor_service = GopalaConstructionLaborService.new()
+	_construction_labor_service.name = "ConstructionLaborService"
+	_construction_labor_service.configure(_entity_queries, _entity_registry, _ledger, _villager_service, _coordinate_service)
+	add_child(_construction_labor_service)
+	_placement_service._labor_service = _construction_labor_service
+	_storage_service = GopalaStorageService.new(self)
+	_worker_job_service = GopalaWorkerJobService.new(self)
+	_survival_service = GopalaSurvivalService.new(self)
+	_herd_service = GopalaHerdService.new(self)
+	_gather_delivery_service.storage = _storage_service
+	_construction_labor_service.storage = _storage_service
+	_placement_service.storage = _storage_service
+	_entity_registry.entity_removed.connect(_storage_service.on_removed)
 
 func bootstrap_session() -> bool:
 	if _session_epoch > 0 or _ledger.amount(&"timber") > 0:
@@ -94,12 +120,20 @@ func _ready() -> void:
 	_commit_snapshot()
 
 func _physics_process(delta: float) -> void:
+	_advancing_ticks = true
+	_storage_service.flush_removed()
 	var advanced := _clock.advance_frame(delta)
 	for i in range(advanced):
 		logical_tick_advanced.emit(logical_tick - advanced + i + 1)
+		_survival_service.tick(logical_tick - advanced + i + 1)
 		_villager_service.tick(logical_tick - advanced + i + 1)
 		_gather_delivery_service.tick(logical_tick - advanced + i + 1)
+		_construction_labor_service.tick(logical_tick - advanced + i + 1)
+		_herd_service.tick(logical_tick - advanced + i + 1)
+		_worker_job_service.tick(logical_tick - advanced + i + 1)
+		GopalaMvpScenario.tick(self,logical_tick - advanced + i + 1)
 		_commit_snapshot()
+	_advancing_ticks = false
 	process_pending_commands()
 
 func submit_command(command_type: StringName, payload: Dictionary = {}, source_id: StringName = &"") -> int:
@@ -115,6 +149,7 @@ func process_pending_commands() -> int:
 	var drain_epoch := _session_epoch
 	var logical_tick_before_drain := logical_tick
 	while drained < drain_count and _session_epoch == drain_epoch and _queue.has_pending():
+		_storage_service.flush_removed()
 		var command: GopalaSimulationCommand = _queue.pop_front()
 		if command == null:
 			break
@@ -152,12 +187,27 @@ func request_construction(building_id: StringName, cell: Vector2i, rotation: int
 func advance_ticks(count: int) -> bool:
 	if paused and count > 0:
 		return false
-	if not _clock.advance_ticks(count):
+	if count < 0:
 		return false
-	if count > 0:
+	if count == 0:
+		return true
+	_advancing_ticks = true
+	for i in range(count):
+		if not _clock.advance_ticks(1):
+			_advancing_ticks = false
+			return false
 		logical_tick_advanced.emit(logical_tick)
+		_storage_service.flush_removed()
+		_survival_service.tick(logical_tick)
+		_villager_service.tick(logical_tick)
+		_gather_delivery_service.tick(logical_tick)
+		_construction_labor_service.tick(logical_tick)
+		_herd_service.tick(logical_tick)
+		_worker_job_service.tick(logical_tick)
+		GopalaMvpScenario.tick(self,logical_tick)
 		_commit_snapshot()
 		process_pending_commands()
+	_advancing_ticks = false
 	return true
 
 func tick_interval_seconds() -> float:
@@ -213,7 +263,7 @@ func validate_resource_transaction(delta: Variant) -> bool:
 	return _ledger.validate_transaction(delta)
 
 func apply_authorized_transaction(delta: Variant) -> bool:
-	if not _ledger.apply_authorized_transaction(delta):
+	if not delta is Dictionary or not _storage_service.apply_transaction(delta):
 		return false
 	_commit_snapshot()
 	return true
@@ -236,10 +286,17 @@ func reset() -> bool:
 	if _entity_registry != null:
 		_entity_registry.reset()
 	_entity_ids.reset_new_session()
+	_villager_service.reset()
 	_clock.reset()
 	_ledger.reset()
+	_storage_service.stocks.clear()
+	_storage_service._positions.clear()
+	_storage_service._removed.clear()
+	_storage_service.located = false
 	if _gather_delivery_service != null:
 		_gather_delivery_service.reset()
+	if _construction_labor_service != null:
+		_construction_labor_service.reset()
 	_snapshot_sequence = 0
 	if not was_paused:
 		pause_changed.emit(true)
@@ -291,6 +348,8 @@ func _apply_command(command: GopalaSimulationCommand) -> GopalaCommandResult:
 				return _result(command, GopalaCommandResult.Status.REJECTED, GopalaCommandResult.REASON_INVALID_PAYLOAD)
 			var pos := Vector2(payload["x"], payload["z"])
 			var entity_id := _villager_service.spawn_villager(pos)
+			if entity_id == 0:
+				return _result(command,GopalaCommandResult.Status.REJECTED,&"INVALID_SPAWN_POSITION")
 			return _result(command, GopalaCommandResult.Status.APPLIED, GopalaCommandResult.REASON_APPLIED, {"changed": true, "entity_id": entity_id})
 		GopalaSimulationCommand.REQUEST_MOVE_VILLAGER:
 			if not payload.has("villager_id") or typeof(payload["villager_id"]) != TYPE_INT:
@@ -303,9 +362,27 @@ func _apply_command(command: GopalaSimulationCommand) -> GopalaCommandResult:
 			if success:
 				return _result(command, GopalaCommandResult.Status.APPLIED, GopalaCommandResult.REASON_APPLIED, {"changed": true})
 			else:
-				return _result(command, GopalaCommandResult.Status.REJECTED, GopalaCommandResult.REASON_INVALID_PAYLOAD)
-		GopalaSimulationCommand.REQUEST_GATHER_TIMBER:
+				return _result(command, GopalaCommandResult.Status.REJECTED, _villager_service.last_failure if _villager_service.last_failure != &"" else GopalaCommandResult.REASON_INVALID_PAYLOAD)
+		GopalaSimulationCommand.ASSIGN_CATTLE_PASTURE:
+			return _herd_service.assign_pasture(command,logical_tick)
+		GopalaSimulationCommand.CREATE_PASTURE:
+			return _herd_service.create_pasture(command,logical_tick)
+		GopalaSimulationCommand.SET_WORK_ROLE:
+			return _worker_job_service.assign(command,logical_tick)
+		GopalaSimulationCommand.REQUEST_STOP_GATHERING:
+			return _gather_delivery_service.handle_stop_gathering(command, logical_tick)
+		GopalaSimulationCommand.REQUEST_GATHER_TIMBER, GopalaSimulationCommand.REQUEST_GATHER_STONE, GopalaSimulationCommand.REQUEST_GATHER_RESOURCE:
 			var result = _gather_delivery_service.handle_request_gather_timber(command, logical_tick)
+			if result.status == GopalaCommandResult.Status.APPLIED:
+				_commit_snapshot()
+			return result
+		GopalaSimulationCommand.REQUEST_ASSIGN_BUILDER:
+			var result = _construction_labor_service.handle_request_assign_builder(command, logical_tick)
+			if result.status == GopalaCommandResult.Status.APPLIED:
+				_commit_snapshot()
+			return result
+		GopalaSimulationCommand.REQUEST_CANCEL_CONSTRUCTION:
+			var result = _placement_service.handle_request_cancel_construction(command, logical_tick)
 			if result.status == GopalaCommandResult.Status.APPLIED:
 				_commit_snapshot()
 			return result
@@ -349,12 +426,12 @@ func _commit_snapshot() -> void:
 
 func _on_registry_transaction_committed(_snapshot: GopalaEntityRegistrySnapshot) -> void:
 	# The final reset-state snapshot is committed after clock/ledger/sequence reset.
-	if _resetting:
+	if _resetting or _advancing_ticks:
 		return
 	_commit_snapshot()
 
 func _on_occupancy_changed(_grid_snapshot: GopalaOccupancyGridSnapshot) -> void:
-	if _resetting:
+	if _resetting or _advancing_ticks:
 		return
 	_commit_snapshot()
 
@@ -363,6 +440,10 @@ func _snapshot_sequence_for_tests() -> int:
 
 func _reset_ledger_for_tests() -> void:
 	_ledger.reset()
+	_storage_service.stocks.clear()
+	_storage_service._positions.clear()
+	_storage_service._removed.clear()
+	_storage_service.located = false
 
 func _seed_resources_for_tests(delta: Dictionary) -> bool:
 	if not _ledger._seed_for_tests(delta):

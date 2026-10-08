@@ -9,5 +9,6 @@ extends Resource
 @export var entrance: Vector2i = Vector2i(0, 2)
 @export var costs: Dictionary[StringName, int] = {}
 @export_range(1, 100000) var work_ticks: int = 100
+@export var inventory_limits: Dictionary[StringName, int] = {}
+@export_range(0, 100) var home_capacity: int = 0
 @export var prototype_sprite: Texture2D
-
