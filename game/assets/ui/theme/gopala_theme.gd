@@ -171,3 +171,40 @@ static func style_misc(theme: Theme) -> void:
 
 	theme.set_stylebox("panel", "ProgressBar", flat(PAPER_SUNK, 6, 1, INK_FAINT))
 	theme.set_color("font_color", "ProgressBar", INK)
+# The accepted 52-pixel top navbar is the reference for active gameplay UI.
+const NAV_SURFACE := Color("1c180d")
+const NAV_RAISED := Color("282313")
+const NAV_INSET := Color("15120a")
+const NAV_TEXT := Color("fdfbf7")
+const NAV_MUTED := Color("bcb6a6")
+const NAV_BORDER := Color("61512d")
+const NAV_RADIUS := 5
+const NAV_BODY_SIZE := 13
+const NAV_TITLE_SIZE := 16
+const NAV_CONTROL_HEIGHT := 32
+
+static func navbar() -> Theme:
+	var theme := build()
+	theme.default_font_size = NAV_BODY_SIZE
+	for type in ["Label","Button","LineEdit","PopupMenu","TooltipLabel"]:
+		theme.set_font_size("font_size",type,NAV_BODY_SIZE)
+		theme.set_color("font_color",type,NAV_TEXT)
+	for state in ["font_hover_color","font_pressed_color","font_focus_color"]: theme.set_color(state,"Button",BRASS_LIGHT)
+	theme.set_color("font_disabled_color","Button",NAV_MUTED)
+	theme.set_color("default_color","RichTextLabel",NAV_TEXT)
+	theme.set_constant("line_separation","RichTextLabel",3)
+	for type in ["Panel","PanelContainer","PopupMenu","Window","AcceptDialog","TooltipPanel"]:
+		theme.set_stylebox("panel",type,flat(NAV_SURFACE,NAV_RADIUS,1,NAV_BORDER,10,8))
+	for type in ["Button","MenuButton","OptionButton","CheckButton","CheckBox"]:
+		theme.set_stylebox("normal",type,flat(NAV_INSET,NAV_RADIUS,1,NAV_BORDER,8,5))
+		theme.set_stylebox("hover",type,flat(NAV_RAISED,NAV_RADIUS,1,BRASS,8,5))
+		theme.set_stylebox("pressed",type,flat(NAV_RAISED,NAV_RADIUS,1,BRASS,8,5))
+		theme.set_stylebox("hover_pressed",type,flat(NAV_RAISED,NAV_RADIUS,1,BRASS_LIGHT,8,5))
+		theme.set_stylebox("focus",type,flat(Color.TRANSPARENT,NAV_RADIUS,2,BRASS_LIGHT,8,5))
+		theme.set_stylebox("disabled",type,flat(NAV_INSET,NAV_RADIUS,1,NAV_BORDER,8,5))
+	for state in ["normal","focus"]: theme.set_stylebox(state,"LineEdit",flat(NAV_INSET,NAV_RADIUS,1,NAV_BORDER,8,5))
+	theme.set_stylebox("hover","PopupMenu",flat(NAV_RAISED,NAV_RADIUS))
+	theme.set_stylebox("background","ProgressBar",flat(NAV_INSET,NAV_RADIUS,1,NAV_BORDER))
+	theme.set_stylebox("fill","ProgressBar",flat(BRASS,NAV_RADIUS))
+	theme.set_color("font_color","ProgressBar",NAV_TEXT)
+	return theme

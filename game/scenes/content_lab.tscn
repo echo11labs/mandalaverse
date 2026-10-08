@@ -1,7 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://badudp6e6dgrj"]
 
-[ext_resource type="Script" path="res://scenes/content_lab.gd" id="1"]
+[ext_resource type="Script" uid="uid://cuhd78ldd80bj" path="res://scenes/content_lab.gd" id="1"]
 
-[node name="ContentLab" type="Node2D"]
+[node name="ContentLab" type="Node2D" unique_id=1134386877]
 script = ExtResource("1")
-

@@ -14,7 +14,62 @@ signal zoom_out_requested
 signal turn_left_requested
 signal turn_right_requested
 signal build_selected(id: StringName)
+signal cattle_pasture_selected(pasture_id: int)
+var _cattle_controls: VBoxContainer
+var _pasture_choices: OptionButton
+var _pasture_signature := ""
+signal work_role_selected(role: StringName)
+var _worker_jobs: GridContainer
+signal save_requested
+signal load_requested
 signal speed_selected(multiplier: int)
+signal new_game_requested
+var _mvp_summary: Label
+
+func enable_mvp_controls() -> void:
+	_status_shell.visible = true
+	_build_bar_shell.visible = true
+	_view_tools_shell.visible = true
+	var panel := _panel(&"paper")
+	panel.name = "SurvivalPanel"
+	panel.set_anchors_preset(Control.PRESET_TOP_LEFT)
+	panel.offset_left = 14
+	panel.offset_top = 248
+	panel.offset_right = 314
+	panel.offset_bottom = 498
+	_root.add_child(panel)
+	var margin := MarginContainer.new()
+	for side in ["left","right","top","bottom"]: margin.add_theme_constant_override("margin_"+side,12)
+	panel.add_child(margin)
+	var column := _column(8)
+	margin.add_child(column)
+	column.add_child(_eyebrow("Build a living settlement"))
+	_mvp_summary = _label("",GopalaTheme.font(GopalaTheme.FONT_UI,400,13),13,GopalaTheme.INK)
+	_mvp_summary.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_mvp_summary.custom_minimum_size.x = 260
+	column.add_child(_mvp_summary)
+	var help := Button.new()
+	help.text = "Controls & credits"
+	help.custom_minimum_size.y = GopalaTheme.NAV_CONTROL_HEIGHT
+	help.pressed.connect(func():
+		var dialog := AcceptDialog.new()
+		dialog.theme = GopalaTheme.navbar()
+		dialog.title = "GOPALA MVP"
+		dialog.dialog_text = "Select a settler with left-click. Assign a supply job in the inspection panel.\nPlace a building, then right-click its site with a free settler to build.\nSelect Pasture to mark an 8 × 8 metre grazing plot. Assign Herd and Milk jobs.\nSelect a cow and use Move to pasture to relocate it. Crowding slows grazing production; fodder restores it.\nCows need a completed shelter, grazing or fodder, water, and tending.\nUse the tempo buttons to start, pause, or change speed. Save / Load or F5 / F9.\nWASD pans; wheel zooms; Q/E turns; C focuses the settlement.\nEsc cancels placement. Comma / period rotate a building.\n\nPrototype assets: Kenney and Poly Haven (CC0); icons and addons (MIT); fonts (OFL).\nMap data © OpenStreetMap contributors (ODbL): https://www.openstreetmap.org/copyright\nProduced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018\nprovided under COPERNICUS by the European Union and ESA; all rights reserved.\nFull notices and sources are bundled with the build."
+		_root.add_child(dialog)
+		dialog.popup_centered(Vector2i(700,420))
+		dialog.confirmed.connect(dialog.queue_free)
+	)
+	column.add_child(help)
+	var restart := Button.new()
+	restart.text = "New settlement"
+	restart.custom_minimum_size.y = GopalaTheme.NAV_CONTROL_HEIGHT
+	restart.tooltip_text = "Start a new paused run. Save first to keep the current run."
+	restart.pressed.connect(func(): new_game_requested.emit())
+	column.add_child(restart)
+
+func set_mvp_summary(text: String) -> void:
+	if _mvp_summary != null: _mvp_summary.text = text
 
 const MODE_HINTS := {
 	"Wash": "Territory wash — click any ground to read the chiefdom holding it.",
@@ -22,6 +77,17 @@ const MODE_HINTS := {
 }
 const TOAST_LIFETIME := 4.2
 const INK_SCRIM := Color(0.11, 0.09, 0.06, 0.93)
+const RESOURCE_ICONS := {
+	&"timber": "res://addons/at-icons/control/tree.svg",
+	&"stone": "res://addons/at-icons/node/rocks.svg",
+	&"thatch": "res://addons/at-icons/mesh/grass.svg",
+	&"water": "res://addons/at-icons/node2d/droplet.svg",
+	&"milk": "res://addons/at-icons/node/glass.svg",
+	&"fodder": "res://addons/at-icons/control/sprout.svg",
+	&"wild_food": "res://addons/at-icons/node3d/apple.svg",
+}
+const CREST_ICON := "res://addons/at-icons/mesh/castle.svg"
+const CALENDAR_ICON := "res://addons/at-icons/mesh/sun.svg"
 
 var terrain: GopalaKathmanduTerrain
 var territory_mode := "Off"
@@ -35,6 +101,10 @@ var _season_line: Label
 var _clock_line: Label
 var _resource_slots: Dictionary = {}
 var _minimap: GopalaMinimap
+var _minimap_shell: PanelContainer
+var _status_shell: PanelContainer
+var _build_bar_shell: PanelContainer
+var _view_tools_shell: PanelContainer
 var _inspection: PanelContainer
 var _inspect_title: Label
 var _inspect_detail: Label
@@ -51,6 +121,7 @@ var _toast_stack: VBoxContainer
 var _grid_button: Button
 var _names_button: Button
 var _speed_buttons: Array[Button] = []
+var _pause_button: Button
 var _selected_build := StringName("")
 var _placement_active := false
 var _last_place_stamp := 0
@@ -59,6 +130,7 @@ func _ready() -> void:
 	layer = 2
 	_build_root()
 	_build_top_bar()
+	_build_survey_minimap()
 	_build_status_card()
 	_build_inspection_panel()
 	_build_build_bar()
@@ -75,7 +147,7 @@ func _build_root() -> void:
 	_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	# CanvasLayer has no theme of its own, so the interface root carries it and
 	# every plate, label and button inherits from there.
-	_root.theme = GopalaTheme.build()
+	_root.theme = GopalaTheme.navbar()
 	add_child(_root)
 
 func _panel(style: StringName, margin := 0) -> PanelContainer:
@@ -92,15 +164,29 @@ func _panel(style: StringName, margin := 0) -> PanelContainer:
 
 func _style(style: StringName) -> StyleBox:
 	match style:
+		&"top_bar":
+			var top_box := GopalaTheme.flat(INK_SCRIM, 0)
+			top_box.border_width_bottom = 1
+			top_box.border_color = GopalaTheme.BRASS_DARK
+			top_box.shadow_color = Color(0.08, 0.06, 0.04, 0.35)
+			top_box.shadow_offset = Vector2(0, 2)
+			top_box.shadow_size = 6
+			return top_box
+		&"chip":
+			return GopalaTheme.flat(Color(0.06, 0.05, 0.04, 0.65), 5, 1, Color(GopalaTheme.BRASS.r, GopalaTheme.BRASS.g, GopalaTheme.BRASS.b, 0.22), 8, 5)
+		&"tab_normal": return GopalaTheme.flat(GopalaTheme.NAV_INSET,5,1,GopalaTheme.NAV_BORDER,10,4)
+		&"tab_hover": return GopalaTheme.flat(GopalaTheme.NAV_RAISED,5,1,GopalaTheme.BRASS,10,4)
+		&"tab_active": return GopalaTheme.flat(GopalaTheme.NAV_RAISED,5,1,GopalaTheme.BRASS,10,4)
+		&"ink_bare": return GopalaTheme.flat(Color(0, 0, 0, 0), 4)
 		&"shell": return GopalaTheme.lifted(GopalaTheme.flat(Color(0, 0, 0, 0), 18), 0.06, 8, 24)
-		&"ink": return GopalaTheme.flat(INK_SCRIM, 16, 1, GopalaTheme.BRASS)
-		&"paper": return GopalaTheme.flat(GopalaTheme.PAPER, 13, 1, GopalaTheme.BRASS_LIGHT)
-		&"paper_raised": return GopalaTheme.flat(GopalaTheme.PAPER_RAISED, 13, 1, GopalaTheme.INK_FAINT)
-		&"sunk": return GopalaTheme.flat(GopalaTheme.PAPER_SUNK, 11, 1, GopalaTheme.INK_FAINT)
-		&"brass": return GopalaTheme.flat(GopalaTheme.BRASS, 10)
-		&"forest": return GopalaTheme.flat(GopalaTheme.FOREST_PALE, 9, 1, GopalaTheme.FOREST)
-		&"river": return GopalaTheme.flat(GopalaTheme.RIVER_PALE, 9, 1, GopalaTheme.RIVER)
-		&"terra": return GopalaTheme.flat(GopalaTheme.TERRA_PALE, 9, 1, GopalaTheme.TERRA)
+		&"ink": return GopalaTheme.flat(GopalaTheme.NAV_SURFACE, GopalaTheme.NAV_RADIUS, 1, GopalaTheme.NAV_BORDER)
+		&"paper": return GopalaTheme.flat(GopalaTheme.NAV_SURFACE, GopalaTheme.NAV_RADIUS, 1, GopalaTheme.NAV_BORDER)
+		&"paper_raised": return GopalaTheme.flat(GopalaTheme.NAV_INSET, GopalaTheme.NAV_RADIUS, 1, GopalaTheme.NAV_BORDER)
+		&"sunk": return GopalaTheme.flat(GopalaTheme.NAV_INSET, GopalaTheme.NAV_RADIUS, 1, GopalaTheme.NAV_BORDER)
+		&"brass": return GopalaTheme.flat(GopalaTheme.NAV_RAISED, 5, 1, GopalaTheme.BRASS)
+		&"forest": return GopalaTheme.flat(GopalaTheme.NAV_SURFACE, 5, 1, GopalaTheme.FOREST)
+		&"river": return GopalaTheme.flat(GopalaTheme.NAV_SURFACE, 5, 1, GopalaTheme.RIVER)
+		&"terra": return GopalaTheme.flat(GopalaTheme.NAV_SURFACE, 5, 1, GopalaTheme.TERRA)
 	return GopalaTheme.flat(GopalaTheme.PAPER, 12)
 
 func _column(separation := 0) -> VBoxContainer:
@@ -121,7 +207,7 @@ func _label(text_value: String, font: Font, size: int, color: Color) -> Label:
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	label.add_theme_font_override("font", font)
 	label.add_theme_font_size_override("font_size", size)
-	label.add_theme_color_override("font_color", color)
+	label.add_theme_color_override("font_color", GopalaTheme.NAV_TEXT if color == GopalaTheme.INK else (GopalaTheme.NAV_MUTED if color == GopalaTheme.INK_MUTED else color))
 	return label
 
 func _eyebrow(text_value: String) -> Label:
@@ -155,19 +241,19 @@ func _icon(texture: Texture2D, side: float) -> TextureRect:
 	return rect
 
 ## Square icon-only control used by the map view tools.
-func _tool_button(label_text: String, tooltip: String, glyph: String) -> Button:
+func _tool_button(label_text: String, tooltip: String, glyph: String, navbar_reference := false) -> Button:
 	var button := Button.new()
 	button.text = glyph
 	button.tooltip_text = tooltip
-	button.custom_minimum_size = Vector2(38, 38)
-	button.focus_mode = Control.FOCUS_NONE
-	button.add_theme_font_size_override("font_size", 17)
-	button.add_theme_stylebox_override("normal", _style(&"paper_raised"))
-	button.add_theme_stylebox_override("hover", GopalaTheme.flat(GopalaTheme.PAPER_RAISED, 10, 1, GopalaTheme.BRASS_DARK))
-	button.add_theme_stylebox_override("pressed", GopalaTheme.flat(GopalaTheme.PAPER_DEEP, 10, 1, GopalaTheme.BRASS))
-	button.add_theme_stylebox_override("hover_pressed", GopalaTheme.flat(GopalaTheme.PAPER_DEEP, 10, 1, GopalaTheme.BRASS))
-	button.add_theme_stylebox_override("focus", GopalaTheme.flat(Color(0, 0, 0, 0), 10))
-	button.add_theme_stylebox_override("disabled", GopalaTheme.flat(GopalaTheme.PAPER_SUNK, 10, 1, GopalaTheme.INK_FAINT))
+	button.custom_minimum_size = Vector2(38,38) if navbar_reference else Vector2(GopalaTheme.NAV_CONTROL_HEIGHT,GopalaTheme.NAV_CONTROL_HEIGHT)
+	button.focus_mode = Control.FOCUS_ALL
+	button.add_theme_font_size_override("font_size",17 if navbar_reference else 14)
+	if navbar_reference:
+		button.add_theme_stylebox_override("normal",GopalaTheme.flat(GopalaTheme.PAPER_RAISED,13,1,GopalaTheme.INK_FAINT))
+		for state in ["hover","pressed","hover_pressed"]: button.add_theme_stylebox_override(state,GopalaTheme.flat(GopalaTheme.PAPER_DEEP,10,1,GopalaTheme.BRASS))
+		button.add_theme_color_override("font_color",GopalaTheme.INK)
+		button.add_theme_color_override("font_hover_color",GopalaTheme.INK)
+		button.add_theme_color_override("font_pressed_color",GopalaTheme.INK)
 	return button
 
 ## Staggered entrance so the interface assembles instead of appearing at once.
@@ -199,80 +285,118 @@ func _collect_reveal(node: Node, into: Array) -> void:
 		if child is Control and child.visible:
 			into.append(child)
 
-# ------------------------------------------------------------------- top bar
-
 func _build_top_bar() -> void:
-	var shell := _panel(&"shell")
+	var shell := _panel(&"top_bar")
 	shell.set_anchors_preset(Control.PRESET_TOP_WIDE)
-	shell.offset_left = 16.0
-	shell.offset_right = -16.0
-	shell.offset_top = 12.0
-	shell.offset_bottom = 12.0 + 92.0
+	shell.offset_left = 0.0
+	shell.offset_right = 0.0
+	shell.offset_top = 0.0
+	shell.offset_bottom = 52.0
 	_root.add_child(shell)
 
-	var plate := _panel(&"ink")
+	var plate := _panel(&"top_bar")
 	plate.set_anchors_preset(Control.PRESET_FULL_RECT)
 	shell.add_child(plate)
 
 	var margin := MarginContainer.new()
 	margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	for side in ["left", "right"]:
-		margin.add_theme_constant_override("margin_" + side, 18)
-	margin.add_theme_constant_override("margin_top", _tokens.space_3)
-	margin.add_theme_constant_override("margin_bottom", _tokens.space_3)
+	margin.add_theme_constant_override("margin_left", 20)
+	margin.add_theme_constant_override("margin_right", 20)
+	margin.add_theme_constant_override("margin_top", 0)
+	margin.add_theme_constant_override("margin_bottom", 0)
 	plate.add_child(margin)
 
-	var row := _row(18)
+	var row := _row(16)
+	row.alignment = BoxContainer.ALIGNMENT_CENTER
+	row.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	margin.add_child(row)
 
-	# Identity: crest, wordmark, and the settlement's own name.
-	var identity := _column(1)
-	identity.custom_minimum_size.x = 236
+	# Identity: crest and settlement name with balanced hierarchy
+	var identity := _row(10)
+	identity.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	row.add_child(identity)
 
 	var crest := TextureRect.new()
 	crest.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	crest.custom_minimum_size = Vector2(58, 58)
+	crest.custom_minimum_size = Vector2(28, 28)
 	crest.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	crest.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	var crest_path := "res://assets/ui/theme/crest.png"
-	if ResourceLoader.exists(crest_path):
-		crest.texture = load(crest_path)
+	if ResourceLoader.exists(CREST_ICON):
+		crest.texture = load(CREST_ICON)
+	elif ResourceLoader.exists("res://assets/ui/theme/crest.png"):
+		crest.texture = load("res://assets/ui/theme/crest.png")
 	identity.add_child(crest)
 
-	var words := _column(0)
-	words.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	identity.add_child(words)
-	words.add_child(_eyebrow("Gopala · dawn of the valley"))
-	_settlement_name = _label("Dudhkunda", GopalaTheme.font(GopalaTheme.FONT_DISPLAY, 600, 26), 26, GopalaTheme.PAPER)
-	words.add_child(_settlement_name)
+	var title_col := _column(1)
+	title_col.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	identity.add_child(title_col)
+	title_col.add_child(_eyebrow("Gopala"))
+	_settlement_name = _label("Dudhkunda", GopalaTheme.font(GopalaTheme.FONT_DISPLAY, 600, 16), 16, GopalaTheme.PAPER)
+	title_col.add_child(_settlement_name)
 
-	# Resource rail: tabular counts that never jitter as the simulation runs.
-	var rail := _row(6)
+	row.add_child(_spacer())
+
+	# Resource rail: balanced horizontal chips
+	var rail := _row(8)
 	rail.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	row.add_child(rail)
 	_reload_resources(rail)
 
 	row.add_child(_spacer())
 
-	# Clock plate: season, day, and the survey toggle.
-	var clock := _column(1)
+	for action in ["Save", "Load"]:
+		var button := _tool_button(action, action + " settlement (" + ("F5" if action == "Save" else "F9") + ")", "",true)
+		button.text = action
+		button.add_theme_font_size_override("font_size",13)
+		if action == "Load": button.tooltip_text += " · Shift+F9 loads previous backup"
+		button.pressed.connect(func() -> void:
+			if action == "Save": save_requested.emit()
+			else: load_requested.emit()
+		)
+		row.add_child(button)
+
+	# Calendar / Clock: elegant framed badge
+	var clock := _row(8)
 	clock.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	clock.custom_minimum_size.x = 150
 	row.add_child(clock)
-	clock.add_child(_eyebrow("Calendar"))
-	_season_line = _label("Spring", GopalaTheme.font(GopalaTheme.FONT_DISPLAY, 500, 19), 19, GopalaTheme.BRASS_LIGHT)
-	clock.add_child(_season_line)
-	_clock_line = _label("Day 1 · Year 1", GopalaTheme.font(GopalaTheme.FONT_UI, 400, 12), 12, Color(GopalaTheme.PAPER.r, GopalaTheme.PAPER.g, GopalaTheme.PAPER.b, 0.62))
-	clock.add_child(_clock_line)
 
-	row.add_child(_rule())
+	var clock_badge := _panel(&"chip")
+	clock.add_child(clock_badge)
 
-	# Survey plate: schematic map of the same geography as the 3D scene.
-	var survey := _panel(&"ink_bare")
-	survey.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	survey.custom_minimum_size = Vector2(84, 84)
-	row.add_child(survey)
+	var cal_row := _row(6)
+	cal_row.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	clock_badge.add_child(cal_row)
+
+	if ResourceLoader.exists(CALENDAR_ICON):
+		cal_row.add_child(_icon(load(CALENDAR_ICON), 18))
+
+	var cal_col := _column(1)
+	cal_col.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	cal_row.add_child(cal_col)
+	_season_line = _label("Spring", GopalaTheme.font(GopalaTheme.FONT_DISPLAY, 600, 13), 13, GopalaTheme.BRASS_LIGHT)
+	cal_col.add_child(_season_line)
+	_clock_line = _label("Day 1 · Year 1", GopalaTheme.font(GopalaTheme.FONT_UI, 400, 11), 11, Color(GopalaTheme.PAPER.r, GopalaTheme.PAPER.g, GopalaTheme.PAPER.b, 0.75))
+	cal_col.add_child(_clock_line)
+
+
+# ------------------------------------------------------------------- top bar
+
+
+func _build_survey_minimap() -> void:
+	var shell := _panel(&"shell")
+	shell.set_anchors_preset(Control.PRESET_TOP_RIGHT)
+	shell.offset_right = -14.0
+	shell.offset_left = -14.0 - 88.0
+	shell.offset_top = 60.0
+	shell.offset_bottom = 60.0 + 88.0
+	shell.visible = false
+	_minimap_shell = shell
+	_root.add_child(shell)
+
+	var survey := _panel(&"ink")
+	survey.set_anchors_preset(Control.PRESET_FULL_RECT)
+	shell.add_child(survey)
+
 	_minimap = GopalaMinimap.new()
 	_minimap.custom_minimum_size = Vector2(84, 84)
 	survey.add_child(_minimap)
@@ -290,18 +414,22 @@ func _reload_resources(rail: HBoxContainer) -> void:
 		rail.add_child(_resource_slot(good))
 
 func _resource_slot(good: GopalaResourceDefinition) -> Control:
-	var shell := _panel(&"ink_bare")
+	var shell := _panel(&"chip")
 	shell.tooltip_text = "%s · carries %d at a time" % [good.display_name, good.carry_units]
-	var inner := _column(0)
-	shell.add_child(inner)
-	var head := _row(5)
-	inner.add_child(head)
-	if good.icon != null:
-		head.add_child(_icon(good.icon, 20))
-	var amount := _label("0", GopalaTheme.font(GopalaTheme.FONT_MONO, 500, 16), 16, GopalaTheme.PAPER)
+	var head := _row(6)
+	head.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	shell.add_child(head)
+	var icon_path: String = RESOURCE_ICONS.get(good.id, "")
+	var icon_tex: Texture2D = null
+	if not icon_path.is_empty() and ResourceLoader.exists(icon_path):
+		icon_tex = load(icon_path)
+	elif good.icon != null:
+		icon_tex = good.icon
+	if icon_tex != null:
+		head.add_child(_icon(icon_tex, 18))
+	var amount := _label("0", GopalaTheme.font(GopalaTheme.FONT_MONO, 500, 13), 13, GopalaTheme.PAPER)
+	amount.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	head.add_child(amount)
-	var name_line := _label(good.display_name.to_upper(), GopalaTheme.font(GopalaTheme.FONT_UI, 600, 9), 9, Color(GopalaTheme.BRASS.r, GopalaTheme.BRASS.g, GopalaTheme.BRASS.b, 0.75))
-	inner.add_child(name_line)
 	_resource_slots[good.id] = amount
 	return shell
 
@@ -310,10 +438,12 @@ func _resource_slot(good: GopalaResourceDefinition) -> Control:
 func _build_status_card() -> void:
 	var shell := _panel(&"shell")
 	shell.set_anchors_preset(Control.PRESET_TOP_LEFT)
-	shell.offset_left = 16.0
-	shell.offset_top = 116.0
-	shell.offset_right = 16.0 + 236.0
-	shell.offset_bottom = 116.0 + 172.0
+	shell.offset_left = 14.0
+	shell.offset_top = 60.0
+	shell.offset_right = 314.0
+	shell.offset_bottom = 60.0 + 172.0
+	shell.visible = false
+	_status_shell = shell
 	_root.add_child(shell)
 
 	var plate := _panel(&"paper")
@@ -332,7 +462,7 @@ func _build_status_card() -> void:
 	margin.add_child(column)
 	column.add_child(_eyebrow("Valley survey"))
 	column.add_child(_rule(GopalaTheme.BRASS, 0.4))
-	column.add_child(_label("Kathmandu valley", GopalaTheme.font(GopalaTheme.FONT_DISPLAY, 500, 20), 20, GopalaTheme.INK))
+	column.add_child(_label("Kathmandu valley", GopalaTheme.font(GopalaTheme.FONT_DISPLAY, 500, 16), 16, GopalaTheme.INK))
 
 	var scale_note := _label("40 km across · 1200 m base", GopalaTheme.font(GopalaTheme.FONT_UI, 400, 12), 12, GopalaTheme.INK_MUTED)
 	column.add_child(scale_note)
@@ -341,7 +471,7 @@ func _build_status_card() -> void:
 	# Actions that used to live as loose keyboard-only shortcuts.
 	var actions := _row(6)
 	column.add_child(actions)
-	_grid_button = _tool_button("", "Planning grid (G)", "▦")
+	_grid_button = _tool_button("", "Planning grid · 2 m cells (G)", "▦")
 	_grid_button.toggle_mode = true
 	_grid_button.toggled.connect(func(on: bool) -> void: grid_changed.emit(on))
 	actions.add_child(_grid_button)
@@ -367,6 +497,7 @@ func _build_status_card() -> void:
 	column.add_child(speed_row)
 	speed_row.add_child(_eyebrow("Tempo"))
 	var pause := _tool_button("", "Pause (Space)", "❚❚")
+	_pause_button = pause
 	pause.toggle_mode = true
 	pause.toggled.connect(func(on: bool) -> void: speed_selected.emit(0 if on else 1))
 	speed_row.add_child(pause)
@@ -374,11 +505,11 @@ func _build_status_card() -> void:
 		var button := Button.new()
 		button.text = "%d×" % multiplier
 		button.toggle_mode = true
-		button.focus_mode = Control.FOCUS_NONE
+		button.focus_mode = Control.FOCUS_ALL
 		button.custom_minimum_size = Vector2(40, 30)
 		button.add_theme_font_size_override("font_size", 13)
 		button.add_theme_stylebox_override("normal", _style(&"paper_raised"))
-		button.add_theme_stylebox_override("hover", GopalaTheme.flat(GopalaTheme.PAPER_RAISED, 10, 1, GopalaTheme.BRASS_DARK))
+		button.add_theme_stylebox_override("hover", GopalaTheme.flat(GopalaTheme.NAV_RAISED, 5, 1, GopalaTheme.BRASS_DARK))
 		button.add_theme_stylebox_override("pressed", GopalaTheme.flat(GopalaTheme.BRASS, 10))
 		button.add_theme_stylebox_override("hover_pressed", GopalaTheme.flat(GopalaTheme.BRASS_DARK, 10))
 		button.add_theme_stylebox_override("focus", GopalaTheme.flat(Color(0, 0, 0, 0), 10))
@@ -392,10 +523,10 @@ func _build_status_card() -> void:
 func _build_inspection_panel() -> void:
 	var shell := _panel(&"shell")
 	shell.set_anchors_preset(Control.PRESET_TOP_RIGHT)
-	shell.offset_right = -16.0
-	shell.offset_top = 116.0
-	shell.offset_left = -16.0 - 340.0
-	shell.offset_bottom = 116.0 + 396.0
+	shell.offset_right = -14.0
+	shell.offset_left = -14.0 - 340.0
+	shell.offset_top = 60.0
+	shell.offset_bottom = 60.0 + 342.0
 	shell.visible = false
 	_root.add_child(shell)
 
@@ -429,7 +560,7 @@ func _build_inspection_panel() -> void:
 	close.pressed.connect(hide_inspection)
 	header.add_child(close)
 
-	_inspect_title = _label("", GopalaTheme.font(GopalaTheme.FONT_DISPLAY, 600, 24), 24, GopalaTheme.PAPER)
+	_inspect_title = _label("", GopalaTheme.font(GopalaTheme.FONT_DISPLAY, 600, 16), 16, GopalaTheme.PAPER)
 	column.add_child(_inspect_title)
 	column.add_child(_rule(GopalaTheme.BRASS, 0.45))
 	_inspect_detail = _label("", GopalaTheme.font(GopalaTheme.FONT_UI, 400, 13), 13, GopalaTheme.BRASS_LIGHT)
@@ -447,6 +578,52 @@ func _build_inspection_panel() -> void:
 	_inspect_body.add_theme_font_override("data", GopalaTheme.font(GopalaTheme.FONT_MONO, 400, 12))
 	_inspect_body.add_theme_color_override("default_color", Color(GopalaTheme.PAPER.r, GopalaTheme.PAPER.g, GopalaTheme.PAPER.b, 0.78))
 	column.add_child(_inspect_body)
+	_worker_jobs = GridContainer.new()
+	_worker_jobs.columns = 3
+	_worker_jobs.add_theme_constant_override("h_separation",5)
+	_worker_jobs.add_theme_constant_override("v_separation",5)
+	_worker_jobs.visible = false
+	column.add_child(_worker_jobs)
+	for choice in [["Timber",&"timber"],["Stone",&"stone"],["Thatch",&"thatch"],["Wild food",&"wild_food"],["Fodder",&"fodder"],["Water",&"water"],["Milk",&"milk"],["Herd",&"herder"],["Stop job",&"NONE"]]:
+		var button := Button.new()
+		button.text = choice[0]
+		button.add_theme_font_size_override("font_size",12)
+		button.custom_minimum_size.y = GopalaTheme.NAV_CONTROL_HEIGHT
+		if RESOURCE_ICONS.has(choice[1]) and ResourceLoader.exists(RESOURCE_ICONS[choice[1]]):
+			button.icon = load(RESOURCE_ICONS[choice[1]])
+			button.expand_icon = true
+			button.add_theme_constant_override("icon_max_width",16)
+		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		button.tooltip_text = "Persistent collection: switches sources and waits for storage" if choice[1] != &"NONE" else "Finish any carried delivery, then stop"
+		button.focus_mode = Control.FOCUS_ALL
+		button.pressed.connect(func(): work_role_selected.emit(choice[1]))
+		_worker_jobs.add_child(button)
+
+	_cattle_controls = VBoxContainer.new()
+	_cattle_controls.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_cattle_controls.visible = false
+	column.add_child(_cattle_controls)
+	_pasture_choices = OptionButton.new()
+	_pasture_choices.text = "Choose pasture"
+	_pasture_choices.tooltip_text = "Destination pasture and assigned cattle / grazing capacity"
+	_pasture_choices.custom_minimum_size.y = GopalaTheme.NAV_CONTROL_HEIGHT
+	_cattle_controls.add_child(_pasture_choices)
+	var move := _tool_button("Move to pasture","Walk to the selected grazing plot","Move to pasture")
+	move.pressed.connect(func():
+		if _pasture_choices.selected >= 0: cattle_pasture_selected.emit(_pasture_choices.get_item_id(_pasture_choices.selected))
+	)
+	_cattle_controls.add_child(move)
+
+func show_cattle_controls(rows: Array) -> void:
+	_cattle_controls.visible = not rows.is_empty()
+	var signature := str(rows)
+	if signature == _pasture_signature: return
+	_pasture_signature = signature
+	var previous := _pasture_choices.get_selected_id()
+	_pasture_choices.clear()
+	for row in rows:
+		_pasture_choices.add_item(row.label,row.id)
+		if row.id == previous: _pasture_choices.select(_pasture_choices.item_count-1)
 
 # -------------------------------------------------------------- build bar
 
@@ -455,8 +632,10 @@ func _build_build_bar() -> void:
 	shell.set_anchors_preset(Control.PRESET_BOTTOM_WIDE)
 	shell.offset_left = 16.0
 	shell.offset_right = -16.0
-	shell.offset_top = -214.0
+	shell.offset_top = -166.0
 	shell.offset_bottom = -16.0
+	shell.visible = false
+	_build_bar_shell = shell
 	_root.add_child(shell)
 
 	var plate := _panel(&"paper")
@@ -489,7 +668,7 @@ func _build_build_bar() -> void:
 	var card_text := _column(1)
 	card_text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	card_row.add_child(card_text)
-	_build_title = _label("Choose a structure", GopalaTheme.font(GopalaTheme.FONT_DISPLAY, 500, 18), 18, GopalaTheme.INK)
+	_build_title = _label("Choose a structure", GopalaTheme.font(GopalaTheme.FONT_DISPLAY, 500, 16), 16, GopalaTheme.INK)
 	card_text.add_child(_build_title)
 	_build_meta = _label("Six P0 structures. Costs are drawn from the content catalogue.", GopalaTheme.font(GopalaTheme.FONT_UI, 400, 12), 12, GopalaTheme.INK_MUTED)
 	card_text.add_child(_build_meta)
@@ -506,14 +685,14 @@ func _build_build_bar() -> void:
 		var button := Button.new()
 		button.text = category
 		button.toggle_mode = true
-		button.focus_mode = Control.FOCUS_NONE
+		button.focus_mode = Control.FOCUS_ALL
 		button.add_theme_font_size_override("font_size", 13)
 		button.add_theme_stylebox_override("normal", _style(&"tab_normal"))
 		button.add_theme_stylebox_override("hover", _style(&"tab_hover"))
 		button.add_theme_stylebox_override("pressed", _style(&"tab_active"))
 		button.add_theme_stylebox_override("focus", GopalaTheme.flat(Color(0, 0, 0, 0), 8))
-		button.add_theme_color_override("font_color", GopalaTheme.INK_MUTED)
-		button.add_theme_color_override("font_hover_color", GopalaTheme.INK)
+		button.add_theme_color_override("font_color", GopalaTheme.NAV_MUTED)
+		button.add_theme_color_override("font_hover_color", GopalaTheme.NAV_TEXT)
 		button.add_theme_color_override("font_pressed_color", GopalaTheme.BRASS_DARK)
 		button.toggled.connect(func(on: bool) -> void: _select_category(category, on))
 		tabs.add_child(button)
@@ -572,11 +751,11 @@ func _structure_button(definition: GopalaBuildingDefinition) -> Button:
 		_cost_text(definition.costs),
 	]
 	button.toggle_mode = true
-	button.focus_mode = Control.FOCUS_NONE
-	button.custom_minimum_size = Vector2(132, 40)
+	button.focus_mode = Control.FOCUS_ALL
+	button.custom_minimum_size = Vector2(120, GopalaTheme.NAV_CONTROL_HEIGHT)
 	button.add_theme_font_size_override("font_size", 13)
 	button.add_theme_stylebox_override("normal", _style(&"paper_raised"))
-	button.add_theme_stylebox_override("hover", GopalaTheme.flat(GopalaTheme.PAPER_RAISED, 10, 1, GopalaTheme.BRASS_DARK))
+	button.add_theme_stylebox_override("hover", GopalaTheme.flat(GopalaTheme.NAV_RAISED, 5, 1, GopalaTheme.BRASS_DARK))
 	button.add_theme_stylebox_override("pressed", GopalaTheme.flat(GopalaTheme.BRASS, 10))
 	button.add_theme_stylebox_override("hover_pressed", GopalaTheme.flat(GopalaTheme.BRASS_DARK, 10))
 	button.add_theme_stylebox_override("focus", GopalaTheme.flat(Color(0, 0, 0, 0), 10))
@@ -596,11 +775,11 @@ func _zone_button(zone: GopalaZoneDefinition) -> Button:
 	button.text = zone.display_name
 	button.tooltip_text = "%s\nZone · at least %d cells" % [zone.display_name, zone.minimum_cells]
 	button.toggle_mode = true
-	button.focus_mode = Control.FOCUS_NONE
-	button.custom_minimum_size = Vector2(132, 40)
+	button.focus_mode = Control.FOCUS_ALL
+	button.custom_minimum_size = Vector2(120, GopalaTheme.NAV_CONTROL_HEIGHT)
 	button.add_theme_font_size_override("font_size", 13)
 	button.add_theme_stylebox_override("normal", _style(&"paper_raised"))
-	button.add_theme_stylebox_override("hover", GopalaTheme.flat(GopalaTheme.PAPER_RAISED, 10, 1, GopalaTheme.BRASS_DARK))
+	button.add_theme_stylebox_override("hover", GopalaTheme.flat(GopalaTheme.NAV_RAISED, 5, 1, GopalaTheme.BRASS_DARK))
 	button.add_theme_stylebox_override("pressed", GopalaTheme.flat(GopalaTheme.BRASS, 10))
 	button.add_theme_stylebox_override("hover_pressed", GopalaTheme.flat(GopalaTheme.BRASS_DARK, 10))
 	button.add_theme_stylebox_override("focus", GopalaTheme.flat(Color(0, 0, 0, 0), 10))
@@ -667,9 +846,11 @@ func _build_view_tools() -> void:
 	var shell := _panel(&"shell")
 	shell.set_anchors_preset(Control.PRESET_BOTTOM_RIGHT)
 	shell.offset_right = -16.0
-	shell.offset_bottom = -16.0
+	shell.offset_bottom = -182.0
 	shell.offset_left = -16.0 - 232.0
-	shell.offset_top = -16.0 - 44.0
+	shell.offset_top = -218.0
+	shell.visible = false
+	_view_tools_shell = shell
 	_root.add_child(shell)
 
 	var plate := _panel(&"paper")
@@ -695,9 +876,19 @@ func _build_view_tools() -> void:
 		else:
 			button.pressed.connect(func() -> void: turn_right_requested.emit())
 		row.add_child(button)
-	var hint := _label("Esc cancels placement", GopalaTheme.font(GopalaTheme.FONT_UI, 400, 12), 12, GopalaTheme.INK_MUTED)
+	var hint := _label("Esc: cancel", GopalaTheme.font(GopalaTheme.FONT_UI, 400, 12), 12, GopalaTheme.INK_MUTED)
 	hint.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	row.add_child(hint)
+
+func set_other_hud_visible(show: bool) -> void:
+	if _minimap_shell != null:
+		_minimap_shell.visible = show
+	if _status_shell != null:
+		_status_shell.visible = show
+	if _build_bar_shell != null:
+		_build_bar_shell.visible = show
+	if _view_tools_shell != null:
+		_view_tools_shell.visible = show
 
 # ------------------------------------------------------------------ toasts
 
@@ -750,7 +941,7 @@ func notify(title: String, body: String, tone: String = "river") -> void:
 func follow(camera: Camera3D) -> void:
 	if camera == null or _minimap == null:
 		return
-	_minimap.set_view(camera.global_position, float(camera.size))
+	_minimap.set_view(camera.target, float(camera.size))
 
 func close_build() -> void:
 	if _placement_active:
@@ -851,6 +1042,8 @@ func hide_inspection() -> void:
 		shell.visible = false
 
 func _show_inspection(eyebrow: String, title: String, detail: String, body: String) -> void:
+	if _worker_jobs != null: _worker_jobs.visible = false
+	if _cattle_controls != null: _cattle_controls.visible = false
 	var shell := _inspection.get_parent() as Control
 	if shell != null:
 		shell.visible = true
@@ -858,7 +1051,7 @@ func _show_inspection(eyebrow: String, title: String, detail: String, body: Stri
 	_inspect_title.text = title
 	_inspect_detail.text = detail
 	_inspect_detail.visible = not detail.is_empty()
-	_inspect_body.text = body
+	_inspect_body.text = body.replace("[data]","[color=#d6c79f]").replace("[/data]","[/color]")
 	_inspect_body.visible = not body.is_empty()
 
 func configure_survey(terrain_ref: GopalaKathmanduTerrain, regions: Array) -> void:
@@ -869,3 +1062,8 @@ func configure_survey(terrain_ref: GopalaKathmanduTerrain, regions: Array) -> vo
 func _catalog() -> Dictionary:
 	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://data/catalog.json"))
 	return parsed if parsed is Dictionary else {}
+
+func set_tempo(paused: bool, speed: int) -> void:
+	if _pause_button != null: _pause_button.set_pressed_no_signal(paused)
+	for i in _speed_buttons.size():
+		_speed_buttons[i].set_pressed_no_signal(not paused and [1,2,4][i] == speed)

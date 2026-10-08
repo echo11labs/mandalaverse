@@ -82,6 +82,9 @@ func _test_structure() -> void:
 	var plates := hud._root.find_children("*", "PanelContainer", true, false)
 	expect(plates.size() >= 4, "Interface must be composed of several plates.")
 	for plate in plates:
+		if plate.get_parent() is PopupMenu:
+			expect((plate as Control).mouse_filter == Control.MOUSE_FILTER_STOP,"Interactive dropdown must consume its own clicks.")
+			continue
 		expect((plate as Control).mouse_filter == Control.MOUSE_FILTER_IGNORE,
 			"Decorative plates must ignore the mouse so world picking still works.")
 
