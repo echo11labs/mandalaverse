@@ -15,6 +15,7 @@ var water_segments := 0
 var water_network: GopalaWaterNetwork
 var sample_pine_height_m := 0.0
 var tree_population := 0
+var _alerts_service: GopalaAlertService
 @onready var camera = $Camera3D
 @onready var simulation: GopalaSettlementSimulation = $SettlementSimulation
 @onready var detail_forest = $DetailForest
@@ -86,6 +87,7 @@ func _ready() -> void:
 	simulation.snapshot_committed.connect(_on_snapshot_committed)
 	# The initial scenario was seeded before presentation subscribed, while paused.
 	_on_snapshot_committed(simulation.snapshot())
+	if mvp_enabled: _bind_alerts()
 
 	make_trees()
 	if not Array(OS.get_cmdline_user_args()).any(func(s: String): return s.begins_with("--capture")):
@@ -2130,6 +2132,7 @@ func load_settlement(path: String = SAVE_PATH) -> bool:
 	restored.command_processed.connect(_on_command_processed)
 	restored.snapshot_committed.connect(_on_snapshot_committed)
 	_on_snapshot_committed(restored.snapshot())
+	if mvp_enabled: _bind_alerts()
 	previous.queue_free()
 	focus_camp()
 	hud.notify("Settlement loaded", "Resources, construction and worker tasks restored")
@@ -2169,3 +2172,25 @@ func _spawn_pasture(record):
 	view.material_override = line_material(Color("b7c274"))
 	add_child(view)
 	_built_views[record.entity_id] = view
+
+func _bind_alerts() -> void:
+	if _alerts_service == null:
+		_alerts_service = GopalaAlertService.new()
+		_alerts_service.name = "SettlementAlerts"
+		add_child(_alerts_service)
+		hud.enable_alerts_feed()
+		_alerts_service.alerts_changed.connect(hud.set_alerts)
+		hud.alert_requested.connect(focus_alert)
+	_alerts_service.bind(simulation)
+
+func focus_alert(key: String) -> bool:
+	if _alerts_service == null: return false
+	var payload := _alerts_service.focus_payload(key)
+	if payload.is_empty(): return false
+	var result := simulation.selection_service().select_entity(int(payload.entity_id))
+	if result.status == GopalaSelectionResult.Status.REJECTED: return false
+	var point := Vector3(float(payload.position_x),0.0,float(payload.position_z))
+	point.y = ground_height_at(point.x,point.z)
+	camera.focus_point(point,GopalaScaleStandard.number("camera","inspection_span"))
+	_inspect_selected_entity(int(payload.entity_id))
+	return true

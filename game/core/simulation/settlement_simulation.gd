@@ -4,6 +4,7 @@ extends Node
 signal snapshot_committed(snapshot: GopalaSettlementSnapshot)
 signal command_processed(result: GopalaCommandResult)
 signal logical_tick_advanced(tick: int)
+signal fixed_tick_completed(tick: int) # Read-only observers run after all fixed-tick services.
 signal pause_changed(paused: bool)
 signal speed_changed(speed: int)
 signal session_reset
@@ -133,6 +134,7 @@ func _physics_process(delta: float) -> void:
 		_worker_job_service.tick(logical_tick - advanced + i + 1)
 		GopalaMvpScenario.tick(self,logical_tick - advanced + i + 1)
 		_commit_snapshot()
+		fixed_tick_completed.emit(logical_tick - advanced + i + 1)
 	_advancing_ticks = false
 	process_pending_commands()
 
@@ -207,6 +209,7 @@ func advance_ticks(count: int) -> bool:
 		GopalaMvpScenario.tick(self,logical_tick)
 		_commit_snapshot()
 		process_pending_commands()
+		fixed_tick_completed.emit(logical_tick)
 	_advancing_ticks = false
 	return true
 

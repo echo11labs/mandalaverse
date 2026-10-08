@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "food_minutes": 5,
+  "water_minutes": 5,
+  "health_below": 50,
+  "severity": {
+    "food": "warning", "water": "warning", "health": "critical",
+    "store": "warning", "construction": "warning", "cattle_water": "warning",
+    "cattle_feed": "warning", "homeless": "warning", "idle": "info"
+  },
+  "priority": {
+    "health": 0, "water": 1, "food": 2, "cattle_water": 3,
+    "cattle_feed": 4, "construction": 5, "store": 6, "homeless": 7, "idle": 8
+  }
+}

@@ -68,6 +68,73 @@ func enable_mvp_controls() -> void:
 	restart.pressed.connect(func(): new_game_requested.emit())
 	column.add_child(restart)
 
+signal alert_requested(key: String)
+var _alert_panel: PanelContainer
+var _alert_list: VBoxContainer
+var _alert_buttons := {}
+var _alert_display_signature := ""
+
+func enable_alerts_feed() -> void:
+	if _alert_panel != null: return
+	_alert_panel = _panel(&"paper")
+	_alert_panel.name = "AlertsFeed"
+	_alert_panel.mouse_filter = Control.MOUSE_FILTER_STOP
+	_alert_panel.set_anchors_preset(Control.PRESET_TOP_RIGHT)
+	_alert_panel.offset_left = -354
+	_alert_panel.offset_right = -14
+	_alert_panel.offset_top = 416
+	_alert_panel.offset_bottom = 568
+	_root.add_child(_alert_panel)
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation",6)
+	_alert_panel.add_child(column)
+	column.add_child(_eyebrow("Settlement alerts · select to focus"))
+	var scroll := ScrollContainer.new()
+	scroll.custom_minimum_size.y = 96
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	scroll.mouse_filter = Control.MOUSE_FILTER_STOP
+	column.add_child(scroll)
+	_alert_list = VBoxContainer.new()
+	_alert_list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_alert_list.add_theme_constant_override("separation",4)
+	scroll.add_child(_alert_list)
+	_alert_panel.visible = false
+
+func set_alerts(rows: Array) -> void:
+	if _alert_panel == null: return
+	var display: Array = []
+	for row in rows: display.append([row.key,row.severity,row.message])
+	var signature := JSON.stringify(display)
+	if signature == _alert_display_signature: return
+	_alert_display_signature = signature
+	var live := {}
+	for row in rows:
+		var key: String = row.key
+		live[key] = true
+		var button: Button = _alert_buttons.get(key)
+		if button == null:
+			button = Button.new()
+			button.name = "Alert_"+key.replace(":","_")
+			button.mouse_filter = Control.MOUSE_FILTER_STOP
+			button.custom_minimum_size.y = GopalaTheme.NAV_CONTROL_HEIGHT
+			button.clip_text = true
+			button.alignment = HORIZONTAL_ALIGNMENT_LEFT
+			button.pressed.connect(func(): alert_requested.emit(key))
+			_alert_list.add_child(button)
+			_alert_buttons[key] = button
+		var glyph := "!" if row.severity == "critical" else "△" if row.severity == "warning" else "•"
+		button.text = "%s %s · %s" % [glyph,str(row.severity).capitalize(),row.message]
+		button.tooltip_text = button.text+"\nSelect this subject and focus the camera"
+		_alert_list.move_child(button,live.size()-1)
+	for key in _alert_buttons.keys():
+		if not live.has(key):
+			var button: Button = _alert_buttons[key]
+			_alert_list.remove_child(button)
+			button.queue_free()
+			_alert_buttons.erase(key)
+	_alert_panel.visible = not rows.is_empty()
+
 func set_mvp_summary(text: String) -> void:
 	if _mvp_summary != null: _mvp_summary.text = text
 
