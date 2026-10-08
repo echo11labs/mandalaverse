@@ -73,7 +73,7 @@ def main():
             completed = subprocess.run(command,stdout=stream,stderr=subprocess.STDOUT,timeout=warmup+duration+600)
         text = log.read_text(errors='replace')
         if completed.returncode or ERROR.search(text) or not path.exists() or 'GOPALA_TEST_REPORT=' not in text:
-            raise SystemExit('Replay failed; inspect '+str(log))
+            raise SystemExit(f'Replay failed (exit={completed.returncode}, report_exists={path.exists()}); inspect {log}')
         report = json.loads(path.read_text())
         report.update({'revision':revision,'wall_seconds':round(time.monotonic()-started,2),'log':log.name,'run':index,'baseline':not(args.smoke or args.quick or args.profile)})
         path.write_text(json.dumps(report,indent=2)+'\n')
