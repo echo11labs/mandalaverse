@@ -1,0 +1,8 @@
+Starting 1280x800-off-1
+Finished 1280x800-off-1: valid=True active_min=36 frame_p95=422.93ms tick_p95=407.91ms
+Starting 1280x800-off-2
+Finished 1280x800-off-2: valid=True active_min=36 frame_p95=421.98ms tick_p95=407.84ms
+Starting 1280x800-off-3
+Finished 1280x800-off-3: valid=True active_min=36 frame_p95=421.45ms tick_p95=406.33ms
+Starting 1280x800-on-1
+Replay failed (exit=-15, report_exists=False); inspect /Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/1280x800-on-1.log
