@@ -1,0 +1,148 @@
+{
+  "activity_definition": "Live collection/build task or carried goods or job movement; excludes NEED trips and mere assigned roles. Window minimum is strict per sampled tick.",
+  "activity_windows": [
+    {
+      "minimum_active": 39,
+      "window": 0
+    },
+    {
+      "minimum_active": 40,
+      "window": 1
+    },
+    {
+      "minimum_active": 23,
+      "window": 2
+    },
+    {
+      "minimum_active": 17,
+      "window": 3
+    }
+  ],
+  "adapter": "Apple M4 Pro",
+  "camera_points": [
+    {
+      "pitch": -55.0,
+      "span": 0.731547772884369,
+      "target": "(-74.23, 2.297649, 12.125)",
+      "view": "camp",
+      "yaw": 45.0
+    },
+    {
+      "pitch": -55.0,
+      "span": 0.800000011920929,
+      "target": "(-74.48, 2.29213, 11.93)",
+      "view": "pasture",
+      "yaw": 45.0
+    }
+  ],
+  "captures": [
+    "/private/tmp/g1-12-quick2/1280x800-off-1-camp.png",
+    "/private/tmp/g1-12-quick2/1280x800-off-1-pasture.png"
+  ],
+  "collection_seconds": 35.0,
+  "display_driver": "macOS",
+  "draw_calls": {
+    "count": 639,
+    "max": 2763.0,
+    "median": 2719.0,
+    "p95": 2763.0
+  },
+  "elapsed_seconds": 36.003423,
+  "failures": [],
+  "fixture": {
+    "cattle": 2,
+    "completed_fixture_homes": 10,
+    "completed_fixture_shelters": 1,
+    "extra_sources": 40,
+    "initial_ledger": {
+      "fodder": 10000,
+      "stone": 50,
+      "thatch": 50,
+      "timber": 100,
+      "water": 10064,
+      "wild_food": 10048
+    },
+    "roles": {
+      "herder": 1,
+      "timber": 39
+    },
+    "seed": 401208,
+    "setup_exception": "Registry/stock APIs only before warmup; spawning/roles/pasture use commands. Completed fixture buildings are nonblocking pre-existing records.",
+    "storage_capacity": {
+      "fodder": 1000000,
+      "milk": 1000000,
+      "stone": 1000000,
+      "thatch": 1000000,
+      "timber": 1000000,
+      "water": 1000000,
+      "wild_food": 1000000
+    },
+    "supplies_added": {
+      "fodder": 10000,
+      "water": 10000,
+      "wild_food": 10000
+    },
+    "timber_per_extra_source": 100000,
+    "workers": 40
+  },
+  "frame_ms": {
+    "count": 638,
+    "max": 9534.417,
+    "median": 8.303,
+    "p95": 208.369
+  },
+  "godot": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "logical_ticks": 144,
+  "minimum_active": 17,
+  "ok": true,
+  "rendered_instances": {
+    "count": 639,
+    "max": 3286.0,
+    "median": 3242.0,
+    "p95": 3286.0
+  },
+  "renderer": "gl_compatibility",
+  "resolution": [
+    1280,
+    800
+  ],
+  "sampled_tick_count": 142,
+  "schema": 1,
+  "screen_refresh_rate": 120.0,
+  "screen_size": "(3024, 1964)",
+  "smoke": false,
+  "static_memory_bytes": {
+    "count": 639,
+    "max": 526301438.0,
+    "median": 526256586.0,
+    "p95": 526288286.0
+  },
+  "tick_ms": {
+    "count": 142,
+    "max": 483.457,
+    "median": 183.967,
+    "p95": 293.782
+  },
+  "tick_rate": 4.0,
+  "tick_rate_sustained": true,
+  "valid": false,
+  "vsync_actual": 0,
+  "vsync_requested": "off",
+  "warmup_seconds": 1.0,
+  "world_seed": 43129,
+  "revision": "c38c331decc53b21f7b35a419b8603e95a2d86af",
+  "wall_seconds": 73.84,
+  "log": "1280x800-off-1.log",
+  "run": 1,
+  "baseline": false
+}
