@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[MCPRuntimeServer] port: scanning 6570-6585 (default)
+[MCPRuntimeServer] listening on 127.0.0.1:6570
+[MCPRegistry] runtime port 6570 registered for /users/devendrashahithakuri/.codex/worktrees/g1-02-cleancheck/nep-all/game
+FOREST_PENDING_VISUAL_REVIEW loading submitted bake: res://data/forest/kathmandu_forest.scn
+GOPALA_MVP_ACCEPTANCE={"cattle":[{"assigned_herder_id":0,"cattle_move_state":"IDLE","consumed_goods":{"fodder":3,"water":11},"display_name":"Cow 1","fodder_fed":1,"grazing_consumed":8,"herd_status":"READY","milk_produced":20,"milk_source_id":83,"next_milk_tick":1602,"pasture_id":81,"position_x":-74.4225006103516,"position_z":12.227499961853,"shelter_id":78,"species":"cattle","tended_tick":1481,"water_fed":1},{"assigned_herder_id":68,"cattle_move_state":"IDLE","consumed_goods":{"fodder":1,"water":10},"display_name":"Cow 2","fodder_fed":0,"grazing_consumed":8,"herd_status":"NO_FEED","milk_produced":18,"milk_source_id":85,"next_milk_tick":1577,"pasture_id":81,"position_x":-74.4075012207031,"position_z":12.227499961853,"shelter_id":78,"species":"cattle","tended_tick":1456,"water_fed":1}],"objective":"SUCCESS","resources":{"fodder":44,"milk":36,"stone":43,"thatch":23,"timber":59,"water":131,"wild_food":8},"stable_ticks":900,"tick":1528}
+GOPALA_TEST_REPORT={"checks":16,"failures":[],"ok":true}
