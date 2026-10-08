@@ -83,13 +83,15 @@ func run():
 			second_view = true
 		while float(Time.get_ticks_usec()-start)/1000000.0 >= next_tick and float(Time.get_ticks_usec()-start)/1000000.0 < warmup+duration:
 			var tick_start := Time.get_ticks_usec()
+			var tick_elapsed := float(tick_start-start)/1000000.0
+			var tick_collecting := tick_elapsed >= warmup
 			if not sim.advance_ticks(1): errors.append("Tick rejected")
 			var cost := float(Time.get_ticks_usec()-tick_start)/1000.0
-			if collecting: tick_samples.append(cost)
+			if tick_collecting: tick_samples.append(cost)
 			next_tick += 1.0/tick_rate
 			var activity := Fixture.activity(sim)
-			if collecting:
-				var index := int((elapsed-warmup)/10.0)
+			if tick_collecting:
+				var index := int((tick_elapsed-warmup)/10.0)
 				if index != window_index:
 					if window_index >= 0: activity_windows.append({"window":window_index,"minimum_active":window_min})
 					window_index = index

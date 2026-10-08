@@ -46,7 +46,7 @@ def main():
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=True)
     revision = command_output(['git', '-C', str(ROOT), 'rev-parse', 'HEAD'])['output']
-    changes = command_output(['git','-C',str(ROOT),'status','--porcelain','--untracked-files=normal'])['output']
+    changes = subprocess.run(['git','-C',str(ROOT),'status','--porcelain','--untracked-files=normal'], capture_output=True, text=True, check=True).stdout
     # Reports are derived output; all game/tools/config changes must be committed.
     dirty = [line for line in changes.splitlines() if not line[3:].startswith('reports/') and not (line[3:] == '.tools' and (ROOT/'.tools').is_symlink())]
     if dirty and not (args.smoke or args.quick or args.profile):
