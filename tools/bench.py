@@ -32,7 +32,7 @@ def summarize(runs):
                        'frame_p95_range': max(frame)-min(frame) if frame else None,
                        'frame_budget_ms': 16.7 if resolution[0] == 1280 else 20.0,
                        'tick_budget_ms': 4.0,
-                       'meets_budget': bool(selected) and all(r['valid'] and r['frame_ms']['p95'] <= (16.7 if resolution[0] == 1280 else 20.0) and r['tick_ms']['p95'] <= 4 for r in selected)})
+                       'meets_budget': bool(selected) and all(r['valid'] and r['tick_rate_sustained'] and r['frame_ms']['p95'] <= (16.7 if resolution[0] == 1280 else 20.0) and r['tick_ms']['p95'] <= 4 for r in selected)})
     return groups
 
 
