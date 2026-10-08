@@ -19,7 +19,7 @@ func run():
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if options.get("vsync","off") == "on" else DisplayServer.VSYNC_DISABLED)
 	var valley = load("res://scenes/mvp.tscn").instantiate()
 	root.add_child(valley)
-	var fixture := Fixture.setup(valley)
+	var fixture := Fixture.setup(valley,smoke)
 	var sim: GopalaSettlementSimulation = valley.simulation
 	var tick_rate := float(sim.speed) / sim.tick_interval_seconds()
 	var warmup := float(options.get("warmup","30"))
