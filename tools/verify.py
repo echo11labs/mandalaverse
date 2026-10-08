@@ -40,7 +40,7 @@ def run_stage(name, arguments, timeout=60, external=False):
         if line.startswith(marker):
             result["tests"] = json.loads(line[len(marker):])
             result["ok"] = result["ok"] and result["tests"]["ok"]
-    if name in ["content-tests", "landscape-tests", "scenic-tests", "kathmandu-tests", "coordinate-tests", "waterways-tests", "forest-tests", "entity-registry-tests", "selection-tests", "spatial-grid-tests", "simulation-spine-tests", "ui-tests", "component-gallery-tests", "gather-delivery-tests", "placement-slice-tests", "villager-movement-tests", "construction-labor-tests", "stone-resource-tests", "scale-standard-tests", "model-asset-tests", "local-view-tests", "route-tests", "save-tests", "worker-job-tests", "stockpile-inventory-tests", "forage-tests", "survival-tests", "herd-tests", "mvp-scenario-tests"] and "tests" not in result:
+    if name in ["content-tests", "landscape-tests", "scenic-tests", "kathmandu-tests", "coordinate-tests", "waterways-tests", "forest-tests", "entity-registry-tests", "selection-tests", "spatial-grid-tests", "simulation-spine-tests", "ui-tests", "component-gallery-tests", "gather-delivery-tests", "placement-slice-tests", "villager-movement-tests", "construction-labor-tests", "stone-resource-tests", "scale-standard-tests", "model-asset-tests", "local-view-tests", "route-tests", "save-tests", "worker-job-tests", "stockpile-inventory-tests", "forage-tests", "survival-tests", "herd-tests", "mvp-scenario-tests", "bench-smoke"] and "tests" not in result:
         result["ok"] = False
     print(f"{name}: {'PASS' if result['ok'] else 'FAIL'}", flush=True)
     return result
@@ -55,7 +55,7 @@ def main():
         raise SystemExit("Unexpected engine version: " + version)
     stages = [run_stage("import", ["--editor", "--import"])]
     if stages[-1]["ok"]:
-        scripts = list((ROOT / "game/core").rglob("*.gd")) + list((ROOT / "game/scenes").rglob("*.gd")) + list((ROOT / "game/tests").rglob("*.gd")) + list((ROOT / "game/addons/gopala_mcp").rglob("*.gd")) + [path for path in (ROOT / "game/assets/ui").rglob("*.gd") if "generate_" not in path.name]
+        scripts = list((ROOT / "game/core").rglob("*.gd")) + list((ROOT / "game/scenes").rglob("*.gd")) + list((ROOT / "game/tests").rglob("*.gd")) + list((ROOT / "game/bench").rglob("*.gd")) + list((ROOT / "game/addons/gopala_mcp").rglob("*.gd")) + [path for path in (ROOT / "game/assets/ui").rglob("*.gd") if "generate_" not in path.name]
         for path in sorted(scripts):
             relative = path.relative_to(ROOT / "game").as_posix()
             stages.append(run_stage("parse-" + path.stem, ["--check-only", "--script", relative]))
@@ -103,6 +103,7 @@ def main():
             stages.append(run_stage("forest-tests", [str(ENGINE), "--path", str(ROOT / "game"), "--script", "tests/run_forest_tests.gd"], external=True))
         if (ROOT / "game/data/geography/kathmandu.json").exists():
             stages.append(run_stage("coordinate-tests", [str(ROOT / ".tools/python/bin/python"), str(ROOT / "tools/test_geography.py")], external=True))
+        stages.append(run_stage("bench-smoke", ["python3", str(ROOT / "tools/bench.py"), "--smoke", "--output", str(REPORTS / "bench-smoke")], external=True))
         stages.append(run_stage("main-scene", ["--quit-after", "5"]))
     report = {"ok": all(stage["ok"] for stage in stages), "engine": version, "stages": stages, "scope": "Development import, authored scripts, content invariants and headless scene execution. No export, simulation, GPU performance or final art claim."}
     (ROOT / "reports/verification.json").write_text(json.dumps(report, indent=2) + "\n")
