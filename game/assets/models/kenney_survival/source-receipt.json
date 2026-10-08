@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "author": "Kenney",
+  "license": "CC0-1.0",
+  "version": "2.0",
+  "source_url": "https://kenney.nl/assets/survival-kit",
+  "source_archive": "kenney_survival-kit.zip",
+  "archive_sha256": "c3586341b5932c87eb43d75d915434f47daed168b17ed36a03e8ca9977c7443e",
+  "scope": "Temporary stylized prototype art; not historical evidence",
+  "files": {
+    "structure.glb": "2ff24b6e283bc687c04cd3e0341049e34ce10fe2394a9856af89226a72eebd9d",
+    "Textures/colormap.png": "6ca023be9f12e8c2358fcf94320c8a894b4c05a3dd0bad1f5c268312053caca1",
+    "structure-roof.glb": "645e0454780d0b07084e3d5ffc6c5b164742f62b07b810e1cb838897c7ca83ac",
+    "structure-canvas.glb": "f450f215599f8962b63737825c7d55d7be498742551ba21e5633d6459b194134",
+    "box.glb": "346eebd23986793b992ca6e05e9f98d6f5db96a9bfa3aa7c8360ac8b7920def8",
+    "barrel.glb": "3a0d12f6bdd1badd361f64ce0fbbf878a4ccfc2de8ff1ac4ed4c1aea2a9ee04a",
+    "License.txt": "62c8356876481204fa4d40dc59183dfed777adf987d7f2a1390fffe8a699f3ff"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "source": "Installed Proton Scatter demos/assets",
+  "license": "LICENSE.md (MIT, HungryProton)",
+  "purpose": "Prototype rock visuals copied out of demo .gdignore; no upstream changes",
+  "files": [
+    {
+      "source": "models/large_rock.glb",
+      "file": "large_rock.glb",
+      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6"
+    },
+    {
+      "source": "models/small_rock.glb",
+      "file": "small_rock.glb",
+      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a"
+    },
+    {
+      "source": "textures/t_rock_dirty.png",
+      "file": "t_rock_dirty.png",
+      "sha256": "617927485e5d11ab035e036275d81b81fa68f66eceda3738248d70be562cc769"
+    }
+  ]
+}
