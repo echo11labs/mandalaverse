@@ -48,7 +48,7 @@ def main():
     revision = command_output(['git', '-C', str(ROOT), 'rev-parse', 'HEAD'])['output']
     changes = command_output(['git','-C',str(ROOT),'status','--porcelain','--untracked-files=normal'])['output']
     # Reports are derived output; all game/tools/config changes must be committed.
-    dirty = [line for line in changes.splitlines() if not line[3:].startswith('reports/')]
+    dirty = [line for line in changes.splitlines() if not line[3:].startswith('reports/') and not (line[3:] == '.tools' and (ROOT/'.tools').is_symlink())]
     if dirty and not (args.smoke or args.quick or args.profile):
         raise SystemExit('Full baseline needs a clean checkout. Uncommitted entries: '+str(dirty))
     warmup, duration = (0, 3) if args.smoke else ((1, 35) if args.quick or args.profile else (30, 120))
