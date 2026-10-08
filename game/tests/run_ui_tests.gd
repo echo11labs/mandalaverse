@@ -5,6 +5,12 @@ extends SceneTree
 ## control is unlabelled, that the layout fits the target resolution, and that
 ## placement and inspection state actually reach the player.
 
+class WorldPickProbe extends Node:
+	var clicks := 0
+	func _unhandled_input(event: InputEvent) -> void:
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			clicks += 1
+
 var failures: Array[String] = []
 var checks := 0
 var hud: GopalaKathmanduHud
@@ -24,6 +30,7 @@ func run() -> void:
 	hud = load("res://scenes/ui/hud.tscn").instantiate() as GopalaKathmanduHud
 	root.add_child(hud)
 	root.size = viewport_size
+	root.content_scale_size = viewport_size
 	var terrain := GopalaKathmanduTerrain.new()
 	terrain.load_data()
 	hud.configure_survey(terrain, [
@@ -35,11 +42,17 @@ func run() -> void:
 	await process_frame
 	_test_structure()
 	_test_resources()
-	_test_build_bar()
-	_test_inspection()
+	await _test_build_bar()
+	await _test_inspection()
+	# Populate optional readouts before checking their labels.
+	hud.show_territory("Survey", true, [{"name": "Yambu", "modern": "Kathmandu Durbar Square"}])
+	hud.button_for(&"dwelling").button_pressed = true
 	_test_controls_are_labelled()
+	hud.close_build()
+	hud.hide_inspection()
 	_test_layout_fits()
 	_test_minimap()
+	await _test_pasture_dropdown_input()
 	hud.queue_free()
 	print("GOPALA_TEST_REPORT=", JSON.stringify({"ok": failures.is_empty(), "checks": checks, "failures": failures}))
 	quit(0 if failures.is_empty() else 1)
@@ -220,3 +233,45 @@ func _test_minimap() -> void:
 	await process_frame
 	blank.queue_free()
 	minimap.queue_free()
+## Exercise viewport input dispatch rather than emitting a button signal: the
+## popup must select a real pasture and consume the mouse before world picking.
+func _test_pasture_dropdown_input() -> void:
+	root.gui_embed_subwindows = true
+	var probe := WorldPickProbe.new()
+	root.add_child(probe)
+	hud.show_place("Cattle", "Choose a destination")
+	hud.show_cattle_controls([{"id": 101, "label": "North pasture"}, {"id": 202, "label": "South pasture"}])
+	await process_frame
+	await process_frame
+	_click_at(Vector2(700, 500))
+	expect(probe.clicks == 1, "World picking observer must receive an unobstructed terrain click.")
+	var before := probe.clicks
+	var choice := hud._pasture_choices
+	_click_at(choice.get_global_rect().get_center())
+	await process_frame
+	var popup := choice.get_popup()
+	expect(popup.visible, "Clicking the pasture selector must open its actual popup.")
+	var panel := popup.get_theme_stylebox("panel")
+	var top := panel.get_content_margin(SIDE_TOP)
+	var bottom := panel.get_content_margin(SIDE_BOTTOM)
+	var row_height := (float(popup.size.y) - top - bottom) / float(popup.item_count)
+	_click_at(Vector2(popup.position) + Vector2(float(popup.size.x) * 0.5, top + row_height * 1.5))
+	await process_frame
+	expect(choice.get_selected_id() == 202, "Clicking the second popup row must select South pasture.")
+	expect(not popup.visible, "Selecting a pasture must close the popup.")
+	expect(probe.clicks == before, "Opening and selecting a pasture must never reach world picking.")
+	probe.queue_free()
+	hud.show_cattle_controls([])
+
+func _click_at(point: Vector2) -> void:
+	var motion := InputEventMouseMotion.new()
+	motion.position = point
+	motion.global_position = point
+	root.push_input(motion, true)
+	for pressed in [true, false]:
+		var event := InputEventMouseButton.new()
+		event.position = point
+		event.global_position = point
+		event.button_index = MOUSE_BUTTON_LEFT
+		event.pressed = pressed
+		root.push_input(event, true)
