@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "balance_status": "prototype",
+  "population": 8,
+  "starting_food": 48,
+  "starting_water": 64,
+  "meal_interval_ticks": 120,
+  "drink_interval_ticks": 120,
+  "shortage_grace_ticks": 180,
+  "health_interval_ticks": 30,
+  "health_change": 2,
+  "water_refill_ticks": 60,
+  "water_source_capacity": 12,
+  "objective_ticks": 900,
+  "cattle_cycle_ticks": 120,
+  "cattle_water_per_cycle": 1,
+  "cattle_fodder_per_cycle": 1,
+  "milk_per_cycle": 2
+}
