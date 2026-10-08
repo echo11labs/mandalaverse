@@ -52,8 +52,16 @@ static func setup(valley, smoke := false) -> Dictionary:
 	sim.process_pending_commands()
 	# Let normal need trips dephase through gameplay; no worker-state edits.
 	if not smoke: sim.advance_ticks(180)
+	sim.advance_ticks(1) # Initialize normal survival fields before changing only due ticks.
+	var timer_offsets: Array = []
+	workers = sim.entity_queries().snapshots_by_kind(GopalaEntityKind.VILLAGER)
+	for i in workers.size():
+		var meal_offset := 1 + int(i * int(sim._survival_service.policy.meal_interval_ticks) / workers.size())
+		var drink_offset := 1 + int(i * int(sim._survival_service.policy.drink_interval_ticks) / workers.size())
+		registry.update_entity(workers[i].entity_id,{&"meal_due_tick":sim.logical_tick+meal_offset,&"drink_due_tick":sim.logical_tick+drink_offset},{},sim.logical_tick)
+		timer_offsets.append({"worker_id":workers[i].entity_id,"meal_offset":meal_offset,"drink_offset":drink_offset})
 	valley.focus_camp()
-	return {"seed":SEED, "preconditioning_ticks":sim.logical_tick, "supplies_added":SUPPLIES, "initial_ledger":sim.resource_balances_snapshot(), "storage_capacity":capacities, "extra_sources":40, "timber_per_extra_source":100000, "completed_fixture_homes":10, "completed_fixture_shelters":1, "workers":workers.size(), "cattle":sim._herd_service.animals().size(), "roles":{"timber":39,"herder":1}, "setup_exception":"Registry/stock APIs only before warmup; spawning/roles/pasture use commands. Completed fixture buildings are nonblocking pre-existing records."}
+	return {"seed":SEED, "preconditioning_ticks":sim.logical_tick, "initial_need_timer_offsets":timer_offsets, "supplies_added":SUPPLIES, "initial_ledger":sim.resource_balances_snapshot(), "storage_capacity":capacities, "extra_sources":40, "timber_per_extra_source":100000, "completed_fixture_homes":10, "completed_fixture_shelters":1, "workers":workers.size(), "cattle":sim._herd_service.animals().size(), "roles":{"timber":39,"herder":1}, "setup_exception":"Registry/stock APIs only before warmup; spawning/roles/pasture use commands. Completed fixture buildings are nonblocking pre-existing records."}
 
 static func activity(sim) -> Dictionary:
 	var active := 0

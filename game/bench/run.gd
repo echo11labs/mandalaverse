@@ -81,7 +81,7 @@ func run():
 			point.y = valley.ground_height_at(point.x,point.z)
 			valley.camera.focus_point(point,0.8)
 			second_view = true
-		if elapsed >= next_tick:
+		while float(Time.get_ticks_usec()-start)/1000000.0 >= next_tick and float(Time.get_ticks_usec()-start)/1000000.0 < warmup+duration:
 			var tick_start := Time.get_ticks_usec()
 			if not sim.advance_ticks(1): errors.append("Tick rejected")
 			var cost := float(Time.get_ticks_usec()-tick_start)/1000.0
