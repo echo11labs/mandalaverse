@@ -1,0 +1,11 @@
+# Pasture and herd management
+
+Select a cow to inspect its assigned pasture, cattle count versus grazing capacity, estimated grazing minutes, travel state and milk production. Choose a plot in the destination dropdown, then click **Move to pasture**. Assignment takes effect on fixed ticks after unpausing. Cattle walk along the local grid; they do not teleport. Milk already produced stays at its original physical collection point.
+
+Each eight-metre pasture supports two grass-fed cattle. Additional cattle slow grazing-only production by `ceil(cattle / capacity)`; moving them to another plot restores normal support. A physically delivered fodder ration bypasses that crowding penalty for the cycle and is consumed instead of grazing. Water and tending remain required. With no stocked fodder, herders can still tend crowded cattle for the slower grass-fed cycle. There is no player cattle purchase/breeding feature yet; the scenario still begins with two.
+
+Assignments persist across ticks and saves. The save records the destination pasture and movement state; routes are derived from the saved position and rebuilt against current terrain/occupancy. Unreachable destinations are rejected without changing assignment. An interrupted herder drops any carried ration at its real position before the cow moves. A blocked cattle route prevents milk production and retries when access changes.
+
+Grazing remains finite. The reserve estimate assumes the current herd and grass-only cycle rate, excludes fodder and water, and uses logical minutes. The game has no authoritative day/season calendar yet, so this interface does not claim a days-of-feed forecast. Weather, regrowth and calendar integration are the next slice. Plot assignment is capped at sixteen cattle to keep destinations inside the measured plot.
+
+The expanded herd suite covers mid-walk loading, stable assignment, movement speed, rejected commands/saves, inaccessible routes, crowding, tending without fodder, restored support and per-cycle input journals. Existing physical herder pickup/delivery/milk collection tests remain. Render captures are `reports/herd-1280x800.png` and `reports/herd-1920x1080.png`. Human gameplay/art acceptance remains pending.

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GOPALA — Dawn of the Valley"
-run/main_scene="res://scenes/landscape/kathmandu_valley.tscn"
+run/main_scene="res://scenes/mvp.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [autoload]
@@ -21,6 +21,7 @@ UIRouter="*res://core/autoload/ui_router.gd"
 UISettings="*res://core/autoload/ui_settings.gd"
 MCPRuntimeServer="*res://addons/godot_mcp_toolkit/runtime/mcp_runtime_server.gd"
 Godai="*uid://cx3445acrymoq"
+GUIDE="*uid://p2jwrgjcbexr"
 
 [display]
 
@@ -30,7 +31,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/flatten_for_llm/plugin.cfg", "res://addons/godai/plugin.cfg", "res://addons/godot_mcp_toolkit/plugin.cfg", "res://addons/proton_scatter/plugin.cfg", "res://addons/waterways/plugin.cfg")
+enabled=PackedStringArray("res://addons/at-icons/plugin.cfg", "res://addons/ez-tree-godot-port/plugin.cfg", "res://addons/flatten_for_llm/plugin.cfg", "res://addons/godai/plugin.cfg", "res://addons/godot_mcp_toolkit/plugin.cfg", "res://addons/guide/plugin.cfg", "res://addons/proton_scatter/plugin.cfg", "res://addons/waterways/plugin.cfg")
 
 [input]
 

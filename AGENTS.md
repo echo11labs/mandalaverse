@@ -26,3 +26,7 @@ The tool catalog is identical across all profiles. After a bridge upgrade, start
 task or restart Codex so its stdio workers and cached `tools/list` are rebuilt. A 46-tool response
 with `arbitrary_python: false` is a stale 0.4.0 task, not a restricted profile.
 <!-- END blender-mcp-bridge -->
+
+## Scaling and sizing
+
+For authored scaling/sizing changes, use `game/data/standards/world_scale.json` and `docs/GOPALA-Scale-and-Sizing.md`. Express sizes as target dimensions, normalize imported mesh bounds including child transforms, and preserve bottom-centre ground anchors. Add a standard profile and measured checks for new object categories. Update the standard revision when its dimensions or unit contract change. Run `python3 tools/verify.py`; it regenerates `reports/scale-audit.json` with standard/asset hashes and measured sizes. Inspect that report after every scaling change. World-object dimensions must be authored in metres and converted through the terrain metres-per-world-unit setting. Check people against rivers and terrain, not only against props. Do not enlarge physical meshes into map markers.
