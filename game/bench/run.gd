@@ -29,6 +29,7 @@ func run():
 	var draw_samples: Array = []
 	var instance_samples: Array = []
 	var memory_samples: Array = []
+	var backlog_samples: Array = []
 	var activity_windows: Array = []
 	var window_min := 40
 	var all_min := 40
@@ -81,9 +82,8 @@ func run():
 			point.y = valley.ground_height_at(point.x,point.z)
 			valley.camera.focus_point(point,0.8)
 			second_view = true
-		# Freeze the due set at this frame's start, as advance_frame(delta) does.
-		# Newly overdue ticks wait for the next frame so rendering can observe stalls.
-		while elapsed >= next_tick and float(Time.get_ticks_usec()-start)/1000000.0 < warmup+duration:
+		# G1-12: at most one due tick per frame; overdue work remains scheduled.
+		if elapsed >= next_tick:
 			var tick_start := Time.get_ticks_usec()
 			var tick_elapsed := float(tick_start-start)/1000000.0
 			var tick_collecting := tick_elapsed >= warmup
@@ -101,15 +101,19 @@ func run():
 					window_min = 40
 				window_min = mini(window_min,activity.active)
 				all_min = mini(all_min,activity.active)
+			if tick_collecting:
+				var after_tick := minf(float(Time.get_ticks_usec()-start)/1000000.0,warmup+duration-0.000001)
+				backlog_samples.append(maxi(0,floori((after_tick-next_tick)*tick_rate)+1))
 			if smoke and sim.logical_tick >= 8: break
 	RenderingServer.frame_post_draw.disconnect(on_draw)
 
 	if window_index >= 0: activity_windows.append({"window":window_index,"minimum_active":window_min})
 	var actual_elapsed := float(Time.get_ticks_usec()-start)/1000000.0
 	var workload_valid: bool = fixture.workers == 40 and fixture.cattle == 2 and (smoke or all_min >= 36)
-	var rate_sustained: bool = smoke or tick_samples.size() >= int(duration*tick_rate)-2
+	var final_backlog := maxi(0,floori((minf(actual_elapsed,warmup+duration-0.000001)-next_tick)*tick_rate)+1)
+	var rate_sustained: bool = smoke or (tick_samples.size() >= int(duration*tick_rate)-2 and final_backlog <= 1)
 	if not smoke and (DisplayServer.get_name() == "headless" or frame_samples.is_empty()): errors.append("No real renderer samples")
-	var report := {"schema":1,"smoke":smoke,"ok":errors.is_empty(),"valid":workload_valid and errors.is_empty(),"workload_valid":workload_valid,"tick_rate_sustained":rate_sustained,"sampled_tick_count":tick_samples.size(),"failures":errors,"fixture":fixture,"tick_rate":tick_rate,"logical_ticks":sim.logical_tick,"warmup_seconds":warmup,"collection_seconds":duration,"elapsed_seconds":actual_elapsed,"frame_ms":stats(frame_samples),"tick_ms":stats(tick_samples),"draw_calls":stats(draw_samples),"rendered_instances":stats(instance_samples),"static_memory_bytes":stats(memory_samples),"minimum_active":all_min,"activity_windows":activity_windows,"activity_definition":"Live collection/build task or carried goods or job movement; excludes NEED trips and mere assigned roles. Window minimum is strict per sampled tick.","captures":capture_files,"camera_points":camera_points,"world_seed":valley.resolved_world_seed,"godot":Engine.get_version_info(),"display_driver":DisplayServer.get_name(),"screen_size":str(DisplayServer.screen_get_size()),"screen_refresh_rate":DisplayServer.screen_get_refresh_rate(),"renderer":RenderingServer.get_current_rendering_method(),"adapter":RenderingServer.get_video_adapter_name(),"resolution":[width,height],"vsync_requested":options.get("vsync","off"),"vsync_actual":DisplayServer.window_get_vsync_mode()}
+	var report := {"schema":1,"smoke":smoke,"ok":errors.is_empty(),"valid":workload_valid and errors.is_empty(),"workload_valid":workload_valid,"tick_rate_sustained":rate_sustained,"sampled_tick_count":tick_samples.size(),"requested_tick_rate":tick_rate,"actual_sampled_tick_rate":float(tick_samples.size())/duration,"pending_tick_backlog":final_backlog,"pending_tick_backlog_stats":stats(backlog_samples),"driver":"At most one unchanged tick call per process frame; overdue ticks remain scheduled","failures":errors,"fixture":fixture,"tick_rate":tick_rate,"logical_ticks":sim.logical_tick,"warmup_seconds":warmup,"collection_seconds":duration,"elapsed_seconds":actual_elapsed,"frame_ms":stats(frame_samples) if smoke or not frame_samples.is_empty() else null,"tick_ms":stats(tick_samples),"draw_calls":stats(draw_samples),"rendered_instances":stats(instance_samples),"static_memory_bytes":stats(memory_samples),"minimum_active":all_min,"activity_windows":activity_windows,"activity_definition":"Live collection/build task or carried goods or job movement; excludes NEED trips and mere assigned roles. Window minimum is strict per sampled tick.","captures":capture_files,"camera_points":camera_points,"world_seed":valley.resolved_world_seed,"godot":Engine.get_version_info(),"display_driver":DisplayServer.get_name(),"screen_size":str(DisplayServer.screen_get_size()),"screen_refresh_rate":DisplayServer.screen_get_refresh_rate(),"renderer":RenderingServer.get_current_rendering_method(),"adapter":RenderingServer.get_video_adapter_name(),"resolution":[width,height],"vsync_requested":options.get("vsync","off"),"vsync_actual":DisplayServer.window_get_vsync_mode()}
 	var file := FileAccess.open(options.get("output","user://benchmark.json"), FileAccess.WRITE)
 	if file: file.store_string(JSON.stringify(report,"\t"))
 	else: errors.append("Report write failed")
