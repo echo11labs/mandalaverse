@@ -1,0 +1,31 @@
+{
+  "before": {
+    "context": "Local Apple M4 Pro GPU run; other editor/runtime processes may affect timing; geometry counters are the optimization evidence.",
+    "draw_calls": 365,
+    "focus": [
+      -74.375,
+      12.3250007629395
+    ],
+    "mean_frame_ms": 23.5941222222222,
+    "objects": 396,
+    "primitives": 4051154,
+    "sample_frames": 90,
+    "span_metres": 40
+  },
+  "after": {
+    "context": "Local Apple M4 Pro GPU run; other editor/runtime processes may affect timing; geometry counters are the optimization evidence.",
+    "draw_calls": 85,
+    "focus": [
+      -74.375,
+      12.3250007629395
+    ],
+    "mean_frame_ms": 8.3336,
+    "objects": 116,
+    "primitives": 148297,
+    "sample_frames": 90,
+    "span_metres": 40
+  },
+  "primitive_reduction_percent": 96.34,
+  "draw_call_reduction_percent": 76.71,
+  "scope": "Matched local GPU probe, not a general performance acceptance result."
+}

@@ -1,0 +1,16 @@
+{
+	"bounds_failures": 0,
+	"culling_chunks": 5676,
+	"culling_samples": 49127,
+	"default_span_metres": 200.0,
+	"distance_culling_failures": 0,
+	"distance_metres": 299.999833106995,
+	"far_metres": 12300.0,
+	"height_above_pivot_metres": 245.745587348938,
+	"near_metres": 0.0500000023748726,
+	"pivot": [
+		-74.5195846557617,
+		2.23889803886414,
+		12.4026174545288
+	]
+}

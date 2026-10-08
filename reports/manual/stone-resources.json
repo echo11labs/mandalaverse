@@ -1,0 +1,15 @@
+{
+  "deposits": 24,
+  "stored_stone": 50,
+  "uncollected_stone": 729,
+  "renderer": "Compatibility, OpenGL 4.1 Metal, Apple M4 Pro",
+  "capture": "reports/manual/stone-resources.png",
+  "runtime_errors": false,
+  "scope": "Actual scene startup and GPU capture; manual player acceptance and performance not established",
+  "input_delivery": {
+    "delivery_incremented_stone": true,
+    "right_click_created_task": true,
+    "stored_stone": 51
+  },
+  "delivery_capture": "reports/manual/stone-delivery.png"
+}

@@ -1,0 +1,13 @@
+{
+	"capture": "reports/manual/seeded-resources.png",
+	"seed": 43129,
+	"seeded_counts": {
+		"stone": 24,
+		"timber": 12
+	},
+	"uncollected_amounts": {
+		"stone": 715,
+		"timber": 268
+	},
+	"vegetation_scope": "Collectible timber stands; baked forest and grass remain scenery"
+}

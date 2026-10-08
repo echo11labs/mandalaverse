@@ -1,0 +1,616 @@
+{
+  "checks": 136,
+  "failures": [],
+  "forage_measurements": [
+    {
+      "bounds_bottom": 0.0,
+      "resource": "thatch",
+      "size_metres": [
+        1.7515029758215,
+        0.939133577048779,
+        1.7516802996397
+      ],
+      "source_sha256": "b3519ef6d4ca8c34ba6e8dabb7d7822c9242af3cbb5c0c332a95081e7584bb32"
+    },
+    {
+      "bounds_bottom": 0.0,
+      "resource": "wild_food",
+      "size_metres": [
+        2.36715190112591,
+        1.05510074645281,
+        1.37533051893115
+      ],
+      "source_sha256": "b3519ef6d4ca8c34ba6e8dabb7d7822c9242af3cbb5c0c332a95081e7584bb32"
+    },
+    {
+      "bounds_bottom": 0.0,
+      "resource": "fodder",
+      "size_metres": [
+        1.7515029758215,
+        0.939133577048779,
+        1.7516802996397
+      ],
+      "source_sha256": "b3519ef6d4ca8c34ba6e8dabb7d7822c9242af3cbb5c0c332a95081e7584bb32"
+    }
+  ],
+  "mesh_measurements": [
+    {
+      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00292542716488242,
+        0.00165067869238555,
+        0.00300000002607703
+      ],
+      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "source_size": [
+        0.0348508134484291,
+        0.0196646470576525,
+        0.0357392057776451
+      ],
+      "yaw": 0.0
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.00292542716488242,
+        0.00165067845955491,
+        0.00300000002607703
+      ],
+      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "source_size": [
+        3.48508143424988,
+        1.96646475791931,
+        3.57392072677612
+      ],
+      "yaw": 0.0
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00292542716488242,
+        0.00165067845955491,
+        0.00300000002607703
+      ],
+      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "source_size": [
+        348.508148193359,
+        196.646484375,
+        357.39208984375
+      ],
+      "yaw": 0.0
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00299354270100594,
+        0.00118494173511863,
+        0.00300000002607703
+      ],
+      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "source_size": [
+        0.0496792048215866,
+        0.0196646470576525,
+        0.0497863665223122
+      ],
+      "yaw": 0.7
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.00299354270100594,
+        0.00118494173511863,
+        0.00300000002607703
+      ],
+      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "source_size": [
+        4.96792030334473,
+        1.96646475791931,
+        4.97863674163818
+      ],
+      "yaw": 0.7
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00299354270100594,
+        0.00118494173511863,
+        0.00300000002607703
+      ],
+      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "source_size": [
+        496.792053222656,
+        196.646484375,
+        497.863647460938
+      ],
+      "yaw": 0.7
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00300000025890768,
+        0.00160564482212067,
+        0.00292961089871824
+      ],
+      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "source_size": [
+        0.036741591989994,
+        0.0196646470576525,
+        0.035879522562027
+      ],
+      "yaw": 1.6
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.00299999979324639,
+        0.00160564458929002,
+        0.00292961066588759
+      ],
+      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "source_size": [
+        3.67415952682495,
+        1.96646475791931,
+        3.58795213699341
+      ],
+      "yaw": 1.6
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00299999979324639,
+        0.00160564458929002,
+        0.00292961066588759
+      ],
+      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "source_size": [
+        367.415954589844,
+        196.646484375,
+        358.795227050781
+      ],
+      "yaw": 1.6
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00297308643348515,
+        0.00124972988851368,
+        0.00300000002607703
+      ],
+      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "source_size": [
+        0.0467818677425385,
+        0.0196646470576525,
+        0.0472053550183773
+      ],
+      "yaw": 2.7
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.00297308643348515,
+        0.00124972988851368,
+        0.00300000002607703
+      ],
+      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "source_size": [
+        4.67818689346313,
+        1.96646475791931,
+        4.72053575515747
+      ],
+      "yaw": 2.7
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00297308643348515,
+        0.00124972988851368,
+        0.00300000002607703
+      ],
+      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "source_size": [
+        467.818695068359,
+        196.646484375,
+        472.053588867188
+      ],
+      "yaw": 2.7
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00300000002607703,
+        0.00242641009390354,
+        0.00230306200683117
+      ],
+      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "source_size": [
+        0.00598317570984364,
+        0.00483921263366938,
+        0.00459320843219757
+      ],
+      "yaw": 0.0
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.00300000002607703,
+        0.00242641009390354,
+        0.00230306200683117
+      ],
+      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "source_size": [
+        0.598317563533783,
+        0.483921259641647,
+        0.459320843219757
+      ],
+      "yaw": 0.0
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00300000002607703,
+        0.00242641009390354,
+        0.00230306200683117
+      ],
+      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "source_size": [
+        59.8317565917969,
+        48.3921279907227,
+        45.9320831298828
+      ],
+      "yaw": 0.0
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00300000002607703,
+        0.0019266395829618,
+        0.00293324748054147
+      ],
+      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "source_size": [
+        0.007535211276263,
+        0.00483921263366938,
+        0.00736754713580012
+      ],
+      "yaw": 0.7
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.00300000002607703,
+        0.00192663981579244,
+        0.00293324771337211
+      ],
+      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "source_size": [
+        0.753521144390106,
+        0.483921259641647,
+        0.736754715442657
+      ],
+      "yaw": 0.7
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00300000002607703,
+        0.00192663981579244,
+        0.00293324771337211
+      ],
+      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "source_size": [
+        75.3521118164062,
+        48.3921279907227,
+        73.6754684448242
+      ],
+      "yaw": 0.7
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00233826087787747,
+        0.00237420201301575,
+        0.00299999979324639
+      ],
+      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "source_size": [
+        0.0047659557312727,
+        0.00483921263366938,
+        0.00611474364995956
+      ],
+      "yaw": 1.6
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.00233826087787747,
+        0.00237420201301575,
+        0.00299999979324639
+      ],
+      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "source_size": [
+        0.47659558057785,
+        0.483921259641647,
+        0.611474394798279
+      ],
+      "yaw": 1.6
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00233826111070812,
+        0.00237420224584639,
+        0.00300000002607703
+      ],
+      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "source_size": [
+        47.6595611572266,
+        48.3921279907227,
+        61.1474380493164
+      ],
+      "yaw": 1.6
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00299999979324639,
+        0.00196922291070223,
+        0.00273037329316139
+      ],
+      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "source_size": [
+        0.00737226754426956,
+        0.00483921263366938,
+        0.00670968042686582
+      ],
+      "yaw": 2.7
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.00300000002607703,
+        0.00196922291070223,
+        0.00273037329316139
+      ],
+      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "source_size": [
+        0.737226724624634,
+        0.483921259641647,
+        0.670968055725098
+      ],
+      "yaw": 2.7
+    },
+    {
+      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00300000002607703,
+        0.00196922291070223,
+        0.00273037329316139
+      ],
+      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "source_size": [
+        73.7226715087891,
+        48.3921279907227,
+        67.096809387207
+      ],
+      "yaw": 2.7
+    },
+    {
+      "asset": "res://assets/models/kenney_survival/barrel.glb",
+      "fitted_size": [
+        0.00481249950826168,
+        0.00699999975040555,
+        0.00481249950826168
+      ],
+      "sha256": "3a0d12f6bdd1badd361f64ce0fbbf878a4ccfc2de8ff1ac4ed4c1aea2a9ee04a"
+    },
+    {
+      "asset": "res://core/presentation/cattle_view.gd",
+      "fitted_size": [
+        0.00643153535202146,
+        0.0125000001862645,
+        0.0188278015702963
+      ],
+      "sha256": "6c876f2c60fd3d56210cd9b72826644c7e462f5d80467ebf6d39cb1af63ede2f"
+    }
+  ],
+  "ok": true,
+  "patch_size": [
+    0.0094941733404994,
+    0.00198630173690617,
+    0.00901564210653305
+  ],
+  "profiles": {
+    "axis_convention": "+Y up; XZ ground; model ground anchor at bottom centre",
+    "building": {
+      "blueprint_height": 0.25,
+      "foundation_height": 0.35,
+      "frame_height": 0.4,
+      "height": 2.5,
+      "prop_height": 0.6,
+      "prop_offset_x": 0.45,
+      "prop_offset_z": 0.25
+    },
+    "camera": {
+      "culling_padding": 2.0,
+      "default_span": 40.0,
+      "focus_padding": 8.0,
+      "inspection_span": 12.0,
+      "min_span": 5.0,
+      "minimum_distance": 50.0,
+      "near_clip": 0.05,
+      "relief_depth": 12000.0
+    },
+    "cattle": {
+      "height": 1.25,
+      "height_max": 1.25,
+      "pick_length": 2.05,
+      "pick_width": 0.8,
+      "width_max": 2.05
+    },
+    "coverage": [
+      "Kathmandu grid conversion",
+      "villager reference and ground anchor",
+      "collectible stone pieces and patches",
+      "stone picking bounds",
+      "decorative stone MultiMeshes",
+      "stone and timber carry visuals",
+      "imported timber structures fitted to footprint and height",
+      "timber source tree normalization",
+      "close camera scale",
+      "walking speed in metres per second",
+      "starting settlement offsets",
+      "animated imported worker rest-pose height and bottom anchor",
+      "settlement planning grid borders and ghost ground anchor",
+      "chunked terrain and camera-local shadow reach",
+      "two-metre worker routes with eighty-metre navigation margin",
+      "thatch, fodder and wild-food patches and depletion",
+      "forage carry bundles",
+      "water point collection barrels and carried water",
+      "prototype cattle body and ground anchors",
+      "eight-metre pasture footprint and milk vessels"
+    ],
+    "dimensions_unit": "metres",
+    "forage_carry": {
+      "depth": 0.45,
+      "height": 0.35,
+      "width": 0.45
+    },
+    "forage_patch": {
+      "berry_width": 0.05,
+      "height_max": 1.65,
+      "pick_height": 1.65,
+      "pick_width": 3.0,
+      "piece_count": 9.0,
+      "plant_height": 1.0,
+      "radius": 1.1,
+      "shrub_width": 0.55,
+      "stem_width": 0.035,
+      "width_max": 3.0
+    },
+    "legacy_scope": "Forest models retain their existing metre-height normalization. Rivers retain existing artistic widths, not surveyed banks; regression checks enforce actor-to-river proportions. Buildings retain logical footprint sizing.",
+    "milk_carry": {
+      "depth": 0.3,
+      "height": 0.4,
+      "width": 0.3
+    },
+    "movement": {
+      "walk_speed": 1.4
+    },
+    "navigation": {
+      "margin": 80.0
+    },
+    "pasture": {
+      "length": 8.0,
+      "width": 8.0
+    },
+    "planning": {
+      "grid_lift": 0.03
+    },
+    "rendering": {
+      "canopy_height_max": 40.0,
+      "local_span_max": 500.0,
+      "scenery_cache_groups": 128.0,
+      "scenery_chunk_width": 100.0,
+      "scenery_padding": 25.0,
+      "shadow_padding": 10.0,
+      "terrain_chunk_quads": 32.0
+    },
+    "revision": 10.0,
+    "scenario": {
+      "bank_search_radius": 150.0,
+      "bank_search_step": 5.0,
+      "camp_clearance": 10.0,
+      "starter_tree_offset": 10.0,
+      "worker_offset": 5.0
+    },
+    "schema_version": 1.0,
+    "stone_carry": {
+      "depth": 0.28,
+      "height": 0.22,
+      "width": 0.28
+    },
+    "stone_patch": {
+      "height_max": 0.9,
+      "pick_height": 0.4,
+      "pick_width": 1.4,
+      "piece_count": 11.0,
+      "radius": 0.42,
+      "width_max": 1.4
+    },
+    "stone_piece": {
+      "height_max": 0.26,
+      "width_max": 0.3,
+      "width_min": 0.18
+    },
+    "stone_scenery": {
+      "satellite_width_max": 0.1,
+      "satellite_width_min": 0.04,
+      "width_max": 0.18,
+      "width_min": 0.06
+    },
+    "timber_carry": {
+      "depth": 1.2,
+      "height": 0.3,
+      "width": 0.3
+    },
+    "timber_stand": {
+      "pick_height": 2.0,
+      "pick_width": 4.0,
+      "tree_height": 16.0
+    },
+    "units": {
+      "logical_meters_per_cell": 2.0,
+      "presentation_reference": "Physical dimensions are in metres and converted to world units by regional_meters_per_world_unit. No enlarged actor or prop meshes.",
+      "regional_meters_per_world_unit": 100.0
+    },
+    "villager": {
+      "height": 1.75,
+      "radius": 0.25
+    },
+    "water_carry": {
+      "depth": 0.3,
+      "height": 0.4,
+      "width": 0.3
+    },
+    "water_source": {
+      "height": 0.7,
+      "height_max": 0.7,
+      "pick_height": 0.7,
+      "pick_width": 0.8,
+      "width_max": 0.8
+    }
+  },
+  "revision": 10.0,
+  "scope": "Regenerated on verification: standard values, imported mesh bounds, export-scale/yaw/nested-pivot normalization, patch footprint and depletion. Live terrain patches are checked in stone-resource-tests.",
+  "standard_path": "res://data/standards/world_scale.json",
+  "standard_sha256": "1df74a194283bc5cca4240879f7698e353ea86351fd6981cc4e2b73ef9c96c6d",
+  "units": {
+    "logical_meters_per_cell": 2.0,
+    "presentation_reference": "Physical dimensions are in metres and converted to world units by regional_meters_per_world_unit. No enlarged actor or prop meshes.",
+    "regional_meters_per_world_unit": 100.0
+  }
+}

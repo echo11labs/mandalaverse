@@ -1,0 +1,16 @@
+{
+  "comparison_patch": "Temporary render reference; no resource inventory added",
+  "human_height_metres": 1.75,
+  "human_height_world": 0.0175,
+  "river_name": "Unnamed stream",
+  "river_to_human_ratio": 11.4285714285714,
+  "river_width_metres": 20.0,
+  "river_width_world": 0.2,
+  "standard_revision": 2,
+  "runtime_errors": false,
+  "captures": [
+    "reports/manual/physical-human-river.png",
+    "reports/manual/physical-human-stones.png"
+  ],
+  "scope": "Rendered comparison using actual worker and existing river geometry; temporary patch reference, no inventory added"
+}

@@ -1,0 +1,84 @@
+{
+	"checks": 193,
+	"measurements": [
+		{
+			"asset": "character-a.glb",
+			"ground_metres": 0.0,
+			"size_metres": "(1.037037, 1.75, 0.518519)"
+		},
+		{
+			"definition": "stockpile",
+			"footprint_metres": "(4.0, 2.5, 4.0)",
+			"rotation_probe": 0,
+			"size_metres": "(2.036993, 2.5, 2.099319)"
+		},
+		{
+			"definition": "stockpile",
+			"footprint_metres": "(4.0, 2.5, 4.0)",
+			"rotation_probe": 1,
+			"size_metres": "(2.036993, 2.5, 2.099319)"
+		},
+		{
+			"definition": "dwelling",
+			"footprint_metres": "(4.0, 2.5, 4.0)",
+			"rotation_probe": 0,
+			"size_metres": "(2.036993, 2.5, 2.099319)"
+		},
+		{
+			"definition": "dwelling",
+			"footprint_metres": "(4.0, 2.5, 4.0)",
+			"rotation_probe": 1,
+			"size_metres": "(2.036993, 2.5, 2.099319)"
+		},
+		{
+			"definition": "timber_camp",
+			"footprint_metres": "(4.0, 2.5, 4.0)",
+			"rotation_probe": 0,
+			"size_metres": "(2.036993, 2.5, 2.099319)"
+		},
+		{
+			"definition": "timber_camp",
+			"footprint_metres": "(4.0, 2.5, 4.0)",
+			"rotation_probe": 1,
+			"size_metres": "(2.036993, 2.5, 2.099319)"
+		},
+		{
+			"definition": "gatherer_shelter",
+			"footprint_metres": "(4.0, 2.5, 4.0)",
+			"rotation_probe": 0,
+			"size_metres": "(2.036993, 2.5, 2.099319)"
+		},
+		{
+			"definition": "gatherer_shelter",
+			"footprint_metres": "(4.0, 2.5, 4.0)",
+			"rotation_probe": 1,
+			"size_metres": "(2.036993, 2.5, 2.099319)"
+		},
+		{
+			"definition": "water_point",
+			"footprint_metres": "(4.0, 2.5, 4.0)",
+			"rotation_probe": 0,
+			"size_metres": "(2.036993, 2.5, 2.099319)"
+		},
+		{
+			"definition": "water_point",
+			"footprint_metres": "(4.0, 2.5, 4.0)",
+			"rotation_probe": 1,
+			"size_metres": "(2.036993, 2.5, 2.099319)"
+		},
+		{
+			"definition": "cattle_shelter",
+			"footprint_metres": "(4.0, 2.5, 4.0)",
+			"rotation_probe": 0,
+			"size_metres": "(2.036993, 2.5, 2.099319)"
+		},
+		{
+			"definition": "cattle_shelter",
+			"footprint_metres": "(4.0, 2.5, 4.0)",
+			"rotation_probe": 1,
+			"size_metres": "(2.036993, 2.5, 2.099319)"
+		}
+	],
+	"ok": true,
+	"standard_revision": 10.0
+}

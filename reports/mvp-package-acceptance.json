@@ -1,0 +1,82 @@
+{
+  "ok": true,
+  "package_sha256": "11fcb1dbebc73c9527d544ffdc263e32906cb24691803d7e5803bedf5cb6a83b",
+  "native_startup_smoke": {
+    "exit_code": 0,
+    "frames": 30,
+    "engine_errors": [],
+    "signature_verification": "codesign --verify --deep --strict passed"
+  },
+  "packaged_data_acceptance": {
+    "exit_code": 0,
+    "test_report": {
+      "checks": 16,
+      "failures": [],
+      "ok": true
+    },
+    "scenario": {
+      "cattle": [
+        {
+          "assigned_herder_id": 68,
+          "consumed_goods": {
+            "fodder": 2,
+            "water": 10
+          },
+          "display_name": "Cow 1",
+          "fodder_fed": 0,
+          "grazing_consumed": 8,
+          "herd_status": "NO_WATER",
+          "milk_produced": 20,
+          "milk_source_id": 83,
+          "next_milk_tick": 1545,
+          "pasture_id": 81,
+          "position_x": -74.4100036621094,
+          "position_z": 12.25,
+          "shelter_id": 78,
+          "species": "cattle",
+          "tended_tick": 1424,
+          "water_fed": 0
+        },
+        {
+          "assigned_herder_id": 0,
+          "consumed_goods": {
+            "fodder": 2,
+            "water": 10
+          },
+          "display_name": "Cow 2",
+          "fodder_fed": 1,
+          "grazing_consumed": 8,
+          "herd_status": "READY",
+          "milk_produced": 18,
+          "milk_source_id": 84,
+          "next_milk_tick": 1463,
+          "pasture_id": 81,
+          "position_x": -74.3899993896484,
+          "position_z": 12.25,
+          "shelter_id": 78,
+          "species": "cattle",
+          "tended_tick": 1342,
+          "water_fed": 1
+        }
+      ],
+      "objective": "SUCCESS",
+      "resources": {
+        "fodder": 36,
+        "milk": 36,
+        "stone": 43,
+        "thatch": 23,
+        "timber": 59,
+        "water": 201,
+        "wild_food": 14
+      },
+      "stable_ticks": 900,
+      "tick": 1437
+    },
+    "scope": "Actual exported app PCK run by pinned Godot 4.7.2 engine with external test driver. Release executable ignores external script overrides."
+  },
+  "remaining_acceptance": [
+    "Human gameplay and art review",
+    "Low-end target performance",
+    "Notarized public distribution"
+  ]
+}

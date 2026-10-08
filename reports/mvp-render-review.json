@@ -1,0 +1,38 @@
+{
+	"captures": [
+		{
+			"build_bar": "[P: (16.0, 634.0), S: (1248.0, 157.0)]",
+			"camera_controls": "[P: (1032.0, 582.0), S: (232.0, 36.0)]",
+			"capture": "/Users/devendrashahithakuri/Work/Nep-All/game/../reports/mvp-1280x800.png",
+			"size": [
+				1280,
+				800
+			],
+			"worker_controls": "[P: (944.0, 293.0), S: (304.0, 106.0)]"
+		},
+		{
+			"build_bar": "[P: (16.0, 634.0), S: (1248.0, 157.0)]",
+			"camera_controls": "[P: (1032.0, 582.0), S: (232.0, 36.0)]",
+			"capture": "/Users/devendrashahithakuri/Work/Nep-All/game/../reports/mvp-1920x1080.png",
+			"size": [
+				1920,
+				1080
+			],
+			"worker_controls": "[P: (944.0, 293.0), S: (304.0, 106.0)]"
+		}
+	],
+	"device": "Apple M4 Pro",
+	"mean_frame_ms": 7.79831488698364,
+	"ok": true,
+	"p95_frame_ms": 7.759,
+	"p99_frame_ms": 44.92,
+	"population": 8,
+	"renderer": "Apple M4 Pro",
+	"resolution": [
+		1920,
+		1080
+	],
+	"samples": 1283,
+	"scope": "Development render on this Mac, initial eight-worker settlement; no low-end device or exported-build performance claim.",
+	"speed": 4
+}
