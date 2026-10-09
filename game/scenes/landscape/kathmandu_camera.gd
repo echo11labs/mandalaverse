@@ -11,6 +11,9 @@ var MIN_SIZE: float = GopalaScaleStandard.number("camera", "min_span")
 var yaw := 45.0
 var pitch := PITCH_START
 var target := Vector3.ZERO
+var input_blocked := false
+var edge_pan_enabled := false
+var pan_speed_multiplier := 1.0
 var dragging := false
 var rotating := false
 var clamped_last := false
@@ -198,6 +201,7 @@ func _placement_active() -> bool:
 	return parent != null and parent.get("hud") != null and parent.hud._placement_active
 
 func _process(delta: float) -> void:
+	if input_blocked: return
 	if _zoom_goal > 0.0:
 		var goal := clampf(_zoom_goal, MIN_SIZE, maximum_size())
 		var next := exp(lerpf(log(size), log(goal), 1.0 - exp(-ZOOM_RESPONSE * delta)))
@@ -206,19 +210,26 @@ func _process(delta: float) -> void:
 			_zoom_goal = -1.0
 		zoom_toward(_zoom_anchor, next / size)
 	var direction := Vector2(Input.get_action_strength("camera_right") - Input.get_action_strength("camera_left"), Input.get_action_strength("camera_forward") - Input.get_action_strength("camera_back"))
+	if edge_pan_enabled and not _placement_active() and DisplayServer.window_is_focused() and get_viewport().gui_get_hovered_control() == null:
+		var mouse := get_viewport().get_mouse_position()
+		var view := view_size()
+		if Rect2(Vector2.ZERO,view).has_point(mouse):
+			direction.x += -1.0 if mouse.x < 12.0 else (1.0 if mouse.x > view.x-12.0 else 0.0)
+			direction.y += 1.0 if mouse.y < 12.0 else (-1.0 if mouse.y > view.y-12.0 else 0.0)
 	if not _placement_active():
 		var turn := Input.get_action_strength("camera_rotate_right") - Input.get_action_strength("camera_rotate_left")
 		if turn != 0.0:
 			turn_by(turn * YAW_SPEED * delta)
 	if direction != Vector2.ZERO:
 		var speed := 1.5 if Input.is_key_pressed(KEY_SHIFT) else 0.5
-		var step := direction.normalized() * size * delta * speed
+		var step := direction.normalized() * size * delta * speed * pan_speed_multiplier
 		pan_ground(step.x, step.y)
 	if (dragging or rotating) and not Input.is_mouse_button_pressed(MOUSE_BUTTON_MIDDLE):
 		dragging = false
 		rotating = false
 
 func _unhandled_input(event: InputEvent) -> void:
+	if input_blocked: return
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_MIDDLE:
 			rotating = event.pressed and event.shift_pressed

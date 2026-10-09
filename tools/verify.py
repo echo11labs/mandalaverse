@@ -40,7 +40,7 @@ def run_stage(name, arguments, timeout=60, external=False):
         if line.startswith(marker):
             result["tests"] = json.loads(line[len(marker):])
             result["ok"] = result["ok"] and result["tests"]["ok"]
-    if name in ["content-tests", "landscape-tests", "scenic-tests", "kathmandu-tests", "coordinate-tests", "waterways-tests", "forest-tests", "entity-registry-tests", "selection-tests", "spatial-grid-tests", "simulation-spine-tests", "ui-tests", "component-gallery-tests", "gather-delivery-tests", "placement-slice-tests", "villager-movement-tests", "construction-labor-tests", "stone-resource-tests", "scale-standard-tests", "model-asset-tests", "local-view-tests", "route-tests", "save-tests", "worker-job-tests", "stockpile-inventory-tests", "forage-tests", "survival-tests", "herd-tests", "mvp-scenario-tests", "bench-smoke", "alert-tests", "alert-ui-tests"] and "tests" not in result:
+    if name in ["content-tests", "landscape-tests", "scenic-tests", "kathmandu-tests", "coordinate-tests", "waterways-tests", "forest-tests", "entity-registry-tests", "selection-tests", "spatial-grid-tests", "simulation-spine-tests", "ui-tests", "component-gallery-tests", "gather-delivery-tests", "placement-slice-tests", "villager-movement-tests", "construction-labor-tests", "stone-resource-tests", "scale-standard-tests", "model-asset-tests", "local-view-tests", "route-tests", "save-tests", "worker-job-tests", "stockpile-inventory-tests", "forage-tests", "survival-tests", "herd-tests", "mvp-scenario-tests", "bench-smoke", "alert-tests", "alert-ui-tests", "front-door-tests"] and "tests" not in result:
         result["ok"] = False
     print(f"{name}: {'PASS' if result['ok'] else 'FAIL'}", flush=True)
     return result
@@ -59,6 +59,7 @@ def main():
         for path in sorted(scripts):
             relative = path.relative_to(ROOT / "game").as_posix()
             stages.append(run_stage("parse-" + path.stem, ["--check-only", "--script", relative]))
+        stages.append(run_stage("front-door-tests", ["--script", "tests/run_front_door_tests.gd"], timeout=90))
         stages.append(run_stage("alert-tests", ["--script", "tests/run_alert_tests.gd"]))
         stages.append(run_stage("alert-ui-tests", ["--script", "tests/run_alert_ui_tests.gd"]))
         stages.append(run_stage("content-tests", ["--script", "tests/run_content_tests.gd"]))

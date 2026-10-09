@@ -1,4 +1,11 @@
 extends Node3D
+
+signal pause_menu_requested
+signal save_menu_requested
+signal load_menu_requested
+signal restart_requested
+var managed_session := false
+var menu_input_blocked := false
 ## Regional geography view; settlement simulation remains a separate layer.
 var terrain := GopalaKathmanduTerrain.new()
 const GROUND_QUADS := 512
@@ -78,7 +85,10 @@ func _ready() -> void:
 	if mvp_enabled:
 		GopalaMvpScenario.setup(simulation,terrain.camp)
 		hud.enable_mvp_controls()
-		hud.new_game_requested.connect(func(): get_tree().change_scene_to_file("res://scenes/mvp.tscn"))
+		hud.new_game_requested.connect(func():
+			if managed_session: restart_requested.emit()
+			else: get_tree().change_scene_to_file("res://scenes/mvp.tscn")
+		)
 
 	_picker = GopalaEntityPickResolver3D.new()
 	_picker.configure(simulation.entity_queries())
@@ -647,8 +657,18 @@ func make_hud() -> void:
 		if selected.state == GopalaSelectionSnapshot.State.ENTITY and selected.entity.kind == GopalaEntityKind.ANIMAL:
 			simulation.submit_command(GopalaSimulationCommand.ASSIGN_CATTLE_PASTURE,{"cow_id":selected.selected_entity_id,"pasture_id":pasture_id})
 	)
-	hud.save_requested.connect(save_settlement)
-	hud.load_requested.connect(load_settlement)
+	hud.save_requested.connect(func():
+		if managed_session: save_menu_requested.emit()
+		else: save_settlement()
+	)
+	hud.load_requested.connect(func():
+		if managed_session: load_menu_requested.emit()
+		else: load_settlement()
+	)
+	hud.pause_requested.connect(func(): pause_menu_requested.emit())
+	hud.help_requested.connect(func():
+		if managed_session: pause_menu_requested.emit()
+	)
 	hud.speed_selected.connect(func(mult: int) -> void:
 		if mult == 0:
 			simulation.set_paused(true)
@@ -711,6 +731,11 @@ func pick(screen: Vector2) -> Dictionary:
 	query.hit_from_inside = true # Imported canopies may surround the orthographic ray origin.
 	return get_world_3d().direct_space_state.intersect_ray(query)
 func _unhandled_input(event: InputEvent) -> void:
+	if menu_input_blocked: return
+	if managed_session and event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		if not event.echo: handle_game_escape()
+		get_viewport().set_input_as_handled()
+		return
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_F5:
 			save_settlement()
@@ -2195,3 +2220,15 @@ func focus_alert(key: String) -> bool:
 	camera.focus_point(point,GopalaScaleStandard.number("camera","inspection_span"))
 	_inspect_selected_entity(int(payload.entity_id))
 	return true
+
+func handle_game_escape() -> String:
+	if hud._placement_active:
+		hud.clear_build()
+		_placement_ghost.visible = false
+		_placement_outline.visible = false
+		return "placement"
+	if hud._inspection.get_parent().visible:
+		hud.hide_inspection()
+		return "panel"
+	pause_menu_requested.emit()
+	return "pause"

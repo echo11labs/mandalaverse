@@ -20,6 +20,8 @@ var _pasture_choices: OptionButton
 var _pasture_signature := ""
 signal work_role_selected(role: StringName)
 var _worker_jobs: GridContainer
+signal help_requested
+signal pause_requested
 signal save_requested
 signal load_requested
 signal speed_selected(multiplier: int)
@@ -52,10 +54,11 @@ func enable_mvp_controls() -> void:
 	help.text = "Controls & credits"
 	help.custom_minimum_size.y = GopalaTheme.NAV_CONTROL_HEIGHT
 	help.pressed.connect(func():
+		help_requested.emit()
 		var dialog := AcceptDialog.new()
 		dialog.theme = GopalaTheme.navbar()
 		dialog.title = "GOPALA MVP"
-		dialog.dialog_text = "Select a settler with left-click. Assign a supply job in the inspection panel.\nPlace a building, then right-click its site with a free settler to build.\nSelect Pasture to mark an 8 × 8 metre grazing plot. Assign Herd and Milk jobs.\nSelect a cow and use Move to pasture to relocate it. Crowding slows grazing production; fodder restores it.\nCows need a completed shelter, grazing or fodder, water, and tending.\nUse the tempo buttons to start, pause, or change speed. Save / Load or F5 / F9.\nWASD pans; wheel zooms; Q/E turns; C focuses the settlement.\nEsc cancels placement. Comma / period rotate a building.\n\nPrototype assets: Kenney and Poly Haven (CC0); icons and addons (MIT); fonts (OFL).\nMap data © OpenStreetMap contributors (ODbL): https://www.openstreetmap.org/copyright\nProduced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018\nprovided under COPERNICUS by the European Union and ESA; all rights reserved.\nFull notices and sources are bundled with the build."
+		dialog.dialog_text = "Select a settler with left-click. Assign a supply job in the inspection panel.\nPlace a building, then right-click its site with a free settler to build.\nSelect Pasture to mark an 8 × 8 metre grazing plot. Assign Herd and Milk jobs.\nSelect a cow and use Move to pasture to relocate it. Crowding slows grazing production; fodder restores it.\nCows need a completed shelter, grazing or fodder, water, and tending.\nUse the tempo buttons to start, pause, or change speed. Save / Load or F5 / F9.\nWASD pans; wheel zooms; Q/E turns; C focuses the settlement.\nEsc cancels placement, closes panels, then opens the pause menu. Comma / period rotate a building.\n\nPrototype assets: Kenney and Poly Haven (CC0); icons and addons (MIT); fonts (OFL).\nMap data © OpenStreetMap contributors (ODbL): https://www.openstreetmap.org/copyright\nProduced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018\nprovided under COPERNICUS by the European Union and ESA; all rights reserved.\nFull notices and sources are bundled with the build."
 		_root.add_child(dialog)
 		dialog.popup_centered(Vector2i(700,420))
 		dialog.confirmed.connect(dialog.queue_free)
@@ -411,13 +414,14 @@ func _build_top_bar() -> void:
 
 	row.add_child(_spacer())
 
-	for action in ["Save", "Load"]:
-		var button := _tool_button(action, action + " settlement (" + ("F5" if action == "Save" else "F9") + ")", "",true)
+	for action in ["Menu", "Save", "Load"]:
+		var button := _tool_button(action, "Pause menu (Esc)" if action == "Menu" else action + " settlement (" + ("F5" if action == "Save" else "F9") + ")", "",true)
 		button.text = action
 		button.add_theme_font_size_override("font_size",13)
 		if action == "Load": button.tooltip_text += " · Shift+F9 loads previous backup"
 		button.pressed.connect(func() -> void:
-			if action == "Save": save_requested.emit()
+			if action == "Menu": pause_requested.emit()
+			elif action == "Save": save_requested.emit()
 			else: load_requested.emit()
 		)
 		row.add_child(button)
@@ -1134,3 +1138,13 @@ func set_tempo(paused: bool, speed: int) -> void:
 	if _pause_button != null: _pause_button.set_pressed_no_signal(paused)
 	for i in _speed_buttons.size():
 		_speed_buttons[i].set_pressed_no_signal(not paused and [1,2,4][i] == speed)
+
+func apply_ui_scale(value: float) -> void:
+	_scale_text(_root,clampf(value,0.8,1.5))
+
+func _scale_text(node: Node, value: float) -> void:
+	if node is Control:
+		if not node.has_meta("base_font_size"):
+			node.set_meta("base_font_size",node.get_theme_font_size("font_size"))
+		node.add_theme_font_size_override("font_size",roundi(int(node.get_meta("base_font_size"))*value))
+	for child in node.get_children(): _scale_text(child,value)

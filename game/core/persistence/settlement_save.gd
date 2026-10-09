@@ -65,7 +65,10 @@ func read(path: String) -> Dictionary:
 	var file := FileAccess.open(path, FileAccess.READ)
 	if file == null: _fail("Save file unavailable"); return {}
 	if file.get_length() > MAX_BYTES: _fail("Save exceeds size limit"); return {}
-	var document: Variant = JSON.parse_string(file.get_as_text())
+	var parser := JSON.new()
+	if parser.parse(file.get_as_text()) != OK:
+		_fail("Unsupported or malformed save"); return {}
+	var document: Variant = parser.data
 	if not document is Dictionary or document.get("version") != VERSION or not document.has("payload"):
 		_fail("Unsupported or malformed save"); return {}
 	if document.get("checksum") != JSON.stringify(document.payload).sha256_text():
