@@ -1,7 +1,7 @@
 class_name GopalaGameSettings
 extends RefCounted
 ## Front-door preferences; independent of settlement saves and simulation balance.
-const DEFAULTS := {"master":1.0,"music":0.8,"sfx":0.8,"ui_scale":1.0,"edge_pan":false,"pan_speed":1.0,"fullscreen":false}
+const DEFAULTS := {"master":1.0,"music":0.8,"sfx":0.8,"ui_scale":1.0,"edge_pan":false,"pan_speed":1.0,"fullscreen":false,"debug_overlay":false}
 var values := DEFAULTS.duplicate()
 var storage_path := "user://settings.cfg"
 var error := ""
@@ -51,5 +51,7 @@ func apply(camera: Camera3D = null, apply_window := true) -> void:
 		camera.set("pan_speed_multiplier",values.pan_speed)
 		var hud = camera.get_parent().get("hud")
 		if hud != null: hud.apply_ui_scale(float(values.ui_scale))
+		var overlay = camera.get_parent().get("debug_overlay")
+		if overlay != null: overlay.set_release_flag(bool(values.debug_overlay))
 	if apply_window and DisplayServer.get_name() != "headless":
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if values.fullscreen else DisplayServer.WINDOW_MODE_WINDOWED)

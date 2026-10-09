@@ -12,6 +12,10 @@ var last_failure: StringName = &""
 
 var _current_tick: int = 0
 
+## Defensive presentation copy. Never plans/replans a route or advances movement.
+func route_snapshot(villager_id: int) -> Dictionary:
+	return _routes.get(villager_id,{}).duplicate(true)
+
 func configure(queries: GopalaEntityQueryService, registry: GopalaEntityRegistry, coordinates: GopalaSettlementCoordinateService, config: GopalaSimulationConfig, navigation: GopalaSettlementRouteService = null) -> void:
 	_queries = queries
 	_registry = registry

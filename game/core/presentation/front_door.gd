@@ -289,7 +289,7 @@ func _settings_page() -> void:
 			_update_setting(entry[0],value)
 		)
 		settings_controls[entry[0]] = slider
-	for entry in [["edge_pan","Pan at screen edges"],["fullscreen","Fullscreen"]]:
+	for entry in [["edge_pan","Pan at screen edges"],["fullscreen","Fullscreen"],["debug_overlay","Allow diagnostics (F3)"]]:
 		var toggle := CheckButton.new()
 		toggle.text = entry[1]
 		toggle.button_pressed = settings.values[entry[0]]

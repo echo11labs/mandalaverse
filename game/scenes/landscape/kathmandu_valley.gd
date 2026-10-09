@@ -6,6 +6,7 @@ signal load_menu_requested
 signal restart_requested
 var managed_session := false
 var menu_input_blocked := false
+var debug_overlay: GopalaDebugOverlay
 ## Regional geography view; settlement simulation remains a separate layer.
 var terrain := GopalaKathmanduTerrain.new()
 const GROUND_QUADS := 512
@@ -99,6 +100,10 @@ func _ready() -> void:
 	_on_snapshot_committed(simulation.snapshot())
 	if mvp_enabled: _bind_alerts()
 
+	debug_overlay = GopalaDebugOverlay.new()
+	debug_overlay.world = self
+	add_child(debug_overlay)
+	debug_overlay.bind(simulation)
 	make_trees()
 	if not Array(OS.get_cmdline_user_args()).any(func(s: String): return s.begins_with("--capture")):
 		focus_camp()
@@ -2159,6 +2164,7 @@ func load_settlement(path: String = SAVE_PATH) -> bool:
 	restored.snapshot_committed.connect(_on_snapshot_committed)
 	_on_snapshot_committed(restored.snapshot())
 	if mvp_enabled: _bind_alerts()
+	debug_overlay.bind(restored)
 	previous.queue_free()
 	focus_camp()
 	hud.notify("Settlement loaded", "Resources, construction and worker tasks restored")
