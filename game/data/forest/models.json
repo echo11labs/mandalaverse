@@ -1,26 +1,122 @@
 {
-  "source_pack": "Poly Haven CC0 Tree Scans (GOPALA LOD pass)",
+  "source_pack": "KayKit Forest Nature 1.0 (CC0, Kay Lousberg)",
   "seed": 43129,
   "regional_spacing_m": 70,
   "detail_spacing_m": 18,
   "chunk_size_units": 20,
   "variants": [
-    { "id": "Fir_Tall_A",    "path": "res://assets/models/trees/PolyHavenFoliage/Fir_Tall_A.glb",    "kind": "conifer",  "height_min_m": 20, "height_max_m": 30 },
-    { "id": "Fir_Tall_B",    "path": "res://assets/models/trees/PolyHavenFoliage/Fir_Tall_B.glb",    "kind": "conifer",  "height_min_m": 12, "height_max_m": 19 },
-    { "id": "Fir_Young_C",   "path": "res://assets/models/trees/PolyHavenFoliage/Fir_Young_C.glb",   "kind": "conifer",  "height_min_m": 15, "height_max_m": 24 },
-    { "id": "Pine_Open_A",   "path": "res://assets/models/trees/PolyHavenFoliage/Pine_Open_A.glb",   "kind": "conifer",  "height_min_m": 9,  "height_max_m": 16 },
-    { "id": "Pine_Open_B",   "path": "res://assets/models/trees/PolyHavenFoliage/Pine_Open_B.glb",   "kind": "conifer",  "height_min_m": 8,  "height_max_m": 15 },
-    { "id": "Pine_Dense_C",  "path": "res://assets/models/trees/PolyHavenFoliage/Pine_Dense_C.glb",  "kind": "conifer",  "height_min_m": 7,  "height_max_m": 13 },
-    { "id": "Broad_Oak_A",   "path": "res://assets/models/trees/PolyHavenFoliage/Broad_Oak_A.glb",   "kind": "broadleaf", "height_min_m": 9,  "height_max_m": 16 },
-    { "id": "Broad_Oak_B",   "path": "res://assets/models/trees/PolyHavenFoliage/Broad_Oak_B.glb",   "kind": "broadleaf", "height_min_m": 8,  "height_max_m": 15 },
-    { "id": "Broad_Oak_C",   "path": "res://assets/models/trees/PolyHavenFoliage/Broad_Oak_C.glb",   "kind": "broadleaf", "height_min_m": 9,  "height_max_m": 16 },
-    { "id": "Broad_Oak_D",   "path": "res://assets/models/trees/PolyHavenFoliage/Broad_Oak_D.glb",   "kind": "broadleaf", "height_min_m": 10, "height_max_m": 18 },
-    { "id": "Broad_Round_A", "path": "res://assets/models/trees/PolyHavenFoliage/Broad_Round_A.glb", "kind": "broadleaf", "height_min_m": 7,  "height_max_m": 13 },
-    { "id": "Broad_Round_B", "path": "res://assets/models/trees/PolyHavenFoliage/Broad_Round_B.glb", "kind": "broadleaf", "height_min_m": 8,  "height_max_m": 14 },
-    { "id": "Broad_Round_C", "path": "res://assets/models/trees/PolyHavenFoliage/Broad_Round_C.glb", "kind": "broadleaf", "height_min_m": 6,  "height_max_m": 12 },
-    { "id": "Broad_Scrub_A", "path": "res://assets/models/trees/PolyHavenFoliage/Broad_Scrub_A.glb", "kind": "broadleaf", "height_min_m": 5,  "height_max_m": 10 },
-    { "id": "Broad_Scrub_B", "path": "res://assets/models/trees/PolyHavenFoliage/Broad_Scrub_B.glb", "kind": "broadleaf", "height_min_m": 6,  "height_max_m": 11 },
-    { "id": "Broad_Scrub_C", "path": "res://assets/models/trees/PolyHavenFoliage/Broad_Scrub_C.glb", "kind": "broadleaf", "height_min_m": 6, "height_max_m": 11 }
+    {
+      "id": "Fir_Tall_A",
+      "path": "res://assets/models/nature/kaykit/Tree_2_A.glb",
+      "kind": "conifer",
+      "height_min_m": 20,
+      "height_max_m": 30
+    },
+    {
+      "id": "Fir_Tall_B",
+      "path": "res://assets/models/nature/kaykit/Tree_2_B.glb",
+      "kind": "conifer",
+      "height_min_m": 12,
+      "height_max_m": 19
+    },
+    {
+      "id": "Fir_Young_C",
+      "path": "res://assets/models/nature/kaykit/Tree_2_B.glb",
+      "kind": "conifer",
+      "height_min_m": 15,
+      "height_max_m": 24
+    },
+    {
+      "id": "Pine_Open_A",
+      "path": "res://assets/models/nature/kaykit/Tree_2_A.glb",
+      "kind": "conifer",
+      "height_min_m": 9,
+      "height_max_m": 16
+    },
+    {
+      "id": "Pine_Open_B",
+      "path": "res://assets/models/nature/kaykit/Tree_2_B.glb",
+      "kind": "conifer",
+      "height_min_m": 8,
+      "height_max_m": 15
+    },
+    {
+      "id": "Pine_Dense_C",
+      "path": "res://assets/models/nature/kaykit/Tree_2_A.glb",
+      "kind": "conifer",
+      "height_min_m": 7,
+      "height_max_m": 13
+    },
+    {
+      "id": "Broad_Oak_A",
+      "path": "res://assets/models/nature/kaykit/Tree_1_A.glb",
+      "kind": "broadleaf",
+      "height_min_m": 9,
+      "height_max_m": 16
+    },
+    {
+      "id": "Broad_Oak_B",
+      "path": "res://assets/models/nature/kaykit/Tree_1_B.glb",
+      "kind": "broadleaf",
+      "height_min_m": 8,
+      "height_max_m": 15
+    },
+    {
+      "id": "Broad_Oak_C",
+      "path": "res://assets/models/nature/kaykit/Tree_3_A.glb",
+      "kind": "broadleaf",
+      "height_min_m": 9,
+      "height_max_m": 16
+    },
+    {
+      "id": "Broad_Oak_D",
+      "path": "res://assets/models/nature/kaykit/Tree_3_B.glb",
+      "kind": "broadleaf",
+      "height_min_m": 10,
+      "height_max_m": 18
+    },
+    {
+      "id": "Broad_Round_A",
+      "path": "res://assets/models/nature/kaykit/Tree_4_A.glb",
+      "kind": "broadleaf",
+      "height_min_m": 7,
+      "height_max_m": 13
+    },
+    {
+      "id": "Broad_Round_B",
+      "path": "res://assets/models/nature/kaykit/Tree_4_B.glb",
+      "kind": "broadleaf",
+      "height_min_m": 8,
+      "height_max_m": 14
+    },
+    {
+      "id": "Broad_Round_C",
+      "path": "res://assets/models/nature/kaykit/Tree_3_B.glb",
+      "kind": "broadleaf",
+      "height_min_m": 6,
+      "height_max_m": 12
+    },
+    {
+      "id": "Broad_Scrub_A",
+      "path": "res://assets/models/nature/kaykit/Tree_4_A.glb",
+      "kind": "broadleaf",
+      "height_min_m": 5,
+      "height_max_m": 10
+    },
+    {
+      "id": "Broad_Scrub_B",
+      "path": "res://assets/models/nature/kaykit/Tree_4_B.glb",
+      "kind": "broadleaf",
+      "height_min_m": 6,
+      "height_max_m": 11
+    },
+    {
+      "id": "Broad_Scrub_C",
+      "path": "res://assets/models/nature/kaykit/Tree_1_B.glb",
+      "kind": "broadleaf",
+      "height_min_m": 6,
+      "height_max_m": 11
+    }
   ],
   "detail_center": [
     10,

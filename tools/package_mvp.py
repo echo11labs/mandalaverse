@@ -38,7 +38,7 @@ def main():
     shutil.copytree(SOURCE / "data", STAGE / "data", ignore=ignore)
     for folder in ["fonts", "materials", "prototype", "terrain", "ui"]:
         shutil.copytree(SOURCE / "assets" / folder, STAGE / "assets" / folder, ignore=ignore)
-    for folder in ["kenney_survival", "kenney_workers", "stone_scatter", "trees/PolyHavenFoliage"]:
+    for folder in ["kenney_survival", "kenney_workers", "stone_scatter", "trees/PolyHavenFoliage", "nature/kaykit", "animals/styloo", "buildings/highlands"]:
         shutil.copytree(SOURCE / "assets/models" / folder, STAGE / "assets/models" / folder, ignore=ignore)
     shutil.copy2(SOURCE / "assets/manifest.json", STAGE / "assets/manifest.json")
     for folder in ["landscape", "ui", "world"]:

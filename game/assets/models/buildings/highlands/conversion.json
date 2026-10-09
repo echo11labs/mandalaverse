@@ -1,0 +1,75 @@
+[
+  {
+    "file": "SM_Hut.glb",
+    "triangles": 780,
+    "source": "Hut/SM_Hut.fbx",
+    "source_sha256": "5b737b982d6e86462d48532d1ad94a0777bbc6aa52ee1eb7248e80b5fe506de6",
+    "removed_collision_objects": [
+      "UCX_SM_Hut"
+    ],
+    "texture_source_sha256": {
+      "Hut/TextureMaps/T_Hut_diffuse.png": "3c5ab20d8b856e62e7894569d17b70ca0fae6064eecd13b7539a9a9f7538f09a",
+      "Hut/TextureMaps/T_Hut_roughness.png": "ed14c89d64c7653683e272dd1ced52359428ce80883bca9db263f569a2ce0819",
+      "Hut/TextureMaps/T_Hut_normal.png": "2c30cfaa058c80f7b6b81667e49dee3d5bb60995305b7da4c3f1d7ce150556a2"
+    },
+    "output_sha256": "9549ad24d632f59e1a2202f8cb454a14386d09ddc7855cde9dec69c981216625"
+  },
+  {
+    "file": "SM_WoodCrate.glb",
+    "triangles": 456,
+    "source": "MiscProps/SM_WoodCrate.fbx",
+    "source_sha256": "fa8768ff41ab6f3bb19c4b57698d59852eaf275ed098d8ad9bf5c97f29de6467",
+    "removed_collision_objects": [
+      "UCX_SM_WoodCrate"
+    ],
+    "texture_source_sha256": {
+      "MiscProps/TextureMaps/T_Props_diffuse.png": "c248cfcc9ea2aa32423970e937a35cd2d5c43c7c0d6436cae715aeb469ca036a",
+      "MiscProps/TextureMaps/T_Props_roughness.png": "323e55761d294b0a21b024002740b4ecce12164e5ae4db2b61c4cd9c4cf8f0bd",
+      "MiscProps/TextureMaps/T_Props_normal.png": "2d6d5406ce8e452f1e067301cedd0a2db5b5abf789a11110a57439555161625b"
+    },
+    "output_sha256": "edac0f84fffb6be8a9d586d14deec3ce4f37f4676cbf1561430becc3d82c9715"
+  },
+  {
+    "file": "SM_Barrel.glb",
+    "triangles": 968,
+    "source": "MiscProps/SM_Barrel.fbx",
+    "source_sha256": "6e9c818717d8c250e2fc8084dfbd35bc746ba604475e35476075ac7a189185d6",
+    "removed_collision_objects": [
+      "UCX_SM_Barrel"
+    ],
+    "texture_source_sha256": {
+      "MiscProps/TextureMaps/T_Props_diffuse.png": "c248cfcc9ea2aa32423970e937a35cd2d5c43c7c0d6436cae715aeb469ca036a",
+      "MiscProps/TextureMaps/T_Props_roughness.png": "323e55761d294b0a21b024002740b4ecce12164e5ae4db2b61c4cd9c4cf8f0bd",
+      "MiscProps/TextureMaps/T_Props_normal.png": "2d6d5406ce8e452f1e067301cedd0a2db5b5abf789a11110a57439555161625b"
+    },
+    "output_sha256": "851ce55579be3c9d54a3bba527168274f3b44ead9938c921897e5f6cb5a57ca7"
+  },
+  {
+    "file": "SM_WoodFence.glb",
+    "triangles": 90,
+    "source": "MiscProps/SM_WoodFence.fbx",
+    "source_sha256": "76f7b813ee58277c8897f95070660805bc915ddf53751903aa3992e5798d14dd",
+    "removed_collision_objects": [
+      "UCX_SM_WoodFence"
+    ],
+    "texture_source_sha256": {
+      "MiscProps/TextureMaps/T_Props_diffuse.png": "c248cfcc9ea2aa32423970e937a35cd2d5c43c7c0d6436cae715aeb469ca036a",
+      "MiscProps/TextureMaps/T_Props_roughness.png": "323e55761d294b0a21b024002740b4ecce12164e5ae4db2b61c4cd9c4cf8f0bd",
+      "MiscProps/TextureMaps/T_Props_normal.png": "2d6d5406ce8e452f1e067301cedd0a2db5b5abf789a11110a57439555161625b"
+    },
+    "output_sha256": "a63af45ab52c2babed939e4508e8843e6eac27a608262d8c7104421ca32026d5"
+  },
+  {
+    "file": "SM_Axe.glb",
+    "triangles": 110,
+    "source": "MiscProps/SM_Axe.fbx",
+    "source_sha256": "1c437b1aed8c6ec0fd5ca9e0c0bdc890d2cd0d5752d10d11b6ff869148ff4050",
+    "removed_collision_objects": [],
+    "texture_source_sha256": {
+      "MiscProps/TextureMaps/T_Props_diffuse.png": "c248cfcc9ea2aa32423970e937a35cd2d5c43c7c0d6436cae715aeb469ca036a",
+      "MiscProps/TextureMaps/T_Props_roughness.png": "323e55761d294b0a21b024002740b4ecce12164e5ae4db2b61c4cd9c4cf8f0bd",
+      "MiscProps/TextureMaps/T_Props_normal.png": "2d6d5406ce8e452f1e067301cedd0a2db5b5abf789a11110a57439555161625b"
+    },
+    "output_sha256": "740efa2d5a1f400babf2c82f4927c354ce4fd03bf412ca633efd47929a046423"
+  }
+]

@@ -10,7 +10,7 @@ func build(entity_id: int, world_seed: int, ground_height: Callable, world_xz: V
 	add_child(visual)
 	var rng := RandomNumberGenerator.new()
 	rng.seed = world_seed + entity_id * 7919
-	var scene := preload("res://assets/models/trees/PolyHavenFoliage/Pine_Open_A.glb")
+	var scene := preload("res://assets/models/nature/kaykit/Tree_2_A.glb")
 	var base_y: float = ground_height.call(world_xz.x, world_xz.y)
 	for i in 3:
 		var tree: Node3D = scene.instantiate()
@@ -20,7 +20,6 @@ func build(entity_id: int, world_seed: int, ground_height: Callable, world_xz: V
 		var angle := float(i) * TAU / 3.0
 		var offset := Vector2(cos(angle), sin(angle)) * GopalaScaleStandard.metres_to_world(1.8)
 		tree.position += Vector3(offset.x, float(ground_height.call(world_xz.x + offset.x, world_xz.y + offset.y)) - base_y, offset.y)
-		_apply_material(tree)
 		visual.add_child(tree)
 		trees.append(tree)
 

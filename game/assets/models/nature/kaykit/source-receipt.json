@@ -1,0 +1,118 @@
+{
+  "license": "CC0-1.0",
+  "license_file": "LICENSE.txt",
+  "source_url": "https://kaylousberg.itch.io/kaykit-forest",
+  "date": "2026-10-08",
+  "changes": "Repacked original glTF, buffers and 1024px palette image into GLB without geometry or material changes. Runtime normalizes transformed bounds to existing metre profiles.",
+  "models": {
+    "Fir_Tall_A": {
+      "surfaces": 1,
+      "model": "Tree_2_A.glb"
+    },
+    "Fir_Tall_B": {
+      "surfaces": 1,
+      "model": "Tree_2_B.glb"
+    },
+    "Fir_Young_C": {
+      "surfaces": 1,
+      "model": "Tree_2_B.glb"
+    },
+    "Pine_Open_A": {
+      "surfaces": 1,
+      "model": "Tree_2_A.glb"
+    },
+    "Pine_Open_B": {
+      "surfaces": 1,
+      "model": "Tree_2_B.glb"
+    },
+    "Pine_Dense_C": {
+      "surfaces": 1,
+      "model": "Tree_2_A.glb"
+    },
+    "Broad_Oak_A": {
+      "surfaces": 1,
+      "model": "Tree_1_A.glb"
+    },
+    "Broad_Oak_B": {
+      "surfaces": 1,
+      "model": "Tree_1_B.glb"
+    },
+    "Broad_Oak_C": {
+      "surfaces": 1,
+      "model": "Tree_3_A.glb"
+    },
+    "Broad_Oak_D": {
+      "surfaces": 1,
+      "model": "Tree_3_B.glb"
+    },
+    "Broad_Round_A": {
+      "surfaces": 1,
+      "model": "Tree_4_A.glb"
+    },
+    "Broad_Round_B": {
+      "surfaces": 1,
+      "model": "Tree_4_B.glb"
+    },
+    "Broad_Round_C": {
+      "surfaces": 1,
+      "model": "Tree_3_B.glb"
+    },
+    "Broad_Scrub_A": {
+      "surfaces": 1,
+      "model": "Tree_4_A.glb"
+    },
+    "Broad_Scrub_B": {
+      "surfaces": 1,
+      "model": "Tree_4_B.glb"
+    },
+    "Broad_Scrub_C": {
+      "surfaces": 1,
+      "model": "Tree_1_B.glb"
+    }
+  },
+  "source_sha256": {
+    "Assets/gltf/Tree_1_A_Color1.gltf": "9d972eba9d61fc563cb7c3248f1be057190859ce2554ad2032df27c3d09e06c6",
+    "Assets/gltf/Tree_1_A_Color1.bin": "76a10ffa74960d730f0895a2599e5d56cc50a553d6624a14422420eb9b083979",
+    "Assets/gltf/forest_texture.png": "406c01e0ac1d3368fc7b26ff5fb0d3335ba5e48bd19a703540ed92ee3971ea39",
+    "Assets/gltf/Tree_1_B_Color1.gltf": "03f4773b06adf252ac8ca0a9bfdc77f315c1f4036b6151796f110b4897e586c5",
+    "Assets/gltf/Tree_1_B_Color1.bin": "5d4129bdc6f13a24e076f7fa870c6695dc20491f4820c54153fe9d1d90b40522",
+    "Assets/gltf/Tree_2_A_Color1.gltf": "793570b93cd350b935bc88c766317675890f102d157965d2aca3d8daef5ee49b",
+    "Assets/gltf/Tree_2_A_Color1.bin": "fd413ad809ff30939faf1190194654892066aba94f67ec6f96ce257fa5b34e35",
+    "Assets/gltf/Tree_2_B_Color1.gltf": "3094d793c2625c2543c1c8106864426f6c61cfe13b2cff0a2c133aec23065408",
+    "Assets/gltf/Tree_2_B_Color1.bin": "90e260b69154a83b1799d68778fb35ddeaaf5f0eb69ac67384c99770ed7bf821",
+    "Assets/gltf/Tree_3_A_Color1.gltf": "a5140f21978004544844df4c2969625724c2c263e74f798716ea9e115216a230",
+    "Assets/gltf/Tree_3_A_Color1.bin": "ea2f20e847bd3bcf748b9f1cf9932abe45967db8dcacfeafaea1f07e3da6a2e9",
+    "Assets/gltf/Tree_3_B_Color1.gltf": "13f4ede4272f07308d06da5d6f6ab8ff894e3175ed964de8bc356fa1a1ccf319",
+    "Assets/gltf/Tree_3_B_Color1.bin": "c7b09e0fd302d2a96b02aaa7a5907f2a364a1e7287ce3cb3287406dae331987b",
+    "Assets/gltf/Tree_4_A_Color1.gltf": "14f8f50af9f9cf8d2bb488cae15613f9e2ed6ce0002d2aa11721a2efc2ba3010",
+    "Assets/gltf/Tree_4_A_Color1.bin": "eeb22bdc0ece9941865139476afcaf5dadd8285751321770886d1a065b8512d6",
+    "Assets/gltf/Tree_4_B_Color1.gltf": "7dad365ccc9e9da3e1cbcdbd5ec16b67f0058a3c76aaa06a1bfaa17c706f1ce5",
+    "Assets/gltf/Tree_4_B_Color1.bin": "155be76b0ec5d12a246c6b686156a2fa0d8ca086a67ef156633b7df681143d54",
+    "Assets/gltf/Bush_1_A_Color1.gltf": "bc6cf33dbed296a181d8afbd82ffe1c44ee5e57cb095f9efdf4b63e93c165b70",
+    "Assets/gltf/Bush_1_A_Color1.bin": "66ba041776959c19849954c9d2393528783461ca6dd11ebe1c1f6b9026b63c0c",
+    "Assets/gltf/Bush_2_A_Color1.gltf": "c41284ba3191bdda026380527edf9fb0dcf03b5dd26c8779ed056edb6526c444",
+    "Assets/gltf/Bush_2_A_Color1.bin": "156a986b87b097725a1c675ea20eeaf3f788014742dbf4b8f0fd2c69f27cad98",
+    "Assets/gltf/Grass_1_A_Color1.gltf": "58686904164d636e8731544fbb6911bf1ebc068841fe6c127f0c509b1449212b",
+    "Assets/gltf/Grass_1_A_Color1.bin": "d293510be3ca4a6062dc305c22a143ba134fc49af65aaba064cc8f8d868d6c6e",
+    "Assets/gltf/Rock_1_A_Color1.gltf": "ca24326b9c24556227c68df64933122f34a972cd38b6e95c53353fefa97dbc80",
+    "Assets/gltf/Rock_1_A_Color1.bin": "1c94027b4b01e479f14c6a0288445f2ec74c4971bd5154095c4ea261ddea5b95",
+    "Assets/gltf/Rock_3_A_Color1.gltf": "65484de298f09f7ed5bcf781d7febde1a2df4f0f76b8a6396591240963152c88",
+    "Assets/gltf/Rock_3_A_Color1.bin": "8659daf4bc724f414eda02193bc6a48132b595eef7c62009b7c0a3d93a8aa9b2"
+  },
+  "files": {
+    "Bush_1_A.glb": "fc839ee47ee211cf3f416d2cd35c149e8dc95ad838da5857ffbe5d518b59a9e3",
+    "Bush_2_A.glb": "1de7f574fb60ff9478d27c45c83d2fc21bfd2698dae40610e728d12ff02076bf",
+    "Grass_1_A.glb": "9882d591964b9b01e084e16d432f1d41e2cf2ef83ec2313e1e87f9a58cf183fa",
+    "LICENSE.txt": "987811fa42c7548ad487324531813b0210ee6d1ebd410089e881820630e3be54",
+    "Rock_1_A.glb": "ef52f8f37cbe1b4efc2306ba194abc81b5dd93cdc6d695a4af4fd4189f673785",
+    "Rock_3_A.glb": "5633077cfde7034af2156fe2c5090a359de194fd7df8dbeb79da690c661c9654",
+    "Tree_1_A.glb": "5de57ae96b9a99f3f5a151ac260c0a6c5ba95fb10796b39b01a0f25019590ca2",
+    "Tree_1_B.glb": "abddb9af518ff91019330885e25ab63d4ddb54bcabb579f7e2a87a163c8f1c82",
+    "Tree_2_A.glb": "d8aefe1de7cb6592579c4705752efd589f751cc6485ae1e39584cd1b7f80fd05",
+    "Tree_2_B.glb": "81c030e6ac07b7c332e4b35ca7e8b3511b218d0a1b9adf54005f03cbb5074faa",
+    "Tree_3_A.glb": "0126169a95da747c136ff696bce83dcb11ff6de588afa0b2a8c94117c84082bf",
+    "Tree_3_B.glb": "6a7b037bb1bc22f1dc6f9665c5bc18d2ebe880d20985640a640005d4c0ec789c",
+    "Tree_4_A.glb": "40716f6360f47178ca168009ee7be3f081054572b2b562be319bc2ef5cc41310",
+    "Tree_4_B.glb": "a3b059aeb6d3ea82d443f30431d75e2b8c56fa9f7a9ef5bf8abbed1939fc3242"
+  }
+}

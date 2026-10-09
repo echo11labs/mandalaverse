@@ -48,3 +48,5 @@ Revision 8 adds original prototype forage patches and carry bundles. Thatch/fodd
 Revision 9 adds the existing CC0 Kenney barrel as a water collection view, normalized through all child transforms to 70 cm height with an 80 cm width bound and bottom-centre anchor. Carried water containers are 30 × 40 × 30 cm. Verification adds measured barrel bounds/hashes and retains human-to-river checks.
 
 Revision 10 adds 1.25-metre cattle, bottom-centre normalized original prototype geometry, eight-metre pastures, and carried milk vessels. The scale audit records measured cattle bounds and its source hash.
+
+G1-11 standard revision 11 adds visual-only fence (0.8m high, at most 2m wide) and axe (0.5m high/wide) profiles. Imported cattle, huts, barrels and nature retain their existing target dimensions and bottom-centre anchors. Physical meshes remain metre-authored, converted through the terrain unit standard.

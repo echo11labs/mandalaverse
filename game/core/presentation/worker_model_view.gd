@@ -2,16 +2,23 @@ class_name GopalaWorkerModelView
 extends Node3D
 
 const MODEL := preload("res://assets/models/kenney_workers/character-a.glb")
+var model_path := "res://assets/models/kenney_workers/character-a.glb"
 var player: AnimationPlayer
 var current_pose := ""
 var measured_bounds := AABB()
 
-func build() -> void:
+func build(entity_id := 0) -> void:
 	name = "WorkerVisual"
 	var fitted := Node3D.new()
 	fitted.name = "FittedModel"
 	add_child(fitted)
-	var model := MODEL.instantiate()
+	# Source-restricted downloads are local-only; public checkouts retain the licensed fallback.
+	var local_path := "res://assets/models/local_villagers/peasant_%d.glb" % (4+posmod(entity_id,2))
+	var source: PackedScene = MODEL
+	if FileAccess.file_exists(local_path):
+		source = load(local_path)
+		model_path = local_path
+	var model := source.instantiate()
 	fitted.add_child(model)
 	player = model.find_children("*", "AnimationPlayer", true, false)[0]
 	player.play("static")

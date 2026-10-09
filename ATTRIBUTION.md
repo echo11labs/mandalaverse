@@ -75,3 +75,7 @@ third-party binary packs, `godotiles/bin/*`, `.freebuff/`, and
 **NOT committed** or **UNVERIFIED** require a decision (commit with terms,
 replace, or remove) — the EmacEArt no-standalone-redistribution clause matters
 most for a public remote.
+
+## G1-11 selected downloaded models
+
+KayKit Forest Nature (Kay Lousberg), Styloo Animals (Styloo cow only) and Highlands Fantasy Pack (VisionsMind hut/crate/barrel/fence/axe) are CC0-1.0. See [CREDITS.md](CREDITS.md) and the per-pack LICENSE.txt/RECEIPT.md/source-receipt.json files under game/assets/models/. No restricted or unknown-source pack was admitted. Highlands pieces are European-fantasy placeholders, not final Newari architecture.

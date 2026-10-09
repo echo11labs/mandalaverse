@@ -11,7 +11,7 @@ func run() -> void:
 		push_error("Forest buffer checks require a real renderer.")
 		quit(1)
 		return
-	var directory := "res://assets/models/trees/PolyHavenFoliage/"
+	var directory := "res://assets/models/nature/kaykit/"
 	var source: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(directory + "source-receipt.json"))
 	expect(source.license == "CC0-1.0" and FileAccess.file_exists(directory + source.license_file), "Original publisher license retained")
 	for path in source.files:

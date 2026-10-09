@@ -22,3 +22,9 @@ Accessed 2026-09-29 via https://registry.opendata.aws/copernicus-dem/
 This prototype is not endorsed by the data providers. The reconstructed pre-urban landscape uses modern channels as proxies and is not a verified historical survey.
 
 Imported free art and forest families remain prototypes pending human visual approval.
+
+Selected G1-11 models (CC0-1.0):
+KayKit Forest Nature 1.0 — Kay Lousberg — https://kaylousberg.itch.io/kaykit-forest
+Styloo Animals (Cow only) — Styloo — https://styloo.itch.io/animals
+Highlands Fantasy Pack (Hut, WoodCrate, Barrel, WoodFence, Axe) — VisionsMind — https://visionsmind.itch.io/highlands-fantasy-pack-3d
+Licences and source receipts are beside the selected GLBs. Highlands buildings are European-fantasy placeholders, not final Newari architecture.

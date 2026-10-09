@@ -708,6 +708,7 @@ func pick(screen: Vector2) -> Dictionary:
 	var origin: Vector3 = camera.project_ray_origin(screen)
 	var query := PhysicsRayQueryParameters3D.create(origin,origin+camera.project_ray_normal(screen)*1500)
 	query.hit_back_faces = true
+	query.hit_from_inside = true # Imported canopies may surround the orthographic ray origin.
 	return get_world_3d().direct_space_state.intersect_ray(query)
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
@@ -1163,6 +1164,7 @@ func _on_snapshot_committed(snapshot: GopalaSettlementSnapshot) -> void:
 		if _built_views.has(entity_id):
 			if record.kind == GopalaEntityKind.ANIMAL:
 				_built_views[entity_id].position = Vector3(record.attributes.position_x,ground_height_at(record.attributes.position_x,record.attributes.position_z),record.attributes.position_z)
+				(_built_views[entity_id] as GopalaCattleView).update_state(record.attributes,simulation.paused,float(simulation.speed))
 			elif record.kind == &"building":
 				_update_building_visual(_built_views[entity_id], record)
 			elif record.kind == &"villager":
@@ -1230,7 +1232,7 @@ func _spawn_primitive_villager(record, entity_id: int) -> void:
 	
 	var worker := GopalaWorkerModelView.new()
 	view.add_child(worker)
-	worker.build()
+	worker.build(entity_id)
 	worker.position.y = -box.height * 0.5
 	worker.update_state(record.attributes, simulation.paused, float(simulation.speed))
 
@@ -1745,8 +1747,7 @@ func _generate_detail_vegetation() -> void:
 		else:
 			group.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
 
-		var cat := "scrub" if id.begins_with("Broad_Scrub") else "fir_tall" if id.begins_with("Fir_Tall") else "conifer" if (id.begins_with("Fir") or id.begins_with("Pine")) else "oak" if id.begins_with("Broad_Oak") else "default"
-		group.material_override = cat_materials.get(cat, cat_materials["default"])
+		# Retain the imported KayKit atlas material.
 		group.lod_bias = 0.8
 		detail_forest.add_child(group)
 
@@ -1800,7 +1801,7 @@ func _generate_hero_trees(models: Dictionary, broadleaf_ids: Array[String], coni
 		hero_mat.set_shader_parameter("leaf_highlight", Color(0.26, 0.50, 0.20))
 		hero_mat.set_shader_parameter("canopy_fraction", 0.14)
 		hero_mat.set_shader_parameter("canopy_blend", 0.20)
-		mi.material_override = hero_mat
+		# Retain the imported KayKit atlas material.
 
 		var hero_height := rng.randf_range(0.85, 1.25)
 		var factor := hero_height / bounds.size.y
@@ -1867,8 +1868,8 @@ func _generate_detail_stones(active_seed: int, rng: RandomNumberGenerator) -> vo
 	for child in detail_stones.get_children():
 		child.queue_free()
 
-	var lr_scene: PackedScene = load("res://assets/models/stone_scatter/large_rock.glb")
-	var sr_scene: PackedScene = load("res://assets/models/stone_scatter/small_rock.glb")
+	var lr_scene: PackedScene = load("res://assets/models/nature/kaykit/Rock_3_A.glb")
+	var sr_scene: PackedScene = load("res://assets/models/nature/kaykit/Rock_1_A.glb")
 	if lr_scene == null or sr_scene == null:
 		return
 	var lr_inst = lr_scene.instantiate()
@@ -2057,7 +2058,7 @@ func _generate_detail_stones(active_seed: int, rng: RandomNumberGenerator) -> vo
 		else:
 			group.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
 
-		group.material_override = rock_material
+		# Retain the imported KayKit rock atlas material.
 		group.lod_bias = 0.8
 		detail_stones.add_child(group)
 

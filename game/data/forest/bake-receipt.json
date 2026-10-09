@@ -1,11 +1,11 @@
 {
 	"chunks": 4811,
 	"inputs": {
-		"res://assets/models/trees/PolyHavenFoliage/source-receipt.json": "ae216a090ef0033218d3f85b05730effbe25c687befd0562ce5f916d1a143344",
+		"res://assets/models/nature/kaykit/source-receipt.json": "f7bc5129a3154ceca4bd84306d331a5ac762aa73bbdf60d8a321d1d5348851a6",
 		"res://core/landscape/forest_rules.gd": "5b88528e9f83543f15c7262097ecba128ae3b6d9677112dd33ca6d9e740cdcce",
 		"res://core/landscape/kathmandu_terrain.gd": "f20fd9c81848a79a887494b1436de15ff25d25a5c0324e6c76bcb7aeedacbf72",
-		"res://core/tools/bake_forest.gd": "d050732c0153259f2e146eddf3dd6e12bf06bdeb1d0d048e356e619675479d46",
-		"res://data/forest/models.json": "1fcbd895ab76b06f4db22f186eee2b28c55dca58f50962cee5a1af4dc6532e22",
+		"res://core/tools/bake_forest.gd": "6bd8a892552ffe2c012ac79f0724078640c8c9411f60a78344ee6a3552c1fd20",
+		"res://data/forest/models.json": "296eca4bbee6017eca8232668d4d8e958e96971ab32eb4281064b831bd1f3da2",
 		"res://data/geography/kathmandu-ground-height.f32": "fb7b4586fd2089607224e98a7b4a810a8b7a41a19d7fc0567cddc66d77375cf1",
 		"res://data/geography/kathmandu-river-distance.f32": "85d4740226525c93d7142837cf39dfde43655cf1ee0c6fd11bc506a09b28e52c",
 		"res://data/geography/kathmandu-source-height.f32": "bae69e79cbb321b09ce892ea9b00cc71eb5d8c49f46ce44841f2247e9da7a58d",
@@ -13,7 +13,7 @@
 	},
 	"ok": true,
 	"output": "res://data/forest/kathmandu_forest.scn",
-	"output_sha256": "606a3f39986e6f32bfc39d5abd35395b470b125ec5c8460b1b03f1ffcc6c319a",
+	"output_sha256": "eafea646b93d9b108b99f16835f64cf26ddbdb0cdb622494f240bb101dd87bbe",
 	"placement_engine": "ProtonScatter 4.2.0",
 	"population": 100940,
 	"sample_pine_height_m": 18.2259998321533,

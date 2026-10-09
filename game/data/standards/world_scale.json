@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 10,
+  "revision": 11,
   "axis_convention": "+Y up; XZ ground; model ground anchor at bottom centre",
   "units": {
     "regional_meters_per_world_unit": 100.0,
@@ -60,7 +60,9 @@
     "forage carry bundles",
     "water point collection barrels and carried water",
     "prototype cattle body and ground anchors",
-    "eight-metre pasture footprint and milk vessels"
+    "eight-metre pasture footprint and milk vessels",
+    "Imported Styloo cattle rest pose, moving/idle animation and bottom anchor",
+    "Highlands cattle-shelter fence and timber-camp axe metre profiles"
   ],
   "legacy_scope": "Forest models retain their existing metre-height normalization. Rivers retain existing artistic widths, not surveyed banks; regression checks enforce actor-to-river proportions. Buildings retain logical footprint sizing.",
   "dimensions_unit": "metres",
@@ -157,5 +159,15 @@
   "pasture": {
     "width": 8.0,
     "length": 8.0
+  },
+  "fence_prop": {
+    "height": 0.8,
+    "width_max": 2.0,
+    "offset_z": 0.7
+  },
+  "axe_prop": {
+    "height": 0.5,
+    "width_max": 0.5,
+    "offset_z": 0.25
   }
 }

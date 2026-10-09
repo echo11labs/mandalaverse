@@ -75,3 +75,6 @@ game/addons/at-icons/**
 !game/addons/at-icons/mesh/castle.svg.import
 !game/addons/at-icons/mesh/sun.svg
 !game/addons/at-icons/mesh/sun.svg.import
+
+# Downloaded Craftpix characters: local game use only, no public source redistribution.
+game/assets/models/local_villagers/

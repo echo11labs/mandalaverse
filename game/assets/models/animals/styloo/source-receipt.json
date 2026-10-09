@@ -1,0 +1,15 @@
+{
+  "license": "CC0-1.0",
+  "license_file": "LICENSE.txt",
+  "author": "Styloo",
+  "source_url": "https://styloo.itch.io/animals",
+  "date": "2026-10-08",
+  "files": {
+    "Cow.glb": "9108439239f94ab1a57df162e61067928ce207ccb84d96034175810014d83b43",
+    "Cow_cow_color.png": "5712c2882d20f868353d888ded777660c106f846a3f7404897680b6a47baee99",
+    "Cow_cow_normal.png": "e715d731c3369429aadc72217bb33f2f3d62ab494eb369304322a8f73b21245e",
+    "Cow_cow_roughness.png": "9bef94b515ea558ff47453dd23e377ae8054a3d9dbfbd06d61c590b946d1b258",
+    "LICENSE.txt": "605c4b6ebbdf8f163e8b1d76042f8ac23f3afae1bfe25e437d66c2424a05fd8e",
+    "RECEIPT.md": "6f422157f6a43290474ae04c0cbf5e6f48c6115b2281831a485012363fddc016"
+  }
+}

@@ -1,26 +1,36 @@
 class_name GopalaCattleView
 extends Node3D
-## Original prototype geometry; dimensions come from the shared metre standard.
+## Licensed Styloo model; animation observes herd state and never advances simulation.
+const MODEL := preload("res://assets/models/animals/styloo/Cow.glb")
 var geometry: Node3D
+var player: AnimationPlayer
+var current_pose := ""
+var measured_bounds := AABB()
+var _previous_position := Vector2.ZERO
+var _has_previous := false
 func _init():
 	geometry = Node3D.new()
+	geometry.name = "FittedCow"
 	add_child(geometry)
-	var material := StandardMaterial3D.new()
-	material.albedo_color = Color("c3a889")
-	material.roughness = 0.9
-	part(Vector3(0.62,0.6,1.45),Vector3(0,0.85,0),material)
-	part(Vector3(0.38,0.45,0.48),Vector3(0,0.92,-0.85),material)
-	var dark := StandardMaterial3D.new()
-	dark.albedo_color = Color("554538")
-	for x in [-0.23,0.23]:
-		for z in [-0.5,0.5]: part(Vector3(0.12,0.6,0.14),Vector3(x,0.3,z),dark)
-	for x in [-0.23,0.23]: part(Vector3(0.16,0.09,0.2),Vector3(x,1.16,-0.84),material)
+	var model := MODEL.instantiate()
+	geometry.add_child(model)
+	player = model.find_children("*","AnimationPlayer",true,false)[0]
+	player.play("iddle")
+	player.advance(0.0)
 	GopalaScaleStandard.normalize_height(geometry,GopalaScaleStandard.number("cattle","height"))
-func part(size: Vector3, center: Vector3, material: Material):
-	var view := MeshInstance3D.new()
-	var box := BoxMesh.new()
-	box.size = size
-	view.mesh = box
-	view.position = center
-	view.material_override = material
-	geometry.add_child(view)
+	measured_bounds = GopalaScaleStandard.bounds_in_parent(geometry)
+	update_state({},true)
+func update_state(attributes: Dictionary, paused := false, speed := 1.0) -> void:
+	player.speed_scale = 0.0 if paused else speed
+	var moving := str(attributes.get(&"cattle_move_state",&"IDLE")) == "MOVING"
+	var point := Vector2(float(attributes.get(&"position_x",0)),float(attributes.get(&"position_z",0)))
+	if moving and _has_previous and point.distance_squared_to(_previous_position) > 0.00000001:
+		var direction := point-_previous_position
+		rotation.y = atan2(-direction.x,-direction.y)
+	_previous_position = point
+	_has_previous = true
+	var pose := "walk" if moving else "iddle"
+	if pose != current_pose:
+		player.get_animation(pose).loop_mode = Animation.LOOP_LINEAR
+		player.play(pose,0.12)
+		current_pose = pose

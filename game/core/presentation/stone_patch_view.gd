@@ -10,8 +10,7 @@ func build(entity_id: int, ground_height: Callable, world_xz: Vector2) -> void:
 	add_child(visual)
 	var rng := RandomNumberGenerator.new()
 	rng.seed = entity_id * 7919 + 43129
-	var scenes := [preload("res://assets/models/stone_scatter/small_rock.glb"), preload("res://assets/models/stone_scatter/large_rock.glb")]
-	var material := preload("res://assets/models/stone_scatter/m_rock.tres")
+	var scenes := [preload("res://assets/models/nature/kaykit/Rock_1_A.glb"), preload("res://assets/models/nature/kaykit/Rock_3_A.glb")]
 	var base_y: float = ground_height.call(world_xz.x, world_xz.y)
 	for i in int(GopalaScaleStandard.number("stone_patch", "piece_count")):
 		var piece: Node3D = scenes[i % scenes.size()].instantiate()
@@ -24,7 +23,6 @@ func build(entity_id: int, ground_height: Callable, world_xz: Vector2) -> void:
 		var radius := sqrt(float(i) / maxf(1.0, GopalaScaleStandard.number("stone_patch", "piece_count") - 1.0)) * GopalaScaleStandard.number("stone_patch", "radius")
 		var offset := Vector2(cos(angle), sin(angle)) * radius
 		piece.position += Vector3(offset.x, float(ground_height.call(world_xz.x + offset.x, world_xz.y + offset.y)) - base_y, offset.y)
-		_apply_material(piece, material)
 		piece.set_meta("scale_profile", "stone_piece")
 		visual.add_child(piece)
 		pieces.append(piece)

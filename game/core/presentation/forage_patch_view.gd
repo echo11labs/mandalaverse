@@ -1,7 +1,7 @@
 class_name GopalaForagePatchView
 extends Node3D
 
-## Original prototype plants. All dimensions come from the metre-based standard.
+## Selected KayKit plants on the original deterministic points. All dimensions come from the metre-based standard.
 var plants: Array[Node3D] = []
 var pick_shape: CollisionShape3D
 
@@ -27,31 +27,20 @@ func build(entity_id: int, world_seed: int, resource: StringName, ground_height:
 		var offset := Vector2(cos(angle),sin(angle)) * GopalaScaleStandard.number("forage_patch","radius") * sqrt(rng.randf())
 		plant.position = Vector3(offset.x,float(ground_height.call(world_xz.x+offset.x,world_xz.y+offset.y))-base_y,offset.y)
 		var height := GopalaScaleStandard.number("forage_patch","plant_height") * rng.randf_range(0.65,1.0)
+		var path := "res://assets/models/nature/kaykit/Bush_1_A.glb" if resource == &"wild_food" and i % 2 == 0 else "res://assets/models/nature/kaykit/Bush_2_A.glb" if resource == &"wild_food" else "res://assets/models/nature/kaykit/Grass_1_A.glb"
+		var model: Node3D = (load(path) as PackedScene).instantiate()
+		plant.add_child(model)
+		GopalaScaleStandard.normalize_height(model,height)
+		# Same deterministic scatter points and density; distinguish forage by existing berry markers.
 		if resource == &"wild_food":
-			var trunk := CylinderMesh.new()
-			trunk.height = height * 0.45
-			trunk.top_radius = GopalaScaleStandard.number("forage_patch","stem_width") * 0.5
-			trunk.bottom_radius = trunk.top_radius
-			mesh_part(plant,trunk,Vector3(0,trunk.height*0.5,0),Color(0.30,0.23,0.12))
-			var canopy := SphereMesh.new()
-			canopy.radius = GopalaScaleStandard.number("forage_patch","shrub_width") * 0.5
-			canopy.height = height * 0.65
-			mesh_part(plant,canopy,Vector3(0,trunk.height+canopy.height*0.5,0),Color(0.19,0.35,0.12))
 			for berry in 4:
 				var fruit := SphereMesh.new()
 				fruit.radius = GopalaScaleStandard.number("forage_patch","berry_width") * 0.5
 				fruit.height = fruit.radius * 2
 				var yaw := float(berry) * TAU / 4.0
-				mesh_part(plant,fruit,Vector3(cos(yaw)*canopy.radius,trunk.height+canopy.height*0.5,sin(yaw)*canopy.radius),resource_color(resource))
-		else:
-			for blade in 4:
-				var stem := CylinderMesh.new()
-				stem.height = height * rng.randf_range(0.75,1.0)
-				stem.top_radius = 0
-				stem.bottom_radius = GopalaScaleStandard.number("forage_patch","stem_width")
-				stem.radial_segments = 4
-				var yaw := float(blade) * TAU / 4
-				mesh_part(plant,stem,Vector3(cos(yaw)*stem.bottom_radius,stem.height*0.5,sin(yaw)*stem.bottom_radius),resource_color(resource))
+				mesh_part(plant,fruit,Vector3(cos(yaw)*GopalaScaleStandard.number("forage_patch","shrub_width")*0.5,height*0.65,sin(yaw)*GopalaScaleStandard.number("forage_patch","shrub_width")*0.5),resource_color(resource))
+		if resource != &"wild_food":
+			for unused_blade in 4: rng.randf() # Preserve the original scatter RNG sequence.
 		plants.append(plant)
 
 func mesh_part(parent: Node3D, mesh: Mesh, at: Vector3, color: Color) -> void:

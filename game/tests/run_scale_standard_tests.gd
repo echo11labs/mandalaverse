@@ -16,7 +16,7 @@ func check(value: bool, label: String) -> void:
 func run() -> void:
 	var standard := GopalaScaleStandard.settings()
 	check(standard.schema_version == 1 and int(standard.revision) > 0, "Versioned scale standard")
-	for profile in ["units", "villager", "stone_piece", "stone_patch", "stone_scenery", "stone_carry", "timber_carry", "forage_patch", "forage_carry", "water_source", "water_carry", "cattle", "milk_carry", "pasture"]:
+	for profile in ["units", "villager", "stone_piece", "stone_patch", "stone_scenery", "stone_carry", "timber_carry", "forage_patch", "forage_carry", "water_source", "water_carry", "cattle", "milk_carry", "pasture", "fence_prop", "axe_prop"]:
 		for key in standard[profile]:
 			if typeof(standard[profile][key]) in [TYPE_FLOAT, TYPE_INT]:
 				check(is_finite(float(standard[profile][key])) and float(standard[profile][key]) > 0.0, "Positive finite scale value: %s.%s" % [profile, key])
@@ -28,8 +28,8 @@ func run() -> void:
 	for reach in [{"name": "Bagmati", "kind": "river"}, {"name": "Bishnumati", "kind": "river"}, {"name": "stream", "kind": "stream"}]:
 		var river_width: float = river_script.half_width(reach) * 2.0
 		check(river_width > GopalaScaleStandard.number("villager", "height") * 10.0, "Human remains much smaller than flowing river: %s" % reach.name)
-	for name in ["large_rock", "small_rock"]:
-		var path := "res://assets/models/stone_scatter/%s.glb" % name
+	for name in ["Rock_3_A", "Rock_1_A"]:
+		var path := "res://assets/models/nature/kaykit/%s.glb" % name
 		var source: PackedScene = load(path)
 		for yaw in [0.0, 0.7, 1.6, 2.7]:
 			for export_scale in [0.01, 1.0, 100.0]:
@@ -88,11 +88,11 @@ func run() -> void:
 	var water_bounds := GopalaScaleStandard.bounds_in_parent(water_view.get_node("MeshChild"))
 	check(GopalaScaleStandard.within_profile(water_bounds,"water_source"),"Water barrel normalized to target metre dimensions")
 	check(absf(water_bounds.position.y) < 0.0001 and absf(water_bounds.get_center().x) < 0.0001 and absf(water_bounds.get_center().z) < 0.0001,"Water barrel bottom-centre anchor includes imported transforms")
-	measurements.append({"asset":"res://assets/models/kenney_survival/barrel.glb","sha256":FileAccess.get_sha256("res://assets/models/kenney_survival/barrel.glb"),"fitted_size":[water_bounds.size.x,water_bounds.size.y,water_bounds.size.z]})
+	measurements.append({"asset":"res://assets/models/buildings/highlands/SM_Barrel.glb","sha256":FileAccess.get_sha256("res://assets/models/buildings/highlands/SM_Barrel.glb"),"fitted_size":[water_bounds.size.x,water_bounds.size.y,water_bounds.size.z]})
 	water_view.free()
 	var cow := GopalaCattleView.new()
 	var cow_bounds := GopalaScaleStandard.bounds_in_parent(cow)
-	check(GopalaScaleStandard.within_profile(cow_bounds,"cattle"),"Prototype cattle meets metre dimensions")
+	check(GopalaScaleStandard.within_profile(cow_bounds,"cattle"),"Imported cattle meets metre dimensions")
 	check(is_equal_approx(cow_bounds.size.y,GopalaScaleStandard.number("cattle","height")) and absf(cow_bounds.position.y) < 0.0001 and absf(cow_bounds.get_center().z) < 0.0001,"Cattle target height and bottom-centre ground anchor")
 	check(cow_bounds.size.y < GopalaScaleStandard.number("villager","height"),"Cattle shoulder remains below a human reference")
 	measurements.append({"asset":"res://core/presentation/cattle_view.gd","sha256":FileAccess.get_sha256("res://core/presentation/cattle_view.gd"),"fitted_size":[cow_bounds.size.x,cow_bounds.size.y,cow_bounds.size.z]})
