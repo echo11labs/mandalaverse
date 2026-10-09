@@ -7,7 +7,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 3.78,
+      "seconds": 10.62,
       "log": "reports/local/import.log",
       "warnings": []
     },
@@ -25,7 +25,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-gopala_theme.log",
       "warnings": []
     },
@@ -34,7 +34,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-ui_tokens.log",
       "warnings": []
     },
@@ -43,7 +43,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.3,
+      "seconds": 0.29,
       "log": "reports/local/parse-fixture.log",
       "warnings": []
     },
@@ -61,7 +61,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-ui_events.log",
       "warnings": []
     },
@@ -70,7 +70,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-ui_router.log",
       "warnings": []
     },
@@ -79,7 +79,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-ui_settings.log",
       "warnings": []
     },
@@ -106,7 +106,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-building_definition.log",
       "warnings": []
     },
@@ -133,7 +133,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-zone_definition.log",
       "warnings": []
     },
@@ -151,7 +151,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-entity_lifecycle.log",
       "warnings": []
     },
@@ -160,7 +160,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-entity_operation_result.log",
       "warnings": []
     },
@@ -169,7 +169,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-entity_record.log",
       "warnings": []
     },
@@ -178,7 +178,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-entity_registry.log",
       "warnings": []
     },
@@ -196,7 +196,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-entity_snapshot.log",
       "warnings": []
     },
@@ -223,7 +223,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-kathmandu_terrain.log",
       "warnings": []
     },
@@ -232,7 +232,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-sculpted_valley.log",
       "warnings": []
     },
@@ -241,7 +241,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-terrain_river.log",
       "warnings": []
     },
@@ -268,7 +268,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-building_model_view.log",
       "warnings": []
     },
@@ -286,7 +286,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-forage_patch_view.log",
       "warnings": []
     },
@@ -322,7 +322,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-timber_stand_view.log",
       "warnings": []
     },
@@ -358,7 +358,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-entity_pick_resolver_3d.log",
       "warnings": []
     },
@@ -367,7 +367,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-entity_query_service.log",
       "warnings": []
     },
@@ -385,7 +385,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-selection_result.log",
       "warnings": []
     },
@@ -394,7 +394,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-selection_service.log",
       "warnings": []
     },
@@ -412,7 +412,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.29,
+      "seconds": 0.28,
       "log": "reports/local/parse-alert_service.log",
       "warnings": []
     },
@@ -421,7 +421,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.17,
       "log": "reports/local/parse-command_queue.log",
       "warnings": []
     },
@@ -430,7 +430,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-command_result.log",
       "warnings": []
     },
@@ -448,7 +448,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-entity_id_allocator.log",
       "warnings": []
     },
@@ -493,7 +493,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.29,
+      "seconds": 0.3,
       "log": "reports/local/parse-scenario_setup.log",
       "warnings": []
     },
@@ -502,7 +502,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.24,
+      "seconds": 0.29,
       "log": "reports/local/parse-settlement_simulation.log",
       "warnings": []
     },
@@ -520,7 +520,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-simulation_clock.log",
       "warnings": []
     },
@@ -547,7 +547,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-stone_scatter.log",
       "warnings": []
     },
@@ -574,7 +574,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.29,
+      "seconds": 0.24,
       "log": "reports/local/parse-worker_job_service.log",
       "warnings": []
     },
@@ -583,7 +583,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-footprint_transform.log",
       "warnings": []
     },
@@ -592,7 +592,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-occupancy_claim_snapshot.log",
       "warnings": []
     },
@@ -601,7 +601,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-occupancy_grid_snapshot.log",
       "warnings": []
     },
@@ -610,7 +610,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-occupancy_operation_result.log",
       "warnings": []
     },
@@ -646,7 +646,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.17,
       "log": "reports/local/parse-settlement_occupancy_service.log",
       "warnings": []
     },
@@ -682,7 +682,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-bake_waterways.log",
       "warnings": []
     },
@@ -736,7 +736,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.35,
+      "seconds": 0.4,
       "log": "reports/local/parse-kathmandu_valley.log",
       "warnings": []
     },
@@ -754,7 +754,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.2,
+      "seconds": 0.18,
       "log": "reports/local/parse-scenic_camera.log",
       "warnings": []
     },
@@ -790,7 +790,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-icon_button.log",
       "warnings": []
     },
@@ -808,7 +808,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-progress_meter.log",
       "warnings": []
     },
@@ -826,7 +826,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-shortcut_tooltip.log",
       "warnings": []
     },
@@ -835,7 +835,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-shortcut_tooltip.log",
       "warnings": []
     },
@@ -853,7 +853,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-status_badge.log",
       "warnings": []
     },
@@ -871,7 +871,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-gopala_minimap.log",
       "warnings": []
     },
@@ -880,7 +880,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-terrain_overlay.log",
       "warnings": []
     },
@@ -898,7 +898,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-valley_camera.log",
       "warnings": []
     },
@@ -925,7 +925,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-measure_ui.log",
       "warnings": []
     },
@@ -952,7 +952,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.29,
+      "seconds": 0.24,
       "log": "reports/local/parse-run_component_gallery_tests.log",
       "warnings": []
     },
@@ -970,7 +970,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-run_content_tests.log",
       "warnings": []
     },
@@ -979,7 +979,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.46,
+      "seconds": 0.45,
       "log": "reports/local/parse-run_entity_registry_tests.log",
       "warnings": []
     },
@@ -997,7 +997,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-run_forest_tests.log",
       "warnings": []
     },
@@ -1015,7 +1015,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.29,
+      "seconds": 0.28,
       "log": "reports/local/parse-run_herd_tests.log",
       "warnings": []
     },
@@ -1024,7 +1024,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-run_kathmandu_tests.log",
       "warnings": []
     },
@@ -1033,7 +1033,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-run_landscape_tests.log",
       "warnings": []
     },
@@ -1051,7 +1051,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-run_model_asset_tests.log",
       "warnings": []
     },
@@ -1069,7 +1069,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.28,
+      "seconds": 0.3,
       "log": "reports/local/parse-run_placement_slice_tests.log",
       "warnings": []
     },
@@ -1078,7 +1078,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.29,
+      "seconds": 0.28,
       "log": "reports/local/parse-run_route_tests.log",
       "warnings": []
     },
@@ -1105,7 +1105,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-run_scenic_tests.log",
       "warnings": []
     },
@@ -1123,7 +1123,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.44,
+      "seconds": 0.45,
       "log": "reports/local/parse-run_simulation_spine_tests.log",
       "warnings": []
     },
@@ -1141,7 +1141,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.29,
+      "seconds": 0.24,
       "log": "reports/local/parse-run_stockpile_inventory_tests.log",
       "warnings": []
     },
@@ -1168,7 +1168,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.18,
+      "seconds": 0.19,
       "log": "reports/local/parse-run_ui_tests.log",
       "warnings": []
     },
@@ -1177,7 +1177,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.45,
+      "seconds": 0.46,
       "log": "reports/local/parse-run_villager_movement_tests.log",
       "warnings": []
     },
@@ -1186,7 +1186,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19,
+      "seconds": 0.18,
       "log": "reports/local/parse-run_waterways_tests.log",
       "warnings": []
     },
@@ -1195,7 +1195,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.29,
+      "seconds": 0.76,
       "log": "reports/local/parse-run_worker_job_tests.log",
       "warnings": []
     },
@@ -1204,7 +1204,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.45,
+      "seconds": 1.25,
       "log": "reports/local/alert-tests.log",
       "warnings": [],
       "tests": {
@@ -1218,7 +1218,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 4.95,
+      "seconds": 5.87,
       "log": "reports/local/alert-ui-tests.log",
       "warnings": [],
       "tests": {
@@ -1257,7 +1257,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.46,
+      "seconds": 0.45,
       "log": "reports/local/ui-tests.log",
       "warnings": [],
       "tests": {
@@ -1285,7 +1285,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 4.56,
+      "seconds": 4.61,
       "log": "reports/local/simulation-spine-tests.log",
       "warnings": [],
       "tests": {
@@ -1299,7 +1299,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 4.5,
+      "seconds": 4.71,
       "log": "reports/local/entity-registry-tests.log",
       "warnings": [],
       "tests": {
@@ -1313,7 +1313,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 4.63,
+      "seconds": 4.79,
       "log": "reports/local/selection-tests.log",
       "warnings": [],
       "tests": {
@@ -1327,7 +1327,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 4.44,
+      "seconds": 4.62,
       "log": "reports/local/spatial-grid-tests.log",
       "warnings": [],
       "tests": {
@@ -1341,7 +1341,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 4.34,
+      "seconds": 4.68,
       "log": "reports/local/placement-slice-tests.log",
       "warnings": [],
       "tests": {
@@ -1355,7 +1355,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.67,
+      "seconds": 0.66,
       "log": "reports/local/villager-movement-tests.log",
       "warnings": [],
       "tests": {
@@ -1369,7 +1369,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.4,
+      "seconds": 0.45,
       "log": "reports/local/gather-delivery-tests.log",
       "warnings": [],
       "tests": {
@@ -1383,7 +1383,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 54.81,
+      "seconds": 63.62,
       "log": "reports/local/mvp-scenario-tests.log",
       "warnings": [],
       "tests": {
@@ -1397,7 +1397,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 2.91,
+      "seconds": 2.97,
       "log": "reports/local/herd-tests.log",
       "warnings": [],
       "tests": {
@@ -1411,7 +1411,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 7.62,
+      "seconds": 9.08,
       "log": "reports/local/survival-tests.log",
       "warnings": [],
       "tests": {
@@ -1425,7 +1425,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 4.95,
+      "seconds": 6.27,
       "log": "reports/local/forage-tests.log",
       "warnings": [],
       "tests": {
@@ -1439,7 +1439,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 1.05,
+      "seconds": 1.24,
       "log": "reports/local/stockpile-inventory-tests.log",
       "warnings": [],
       "tests": {
@@ -1453,7 +1453,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 4.84,
+      "seconds": 5.4,
       "log": "reports/local/worker-job-tests.log",
       "warnings": [],
       "tests": {
@@ -1467,7 +1467,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 6.09,
+      "seconds": 7.12,
       "log": "reports/local/save-tests.log",
       "warnings": [],
       "tests": {
@@ -1481,7 +1481,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 5.21,
+      "seconds": 5.29,
       "log": "reports/local/route-tests.log",
       "warnings": [],
       "tests": {
@@ -1495,11 +1495,11 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 4.68,
+      "seconds": 4.72,
       "log": "reports/local/model-asset-tests.log",
       "warnings": [],
       "tests": {
-        "checks": 193,
+        "checks": 253,
         "failures": [],
         "ok": true
       }
@@ -1509,11 +1509,11 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.35,
+      "seconds": 0.34,
       "log": "reports/local/scale-standard-tests.log",
       "warnings": [],
       "tests": {
-        "checks": 136,
+        "checks": 142,
         "failures": [],
         "ok": true
       }
@@ -1523,7 +1523,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 6.39,
+      "seconds": 6.47,
       "log": "reports/local/stone-resource-tests.log",
       "warnings": [],
       "tests": {
@@ -1537,7 +1537,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.45,
+      "seconds": 0.44,
       "log": "reports/local/construction-labor-tests.log",
       "warnings": [],
       "tests": {
@@ -1551,7 +1551,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.39,
+      "seconds": 0.34,
       "log": "reports/local/landscape-tests.log",
       "warnings": [],
       "tests": {
@@ -1567,7 +1567,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 1.16,
+      "seconds": 1.26,
       "log": "reports/local/scenic-tests.log",
       "warnings": [],
       "tests": {
@@ -1581,7 +1581,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 5.21,
+      "seconds": 5.24,
       "log": "reports/local/kathmandu-tests.log",
       "warnings": [],
       "tests": {
@@ -1655,7 +1655,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.78,
+      "seconds": 0.77,
       "log": "reports/local/waterways-tests.log",
       "warnings": [],
       "tests": {
@@ -1672,7 +1672,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 8.35,
+      "seconds": 6.22,
       "log": "reports/local/local-view-tests.log",
       "warnings": [],
       "tests": {
@@ -1686,17 +1686,17 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 1.44,
+      "seconds": 1.36,
       "log": "reports/local/forest-tests.log",
       "warnings": [],
       "tests": {
-        "checks": 14797,
+        "checks": 14795,
         "detail_count": 8305,
         "failures": [],
         "ok": true,
         "physical_height_m": [
-          5.00037822528001,
-          29.9996647557334
+          5.00037820211041,
+          29.9996640963229
         ],
         "population": 100940,
         "scope": "Saved-source integrity and placement checks; artistic replacement acceptance is separate.",
@@ -1708,7 +1708,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.73,
+      "seconds": 0.5,
       "log": "reports/local/coordinate-tests.log",
       "warnings": [],
       "tests": {
@@ -1724,7 +1724,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 9.79,
+      "seconds": 9.68,
       "log": "reports/local/bench-smoke.log",
       "warnings": [],
       "tests": {
@@ -1738,7 +1738,7 @@
       "ok": true,
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 4.64,
+      "seconds": 4.67,
       "log": "reports/local/main-scene.log",
       "warnings": []
     }

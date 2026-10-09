@@ -1,449 +1,454 @@
 {
-  "checks": 136,
+  "checks": 142,
   "failures": [],
   "forage_measurements": [
     {
       "bounds_bottom": 0.0,
       "resource": "thatch",
       "size_metres": [
-        1.7515029758215,
-        0.939133577048779,
-        1.7516802996397
+        2.10197661072016,
+        0.959182623773813,
+        1.81227140128613
       ],
-      "source_sha256": "b3519ef6d4ca8c34ba6e8dabb7d7822c9242af3cbb5c0c332a95081e7584bb32"
+      "source_sha256": "ac3e704131381c952cc6f8933bbb2fdf5a776a17193283e2b1746968bce8f9b2"
     },
     {
       "bounds_bottom": 0.0,
       "resource": "wild_food",
       "size_metres": [
-        2.36715190112591,
-        1.05510074645281,
-        1.37533051893115
+        2.55927704274654,
+        0.959182623773813,
+        1.60167366266251
       ],
-      "source_sha256": "b3519ef6d4ca8c34ba6e8dabb7d7822c9242af3cbb5c0c332a95081e7584bb32"
+      "source_sha256": "ac3e704131381c952cc6f8933bbb2fdf5a776a17193283e2b1746968bce8f9b2"
     },
     {
       "bounds_bottom": 0.0,
       "resource": "fodder",
       "size_metres": [
-        1.7515029758215,
-        0.939133577048779,
-        1.7516802996397
+        2.10197661072016,
+        0.959182623773813,
+        1.81227140128613
       ],
-      "source_sha256": "b3519ef6d4ca8c34ba6e8dabb7d7822c9242af3cbb5c0c332a95081e7584bb32"
+      "source_sha256": "ac3e704131381c952cc6f8933bbb2fdf5a776a17193283e2b1746968bce8f9b2"
     }
   ],
   "mesh_measurements": [
     {
-      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_3_A.glb",
       "export_scale_probe": 0.01,
       "fitted_size": [
-        0.00292542716488242,
-        0.00165067869238555,
-        0.00300000002607703
+        0.00289492914453149,
+        0.00259999977424741,
+        0.00244443002156913
       ],
-      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "sha256": "5633077cfde7034af2156fe2c5090a359de194fd7df8dbeb79da690c661c9654",
       "source_size": [
-        0.0348508134484291,
-        0.0196646470576525,
-        0.0357392057776451
+        0.00956294033676386,
+        0.00858868844807148,
+        0.00807478744536638
       ],
       "yaw": 0.0
     },
     {
-      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_3_A.glb",
       "export_scale_probe": 1.0,
       "fitted_size": [
-        0.00292542716488242,
-        0.00165067845955491,
-        0.00300000002607703
+        0.00289492914453149,
+        0.00259999977424741,
+        0.00244443002156913
       ],
-      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "sha256": "5633077cfde7034af2156fe2c5090a359de194fd7df8dbeb79da690c661c9654",
       "source_size": [
-        3.48508143424988,
-        1.96646475791931,
-        3.57392072677612
+        0.956294059753418,
+        0.858868837356567,
+        0.807478785514832
       ],
       "yaw": 0.0
     },
     {
-      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_3_A.glb",
       "export_scale_probe": 100.0,
       "fitted_size": [
-        0.00292542716488242,
-        0.00165067845955491,
-        0.00300000002607703
+        0.00289492914453149,
+        0.00259999977424741,
+        0.00244443002156913
       ],
-      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "sha256": "5633077cfde7034af2156fe2c5090a359de194fd7df8dbeb79da690c661c9654",
       "source_size": [
-        348.508148193359,
-        196.646484375,
-        357.39208984375
+        95.6294097900391,
+        85.8868865966797,
+        80.7478790283203
       ],
       "yaw": 0.0
     },
     {
-      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_3_A.glb",
       "export_scale_probe": 0.01,
       "fitted_size": [
-        0.00299354270100594,
-        0.00118494173511863,
-        0.00300000002607703
+        0.00300000002607703,
+        0.00205863988958299,
+        0.00295697338879108
       ],
-      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "sha256": "5633077cfde7034af2156fe2c5090a359de194fd7df8dbeb79da690c661c9654",
       "source_size": [
-        0.0496792048215866,
-        0.0196646470576525,
-        0.0497863665223122
+        0.0125160617753863,
+        0.00858868844807148,
+        0.0123365540057421
       ],
       "yaw": 0.7
     },
     {
-      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_3_A.glb",
       "export_scale_probe": 1.0,
       "fitted_size": [
-        0.00299354270100594,
-        0.00118494173511863,
-        0.00300000002607703
+        0.00300000002607703,
+        0.00205863988958299,
+        0.00295697338879108
       ],
-      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "sha256": "5633077cfde7034af2156fe2c5090a359de194fd7df8dbeb79da690c661c9654",
       "source_size": [
-        4.96792030334473,
-        1.96646475791931,
-        4.97863674163818
+        1.25160622596741,
+        0.858868837356567,
+        1.23365545272827
       ],
       "yaw": 0.7
     },
     {
-      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_3_A.glb",
       "export_scale_probe": 100.0,
       "fitted_size": [
-        0.00299354270100594,
-        0.00118494173511863,
-        0.00300000002607703
+        0.00300000002607703,
+        0.00205863988958299,
+        0.00295697338879108
       ],
-      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "sha256": "5633077cfde7034af2156fe2c5090a359de194fd7df8dbeb79da690c661c9654",
       "source_size": [
-        496.792053222656,
-        196.646484375,
-        497.863647460938
+        125.160621643066,
+        85.8868865966797,
+        123.365539550781
       ],
       "yaw": 0.7
     },
     {
-      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_3_A.glb",
       "export_scale_probe": 0.01,
       "fitted_size": [
-        0.00300000025890768,
-        0.00160564482212067,
-        0.00292961089871824
+        0.00252791843377054,
+        0.00259999977424741,
+        0.00296507100574672
       ],
-      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "sha256": "5633077cfde7034af2156fe2c5090a359de194fd7df8dbeb79da690c661c9654",
       "source_size": [
-        0.036741591989994,
-        0.0196646470576525,
-        0.035879522562027
+        0.00835057720541954,
+        0.00858868844807148,
+        0.00979464221745729
       ],
       "yaw": 1.6
     },
     {
-      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_3_A.glb",
       "export_scale_probe": 1.0,
       "fitted_size": [
-        0.00299999979324639,
-        0.00160564458929002,
-        0.00292961066588759
+        0.00252791843377054,
+        0.00259999977424741,
+        0.00296507100574672
       ],
-      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "sha256": "5633077cfde7034af2156fe2c5090a359de194fd7df8dbeb79da690c661c9654",
       "source_size": [
-        3.67415952682495,
-        1.96646475791931,
-        3.58795213699341
+        0.835057854652405,
+        0.858868837356567,
+        0.979464292526245
       ],
       "yaw": 1.6
     },
     {
-      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_3_A.glb",
       "export_scale_probe": 100.0,
       "fitted_size": [
-        0.00299999979324639,
-        0.00160564458929002,
-        0.00292961066588759
+        0.00252791843377054,
+        0.00259999977424741,
+        0.00296507100574672
       ],
-      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "sha256": "5633077cfde7034af2156fe2c5090a359de194fd7df8dbeb79da690c661c9654",
       "source_size": [
-        367.415954589844,
-        196.646484375,
-        358.795227050781
+        83.5057830810547,
+        85.8868865966797,
+        97.9464263916016
       ],
       "yaw": 1.6
     },
     {
-      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_3_A.glb",
       "export_scale_probe": 0.01,
       "fitted_size": [
-        0.00297308643348515,
-        0.00124972988851368,
-        0.00300000002607703
+        0.00299999956041574,
+        0.00213002692908049,
+        0.00282406806945801
       ],
-      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "sha256": "5633077cfde7034af2156fe2c5090a359de194fd7df8dbeb79da690c661c9654",
       "source_size": [
-        0.0467818677425385,
-        0.0196646470576525,
-        0.0472053550183773
+        0.0120965903624892,
+        0.00858868844807148,
+        0.0113871991634369
       ],
       "yaw": 2.7
     },
     {
-      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_3_A.glb",
       "export_scale_probe": 1.0,
       "fitted_size": [
-        0.00297308643348515,
-        0.00124972988851368,
-        0.00300000002607703
+        0.00300000002607703,
+        0.00213002716191113,
+        0.0028240685351193
       ],
-      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "sha256": "5633077cfde7034af2156fe2c5090a359de194fd7df8dbeb79da690c661c9654",
       "source_size": [
-        4.67818689346313,
-        1.96646475791931,
-        4.72053575515747
+        1.20965898036957,
+        0.858868837356567,
+        1.13871991634369
       ],
       "yaw": 2.7
     },
     {
-      "asset": "res://assets/models/stone_scatter/large_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_3_A.glb",
       "export_scale_probe": 100.0,
       "fitted_size": [
-        0.00297308643348515,
-        0.00124972988851368,
-        0.00300000002607703
+        0.00299999956041574,
+        0.00213002692908049,
+        0.00282406806945801
       ],
-      "sha256": "2b7eff55c4c0b8cac878232eb3afb1937cbabd6816c14bd484798614ce2dbca6",
+      "sha256": "5633077cfde7034af2156fe2c5090a359de194fd7df8dbeb79da690c661c9654",
       "source_size": [
-        467.818695068359,
-        196.646484375,
-        472.053588867188
+        120.96590423584,
+        85.8868865966797,
+        113.871994018555
       ],
       "yaw": 2.7
     },
     {
-      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_1_A.glb",
       "export_scale_probe": 0.01,
       "fitted_size": [
-        0.00300000002607703,
-        0.00242641009390354,
-        0.00230306200683117
+        0.0027817259542644,
+        0.00260000000707805,
+        0.00292487978003919
       ],
-      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "sha256": "ef52f8f37cbe1b4efc2306ba194abc81b5dd93cdc6d695a4af4fd4189f673785",
       "source_size": [
-        0.00598317570984364,
-        0.00483921263366938,
-        0.00459320843219757
+        0.00578029733151197,
+        0.00540267955511808,
+        0.00607776455581188
       ],
       "yaw": 0.0
     },
     {
-      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_1_A.glb",
       "export_scale_probe": 1.0,
       "fitted_size": [
-        0.00300000002607703,
-        0.00242641009390354,
-        0.00230306200683117
+        0.0027817259542644,
+        0.00260000000707805,
+        0.00292487978003919
       ],
-      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "sha256": "ef52f8f37cbe1b4efc2306ba194abc81b5dd93cdc6d695a4af4fd4189f673785",
       "source_size": [
-        0.598317563533783,
-        0.483921259641647,
-        0.459320843219757
+        0.578029751777649,
+        0.540267944335938,
+        0.607776463031769
       ],
       "yaw": 0.0
     },
     {
-      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_1_A.glb",
       "export_scale_probe": 100.0,
       "fitted_size": [
-        0.00300000002607703,
-        0.00242641009390354,
-        0.00230306200683117
+        0.0027817259542644,
+        0.00260000000707805,
+        0.00292487978003919
       ],
-      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "sha256": "ef52f8f37cbe1b4efc2306ba194abc81b5dd93cdc6d695a4af4fd4189f673785",
       "source_size": [
-        59.8317565917969,
-        48.3921279907227,
-        45.9320831298828
+        57.8029747009277,
+        54.0267944335938,
+        60.777645111084
       ],
       "yaw": 0.0
     },
     {
-      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_1_A.glb",
       "export_scale_probe": 0.01,
       "fitted_size": [
-        0.00300000002607703,
-        0.0019266395829618,
-        0.00293324748054147
+        0.00298714265227318,
+        0.00193591217976063,
+        0.00300000002607703
       ],
-      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "sha256": "ef52f8f37cbe1b4efc2306ba194abc81b5dd93cdc6d695a4af4fd4189f673785",
       "source_size": [
-        0.007535211276263,
-        0.00483921263366938,
-        0.00736754713580012
+        0.00833641923964024,
+        0.00540267955511808,
+        0.00837230030447245
       ],
       "yaw": 0.7
     },
     {
-      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_1_A.glb",
       "export_scale_probe": 1.0,
       "fitted_size": [
-        0.00300000002607703,
-        0.00192663981579244,
-        0.00293324771337211
-      ],
-      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
-      "source_size": [
-        0.753521144390106,
-        0.483921259641647,
-        0.736754715442657
-      ],
-      "yaw": 0.7
-    },
-    {
-      "asset": "res://assets/models/stone_scatter/small_rock.glb",
-      "export_scale_probe": 100.0,
-      "fitted_size": [
-        0.00300000002607703,
-        0.00192663981579244,
-        0.00293324771337211
-      ],
-      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
-      "source_size": [
-        75.3521118164062,
-        48.3921279907227,
-        73.6754684448242
-      ],
-      "yaw": 0.7
-    },
-    {
-      "asset": "res://assets/models/stone_scatter/small_rock.glb",
-      "export_scale_probe": 0.01,
-      "fitted_size": [
-        0.00233826087787747,
-        0.00237420201301575,
+        0.00298714241944253,
+        0.00193591206334531,
         0.00299999979324639
       ],
-      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "sha256": "ef52f8f37cbe1b4efc2306ba194abc81b5dd93cdc6d695a4af4fd4189f673785",
       "source_size": [
-        0.0047659557312727,
-        0.00483921263366938,
-        0.00611474364995956
+        0.833641886711121,
+        0.540267944335938,
+        0.837230086326599
       ],
-      "yaw": 1.6
+      "yaw": 0.7
     },
     {
-      "asset": "res://assets/models/stone_scatter/small_rock.glb",
-      "export_scale_probe": 1.0,
+      "asset": "res://assets/models/nature/kaykit/Rock_1_A.glb",
+      "export_scale_probe": 100.0,
       "fitted_size": [
-        0.00233826087787747,
-        0.00237420201301575,
+        0.00298714241944253,
+        0.00193591206334531,
         0.00299999979324639
       ],
-      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "sha256": "ef52f8f37cbe1b4efc2306ba194abc81b5dd93cdc6d695a4af4fd4189f673785",
       "source_size": [
-        0.47659558057785,
-        0.483921259641647,
-        0.611474394798279
+        83.3641891479492,
+        54.0267944335938,
+        83.7230072021484
       ],
-      "yaw": 1.6
+      "yaw": 0.7
     },
     {
-      "asset": "res://assets/models/stone_scatter/small_rock.glb",
-      "export_scale_probe": 100.0,
-      "fitted_size": [
-        0.00233826111070812,
-        0.00237420224584639,
-        0.00300000002607703
-      ],
-      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
-      "source_size": [
-        47.6595611572266,
-        48.3921279907227,
-        61.1474380493164
-      ],
-      "yaw": 1.6
-    },
-    {
-      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_1_A.glb",
       "export_scale_probe": 0.01,
       "fitted_size": [
-        0.00299999979324639,
-        0.00196922291070223,
-        0.00273037329316139
+        0.00300000049173832,
+        0.00259579694829881,
+        0.00286131189204752
       ],
-      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "sha256": "ef52f8f37cbe1b4efc2306ba194abc81b5dd93cdc6d695a4af4fd4189f673785",
       "source_size": [
-        0.00737226754426956,
-        0.00483921263366938,
-        0.00670968042686582
+        0.00624395441263914,
+        0.00540267955511808,
+        0.00595530029386282
       ],
-      "yaw": 2.7
+      "yaw": 1.6
     },
     {
-      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_1_A.glb",
       "export_scale_probe": 1.0,
       "fitted_size": [
         0.00300000002607703,
-        0.00196922291070223,
-        0.00273037329316139
+        0.00259579671546817,
+        0.00286131165921688
       ],
-      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "sha256": "ef52f8f37cbe1b4efc2306ba194abc81b5dd93cdc6d695a4af4fd4189f673785",
       "source_size": [
-        0.737226724624634,
-        0.483921259641647,
-        0.670968055725098
+        0.624395489692688,
+        0.540267944335938,
+        0.595530033111572
       ],
-      "yaw": 2.7
+      "yaw": 1.6
     },
     {
-      "asset": "res://assets/models/stone_scatter/small_rock.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_1_A.glb",
       "export_scale_probe": 100.0,
       "fitted_size": [
         0.00300000002607703,
-        0.00196922291070223,
-        0.00273037329316139
+        0.00259579671546817,
+        0.00286131165921688
       ],
-      "sha256": "83b3f49f4e31060269cd6eb7ae01120dde964be398cacbd4cd832bb14090766a",
+      "sha256": "ef52f8f37cbe1b4efc2306ba194abc81b5dd93cdc6d695a4af4fd4189f673785",
       "source_size": [
-        73.7226715087891,
-        48.3921279907227,
-        67.096809387207
+        62.4395523071289,
+        54.0267944335938,
+        59.5530090332031
+      ],
+      "yaw": 1.6
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_1_A.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00294659193605185,
+        0.00203487672843039,
+        0.00299999979324639
+      ],
+      "sha256": "ef52f8f37cbe1b4efc2306ba194abc81b5dd93cdc6d695a4af4fd4189f673785",
+      "source_size": [
+        0.00782332010567188,
+        0.00540267955511808,
+        0.00796512048691511
       ],
       "yaw": 2.7
     },
     {
-      "asset": "res://assets/models/kenney_survival/barrel.glb",
+      "asset": "res://assets/models/nature/kaykit/Rock_1_A.glb",
+      "export_scale_probe": 1.0,
       "fitted_size": [
-        0.00481249950826168,
-        0.00699999975040555,
-        0.00481249950826168
+        0.00294659193605185,
+        0.00203487672843039,
+        0.00300000002607703
       ],
-      "sha256": "3a0d12f6bdd1badd361f64ce0fbbf878a4ccfc2de8ff1ac4ed4c1aea2a9ee04a"
+      "sha256": "ef52f8f37cbe1b4efc2306ba194abc81b5dd93cdc6d695a4af4fd4189f673785",
+      "source_size": [
+        0.782332062721252,
+        0.540267944335938,
+        0.796512007713318
+      ],
+      "yaw": 2.7
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_1_A.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00294659193605185,
+        0.00203487672843039,
+        0.00299999979324639
+      ],
+      "sha256": "ef52f8f37cbe1b4efc2306ba194abc81b5dd93cdc6d695a4af4fd4189f673785",
+      "source_size": [
+        78.2332000732422,
+        54.0267944335938,
+        79.6512069702148
+      ],
+      "yaw": 2.7
+    },
+    {
+      "asset": "res://assets/models/buildings/highlands/SM_Barrel.glb",
+      "fitted_size": [
+        0.00722239771857858,
+        0.00699999928474426,
+        0.00759407691657543
+      ],
+      "sha256": "851ce55579be3c9d54a3bba527168274f3b44ead9938c921897e5f6cb5a57ca7"
     },
     {
       "asset": "res://core/presentation/cattle_view.gd",
       "fitted_size": [
-        0.00643153535202146,
-        0.0125000001862645,
-        0.0188278015702963
+        0.00560425594449043,
+        0.0124999992549419,
+        0.020221309736371
       ],
-      "sha256": "6c876f2c60fd3d56210cd9b72826644c7e462f5d80467ebf6d39cb1af63ede2f"
+      "sha256": "d192e3b62eed202f604694aa3f2ab2142f1f0adc50c634486ceb93bfab8e0b80"
     }
   ],
   "ok": true,
   "patch_size": [
-    0.0094941733404994,
-    0.00198630173690617,
-    0.00901564210653305
+    0.0095340721309185,
+    0.00213017710484564,
+    0.00913961417973042
   ],
   "profiles": {
+    "axe_prop": {
+      "height": 0.5,
+      "offset_z": 0.25,
+      "width_max": 0.5
+    },
     "axis_convention": "+Y up; XZ ground; model ground anchor at bottom centre",
     "building": {
       "blueprint_height": 0.25,
@@ -491,9 +496,16 @@
       "forage carry bundles",
       "water point collection barrels and carried water",
       "prototype cattle body and ground anchors",
-      "eight-metre pasture footprint and milk vessels"
+      "eight-metre pasture footprint and milk vessels",
+      "Imported Styloo cattle rest pose, moving/idle animation and bottom anchor",
+      "Highlands cattle-shelter fence and timber-camp axe metre profiles"
     ],
     "dimensions_unit": "metres",
+    "fence_prop": {
+      "height": 0.8,
+      "offset_z": 0.7,
+      "width_max": 2.0
+    },
     "forage_carry": {
       "depth": 0.45,
       "height": 0.35,
@@ -539,7 +551,7 @@
       "shadow_padding": 10.0,
       "terrain_chunk_quads": 32.0
     },
-    "revision": 10.0,
+    "revision": 11.0,
     "scenario": {
       "bank_search_radius": 150.0,
       "bank_search_step": 5.0,
@@ -604,10 +616,10 @@
       "width_max": 0.8
     }
   },
-  "revision": 10.0,
+  "revision": 11.0,
   "scope": "Regenerated on verification: standard values, imported mesh bounds, export-scale/yaw/nested-pivot normalization, patch footprint and depletion. Live terrain patches are checked in stone-resource-tests.",
   "standard_path": "res://data/standards/world_scale.json",
-  "standard_sha256": "1df74a194283bc5cca4240879f7698e353ea86351fd6981cc4e2b73ef9c96c6d",
+  "standard_sha256": "e33fc21ffc2773913d1b37dfed0f53d654e43bdb05bb443b2404fd8100ccafb8",
   "units": {
     "logical_meters_per_cell": 2.0,
     "presentation_reference": "Physical dimensions are in metres and converted to world units by regional_meters_per_world_unit. No enlarged actor or prop meshes.",

@@ -1,10 +1,10 @@
 {
-	"checks": 193,
+	"checks": 253,
 	"measurements": [
 		{
 			"asset": "character-a.glb",
 			"ground_metres": 0.0,
-			"size_metres": "(1.037037, 1.75, 0.518519)"
+			"size_metres": "(1.671208, 1.75, 0.319334)"
 		},
 		{
 			"definition": "stockpile",
@@ -22,13 +22,13 @@
 			"definition": "dwelling",
 			"footprint_metres": "(4.0, 2.5, 4.0)",
 			"rotation_probe": 0,
-			"size_metres": "(2.036993, 2.5, 2.099319)"
+			"size_metres": "(4.0, 2.077793, 1.963067)"
 		},
 		{
 			"definition": "dwelling",
 			"footprint_metres": "(4.0, 2.5, 4.0)",
 			"rotation_probe": 1,
-			"size_metres": "(2.036993, 2.5, 2.099319)"
+			"size_metres": "(4.0, 2.077793, 1.963067)"
 		},
 		{
 			"definition": "timber_camp",
@@ -46,13 +46,13 @@
 			"definition": "gatherer_shelter",
 			"footprint_metres": "(4.0, 2.5, 4.0)",
 			"rotation_probe": 0,
-			"size_metres": "(2.036993, 2.5, 2.099319)"
+			"size_metres": "(4.0, 2.077793, 1.963067)"
 		},
 		{
 			"definition": "gatherer_shelter",
 			"footprint_metres": "(4.0, 2.5, 4.0)",
 			"rotation_probe": 1,
-			"size_metres": "(2.036993, 2.5, 2.099319)"
+			"size_metres": "(4.0, 2.077793, 1.963067)"
 		},
 		{
 			"definition": "water_point",
@@ -80,5 +80,5 @@
 		}
 	],
 	"ok": true,
-	"standard_revision": 10.0
+	"standard_revision": 11.0
 }

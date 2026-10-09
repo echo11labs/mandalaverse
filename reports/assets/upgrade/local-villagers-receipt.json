@@ -1,0 +1,18 @@
+[
+  {
+    "model": "peasant_4.glb",
+    "source_sha256": "b003ebcfe66feb2111064487a29d36732c2d4a2164575d46243ad41fd43ef964",
+    "output_sha256": "f6895f89c8f79db8baa7dbfca6f5c8973f050e8c5038511680132b52d5887e46",
+    "triangles": 2215,
+    "licence": "Craftpix freebie, local game use only; source redistribution excluded",
+    "animation": "Original project-authored idle, walk and pickup on downloaded rig; no root motion"
+  },
+  {
+    "model": "peasant_5.glb",
+    "source_sha256": "c666a62261b3101ad99cff5783fe06d0b1b0a4d40172903421a52ba9289a17cd",
+    "output_sha256": "eafec5677600192f63241f5ac202a52ec0168b4762bcee83b3525776d049e388",
+    "triangles": 2516,
+    "licence": "Craftpix freebie, local game use only; source redistribution excluded",
+    "animation": "Original project-authored idle, walk and pickup on downloaded rig; no root motion"
+  }
+]

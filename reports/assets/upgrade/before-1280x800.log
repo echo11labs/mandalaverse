@@ -1,0 +1,11 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 90.5 - Compatibility - Using Device: Apple - Apple M4 Pro
+
+[MCPRuntimeServer] port: scanning 6570-6585 (default)
+[MCPRuntimeServer] listening on 127.0.0.1:6571
+[MCPRegistry] runtime port 6571 registered for /users/devendrashahithakuri/work/nep-all/game
+FOREST_PENDING_VISUAL_REVIEW loading submitted bake: res://data/forest/kathmandu_forest.scn
+ASSET_CAPTURE={"path":"res://../reports/assets/upgrade/before-1280x800-camp.png","resolution":"(1280, 800)","span":0.335999995470047,"target":"(-74.36501, 2.264316, 12.305)"}
+ASSET_CAPTURE={"path":"res://../reports/assets/upgrade/before-1280x800-cattle.png","resolution":"(1280, 800)","span":0.119999997317791,"target":"(-74.35, 2.259206, 12.36)"}
+ASSET_CAPTURE={"path":"res://../reports/assets/upgrade/before-1280x800-source.png","resolution":"(1280, 800)","span":65.0,"target":"(17.24364, 39.2595, -128.1593)"}
+ASSET_CAPTURE={"path":"res://../reports/assets/upgrade/before-1280x800-forest.png","resolution":"(1280, 800)","span":3.0,"target":"(10.0, 12.99561, -85.0)"}

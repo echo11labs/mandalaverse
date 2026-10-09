@@ -1,0 +1,24 @@
+/Users/devendrashahithakuri/Work/Nep-All/tools/convert_local_villagers.py:19: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new('VillagerAtlas');mat.use_nodes=True
+FBX version: 7400
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+21:45:25 | INFO: Starting glTF 2.0 export
+21:45:25 | INFO: Extracting primitive: Mesh.024
+21:45:25 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+21:45:25 | INFO: Primitives created: 1
+21:45:25 | WARNING: There are more than 4 joint vertex influences.The 4 with highest weight will be used (and normalized).
+21:45:25 | INFO: Finished glTF 2.0 export in 0.14052104949951172 s
+
+FBX version: 7400
+21:45:25 | INFO: Starting glTF 2.0 export
+21:45:25 | INFO: Extracting primitive: Mesh.025
+21:45:25 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+21:45:25 | INFO: Primitives created: 1
+21:45:25 | WARNING: There are more than 4 joint vertex influences.The 4 with highest weight will be used (and normalized).
+21:45:25 | INFO: Finished glTF 2.0 export in 0.151047945022583 s
+
+LOCAL_VILLAGERS=[{"model": "peasant_4.glb", "source_sha256": "b003ebcfe66feb2111064487a29d36732c2d4a2164575d46243ad41fd43ef964", "output_sha256": "f6895f89c8f79db8baa7dbfca6f5c8973f050e8c5038511680132b52d5887e46", "triangles": 2215, "licence": "Craftpix freebie, local game use only; source redistribution excluded", "animation": "Original project-authored idle, walk and pickup on downloaded rig; no root motion"}, {"model": "peasant_5.glb", "source_sha256": "c666a62261b3101ad99cff5783fe06d0b1b0a4d40172903421a52ba9289a17cd", "output_sha256": "eafec5677600192f63241f5ac202a52ec0168b4762bcee83b3525776d049e388", "triangles": 2516, "licence": "Craftpix freebie, local game use only; source redistribution excluded", "animation": "Original project-authored idle, walk and pickup on downloaded rig; no root motion"}]
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:31:22)
+
+Blender quit
