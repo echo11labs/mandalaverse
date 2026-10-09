@@ -10,7 +10,7 @@ func build(entity_id: int, world_seed: int, ground_height: Callable, world_xz: V
 	add_child(visual)
 	var rng := RandomNumberGenerator.new()
 	rng.seed = world_seed + entity_id * 7919
-	var scene := preload("res://assets/models/nature/kaykit/Tree_2_A.glb")
+	var scene := load(GopalaNatureModels.resolve("Fir_Tall_A", "res://assets/models/nature/kaykit/Tree_2_A.glb")) as PackedScene
 	var base_y: float = ground_height.call(world_xz.x, world_xz.y)
 	for i in 3:
 		var tree: Node3D = scene.instantiate()

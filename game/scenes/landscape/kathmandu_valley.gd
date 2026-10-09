@@ -1478,6 +1478,7 @@ func make_trees() -> void:
 	if status != "accepted":
 		print("FOREST_PENDING_VISUAL_REVIEW loading submitted bake: " + forest_path)
 	var forest: Node3D = load(forest_path).instantiate()
+	GopalaNatureModels.apply_forest(forest)
 	add_child(forest)
 	tree_population = int(forest.get_meta("population"))
 	sample_pine_height_m = float(forest.get_meta("sample_pine_height_m"))
@@ -1509,18 +1510,9 @@ func _generate_detail_vegetation() -> void:
 	var scrub_ids: Array[String] = []
 
 	for v: Dictionary in variants:
-		var scene: PackedScene = load(v.path)
-		if scene == null:
-			continue
-		var inst = scene.instantiate()
-		var mesh: Mesh = null
-		var bounds := AABB()
-		for c in inst.get_children():
-			if c is MeshInstance3D and c.mesh != null:
-				mesh = c.mesh
-				bounds = mesh.get_aabb()
-				break
-		inst.free()
+		var path := GopalaNatureModels.resolve(String(v.id), String(v.path))
+		var mesh := GopalaNatureModels.merged(path)
+		var bounds := mesh.get_aabb() if mesh != null else AABB()
 		if mesh == null:
 			continue
 		var id: String = v.id

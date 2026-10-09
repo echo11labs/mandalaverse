@@ -78,3 +78,6 @@ game/addons/at-icons/**
 
 # Downloaded Craftpix characters: local game use only, no public source redistribution.
 game/assets/models/local_villagers/
+
+# User-requested Vegetation/Forest Scene trees: local use, rights unverified.
+game/assets/models/local_nature/

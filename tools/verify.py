@@ -40,7 +40,7 @@ def run_stage(name, arguments, timeout=60, external=False):
         if line.startswith(marker):
             result["tests"] = json.loads(line[len(marker):])
             result["ok"] = result["ok"] and result["tests"]["ok"]
-    if name in ["content-tests", "landscape-tests", "scenic-tests", "kathmandu-tests", "coordinate-tests", "waterways-tests", "forest-tests", "entity-registry-tests", "selection-tests", "spatial-grid-tests", "simulation-spine-tests", "ui-tests", "component-gallery-tests", "gather-delivery-tests", "placement-slice-tests", "villager-movement-tests", "construction-labor-tests", "stone-resource-tests", "scale-standard-tests", "model-asset-tests", "local-view-tests", "route-tests", "save-tests", "worker-job-tests", "stockpile-inventory-tests", "forage-tests", "survival-tests", "herd-tests", "mvp-scenario-tests", "bench-smoke", "alert-tests", "alert-ui-tests", "front-door-tests", "debug-overlay-tests"] and "tests" not in result:
+    if name in ["content-tests", "landscape-tests", "scenic-tests", "kathmandu-tests", "coordinate-tests", "waterways-tests", "forest-tests", "entity-registry-tests", "selection-tests", "spatial-grid-tests", "simulation-spine-tests", "ui-tests", "component-gallery-tests", "gather-delivery-tests", "placement-slice-tests", "villager-movement-tests", "construction-labor-tests", "stone-resource-tests", "scale-standard-tests", "model-asset-tests", "local-view-tests", "route-tests", "save-tests", "worker-job-tests", "stockpile-inventory-tests", "forage-tests", "survival-tests", "herd-tests", "mvp-scenario-tests", "bench-smoke", "alert-tests", "alert-ui-tests", "front-door-tests", "debug-overlay-tests", "nature-model-tests"] and "tests" not in result:
         result["ok"] = False
     print(f"{name}: {'PASS' if result['ok'] else 'FAIL'}", flush=True)
     return result
@@ -104,6 +104,7 @@ def main():
             stages.append(run_stage("waterways-tests", ["--script", "tests/run_waterways_tests.gd"]))
             # MultiMesh transform storage is unavailable through Godot's dummy renderer.
             stages.append(run_stage("local-view-tests", [str(ENGINE), "--path", str(ROOT / "game"), "--log-file", str(REPORTS / "local-view-tests-engine.log"), "--script", "tests/run_local_view_tests.gd"], external=True))
+            stages.append(run_stage("nature-model-tests", [str(ENGINE), "--path", str(ROOT / "game"), "--script", "tests/run_nature_model_tests.gd"], external=True))
             stages.append(run_stage("forest-tests", [str(ENGINE), "--path", str(ROOT / "game"), "--script", "tests/run_forest_tests.gd"], external=True))
         if (ROOT / "game/data/geography/kathmandu.json").exists():
             stages.append(run_stage("coordinate-tests", [str(ROOT / ".tools/python/bin/python"), str(ROOT / "tools/test_geography.py")], external=True))

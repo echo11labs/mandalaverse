@@ -97,6 +97,18 @@ func run() -> void:
 	check(cow_bounds.size.y < GopalaScaleStandard.number("villager","height"),"Cattle shoulder remains below a human reference")
 	measurements.append({"asset":"res://core/presentation/cattle_view.gd","sha256":FileAccess.get_sha256("res://core/presentation/cattle_view.gd"),"fitted_size":[cow_bounds.size.x,cow_bounds.size.y,cow_bounds.size.z]})
 	cow.free()
+	var forest_config: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/forest/models.json"))
+	for variant: Dictionary in forest_config.variants:
+		var path := GopalaNatureModels.resolve(variant.id, variant.path)
+		var tree: Node3D = (load(path) as PackedScene).instantiate()
+		var target_m := (float(variant.height_min_m)+float(variant.height_max_m))*0.5
+		GopalaScaleStandard.normalize_height(tree, GopalaScaleStandard.metres_to_world(target_m))
+		var tree_bounds := GopalaScaleStandard.bounds_in_parent(tree)
+		check(is_equal_approx(tree_bounds.size.y*100.0,target_m),"Tree uses existing metre height: " + variant.id)
+		check(absf(tree_bounds.position.y)<0.0001 and absf(tree_bounds.get_center().x)<0.0001 and absf(tree_bounds.get_center().z)<0.0001,"Tree bottom-centre including imported transforms: " + variant.id)
+		measurements.append({"variant":variant.id,"asset":path,"sha256":FileAccess.get_sha256(path),"target_height_metres":target_m,"fitted_size":[tree_bounds.size.x,tree_bounds.size.y,tree_bounds.size.z]})
+		tree.free()
+
 	var report := {"ok": failures.is_empty(), "checks": checks, "failures": failures, "standard_path": GopalaScaleStandard.PATH, "standard_sha256": FileAccess.get_sha256(GopalaScaleStandard.PATH), "revision": standard.revision, "units": standard.units, "profiles": standard, "mesh_measurements": measurements,"forage_measurements":forage_measurements, "patch_size": [bounds.size.x, bounds.size.y, bounds.size.z], "scope": "Regenerated on verification: standard values, imported mesh bounds, export-scale/yaw/nested-pivot normalization, patch footprint and depletion. Live terrain patches are checked in stone-resource-tests."}
 	var file := FileAccess.open("res://../reports/scale-audit.json", FileAccess.WRITE)
 	if file == null:

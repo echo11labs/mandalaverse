@@ -1,5 +1,5 @@
 {
-  "checks": 142,
+  "checks": 174,
   "failures": [],
   "forage_measurements": [
     {
@@ -435,6 +435,182 @@
         0.020221309736371
       ],
       "sha256": "d192e3b62eed202f604694aa3f2ab2142f1f0adc50c634486ceb93bfab8e0b80"
+    },
+    {
+      "asset": "res://assets/models/local_nature/Forest_Tall.glb",
+      "fitted_size": [
+        0.0671828985214233,
+        0.25,
+        0.0613512024283409
+      ],
+      "sha256": "aa556a98c73c17cfd971563397632b7f8e5e65483493fd29fb8ee20591b5c270",
+      "target_height_metres": 25.0,
+      "variant": "Fir_Tall_A"
+    },
+    {
+      "asset": "res://assets/models/local_nature/Forest_Medium.glb",
+      "fitted_size": [
+        0.0474257320165634,
+        0.155000001192093,
+        0.0505603700876236
+      ],
+      "sha256": "e4d0cb783eb21873dc41ad3f8e78cd547d726ae5cef62e7084fda2729fcf9484",
+      "target_height_metres": 15.5,
+      "variant": "Fir_Tall_B"
+    },
+    {
+      "asset": "res://assets/models/local_nature/Forest_Small.glb",
+      "fitted_size": [
+        0.0991332903504372,
+        0.194999992847443,
+        0.101998925209045
+      ],
+      "sha256": "9a04d2ba7703203716a004bc3a07bcdf63fc9c3dd06d8f4e6d5e3c35379e8ea1",
+      "target_height_metres": 19.5,
+      "variant": "Fir_Young_C"
+    },
+    {
+      "asset": "res://assets/models/local_nature/Forest_Tall.glb",
+      "fitted_size": [
+        0.0335914492607117,
+        0.125,
+        0.0306756012141705
+      ],
+      "sha256": "aa556a98c73c17cfd971563397632b7f8e5e65483493fd29fb8ee20591b5c270",
+      "target_height_metres": 12.5,
+      "variant": "Pine_Open_A"
+    },
+    {
+      "asset": "res://assets/models/local_nature/Forest_Small.glb",
+      "fitted_size": [
+        0.0584632270038128,
+        0.115000002086163,
+        0.0601532161235809
+      ],
+      "sha256": "9a04d2ba7703203716a004bc3a07bcdf63fc9c3dd06d8f4e6d5e3c35379e8ea1",
+      "target_height_metres": 11.5,
+      "variant": "Pine_Open_B"
+    },
+    {
+      "asset": "res://assets/models/local_nature/Forest_Medium.glb",
+      "fitted_size": [
+        0.0305972490459681,
+        0.100000001490116,
+        0.0326195955276489
+      ],
+      "sha256": "e4d0cb783eb21873dc41ad3f8e78cd547d726ae5cef62e7084fda2729fcf9484",
+      "target_height_metres": 10.0,
+      "variant": "Pine_Dense_C"
+    },
+    {
+      "asset": "res://assets/models/local_nature/Tree_04.glb",
+      "fitted_size": [
+        0.0869778171181679,
+        0.125,
+        0.105051890015602
+      ],
+      "sha256": "1d488206f7b7abb2476d297463cc831f83b56e73980560b1397e696dbc1c628d",
+      "target_height_metres": 12.5,
+      "variant": "Broad_Oak_A"
+    },
+    {
+      "asset": "res://assets/models/local_nature/Tree_05.glb",
+      "fitted_size": [
+        0.0696089044213295,
+        0.115000002086163,
+        0.0797088220715523
+      ],
+      "sha256": "a5f9746316377f459061fe9feb03c2b5aa714633fc5c71338d99c2ed8300eb50",
+      "target_height_metres": 11.5,
+      "variant": "Broad_Oak_B"
+    },
+    {
+      "asset": "res://assets/models/local_nature/Tree_03.glb",
+      "fitted_size": [
+        0.0529966689646244,
+        0.124999992549419,
+        0.0628720000386238
+      ],
+      "sha256": "8c4fe3c74837ce4fc551d37b6ad33391bb0e3233cda3e16927ba3b1340b16dee",
+      "target_height_metres": 12.5,
+      "variant": "Broad_Oak_C"
+    },
+    {
+      "asset": "res://assets/models/local_nature/Tree_04.glb",
+      "fitted_size": [
+        0.0974151492118835,
+        0.140000000596046,
+        0.117658108472824
+      ],
+      "sha256": "1d488206f7b7abb2476d297463cc831f83b56e73980560b1397e696dbc1c628d",
+      "target_height_metres": 14.0,
+      "variant": "Broad_Oak_D"
+    },
+    {
+      "asset": "res://assets/models/local_nature/Tree_05.glb",
+      "fitted_size": [
+        0.0605294778943062,
+        0.100000001490116,
+        0.0693120211362839
+      ],
+      "sha256": "a5f9746316377f459061fe9feb03c2b5aa714633fc5c71338d99c2ed8300eb50",
+      "target_height_metres": 10.0,
+      "variant": "Broad_Round_A"
+    },
+    {
+      "asset": "res://assets/models/local_nature/Tree_03.glb",
+      "fitted_size": [
+        0.0466370694339275,
+        0.109999999403954,
+        0.0553273595869541
+      ],
+      "sha256": "8c4fe3c74837ce4fc551d37b6ad33391bb0e3233cda3e16927ba3b1340b16dee",
+      "target_height_metres": 11.0,
+      "variant": "Broad_Round_B"
+    },
+    {
+      "asset": "res://assets/models/local_nature/Tree_04.glb",
+      "fitted_size": [
+        0.062624029815197,
+        0.0900000035762787,
+        0.0756373628973961
+      ],
+      "sha256": "1d488206f7b7abb2476d297463cc831f83b56e73980560b1397e696dbc1c628d",
+      "target_height_metres": 9.0,
+      "variant": "Broad_Round_C"
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Tree_4_A.glb",
+      "fitted_size": [
+        0.0285438168793917,
+        0.0750000029802322,
+        0.0285011827945709
+      ],
+      "sha256": "40716f6360f47178ca168009ee7be3f081054572b2b562be319bc2ef5cc41310",
+      "target_height_metres": 7.5,
+      "variant": "Broad_Scrub_A"
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Tree_4_B.glb",
+      "fitted_size": [
+        0.0315142795443535,
+        0.0850000008940697,
+        0.027795284986496
+      ],
+      "sha256": "a3b059aeb6d3ea82d443f30431d75e2b8c56fa9f7a9ef5bf8abbed1939fc3242",
+      "target_height_metres": 8.5,
+      "variant": "Broad_Scrub_B"
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Tree_1_B.glb",
+      "fitted_size": [
+        0.069088488817215,
+        0.0850000008940697,
+        0.0594094917178154
+      ],
+      "sha256": "abddb9af518ff91019330885e25ab63d4ddb54bcabb579f7e2a87a163c8f1c82",
+      "target_height_metres": 8.5,
+      "variant": "Broad_Scrub_C"
     }
   ],
   "ok": true,
