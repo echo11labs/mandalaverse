@@ -1,0 +1,306 @@
+{
+  "ok": true,
+  "models": [
+    {
+      "path": "game/assets/models/nature/kaykit/Bush_1_A.glb",
+      "sha256": "fc839ee47ee211cf3f416d2cd35c149e8dc95ad838da5857ffbe5d518b59a9e3",
+      "bytes": 52424,
+      "triangles": 72,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/nature/kaykit/Bush_2_A.glb",
+      "sha256": "1de7f574fb60ff9478d27c45c83d2fc21bfd2698dae40610e728d12ff02076bf",
+      "bytes": 51100,
+      "triangles": 44,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/nature/kaykit/Grass_1_A.glb",
+      "sha256": "9882d591964b9b01e084e16d432f1d41e2cf2ef83ec2313e1e87f9a58cf183fa",
+      "bytes": 52132,
+      "triangles": 44,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/nature/kaykit/Rock_1_A.glb",
+      "sha256": "ef52f8f37cbe1b4efc2306ba194abc81b5dd93cdc6d695a4af4fd4189f673785",
+      "bytes": 52900,
+      "triangles": 48,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/nature/kaykit/Rock_3_A.glb",
+      "sha256": "5633077cfde7034af2156fe2c5090a359de194fd7df8dbeb79da690c661c9654",
+      "bytes": 54516,
+      "triangles": 84,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/nature/kaykit/Tree_1_A.glb",
+      "sha256": "5de57ae96b9a99f3f5a151ac260c0a6c5ba95fb10796b39b01a0f25019590ca2",
+      "bytes": 67564,
+      "triangles": 530,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/nature/kaykit/Tree_1_B.glb",
+      "sha256": "abddb9af518ff91019330885e25ab63d4ddb54bcabb579f7e2a87a163c8f1c82",
+      "bytes": 69092,
+      "triangles": 636,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/nature/kaykit/Tree_2_A.glb",
+      "sha256": "d8aefe1de7cb6592579c4705752efd589f751cc6485ae1e39584cd1b7f80fd05",
+      "bytes": 58268,
+      "triangles": 336,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/nature/kaykit/Tree_2_B.glb",
+      "sha256": "81c030e6ac07b7c332e4b35ca7e8b3511b218d0a1b9adf54005f03cbb5074faa",
+      "bytes": 61764,
+      "triangles": 492,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/nature/kaykit/Tree_3_A.glb",
+      "sha256": "0126169a95da747c136ff696bce83dcb11ff6de588afa0b2a8c94117c84082bf",
+      "bytes": 79820,
+      "triangles": 978,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/nature/kaykit/Tree_3_B.glb",
+      "sha256": "6a7b037bb1bc22f1dc6f9665c5bc18d2ebe880d20985640a640005d4c0ec789c",
+      "bytes": 79368,
+      "triangles": 988,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/nature/kaykit/Tree_4_A.glb",
+      "sha256": "40716f6360f47178ca168009ee7be3f081054572b2b562be319bc2ef5cc41310",
+      "bytes": 62648,
+      "triangles": 404,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/nature/kaykit/Tree_4_B.glb",
+      "sha256": "a3b059aeb6d3ea82d443f30431d75e2b8c56fa9f7a9ef5bf8abbed1939fc3242",
+      "bytes": 66168,
+      "triangles": 522,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/animals/styloo/Cow.glb",
+      "sha256": "9108439239f94ab1a57df162e61067928ce207ccb84d96034175810014d83b43",
+      "bytes": 1629852,
+      "triangles": 4740,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": [
+        "iddle",
+        "jump",
+        "run",
+        "walk",
+        "walking"
+      ]
+    },
+    {
+      "path": "game/assets/models/buildings/highlands/SM_Axe.glb",
+      "sha256": "740efa2d5a1f400babf2c82f4927c354ce4fd03bf412ca633efd47929a046423",
+      "bytes": 3167752,
+      "triangles": 110,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/buildings/highlands/SM_Barrel.glb",
+      "sha256": "851ce55579be3c9d54a3bba527168274f3b44ead9938c921897e5f6cb5a57ca7",
+      "bytes": 3189200,
+      "triangles": 968,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/buildings/highlands/SM_Hut.glb",
+      "sha256": "9549ad24d632f59e1a2202f8cb454a14386d09ddc7855cde9dec69c981216625",
+      "bytes": 2935660,
+      "triangles": 780,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/buildings/highlands/SM_WoodCrate.glb",
+      "sha256": "edac0f84fffb6be8a9d586d14deec3ce4f37f4676cbf1561430becc3d82c9715",
+      "bytes": 3181144,
+      "triangles": 456,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    },
+    {
+      "path": "game/assets/models/buildings/highlands/SM_WoodFence.glb",
+      "sha256": "a63af45ab52c2babed939e4508e8843e6eac27a608262d8c7104421ca32026d5",
+      "bytes": 3169516,
+      "triangles": 90,
+      "texture_dimensions": [
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": []
+    }
+  ]
+}

@@ -7,3 +7,96 @@ __pycache__/
 *.pyc
 .DS_Store
 
+
+builds/
+
+# G1-01: local imported packs excluded by coordinator (license/provenance/size).
+.freebuff/
+game/Materials/
+game/Meshes/
+game/Models/
+game/Prefabs/
+game/Scripts/
+game/Shaders/
+game/Textures/
+game/AssetsPreview_Demo/
+game/Documentation/
+game/EA_Shared.material
+game/README.txt
+game/*.bat
+game/scenes/WaterDemo.tscn
+game/scenes/UI_ParameterPanel.tscn
+game/scenes/main.tscn
+game/scenes/gerstner_ocean.tscn
+game/scenes/Asset DEMO.tscn
+game/scenes/boulder_*_regular.tscn
+game/scenes/pillar_*_regular.tscn
+game/scenes/pillar_spike_light.tscn
+game/scenes/stone_regular.tscn
+game/test_check_all_variants.gd.uid
+game/assets/Rock*
+game/assets/models/coast_rocks_05/
+game/assets/models/namaqualand_boulder_02/
+game/assets/models/sand_rocks_small_01/
+game/assets/hdri/
+game/assets/textures/
+game/assets/generated/
+game/sim/
+game/docs/
+game/tools/gen_textures.py
+game/guide_examples/
+game/@icons picker.html
+game/addons/godotiles/bin/
+game/addons/godoban/
+
+# Only the nine referenced at-icons SVGs and their import settings are admitted.
+game/addons/at-icons/**
+!game/addons/at-icons/LICENSE.txt
+!game/addons/at-icons/control/
+!game/addons/at-icons/mesh/
+!game/addons/at-icons/node/
+!game/addons/at-icons/node2d/
+!game/addons/at-icons/node3d/
+!game/addons/at-icons/control/tree.svg
+!game/addons/at-icons/control/tree.svg.import
+!game/addons/at-icons/node/rocks.svg
+!game/addons/at-icons/node/rocks.svg.import
+!game/addons/at-icons/mesh/grass.svg
+!game/addons/at-icons/mesh/grass.svg.import
+!game/addons/at-icons/node2d/droplet.svg
+!game/addons/at-icons/node2d/droplet.svg.import
+!game/addons/at-icons/node/glass.svg
+!game/addons/at-icons/node/glass.svg.import
+!game/addons/at-icons/control/sprout.svg
+!game/addons/at-icons/control/sprout.svg.import
+!game/addons/at-icons/node3d/apple.svg
+!game/addons/at-icons/node3d/apple.svg.import
+!game/addons/at-icons/mesh/castle.svg
+!game/addons/at-icons/mesh/castle.svg.import
+!game/addons/at-icons/mesh/sun.svg
+!game/addons/at-icons/mesh/sun.svg.import
+
+# Downloaded Craftpix characters: local game use only, no public source redistribution.
+game/assets/models/local_villagers/
+
+# User-requested Vegetation/Forest Scene trees: local use, rights unverified.
+game/assets/models/local_nature/
+
+# Downloaded Craftpix houses: local game use; no public source redistribution.
+game/assets/models/local_buildings/
+reports/building-refresh/source-stage/
+
+# Local raw resource archives (size > 1.7GB)
+/Resources/
+
+# Unmanaged third-party addons and demos
+game/addons/simplegrasstextured/
+game/addons/simplex_terrain/
+game/addons/sky_3d/
+game/addons/terrain_3d/
+game/demo/
+game/scenes/GrassDemo.tscn
+game/scenes/GrassSpectrum.tscn
+game/Unarmed*
+game/RPG*
+game/explosive*

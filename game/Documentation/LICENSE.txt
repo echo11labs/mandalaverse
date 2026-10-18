@@ -1,0 +1,18 @@
+Roadside Tales - Modular Bridge - EmacEArt Asset License
+Copyright (c) 2026 EmacEArt (Maciej)
+
+EMACEART ASSET LICENSE
+
+Free to use in your own projects, personal and commercial alike.
+No credit is required, though it is always welcome.
+
+One favour in return: please do not resell the assets or pass them on as
+standalone files or inside another asset pack. This is a one-person studio,
+and that goodwill is what pays for the next pack.
+
+That applies to the models, textures, materials, scenes, shaders and
+documentation in this pack, on their own or modified.
+
+Questions: emaceart@gmail.com
+Discord:   https://discord.com/invite/ctXaf5Ftqw
+Web:       https://emaceart.dev

@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-12",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "focused_tests": {
+    "ui-rendered": {
+      "checks": 241,
+      "failures": [],
+      "ok": true
+    },
+    "ui-headless": {
+      "checks": 241,
+      "failures": [],
+      "ok": true
+    },
+    "components": {
+      "checks": 346,
+      "failures": [],
+      "ok": true
+    },
+    "alerts": {
+      "checks": 10,
+      "failures": [],
+      "ok": true
+    },
+    "world-interaction": {
+      "checks": 9765,
+      "failures": [],
+      "ok": true
+    },
+    "layout-rendered": {
+      "checks": 120,
+      "failures": [],
+      "measurements": [
+        {
+          "default_hud_fraction": 0.138478732638889,
+          "resolution": "(1280, 720)"
+        },
+        {
+          "default_hud_fraction": 0.0775954861111111,
+          "resolution": "(1920, 1080)"
+        },
+        {
+          "default_hud_fraction": 0.0702336516203704,
+          "resolution": "(2560, 1080)"
+        }
+      ],
+      "ok": true
+    }
+  },
+  "focused_logs_have_errors": {
+    "ui-rendered": false,
+    "ui-headless": false,
+    "components": false,
+    "alerts": false,
+    "world-interaction": false,
+    "layout-rendered": false
+  },
+  "full_gate": {
+    "ok": false,
+    "engine": "4.7.2.stable.official.ed1daf0bf",
+    "stages": [
+      {
+        "stage": "import",
+        "ok": false,
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 4.19,
+        "log": "reports/local/import.log",
+        "warnings": [
+          "Case mismatch opening requested file '/Users/devendrashahithakuri/Work/Nep-All/game/scripts/gerstner_ocean_demo.gd', stored as '/Users/devendrashahithakuri/Work/Nep-All/game/Scripts/gerstner_ocean_demo.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.",
+          "Case mismatch opening requested file '/Users/devendrashahithakuri/Work/Nep-All/game/scripts/main.gd', stored as '/Users/devendrashahithakuri/Work/Nep-All/game/Scripts/main.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.",
+          "1 RID of type \"CanvasItem\" was leaked.",
+          "4 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+        ],
+        "known_engine_errors": {
+          "language_server_stop_without_started_thread": 1
+        }
+      }
+    ],
+    "scope": "Development import, authored scripts, content invariants and headless scene execution. No export, simulation, GPU performance or final art claim."
+  },
+  "skipped_full_gate_stages": "Stages after import were skipped because the required gate stops on inherited resource-leak errors.",
+  "layout_scope": "Normal-scale paused desktop MVP: default, construction, worker inspection, settlement/expanded alerts, notification; no export or GPU performance claim.",
+  "renderer": "Apple M4 Pro, OpenGL Compatibility",
+  "sources": "docs/GOPALA-HUD-Layout.md; game/assets/ui/icons/source-receipt.json"
+}

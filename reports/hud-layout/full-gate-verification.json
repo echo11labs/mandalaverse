@@ -1,0 +1,24 @@
+{
+  "ok": false,
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "stages": [
+    {
+      "stage": "import",
+      "ok": false,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 4.19,
+      "log": "reports/local/import.log",
+      "warnings": [
+        "Case mismatch opening requested file '/Users/devendrashahithakuri/Work/Nep-All/game/scripts/gerstner_ocean_demo.gd', stored as '/Users/devendrashahithakuri/Work/Nep-All/game/Scripts/gerstner_ocean_demo.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.",
+        "Case mismatch opening requested file '/Users/devendrashahithakuri/Work/Nep-All/game/scripts/main.gd', stored as '/Users/devendrashahithakuri/Work/Nep-All/game/Scripts/main.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.",
+        "1 RID of type \"CanvasItem\" was leaked.",
+        "4 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+      ],
+      "known_engine_errors": {
+        "language_server_stop_without_started_thread": 1
+      }
+    }
+  ],
+  "scope": "Development import, authored scripts, content invariants and headless scene execution. No export, simulation, GPU performance or final art claim."
+}

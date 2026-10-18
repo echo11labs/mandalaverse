@@ -1,9 +1,21 @@
 {
-  "status": "pending_replacement",
+  "status": "pending_visual_review",
   "accepted_bake_sha256": "",
   "rejected_source_pack": "Quaternius Stylized Nature MegaKit Standard",
   "reason": "The Standard archive reuses the previous tree meshes and does not satisfy the requested Farthest Frontier visual direction.",
   "asset_budget": "free_only",
-  "candidates_under_evaluation": ["Bentley PlantFactory / PlantCatalog", "Poly Haven authored source LODs"],
-  "acceptance": "A genuinely different externally authored tree family, complete materials, physical scale, terrain placement, management-camera visual review and measured rendering cost. No self-modelled trees."
+  "submitted_candidate": "KayKit Forest Nature 1.0 \u2014 approved G1-11 replacement map",
+  "submitted_bake_sha256": "eafea646b93d9b108b99f16835f64cf26ddbdb0cdb622494f240bb101dd87bbe",
+  "submitted_population": 100940,
+  "submitted_variants": 16,
+  "submitted_triangles_total": 9092,
+  "submission_note": "Devendra explicitly requested immediate replacement on 2026-10-08. Approved KayKit map, original CC0 atlas materials, unchanged seed, count, per-variant heights and placement/culling. This hash pins the rebuilt candidate for in-game presentation; final visual acceptance and complete before/after performance comparison remain pending.",
+  "candidates_under_evaluation": [],
+  "acceptance": "A genuinely different externally authored tree family, complete materials, physical scale, terrain placement, management-camera visual review and measured rendering cost. No self-modelled trees.",
+  "current_implementation": {
+    "regional_forest": "ProtonScatter with KayKit mapped to the same sixteen variants, 100,940 trees",
+    "detail_forest": "Same KayKit mappings at original scatter points and culling",
+    "hero_trees": "EZTreeDraw available for manual placement (5 species templates)"
+  },
+  "ez_tree_status": "Addon installed (ez-tree-godot-port). HeroTrees and DetailForest nodes present for manual placement. Template trees removed due to EZ-Tree library NaN quaternion bug. Detail forest uses proven ProtonScatter system."
 }

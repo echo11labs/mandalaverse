@@ -1,0 +1,25 @@
+{
+  "source_commit": "d25bbd17f7daa4d4077b75770cbea08269738c01",
+  "workspace": {
+    "ok": true,
+    "stages": 166,
+    "model_checks": 253,
+    "scale_checks": 142,
+    "warnings": 0,
+    "sha256": "eb6014a6461e806c9d7be9963e6854c389bc36c6ee5b875be530bb84e3503812"
+  },
+  "fresh_checkout": {
+    "ok": true,
+    "stages": 166,
+    "model_checks": 251,
+    "warnings": 0,
+    "sha256": "0306019ee68389ef1fcdc651db17b78c15ee9a0c657ca76153eb38e307ebc676",
+    "characters": "Kenney licensed fallback; Craftpix local assets absent"
+  },
+  "pending": [
+    "Human visual review",
+    "Complete G1-12 eight-run baseline",
+    "Matched asset performance regression comparison"
+  ],
+  "scope": "Content and code gate; no smooth-gameplay or <=5% regression claim. Local Craftpix character files are not distributed."
+}

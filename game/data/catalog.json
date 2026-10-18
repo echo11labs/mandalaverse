@@ -8,7 +8,8 @@
     "res://data/resources/water.tres",
     "res://data/resources/wild_food.tres",
     "res://data/resources/fodder.tres",
-    "res://data/resources/milk.tres"
+    "res://data/resources/milk.tres",
+    "res://data/resources/grain.tres"
   ],
   "buildings": [
     "res://data/buildings/dwelling.tres",
@@ -19,6 +20,11 @@
     "res://data/buildings/cattle_shelter.tres"
   ],
   "zones": [
-    "res://data/zones/pasture.tres"
+    "res://data/zones/pasture.tres",
+    "res://data/zones/field.tres"
+  ],
+  "crops": [
+    "res://data/crops/cereal.tres",
+    "res://data/crops/fodder_crop.tres"
   ]
 }

@@ -11,7 +11,7 @@ func run() -> void:
 		push_error("Forest buffer checks require a real renderer.")
 		quit(1)
 		return
-	var directory := "res://assets/models/trees/QuaterniusMegaKit/"
+	var directory := "res://assets/models/nature/kaykit/"
 	var source: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(directory + "source-receipt.json"))
 	expect(source.license == "CC0-1.0" and FileAccess.file_exists(directory + source.license_file), "Original publisher license retained")
 	for path in source.files:
@@ -83,19 +83,21 @@ func run() -> void:
 			slopes_ok = slopes_ok and terrain.normal_at(p.x,p.z,true).y>=cos(deg_to_rad(rules.maximum_slope_degrees))-0.000001
 			elevation_ok = elevation_ok and terrain.elevation_at(p.x,p.z)>=rules.minimum_elevation_m-0.001
 			clearing_ok = clearing_ok and Vector2(p.x,p.z).distance_to(terrain.camp)*terrain.METRES_PER_UNIT>=rules.clearing_radius_m-0.001
-			if absf(p.x-rules.detail_center.x)<rules.detail_half_extent and absf(p.z-rules.detail_center.y)<rules.detail_half_extent: detail_count+=1
+			if absf(p.x-rules.detail_center.x)<rules.detail_half_extent and absf(p.z-rules.detail_center.y)<rules.detail_half_extent:
+				detail_count+=1
 			jitter_ok = jitter_ok or absf(fmod(p.x+200.0,float(config.regional_spacing_m)/100.0))>0.02
 			yaw_sample[roundi(placed.basis.get_euler().y * 100.0)] = true
 	expect(count == int(receipt.population) and count == int(forest.get_meta("population")), "All baked placements survive save/load")
 	expect(origin_count == 0, "No lost/zero MultiMesh transforms")
 	# JSON numbers deserialize as floats; compare the integer population values.
 	var recorded_counts := {}
-	for id in receipt.variants: recorded_counts[id] = int(receipt.variants[id])
+	for variant_id in receipt.variants: recorded_counts[variant_id] = int(receipt.variants[variant_id])
 	expect(seen == recorded_counts and seen.size() == variants.size(), "All source variants survive with their recorded placement counts")
 	expect(uniform_ok and height_ok, "Every tree retains aspect ratio and its specified metre height")
 	expect(anchors_ok, "Every model's ground anchor meets the displayed triangle terrain")
 	expect(domain_ok and rivers_ok and slopes_ok and elevation_ok and clearing_ok, "Every placement obeys mapped bounds, water clearance, slope, elevation and clearing rules")
 	expect(jitter_ok and yaw_sample.size()>100, "Scatter has position jitter and varied orientations")
+	# Detail layer is now generated at runtime via EZTreeDraw; baked forest only contains regional layer.
 	expect(detail_count > 500 and config.detail_spacing_m < config.regional_spacing_m, "Dense foothill detail exists at closer spacing than regional proxies")
 	forest.free()
 	await process_frame

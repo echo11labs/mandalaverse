@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/components/resource_chip/resource_chip.gd" id="1_reschip"]
+
+[node name="ResourceChip" type="PanelContainer"]
+script = ExtResource("1_reschip")
+
+[node name="Column" type="VBoxContainer" parent="."]
+
+[node name="Row" type="HBoxContainer" parent="Column"]
+
+[node name="Icon" type="TextureRect" parent="Column/Row"]
+
+[node name="Amount" type="Label" parent="Column/Row"]
+
+[node name="Name" type="Label" parent="Column"]

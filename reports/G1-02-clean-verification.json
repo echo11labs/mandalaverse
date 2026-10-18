@@ -1,0 +1,1660 @@
+{
+  "ok": true,
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "stages": [
+    {
+      "stage": "import",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 6.33,
+      "log": "reports/local/import.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-gopala_extension",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.29,
+      "log": "reports/local/parse-gopala_extension.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-gopala_theme",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-gopala_theme.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-ui_tokens",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-ui_tokens.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-ui_events",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-ui_events.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-ui_router",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-ui_router.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-ui_settings",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-ui_settings.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-construction_placement_service",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.29,
+      "log": "reports/local/parse-construction_placement_service.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-construction_validation_result",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-construction_validation_result.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-building_definition",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-building_definition.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-content_audit",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-content_audit.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-resource_definition",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-resource_definition.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-zone_definition",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-zone_definition.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-entity_kind",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-entity_kind.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-entity_lifecycle",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-entity_lifecycle.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-entity_operation_result",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-entity_operation_result.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-entity_record",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-entity_record.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-entity_registry",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-entity_registry.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-entity_registry_snapshot",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-entity_registry_snapshot.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-entity_snapshot",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-entity_snapshot.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-plain_data",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-plain_data.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-forest_rules",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-forest_rules.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-kathmandu_terrain",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-kathmandu_terrain.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-sculpted_valley",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-sculpted_valley.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-terrain_river",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-terrain_river.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-water_network",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-water_network.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-settlement_save",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.28,
+      "log": "reports/local/parse-settlement_save.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-building_model_view",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-building_model_view.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-cattle_view",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-cattle_view.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-forage_patch_view",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-forage_patch_view.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-scale_standard",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-scale_standard.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-scenery_window",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-scenery_window.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-stone_patch_view",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-stone_patch_view.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-timber_stand_view",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-timber_stand_view.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-water_source_view",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-water_source_view.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-worker_model_view",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-worker_model_view.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-entity_inspection_snapshot",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-entity_inspection_snapshot.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-entity_pick_resolver_3d",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-entity_pick_resolver_3d.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-entity_query_service",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-entity_query_service.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-entity_view_adapter_3d",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-entity_view_adapter_3d.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-selection_result",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-selection_result.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-selection_service",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-selection_service.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-selection_snapshot",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-selection_snapshot.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-command_queue",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-command_queue.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-command_result",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-command_result.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-construction_labor_service",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.29,
+      "log": "reports/local/parse-construction_labor_service.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-entity_id_allocator",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-entity_id_allocator.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-gather_delivery_service",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.24,
+      "log": "reports/local/parse-gather_delivery_service.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-herd_service",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.24,
+      "log": "reports/local/parse-herd_service.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-mvp_scenario",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.24,
+      "log": "reports/local/parse-mvp_scenario.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-resource_ledger",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-resource_ledger.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-scenario_setup",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.3,
+      "log": "reports/local/parse-scenario_setup.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-settlement_simulation",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.3,
+      "log": "reports/local/parse-settlement_simulation.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-settlement_snapshot",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-settlement_snapshot.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-simulation_clock",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-simulation_clock.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-simulation_command",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-simulation_command.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-simulation_config",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-simulation_config.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-stone_scatter",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-stone_scatter.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-storage_service",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.24,
+      "log": "reports/local/parse-storage_service.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-survival_service",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.29,
+      "log": "reports/local/parse-survival_service.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-worker_job_service",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.29,
+      "log": "reports/local/parse-worker_job_service.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-footprint_transform",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-footprint_transform.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-occupancy_claim_snapshot",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-occupancy_claim_snapshot.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-occupancy_grid_snapshot",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-occupancy_grid_snapshot.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-occupancy_operation_result",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-occupancy_operation_result.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-occupancy_state",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-occupancy_state.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-settlement_coordinate_service",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-settlement_coordinate_service.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-settlement_grid_config",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-settlement_grid_config.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-settlement_occupancy_service",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-settlement_occupancy_service.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-settlement_route_service",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-settlement_route_service.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-valley_terrain",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-valley_terrain.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-bake_forest",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-bake_forest.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-bake_waterways",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-bake_waterways.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-thumbnail_generator",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-thumbnail_generator.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-villager_service",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-villager_service.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-content_lab",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-content_lab.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-kathmandu_camera",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-kathmandu_camera.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-kathmandu_hud",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-kathmandu_hud.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-kathmandu_valley",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.35,
+      "log": "reports/local/parse-kathmandu_valley.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-map_overlay_drawer",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-map_overlay_drawer.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-scenic_camera",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-scenic_camera.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-scenic_valley",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-scenic_valley.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-component_gallery",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-component_gallery.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-alert_item",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-alert_item.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-icon_button",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-icon_button.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-panel_shell",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-panel_shell.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-progress_meter",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-progress_meter.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-resource_chip",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-resource_chip.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-shortcut_tooltip",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-shortcut_tooltip.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-shortcut_tooltip",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-shortcut_tooltip.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-stat_row",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-stat_row.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-status_badge",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-status_badge.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-tab_button",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-tab_button.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-gopala_minimap",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-gopala_minimap.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-terrain_overlay",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-terrain_overlay.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-valley",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-valley.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-valley_camera",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-valley_camera.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-bake_landscape",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-bake_landscape.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-generate_prototypes",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-generate_prototypes.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-measure_ui",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.24,
+      "log": "reports/local/parse-measure_ui.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_component_gallery_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-run_component_gallery_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_construction_labor_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.24,
+      "log": "reports/local/parse-run_construction_labor_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_content_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-run_content_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_entity_registry_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.34,
+      "log": "reports/local/parse-run_entity_registry_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_forage_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.24,
+      "log": "reports/local/parse-run_forage_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_forest_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_forest_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_gather_delivery_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.24,
+      "log": "reports/local/parse-run_gather_delivery_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_herd_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.29,
+      "log": "reports/local/parse-run_herd_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_kathmandu_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_kathmandu_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_landscape_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-run_landscape_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_local_view_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_local_view_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_model_asset_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-run_model_asset_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_mvp_scenario_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.3,
+      "log": "reports/local/parse-run_mvp_scenario_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_placement_slice_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.24,
+      "log": "reports/local/parse-run_placement_slice_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_route_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.24,
+      "log": "reports/local/parse-run_route_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_save_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.24,
+      "log": "reports/local/parse-run_save_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_scale_standard_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_scale_standard_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_scenic_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-run_scenic_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_selection_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.35,
+      "log": "reports/local/parse-run_selection_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_simulation_spine_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.35,
+      "log": "reports/local/parse-run_simulation_spine_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_spatial_grid_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.35,
+      "log": "reports/local/parse-run_spatial_grid_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_stockpile_inventory_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.24,
+      "log": "reports/local/parse-run_stockpile_inventory_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_stone_resource_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.29,
+      "log": "reports/local/parse-run_stone_resource_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_survival_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.29,
+      "log": "reports/local/parse-run_survival_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_ui_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-run_ui_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_villager_movement_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.35,
+      "log": "reports/local/parse-run_villager_movement_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_waterways_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-run_waterways_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_worker_job_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.29,
+      "log": "reports/local/parse-run_worker_job_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "content-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.35,
+      "log": "reports/local/content-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 19,
+        "content": {
+          "counts": {
+            "buildings": 6,
+            "resources": 7,
+            "zones": 1
+          },
+          "errors": [],
+          "ok": true,
+          "production_art_approved": false,
+          "prototype_assets": 20
+        },
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "ui-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.45,
+      "log": "reports/local/ui-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 184,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "component-gallery-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.79,
+      "log": "reports/local/component-gallery-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 338,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "simulation-spine-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 4.36,
+      "log": "reports/local/simulation-spine-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 73,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "entity-registry-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 4.37,
+      "log": "reports/local/entity-registry-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 61,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "selection-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 4.51,
+      "log": "reports/local/selection-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 80,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "spatial-grid-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 4.25,
+      "log": "reports/local/spatial-grid-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 47,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "placement-slice-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 4.27,
+      "log": "reports/local/placement-slice-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 22,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "villager-movement-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.57,
+      "log": "reports/local/villager-movement-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 28,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "gather-delivery-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.35,
+      "log": "reports/local/gather-delivery-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 18,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "mvp-scenario-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 51.15,
+      "log": "reports/local/mvp-scenario-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 16,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "herd-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 2.51,
+      "log": "reports/local/herd-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 45,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "survival-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 7.26,
+      "log": "reports/local/survival-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 25,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "forage-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 4.76,
+      "log": "reports/local/forage-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 463,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "stockpile-inventory-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 1.05,
+      "log": "reports/local/stockpile-inventory-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 53,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "worker-job-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 4.75,
+      "log": "reports/local/worker-job-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 113,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "save-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 5.9,
+      "log": "reports/local/save-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 52,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "route-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 5.17,
+      "log": "reports/local/route-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 293,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "model-asset-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 4.5,
+      "log": "reports/local/model-asset-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 193,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "scale-standard-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.35,
+      "log": "reports/local/scale-standard-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 136,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "stone-resource-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 6.16,
+      "log": "reports/local/stone-resource-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 2112,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "construction-labor-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.46,
+      "log": "reports/local/construction-labor-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 38,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "landscape-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.35,
+      "log": "reports/local/landscape-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 4931,
+        "failures": [],
+        "ok": true,
+        "river_cells": 192,
+        "terrain_surfaces": 8
+      }
+    },
+    {
+      "stage": "scenic-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 1.16,
+      "log": "reports/local/scenic-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 3451,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "kathmandu-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 5.23,
+      "log": "reports/local/kathmandu-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 42304,
+        "failures": [],
+        "ok": true,
+        "territory": {
+          "borders_on_river": {
+            "bhakata": {
+              "Bagmati": 528,
+              "Balkhu": 0,
+              "Hanumante": 237,
+              "contour_vertices": 6504
+            },
+            "kirtipur": {
+              "Bagmati": 422,
+              "Balkhu": 455,
+              "Hanumante": 0,
+              "contour_vertices": 1304
+            },
+            "lalitapur": {
+              "Bagmati": 1045,
+              "Balkhu": 64,
+              "Hanumante": 224,
+              "contour_vertices": 4664
+            },
+            "yambu": {
+              "Bagmati": 665,
+              "Balkhu": 383,
+              "Hanumante": 353,
+              "contour_vertices": 5328
+            }
+          },
+          "chiefdoms": {
+            "bhakata": {
+              "cells": 5447,
+              "fraction": 0.360656823147719,
+              "seat": "(53.2251, 26.7168)"
+            },
+            "kirtipur": {
+              "cells": 320,
+              "fraction": 0.0211878434748063,
+              "seat": "(-95.11523, 18.14516)"
+            },
+            "lalitapur": {
+              "cells": 3323,
+              "fraction": 0.220022512083692,
+              "seat": "(-49.2825, 20.5942)"
+            },
+            "yambu": {
+              "cells": 6013,
+              "fraction": 0.398132821293783,
+              "seat": "(-66.43281, -10.79804)"
+            }
+          },
+          "land_cells": 15103,
+          "mode": 2,
+          "snapped": {
+            "bagmati_core": 4,
+            "bagmati_west_reach": 3,
+            "balkhu_line": 4,
+            "chandragiri_rim": 4,
+            "hanumante_march": 2,
+            "kantipur_divide": 2
+          }
+        }
+      }
+    },
+    {
+      "stage": "waterways-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.73,
+      "log": "reports/local/waterways-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 20353,
+        "failures": [],
+        "ok": true,
+        "reaches": 249,
+        "vertices_sampled": 5545,
+        "visible_reaches": 203
+      }
+    },
+    {
+      "stage": "local-view-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 6.1,
+      "log": "reports/local/local-view-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 9728,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "forest-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 1.48,
+      "log": "reports/local/forest-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 14797,
+        "detail_count": 8305,
+        "failures": [],
+        "ok": true,
+        "physical_height_m": [
+          5.00037822528001,
+          29.9996647557334
+        ],
+        "population": 100940,
+        "scope": "Saved-source integrity and placement checks; artistic replacement acceptance is separate.",
+        "source_review_status": "pending_visual_review"
+      }
+    },
+    {
+      "stage": "coordinate-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.46,
+      "log": "reports/local/coordinate-tests.log",
+      "warnings": [],
+      "tests": {
+        "ok": true,
+        "checks": 13824,
+        "failures": [],
+        "maximum_horizontal_serialization_drift_m": 7.049151491251367e-06,
+        "scope": "Projection/serialization agreement only; not absolute OSM or DEM survey accuracy"
+      }
+    },
+    {
+      "stage": "main-scene",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 4.77,
+      "log": "reports/local/main-scene.log",
+      "warnings": []
+    }
+  ],
+  "scope": "Development import, authored scripts, content invariants and headless scene execution. No export, simulation, GPU performance or final art claim."
+}

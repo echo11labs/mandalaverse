@@ -1,0 +1,87 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+Godot MCP Toolkit v1.0.2 — by NPGameDev · npgamedev.com
+[MCPExtensions]   + gopala.content_audit
+[MCPExtensions]   + gopala.catalog
+[MCPExtensions] Discovered 1 extension(s) via reflection
+[MCPExtensions] Hot-reload watcher active
+[MCPServer] port: scanning 6550-6560 (default)
+[MCPServer] session token written to user://addons/godot_mcp_toolkit/project_instance_051fced411d5/mcp_token
+[MCPServer] listening on 127.0.0.1:6551
+[MCPRegistry] registered /users/devendrashahithakuri/work/nep-all/game on port 6551
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (3 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | GopalaKathmanduHud[39m[0m
+[  25% ] [90m[1mupdate_scripts_classes[22m | GopalaResourceOverview[39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (34 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | models.json[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | default_tools.json[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | default_tools.schema.json[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | source-receipt.json[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | conversion.json[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | source-receipt.json[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | source-receipt.json[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | source-receipt.json[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | source-receipt.json[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | variants.json[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | RECEIPT.json[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | source-receipt.json[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | source-receipt.json[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | source-receipt.json[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | source-receipt.json[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | manifest.json[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | bake-receipt.json[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | ez_tree_profiles.json[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | models.json[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | review.json[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | receipt.json[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | bagdwar-source.json[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | cities.json[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | kathmandu.json[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | lakes.json[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | lake_polygons.json[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | regions_gopala.json[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | source-receipt.json[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | world_scale.json[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | alerts.json[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | catalog.json[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | mvp_policy.json[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | resource_distribution.json[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | EA03_Prop_Pier_01c.fbx[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+WARNING: Case mismatch opening requested file '/Users/devendrashahithakuri/Work/Nep-All/game/scripts/gerstner_ocean_demo.gd', stored as '/Users/devendrashahithakuri/Work/Nep-All/game/Scripts/gerstner_ocean_demo.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+     at: open_internal (drivers/unix/file_access_unix.cpp:112)
+WARNING: Case mismatch opening requested file '/Users/devendrashahithakuri/Work/Nep-All/game/scripts/main.gd', stored as '/Users/devendrashahithakuri/Work/Nep-All/game/Scripts/main.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+     at: open_internal (drivers/unix/file_access_unix.cpp:112)
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[  33% ] [90m[1mloading_editor_layout[22m | Reopening scenes...[39m[0m
+[  50% ] [90m[1mloading_editor_layout[22m | Loading central editor layout...[39m[0m
+[  66% ] [90m[1mloading_editor_layout[22m | Loading plugin window layout...[39m[0m
+[  83% ] [90m[1mloading_editor_layout[22m | Editor layout ready.[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+[MCPServer] stopped
+[MCPRegistry] deregistered /users/devendrashahithakuri/work/nep-all/game
+ERROR: Condition "!thread.is_started()" is true.
+   at: stop (modules/gdscript/language_server/gdscript_language_server.cpp:111)
+WARNING: 1 RID of type "CanvasItem" was leaked.
+   at: _free_rids (servers/rendering/renderer_canvas_cull.cpp:2733)
+WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)
+ERROR: 1 RID allocations of type 'PN13RendererDummy14TextureStorage12DummyTextureE' were leaked at exit.

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm8n1p3q5r7t9"]
+
+[ext_resource type="Script" path="res://scenes/ui/hud/components/damage_number.gd" id="1_damage_number"]
+
+[node name="DamageNumber" type="Label"]
+script = ExtResource("1_damage_number")
+text = ""
+horizontal_alignment = 2
+vertical_alignment = 1
+mouse_filter = 0

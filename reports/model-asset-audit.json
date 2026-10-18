@@ -1,0 +1,156 @@
+{
+	"checks": 429,
+	"measurements": [
+		{
+			"asset": "character-a.glb",
+			"ground_metres": 0.0,
+			"size_metres": "(1.671208, 1.75, 0.319334)"
+		},
+		{
+			"definition": "stockpile",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 0,
+			"size_metres": "(3.7, 3.284441, 3.679244)"
+		},
+		{
+			"definition": "stockpile",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 1,
+			"size_metres": "(3.7, 3.136966, 3.7)"
+		},
+		{
+			"definition": "stockpile",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 2,
+			"size_metres": "(3.700001, 3.284441, 3.679244)"
+		},
+		{
+			"definition": "stockpile",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 3,
+			"size_metres": "(3.7, 3.136966, 3.699999)"
+		},
+		{
+			"definition": "dwelling",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 0,
+			"size_metres": "(2.921347, 3.060991, 3.7)"
+		},
+		{
+			"definition": "dwelling",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 1,
+			"size_metres": "(3.068285, 3.177379, 3.7)"
+		},
+		{
+			"definition": "dwelling",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 2,
+			"size_metres": "(3.7, 3.213976, 3.654289)"
+		},
+		{
+			"definition": "dwelling",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 3,
+			"size_metres": "(3.7, 3.060991, 2.921347)"
+		},
+		{
+			"definition": "timber_camp",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 0,
+			"size_metres": "(2.5, 2.5, 2.773488)"
+		},
+		{
+			"definition": "timber_camp",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 1,
+			"size_metres": "(2.773488, 2.5, 2.5)"
+		},
+		{
+			"definition": "timber_camp",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 2,
+			"size_metres": "(2.5, 2.5, 2.773488)"
+		},
+		{
+			"definition": "timber_camp",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 3,
+			"size_metres": "(2.773488, 2.5, 2.5)"
+		},
+		{
+			"definition": "gatherer_shelter",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 0,
+			"size_metres": "(3.307672, 3.716295, 3.7)"
+		},
+		{
+			"definition": "gatherer_shelter",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 1,
+			"size_metres": "(3.7, 3.716295, 3.307672)"
+		},
+		{
+			"definition": "gatherer_shelter",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 2,
+			"size_metres": "(3.307673, 3.716295, 3.7)"
+		},
+		{
+			"definition": "gatherer_shelter",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 3,
+			"size_metres": "(3.7, 3.716295, 3.307672)"
+		},
+		{
+			"definition": "water_point",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 0,
+			"size_metres": "(1.919063, 2.0, 1.850921)"
+		},
+		{
+			"definition": "water_point",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 1,
+			"size_metres": "(1.850921, 2.0, 1.919063)"
+		},
+		{
+			"definition": "water_point",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 2,
+			"size_metres": "(1.919063, 2.0, 1.850921)"
+		},
+		{
+			"definition": "water_point",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 3,
+			"size_metres": "(1.850921, 2.0, 1.919063)"
+		},
+		{
+			"definition": "cattle_shelter",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 0,
+			"size_metres": "(3.146977, 2.5, 2.998949)"
+		},
+		{
+			"definition": "cattle_shelter",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 1,
+			"size_metres": "(2.998949, 2.5, 3.146977)"
+		},
+		{
+			"definition": "cattle_shelter",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 2,
+			"size_metres": "(3.146976, 2.5, 2.998949)"
+		},
+		{
+			"definition": "cattle_shelter",
+			"footprint_metres": "(4.0, 4.0, 4.0)",
+			"rotation_probe": 3,
+			"size_metres": "(2.998949, 2.5, 3.146977)"
+		}
+	],
+	"ok": true,
+	"standard_revision": 15.0
+}

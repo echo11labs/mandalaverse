@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://jyj3ipnnhatv"]
+
+[ext_resource type="Script" uid="uid://buii8lg05ksix" path="res://addons/godai/ui/assistant_chat.gd" id="1_wtqsg"]
+[ext_resource type="PackedScene" uid="uid://cies8dggqt6iu" path="res://addons/godai/ui/markdown_label.tscn" id="2_m8bng"]
+
+[node name="AssistantChat" type="MarginContainer" unique_id=317624562]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_wtqsg")
+
+[node name="MarkdownLabel" parent="." unique_id=1657240445 instance=ExtResource("2_m8bng")]
+unique_name_in_owner = true
+layout_mode = 2

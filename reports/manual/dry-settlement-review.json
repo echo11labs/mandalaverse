@@ -1,0 +1,14 @@
+{
+	"camp": [
+		-74.3499984741211,
+		12.3000001907349
+	],
+	"scope": "Rendered startup; functional collection and conservation are covered by verification",
+	"seed": 43129,
+	"sources": {
+		"stone": 24,
+		"timber": 13
+	},
+	"walk_speed_metres_per_second": 1.4,
+	"worker_distance_metres": 7.07129687070847
+}

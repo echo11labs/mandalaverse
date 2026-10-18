@@ -1,0 +1,21 @@
+{
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "package": "builds/mvp/GOPALA-MVP.zip",
+  "sha256": "11fcb1dbebc73c9527d544ffdc263e32906cb24691803d7e5803bedf5cb6a83b",
+  "bytes": 109655154,
+  "stages": [
+    {
+      "log": "builds/mvp/import.log",
+      "exit_code": 0,
+      "warnings": [],
+      "known_shutdown_error": false
+    },
+    {
+      "log": "builds/mvp/export.log",
+      "exit_code": 0,
+      "warnings": [],
+      "known_shutdown_error": false
+    }
+  ],
+  "scope": "macOS local MVP; ad-hoc signed, not notarized. Manual visual acceptance and target-device performance are separate."
+}

@@ -4,7 +4,21 @@ Companion to [2D Development Vedas](GOPALA-2D-Development-Vedas.md). Prepared 29
 
 ## Current status
 
-G-001: project and engine pinned; desktop export remains outstanding. G-002: typed content registry and rejection checks implemented. G-003: 2D coordinate tests retained; the main orthographic Kathmandu landscape has a 48 × 48 local ground grid and physics picking tests at three zoom levels. Earlier diagnostic terrain tests remain available. G-004: camera, grid and ground inspection implemented; placement cancellation waits for the placement layer. G-005: actor/building visibility is outstanding. Economy tasks G-006 onward remain unimplemented. Toolchain progress does not complete gameplay tasks.
+G-001: project/engine/templates pinned; local macOS export and startup smoke tested. G-002: typed content registry and rejection checks implemented. G-003: logical coordinates, occupancy and terrain physics picking have regression suites. G-004: camera pan/zoom/orbit, terrain-height tracking, corrected culling, selection and the resource/structure/inspection HUD are implemented. G-005: physical actor/prop sizing and building footprint dimensions are checked; final art and occlusion acceptance remain outstanding.
+
+The fixed tick, registry, ledger/reservations, placement/construction labour and timber/stone/thatch/wild-food/fodder pickup/delivery slices now exist and have verification suites. The Kathmandu view starts on dry ground with nearby workers and seeded collectible sources. Right-click gathering repeats until depletion and Escape stops safely. These are partial implementations of G-006–G-011, not completion of the settlement milestone: regional routes, store-to-store transport, broader save compatibility and human gameplay/art acceptance remain outstanding. Cattle, the fifteen-minute scenario, mid-objective load and exported-data acceptance are now implemented.
+
+The separate `scenes/mvp.tscn` starts eight settlers with protected food/water reserves. Needs now physically consume store stock, completed dwellings house four people each, shortages reduce health, and builders return carried goods before needs breaks and resume afterward. Built water points expose bounded refillable collection sources. See [MVP survival](GOPALA-MVP-Survival.md) for implemented scope and remaining acceptance.
+
+The individual stockpile-inventory and persistent collection job slices reserve room in specific stores, pause at full storage and switch depleted sources. Builders fetch all required materials from recorded stores; cancellation and store removal preserve goods at physical locations. Schema 2 validates and saves inventory partitions and construction origins. [Storage and worker jobs](GOPALA-Storage-and-Worker-Jobs.md) records coverage and remaining store-to-store transport/filter/general-dispatcher requirements.
+
+The settlement-wide [worker management](GOPALA-Worker-Management.md) slice adds staffing targets, priority dispatch, safe automatic/manual ownership, blocked-job reasons and saved policy state for existing gathering, building/path and herd work. Store-to-store hauling, per-store filters and processing remain separate requirements.
+
+The local worker-routing slice now uses four-neighbour paths around occupied/reserved plots and displayed water, with access cells beside buildings, occupancy-change replanning and conservation-safe blocked delivery retries. [Worker routes](GOPALA-Worker-Routes.md) records coverage and remaining routing requirements.
+
+The local camera now frames current workers/buildings at a 40 m default span. The visible 2 m planning grid matches logical occupancy, and terrain/scenery rendering is spatially culled with a bounded local scenery cache. GPU comparison and regression scope are recorded in [Local settlement view](GOPALA-Local-Settlement-View.md); this does not implement disk streaming or general worker routes.
+
+The interface layer is recorded in [Interface layer](GOPALA-Interface-Layer.md) and font provenance in [UI font receipt](GOPALA-UI-Font-Receipt.md). Part of G-004 is satisfied; its acceptance still requires that clicking UI does not issue world commands, which is only partly testable before placement exists.
 
 The authorized mixed 2D/3D landscape direction is recorded in [Landscape layer](GOPALA-Landscape-Layer.md). Historical timeline estimates below have not been validated as delivery commitments.
 
@@ -34,7 +48,7 @@ Finish each acceptance condition before treating an item as complete. Implement 
 | G-011 | Add gatherable resources and source depletion | G-009 | Timber/stone/thatch/wild food/fodder reach storage through actual collection and transport |
 | G-012 | Add home assignment and food/water needs | G-010, G-011 | Settlers occupy completed homes; needs consume valid stock; shortage interrupts work with a visible reason |
 | G-013 | Add minimal cattle, pasture, and milk | G-009, G-012 | Two cattle require grazing or fodder plus water and tending; milk appears only after the production conditions pass |
-| G-014 | Add versioned manual save/load | G-006–G-013 | Mid-haul and mid-build round trips preserve stock totals, entity IDs, and progress |
+| G-014 | Add versioned manual save/load | G-006–G-013 | Local Kathmandu slice implemented: [save/load evidence and limits](GOPALA-Save-and-Load.md); mid-haul/mid-build, blocked delivery and cancellation refunds preserve goods and IDs. Full milestone still requires remaining systems and exported acceptance. |
 | G-015 | Assemble all six P0 structures and objective | G-010–G-014 | Eight settlers sustain the test settlement for 15 minutes; save/reload and continue without manual repair |
 
 G-014 is a completion item: start its basic schema and snapshots during G-007/G-010, then extend it as needs and cattle arrive.
@@ -92,3 +106,11 @@ Traffic-worn trails, deeper livestock reproduction, family life events, more wil
 - Confirm the historically inspired scope and review process; select final crops/architecture from research.
 
 Keep progress on a simple board: Ready → In progress → Review → Done. A saved source file is not a completed gameplay feature; acceptance must be demonstrated in the exported game.
+
+## Desktop MVP engineering update
+
+The default MVP scene now includes physical food/water needs, cattle and finite pasture/fodder support, located milk transport, an eight-settler fifteen-minute objective, and mid-objective saving. See [MVP cattle and scenario](GOPALA-MVP-Cattle-and-Scenario.md). Automated acceptance uses actual valley construction and supply jobs. Packaging, visual acceptance and performance receipts must be inspected before closing the active block; human art approval remains pending.
+
+## Herd management continuation
+
+G-016 now includes persistent player pasture assignment, routed cattle relocation, capacity and grazing-minute inspection, crowding penalties and physically supplied fodder support. See [herd management](GOPALA-Herd-Management.md). The two-cow scenario remains unchanged in population; breeding/purchasing, larger configurable plots and calendar-day forecasts remain. G-017 weather and vegetation recovery is the next gameplay slice. The active block remains open for human acceptance.

@@ -1,0 +1,62 @@
+{
+  "ok": true,
+  "scope": "Fixed-camera visual comparisons, not performance samples. Buildings gallery is presentation-only.",
+  "comparisons": [
+    {
+      "resolution": "1280x800",
+      "view": "camp",
+      "matching_camera": true,
+      "target": "(-74.36501, 2.264316, 12.305)",
+      "span": 0.335999995470047
+    },
+    {
+      "resolution": "1280x800",
+      "view": "cattle",
+      "matching_camera": true,
+      "target": "(-74.35, 2.259206, 12.36)",
+      "span": 0.119999997317791
+    },
+    {
+      "resolution": "1280x800",
+      "view": "source",
+      "matching_camera": true,
+      "target": "(17.24364, 39.2595, -128.1593)",
+      "span": 65.0
+    },
+    {
+      "resolution": "1280x800",
+      "view": "forest",
+      "matching_camera": true,
+      "target": "(10.0, 12.99561, -85.0)",
+      "span": 3.0
+    },
+    {
+      "resolution": "1920x1080",
+      "view": "camp",
+      "matching_camera": true,
+      "target": "(-74.36501, 2.264316, 12.305)",
+      "span": 0.335999995470047
+    },
+    {
+      "resolution": "1920x1080",
+      "view": "cattle",
+      "matching_camera": true,
+      "target": "(-74.35, 2.259206, 12.36)",
+      "span": 0.119999997317791
+    },
+    {
+      "resolution": "1920x1080",
+      "view": "source",
+      "matching_camera": true,
+      "target": "(17.24364, 39.2595, -128.1593)",
+      "span": 65.0
+    },
+    {
+      "resolution": "1920x1080",
+      "view": "forest",
+      "matching_camera": true,
+      "target": "(10.0, 12.99561, -85.0)",
+      "span": 3.0
+    }
+  ]
+}

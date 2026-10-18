@@ -40,7 +40,7 @@ def run_stage(name, arguments, timeout=60, external=False):
         if line.startswith(marker):
             result["tests"] = json.loads(line[len(marker):])
             result["ok"] = result["ok"] and result["tests"]["ok"]
-    if name in ["content-tests", "landscape-tests", "scenic-tests", "kathmandu-tests", "coordinate-tests", "waterways-tests", "forest-tests"] and "tests" not in result:
+    if name in ["content-tests", "landscape-tests", "scenic-tests", "kathmandu-tests", "coordinate-tests", "waterways-tests", "forest-tests", "entity-registry-tests", "selection-tests", "spatial-grid-tests", "simulation-spine-tests", "ui-tests", "component-gallery-tests", "gather-delivery-tests", "placement-slice-tests", "villager-movement-tests", "construction-labor-tests", "stone-resource-tests", "scale-standard-tests", "model-asset-tests", "local-view-tests", "route-tests", "save-tests", "worker-job-tests", "stockpile-inventory-tests", "forage-tests", "survival-tests", "herd-tests", "mvp-scenario-tests", "bench-smoke", "alert-tests", "alert-ui-tests", "front-door-tests", "debug-overlay-tests", "nature-model-tests", "road-placement-tests", "path-construction-tests", "workforce-tests", "field-tests"] and "tests" not in result:
         result["ok"] = False
     print(f"{name}: {'PASS' if result['ok'] else 'FAIL'}", flush=True)
     return result
@@ -55,11 +55,51 @@ def main():
         raise SystemExit("Unexpected engine version: " + version)
     stages = [run_stage("import", ["--editor", "--import"])]
     if stages[-1]["ok"]:
-        scripts = list((ROOT / "game/core").rglob("*.gd")) + list((ROOT / "game/scenes").rglob("*.gd")) + list((ROOT / "game/tests").rglob("*.gd")) + list((ROOT / "game/addons/gopala_mcp").rglob("*.gd"))
+        scripts = list((ROOT / "game/core").rglob("*.gd")) + list((ROOT / "game/scenes").rglob("*.gd")) + list((ROOT / "game/tests").rglob("*.gd")) + list((ROOT / "game/bench").rglob("*.gd")) + list((ROOT / "game/addons/gopala_mcp").rglob("*.gd")) + [path for path in (ROOT / "game/assets/ui").rglob("*.gd") if "generate_" not in path.name]
         for path in sorted(scripts):
             relative = path.relative_to(ROOT / "game").as_posix()
             stages.append(run_stage("parse-" + path.stem, ["--check-only", "--script", relative]))
+        stages.append(run_stage("debug-overlay-tests", ["--script", "tests/run_debug_overlay_tests.gd"]))
+        stages.append(run_stage("front-door-tests", ["--script", "tests/run_front_door_tests.gd"], timeout=90))
+        stages.append(run_stage("alert-tests", ["--script", "tests/run_alert_tests.gd"]))
+        stages.append(run_stage("alert-ui-tests", ["--script", "tests/run_alert_ui_tests.gd"]))
         stages.append(run_stage("content-tests", ["--script", "tests/run_content_tests.gd"]))
+        if (ROOT / "game/scenes/ui/hud.tscn").exists():
+            stages.append(run_stage("ui-tests", ["--script", "tests/run_ui_tests.gd"]))
+        if (ROOT / "game/scenes/ui/component_gallery.tscn").exists():
+            stages.append(run_stage("component-gallery-tests", ["--script", "tests/run_component_gallery_tests.gd"]))
+        if (ROOT / "game/tests/run_simulation_spine_tests.gd").exists():
+            stages.append(run_stage("simulation-spine-tests", ["--script", "tests/run_simulation_spine_tests.gd"]))
+        if (ROOT / "game/tests/run_entity_registry_tests.gd").exists():
+            stages.append(run_stage("entity-registry-tests", ["--script", "tests/run_entity_registry_tests.gd"]))
+        if (ROOT / "game/tests/run_selection_tests.gd").exists():
+            stages.append(run_stage("selection-tests", ["--script", "tests/run_selection_tests.gd"]))
+        if (ROOT / "game/tests/run_spatial_grid_tests.gd").exists():
+            stages.append(run_stage("spatial-grid-tests", ["--script", "tests/run_spatial_grid_tests.gd"]))
+        if (ROOT / "game/tests/run_road_placement_tests.gd").exists():
+            stages.append(run_stage("road-placement-tests", ["--script", "tests/run_road_placement_tests.gd"]))
+            stages.append(run_stage("path-construction-tests", ["--script", "tests/run_path_construction_tests.gd"]))
+            stages.append(run_stage("workforce-tests", ["--script", "tests/run_workforce_tests.gd"]))
+        if (ROOT / "game/tests/run_placement_slice_tests.gd").exists():
+            stages.append(run_stage("placement-slice-tests", ["--script", "tests/run_placement_slice_tests.gd"]))
+        if (ROOT / "game/tests/run_villager_movement_tests.gd").exists():
+            stages.append(run_stage("villager-movement-tests", ["--script", "tests/run_villager_movement_tests.gd"]))
+        if (ROOT / "game/tests/run_gather_delivery_tests.gd").exists():
+            stages.append(run_stage("gather-delivery-tests", ["--script", "tests/run_gather_delivery_tests.gd"]))
+        stages.append(run_stage("mvp-scenario-tests", ["--script", "tests/run_mvp_scenario_tests.gd"], timeout=240))
+        stages.append(run_stage("herd-tests", ["--script", "tests/run_herd_tests.gd"]))
+        stages.append(run_stage("survival-tests", ["--script", "tests/run_survival_tests.gd"]))
+        stages.append(run_stage("forage-tests", ["--script", "tests/run_forage_tests.gd"]))
+        stages.append(run_stage("field-tests", ["--script", "tests/run_field_tests.gd"]))
+        stages.append(run_stage("stockpile-inventory-tests", ["--script", "tests/run_stockpile_inventory_tests.gd"]))
+        stages.append(run_stage("worker-job-tests", ["--script", "tests/run_worker_job_tests.gd"]))
+        stages.append(run_stage("save-tests", ["--script", "tests/run_save_tests.gd"]))
+        stages.append(run_stage("route-tests", ["--script", "tests/run_route_tests.gd"]))
+        stages.append(run_stage("model-asset-tests", ["--script", "tests/run_model_asset_tests.gd"]))
+        stages.append(run_stage("scale-standard-tests", ["--script", "tests/run_scale_standard_tests.gd"]))
+        stages.append(run_stage("stone-resource-tests", ["--script", "tests/run_stone_resource_tests.gd"]))
+        if (ROOT / "game/tests/run_construction_labor_tests.gd").exists():
+            stages.append(run_stage("construction-labor-tests", ["--script", "tests/run_construction_labor_tests.gd"]))
         if (ROOT / "game/scenes/world/valley.tscn").exists():
             stages.append(run_stage("landscape-tests", ["--script", "tests/run_landscape_tests.gd"]))
         if (ROOT / "game/scenes/landscape/scenic_valley.tscn").exists():
@@ -68,9 +108,12 @@ def main():
             stages.append(run_stage("kathmandu-tests", ["--script", "tests/run_kathmandu_tests.gd"]))
             stages.append(run_stage("waterways-tests", ["--script", "tests/run_waterways_tests.gd"]))
             # MultiMesh transform storage is unavailable through Godot's dummy renderer.
+            stages.append(run_stage("local-view-tests", [str(ENGINE), "--path", str(ROOT / "game"), "--log-file", str(REPORTS / "local-view-tests-engine.log"), "--script", "tests/run_local_view_tests.gd"], external=True))
+            stages.append(run_stage("nature-model-tests", [str(ENGINE), "--path", str(ROOT / "game"), "--script", "tests/run_nature_model_tests.gd"], external=True))
             stages.append(run_stage("forest-tests", [str(ENGINE), "--path", str(ROOT / "game"), "--script", "tests/run_forest_tests.gd"], external=True))
         if (ROOT / "game/data/geography/kathmandu.json").exists():
             stages.append(run_stage("coordinate-tests", [str(ROOT / ".tools/python/bin/python"), str(ROOT / "tools/test_geography.py")], external=True))
+        stages.append(run_stage("bench-smoke", ["python3", str(ROOT / "tools/bench.py"), "--smoke", "--output", str(REPORTS / "bench-smoke")], external=True))
         stages.append(run_stage("main-scene", ["--quit-after", "5"]))
     report = {"ok": all(stage["ok"] for stage in stages), "engine": version, "stages": stages, "scope": "Development import, authored scripts, content invariants and headless scene execution. No export, simulation, GPU performance or final art claim."}
     (ROOT / "reports/verification.json").write_text(json.dumps(report, indent=2) + "\n")

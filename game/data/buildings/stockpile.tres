@@ -10,5 +10,6 @@ display_name = "Stockpile"
 footprint = Vector2i(2, 2)
 entrance = Vector2i(0, 2)
 costs = Dictionary[StringName, int]({&"timber": 4})
+inventory_limits = Dictionary[StringName, int]({&"timber": 200, &"stone": 200, &"thatch": 200, &"water": 200, &"wild_food": 200, &"fodder": 200, &"milk": 200})
 work_ticks = 100
 prototype_sprite = ExtResource("2")

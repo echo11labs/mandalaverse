@@ -1,0 +1,6158 @@
+{
+  "candidates": [
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_A_Color1.gltf",
+      "bytes": 3054,
+      "triangles_unique_meshes": 72,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_B_Color1.gltf",
+      "bytes": 3061,
+      "triangles_unique_meshes": 168,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_C_Color1.gltf",
+      "bytes": 3056,
+      "triangles_unique_meshes": 168,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_D_Color1.gltf",
+      "bytes": 3058,
+      "triangles_unique_meshes": 168,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_E_Color1.gltf",
+      "bytes": 3063,
+      "triangles_unique_meshes": 552,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_F_Color1.gltf",
+      "bytes": 3062,
+      "triangles_unique_meshes": 576,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_1_G_Color1.gltf",
+      "bytes": 3061,
+      "triangles_unique_meshes": 984,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_2_A_Color1.gltf",
+      "bytes": 3050,
+      "triangles_unique_meshes": 44,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_2_B_Color1.gltf",
+      "bytes": 3057,
+      "triangles_unique_meshes": 108,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_2_C_Color1.gltf",
+      "bytes": 3053,
+      "triangles_unique_meshes": 108,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_2_D_Color1.gltf",
+      "bytes": 3060,
+      "triangles_unique_meshes": 196,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_2_E_Color1.gltf",
+      "bytes": 3064,
+      "triangles_unique_meshes": 476,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_2_F_Color1.gltf",
+      "bytes": 3040,
+      "triangles_unique_meshes": 368,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_3_A_Color1.gltf",
+      "bytes": 3059,
+      "triangles_unique_meshes": 208,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_3_B_Color1.gltf",
+      "bytes": 3060,
+      "triangles_unique_meshes": 240,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_3_C_Color1.gltf",
+      "bytes": 3060,
+      "triangles_unique_meshes": 272,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_4_A_Color1.gltf",
+      "bytes": 3049,
+      "triangles_unique_meshes": 44,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_4_B_Color1.gltf",
+      "bytes": 3054,
+      "triangles_unique_meshes": 44,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_4_C_Color1.gltf",
+      "bytes": 3052,
+      "triangles_unique_meshes": 108,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_4_D_Color1.gltf",
+      "bytes": 3053,
+      "triangles_unique_meshes": 132,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_4_E_Color1.gltf",
+      "bytes": 3058,
+      "triangles_unique_meshes": 284,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_4_F_Color1.gltf",
+      "bytes": 3060,
+      "triangles_unique_meshes": 284,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_1_A_Color1.gltf",
+      "bytes": 3058,
+      "triangles_unique_meshes": 44,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_1_A_Singlesided_Color1.gltf",
+      "bytes": 3088,
+      "triangles_unique_meshes": 14,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_1_B_Color1.gltf",
+      "bytes": 3064,
+      "triangles_unique_meshes": 132,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_1_B_Singlesided_Color1.gltf",
+      "bytes": 3095,
+      "triangles_unique_meshes": 42,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_1_C_Color1.gltf",
+      "bytes": 3067,
+      "triangles_unique_meshes": 396,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_1_C_Singlesided_Color1.gltf",
+      "bytes": 3099,
+      "triangles_unique_meshes": 126,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_1_D_Color1.gltf",
+      "bytes": 3066,
+      "triangles_unique_meshes": 528,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_1_D_Singlesided_Color1.gltf",
+      "bytes": 3099,
+      "triangles_unique_meshes": 168,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_1_Mesh.gltf",
+      "bytes": 2327,
+      "triangles_unique_meshes": 44,
+      "mesh_count": 1,
+      "images": [],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_1_SingleSided_Mesh.gltf",
+      "bytes": 2357,
+      "triangles_unique_meshes": 14,
+      "mesh_count": 1,
+      "images": [],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_A_Color1.gltf",
+      "bytes": 3056,
+      "triangles_unique_meshes": 44,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_A_Singlesided_Color1.gltf",
+      "bytes": 3088,
+      "triangles_unique_meshes": 14,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_B_Color1.gltf",
+      "bytes": 3064,
+      "triangles_unique_meshes": 132,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_B_Singlesided_Color1.gltf",
+      "bytes": 3092,
+      "triangles_unique_meshes": 42,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_C_Color1.gltf",
+      "bytes": 3066,
+      "triangles_unique_meshes": 528,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_C_Singlesided_Color1.gltf",
+      "bytes": 3101,
+      "triangles_unique_meshes": 168,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_D_Color1.gltf",
+      "bytes": 3066,
+      "triangles_unique_meshes": 528,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_D_Singlesided_Color1.gltf",
+      "bytes": 3097,
+      "triangles_unique_meshes": 168,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_Mesh.gltf",
+      "bytes": 2325,
+      "triangles_unique_meshes": 44,
+      "mesh_count": 1,
+      "images": [],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_SingleSided_Mesh.gltf",
+      "bytes": 2357,
+      "triangles_unique_meshes": 14,
+      "mesh_count": 1,
+      "images": [],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_A_Color1.gltf",
+      "bytes": 3032,
+      "triangles_unique_meshes": 48,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_B_Color1.gltf",
+      "bytes": 3035,
+      "triangles_unique_meshes": 48,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_C_Color1.gltf",
+      "bytes": 3032,
+      "triangles_unique_meshes": 48,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_D_Color1.gltf",
+      "bytes": 3039,
+      "triangles_unique_meshes": 84,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_E_Color1.gltf",
+      "bytes": 3007,
+      "triangles_unique_meshes": 84,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_F_Color1.gltf",
+      "bytes": 3008,
+      "triangles_unique_meshes": 84,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_G_Color1.gltf",
+      "bytes": 3038,
+      "triangles_unique_meshes": 104,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_H_Color1.gltf",
+      "bytes": 3039,
+      "triangles_unique_meshes": 104,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_I_Color1.gltf",
+      "bytes": 3038,
+      "triangles_unique_meshes": 104,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_J_Color1.gltf",
+      "bytes": 3046,
+      "triangles_unique_meshes": 521,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_K_Color1.gltf",
+      "bytes": 3060,
+      "triangles_unique_meshes": 529,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_L_Color1.gltf",
+      "bytes": 3044,
+      "triangles_unique_meshes": 494,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_M_Color1.gltf",
+      "bytes": 3044,
+      "triangles_unique_meshes": 528,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_N_Color1.gltf",
+      "bytes": 3042,
+      "triangles_unique_meshes": 355,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_O_Color1.gltf",
+      "bytes": 3037,
+      "triangles_unique_meshes": 223,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_P_Color1.gltf",
+      "bytes": 3042,
+      "triangles_unique_meshes": 405,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_Q_Color1.gltf",
+      "bytes": 3067,
+      "triangles_unique_meshes": 497,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_2_A_Color1.gltf",
+      "bytes": 3052,
+      "triangles_unique_meshes": 12,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_2_B_Color1.gltf",
+      "bytes": 3053,
+      "triangles_unique_meshes": 44,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_2_C_Color1.gltf",
+      "bytes": 3054,
+      "triangles_unique_meshes": 108,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_2_D_Color1.gltf",
+      "bytes": 3055,
+      "triangles_unique_meshes": 108,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_2_E_Color1.gltf",
+      "bytes": 3062,
+      "triangles_unique_meshes": 438,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_2_F_Color1.gltf",
+      "bytes": 3059,
+      "triangles_unique_meshes": 428,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_2_G_Color1.gltf",
+      "bytes": 3062,
+      "triangles_unique_meshes": 488,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_2_H_Color1.gltf",
+      "bytes": 3060,
+      "triangles_unique_meshes": 312,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_A_Color1.gltf",
+      "bytes": 3056,
+      "triangles_unique_meshes": 84,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_B_Color1.gltf",
+      "bytes": 3060,
+      "triangles_unique_meshes": 84,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_C_Color1.gltf",
+      "bytes": 3057,
+      "triangles_unique_meshes": 84,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_D_Color1.gltf",
+      "bytes": 3057,
+      "triangles_unique_meshes": 84,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_E_Color1.gltf",
+      "bytes": 3055,
+      "triangles_unique_meshes": 84,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_F_Color1.gltf",
+      "bytes": 3056,
+      "triangles_unique_meshes": 84,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_G_Color1.gltf",
+      "bytes": 3057,
+      "triangles_unique_meshes": 168,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_H_Color1.gltf",
+      "bytes": 3057,
+      "triangles_unique_meshes": 168,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_I_Color1.gltf",
+      "bytes": 3054,
+      "triangles_unique_meshes": 168,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_J_Color1.gltf",
+      "bytes": 3055,
+      "triangles_unique_meshes": 168,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_K_Color1.gltf",
+      "bytes": 3056,
+      "triangles_unique_meshes": 168,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_L_Color1.gltf",
+      "bytes": 3057,
+      "triangles_unique_meshes": 168,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_M_Color1.gltf",
+      "bytes": 3054,
+      "triangles_unique_meshes": 320,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_N_Color1.gltf",
+      "bytes": 3059,
+      "triangles_unique_meshes": 320,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_O_Color1.gltf",
+      "bytes": 3058,
+      "triangles_unique_meshes": 320,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_P_Color1.gltf",
+      "bytes": 3057,
+      "triangles_unique_meshes": 320,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_Q_Color1.gltf",
+      "bytes": 3058,
+      "triangles_unique_meshes": 320,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_R_Color1.gltf",
+      "bytes": 3055,
+      "triangles_unique_meshes": 320,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_1_A_Color1.gltf",
+      "bytes": 3061,
+      "triangles_unique_meshes": 530,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_1_B_Color1.gltf",
+      "bytes": 3058,
+      "triangles_unique_meshes": 636,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_1_C_Color1.gltf",
+      "bytes": 3064,
+      "triangles_unique_meshes": 1364,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_A_Color1.gltf",
+      "bytes": 3057,
+      "triangles_unique_meshes": 336,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_B_Color1.gltf",
+      "bytes": 3059,
+      "triangles_unique_meshes": 492,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_C_Color1.gltf",
+      "bytes": 3060,
+      "triangles_unique_meshes": 648,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_D_Color1.gltf",
+      "bytes": 3060,
+      "triangles_unique_meshes": 1428,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_E_Color1.gltf",
+      "bytes": 3060,
+      "triangles_unique_meshes": 1560,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_3_A_Color1.gltf",
+      "bytes": 3061,
+      "triangles_unique_meshes": 978,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_3_B_Color1.gltf",
+      "bytes": 3060,
+      "triangles_unique_meshes": 988,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_3_C_Color1.gltf",
+      "bytes": 3066,
+      "triangles_unique_meshes": 2228,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_4_A_Color1.gltf",
+      "bytes": 3061,
+      "triangles_unique_meshes": 404,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_4_B_Color1.gltf",
+      "bytes": 3059,
+      "triangles_unique_meshes": 522,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_4_C_Color1.gltf",
+      "bytes": 3061,
+      "triangles_unique_meshes": 982,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_1_A_Color1.gltf",
+      "bytes": 3075,
+      "triangles_unique_meshes": 324,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_1_B_Color1.gltf",
+      "bytes": 3074,
+      "triangles_unique_meshes": 332,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_1_C_Color1.gltf",
+      "bytes": 3079,
+      "triangles_unique_meshes": 936,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_2_A_Color1.gltf",
+      "bytes": 3077,
+      "triangles_unique_meshes": 404,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_2_B_Color1.gltf",
+      "bytes": 3077,
+      "triangles_unique_meshes": 448,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/nature/kaykit-forest-nature__CC0/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_Bare_2_C_Color1.gltf",
+      "bytes": 3076,
+      "triangles_unique_meshes": 634,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "forest_texture",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 48679
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/animals/styloo-animals__CC0/stylooanimalassetpack/glb/Cow.glb",
+      "bytes": 1629852,
+      "triangles_unique_meshes": 4740,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "cow_normal",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 557168
+        },
+        {
+          "name": "cow_color",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 465323
+        },
+        {
+          "name": "cow_roughness",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 64742
+        }
+      ],
+      "animations": [
+        "iddle",
+        "jump",
+        "run",
+        "walk",
+        "walking"
+      ],
+      "skins": 1,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/animals/styloo-animals__CC0/stylooanimalassetpack/glb/butterfly.glb",
+      "bytes": 154256,
+      "triangles_unique_meshes": 1248,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "butterflytexture",
+          "pixels": [
+            512,
+            512
+          ],
+          "bytes": 87096
+        }
+      ],
+      "animations": [
+        "fly"
+      ],
+      "skins": 1,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/animals/styloo-animals__CC0/stylooanimalassetpack/glb/cat.glb",
+      "bytes": 348696,
+      "triangles_unique_meshes": 3476,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Cube_color.png",
+          "pixels": [
+            512,
+            512
+          ],
+          "bytes": 105541
+        }
+      ],
+      "animations": [],
+      "skins": 1,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/animals/styloo-animals__CC0/stylooanimalassetpack/glb/chichen.glb",
+      "bytes": 1020464,
+      "triangles_unique_meshes": 5214,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "chicken_normal",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 508307
+        },
+        {
+          "name": "chicken_color",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 318734
+        }
+      ],
+      "animations": [],
+      "skins": 1,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/animals/styloo-animals__CC0/stylooanimalassetpack/glb/dog.glb",
+      "bytes": 1566808,
+      "triangles_unique_meshes": 5712,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "dog_normal.png",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 599406
+        },
+        {
+          "name": "dog_color.png",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 321990
+        }
+      ],
+      "animations": [
+        "attack1",
+        "iddle",
+        "jump",
+        "run",
+        "walk",
+        "walksent"
+      ],
+      "skins": 1,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/animals/styloo-animals__CC0/stylooanimalassetpack/glb/girafe.glb",
+      "bytes": 300084,
+      "triangles_unique_meshes": 3024,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "girafetexture",
+          "pixels": [
+            512,
+            512
+          ],
+          "bytes": 87889
+        }
+      ],
+      "animations": [
+        "iddle"
+      ],
+      "skins": 1,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/animals/styloo-animals__CC0/stylooanimalassetpack/glb/ladybug.glb",
+      "bytes": 101076,
+      "triangles_unique_meshes": 2048,
+      "mesh_count": 3,
+      "images": [
+        {
+          "name": "cocinelle",
+          "pixels": [
+            512,
+            512
+          ],
+          "bytes": 27184
+        }
+      ],
+      "animations": [],
+      "skins": 1,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Barracks/SM_Barracks.fbx",
+      "bytes": 70396,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "SM_Barracks",
+          "triangles_after_triangulation": 1526,
+          "collision": false
+        },
+        {
+          "name": "UCX_SM_Barracks",
+          "triangles_after_triangulation": 32,
+          "collision": true
+        }
+      ],
+      "render_triangles": 1526,
+      "collision_triangles": 32
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Hut/SM_Hut.fbx",
+      "bytes": 40796,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "SM_Hut",
+          "triangles_after_triangulation": 780,
+          "collision": false
+        },
+        {
+          "name": "UCX_SM_Hut",
+          "triangles_after_triangulation": 20,
+          "collision": true
+        }
+      ],
+      "render_triangles": 780,
+      "collision_triangles": 20
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/MiscProps/SM_Axe.fbx",
+      "bytes": 18940,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "SM_Axe",
+          "triangles_after_triangulation": 110,
+          "collision": false
+        }
+      ],
+      "render_triangles": 110,
+      "collision_triangles": 0
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/MiscProps/SM_Barrel.fbx",
+      "bytes": 51500,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "UCX_SM_Barrel",
+          "triangles_after_triangulation": 24,
+          "collision": true
+        },
+        {
+          "name": "SM_Barrel",
+          "triangles_after_triangulation": 968,
+          "collision": false
+        }
+      ],
+      "render_triangles": 968,
+      "collision_triangles": 24
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/MiscProps/SM_CropField.fbx",
+      "bytes": 59196,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "SM_CropField",
+          "triangles_after_triangulation": 960,
+          "collision": false
+        }
+      ],
+      "render_triangles": 960,
+      "collision_triangles": 0
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/MiscProps/SM_Grass_01.fbx",
+      "bytes": 30540,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "SM_Grass_01",
+          "triangles_after_triangulation": 100,
+          "collision": false
+        }
+      ],
+      "render_triangles": 100,
+      "collision_triangles": 0
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/MiscProps/SM_Grass_02.fbx",
+      "bytes": 25484,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "SM_Grass_02",
+          "triangles_after_triangulation": 60,
+          "collision": false
+        }
+      ],
+      "render_triangles": 60,
+      "collision_triangles": 0
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/MiscProps/SM_Grass_03.fbx",
+      "bytes": 33196,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "SM_Grass_03",
+          "triangles_after_triangulation": 120,
+          "collision": false
+        }
+      ],
+      "render_triangles": 120,
+      "collision_triangles": 0
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/MiscProps/SM_Shield.fbx",
+      "bytes": 27420,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "SM_Shield",
+          "triangles_after_triangulation": 168,
+          "collision": false
+        }
+      ],
+      "render_triangles": 168,
+      "collision_triangles": 0
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/MiscProps/SM_WoodCrate.fbx",
+      "bytes": 38668,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "UCX_SM_WoodCrate",
+          "triangles_after_triangulation": 12,
+          "collision": true
+        },
+        {
+          "name": "SM_WoodCrate",
+          "triangles_after_triangulation": 456,
+          "collision": false
+        }
+      ],
+      "render_triangles": 456,
+      "collision_triangles": 12
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/MiscProps/SM_WoodFence.fbx",
+      "bytes": 26828,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "UCX_SM_WoodFence",
+          "triangles_after_triangulation": 12,
+          "collision": true
+        },
+        {
+          "name": "SM_WoodFence",
+          "triangles_after_triangulation": 90,
+          "collision": false
+        }
+      ],
+      "render_triangles": 90,
+      "collision_triangles": 12
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/TownCenter/SM_TownCenter.fbx",
+      "bytes": 89372,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "SM_TownCenter",
+          "triangles_after_triangulation": 2070,
+          "collision": false
+        },
+        {
+          "name": "UCX_SM_TownCenter",
+          "triangles_after_triangulation": 48,
+          "collision": true
+        }
+      ],
+      "render_triangles": 2070,
+      "collision_triangles": 48
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Walls/Tower/SM_Tower.fbx",
+      "bytes": 65804,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "SM_TowerW",
+          "triangles_after_triangulation": 1448,
+          "collision": false
+        },
+        {
+          "name": "UCX_SM_TowerW",
+          "triangles_after_triangulation": 32,
+          "collision": true
+        }
+      ],
+      "render_triangles": 1448,
+      "collision_triangles": 32
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Walls/WallMid/SM_WallMid.fbx",
+      "bytes": 39404,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "SM_WallMid",
+          "triangles_after_triangulation": 553,
+          "collision": false
+        },
+        {
+          "name": "UCX_SM_WallMid",
+          "triangles_after_triangulation": 12,
+          "collision": true
+        }
+      ],
+      "render_triangles": 553,
+      "collision_triangles": 12
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/WatchTower/SM_WatchTower.fbx",
+      "bytes": 75324,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "SM_WatchTower",
+          "triangles_after_triangulation": 1712,
+          "collision": false
+        },
+        {
+          "name": "UCX_SM_WatchTower",
+          "triangles_after_triangulation": 32,
+          "collision": true
+        }
+      ],
+      "render_triangles": 1712,
+      "collision_triangles": 32
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Windmill/SM_Windmill.fbx",
+      "bytes": 62396,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "SM_Windmill",
+          "triangles_after_triangulation": 1076,
+          "collision": false
+        },
+        {
+          "name": "UCX_SM_Windmill",
+          "triangles_after_triangulation": 32,
+          "collision": true
+        }
+      ],
+      "render_triangles": 1076,
+      "collision_triangles": 32
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Windmill/SM_Windmill_Sails.fbx",
+      "bytes": 55980,
+      "fbx_version": 7400,
+      "geometries": [
+        {
+          "name": "SM_Windmill_Wings",
+          "triangles_after_triangulation": 1102,
+          "collision": false
+        }
+      ],
+      "render_triangles": 1102,
+      "collision_triangles": 0
+    }
+  ],
+  "current": [
+    {
+      "path": "game/assets/models/coast_rocks_05/coast_rocks_05_4k.gltf",
+      "bytes": 2821,
+      "triangles_unique_meshes": 771724,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "coast_rocks_05_nor_gl",
+          "pixels": null,
+          "bytes": 17716716
+        },
+        {
+          "name": "coast_rocks_05_diff",
+          "pixels": null,
+          "bytes": 12157163
+        },
+        {
+          "name": "coast_rocks_05_rough",
+          "pixels": null,
+          "bytes": 10242175
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/kenney_survival/structure.glb",
+      "bytes": 9672,
+      "triangles_unique_meshes": 80,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "colormap",
+          "pixels": [
+            512,
+            512
+          ],
+          "bytes": 7440
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/kenney_survival/structure-roof.glb",
+      "bytes": 21740,
+      "triangles_unique_meshes": 188,
+      "mesh_count": 2,
+      "images": [
+        {
+          "name": "colormap",
+          "pixels": [
+            512,
+            512
+          ],
+          "bytes": 7440
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/kenney_survival/barrel.glb",
+      "bytes": 34256,
+      "triangles_unique_meshes": 412,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "colormap",
+          "pixels": [
+            512,
+            512
+          ],
+          "bytes": 7440
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/kenney_survival/structure-canvas.glb",
+      "bytes": 11276,
+      "triangles_unique_meshes": 96,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "colormap",
+          "pixels": [
+            512,
+            512
+          ],
+          "bytes": 7440
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/kenney_survival/box.glb",
+      "bytes": 14056,
+      "triangles_unique_meshes": 124,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "colormap",
+          "pixels": [
+            512,
+            512
+          ],
+          "bytes": 7440
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/kenney_workers/character-a.glb",
+      "bytes": 113596,
+      "triangles_unique_meshes": 72,
+      "mesh_count": 6,
+      "images": [
+        {
+          "name": "texture-a",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 20171
+        }
+      ],
+      "animations": [
+        "static",
+        "idle",
+        "walk",
+        "sprint",
+        "sit",
+        "drive",
+        "die",
+        "pick-up",
+        "emote-yes",
+        "emote-no",
+        "holding-right",
+        "holding-left",
+        "holding-both",
+        "holding-right-shoot",
+        "holding-left-shoot",
+        "holding-both-shoot",
+        "attack-melee-right",
+        "attack-melee-left",
+        "attack-kick-right",
+        "attack-kick-left",
+        "interact-right",
+        "interact-left",
+        "wheelchair-sit",
+        "wheelchair-move-forward",
+        "wheelchair-move-back",
+        "wheelchair-move-left",
+        "wheelchair-move-right"
+      ],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/SmallTree.glb",
+      "bytes": 11800,
+      "triangles_unique_meshes": 104,
+      "mesh_count": 1,
+      "images": [],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/OakTree.glb",
+      "bytes": 11796,
+      "triangles_unique_meshes": 104,
+      "mesh_count": 1,
+      "images": [],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PineTree.glb",
+      "bytes": 11796,
+      "triangles_unique_meshes": 104,
+      "mesh_count": 1,
+      "images": [],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/sand_rocks_small_01/sand_rocks_small_01_4k.gltf",
+      "bytes": 2887,
+      "triangles_unique_meshes": 739469,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "sand_rocks_small_01_nor_gl",
+          "pixels": null,
+          "bytes": 16250780
+        },
+        {
+          "name": "sand_rocks_small_01_diff",
+          "pixels": null,
+          "bytes": 8924059
+        },
+        {
+          "name": "sand_rocks_small_01_rough",
+          "pixels": null,
+          "bytes": 9389934
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/namaqualand_boulder_02/namaqualand_boulder_02_4k.gltf",
+      "bytes": 2818,
+      "triangles_unique_meshes": 97964,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "boulder_02_nor_gl",
+          "pixels": null,
+          "bytes": 15191161
+        },
+        {
+          "name": "boulder_02_diff",
+          "pixels": null,
+          "bytes": 14576436
+        },
+        {
+          "name": "boulder_02_rough",
+          "pixels": null,
+          "bytes": 10821162
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/stone_scatter/small_rock.glb",
+      "bytes": 11012,
+      "triangles_unique_meshes": 98,
+      "mesh_count": 1,
+      "images": [],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/stone_scatter/large_rock.glb",
+      "bytes": 11876,
+      "triangles_unique_meshes": 264,
+      "mesh_count": 1,
+      "images": [],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Pine_Open_B.glb",
+      "bytes": 458300,
+      "triangles_unique_meshes": 5034,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Broad_Oak_D.glb",
+      "bytes": 522864,
+      "triangles_unique_meshes": 5003,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Pine_Open_A.glb",
+      "bytes": 464368,
+      "triangles_unique_meshes": 5355,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Broad_Oak_C.glb",
+      "bytes": 523596,
+      "triangles_unique_meshes": 5003,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Broad_Oak_B.glb",
+      "bytes": 524588,
+      "triangles_unique_meshes": 5003,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Broad_Oak_A.glb",
+      "bytes": 523280,
+      "triangles_unique_meshes": 5003,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Broad_Round_A.glb",
+      "bytes": 529868,
+      "triangles_unique_meshes": 5002,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Fir_Tall_A.glb",
+      "bytes": 860308,
+      "triangles_unique_meshes": 6687,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Broad_Round_B.glb",
+      "bytes": 529676,
+      "triangles_unique_meshes": 5002,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Broad_Round_C.glb",
+      "bytes": 529580,
+      "triangles_unique_meshes": 5002,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Fir_Tall_B.glb",
+      "bytes": 694044,
+      "triangles_unique_meshes": 5410,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Broad_Scrub_A.glb",
+      "bytes": 534148,
+      "triangles_unique_meshes": 5087,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Broad_Scrub_C.glb",
+      "bytes": 532868,
+      "triangles_unique_meshes": 5087,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Broad_Scrub_B.glb",
+      "bytes": 531524,
+      "triangles_unique_meshes": 5087,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Pine_Dense_C.glb",
+      "bytes": 456456,
+      "triangles_unique_meshes": 5025,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/PolyHavenFoliage/Fir_Young_C.glb",
+      "bytes": 646824,
+      "triangles_unique_meshes": 5120,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "atlas_nor",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_diff",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 13995
+        },
+        {
+          "name": "atlas_arm",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 15959
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/TwistedTree_5.gltf",
+      "bytes": 3822,
+      "triangles_unique_meshes": 10104,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_TwistedTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 5728199
+        },
+        {
+          "name": "Bark_TwistedTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4630805
+        },
+        {
+          "name": "Leaves_TwistedTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 70353
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pine_3.gltf",
+      "bytes": 3827,
+      "triangles_unique_meshes": 4964,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaf_Pine_C",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 70055
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Plant_1_Big.gltf",
+      "bytes": 2075,
+      "triangles_unique_meshes": 360,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Leaves",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 2586432
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pebble_Square_3.gltf",
+      "bytes": 1847,
+      "triangles_unique_meshes": 52,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/CommonTree_5.gltf",
+      "bytes": 3860,
+      "triangles_unique_meshes": 3182,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaves_NormalTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 158796
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Plant_1.gltf",
+      "bytes": 2057,
+      "triangles_unique_meshes": 120,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Leaves",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 2586432
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pebble_Round_2.gltf",
+      "bytes": 1848,
+      "triangles_unique_meshes": 114,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/RockPath_Round_Small_1.gltf",
+      "bytes": 1871,
+      "triangles_unique_meshes": 998,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/RockPath_Square_Thin.gltf",
+      "bytes": 1871,
+      "triangles_unique_meshes": 1793,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pebble_Round_3.gltf",
+      "bytes": 1848,
+      "triangles_unique_meshes": 128,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/RockPath_Round_Wide.gltf",
+      "bytes": 1868,
+      "triangles_unique_meshes": 3500,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/CommonTree_4.gltf",
+      "bytes": 3865,
+      "triangles_unique_meshes": 4066,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaves_NormalTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 158796
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Petal_1.gltf",
+      "bytes": 1845,
+      "triangles_unique_meshes": 13,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Flowers",
+          "pixels": [
+            1008,
+            981
+          ],
+          "bytes": 444609
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Flower_4_Group.gltf",
+      "bytes": 3645,
+      "triangles_unique_meshes": 1690,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Leaves",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 2586432
+        },
+        {
+          "name": "Flowers",
+          "pixels": [
+            1008,
+            981
+          ],
+          "bytes": 444609
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pebble_Square_2.gltf",
+      "bytes": 1847,
+      "triangles_unique_meshes": 78,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pine_2.gltf",
+      "bytes": 3833,
+      "triangles_unique_meshes": 3648,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaf_Pine_C",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 70055
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/RockPath_Square_Wide.gltf",
+      "bytes": 1872,
+      "triangles_unique_meshes": 2256,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/RockPath_Round_Thin.gltf",
+      "bytes": 1868,
+      "triangles_unique_meshes": 2254,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/TwistedTree_4.gltf",
+      "bytes": 3817,
+      "triangles_unique_meshes": 9600,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_TwistedTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 5728199
+        },
+        {
+          "name": "Bark_TwistedTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4630805
+        },
+        {
+          "name": "Leaves_TwistedTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 70353
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/RockPath_Square_Small_2.gltf",
+      "bytes": 1873,
+      "triangles_unique_meshes": 559,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/CommonTree_3.gltf",
+      "bytes": 3864,
+      "triangles_unique_meshes": 3505,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaves_NormalTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 158796
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Plant_7.gltf",
+      "bytes": 1844,
+      "triangles_unique_meshes": 48,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Leaves",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 2586432
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pebble_Round_4.gltf",
+      "bytes": 1841,
+      "triangles_unique_meshes": 126,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Flower_3_Group.gltf",
+      "bytes": 3629,
+      "triangles_unique_meshes": 755,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Leaves",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 2586432
+        },
+        {
+          "name": "Flowers",
+          "pixels": [
+            1008,
+            981
+          ],
+          "bytes": 444609
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/TwistedTree_3.gltf",
+      "bytes": 3817,
+      "triangles_unique_meshes": 10089,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_TwistedTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 5728199
+        },
+        {
+          "name": "Bark_TwistedTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4630805
+        },
+        {
+          "name": "Leaves_TwistedTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 70353
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Clover_2.gltf",
+      "bytes": 2077,
+      "triangles_unique_meshes": 615,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Leaves",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 2586432
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Flower_3_Single.gltf",
+      "bytes": 3632,
+      "triangles_unique_meshes": 285,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Leaves",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 2586432
+        },
+        {
+          "name": "Flowers",
+          "pixels": [
+            1008,
+            981
+          ],
+          "bytes": 444609
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Bush_Common_Flowers.gltf",
+      "bytes": 3654,
+      "triangles_unique_meshes": 1368,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Leaves_NormalTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 158796
+        },
+        {
+          "name": "Flowers",
+          "pixels": [
+            1008,
+            981
+          ],
+          "bytes": 444609
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Grass_Wispy_Tall.gltf",
+      "bytes": 2023,
+      "triangles_unique_meshes": 622,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Grass",
+          "pixels": [
+            512,
+            512
+          ],
+          "bytes": 33605
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/DeadTree_1.gltf",
+      "bytes": 2206,
+      "triangles_unique_meshes": 6169,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_DeadTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 5728199
+        },
+        {
+          "name": "Bark_DeadTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4228870
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pine_5.gltf",
+      "bytes": 3815,
+      "triangles_unique_meshes": 1646,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaf_Pine_C",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 70055
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Rock_Medium_2.gltf",
+      "bytes": 1825,
+      "triangles_unique_meshes": 244,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Rocks_Diffuse",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 2517398
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pebble_Square_5.gltf",
+      "bytes": 1849,
+      "triangles_unique_meshes": 72,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pebble_Square_4.gltf",
+      "bytes": 1846,
+      "triangles_unique_meshes": 48,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Rock_Medium_3.gltf",
+      "bytes": 1832,
+      "triangles_unique_meshes": 522,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Rocks_Diffuse",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 2517398
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pine_4.gltf",
+      "bytes": 3831,
+      "triangles_unique_meshes": 3370,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaf_Pine_C",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 70055
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Plant_7_Big.gltf",
+      "bytes": 1857,
+      "triangles_unique_meshes": 112,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Leaves",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 2586432
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/TwistedTree_2.gltf",
+      "bytes": 3815,
+      "triangles_unique_meshes": 9134,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_TwistedTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 5728199
+        },
+        {
+          "name": "Bark_TwistedTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4630805
+        },
+        {
+          "name": "Leaves_TwistedTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 70353
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pebble_Round_5.gltf",
+      "bytes": 1846,
+      "triangles_unique_meshes": 124,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/CommonTree_2.gltf",
+      "bytes": 3866,
+      "triangles_unique_meshes": 5648,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaves_NormalTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 158796
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Grass_Wispy_Short.gltf",
+      "bytes": 2025,
+      "triangles_unique_meshes": 494,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Grass",
+          "pixels": [
+            512,
+            512
+          ],
+          "bytes": 33605
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/RockPath_Square_Small_3.gltf",
+      "bytes": 1873,
+      "triangles_unique_meshes": 568,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Mushroom_Common.gltf",
+      "bytes": 1822,
+      "triangles_unique_meshes": 880,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Mushrooms",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 1208660
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/CommonTree_1.gltf",
+      "bytes": 3869,
+      "triangles_unique_meshes": 6265,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaves_NormalTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 158796
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Petal_4.gltf",
+      "bytes": 1848,
+      "triangles_unique_meshes": 30,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Flowers",
+          "pixels": [
+            1008,
+            981
+          ],
+          "bytes": 444609
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/DeadTree_3.gltf",
+      "bytes": 2211,
+      "triangles_unique_meshes": 5802,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_DeadTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 5728199
+        },
+        {
+          "name": "Bark_DeadTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4228870
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/TwistedTree_1.gltf",
+      "bytes": 3819,
+      "triangles_unique_meshes": 9564,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_TwistedTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 5728199
+        },
+        {
+          "name": "Bark_TwistedTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4630805
+        },
+        {
+          "name": "Leaves_TwistedTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 70353
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Clover_1.gltf",
+      "bytes": 2074,
+      "triangles_unique_meshes": 379,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Leaves",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 2586432
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Flower_4_Single.gltf",
+      "bytes": 3631,
+      "triangles_unique_meshes": 642,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Leaves",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 2586432
+        },
+        {
+          "name": "Flowers",
+          "pixels": [
+            1008,
+            981
+          ],
+          "bytes": 444609
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Fern_1.gltf",
+      "bytes": 2058,
+      "triangles_unique_meshes": 288,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Leaves",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 2586432
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/DeadTree_2.gltf",
+      "bytes": 2213,
+      "triangles_unique_meshes": 6557,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_DeadTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 5728199
+        },
+        {
+          "name": "Bark_DeadTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4228870
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Grass_Common_Tall.gltf",
+      "bytes": 2025,
+      "triangles_unique_meshes": 326,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Grass",
+          "pixels": [
+            512,
+            512
+          ],
+          "bytes": 33605
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Rock_Medium_1.gltf",
+      "bytes": 1831,
+      "triangles_unique_meshes": 342,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Rocks_Diffuse",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 2517398
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pebble_Square_6.gltf",
+      "bytes": 1850,
+      "triangles_unique_meshes": 65,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Petal_5.gltf",
+      "bytes": 1844,
+      "triangles_unique_meshes": 15,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Flowers",
+          "pixels": [
+            1008,
+            981
+          ],
+          "bytes": 444609
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/RockPath_Square_Small_1.gltf",
+      "bytes": 1874,
+      "triangles_unique_meshes": 783,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Mushroom_Laetiporus.gltf",
+      "bytes": 1833,
+      "triangles_unique_meshes": 3216,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Mushrooms",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 1208660
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Petal_2.gltf",
+      "bytes": 1825,
+      "triangles_unique_meshes": 15,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Flowers",
+          "pixels": [
+            1008,
+            981
+          ],
+          "bytes": 444609
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pebble_Square_1.gltf",
+      "bytes": 1850,
+      "triangles_unique_meshes": 104,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pine_1.gltf",
+      "bytes": 3832,
+      "triangles_unique_meshes": 3947,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaf_Pine_C",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 70055
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/DeadTree_5.gltf",
+      "bytes": 2211,
+      "triangles_unique_meshes": 5648,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_DeadTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 5728199
+        },
+        {
+          "name": "Bark_DeadTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4228870
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Grass_Common_Short.gltf",
+      "bytes": 2023,
+      "triangles_unique_meshes": 155,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Grass",
+          "pixels": [
+            512,
+            512
+          ],
+          "bytes": 33605
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/RockPath_Round_Small_3.gltf",
+      "bytes": 1872,
+      "triangles_unique_meshes": 1002,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Pebble_Round_1.gltf",
+      "bytes": 1850,
+      "triangles_unique_meshes": 136,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/RockPath_Round_Small_2.gltf",
+      "bytes": 1873,
+      "triangles_unique_meshes": 1126,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "PathRocks_Diffuse",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 811732
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/DeadTree_4.gltf",
+      "bytes": 2211,
+      "triangles_unique_meshes": 5702,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_DeadTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 5728199
+        },
+        {
+          "name": "Bark_DeadTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4228870
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Bush_Common.gltf",
+      "bytes": 2101,
+      "triangles_unique_meshes": 900,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Leaves_TwistedTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 70353
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/StylizedNature/Petal_3.gltf",
+      "bytes": 1849,
+      "triangles_unique_meshes": 15,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Flowers",
+          "pixels": [
+            1008,
+            981
+          ],
+          "bytes": 444609
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/QuaterniusMegaKit/TwistedTree_5.gltf",
+      "bytes": 3822,
+      "triangles_unique_meshes": 10104,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_TwistedTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 5728199
+        },
+        {
+          "name": "Bark_TwistedTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4630805
+        },
+        {
+          "name": "Leaves_TwistedTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 70353
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/QuaterniusMegaKit/Pine_3.gltf",
+      "bytes": 3827,
+      "triangles_unique_meshes": 4964,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaf_Pine_C",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 70055
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/QuaterniusMegaKit/CommonTree_5.gltf",
+      "bytes": 3860,
+      "triangles_unique_meshes": 3182,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaves_NormalTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 158796
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/QuaterniusMegaKit/CommonTree_4.gltf",
+      "bytes": 3865,
+      "triangles_unique_meshes": 4066,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaves_NormalTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 158796
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/QuaterniusMegaKit/Pine_2.gltf",
+      "bytes": 3833,
+      "triangles_unique_meshes": 3648,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaf_Pine_C",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 70055
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/QuaterniusMegaKit/TwistedTree_4.gltf",
+      "bytes": 3817,
+      "triangles_unique_meshes": 9600,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_TwistedTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 5728199
+        },
+        {
+          "name": "Bark_TwistedTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4630805
+        },
+        {
+          "name": "Leaves_TwistedTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 70353
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/QuaterniusMegaKit/CommonTree_3.gltf",
+      "bytes": 3864,
+      "triangles_unique_meshes": 3505,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaves_NormalTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 158796
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/QuaterniusMegaKit/TwistedTree_3.gltf",
+      "bytes": 3817,
+      "triangles_unique_meshes": 10089,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_TwistedTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 5728199
+        },
+        {
+          "name": "Bark_TwistedTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4630805
+        },
+        {
+          "name": "Leaves_TwistedTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 70353
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/QuaterniusMegaKit/Pine_5.gltf",
+      "bytes": 3815,
+      "triangles_unique_meshes": 1646,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaf_Pine_C",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 70055
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/QuaterniusMegaKit/Pine_4.gltf",
+      "bytes": 3831,
+      "triangles_unique_meshes": 3370,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaf_Pine_C",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 70055
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/QuaterniusMegaKit/TwistedTree_2.gltf",
+      "bytes": 3815,
+      "triangles_unique_meshes": 9134,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_TwistedTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 5728199
+        },
+        {
+          "name": "Bark_TwistedTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4630805
+        },
+        {
+          "name": "Leaves_TwistedTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 70353
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/QuaterniusMegaKit/CommonTree_2.gltf",
+      "bytes": 3866,
+      "triangles_unique_meshes": 5648,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaves_NormalTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 158796
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/QuaterniusMegaKit/CommonTree_1.gltf",
+      "bytes": 3869,
+      "triangles_unique_meshes": 6265,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaves_NormalTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 158796
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/QuaterniusMegaKit/TwistedTree_1.gltf",
+      "bytes": 3819,
+      "triangles_unique_meshes": 9564,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_TwistedTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 5728199
+        },
+        {
+          "name": "Bark_TwistedTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4630805
+        },
+        {
+          "name": "Leaves_TwistedTree_C",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "bytes": 70353
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    },
+    {
+      "path": "game/assets/models/trees/QuaterniusMegaKit/Pine_1.gltf",
+      "bytes": 3832,
+      "triangles_unique_meshes": 3947,
+      "mesh_count": 1,
+      "images": [
+        {
+          "name": "Bark_NormalTree_Normal",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 4384496
+        },
+        {
+          "name": "Bark_NormalTree",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 3894788
+        },
+        {
+          "name": "Leaf_Pine_C",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "bytes": 70055
+        }
+      ],
+      "animations": [],
+      "skins": 0,
+      "primitive_modes": [
+        4
+      ]
+    }
+  ],
+  "highlands_textures": [
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/MiscProps/TextureMaps/T_Props_metalness.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 340610
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/MiscProps/TextureMaps/T_Props_alpha.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 481220
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/MiscProps/TextureMaps/T_Props_roughness.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 5108421
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/MiscProps/TextureMaps/T_Props_normal.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 80117398
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/MiscProps/TextureMaps/T_Props_diffuse.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 14194993
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Barracks/TextureMaps/T_Barracks_normal.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 76086786
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Barracks/TextureMaps/T_Barracks_diffuse.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 16202183
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Barracks/TextureMaps/T_Barracks_roughness.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 6251189
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Barracks/TextureMaps/T_Barracks_alpha.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 978143
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Barracks/TextureMaps/T_Barracks_metalness.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 328102
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/WatchTower/TextureMaps/T_WatchTower_diffuse.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 16408648
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/WatchTower/TextureMaps/T_WatchTower_normal.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 73549495
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/WatchTower/TextureMaps/T_WatchTower_metalness.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 308384
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/WatchTower/TextureMaps/T_WatchTower_alpha.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 1238927
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/WatchTower/TextureMaps/T_WatchTower_roughness.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 6046542
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Hut/TextureMaps/T_Hut_alpha.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 517713
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Hut/TextureMaps/T_Hut_diffuse.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 15938106
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Hut/TextureMaps/T_Hut_roughness.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 5523294
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Hut/TextureMaps/T_Hut_normal.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 75412090
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Windmill/TextureMaps/T_Windmill_metalness.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 308731
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Windmill/TextureMaps/T_Windmill_diffuse.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 17177916
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Windmill/TextureMaps/T_Windmill_alpha.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 1237889
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Windmill/TextureMaps/T_Windmill_normal.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 77593082
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Windmill/TextureMaps/T_Windmill_roughness.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 6375688
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/TownCenter/TextureMaps/T_TownCenter_alpha.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 1065040
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/TownCenter/TextureMaps/T_TownCenter_roughness.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 7484259
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/TownCenter/TextureMaps/T_TownCenter_metalness.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 315049
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/TownCenter/TextureMaps/T_TownCenter_normal.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 75948528
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/TownCenter/TextureMaps/T_TownCenter_diffuse.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 17819914
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Walls/WallMid/TextureMaps/T_WallMid_diffuse.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 14361206
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Walls/WallMid/TextureMaps/T_WallMid_normal.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 87318285
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Walls/WallMid/TextureMaps/T_WallMid_roughness.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 3418575
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Walls/WallMid/TextureMaps/T_WallMid_alpha.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 369522
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Walls/Tower/TextureMaps/T_Tower_metalness.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 310434
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Walls/Tower/TextureMaps/T_Tower_diffuse.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 13366298
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Walls/Tower/TextureMaps/T_Tower_alpha.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 765207
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Walls/Tower/TextureMaps/T_Tower_roughness.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 4216810
+    },
+    {
+      "path": "/Users/devendrashahithakuri/Work/gopala-assets/buildings/highlands-fantasy__CC0/Walls/Tower/TextureMaps/T_Tower_normal.png",
+      "pixels": [
+        4096,
+        4096
+      ],
+      "bytes": 68152891
+    }
+  ]
+}

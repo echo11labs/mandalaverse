@@ -1,0 +1,45 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "script": "run_nature_model_tests.gd",
+      "ok": true,
+      "exit_code": 0,
+      "report": {
+        "checks": 54,
+        "failures": [],
+        "local_chunks": 0,
+        "ok": true,
+        "population": 100940,
+        "variants": {
+          "Broad_Oak_A": "res://assets/models/nature/kaykit/Tree_1_A.glb",
+          "Broad_Oak_B": "res://assets/models/nature/kaykit/Tree_1_B.glb",
+          "Broad_Oak_C": "res://assets/models/nature/kaykit/Tree_3_A.glb",
+          "Broad_Oak_D": "res://assets/models/nature/kaykit/Tree_3_B.glb",
+          "Broad_Round_A": "res://assets/models/nature/kaykit/Tree_4_A.glb",
+          "Broad_Round_B": "res://assets/models/nature/kaykit/Tree_4_B.glb",
+          "Broad_Round_C": "res://assets/models/nature/kaykit/Tree_3_B.glb",
+          "Broad_Scrub_A": "res://assets/models/nature/kaykit/Tree_4_A.glb",
+          "Broad_Scrub_B": "res://assets/models/nature/kaykit/Tree_4_B.glb",
+          "Broad_Scrub_C": "res://assets/models/nature/kaykit/Tree_1_B.glb",
+          "Fir_Tall_A": "res://assets/models/nature/kaykit/Tree_2_A.glb",
+          "Fir_Tall_B": "res://assets/models/nature/kaykit/Tree_2_B.glb",
+          "Fir_Young_C": "res://assets/models/nature/kaykit/Tree_2_B.glb",
+          "Pine_Dense_C": "res://assets/models/nature/kaykit/Tree_2_A.glb",
+          "Pine_Open_A": "res://assets/models/nature/kaykit/Tree_2_A.glb",
+          "Pine_Open_B": "res://assets/models/nature/kaykit/Tree_2_B.glb"
+        }
+      }
+    },
+    {
+      "script": "run_scale_standard_tests.gd",
+      "ok": true,
+      "exit_code": 0,
+      "report": {
+        "checks": 174,
+        "failures": [],
+        "ok": true
+      }
+    }
+  ]
+}

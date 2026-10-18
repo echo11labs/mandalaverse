@@ -1,0 +1,20 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 90.5 - Compatibility - Using Device: Apple - Apple M4 Pro
+
+[MCPRuntimeServer] port: scanning 6570-6585 (default)
+[MCPRuntimeServer] listening on 127.0.0.1:6570
+[MCPRegistry] runtime port 6570 registered for /users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/nep-all/game
+FOREST_PENDING_VISUAL_REVIEW loading submitted bake: res://data/forest/kathmandu_forest.scn
+BENCH_WINDOW=0 tick=310 active=39
+BENCH_WINDOW=1 tick=342 active=38
+BENCH_WINDOW=2 tick=375 active=37
+BENCH_WINDOW=3 tick=408 active=38
+BENCH_WINDOW=4 tick=440 active=38
+BENCH_WINDOW=5 tick=472 active=37
+BENCH_WINDOW=6 tick=504 active=39
+BENCH_WINDOW=7 tick=537 active=38
+BENCH_WINDOW=8 tick=568 active=37
+BENCH_WINDOW=9 tick=599 active=39
+BENCH_WINDOW=10 tick=630 active=38
+BENCH_WINDOW=11 tick=662 active=38
+GOPALA_TEST_REPORT={"checks":4,"failures":[],"ok":true}

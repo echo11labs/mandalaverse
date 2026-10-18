@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "author": "Kenney",
+  "license": "CC0-1.0",
+  "version": "2.0",
+  "source_url": "https://kenney.nl/assets/blocky-characters",
+  "source_archive": "kenney_blocky-characters_20.zip",
+  "archive_sha256": "5e123859aa0c1598342b600c6db197024a1d63eb9ec531398b310725f589887e",
+  "scope": "Temporary stylized prototype art; not historical evidence",
+  "files": {
+    "character-a.glb": "8ee5dae167ec589863f6bba222467eb90ace8be357a4c5abfcab289290181616",
+    "Textures/texture-a.png": "257e944c582ce7cda206fbd8ceb717be648f9721756baf377a36478c11c0059a",
+    "License.txt": "610fec89c16826112e9d6b80497b726c43fea0e42c9cd9d7cb081f8ad550c0ec"
+  }
+}

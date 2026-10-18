@@ -1,0 +1,100 @@
+{
+  "task": "G1-01",
+  "code_commit": "43bdb37c416cf7bf682156a84739521666a0b8fa",
+  "scope": "Every tracked .gd/.tscn/.tres/project.godot scanned for literal res:// paths into ignored, untracked content. Dynamic/generated paths are not guaranteed by this scan.",
+  "ignored_references": [
+    {
+      "file": "game/addons/flatten_for_llm/flatten_for_llm_dock.gd",
+      "line": 5,
+      "resource": "res://.godot/flatten_for_llm_config.ini",
+      "exists_locally": false
+    },
+    {
+      "file": "game/addons/godot_mcp_toolkit/contract/mcp_toolkit_error.gd",
+      "line": 106,
+      "resource": "res://scenes/main.tscn",
+      "exists_locally": true
+    },
+    {
+      "file": "game/addons/godot_mcp_toolkit/core/export_strip.gd",
+      "line": 4,
+      "resource": "res://.mcp.json",
+      "exists_locally": true
+    },
+    {
+      "file": "game/addons/godot_mcp_toolkit/core/export_strip.gd",
+      "line": 20,
+      "resource": "res://.mcp.json",
+      "exists_locally": true
+    },
+    {
+      "file": "game/project.godot",
+      "line": 34,
+      "resource": "res://addons/at-icons/plugin.cfg",
+      "exists_locally": true
+    }
+  ],
+  "mvp_or_kathmandu_scene_references_to_excluded_content": [],
+  "ignored_reference_classification": {
+    "res://addons/at-icons/plugin.cfg": "Enabled editor plugin configuration excluded by approved nine-SVG subset; requires a follow-up decision.",
+    "res://scenes/main.tscn": "Upstream toolkit example text in error documentation, not a gameplay load.",
+    "res://.godot/flatten_for_llm_config.ini": "Runtime/editor configuration output.",
+    "res://.mcp.json": "Local MCP configuration explicitly stripped from exports."
+  },
+  "clean_checkout": {
+    "commit": "43bdb37c416cf7bf682156a84739521666a0b8fa",
+    "pinned_tools": "Shared original .tools via temporary ignored symlink; no excluded game content copied.",
+    "command": "python3 tools/verify.py",
+    "result": {
+      "ok": false,
+      "engine": "4.7.2.stable.official.ed1daf0bf",
+      "stages": [
+        {
+          "stage": "import",
+          "ok": false,
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 9.12,
+          "log": "reports/local/import.log",
+          "warnings": []
+        }
+      ],
+      "scope": "Development import, authored scripts, content invariants and headless scene execution. No export, simulation, GPU performance or final art claim."
+    },
+    "diagnostics": [
+      "ERROR: Can't open dynamic library: /Users/devendrashahithakuri/.codex/worktrees/g1-01-cleancheck/Nep-All/game/addons/godotiles/bin/macos/libgodotiles.dylib. Error: dlopen(/Users/devendrashahithakuri/.codex/worktrees/g1-01-cleancheck/Nep-All/game/addons/godotiles/bin/macos/libgodotiles.dylib, 0x0002): tried: '/Users/devendrashahithakuri/.codex/worktrees/g1-01-cleancheck/Nep-All/game/addons/godotiles/bin/macos/libgodotiles.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/Users/devendrashahithakuri/.codex/worktrees/g1-01-cleancheck/Nep-All/game/addons/godotiles/bin/macos/libgodotiles.dylib' (no such file), '/Users/devendrashahithakuri/.codex/worktrees/g1-01-cleancheck/Nep-All/game/addons/godotiles/bin/macos/libgodotiles.dylib' (no such file).",
+      "ERROR: Can't open GDExtension dynamic library: 'res://addons/godotiles/godotiles.gdextension'.",
+      "ERROR: Signal 'script_classes_updated' is already connected to given callable 'GDScript::_mark_dirty' in that object.",
+      "ERROR: Can't open dynamic library: /Users/devendrashahithakuri/.codex/worktrees/g1-01-cleancheck/Nep-All/game/addons/godotiles/bin/macos/libgodotiles.dylib. Error: dlopen(/Users/devendrashahithakuri/.codex/worktrees/g1-01-cleancheck/Nep-All/game/addons/godotiles/bin/macos/libgodotiles.dylib, 0x0002): tried: '/Users/devendrashahithakuri/.codex/worktrees/g1-01-cleancheck/Nep-All/game/addons/godotiles/bin/macos/libgodotiles.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/Users/devendrashahithakuri/.codex/worktrees/g1-01-cleancheck/Nep-All/game/addons/godotiles/bin/macos/libgodotiles.dylib' (no such file), '/Users/devendrashahithakuri/.codex/worktrees/g1-01-cleancheck/Nep-All/game/addons/godotiles/bin/macos/libgodotiles.dylib' (no such file).",
+      "ERROR: Can't open GDExtension dynamic library: 'res://addons/godotiles/godotiles.gdextension'.",
+      "ERROR: Signal 'script_classes_updated' is already connected to given callable 'GDScript::_mark_dirty' in that object.",
+      "ERROR: Required object \"rp_logger\" is null."
+    ],
+    "log": "reports/G1-01-clean-import.log",
+    "limitation": "Full suite did not run because clean import failed. No code fixes were made under the checkpoint task."
+  },
+  "workspace_verification": {
+    "command": "python3 tools/verify.py",
+    "ok": true,
+    "stages": 158,
+    "warnings": [
+      "Instantiated TerrainNetworkConfig used as default value for TerrainStreamer's \"network\" property.",
+      "Instantiated TerrainRenderingConfig used as default value for TerrainStreamer's \"rendering\" property.",
+      "Instantiated TerrainStreamingConfig used as default value for TerrainStreamer's \"streaming\" property.",
+      "Instantiated TerrainWorldConfig used as default value for TerrainStreamer's \"world\" property."
+    ]
+  },
+  "excluded_categories": [
+    "EmacEArt packs, demo scenes/scripts/shaders/batch files",
+    "Unverified Rocks Sample Pack FBXs/scenes and oversized Rock GLBs/PNGs",
+    "All at-icons content except nine used SVGs/import settings and LICENSE.txt",
+    "Unused godoban addon and GUIDE examples",
+    "Godotiles native binaries",
+    "Unadmitted Poly Haven rock folders, HDRIs and terrain textures",
+    "Unverified generated water textures, sim compute shaders, exported HTML docs and generator",
+    "Icon picker HTML and asset demo",
+    "Local .freebuff, .tools, builds, zip archives"
+  ],
+  "code_edit_scope": "Existing code checkpointed as-is; only .gitignore and checkpoint evidence authored in G1-01.",
+  "whitespace_check": "git diff --check reported nine existing trailing-whitespace lines in construction_placement_service.gd; left unchanged under no-code-edit task."
+}

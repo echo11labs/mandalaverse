@@ -1,0 +1,13 @@
+{
+	"context": "Local Apple M4 Pro GPU run; other editor/runtime processes may affect timing; geometry counters are the optimization evidence.",
+	"draw_calls": 85,
+	"focus": [
+		-74.375,
+		12.3250007629395
+	],
+	"mean_frame_ms": 8.3336,
+	"objects": 116,
+	"primitives": 148297,
+	"sample_frames": 90,
+	"span_metres": 40
+}

@@ -1,6 +1,6 @@
 # GOPALA toolchain and acceptance
 
-The local engine is Godot 4.7.2 Standard, official build `ed1daf0bf`, under `.tools/godot/Godot.app`. Use `python3 tools/godot.py` to run it against `game/`. `.tools/` contains pinned local dependencies and is excluded from version control. Export templates have not been installed or export-tested.
+The local engine is Godot 4.7.2 Standard, official build `ed1daf0bf`, under `.tools/godot/Godot.app`. Use `python3 tools/godot.py` to run it against `game/`. `.tools/` contains pinned local dependencies and is excluded from version control. Matching official 4.7.2 export templates are stored project-locally in `.tools/godot/templates/`; only `macos.zip` is used. `python3 tools/package_mvp.py` produces the isolated macOS MVP package and `reports/mvp-build.json`, with editor MCP/AI autoloads omitted. The local app is ad-hoc signed and not notarized.
 
 ## Verification
 
@@ -25,3 +25,9 @@ The content lab, tested tooling and generated sprites are development infrastruc
 ## Geographic import environment
 
 The project-local Python environment includes NumPy 2.5.3, Rasterio 1.5.1 and SciPy 1.18.1. Installation initially failed due to intermittent disk-full errors, then completed after space became available. The final pip dependency check reported no broken requirements. Geographic conversion and source-coordinate tests are described in docs/GOPALA-Kathmandu-Geography.md. Original terrain-download and country-archive caches were removed after processing; their SHA-256 receipts and download URLs are retained.
+
+## MVP package acceptance
+
+`tools/package_mvp.py` produces the local macOS app and accessible licenses/map-data notices. The required source gate currently passes 158 stages with four existing TerrainStreamer default-resource warnings; scale revision 10 passes 136 checks. `reports/mvp-build.json` records the exact package hash and clean import/export diagnostics.
+
+The actual release executable passes headless normal-startup/clean-shutdown smoke validation. Official 4.7.2 release templates ignore external script overrides, so the accelerated scenario driver must use the pinned test-capable engine with `--main-pack` pointing at the app’s actual PCK. This tests exported gameplay/data with an external test driver; it is not a claim that the release executable itself ran that driver. See `reports/mvp-package-acceptance.json` for results and scope. Human gameplay/art acceptance and low-end performance remain separate.

@@ -1,0 +1,17 @@
+{
+  "standard": "game/data/standards/world_scale.json",
+  "audit": "reports/scale-audit.json",
+  "captures": [
+    "reports/manual/stone-scale-close.png",
+    "reports/manual/stone-scale-management.png"
+  ],
+  "renderer": "Compatibility OpenGL 4.1 Metal, Apple M4 Pro",
+  "visual_review": "Close view confirms a low patch of small individual stones beside the full 2-unit villager. Management view retains small patches rather than oversized boulders. Picking uses separate bounds.",
+  "interaction": {
+    "right_click_ordered": true,
+    "delivery_incremented_stone": true,
+    "stored_stone_after": 51
+  },
+  "limitations": "Prototype models/worker; no performance or final player acceptance claim. Geographic scale remains separate from schematic display dimensions.",
+  "status": "Superseded: revision 1 used incorrect enlarged actor dimensions; use physical-human-river.png and revision 2 scale audit"
+}

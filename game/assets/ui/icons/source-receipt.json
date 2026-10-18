@@ -1,0 +1,108 @@
+{
+  "library": "AT Icons",
+  "license": "MIT",
+  "source": "Local vendored game/addons/at-icons library",
+  "admitted": "2026-10-12",
+  "assets": [
+    {
+      "file": "building.svg",
+      "source": "game/addons/at-icons/mesh/building.svg",
+      "sha256": "bec34166ffaf4a8d5f7f050fdb10c1ba1a2226a367cd6545822756599ee45994"
+    },
+    {
+      "file": "castle.svg",
+      "source": "game/addons/at-icons/mesh/castle.svg",
+      "sha256": "ad5c8615a218d0efb7e42a169a562afc9c8b1f80ade9008dba998736072222b1"
+    },
+    {
+      "file": "chest.svg",
+      "source": "game/addons/at-icons/mesh/chest.svg",
+      "sha256": "2d72f3577b6cee6409f391e57aa51a40a1fc2dd73695a6a684580543064a9cd9"
+    },
+    {
+      "file": "cog.svg",
+      "source": "game/addons/at-icons/mesh/cog.svg",
+      "sha256": "8437f0cea5fc3f3d4942288defbfc33f6cb49de0b1972ce18c660869e2e6eaba"
+    },
+    {
+      "file": "compass.svg",
+      "source": "game/addons/at-icons/mesh/compass.svg",
+      "sha256": "8bfd05bdd1daad2d86c829e166b951dfc267919d0ace4c274ba096abe624eda0"
+    },
+    {
+      "file": "droplet.svg",
+      "source": "game/addons/at-icons/mesh/droplet.svg",
+      "sha256": "a751f6eabd7894dcd270fd05c170f217d7bc8ff64fcabad840bb8cc811a097ea"
+    },
+    {
+      "file": "floppy_disk.svg",
+      "source": "game/addons/at-icons/mesh/floppy_disk.svg",
+      "sha256": "eb99750d84cc260805dca23ae635aaefd88304a2b8334b39adfc292174c8fa95"
+    },
+    {
+      "file": "folder_open.svg",
+      "source": "game/addons/at-icons/mesh/folder_open.svg",
+      "sha256": "3ee2567d8fcbb459a28b20a5c5005abd32a935b6f3cf62018d6117bd3c260a9f"
+    },
+    {
+      "file": "grass.svg",
+      "source": "game/addons/at-icons/mesh/grass.svg",
+      "sha256": "e76c1ef970e6e37897ce7227e12c073a639e8d2bf0997b320c97ebe16f0d6543"
+    },
+    {
+      "file": "grid_fine.svg",
+      "source": "game/addons/at-icons/mesh/grid_fine.svg",
+      "sha256": "de8bb96bd4f2e4654e84ab55e2a66b50d17aa94094eb210d2c33358ce341aa98"
+    },
+    {
+      "file": "hammer.svg",
+      "source": "game/addons/at-icons/mesh/hammer.svg",
+      "sha256": "4f3d18b68b61506815e9e1e11a3ec2e789a78015d32624350e323a42c1979ff2"
+    },
+    {
+      "file": "house.svg",
+      "source": "game/addons/at-icons/mesh/house.svg",
+      "sha256": "f8cbb4874a1b4dd363d4bd31f7f9a5e7b352a99250af7243548137b6908daf1a"
+    },
+    {
+      "file": "map.svg",
+      "source": "game/addons/at-icons/mesh/map.svg",
+      "sha256": "5caa2fa488dee4ff31ca8d3943c1fe761f8adfabf623e4724dea4d6ca88266c3"
+    },
+    {
+      "file": "meat.svg",
+      "source": "game/addons/at-icons/mesh/meat.svg",
+      "sha256": "84be2872c8b524a1ba3e2d97f5e7b41ea67ec8616ac39da1df17838645400e64"
+    },
+    {
+      "file": "person_body.svg",
+      "source": "game/addons/at-icons/mesh/person_body.svg",
+      "sha256": "07e78b752f5a1653a9b14e0e97110f3508922bcdd570010fe44113ee606d596d"
+    },
+    {
+      "file": "road.svg",
+      "source": "game/addons/at-icons/mesh/road.svg",
+      "sha256": "d4df49080c2624a5b7643075fdf373223808bd69f9d54923b37efaa6e510b257"
+    },
+    {
+      "file": "shopping_basket.svg",
+      "source": "game/addons/at-icons/mesh/shopping_basket.svg",
+      "sha256": "3929b05c396fde1c7946a3351afed47f1ca9fecabc3ac8b07d189835b6719389"
+    },
+    {
+      "file": "sun.svg",
+      "source": "game/addons/at-icons/mesh/sun.svg",
+      "sha256": "9fdc05c8cbfd0c53762b0e5dbcae7ae9f896e643dcd1d45162ef90801121878a"
+    },
+    {
+      "file": "tree.svg",
+      "source": "game/addons/at-icons/mesh/tree.svg",
+      "sha256": "f5c651fd0c55d23de295960dfec68194257ec97b5a3b82657cf4da7a27151d3c"
+    },
+    {
+      "file": "hourglass.svg",
+      "source": "game/addons/at-icons/mesh/hourglass.svg",
+      "sha256": "e0473f465aef4e4de6a7fed7ddfed25af2619120f9c13765e20c1ab0a140ab98"
+    }
+  ]
+}

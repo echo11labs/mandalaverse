@@ -1,0 +1,3266 @@
+{
+  "revision": "aa85db5679d65f4ef45e762cddec0d1b3f83e2a5",
+  "machine": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "hardware": {
+      "exit_code": 0,
+      "output": "Mac16,8\n25769803776",
+      "error": ""
+    },
+    "power": {
+      "exit_code": 0,
+      "output": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=22937699)\t100%; charged; 0:00 remaining present: true",
+      "error": ""
+    },
+    "thermal": {
+      "exit_code": 0,
+      "output": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+      "error": ""
+    },
+    "process_load": {
+      "exit_code": 0,
+      "output": "%CPU COMM\n  0.4 /sbin/launchd\n  0.4 /usr/libexec/logd\n  0.0 /usr/libexec/UserEventAgent\n  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  0.0 /System/Library/PrivateFrameworks/MediaRemote.framework/Support/mediaremoted\n  0.0 /usr/sbin/systemstats\n  0.0 /usr/libexec/configd\n  0.0 /System/Library/CoreServices/powerd.bundle/powerd\n  0.0 /usr/libexec/IOMFB_bics_daemon\n  0.0 /usr/libexec/remoted\n  0.0 /System/Library/PrivateFrameworks/CoreSpeech.framework/corespeechd_system\n  0.0 /usr/libexec/watchdogd\n  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  0.0 /usr/libexec/kernelmanagerd\n  0.0 /usr/libexec/diskarbitrationd\n  0.0 /usr/sbin/syslogd\n  0.0 /usr/libexec/thermalmonitord\n  0.0 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored\n  0.0 /usr/libexec/xprotectd\n  0.6 /usr/libexec/opendirectoryd\n  0.0 /System/Library/PrivateFrameworks/ApplePushService.framework/apsd\n  0.0 /usr/sbin/httpd\n  0.0 /System/Library/CoreServices/launchservicesd\n  0.0 /usr/libexec/timed\n  0.0 /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/Resources/usbmuxd\n  0.0 /usr/sbin/securityd\n  0.0 /usr/libexec/locationd\n  0.0 /usr/libexec/nesessionmanager\n  0.0 autofsd\n  0.0 /usr/libexec/dasd\n  0.0 /usr/libexec/corerepaird\n  0.0 /usr/sbin/distnoted\n  0.0 /System/Library/CoreServices/logind\n  0.0 /System/Library/PrivateFrameworks/GenerationalStorage.framework/Versions/A/Support/revisiond\n  0.0 /usr/sbin/KernelEventAgent\n  0.0 /usr/libexec/usermanagerd\n  0.7 /usr/sbin/bluetoothd\n  0.3 /usr/sbin/notifyd\n  0.1 /usr/libexec/corebrightnessd\n  0.0 /usr/libexec/AirPlayXPCHelper\n  0.0 /System/Library/Frameworks/CoreMediaIO.framework/Versions/A/Resources/com.apple.cmio.registerassistantservice\n  0.0 /System/Library/PrivateFrameworks/CoreAnalytics.framework/Support/analyticsd\n  0.0 /System/Library/PrivateFrameworks/TCC.framework/Support/tccd\n  0.0 /usr/sbin/cfprefsd\n 32.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  0.0 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  0.0 /System/Library/CoreServices/coreservicesd\n  2.6 /usr/sbin/coreaudiod\n  0.0 /usr/libexec/trustd\n  0.6 /usr/libexec/runningboardd\n  0.0 /usr/libexec/lsd\n  0.0 /usr/libexec/apfsd\n  0.0 /usr/libexec/nsurlsessiond\n  0.0 /usr/libexec/biometrickitd\n  0.0 /System/Library/PrivateFrameworks/SystemStatusServer.framework/Support/systemstatusd\n  0.0 /usr/libexec/eligibilityd\n  0.0 /usr/sbin/distnoted\n  0.0 /usr/sbin/distnoted\n  0.0 /usr/libexec/ApplicationFirewall/socketfilterfw\n  0.0 /usr/libexec/syspolicyd\n  0.0 /usr/sbin/cron\n  0.0 /usr/libexec/symptomsd\n  0.0 /usr/sbin/mDNSResponder\n  0.0 /usr/sbin/distnoted\n  0.0 /usr/libexec/airportd\n  0.0 /System/Library/Frameworks/Security.framework/Versions/A/XPCServices/authd.xpc/Contents/MacOS/authd\n  0.0 /usr/libexec/com.apple.cmio.videodriverkithostextension.systemextension/Contents/MacOS/com.apple.cmio.videodriverkithostextension\n  0.0 /usr/libexec/cameracaptured\n  0.0 /System/Library/Frameworks/CoreMediaIO.framework/Versions/A/Resources/UVCAssistant.systemextension/Contents/MacOS/UVCAssistant\n  0.0 /System/Library/CoreServices/appleeventsd\n  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  0.0 /System/Library/CoreServices/Software Update.app/Contents/Resources/suhelperd\n  0.0 /usr/sbin/distnoted\n  0.0 /usr/sbin/distnoted\n  0.0 /System/Library/CoreServices/TimeMachine/backupd\n  1.5 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n  0.0 /System/Library/DriverExtensions/com.apple.DriverKit-IOUserDockChannelSerial.dext/com.apple.DriverKit-IOUserDockChannelSerial\n  0.0 /System/Library/DriverExtensions/com.apple.AppleUserHIDDrivers.dext/com.apple.AppleUserHIDDrivers\n  0.0 /Library/Application Support/com.canonical.multipass/bin/multipassd\n  0.0 /Library/PrivilegedHelperTools/com.docker.vmnetd\n  0.0 /System/Library/CoreServices/SubmitDiagInfo\n  0.0 /usr/sbin/distnoted\n  0.0 /usr/sbin/distnoted\n  0.0 Core Audio Driver (MSTeamsAudioDevice.driver)\n  0.0 /usr/libexec/audiomxd\n  0.0 /usr/sbin/mDNSResponderHelper\n  0.0 Core Audio Driver (ParrotAudioPlugin.driver)\n  0.0 /usr/libexec/audioclocksyncd\n  0.0 /usr/sbin/WirelessRadioManagerd\n  0.0 Core Audio Driver (YuJa Internal Audio.driver)\n  0.0 /usr/libexec/rosetta/oahd\n  0.0 /usr/libexec/modelmanagerd\n  0.0 /usr/libexec/audioanalyticsd\n  0.0 /usr/libexec/wifip2pd\n  0.0 /usr/sbin/distnoted\n  0.0 /usr/libexec/searchpartyd\n  0.0 /usr/sbin/distnoted\n  0.0 /System/Library/Frameworks/LocalAuthentication.framework/Support/coreauthd\n  0.0 /usr/sbin/distnoted\n  0.2 /usr/sbin/cfprefsd\n  0.0 /usr/libexec/secd\n  0.0 /usr/libexec/UserEventAgent\n  0.0 /usr/sbin/universalaccessd\n  0.0 /usr/libexec/pboard\n  0.0 /System/Library/PrivateFrameworks/BiomeStreams.framework/Support/BiomeAgent\n  0.0 /usr/libexec/lsd\n  0.0 /usr/libexec/nsurlsessiond\n  0.0 /usr/libexec/rapportd\n  0.0 /usr/sbin/usernoted\n  0.0 /usr/libexec/routined\n  0.0 /System/Library/PrivateFrameworks/UserNotificationsCore.framework/Support/usernotificationsd\n  0.0 /usr/libexec/trustd\n  0.0 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/ContextStoreAgent\n  0.0 /System/Library/Frameworks/Accounts.framework/Versions/A/Support/accountsd\n  0.0 /System/Library/PrivateFrameworks/TCC.framework/Support/tccd\n  0.0 /usr/libexec/sharingd\n  0.0 /System/Library/PrivateFrameworks/IDS.framework/identityservicesd.app/Contents/MacOS/identityservicesd\n  0.0 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n  0.0 /System/Library/Frameworks/ApplicationServices.framework/Frameworks/ATS.framework/Support/fontd\n  0.0 /System/Library/PrivateFrameworks/HomeKitDaemon.framework/Support/homed\n  0.0 /System/Library/CoreServices/talagentd\n  0.0 /System/Library/CoreServices/WiFiAgent.app/Contents/MacOS/WiFiAgent\n  0.0 /System/Library/CoreServices/sharedfilelistd\n  0.0 /usr/sbin/distnoted\n  0.0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/fontworker\n  0.0 /System/Library/PrivateFrameworks/IMCore.framework/imagent.app/Contents/MacOS/imagent\n  0.0 /System/Library/Frameworks/CryptoTokenKit.framework/ctkd\n  0.0 /System/Library/CoreServices/AccessibilityUIServer.app/Contents/MacOS/AccessibilityUIServer\n  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/corespotlightd\n  0.0 /usr/libexec/ContinuityCaptureAgent\n  0.0 /System/Library/PrivateFrameworks/ViewBridge.framework/Versions/A/XPCServices/ViewBridgeAuxiliary.xpc/Contents/MacOS/ViewBridgeAuxiliary\n  0.0 /System/Library/Frameworks/InputMethodKit.framework/Resources/imklaunchagent\n  0.0 /usr/sbin/BTLEServer\n  0.0 /System/Library/CoreServices/audioaccessoryd\n  0.0 /usr/libexec/spotlightknowledged.updater\n  0.0 /System/Library/PrivateFrameworks/FileProvider.framework/Support/fileproviderd\n  0.0 /System/Library/Input Methods/PressAndHold.app/Contents/PlugIns/PAH_Extension.appex/Contents/MacOS/PAH_Extension\n  0.0 /usr/libexec/nearbyd\n  0.0 /System/Library/CoreServices/NotificationCenter.app/Contents/MacOS/NotificationCenter\n  0.0 /System/Library/PrivateFrameworks/FamilyCircle.framework/Versions/A/Resources/familycircled\n  0.0 /usr/sbin/filecoordinationd\n  0.0 /System/Library/PrivateFrameworks/StatusKit.framework/StatusKitAgent\n  0.0 /System/Library/PrivateFrameworks/ChronoCore.framework/Support/chronod\n  0.0 /usr/libexec/duetexpertd\n  0.0 /System/Library/PrivateFrameworks/CommunicationsFilter.framework/CMFSyncAgent\n  0.0 /System/Library/PrivateFrameworks/MediaRemote.framework/Support/mediaremoteagent\n  0.0 /System/Library/PrivateFrameworks/UserActivity.framework/Agents/useractivityd\n  0.0 /usr/libexec/avconferenced\n  0.0 /System/Library/PrivateFrameworks/AssistantServices.framework/Versions/A/Support/assistantd\n  0.0 /usr/libexec/rtcreportingd\n  0.0 /usr/sbin/distnoted\n  0.0 /usr/sbin/netbiosd\n  0.0 /Applications/WhatsApp.app/Contents/PlugIns/ServiceExtension.appex/Contents/MacOS/ServiceExtension\n  0.0 /usr/sbin/distnoted\n  0.0 /usr/sbin/distnoted\n  0.0 /usr/sbin/systemstats\n  0.0 /System/Library/CoreServices/ControlCenter.app/Contents/MacOS/ControlCenter\n  0.0 /System/Library/PrivateFrameworks/AppleMediaServices.framework/Resources/amsaccountsd\n  0.0 /System/Library/PrivateFrameworks/IntelligenceFlowContextRuntime.framework/Versions/A/intelligencecontextd\n  0.0 /usr/sbin/httpd\n  0.0 /usr/sbin/distnoted\n  0.0 /System/Library/DriverExtensions/IOUserBluetoothSerialDriver.dext/IOUserBluetoothSerialDriver\n  0.0 /System/Library/DriverExtensions/IOUserBluetoothSerialDriver.dext/IOUserBluetoothSerialDriver\n  0.0 /System/Library/PrivateFrameworks/CoreFP.framework/Versions/A/fairplayd\n  0.0 /System/Library/CoreServices/diagnostics_agent\n  0.7 /System/Library/PrivateFrameworks/CoreSpeech.framework/corespeechd\n  0.0 /System/Library/PrivateFrameworks/CloudDocs.framework/PlugIns/com.apple.CloudDocs.iCloudDriveFileProvider.appex/Contents/MacOS/com.apple.CloudDocs.iCloudDriveFileProvider\n  0.0 /usr/sbin/distnoted\n  0.1 /usr/libexec/gamepolicyd\n  0.8 /Applications/Comet.app/Contents/MacOS/Comet\n  0.0 /System/Library/PrivateFrameworks/TextInputUIMacHelper.framework/Versions/A/XPCServices/CursorUIViewService.xpc/Contents/MacOS/CursorUIViewService\n  0.1 /Applications/Grok Bot.app/Contents/MacOS/Grok Bot\n  0.1 /Applications/ChatGPT.app/Contents/MacOS/ChatGPT\n  0.0 /Applications/Ghostty.app/Contents/MacOS/ghostty\n  0.0 /System/Library/CoreServices/Dock.app/Contents/MacOS/Dock\n  0.0 /System/Library/CoreServices/SystemUIServer.app/Contents/MacOS/SystemUIServer\n  0.0 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  0.0 /System/Library/CoreServices/WallpaperAgent.app/Contents/MacOS/WallpaperAgent\n  0.0 automountd\n  0.0 /System/Library/PrivateFrameworks/AMPDevices.framework/Versions/A/Support/AMPDeviceDiscoveryAgent\n  0.0 /System/Library/ExtensionKit/Extensions/WallpaperDynamicExtension.appex/Contents/MacOS/WallpaperDynamicExtension\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/chrome_crashpad_handler\n  0.0 /System/Library/ExtensionKit/Extensions/WallpaperAerialsExtension.appex/Contents/MacOS/WallpaperAerialsExtension\n  0.0 /System/Library/CoreServices/Dock.app/Contents/XPCServices/com.apple.dock.extra.xpc/Contents/MacOS/com.apple.dock.extra\n  0.0 /System/Library/CoreServices/Dock.app/Contents/XPCServices/com.apple.dock.external.extra.arm64.xpc/Contents/MacOS/com.apple.dock.external.extra.arm64\n  0.0 /System/Library/CoreServices/Dock.app/Contents/XPCServices/com.apple.dock.external.extra.arm64.xpc/Contents/MacOS/com.apple.dock.external.extra.arm64\n  0.0 /System/Library/CoreServices/Spotlight.app/Contents/MacOS/Spotlight\n  0.1 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper.app/Contents/MacOS/Comet Helper\n  0.0 /Applications/Grok Bot.app/Contents/Frameworks/Electron Framework.framework/Helpers/chrome_crashpad_handler\n  0.0 /Applications/Grok Bot.app/Contents/Frameworks/Grok Bot Helper.app/Contents/MacOS/Grok Bot Helper\n  0.0 /Applications/Grok Bot.app/Contents/Frameworks/Grok Bot Helper.app/Contents/MacOS/Grok Bot Helper\n 11.3 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/155.0.8059.27/Helpers/Codex (Service).app/Contents/MacOS/Codex (Service)\n  0.0 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/155.0.8059.27/Helpers/Codex (Service).app/Contents/MacOS/Codex (Service)\n  0.0 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/155.0.8059.27/Helpers/Codex (Service).app/Contents/MacOS/Codex (Service)\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper.app/Contents/MacOS/Comet Helper\n  0.0 /Applications/Grok Bot.app/Contents/Frameworks/Grok Bot Helper (Renderer).app/Contents/MacOS/Grok Bot Helper (Renderer)\n  0.0 /System/Library/PrivateFrameworks/PassKitCore.framework/passd\n  0.0 /Applications/Grok Bot.app/Contents/Frameworks/Grok Bot Helper.app/Contents/MacOS/Grok Bot Helper\n  0.0 /Applications/Grok Bot.app/Contents/Frameworks/Grok Bot Helper.app/Contents/MacOS/Grok Bot Helper\n  0.3 /Applications/Zen.app/Contents/MacOS/zen\n  0.0 /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/CVMServer\n  0.0 /Library/Apple/System/Library/PrivateFrameworks/RemotePairing.framework/Versions/A/XPCServices/remotepairingd.xpc/Contents/MacOS/remotepairingd\n  0.0 /Library/Developer/PrivateFrameworks/CoreSimulator.framework/Resources/bin/simdiskimaged\n  0.0 /usr/libexec/diskimagesiod\n  0.0 /usr/libexec/diskimagesiod\n  0.0 /usr/libexec/diskimagesiod\n  0.0 /Library/Developer/PrivateFrameworks/CoreSimulator.framework/Versions/A/XPCServices/SimLaunchHost.x86.xpc/Contents/MacOS/SimLaunchHost.x86\n  0.0 /Library/Developer/PrivateFrameworks/CoreSimulator.framework/Versions/A/XPCServices/SimLaunchHost.arm64.xpc/Contents/MacOS/SimLaunchHost.arm64\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper.app/Contents/MacOS/Comet Helper\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper.app/Contents/MacOS/Comet Helper\n  0.0 /opt/homebrew/opt/mongodb-community/bin/mongod\n  0.0 com.screenlight.helper\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /bin/sh\n  0.0 /System/Library/Image Capture/Support/icdd\n  0.0 Contents/Resources/ChatGPTHelper\n  0.0 /opt/homebrew/bin/watchman\n  0.1 Contents/Library/LaunchAgents/Perplexity Helper.app/Contents/MacOS/perplexityd\n  0.0 /opt/homebrew/opt/postgresql@15/bin/postgres\n  0.0 /System/Library/CoreServices/AirPlayUIAgent.app/Contents/MacOS/AirPlayUIAgent\n  0.0 /Users/devendrashahithakuri/Library/Application Support/Perplexity/PerplexityXPC.xpc/Contents/MacOS/PerplexityXPC\n  0.0 /System/Library/CoreServices/TextInputMenuAgent.app/Contents/MacOS/TextInputMenuAgent\n  0.0 Contents/Library/LaunchAgents/com.microsoft.teams2.agent\n  0.0 /System/Library/Frameworks/CryptoTokenKit.framework/ctkahp.bundle/Contents/MacOS/ctkahp\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Applications/Adobe Acrobat DC/Adobe Acrobat.app/Contents/Helpers/AdobeResourceSynchronizer.app/Contents/MacOS/AdobeResourceSynchronizer\n  0.0 /System/Library/PrivateFrameworks/SafariPlatformSupport.framework/Versions/A/XPCServices/com.apple.SafariPlatformSupport.Helper.xpc/Contents/MacOS/com.apple.SafariPlatformSupport.Helper\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Users/devendrashahithakuri/Library/Application Support/Figma/FigmaAgent.app/Contents/MacOS/figma_agent\n  0.0 /System/Library/Frameworks/CryptoTokenKit.framework/ctkahp.bundle/Contents/MacOS/ctkahp\n  0.0 /Applications/Zen.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container\n  0.0 /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Resources/universalAccessAuthWarn.app/Contents/MacOS/universalAccessAuthWarn\n  0.0 /Applications/Zen.app/Contents/MacOS/gpu-helper.app/Contents/MacOS/Zen GPU Helper\n  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdbulkimport\n  0.0 /Applications/Zen.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container\n  0.0 /Applications/Zen.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Applications/ChatGPT.app/Contents/Resources/native/bare-modifier-monitor\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 postgres: checkpointer \n  0.0 postgres: background writer \n  0.7 /Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex\n  0.0 /Applications/Zen.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container\n  0.0 /Applications/Zen.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container\n  0.0 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/155.0.8059.27/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)\n 14.1 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/155.0.8059.27/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)\n  0.0 /Applications/Zen.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container\n  0.0 /opt/homebrew/opt/mysql/bin/mysqld\n  0.0 postgres: walwriter \n  0.0 postgres: autovacuum launcher \n  0.0 postgres: logical replication launcher \n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Applications/OneDrive.app/Contents/OneDrive Sync Service.app/Contents/MacOS/OneDrive Sync Service\n  0.0 /Applications/OneDrive.app/Contents/StandaloneUpdaterDaemon.xpc/Contents/MacOS/StandaloneUpdaterDaemon\n  0.0 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/155.0.8059.27/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)\n  0.0 /System/Library/PrivateFrameworks/SafariPlatformSupport.framework/Versions/A/XPCServices/com.apple.SafariPlatformSupport.Helper.xpc/Contents/MacOS/com.apple.SafariPlatformSupport.Helper\n  0.0 /System/Library/Frameworks/AppKit.framework/Versions/C/XPCServices/ThemeWidgetControlViewService.xpc/Contents/MacOS/ThemeWidgetControlViewService\n  0.0 /Users/devendrashahithakuri/.codex/computer-use/Codex Computer Use.app/Contents/MacOS/SkyComputerUseService\n  0.0 /System/Library/PrivateFrameworks/iTunesCloud.framework/Support/itunescloudd\n  0.0 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/155.0.8059.27/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)\n  0.0 /Applications/Ollama.app/Contents/MacOS/Ollama\n  0.0 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/155.0.8059.27/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)\n  0.0 /System/Library/CoreServices/liquiddetectiond.app/liquiddetectiond\n  0.0 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/155.0.8059.27/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)\n  0.0 /usr/bin/ssh-agent\n  0.0 /Users/devendrashahithakuri/ME/Blender/Addons/blender-mcp-bridge/.venv/bin/python\n  0.0 /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node\n  0.0 /Users/devendrashahithakuri/ME/Blender/Addons/blender-mcp-bridge/.venv/bin/python\n  0.0 /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node\n  0.0 /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node\n  0.0 /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node\n  0.0 /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl\n  0.0 /Users/devendrashahithakuri/ME/Blender/Addons/blender-mcp-bridge/.venv/bin/python\n  0.0 /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl\n  0.0 /Applications/Canva.app/Contents/Frameworks/Electron Framework.framework/Helpers/chrome_crashpad_handler\n  0.0 /Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex\n  0.0 /System/Library/PrivateFrameworks/People.framework/peopled\n  0.0 /usr/libexec/corercd\n  0.0 /System/Library/PrivateFrameworks/AmbientDisplay.framework/Versions/A/XPCServices/com.apple.AmbientDisplayAgent.xpc/Contents/MacOS/com.apple.AmbientDisplayAgent\n  0.0 /Applications/Ollama.app/Contents/Resources/ollama\n  0.0 /usr/libexec/seputil\n  0.0 /Applications/Open Design.app/Contents/MacOS/Open Design\n 13.7 /Applications/Open Design.app/Contents/Frameworks/Open Design Helper.app/Contents/MacOS/Open Design Helper\n  0.0 /Applications/Open Design.app/Contents/Frameworks/Open Design Helper.app/Contents/MacOS/Open Design Helper\n  0.0 next-server (v16.2.6)\n  0.0 /Applications/Open Design.app/Contents/Frameworks/Electron Framework.framework/Helpers/chrome_crashpad_handler\n  9.2 /Applications/Open Design.app/Contents/Frameworks/Open Design Helper (Renderer).app/Contents/MacOS/Open Design Helper (Renderer)\n  0.1 /Applications/Open Design.app/Contents/Frameworks/Open Design Helper (Renderer).app/Contents/MacOS/Open Design Helper (Renderer)\n  0.0 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/155.0.8059.27/Helpers/browser_crashpad_handler\n  0.0 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/155.0.8059.27/Helpers/browser_crashpad_handler\n  0.0 /Applications/Canva.app/Contents/Frameworks/Canva Helper.app/Contents/MacOS/Canva Helper\n  0.0 /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/155.0.8059.27/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)\n  0.0 /Applications/Grok Bot.app/Contents/Frameworks/Grok Bot Helper.app/Contents/MacOS/Grok Bot Helper\n  0.0 /Applications/Grok Bot.app/Contents/Frameworks/Grok Bot Helper.app/Contents/MacOS/Grok Bot Helper\n  0.1 /Applications/ChatGPT.app/Contents/Resources/codex-cli/bin/codex-code-mode-host\n  0.0 /System/Library/CoreServices/CrashReporterSupportHelper\n  0.0 /System/Library/Frameworks/AppKit.framework/Versions/C/XPCServices/ThemeWidgetControlViewService.xpc/Contents/MacOS/ThemeWidgetControlViewService\n  0.0 /usr/sbin/distnoted\n  0.0 /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd\n  0.0 /System/Library/PrivateFrameworks/SafariPlatformSupport.framework/Versions/A/XPCServices/com.apple.SafariPlatformSupport.Helper.xpc/Contents/MacOS/com.apple.SafariPlatformSupport.Helper\n  0.0 /Applications/Zen.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container\n  0.0 /Applications/Zen.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container\n  0.0 /System/Library/Frameworks/AudioToolbox.framework/AudioComponentRegistrar\n  0.0 /System/Library/PrivateFrameworks/EcosystemAnalytics.framework/Support/ecosystemanalyticsd\n  0.0 /System/Library/PrivateFrameworks/Ecosystem.framework/Support/ecosystemd\n  0.0 /usr/libexec/GamePolicyAgent\n  0.0 /System/Library/Frameworks/NetFS.framework/Versions/A/XPCServices/PlugInLibraryService.xpc/Contents/MacOS/PlugInLibraryService\n  0.0 /usr/sbin/spindump\n  0.0 /Applications/Zen.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container\n  0.0 /System/Library/CoreServices/ReportCrash\n  0.0 /System/Library/CoreServices/diagnosticservicesd\n  0.0 /usr/libexec/spindump_agent\n  0.0 /System/Library/PrivateFrameworks/EmailDaemon.framework/Versions/A/maild\n  0.0 /System/Library/PrivateFrameworks/SoftwareUpdate.framework/Resources/SoftwareUpdateNotificationManager.app/Contents/MacOS/SoftwareUpdateNotificationManager\n  0.0 /usr/libexec/uarpassetmanagerd\n  0.0 /System/Library/PrivateFrameworks/UARPAssetManager.framework/XPCServices/UARPAssetManagerServiceMobileAsset.xpc/Contents/MacOS/UARPAssetManagerServiceMobileAsset\n  0.0 /usr/libexec/countryd\n  0.0 /usr/libexec/tipsd\n  0.0 /System/Library/PrivateFrameworks/IASUtilities.framework/Versions/A/Resources/installerauthagent\n  0.0 /usr/libexec/NRDUpdated\n  0.0 /System/Library/AssetsV2/com_apple_MobileAsset_RecoveryOSUpdateBrain/28f9b40aedc0bda53bdc29e31682c998de89e5cb.asset/AssetData/com.apple.NRD.UpdateBrainService.xpc/Contents/MacOS/com.apple.NRD.UpdateBrainService\n  0.0 /System/Library/PrivateFrameworks/AssetCacheServices.framework/Versions/A/XPCServices/AssetCacheLocatorService.xpc/Contents/MacOS/AssetCacheLocatorService\n  0.0 /System/Library/PrivateFrameworks/StreamingZip.framework/Versions/A/XPCServices/com.apple.StreamingUnzipService.privileged.xpc/Contents/MacOS/com.apple.StreamingUnzipService.privileged\n  0.0 /System/Library/PrivateFrameworks/PowerLog.framework/Versions/A/XPCServices/PerfPowerTelemetryClientRegistrationService.xpc/Contents/MacOS/PerfPowerTelemetryClientRegistrationService\n  0.0 /System/Library/PrivateFrameworks/IntelligencePlatformCore.framework/Versions/A/intelligenceplatformd\n  0.0 /System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/XPCServices/nsattributedstringagent.xpc/Contents/MacOS/nsattributedstringagent\n  0.0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/XPCServices/com.apple.hiservices-xpcservice.xpc/Contents/MacOS/com.apple.hiservices-xpcservice\n  0.0 /usr/sbin/cfprefsd\n  0.0 /System/Library/Frameworks/MediaAccessibility.framework/Versions/A/XPCServices/com.apple.accessibility.mediaaccessibilityd.xpc/Contents/MacOS/com.apple.accessibility.mediaaccessibilityd\n  0.0 /System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/XPCServices/nsattributedstringagent.xpc/Contents/MacOS/nsattributedstringagent\n  0.0 /System/Library/Frameworks/MediaAccessibility.framework/Versions/A/XPCServices/com.apple.accessibility.mediaaccessibilityd.xpc/Contents/MacOS/com.apple.accessibility.mediaaccessibilityd\n  0.0 /System/Library/PrivateFrameworks/Install.framework/Frameworks/DistributionKit.framework/Versions/A/XPCServices/DistributionHelper.xpc/Contents/MacOS/DistributionHelper\n  0.0 /Applications/Zen.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container\n  0.0 /System/Library/PrivateFrameworks/CloudTelemetry.framework/Versions/A/XPCServices/CloudTelemetryService.xpc/Contents/MacOS/CloudTelemetryService\n  0.0 /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XProtectBridgeService.xpc/Contents/MacOS/XProtectBridgeService\n  0.0 /System/Library/PrivateFrameworks/AppleCredentialManager.framework/AppleCredentialManagerDaemon\n  0.0 /usr/libexec/usbpowerd\n  0.0 /System/Library/CryptoTokenKit/com.apple.ifdreader.slotd/Contents/MacOS/com.apple.ifdreader\n  0.0 /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/XPCServices/MDRemoteServiceSupport.xpc/Contents/MacOS/MDRemoteServiceSupport\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper.app/Contents/MacOS/Comet Helper\n  0.0 /System/Library/Frameworks/ExtensionFoundation.framework/Versions/A/XPCServices/extensionkitservice.xpc/Contents/MacOS/extensionkitservice\n  0.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n  0.0 /System/Library/Services/AppleSpell.service/Contents/MacOS/AppleSpell\n  0.0 /usr/libexec/keyboardservicesd\n  0.0 /System/Library/PrivateFrameworks/HearingCore.framework/heard\n  0.0 /System/Library/CoreServices/Siri.app/Contents/MacOS/Siri\n  0.0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/XPCServices/com.apple.hiservices-xpcservice.xpc/Contents/MacOS/com.apple.hiservices-xpcservice\n  0.0 /Applications/Freebuff.app/Contents/MacOS/Freebuff\n  0.0 /System/Library/PrivateFrameworks/OnDeviceStorage.framework/Support/amsondevicestoraged\n  0.0 /System/Library/CoreServices/Siri.app/Contents/XPCServices/SiriNCService.xpc/Contents/MacOS/SiriNCService\n  0.0 /usr/libexec/SidecarRelay\n  0.0 /System/Library/PrivateFrameworks/CoreSuggestions.framework/Versions/A/Support/suggestd\n  0.0 /System/Library/CoreServices/rcd.app/Contents/MacOS/rcd\n  0.0 /Applications/Freebuff.app/Contents/Frameworks/Freebuff Helper (GPU).app/Contents/MacOS/Freebuff Helper (GPU)\n  0.0 /Applications/Freebuff.app/Contents/Frameworks/Freebuff Helper.app/Contents/MacOS/Freebuff Helper\n 35.4 /Applications/Freebuff.app/Contents/Resources/bun/bun\n  2.1 /Applications/Freebuff.app/Contents/Frameworks/Freebuff Helper (Renderer).app/Contents/MacOS/Freebuff Helper (Renderer)\n  0.0 /System/Library/PrivateFrameworks/SafariPlatformSupport.framework/Versions/A/XPCServices/com.apple.SafariPlatformSupport.Helper.xpc/Contents/MacOS/com.apple.SafariPlatformSupport.Helper\n  0.0 /Applications/Freebuff.app/Contents/Frameworks/Freebuff Helper.app/Contents/MacOS/Freebuff Helper\n  0.0 /System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper\n  0.0 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService\n  0.0 /System/Library/Frameworks/AppKit.framework/Versions/C/XPCServices/ThemeWidgetControlViewService.xpc/Contents/MacOS/ThemeWidgetControlViewService\n  0.0 /System/Library/PrivateFrameworks/ContinuousDialogManagerService.framework/assistant_cdmd\n  0.0 /System/Library/PrivateFrameworks/IntelligenceFlowRuntime.framework/Versions/A/intelligenceflowd\n  0.0 /System/Library/ExtensionKit/Extensions/TGOnDeviceInferenceProviderService.appex/Contents/MacOS/TGOnDeviceInferenceProviderService\n  0.0 /System/Library/Frameworks/Speech.framework/Versions/A/XPCServices/localspeechrecognition.xpc/Contents/MacOS/localspeechrecognition\n  0.0 /usr/sbin/distnoted\n  0.0 /System/Library/PrivateFrameworks/SiriInference.framework/Versions/A/siriinferenced\n  0.0 /usr/libexec/inputanalyticsd\n  0.0 /usr/libexec/naturallanguaged\n  0.0 /System/Library/PrivateFrameworks/SiriSuggestionsSupport.framework/Versions/A/XPCServices/SiriSuggestionsBookkeepingService.xpc/Contents/MacOS/SiriSuggestionsBookkeepingService\n  0.0 /usr/sbin/distnoted\n  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdbulkimport\n  0.0 /System/Library/Frameworks/AppKit.framework/Versions/C/XPCServices/ThemeWidgetControlViewService.xpc/Contents/MacOS/ThemeWidgetControlViewService\n  0.0 /usr/libexec/PerfPowerServices\n  1.3 /Applications/Adobe Acrobat DC/Adobe Acrobat.app/Contents/MacOS/AdobeAcrobat\n  0.0 /Applications/Adobe Acrobat DC/Adobe Acrobat.app/Contents/Helpers/AcroCEF/AcroCEF.app/Contents/MacOS/AcroCEF\n  0.0 /System/Library/PrivateFrameworks/SafariPlatformSupport.framework/Versions/A/XPCServices/com.apple.SafariPlatformSupport.Helper.xpc/Contents/MacOS/com.apple.SafariPlatformSupport.Helper\n  0.1 /Applications/Adobe Acrobat DC/Adobe Acrobat.app/Contents/Frameworks/AcroCEF Helper (GPU).app/Contents/MacOS/AcroCEF Helper (GPU)\n  0.0 /Applications/Adobe Acrobat DC/Adobe Acrobat.app/Contents/Frameworks/AcroCEF Helper.app/Contents/MacOS/AcroCEF Helper\n  0.0 /Applications/Adobe Acrobat DC/Adobe Acrobat.app/Contents/Frameworks/AcroCEF Helper.app/Contents/MacOS/AcroCEF Helper\n  0.0 /Applications/Adobe Acrobat DC/Adobe Acrobat.app/Contents/Frameworks/AcroCEF Helper (Renderer).app/Contents/MacOS/AcroCEF Helper (Renderer)\n  0.0 /Applications/Adobe Acrobat DC/Adobe Acrobat.app/Contents/Frameworks/AcroCEF Helper (Renderer).app/Contents/MacOS/AcroCEF Helper (Renderer)\n  0.0 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU\n  0.0 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking\n  0.0 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n  0.0 /Applications/Adobe Acrobat DC/Adobe Acrobat.app/Contents/Frameworks/AcroCEF Helper (Renderer).app/Contents/MacOS/AcroCEF Helper (Renderer)\n  0.0 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n  0.0 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n  0.0 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n  0.0 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n  0.0 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n  0.1 /Applications/Adobe Acrobat DC/Adobe Acrobat.app/Contents/Frameworks/AdobeCrashReporter.framework/Versions/A/Adobe Crash Processor.app/Contents/MacOS/Adobe Crash Processor\n  0.0 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdwrite\n  0.0 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n  0.0 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n  0.0 /System/Library/Frameworks/AppKit.framework/Versions/C/XPCServices/com.apple.appkit.xpc.openAndSavePanelService.xpc/Contents/MacOS/com.apple.appkit.xpc.openAndSavePanelService\n  0.0 /System/Library/Frameworks/QuickLookUI.framework/Versions/A/XPCServices/QuickLookUIService.xpc/Contents/MacOS/QuickLookUIService\n  0.1 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex\n  0.0 /Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex\n  0.0 /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node\n  0.0 /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node\n  0.0 /Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex\n  0.0 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n 19.4 /Users/devendrashahithakuri/Work/Nep-All/.tools/godot/Godot.app/Contents/MacOS/Godot\n  0.0 /System/Library/PrivateFrameworks/SafariPlatformSupport.framework/Versions/A/XPCServices/com.apple.SafariPlatformSupport.Helper.xpc/Contents/MacOS/com.apple.SafariPlatformSupport.Helper\n  0.0 /Applications/Zen.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container\n 24.3 /Users/devendrashahithakuri/.local/bin/opencode\n  0.0 /System/Library/Frameworks/ManagedAppDistribution.framework/Support/managedappdistributionagent\n  0.0 /System/Library/Frameworks/ManagedAppDistribution.framework/Support/managedappdistributiond\n  0.0 /System/Library/Frameworks/AppKit.framework/Versions/C/XPCServices/ThemeWidgetControlViewService.xpc/Contents/MacOS/ThemeWidgetControlViewService\n  0.0 /usr/libexec/mmaintenanced\n  0.0 /System/Library/PrivateFrameworks/IMTransferServices.framework/IMTransferAgent.app/Contents/MacOS/IMTransferAgent\n  0.0 /System/Library/PrivateFrameworks/AOSKit.framework/Versions/A/XPCServices/com.apple.iCloudHelper.xpc/Contents/MacOS/com.apple.iCloudHelper\n  0.0 /System/Library/PrivateFrameworks/ScreenTimeCore.framework/Versions/A/ScreenTimeAgent\n  0.0 caffeinate\n  0.0 /usr/libexec/bootpd\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Applications/Open Design.app/Contents/Frameworks/Open Design Helper.app/Contents/MacOS/Open Design Helper\n  0.0 /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl\n  0.0 /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node\n  0.0 /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node\n  0.0 /Users/devendrashahithakuri/.pencil/mcp/cursor/out/mcp-server-darwin-arm64\n  0.0 /Users/devendrashahithakuri/ME/Blender/Addons/blender-mcp-bridge/.venv/bin/python\n  0.0 /Users/devendrashahithakuri/.nvm/versions/node/v22.18.0/bin/node\n  0.0 /Users/devendrashahithakuri/ME/Blender/Addons/blender-mcp-bridge/.venv/bin/python\n  0.0 /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node\n  0.0 /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node\n  0.0 /Users/devendrashahithakuri/ME/Blender/Addons/blender-mcp-bridge/.venv/bin/python\n  0.0 /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl\n  0.0 npm run dev -p 3000\n  0.0 node\n  0.0 next-server (v15.5.12)\n  0.0 npm run dev -p 3001\n  0.0 node\n  0.0 next-server (v15.5.12)\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  1.6 bash\n 11.8 /Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python\n  5.2 caffeinate\n  0.0 ps\n  0.0 /System/Library/PrivateFrameworks/SafariPlatformSupport.framework/Versions/A/XPCServices/com.apple.SafariPlatformSupport.Helper.xpc/Contents/MacOS/com.apple.SafariPlatformSupport.Helper\n  0.0 /System/Library/PrivateFrameworks/BiomeStreams.framework/Support/biomed\n  0.0 /usr/libexec/containermanagerd\n  0.0 /usr/libexec/knowledge-agent\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper.app/Contents/MacOS/Comet Helper\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Applications/Claude.app/Contents/Helpers/chrome-native-host\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /usr/libexec/secinitd\n  0.0 /System/Library/Frameworks/AppKit.framework/Versions/C/XPCServices/com.apple.appkit.xpc.openAndSavePanelService.xpc/Contents/MacOS/com.apple.appkit.xpc.openAndSavePanelService\n  0.0 /System/Library/Frameworks/QuickLookUI.framework/Versions/A/XPCServices/QuickLookUIService.xpc/Contents/MacOS/QuickLookUIService\n  0.0 /Applications/Antigravity IDE.app/Contents/MacOS/Electron\n  0.0 /Applications/Antigravity IDE.app/Contents/Frameworks/Electron Framework.framework/Helpers/chrome_crashpad_handler\n  0.0 /Applications/Antigravity IDE.app/Contents/Frameworks/Antigravity IDE Helper (GPU).app/Contents/MacOS/Antigravity IDE Helper (GPU)\n  0.0 /Applications/Antigravity IDE.app/Contents/Frameworks/Antigravity IDE Helper.app/Contents/MacOS/Antigravity IDE Helper\n  0.0 /Applications/Antigravity IDE.app/Contents/Frameworks/Antigravity IDE Helper.app/Contents/MacOS/Antigravity IDE Helper\n  0.0 /Applications/Antigravity IDE.app/Contents/Frameworks/Antigravity IDE Helper (Plugin).app/Contents/MacOS/Antigravity IDE Helper (Plugin)\n  0.0 /System/Library/PrivateFrameworks/SafariPlatformSupport.framework/Versions/A/XPCServices/com.apple.SafariPlatformSupport.Helper.xpc/Contents/MacOS/com.apple.SafariPlatformSupport.Helper\n  0.0 /Applications/Antigravity IDE.app/Contents/Frameworks/Antigravity IDE Helper.app/Contents/MacOS/Antigravity IDE Helper\n  0.0 /Applications/Antigravity IDE.app/Contents/Resources/app/extensions/antigravity/bin/language_server_macos_arm\n  0.0 npm exec chrome-devtools-mcp@latest --autoConnect --no-usage-statistics --no-performance-crux\n  0.0 /Applications/Open Design.app/Contents/Frameworks/Open Design Helper (Renderer).app/Contents/MacOS/Open Design Helper (Renderer)\n  0.0 /Applications/Open Design.app/Contents/Frameworks/Open Design Helper.app/Contents/MacOS/Open Design Helper\n  0.0 /Applications/Antigravity IDE.app/Contents/Frameworks/Antigravity IDE Helper.app/Contents/MacOS/Antigravity IDE Helper\n  0.0 chrome-devtools-mcp\n  0.0 /Users/devendrashahithakuri/.nvm/versions/node/v22.18.0/bin/node\n  0.0 npm exec paperclip-mcp\n  0.0 node\n  0.0 /System/Library/CoreServices/iconservicesagent\n  0.0 /usr/sbin/BTLEServerAgent\n  0.0 /usr/libexec/taskgated\n  0.0 /System/Library/PrivateFrameworks/MobileDevice.framework/Resources/MobileDeviceUpdater.app/Contents/MacOS/MobileDeviceUpdater\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /System/Library/PrivateFrameworks/BackgroundTaskManagement.framework/Resources/backgroundtaskmanagementd\n  0.0 /usr/libexec/smd\n  0.0 /Users/devendrashahithakuri/.pencil/mcp/cursor/out/mcp-server-darwin-arm64\n  0.0 /Users/devendrashahithakuri/.nvm/versions/node/v22.18.0/bin/node\n  0.0 /System/Library/Frameworks/AppKit.framework/Versions/C/XPCServices/com.apple.appkit.xpc.openAndSavePanelService.xpc/Contents/MacOS/com.apple.appkit.xpc.openAndSavePanelService\n  0.0 /System/Library/Frameworks/QuickLookUI.framework/Versions/A/XPCServices/QuickLookUIService.xpc/Contents/MacOS/QuickLookUIService\n  0.0 /System/Library/CoreServices/PowerChime.app/Contents/MacOS/PowerChime\n  0.0 /System/Cryptexes/App/usr/libexec/PasswordBreachAgent\n  0.0 /usr/libexec/milod\n  4.9 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper.app/Contents/MacOS/Comet Helper\n  0.0 /System/Library/PrivateFrameworks/CloudKitDaemon.framework/Support/cloudd\n  1.1 /Applications/Zen.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container\n  0.0 /System/Library/CoreServices/UserNotificationCenter.app/Contents/MacOS/UserNotificationCenter\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /Applications/Comet.app/Contents/Frameworks/Comet Framework.framework/Versions/153.0.8010.222/Helpers/Comet Helper (Renderer).app/Contents/MacOS/Comet Helper (Renderer)\n  0.0 /usr/libexec/containermanagerd_system\n  0.0 /System/Library/Frameworks/Security.framework/Versions/A/XPCServices/com.apple.CodeSigningHelper.xpc/Contents/MacOS/com.apple.CodeSigningHelper\n  0.0 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTDecoderXPCService.xpc/Contents/MacOS/VTDecoderXPCService\n  0.0 /System/Library/PrivateFrameworks/UsageTracking.framework/Versions/A/UsageTrackingAgent\n  0.0 /System/Library/PrivateFrameworks/Synapse.framework/Support/contentlinkingd\n  0.0 /usr/libexec/searchpartyuseragent\n  0.0 /usr/libexec/securityd_system\n  0.0 /usr/libexec/nehelper\n  0.0 /System/Library/CoreServices/CoreLocationAgent.app/Contents/MacOS/CoreLocationAgent\n  0.0 /usr/libexec/aned\n  0.0 /System/Library/PrivateFrameworks/AppleNeuralEngine.framework/XPCServices/ANECompilerService.xpc/Contents/MacOS/ANECompilerService\n  0.0 /System/Library/PrivateFrameworks/GeoServices.framework/Versions/A/XPCServices/com.apple.geod.xpc/Contents/MacOS/com.apple.geod\n  0.0 /usr/libexec/containermanagerd\n  0.0 /System/Library/PrivateFrameworks/GeoServices.framework/Versions/A/XPCServices/com.apple.geod.xpc/Contents/MacOS/com.apple.geod\n  0.0 /System/Library/PrivateFrameworks/GeoServices.framework/Versions/A/XPCServices/com.apple.geod.xpc/Contents/MacOS/com.apple.geod\n  0.0 /System/Library/PrivateFrameworks/GeoServices.framework/Versions/A/XPCServices/com.apple.geod.xpc/Contents/MacOS/com.apple.geod\n  0.0 /System/Library/PrivateFrameworks/GeoServices.framework/Versions/A/XPCServices/com.apple.geod.xpc/Contents/MacOS/com.apple.geod\n  0.0 /usr/libexec/containermanagerd\n  0.0 /usr/libexec/containermanagerd\n  0.0 /usr/libexec/containermanagerd\n  0.0 /usr/libexec/coreduetd\n  0.0 /Applications/Zen.app/Contents/MacOS/plugin-container.app/Contents/MacOS/plugin-container\n  0.0 /System/Library/CoreServices/CoreServicesUIAgent.app/Contents/MacOS/CoreServicesUIAgent\n  0.0 /usr/libexec/logd_helper\n  0.0 /System/Library/CoreServices/Keychain Circle Notification.app/Contents/MacOS/Keychain Circle Notification\n  0.0 /usr/libexec/sandboxd\n  0.0 /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/Versions/A/Support/photolibraryd\n  0.0 /System/Library/CoreServices/pbs\n  0.0 /System/Library/PrivateFrameworks/DoNotDisturbServer.framework/Support/donotdisturbd\n  0.0 /usr/libexec/findmylocateagent\n  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd\n  0.0 /System/Library/PrivateFrameworks/CloudTelemetry.framework/Versions/A/XPCServices/CloudTelemetryService.xpc/Contents/MacOS/CloudTelemetryService\n  0.0 /System/Library/CoreServices/osanalyticshelper\n  0.0 /usr/libexec/neagent\n  0.0 /System/Library/PrivateFrameworks/AuthKit.framework/Versions/A/Support/akd\n  0.0 /System/Library/PrivateFrameworks/CoreADI.framework/adid\n  0.0 /System/Library/CoreServices/UniversalControl.app/Contents/MacOS/UniversalControl\n  0.0 /usr/libexec/assessmentagent\n  0.0 /System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/Resources/commerce\n  0.0 /usr/libexec/feedbackd\n  0.0 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter\n  0.0 /System/Cryptexes/App/usr/libexec/SafariNotificationAgent\n  0.0 /System/Library/PrivateFrameworks/CoreAnalytics.framework/Support/analyticsagent\n  0.0 /usr/libexec/ospredictiond\n  0.0 /usr/libexec/replayd\n  0.0 /usr/libexec/mobileassetd\n  0.0 /System/Library/PrivateFrameworks/MobileAssetDaemon.framework/Versions/A/XPCServices/com.apple.MobileAsset.DownloadService.Builtin.xpc/Contents/MacOS/com.apple.MobileAsset.DownloadService.Builtin\n  0.0 /System/Library/CoreServices/Software Update.app/Contents/Resources/softwareupdated\n  0.0 /usr/libexec/powerdatad\n  0.0 /System/Library/PrivateFrameworks/ModelCatalogRuntime.framework/Versions/A/modelcatalogd\n  0.0 /System/Library/PrivateFrameworks/GenerativeExperiencesRuntime.framework/Versions/A/generativeexperiencesd\n  0.0 /System/Library/PrivateFrameworks/MobileSoftwareUpdate.framework/Support/softwareupdated\n  0.0 /System/Library/PrivateFrameworks/MobileSoftwareUpdate.framework/Versions/A/XPCServices/com.apple.MobileSoftwareUpdate.CleanupPreparePathService.xpc/Contents/MacOS/com.apple.MobileSoftwareUpdate.CleanupPreparePathService\n  0.0 /System/Library/CoreServices/TimeMachine/backupd-helper\n  0.0 /System/Library/Frameworks/NetFS.framework/Versions/A/XPCServices/PlugInLibraryService.xpc/Contents/MacOS/PlugInLibraryService\n  0.0 /usr/libexec/gamecontrollerd\n  0.0 /usr/libexec/gamecontrolleragentd\n  0.0 /usr/libexec/online-auth-agent\n  0.0 /System/Library/PrivateFrameworks/ModelCatalogRuntime.framework/Versions/A/ModelCatalogAgent\n  0.0 /System/Library/CoreServices/iconservicesd\n  0.0 /System/Library/Frameworks/SystemExtensions.framework/Versions/A/Helpers/sysextd\n  0.0 /usr/libexec/dmd\n  0.0 /System/Library/Frameworks/ManagedSettings.framework/Versions/A/ManagedSettingsAgent\n  0.0 /System/Library/PrivateFrameworks/Categories.framework/Versions/A/XPCServices/CategoriesService.xpc/Contents/MacOS/CategoriesService\n  0.0 /System/Library/PrivateFrameworks/ContextKit.framework/Versions/A/XPCServices/ContextService.xpc/Contents/MacOS/ContextService\n  0.0 /System/Library/PrivateFrameworks/ContextKit.framework/Versions/A/XPCServices/ContextService.xpc/Contents/MacOS/ContextService\n  0.0 /System/Library/PrivateFrameworks/iCloudDriveCore.framework/Versions/A/Support/bird\n  0.0 /System/Library/PrivateFrameworks/CommunicationTrust.framework/Support/communicationtrustd\n  0.0 /System/Library/PrivateFrameworks/CloudPhotoServices.framework/Versions/A/XPCServices/com.apple.CloudPhotosConfiguration.xpc/Contents/MacOS/com.apple.CloudPhotosConfiguration\n  0.0 /System/Library/PrivateFrameworks/CloudSubscriptionFeatures.framework/FeatureAccessAgent\n  0.0 /System/Library/PrivateFrameworks/CoreCDP.framework/Versions/A/Resources/cdpd\n  0.0 /usr/libexec/appleaccountd\n  0.0 /System/Library/Frameworks/CryptoTokenKit.framework/ctkd\n  0.0 /System/Library/CoreServices/ScopedBookmarkAgent\n  0.0 /System/Library/PrivateFrameworks/CoreFollowUp.framework/Versions/A/Support/followupd\n  0.0 /System/Library/PrivateFrameworks/CoreRecents.framework/Versions/A/Support/recentsd\n  0.0 /usr/libexec/mobileactivationd\n  0.0 /System/Library/Frameworks/LocalAuthentication.framework/Support/coreauthd\n  0.0 /usr/libexec/pkd\n  0.0 /usr/libexec/findmydeviced\n  0.0 /usr/libexec/networkserviceproxy\n  0.0 /System/Library/Frameworks/Security.framework/Versions/A/XPCServices/TrustedPeersHelper.xpc/Contents/MacOS/TrustedPeersHelper\n  0.0 /usr/libexec/findmydevice-user-agent\n  0.0 /System/Library/Frameworks/NetFS.framework/Versions/A/XPCServices/PlugInLibraryService.xpc/Contents/MacOS/PlugInLibraryService\n  0.0 /usr/libexec/icloudwebd\n  0.0 /usr/libexec/dirhelper\n  0.0 /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Support/photoanalysisd\n  0.0 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n  0.0 cloudphotod\n  0.0 /usr/libexec/aneuserd\n  0.0 /System/Cryptexes/App/usr/libexec/AuthenticationServicesAgent\n  0.0 /System/Library/PrivateFrameworks/AppSSO.framework/Support/AppSSOAgent.app/Contents/MacOS/AppSSOAgent\n  0.0 /System/Library/PrivateFrameworks/DataAccess.framework/Support/dataaccessd\n  0.0 /usr/libexec/swtransparencyd\n  0.0 /System/Library/PrivateFrameworks/AssetCacheServices.framework/Versions/A/XPCServices/AssetCacheLocatorService.xpc/Contents/MacOS/AssetCacheLocatorService\n  0.0 /System/Library/Frameworks/GSS.framework/Helpers/GSSCred\n  0.0 /usr/libexec/studentd\n  0.0 /System/Library/PrivateFrameworks/AppSSO.framework/Support/AppSSODaemon\n  0.0 /usr/libexec/transparencyd\n  0.0 /System/Library/Frameworks/ClassKit.framework/Versions/A/progressd\n  0.0 /usr/libexec/keychainsharingmessagingd\n  0.0 /System/Library/PrivateFrameworks/CloudTelemetry.framework/Versions/A/XPCServices/CloudTelemetryService.xpc/Contents/MacOS/CloudTelemetryService\n  0.0 /usr/libexec/storagekitd\n  0.0 /usr/libexec/PowerUIAgent\n  0.0 /System/Library/PrivateFrameworks/IMDPersistence.framework/XPCServices/IMDPersistenceAgent.xpc/Contents/MacOS/IMDPersistenceAgent\n  0.0 /System/Library/PrivateFrameworks/CalendarDaemon.framework/Support/calaccessd\n  0.0 /System/Library/PrivateFrameworks/ProtectedCloudStorage.framework/Helpers/ProtectedCloudKeySyncing\n  0.0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/XPCServices/com.apple.hiservices-xpcservice.xpc/Contents/MacOS/com.apple.hiservices-xpcservice\n  0.0 /System/Library/PrivateFrameworks/CacheDelete.framework/deleted\n  0.0 /usr/libexec/fskitd\n  0.0 /System/Library/PrivateFrameworks/CacheDelete.framework/deleted_helper\n  0.0 /usr/libexec/triald_system\n  0.0 /usr/libexec/triald\n  0.0 /System/Library/Frameworks/QuickLookThumbnailing.framework/Support/com.apple.quicklook.ThumbnailsAgent\n  0.0 /System/Library/PrivateFrameworks/PackageKit.framework/Resources/system_installd\n  0.0 /System/Library/PrivateFrameworks/CloudKitDaemon.framework/Support/cloudd\n  0.0 /System/Library/PrivateFrameworks/PackageKit.framework/Resources/installd\n  0.0 /System/Library/PrivateFrameworks/GeoServices.framework/geodMachServiceBridge\n  0.0 /System/Library/PrivateFrameworks/TrialServer.framework/Versions/A/XPCServices/TrialArchivingService.xpc/Contents/MacOS/TrialArchivingService\n  0.0 /System/Library/PrivateFrameworks/iCloudDriveService.framework/XPCServices/ContainerMetadataExtractor.xpc/Contents/MacOS/ContainerMetadataExtractor\n  0.0 /System/Library/Frameworks/LocalAuthentication.framework/Support/coreautha.bundle/Contents/MacOS/coreautha\n  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent\n  0.0 /System/Library/PrivateFrameworks/SystemAdministration.framework/XPCServices/writeconfig.xpc/Contents/MacOS/writeconfig\n  0.0 /System/Library/PrivateFrameworks/AXAssetLoader.framework/Support/axassetsd\n  0.0 /System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/com.apple.Safari.SafeBrowsing.Service\n  0.0 /usr/libexec/AssetCache/AssetCache\n  0.0 /System/Library/PrivateFrameworks/AssetCacheServicesExtensions.framework/XPCServices/AssetCacheTetheratorService.xpc/Contents/MacOS/AssetCacheTetheratorService\n  0.0 /System/Library/PrivateFrameworks/AppStoreDaemon.framework/Support/appstoreagent\n  0.0 /System/Library/PrivateFrameworks/InstallCoordination.framework/Support/installcoordinationd\n  0.0 /System/Library/PrivateFrameworks/AppStoreDaemon.framework/Versions/A/XPCServices/com.apple.AppStoreDaemon.StorePrivilegedODRService.xpc/Contents/MacOS/com.apple.AppStoreDaemon.StorePrivilegedODRService\n  0.0 /System/Library/PrivateFrameworks/AppleMediaServicesUI.framework/amsengagementd\n  0.0 /usr/libexec/promotedcontentd\n  0.0 /usr/libexec/fairplaydeviceidentityd\n  0.0 /System/Library/PrivateFrameworks/StorageManagement.framework/Resources/diskspaced\n  0.0 /usr/libexec/sysmond\n  0.0 /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XprotectService.xpc/Contents/MacOS/XprotectService\n  0.0 /System/Library/CoreServices/ReportCrash\n  0.0 /System/Library/PrivateFrameworks/CoreSymbolication.framework/coresymbolicationd\n  0.0 /usr/libexec/linkd\n  0.0 /System/Library/PrivateFrameworks/IntelligencePlatformCompute.framework/Versions/A/XPCServices/IntelligencePlatformComputeService.xpc/Contents/MacOS/IntelligencePlatformComputeService\n  0.0 /System/Library/PrivateFrameworks/VoiceShortcuts.framework/Versions/A/Support/siriactionsd\n  0.0 /System/Library/PrivateFrameworks/MobileTimer.framework/Executables/mobiletimerd\n  0.0 /usr/sbin/systemsoundserverd\n  0.0 /System/Library/Frameworks/AudioToolbox.framework/AudioComponentRegistrar\n  0.0 /System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper\n  0.0 /System/Library/PrivateFrameworks/WorkflowKit.framework/XPCServices/ShortcutsViewService.xpc/Contents/MacOS/ShortcutsViewService\n  0.0 /System/Library/PrivateFrameworks/SessionCore.framework/Support/liveactivitiesd\n  0.0 /System/Library/PrivateFrameworks/ReplicatorCore.framework/Support/replicatord\n  0.0 /System/Library/PrivateFrameworks/DeviceCheckInternal.framework/devicecheckd\n  0.0 /System/Library/PrivateFrameworks/AppPredictionFoundation.framework/Versions/A/XPCServices/AppPredictionIntentsHelperService.xpc/Contents/MacOS/AppPredictionIntentsHelperService\n  0.0 /System/Library/PrivateFrameworks/SiriAnalytics.framework/Versions/A/XPCServices/SAExtensionOrchestrator.xpc/Contents/MacOS/SAExtensionOrchestrator\n  0.0 /System/Library/Frameworks/ExtensionFoundation.framework/Versions/A/XPCServices/extensionkitservice.xpc/Contents/MacOS/extensionkitservice\n  0.0 /System/Library/ExtensionKit/Extensions/GMSSELFIngestor.appex/Contents/MacOS/GMSSELFIngestor\n  0.0 /System/Library/ExtensionKit/Extensions/BiomeSELFIngestor.appex/Contents/MacOS/BiomeSELFIngestor\n  0.0 /System/Library/ExtensionKit/Extensions/IFTelemetrySELFIngestor.appex/Contents/MacOS/IFTelemetrySELFIngestor\n  0.0 /System/Library/ExtensionKit/Extensions/IFTranscriptSELFIngestor.appex/Contents/MacOS/IFTranscriptSELFIngestor\n  0.0 /System/Library/CoreServices/appplaceholdersyncd\n  0.0 /System/Library/PrivateFrameworks/StreamingZip.framework/Versions/A/XPCServices/com.apple.StreamingUnzipService.xpc/Contents/MacOS/com.apple.StreamingUnzipService\n  0.0 /usr/libexec/MTLAssetUpgraderD\n  0.0 /usr/libexec/swcd\n  0.0 /System/Library/Frameworks/MediaExtension.framework/Versions/A/Helpers/MENotificationAgent\n  0.0 /System/Library/PrivateFrameworks/BackgroundTaskManagement.framework/Support/BackgroundTaskManagementAgent.app/Contents/MacOS/BackgroundTaskManagementAgent\n  0.0 /usr/libexec/siriknowledged\n  0.0 /System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService\n  0.0 /usr/libexec/assetsubscriptiond\n  0.0 /usr/libexec/findmybeaconingd\n  0.0 /usr/libexec/mlhostd\n  0.0 /System/Library/Frameworks/ExtensionFoundation.framework/Versions/A/XPCServices/extensionkitservice.xpc/Contents/MacOS/extensionkitservice\n  0.0 /usr/libexec/keybagd\n  0.0 /System/Library/PrivateFrameworks/MapsSync.framework/mapssyncd\n  0.0 /System/Library/Frameworks/Intents.framework/XPCServices/intents_helper.xpc/Contents/MacOS/intents_helper\n  0.0 /usr/libexec/amfid\n  0.0 /System/Library/PrivateFrameworks/TelephonyUtilities.framework/callservicesd\n  0.0 /usr/bin/login\n  0.0 -/bin/zsh",
+      "error": ""
+    },
+    "other_apps": "User-owned editor and applications left open; no unsolicited termination. Background CPU contention is not isolated."
+  },
+  "mode": "baseline",
+  "groups": [
+    {
+      "resolution": [
+        1280,
+        800
+      ],
+      "runs": 3,
+      "valid": true,
+      "frame_p95_ms": [
+        434.06,
+        414.35,
+        26560.692
+      ],
+      "tick_p95_ms": [
+        400.38,
+        399.006,
+        396.569
+      ],
+      "frame_p95_variance": 151803609.79205424,
+      "tick_p95_variance": 2.4833962222221873,
+      "frame_p95_range": 26146.342,
+      "frame_budget_ms": 16.7,
+      "tick_budget_ms": 4.0,
+      "meets_budget": false
+    },
+    {
+      "resolution": [
+        1920,
+        1080
+      ],
+      "runs": 3,
+      "valid": true,
+      "frame_p95_ms": [
+        465.187,
+        409.88,
+        425.104
+      ],
+      "tick_p95_ms": [
+        445.97,
+        397.591,
+        405.857
+      ],
+      "frame_p95_variance": 544.1423682222227,
+      "tick_p95_variance": 446.4341295555558,
+      "frame_p95_range": 55.307000000000016,
+      "frame_budget_ms": 20.0,
+      "tick_budget_ms": 4.0,
+      "meets_budget": false
+    }
+  ],
+  "runs": [
+    {
+      "activity_definition": "Live collection/build task or carried goods or job movement; excludes NEED trips and mere assigned roles. Window minimum is strict per sampled tick.",
+      "activity_windows": [
+        {
+          "minimum_active": 37,
+          "window": 0
+        },
+        {
+          "minimum_active": 36,
+          "window": 1
+        },
+        {
+          "minimum_active": 37,
+          "window": 2
+        },
+        {
+          "minimum_active": 37,
+          "window": 3
+        },
+        {
+          "minimum_active": 37,
+          "window": 4
+        },
+        {
+          "minimum_active": 36,
+          "window": 5
+        },
+        {
+          "minimum_active": 37,
+          "window": 6
+        },
+        {
+          "minimum_active": 37,
+          "window": 7
+        },
+        {
+          "minimum_active": 37,
+          "window": 8
+        },
+        {
+          "minimum_active": 36,
+          "window": 9
+        },
+        {
+          "minimum_active": 37,
+          "window": 10
+        },
+        {
+          "minimum_active": 37,
+          "window": 11
+        }
+      ],
+      "actual_sampled_tick_rate": 3.19166666666667,
+      "adapter": "Apple M4 Pro",
+      "benchmark_screen": 0,
+      "benchmark_screen_refresh_rate": 120.0,
+      "benchmark_screen_size": "(3024, 1964)",
+      "camera_points": [
+        {
+          "pitch": -55.0,
+          "span": 0.400000005960464,
+          "target": "(-74.36, 2.265353, 12.3)",
+          "view": "camp",
+          "yaw": 45.0
+        },
+        {
+          "pitch": -55.0,
+          "span": 0.800000011920929,
+          "target": "(-74.32, 2.260739, 12.37)",
+          "view": "pasture",
+          "yaw": 45.0
+        }
+      ],
+      "captures": [
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1280x800-off-1-camp.png",
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1280x800-off-1-pasture.png"
+      ],
+      "collection_seconds": 120.0,
+      "display_driver": "macOS",
+      "draw_calls": {
+        "count": 53,
+        "max": 2943.0,
+        "median": 2929.0,
+        "p95": 2939.0
+      },
+      "driver": "At most one unchanged tick call per process frame; overdue ticks remain scheduled",
+      "elapsed_seconds": 150.042877,
+      "failures": [],
+      "fixture": {
+        "cattle": 2,
+        "completed_fixture_homes": 10,
+        "completed_fixture_shelters": 1,
+        "extra_sources": 40,
+        "initial_ledger": {
+          "fodder": 10000,
+          "stone": 50,
+          "thatch": 50,
+          "timber": 1006,
+          "water": 10018,
+          "wild_food": 10008
+        },
+        "initial_need_timer_offsets": [
+          {
+            "drink_offset": 1,
+            "meal_offset": 1,
+            "worker_id": 3
+          },
+          {
+            "drink_offset": 4,
+            "meal_offset": 4,
+            "worker_id": 65
+          },
+          {
+            "drink_offset": 7,
+            "meal_offset": 7,
+            "worker_id": 66
+          },
+          {
+            "drink_offset": 10,
+            "meal_offset": 10,
+            "worker_id": 67
+          },
+          {
+            "drink_offset": 13,
+            "meal_offset": 13,
+            "worker_id": 68
+          },
+          {
+            "drink_offset": 16,
+            "meal_offset": 16,
+            "worker_id": 69
+          },
+          {
+            "drink_offset": 19,
+            "meal_offset": 19,
+            "worker_id": 70
+          },
+          {
+            "drink_offset": 22,
+            "meal_offset": 22,
+            "worker_id": 71
+          },
+          {
+            "drink_offset": 25,
+            "meal_offset": 25,
+            "worker_id": 125
+          },
+          {
+            "drink_offset": 28,
+            "meal_offset": 28,
+            "worker_id": 126
+          },
+          {
+            "drink_offset": 31,
+            "meal_offset": 31,
+            "worker_id": 127
+          },
+          {
+            "drink_offset": 34,
+            "meal_offset": 34,
+            "worker_id": 128
+          },
+          {
+            "drink_offset": 37,
+            "meal_offset": 37,
+            "worker_id": 129
+          },
+          {
+            "drink_offset": 40,
+            "meal_offset": 40,
+            "worker_id": 130
+          },
+          {
+            "drink_offset": 43,
+            "meal_offset": 43,
+            "worker_id": 131
+          },
+          {
+            "drink_offset": 46,
+            "meal_offset": 46,
+            "worker_id": 132
+          },
+          {
+            "drink_offset": 49,
+            "meal_offset": 49,
+            "worker_id": 133
+          },
+          {
+            "drink_offset": 52,
+            "meal_offset": 52,
+            "worker_id": 134
+          },
+          {
+            "drink_offset": 55,
+            "meal_offset": 55,
+            "worker_id": 135
+          },
+          {
+            "drink_offset": 58,
+            "meal_offset": 58,
+            "worker_id": 136
+          },
+          {
+            "drink_offset": 61,
+            "meal_offset": 61,
+            "worker_id": 137
+          },
+          {
+            "drink_offset": 64,
+            "meal_offset": 64,
+            "worker_id": 138
+          },
+          {
+            "drink_offset": 67,
+            "meal_offset": 67,
+            "worker_id": 139
+          },
+          {
+            "drink_offset": 70,
+            "meal_offset": 70,
+            "worker_id": 140
+          },
+          {
+            "drink_offset": 73,
+            "meal_offset": 73,
+            "worker_id": 141
+          },
+          {
+            "drink_offset": 76,
+            "meal_offset": 76,
+            "worker_id": 142
+          },
+          {
+            "drink_offset": 79,
+            "meal_offset": 79,
+            "worker_id": 143
+          },
+          {
+            "drink_offset": 82,
+            "meal_offset": 82,
+            "worker_id": 144
+          },
+          {
+            "drink_offset": 85,
+            "meal_offset": 85,
+            "worker_id": 145
+          },
+          {
+            "drink_offset": 88,
+            "meal_offset": 88,
+            "worker_id": 146
+          },
+          {
+            "drink_offset": 91,
+            "meal_offset": 91,
+            "worker_id": 147
+          },
+          {
+            "drink_offset": 94,
+            "meal_offset": 94,
+            "worker_id": 148
+          },
+          {
+            "drink_offset": 97,
+            "meal_offset": 97,
+            "worker_id": 149
+          },
+          {
+            "drink_offset": 100,
+            "meal_offset": 100,
+            "worker_id": 150
+          },
+          {
+            "drink_offset": 103,
+            "meal_offset": 103,
+            "worker_id": 151
+          },
+          {
+            "drink_offset": 106,
+            "meal_offset": 106,
+            "worker_id": 152
+          },
+          {
+            "drink_offset": 109,
+            "meal_offset": 109,
+            "worker_id": 153
+          },
+          {
+            "drink_offset": 112,
+            "meal_offset": 112,
+            "worker_id": 154
+          },
+          {
+            "drink_offset": 115,
+            "meal_offset": 115,
+            "worker_id": 155
+          },
+          {
+            "drink_offset": 118,
+            "meal_offset": 118,
+            "worker_id": 156
+          }
+        ],
+        "preconditioning_ticks": 213,
+        "roles": {
+          "herder": 1,
+          "timber": 39
+        },
+        "seed": 401208,
+        "setup_exception": "Registry/stock APIs only before warmup; spawning/roles/pasture use commands. Completed fixture buildings are nonblocking pre-existing records.",
+        "storage_capacity": {
+          "fodder": 1000000,
+          "milk": 1000000,
+          "stone": 1000000,
+          "thatch": 1000000,
+          "timber": 1000000,
+          "water": 1000000,
+          "wild_food": 1000000
+        },
+        "supplies_added": {
+          "fodder": 10000,
+          "water": 10000,
+          "wild_food": 10000
+        },
+        "timber_per_extra_source": 100000,
+        "workers": 40
+      },
+      "frame_ms": {
+        "count": 52,
+        "max": 63608.137,
+        "median": 325.649,
+        "p95": 434.06
+      },
+      "godot": {
+        "build": "official",
+        "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+        "hex": 263938,
+        "major": 4,
+        "minor": 7,
+        "patch": 2,
+        "status": "stable",
+        "string": "4.7.2-stable (official)",
+        "timestamp": 0
+      },
+      "launch_screen": 0,
+      "logical_ticks": 692,
+      "minimum_active": 36,
+      "ok": true,
+      "pending_tick_backlog": 121,
+      "pending_tick_backlog_stats": {
+        "count": 383,
+        "max": 121,
+        "median": 69,
+        "p95": 117
+      },
+      "rendered_instances": {
+        "count": 53,
+        "max": 3438.0,
+        "median": 3424.0,
+        "p95": 3434.0
+      },
+      "renderer": "gl_compatibility",
+      "requested_tick_rate": 4.0,
+      "resolution": [
+        1280,
+        800
+      ],
+      "sampled_tick_count": 383,
+      "schema": 1,
+      "screen_refresh_rate": 120.0,
+      "screen_size": "(3024, 1964)",
+      "smoke": false,
+      "static_memory_bytes": {
+        "count": 53,
+        "max": 527229140.0,
+        "median": 527217556.0,
+        "p95": 527227056.0
+      },
+      "tick_ms": {
+        "count": 383,
+        "max": 454.594,
+        "median": 301.906,
+        "p95": 400.38
+      },
+      "tick_rate": 4.0,
+      "tick_rate_sustained": false,
+      "valid": true,
+      "vsync_actual": 0,
+      "vsync_requested": "off",
+      "warmup_seconds": 30.0,
+      "workload_valid": true,
+      "world_seed": 43129,
+      "revision": "aa85db5679d65f4ef45e762cddec0d1b3f83e2a5",
+      "wall_seconds": 213.66,
+      "log": "1280x800-off-1.log",
+      "run": 1,
+      "baseline": true
+    },
+    {
+      "activity_definition": "Live collection/build task or carried goods or job movement; excludes NEED trips and mere assigned roles. Window minimum is strict per sampled tick.",
+      "activity_windows": [
+        {
+          "minimum_active": 37,
+          "window": 0
+        },
+        {
+          "minimum_active": 37,
+          "window": 1
+        },
+        {
+          "minimum_active": 36,
+          "window": 2
+        },
+        {
+          "minimum_active": 37,
+          "window": 3
+        },
+        {
+          "minimum_active": 37,
+          "window": 4
+        },
+        {
+          "minimum_active": 37,
+          "window": 5
+        },
+        {
+          "minimum_active": 36,
+          "window": 6
+        },
+        {
+          "minimum_active": 37,
+          "window": 7
+        },
+        {
+          "minimum_active": 37,
+          "window": 8
+        },
+        {
+          "minimum_active": 37,
+          "window": 9
+        },
+        {
+          "minimum_active": 36,
+          "window": 10
+        },
+        {
+          "minimum_active": 37,
+          "window": 11
+        }
+      ],
+      "actual_sampled_tick_rate": 3.13333333333333,
+      "adapter": "Apple M4 Pro",
+      "benchmark_screen": 0,
+      "benchmark_screen_refresh_rate": 120.0,
+      "benchmark_screen_size": "(3024, 1964)",
+      "camera_points": [
+        {
+          "pitch": -55.0,
+          "span": 0.400000005960464,
+          "target": "(-74.36, 2.265353, 12.3)",
+          "view": "camp",
+          "yaw": 45.0
+        },
+        {
+          "pitch": -55.0,
+          "span": 0.800000011920929,
+          "target": "(-74.32, 2.260739, 12.37)",
+          "view": "pasture",
+          "yaw": 45.0
+        }
+      ],
+      "captures": [
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1280x800-off-2-camp.png",
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1280x800-off-2-pasture.png"
+      ],
+      "collection_seconds": 120.0,
+      "display_driver": "macOS",
+      "draw_calls": {
+        "count": 231,
+        "max": 2943.0,
+        "median": 1668.0,
+        "p95": 2937.0
+      },
+      "driver": "At most one unchanged tick call per process frame; overdue ticks remain scheduled",
+      "elapsed_seconds": 150.114208,
+      "failures": [],
+      "fixture": {
+        "cattle": 2,
+        "completed_fixture_homes": 10,
+        "completed_fixture_shelters": 1,
+        "extra_sources": 40,
+        "initial_ledger": {
+          "fodder": 10000,
+          "stone": 50,
+          "thatch": 50,
+          "timber": 1006,
+          "water": 10018,
+          "wild_food": 10008
+        },
+        "initial_need_timer_offsets": [
+          {
+            "drink_offset": 1,
+            "meal_offset": 1,
+            "worker_id": 3
+          },
+          {
+            "drink_offset": 4,
+            "meal_offset": 4,
+            "worker_id": 65
+          },
+          {
+            "drink_offset": 7,
+            "meal_offset": 7,
+            "worker_id": 66
+          },
+          {
+            "drink_offset": 10,
+            "meal_offset": 10,
+            "worker_id": 67
+          },
+          {
+            "drink_offset": 13,
+            "meal_offset": 13,
+            "worker_id": 68
+          },
+          {
+            "drink_offset": 16,
+            "meal_offset": 16,
+            "worker_id": 69
+          },
+          {
+            "drink_offset": 19,
+            "meal_offset": 19,
+            "worker_id": 70
+          },
+          {
+            "drink_offset": 22,
+            "meal_offset": 22,
+            "worker_id": 71
+          },
+          {
+            "drink_offset": 25,
+            "meal_offset": 25,
+            "worker_id": 125
+          },
+          {
+            "drink_offset": 28,
+            "meal_offset": 28,
+            "worker_id": 126
+          },
+          {
+            "drink_offset": 31,
+            "meal_offset": 31,
+            "worker_id": 127
+          },
+          {
+            "drink_offset": 34,
+            "meal_offset": 34,
+            "worker_id": 128
+          },
+          {
+            "drink_offset": 37,
+            "meal_offset": 37,
+            "worker_id": 129
+          },
+          {
+            "drink_offset": 40,
+            "meal_offset": 40,
+            "worker_id": 130
+          },
+          {
+            "drink_offset": 43,
+            "meal_offset": 43,
+            "worker_id": 131
+          },
+          {
+            "drink_offset": 46,
+            "meal_offset": 46,
+            "worker_id": 132
+          },
+          {
+            "drink_offset": 49,
+            "meal_offset": 49,
+            "worker_id": 133
+          },
+          {
+            "drink_offset": 52,
+            "meal_offset": 52,
+            "worker_id": 134
+          },
+          {
+            "drink_offset": 55,
+            "meal_offset": 55,
+            "worker_id": 135
+          },
+          {
+            "drink_offset": 58,
+            "meal_offset": 58,
+            "worker_id": 136
+          },
+          {
+            "drink_offset": 61,
+            "meal_offset": 61,
+            "worker_id": 137
+          },
+          {
+            "drink_offset": 64,
+            "meal_offset": 64,
+            "worker_id": 138
+          },
+          {
+            "drink_offset": 67,
+            "meal_offset": 67,
+            "worker_id": 139
+          },
+          {
+            "drink_offset": 70,
+            "meal_offset": 70,
+            "worker_id": 140
+          },
+          {
+            "drink_offset": 73,
+            "meal_offset": 73,
+            "worker_id": 141
+          },
+          {
+            "drink_offset": 76,
+            "meal_offset": 76,
+            "worker_id": 142
+          },
+          {
+            "drink_offset": 79,
+            "meal_offset": 79,
+            "worker_id": 143
+          },
+          {
+            "drink_offset": 82,
+            "meal_offset": 82,
+            "worker_id": 144
+          },
+          {
+            "drink_offset": 85,
+            "meal_offset": 85,
+            "worker_id": 145
+          },
+          {
+            "drink_offset": 88,
+            "meal_offset": 88,
+            "worker_id": 146
+          },
+          {
+            "drink_offset": 91,
+            "meal_offset": 91,
+            "worker_id": 147
+          },
+          {
+            "drink_offset": 94,
+            "meal_offset": 94,
+            "worker_id": 148
+          },
+          {
+            "drink_offset": 97,
+            "meal_offset": 97,
+            "worker_id": 149
+          },
+          {
+            "drink_offset": 100,
+            "meal_offset": 100,
+            "worker_id": 150
+          },
+          {
+            "drink_offset": 103,
+            "meal_offset": 103,
+            "worker_id": 151
+          },
+          {
+            "drink_offset": 106,
+            "meal_offset": 106,
+            "worker_id": 152
+          },
+          {
+            "drink_offset": 109,
+            "meal_offset": 109,
+            "worker_id": 153
+          },
+          {
+            "drink_offset": 112,
+            "meal_offset": 112,
+            "worker_id": 154
+          },
+          {
+            "drink_offset": 115,
+            "meal_offset": 115,
+            "worker_id": 155
+          },
+          {
+            "drink_offset": 118,
+            "meal_offset": 118,
+            "worker_id": 156
+          }
+        ],
+        "preconditioning_ticks": 213,
+        "roles": {
+          "herder": 1,
+          "timber": 39
+        },
+        "seed": 401208,
+        "setup_exception": "Registry/stock APIs only before warmup; spawning/roles/pasture use commands. Completed fixture buildings are nonblocking pre-existing records.",
+        "storage_capacity": {
+          "fodder": 1000000,
+          "milk": 1000000,
+          "stone": 1000000,
+          "thatch": 1000000,
+          "timber": 1000000,
+          "water": 1000000,
+          "wild_food": 1000000
+        },
+        "supplies_added": {
+          "fodder": 10000,
+          "water": 10000,
+          "wild_food": 10000
+        },
+        "timber_per_extra_source": 100000,
+        "workers": 40
+      },
+      "frame_ms": {
+        "count": 230,
+        "max": 18364.226,
+        "median": 316.99,
+        "p95": 414.35
+      },
+      "godot": {
+        "build": "official",
+        "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+        "hex": 263938,
+        "major": 4,
+        "minor": 7,
+        "patch": 2,
+        "status": "stable",
+        "string": "4.7.2-stable (official)",
+        "timestamp": 0
+      },
+      "launch_screen": 0,
+      "logical_ticks": 683,
+      "minimum_active": 36,
+      "ok": true,
+      "pending_tick_backlog": 130,
+      "pending_tick_backlog_stats": {
+        "count": 376,
+        "max": 131,
+        "median": 76,
+        "p95": 126
+      },
+      "rendered_instances": {
+        "count": 231,
+        "max": 3438.0,
+        "median": 2164.0,
+        "p95": 3432.0
+      },
+      "renderer": "gl_compatibility",
+      "requested_tick_rate": 4.0,
+      "resolution": [
+        1280,
+        800
+      ],
+      "sampled_tick_count": 376,
+      "schema": 1,
+      "screen_refresh_rate": 120.0,
+      "screen_size": "(3024, 1964)",
+      "smoke": false,
+      "static_memory_bytes": {
+        "count": 231,
+        "max": 527253640.0,
+        "median": 527220200.0,
+        "p95": 527247136.0
+      },
+      "tick_ms": {
+        "count": 376,
+        "max": 455.213,
+        "median": 303.141,
+        "p95": 399.006
+      },
+      "tick_rate": 4.0,
+      "tick_rate_sustained": false,
+      "valid": true,
+      "vsync_actual": 0,
+      "vsync_requested": "off",
+      "warmup_seconds": 30.0,
+      "workload_valid": true,
+      "world_seed": 43129,
+      "revision": "aa85db5679d65f4ef45e762cddec0d1b3f83e2a5",
+      "wall_seconds": 303.89,
+      "log": "1280x800-off-2.log",
+      "run": 2,
+      "baseline": true
+    },
+    {
+      "activity_definition": "Live collection/build task or carried goods or job movement; excludes NEED trips and mere assigned roles. Window minimum is strict per sampled tick.",
+      "activity_windows": [
+        {
+          "minimum_active": 37,
+          "window": 0
+        },
+        {
+          "minimum_active": 37,
+          "window": 1
+        },
+        {
+          "minimum_active": 36,
+          "window": 2
+        },
+        {
+          "minimum_active": 37,
+          "window": 3
+        },
+        {
+          "minimum_active": 37,
+          "window": 4
+        },
+        {
+          "minimum_active": 36,
+          "window": 5
+        },
+        {
+          "minimum_active": 37,
+          "window": 6
+        },
+        {
+          "minimum_active": 37,
+          "window": 7
+        },
+        {
+          "minimum_active": 37,
+          "window": 8
+        },
+        {
+          "minimum_active": 36,
+          "window": 9
+        },
+        {
+          "minimum_active": 37,
+          "window": 10
+        },
+        {
+          "minimum_active": 37,
+          "window": 11
+        }
+      ],
+      "actual_sampled_tick_rate": 3.2,
+      "adapter": "Apple M4 Pro",
+      "benchmark_screen": 0,
+      "benchmark_screen_refresh_rate": 120.0,
+      "benchmark_screen_size": "(3024, 1964)",
+      "camera_points": [
+        {
+          "pitch": -55.0,
+          "span": 0.400000005960464,
+          "target": "(-74.36, 2.265353, 12.3)",
+          "view": "camp",
+          "yaw": 45.0
+        },
+        {
+          "pitch": -55.0,
+          "span": 0.800000011920929,
+          "target": "(-74.74888, 2.206768, 12.86563)",
+          "view": "pasture",
+          "yaw": 45.0
+        }
+      ],
+      "captures": [
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1280x800-off-3-camp.png",
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1280x800-off-3-pasture.png"
+      ],
+      "collection_seconds": 120.0,
+      "display_driver": "macOS",
+      "draw_calls": {
+        "count": 15,
+        "max": 2939.0,
+        "median": 1662.0,
+        "p95": 2939.0
+      },
+      "driver": "At most one unchanged tick call per process frame; overdue ticks remain scheduled",
+      "elapsed_seconds": 150.152902,
+      "failures": [],
+      "fixture": {
+        "cattle": 2,
+        "completed_fixture_homes": 10,
+        "completed_fixture_shelters": 1,
+        "extra_sources": 40,
+        "initial_ledger": {
+          "fodder": 10000,
+          "stone": 50,
+          "thatch": 50,
+          "timber": 1006,
+          "water": 10018,
+          "wild_food": 10008
+        },
+        "initial_need_timer_offsets": [
+          {
+            "drink_offset": 1,
+            "meal_offset": 1,
+            "worker_id": 3
+          },
+          {
+            "drink_offset": 4,
+            "meal_offset": 4,
+            "worker_id": 65
+          },
+          {
+            "drink_offset": 7,
+            "meal_offset": 7,
+            "worker_id": 66
+          },
+          {
+            "drink_offset": 10,
+            "meal_offset": 10,
+            "worker_id": 67
+          },
+          {
+            "drink_offset": 13,
+            "meal_offset": 13,
+            "worker_id": 68
+          },
+          {
+            "drink_offset": 16,
+            "meal_offset": 16,
+            "worker_id": 69
+          },
+          {
+            "drink_offset": 19,
+            "meal_offset": 19,
+            "worker_id": 70
+          },
+          {
+            "drink_offset": 22,
+            "meal_offset": 22,
+            "worker_id": 71
+          },
+          {
+            "drink_offset": 25,
+            "meal_offset": 25,
+            "worker_id": 125
+          },
+          {
+            "drink_offset": 28,
+            "meal_offset": 28,
+            "worker_id": 126
+          },
+          {
+            "drink_offset": 31,
+            "meal_offset": 31,
+            "worker_id": 127
+          },
+          {
+            "drink_offset": 34,
+            "meal_offset": 34,
+            "worker_id": 128
+          },
+          {
+            "drink_offset": 37,
+            "meal_offset": 37,
+            "worker_id": 129
+          },
+          {
+            "drink_offset": 40,
+            "meal_offset": 40,
+            "worker_id": 130
+          },
+          {
+            "drink_offset": 43,
+            "meal_offset": 43,
+            "worker_id": 131
+          },
+          {
+            "drink_offset": 46,
+            "meal_offset": 46,
+            "worker_id": 132
+          },
+          {
+            "drink_offset": 49,
+            "meal_offset": 49,
+            "worker_id": 133
+          },
+          {
+            "drink_offset": 52,
+            "meal_offset": 52,
+            "worker_id": 134
+          },
+          {
+            "drink_offset": 55,
+            "meal_offset": 55,
+            "worker_id": 135
+          },
+          {
+            "drink_offset": 58,
+            "meal_offset": 58,
+            "worker_id": 136
+          },
+          {
+            "drink_offset": 61,
+            "meal_offset": 61,
+            "worker_id": 137
+          },
+          {
+            "drink_offset": 64,
+            "meal_offset": 64,
+            "worker_id": 138
+          },
+          {
+            "drink_offset": 67,
+            "meal_offset": 67,
+            "worker_id": 139
+          },
+          {
+            "drink_offset": 70,
+            "meal_offset": 70,
+            "worker_id": 140
+          },
+          {
+            "drink_offset": 73,
+            "meal_offset": 73,
+            "worker_id": 141
+          },
+          {
+            "drink_offset": 76,
+            "meal_offset": 76,
+            "worker_id": 142
+          },
+          {
+            "drink_offset": 79,
+            "meal_offset": 79,
+            "worker_id": 143
+          },
+          {
+            "drink_offset": 82,
+            "meal_offset": 82,
+            "worker_id": 144
+          },
+          {
+            "drink_offset": 85,
+            "meal_offset": 85,
+            "worker_id": 145
+          },
+          {
+            "drink_offset": 88,
+            "meal_offset": 88,
+            "worker_id": 146
+          },
+          {
+            "drink_offset": 91,
+            "meal_offset": 91,
+            "worker_id": 147
+          },
+          {
+            "drink_offset": 94,
+            "meal_offset": 94,
+            "worker_id": 148
+          },
+          {
+            "drink_offset": 97,
+            "meal_offset": 97,
+            "worker_id": 149
+          },
+          {
+            "drink_offset": 100,
+            "meal_offset": 100,
+            "worker_id": 150
+          },
+          {
+            "drink_offset": 103,
+            "meal_offset": 103,
+            "worker_id": 151
+          },
+          {
+            "drink_offset": 106,
+            "meal_offset": 106,
+            "worker_id": 152
+          },
+          {
+            "drink_offset": 109,
+            "meal_offset": 109,
+            "worker_id": 153
+          },
+          {
+            "drink_offset": 112,
+            "meal_offset": 112,
+            "worker_id": 154
+          },
+          {
+            "drink_offset": 115,
+            "meal_offset": 115,
+            "worker_id": 155
+          },
+          {
+            "drink_offset": 118,
+            "meal_offset": 118,
+            "worker_id": 156
+          }
+        ],
+        "preconditioning_ticks": 213,
+        "roles": {
+          "herder": 1,
+          "timber": 39
+        },
+        "seed": 401208,
+        "setup_exception": "Registry/stock APIs only before warmup; spawning/roles/pasture use commands. Completed fixture buildings are nonblocking pre-existing records.",
+        "storage_capacity": {
+          "fodder": 1000000,
+          "milk": 1000000,
+          "stone": 1000000,
+          "thatch": 1000000,
+          "timber": 1000000,
+          "water": 1000000,
+          "wild_food": 1000000
+        },
+        "supplies_added": {
+          "fodder": 10000,
+          "water": 10000,
+          "wild_food": 10000
+        },
+        "timber_per_extra_source": 100000,
+        "workers": 40
+      },
+      "frame_ms": {
+        "count": 14,
+        "max": 26560.692,
+        "median": 328.024,
+        "p95": 26560.692
+      },
+      "godot": {
+        "build": "official",
+        "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+        "hex": 263938,
+        "major": 4,
+        "minor": 7,
+        "patch": 2,
+        "status": "stable",
+        "string": "4.7.2-stable (official)",
+        "timestamp": 0
+      },
+      "launch_screen": 0,
+      "logical_ticks": 692,
+      "minimum_active": 36,
+      "ok": true,
+      "pending_tick_backlog": 121,
+      "pending_tick_backlog_stats": {
+        "count": 384,
+        "max": 122,
+        "median": 73,
+        "p95": 117
+      },
+      "rendered_instances": {
+        "count": 15,
+        "max": 3434.0,
+        "median": 2158.0,
+        "p95": 3434.0
+      },
+      "renderer": "gl_compatibility",
+      "requested_tick_rate": 4.0,
+      "resolution": [
+        1280,
+        800
+      ],
+      "sampled_tick_count": 384,
+      "schema": 1,
+      "screen_refresh_rate": 120.0,
+      "screen_size": "(3024, 1964)",
+      "smoke": false,
+      "static_memory_bytes": {
+        "count": 15,
+        "max": 527235008.0,
+        "median": 526886944.0,
+        "p95": 527235008.0
+      },
+      "tick_ms": {
+        "count": 384,
+        "max": 458.756,
+        "median": 304.04,
+        "p95": 396.569
+      },
+      "tick_rate": 4.0,
+      "tick_rate_sustained": false,
+      "valid": true,
+      "vsync_actual": 0,
+      "vsync_requested": "off",
+      "warmup_seconds": 30.0,
+      "workload_valid": true,
+      "world_seed": 43129,
+      "revision": "aa85db5679d65f4ef45e762cddec0d1b3f83e2a5",
+      "wall_seconds": 362.01,
+      "log": "1280x800-off-3.log",
+      "run": 3,
+      "baseline": true
+    },
+    {
+      "activity_definition": "Live collection/build task or carried goods or job movement; excludes NEED trips and mere assigned roles. Window minimum is strict per sampled tick.",
+      "activity_windows": [
+        {
+          "minimum_active": 37,
+          "window": 0
+        },
+        {
+          "minimum_active": 36,
+          "window": 1
+        },
+        {
+          "minimum_active": 37,
+          "window": 2
+        },
+        {
+          "minimum_active": 37,
+          "window": 3
+        },
+        {
+          "minimum_active": 37,
+          "window": 4
+        },
+        {
+          "minimum_active": 36,
+          "window": 5
+        },
+        {
+          "minimum_active": 37,
+          "window": 6
+        },
+        {
+          "minimum_active": 37,
+          "window": 7
+        },
+        {
+          "minimum_active": 37,
+          "window": 8
+        },
+        {
+          "minimum_active": 36,
+          "window": 9
+        },
+        {
+          "minimum_active": 37,
+          "window": 10
+        },
+        {
+          "minimum_active": 37,
+          "window": 11
+        }
+      ],
+      "actual_sampled_tick_rate": 3.19166666666667,
+      "adapter": "Apple M4 Pro",
+      "benchmark_screen": 0,
+      "benchmark_screen_refresh_rate": 120.0,
+      "benchmark_screen_size": "(3024, 1964)",
+      "camera_points": [
+        {
+          "pitch": -55.0,
+          "span": 0.400000005960464,
+          "target": "(-74.36, 2.265353, 12.3)",
+          "view": "camp",
+          "yaw": 45.0
+        },
+        {
+          "pitch": -55.0,
+          "span": 0.800000011920929,
+          "target": "(-74.32, 2.260739, 12.37)",
+          "view": "pasture",
+          "yaw": 45.0
+        }
+      ],
+      "captures": [
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1280x800-on-1-camp.png",
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1280x800-on-1-pasture.png"
+      ],
+      "collection_seconds": 120.0,
+      "display_driver": "macOS",
+      "draw_calls": {
+        "count": 6,
+        "max": 1674.0,
+        "median": 1660.0,
+        "p95": 1674.0
+      },
+      "driver": "At most one unchanged tick call per process frame; overdue ticks remain scheduled",
+      "elapsed_seconds": 150.203039,
+      "failures": [],
+      "fixture": {
+        "cattle": 2,
+        "completed_fixture_homes": 10,
+        "completed_fixture_shelters": 1,
+        "extra_sources": 40,
+        "initial_ledger": {
+          "fodder": 10000,
+          "stone": 50,
+          "thatch": 50,
+          "timber": 1006,
+          "water": 10018,
+          "wild_food": 10008
+        },
+        "initial_need_timer_offsets": [
+          {
+            "drink_offset": 1,
+            "meal_offset": 1,
+            "worker_id": 3
+          },
+          {
+            "drink_offset": 4,
+            "meal_offset": 4,
+            "worker_id": 65
+          },
+          {
+            "drink_offset": 7,
+            "meal_offset": 7,
+            "worker_id": 66
+          },
+          {
+            "drink_offset": 10,
+            "meal_offset": 10,
+            "worker_id": 67
+          },
+          {
+            "drink_offset": 13,
+            "meal_offset": 13,
+            "worker_id": 68
+          },
+          {
+            "drink_offset": 16,
+            "meal_offset": 16,
+            "worker_id": 69
+          },
+          {
+            "drink_offset": 19,
+            "meal_offset": 19,
+            "worker_id": 70
+          },
+          {
+            "drink_offset": 22,
+            "meal_offset": 22,
+            "worker_id": 71
+          },
+          {
+            "drink_offset": 25,
+            "meal_offset": 25,
+            "worker_id": 125
+          },
+          {
+            "drink_offset": 28,
+            "meal_offset": 28,
+            "worker_id": 126
+          },
+          {
+            "drink_offset": 31,
+            "meal_offset": 31,
+            "worker_id": 127
+          },
+          {
+            "drink_offset": 34,
+            "meal_offset": 34,
+            "worker_id": 128
+          },
+          {
+            "drink_offset": 37,
+            "meal_offset": 37,
+            "worker_id": 129
+          },
+          {
+            "drink_offset": 40,
+            "meal_offset": 40,
+            "worker_id": 130
+          },
+          {
+            "drink_offset": 43,
+            "meal_offset": 43,
+            "worker_id": 131
+          },
+          {
+            "drink_offset": 46,
+            "meal_offset": 46,
+            "worker_id": 132
+          },
+          {
+            "drink_offset": 49,
+            "meal_offset": 49,
+            "worker_id": 133
+          },
+          {
+            "drink_offset": 52,
+            "meal_offset": 52,
+            "worker_id": 134
+          },
+          {
+            "drink_offset": 55,
+            "meal_offset": 55,
+            "worker_id": 135
+          },
+          {
+            "drink_offset": 58,
+            "meal_offset": 58,
+            "worker_id": 136
+          },
+          {
+            "drink_offset": 61,
+            "meal_offset": 61,
+            "worker_id": 137
+          },
+          {
+            "drink_offset": 64,
+            "meal_offset": 64,
+            "worker_id": 138
+          },
+          {
+            "drink_offset": 67,
+            "meal_offset": 67,
+            "worker_id": 139
+          },
+          {
+            "drink_offset": 70,
+            "meal_offset": 70,
+            "worker_id": 140
+          },
+          {
+            "drink_offset": 73,
+            "meal_offset": 73,
+            "worker_id": 141
+          },
+          {
+            "drink_offset": 76,
+            "meal_offset": 76,
+            "worker_id": 142
+          },
+          {
+            "drink_offset": 79,
+            "meal_offset": 79,
+            "worker_id": 143
+          },
+          {
+            "drink_offset": 82,
+            "meal_offset": 82,
+            "worker_id": 144
+          },
+          {
+            "drink_offset": 85,
+            "meal_offset": 85,
+            "worker_id": 145
+          },
+          {
+            "drink_offset": 88,
+            "meal_offset": 88,
+            "worker_id": 146
+          },
+          {
+            "drink_offset": 91,
+            "meal_offset": 91,
+            "worker_id": 147
+          },
+          {
+            "drink_offset": 94,
+            "meal_offset": 94,
+            "worker_id": 148
+          },
+          {
+            "drink_offset": 97,
+            "meal_offset": 97,
+            "worker_id": 149
+          },
+          {
+            "drink_offset": 100,
+            "meal_offset": 100,
+            "worker_id": 150
+          },
+          {
+            "drink_offset": 103,
+            "meal_offset": 103,
+            "worker_id": 151
+          },
+          {
+            "drink_offset": 106,
+            "meal_offset": 106,
+            "worker_id": 152
+          },
+          {
+            "drink_offset": 109,
+            "meal_offset": 109,
+            "worker_id": 153
+          },
+          {
+            "drink_offset": 112,
+            "meal_offset": 112,
+            "worker_id": 154
+          },
+          {
+            "drink_offset": 115,
+            "meal_offset": 115,
+            "worker_id": 155
+          },
+          {
+            "drink_offset": 118,
+            "meal_offset": 118,
+            "worker_id": 156
+          }
+        ],
+        "preconditioning_ticks": 213,
+        "roles": {
+          "herder": 1,
+          "timber": 39
+        },
+        "seed": 401208,
+        "setup_exception": "Registry/stock APIs only before warmup; spawning/roles/pasture use commands. Completed fixture buildings are nonblocking pre-existing records.",
+        "storage_capacity": {
+          "fodder": 1000000,
+          "milk": 1000000,
+          "stone": 1000000,
+          "thatch": 1000000,
+          "timber": 1000000,
+          "water": 1000000,
+          "wild_food": 1000000
+        },
+        "supplies_added": {
+          "fodder": 10000,
+          "water": 10000,
+          "wild_food": 10000
+        },
+        "timber_per_extra_source": 100000,
+        "workers": 40
+      },
+      "frame_ms": {
+        "count": 5,
+        "max": 460.996,
+        "median": 339.987,
+        "p95": 460.996
+      },
+      "godot": {
+        "build": "official",
+        "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+        "hex": 263938,
+        "major": 4,
+        "minor": 7,
+        "patch": 2,
+        "status": "stable",
+        "string": "4.7.2-stable (official)",
+        "timestamp": 0
+      },
+      "launch_screen": 0,
+      "logical_ticks": 692,
+      "minimum_active": 36,
+      "ok": true,
+      "pending_tick_backlog": 121,
+      "pending_tick_backlog_stats": {
+        "count": 383,
+        "max": 122,
+        "median": 71,
+        "p95": 117
+      },
+      "rendered_instances": {
+        "count": 6,
+        "max": 2170.0,
+        "median": 2156.0,
+        "p95": 2170.0
+      },
+      "renderer": "gl_compatibility",
+      "requested_tick_rate": 4.0,
+      "resolution": [
+        1280,
+        800
+      ],
+      "sampled_tick_count": 383,
+      "schema": 1,
+      "screen_refresh_rate": 120.0,
+      "screen_size": "(3024, 1964)",
+      "smoke": false,
+      "static_memory_bytes": {
+        "count": 6,
+        "max": 526839056.0,
+        "median": 526836068.0,
+        "p95": 526839056.0
+      },
+      "tick_ms": {
+        "count": 383,
+        "max": 455.562,
+        "median": 303.645,
+        "p95": 399.356
+      },
+      "tick_rate": 4.0,
+      "tick_rate_sustained": false,
+      "valid": true,
+      "vsync_actual": 1,
+      "vsync_requested": "on",
+      "warmup_seconds": 30.0,
+      "workload_valid": true,
+      "world_seed": 43129,
+      "revision": "aa85db5679d65f4ef45e762cddec0d1b3f83e2a5",
+      "wall_seconds": 213.59,
+      "log": "1280x800-on-1.log",
+      "run": 1,
+      "baseline": true
+    },
+    {
+      "activity_definition": "Live collection/build task or carried goods or job movement; excludes NEED trips and mere assigned roles. Window minimum is strict per sampled tick.",
+      "activity_windows": [
+        {
+          "minimum_active": 37,
+          "window": 0
+        },
+        {
+          "minimum_active": 37,
+          "window": 1
+        },
+        {
+          "minimum_active": 36,
+          "window": 2
+        },
+        {
+          "minimum_active": 37,
+          "window": 3
+        },
+        {
+          "minimum_active": 37,
+          "window": 4
+        },
+        {
+          "minimum_active": 37,
+          "window": 5
+        },
+        {
+          "minimum_active": 36,
+          "window": 6
+        },
+        {
+          "minimum_active": 37,
+          "window": 7
+        },
+        {
+          "minimum_active": 37,
+          "window": 8
+        },
+        {
+          "minimum_active": 37,
+          "window": 9
+        },
+        {
+          "minimum_active": 37,
+          "window": 10
+        },
+        {
+          "minimum_active": 36,
+          "window": 11
+        }
+      ],
+      "actual_sampled_tick_rate": 2.775,
+      "adapter": "Apple M4 Pro",
+      "benchmark_screen": 0,
+      "benchmark_screen_refresh_rate": 120.0,
+      "benchmark_screen_size": "(3024, 1964)",
+      "camera_points": [
+        {
+          "pitch": -55.0,
+          "span": 0.400000005960464,
+          "target": "(-74.36, 2.265353, 12.3)",
+          "view": "camp",
+          "yaw": 45.0
+        },
+        {
+          "pitch": -55.0,
+          "span": 0.800000011920929,
+          "target": "(-74.32, 2.260739, 12.37)",
+          "view": "pasture",
+          "yaw": 45.0
+        }
+      ],
+      "captures": [
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1920x1080-off-1-camp.png",
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1920x1080-off-1-pasture.png"
+      ],
+      "collection_seconds": 120.0,
+      "display_driver": "macOS",
+      "draw_calls": {
+        "count": 333,
+        "max": 3158.0,
+        "median": 1770.0,
+        "p95": 3152.0
+      },
+      "driver": "At most one unchanged tick call per process frame; overdue ticks remain scheduled",
+      "elapsed_seconds": 150.224135,
+      "failures": [],
+      "fixture": {
+        "cattle": 2,
+        "completed_fixture_homes": 10,
+        "completed_fixture_shelters": 1,
+        "extra_sources": 40,
+        "initial_ledger": {
+          "fodder": 10000,
+          "stone": 50,
+          "thatch": 50,
+          "timber": 1006,
+          "water": 10018,
+          "wild_food": 10008
+        },
+        "initial_need_timer_offsets": [
+          {
+            "drink_offset": 1,
+            "meal_offset": 1,
+            "worker_id": 3
+          },
+          {
+            "drink_offset": 4,
+            "meal_offset": 4,
+            "worker_id": 65
+          },
+          {
+            "drink_offset": 7,
+            "meal_offset": 7,
+            "worker_id": 66
+          },
+          {
+            "drink_offset": 10,
+            "meal_offset": 10,
+            "worker_id": 67
+          },
+          {
+            "drink_offset": 13,
+            "meal_offset": 13,
+            "worker_id": 68
+          },
+          {
+            "drink_offset": 16,
+            "meal_offset": 16,
+            "worker_id": 69
+          },
+          {
+            "drink_offset": 19,
+            "meal_offset": 19,
+            "worker_id": 70
+          },
+          {
+            "drink_offset": 22,
+            "meal_offset": 22,
+            "worker_id": 71
+          },
+          {
+            "drink_offset": 25,
+            "meal_offset": 25,
+            "worker_id": 125
+          },
+          {
+            "drink_offset": 28,
+            "meal_offset": 28,
+            "worker_id": 126
+          },
+          {
+            "drink_offset": 31,
+            "meal_offset": 31,
+            "worker_id": 127
+          },
+          {
+            "drink_offset": 34,
+            "meal_offset": 34,
+            "worker_id": 128
+          },
+          {
+            "drink_offset": 37,
+            "meal_offset": 37,
+            "worker_id": 129
+          },
+          {
+            "drink_offset": 40,
+            "meal_offset": 40,
+            "worker_id": 130
+          },
+          {
+            "drink_offset": 43,
+            "meal_offset": 43,
+            "worker_id": 131
+          },
+          {
+            "drink_offset": 46,
+            "meal_offset": 46,
+            "worker_id": 132
+          },
+          {
+            "drink_offset": 49,
+            "meal_offset": 49,
+            "worker_id": 133
+          },
+          {
+            "drink_offset": 52,
+            "meal_offset": 52,
+            "worker_id": 134
+          },
+          {
+            "drink_offset": 55,
+            "meal_offset": 55,
+            "worker_id": 135
+          },
+          {
+            "drink_offset": 58,
+            "meal_offset": 58,
+            "worker_id": 136
+          },
+          {
+            "drink_offset": 61,
+            "meal_offset": 61,
+            "worker_id": 137
+          },
+          {
+            "drink_offset": 64,
+            "meal_offset": 64,
+            "worker_id": 138
+          },
+          {
+            "drink_offset": 67,
+            "meal_offset": 67,
+            "worker_id": 139
+          },
+          {
+            "drink_offset": 70,
+            "meal_offset": 70,
+            "worker_id": 140
+          },
+          {
+            "drink_offset": 73,
+            "meal_offset": 73,
+            "worker_id": 141
+          },
+          {
+            "drink_offset": 76,
+            "meal_offset": 76,
+            "worker_id": 142
+          },
+          {
+            "drink_offset": 79,
+            "meal_offset": 79,
+            "worker_id": 143
+          },
+          {
+            "drink_offset": 82,
+            "meal_offset": 82,
+            "worker_id": 144
+          },
+          {
+            "drink_offset": 85,
+            "meal_offset": 85,
+            "worker_id": 145
+          },
+          {
+            "drink_offset": 88,
+            "meal_offset": 88,
+            "worker_id": 146
+          },
+          {
+            "drink_offset": 91,
+            "meal_offset": 91,
+            "worker_id": 147
+          },
+          {
+            "drink_offset": 94,
+            "meal_offset": 94,
+            "worker_id": 148
+          },
+          {
+            "drink_offset": 97,
+            "meal_offset": 97,
+            "worker_id": 149
+          },
+          {
+            "drink_offset": 100,
+            "meal_offset": 100,
+            "worker_id": 150
+          },
+          {
+            "drink_offset": 103,
+            "meal_offset": 103,
+            "worker_id": 151
+          },
+          {
+            "drink_offset": 106,
+            "meal_offset": 106,
+            "worker_id": 152
+          },
+          {
+            "drink_offset": 109,
+            "meal_offset": 109,
+            "worker_id": 153
+          },
+          {
+            "drink_offset": 112,
+            "meal_offset": 112,
+            "worker_id": 154
+          },
+          {
+            "drink_offset": 115,
+            "meal_offset": 115,
+            "worker_id": 155
+          },
+          {
+            "drink_offset": 118,
+            "meal_offset": 118,
+            "worker_id": 156
+          }
+        ],
+        "preconditioning_ticks": 213,
+        "roles": {
+          "herder": 1,
+          "timber": 39
+        },
+        "seed": 401208,
+        "setup_exception": "Registry/stock APIs only before warmup; spawning/roles/pasture use commands. Completed fixture buildings are nonblocking pre-existing records.",
+        "storage_capacity": {
+          "fodder": 1000000,
+          "milk": 1000000,
+          "stone": 1000000,
+          "thatch": 1000000,
+          "timber": 1000000,
+          "water": 1000000,
+          "wild_food": 1000000
+        },
+        "supplies_added": {
+          "fodder": 10000,
+          "water": 10000,
+          "wild_food": 10000
+        },
+        "timber_per_extra_source": 100000,
+        "workers": 40
+      },
+      "frame_ms": {
+        "count": 332,
+        "max": 575.048,
+        "median": 353.911,
+        "p95": 465.187
+      },
+      "godot": {
+        "build": "official",
+        "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+        "hex": 263938,
+        "major": 4,
+        "minor": 7,
+        "patch": 2,
+        "status": "stable",
+        "string": "4.7.2-stable (official)",
+        "timestamp": 0
+      },
+      "launch_screen": 0,
+      "logical_ticks": 638,
+      "minimum_active": 36,
+      "ok": true,
+      "pending_tick_backlog": 175,
+      "pending_tick_backlog_stats": {
+        "count": 333,
+        "max": 176,
+        "median": 87,
+        "p95": 168
+      },
+      "rendered_instances": {
+        "count": 333,
+        "max": 3653.0,
+        "median": 2266.0,
+        "p95": 3647.0
+      },
+      "renderer": "gl_compatibility",
+      "requested_tick_rate": 4.0,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "sampled_tick_count": 333,
+      "schema": 1,
+      "screen_refresh_rate": 120.0,
+      "screen_size": "(3024, 1964)",
+      "smoke": false,
+      "static_memory_bytes": {
+        "count": 333,
+        "max": 527325440.0,
+        "median": 527273580.0,
+        "p95": 527314072.0
+      },
+      "tick_ms": {
+        "count": 333,
+        "max": 558.468,
+        "median": 337.53,
+        "p95": 445.97
+      },
+      "tick_rate": 4.0,
+      "tick_rate_sustained": false,
+      "valid": true,
+      "vsync_actual": 0,
+      "vsync_requested": "off",
+      "warmup_seconds": 30.0,
+      "workload_valid": true,
+      "world_seed": 43129,
+      "revision": "aa85db5679d65f4ef45e762cddec0d1b3f83e2a5",
+      "wall_seconds": 214.96,
+      "log": "1920x1080-off-1.log",
+      "run": 1,
+      "baseline": true
+    },
+    {
+      "activity_definition": "Live collection/build task or carried goods or job movement; excludes NEED trips and mere assigned roles. Window minimum is strict per sampled tick.",
+      "activity_windows": [
+        {
+          "minimum_active": 37,
+          "window": 0
+        },
+        {
+          "minimum_active": 37,
+          "window": 1
+        },
+        {
+          "minimum_active": 36,
+          "window": 2
+        },
+        {
+          "minimum_active": 37,
+          "window": 3
+        },
+        {
+          "minimum_active": 37,
+          "window": 4
+        },
+        {
+          "minimum_active": 36,
+          "window": 5
+        },
+        {
+          "minimum_active": 37,
+          "window": 6
+        },
+        {
+          "minimum_active": 37,
+          "window": 7
+        },
+        {
+          "minimum_active": 37,
+          "window": 8
+        },
+        {
+          "minimum_active": 36,
+          "window": 9
+        },
+        {
+          "minimum_active": 37,
+          "window": 10
+        },
+        {
+          "minimum_active": 37,
+          "window": 11
+        }
+      ],
+      "actual_sampled_tick_rate": 3.225,
+      "adapter": "Apple M4 Pro",
+      "benchmark_screen": 0,
+      "benchmark_screen_refresh_rate": 120.0,
+      "benchmark_screen_size": "(3024, 1964)",
+      "camera_points": [
+        {
+          "pitch": -55.0,
+          "span": 0.400000005960464,
+          "target": "(-74.33879, 2.264776, 12.32121)",
+          "view": "camp",
+          "yaw": 45.0
+        },
+        {
+          "pitch": -55.0,
+          "span": 0.800000011920929,
+          "target": "(-74.32, 2.260739, 12.37)",
+          "view": "pasture",
+          "yaw": 45.0
+        }
+      ],
+      "captures": [
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1920x1080-off-2-camp.png",
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1920x1080-off-2-pasture.png"
+      ],
+      "collection_seconds": 120.0,
+      "display_driver": "macOS",
+      "draw_calls": {
+        "count": 22,
+        "max": 3710.0,
+        "median": 1940.0,
+        "p95": 3705.0
+      },
+      "driver": "At most one unchanged tick call per process frame; overdue ticks remain scheduled",
+      "elapsed_seconds": 150.03225,
+      "failures": [],
+      "fixture": {
+        "cattle": 2,
+        "completed_fixture_homes": 10,
+        "completed_fixture_shelters": 1,
+        "extra_sources": 40,
+        "initial_ledger": {
+          "fodder": 10000,
+          "stone": 50,
+          "thatch": 50,
+          "timber": 1006,
+          "water": 10018,
+          "wild_food": 10008
+        },
+        "initial_need_timer_offsets": [
+          {
+            "drink_offset": 1,
+            "meal_offset": 1,
+            "worker_id": 3
+          },
+          {
+            "drink_offset": 4,
+            "meal_offset": 4,
+            "worker_id": 65
+          },
+          {
+            "drink_offset": 7,
+            "meal_offset": 7,
+            "worker_id": 66
+          },
+          {
+            "drink_offset": 10,
+            "meal_offset": 10,
+            "worker_id": 67
+          },
+          {
+            "drink_offset": 13,
+            "meal_offset": 13,
+            "worker_id": 68
+          },
+          {
+            "drink_offset": 16,
+            "meal_offset": 16,
+            "worker_id": 69
+          },
+          {
+            "drink_offset": 19,
+            "meal_offset": 19,
+            "worker_id": 70
+          },
+          {
+            "drink_offset": 22,
+            "meal_offset": 22,
+            "worker_id": 71
+          },
+          {
+            "drink_offset": 25,
+            "meal_offset": 25,
+            "worker_id": 125
+          },
+          {
+            "drink_offset": 28,
+            "meal_offset": 28,
+            "worker_id": 126
+          },
+          {
+            "drink_offset": 31,
+            "meal_offset": 31,
+            "worker_id": 127
+          },
+          {
+            "drink_offset": 34,
+            "meal_offset": 34,
+            "worker_id": 128
+          },
+          {
+            "drink_offset": 37,
+            "meal_offset": 37,
+            "worker_id": 129
+          },
+          {
+            "drink_offset": 40,
+            "meal_offset": 40,
+            "worker_id": 130
+          },
+          {
+            "drink_offset": 43,
+            "meal_offset": 43,
+            "worker_id": 131
+          },
+          {
+            "drink_offset": 46,
+            "meal_offset": 46,
+            "worker_id": 132
+          },
+          {
+            "drink_offset": 49,
+            "meal_offset": 49,
+            "worker_id": 133
+          },
+          {
+            "drink_offset": 52,
+            "meal_offset": 52,
+            "worker_id": 134
+          },
+          {
+            "drink_offset": 55,
+            "meal_offset": 55,
+            "worker_id": 135
+          },
+          {
+            "drink_offset": 58,
+            "meal_offset": 58,
+            "worker_id": 136
+          },
+          {
+            "drink_offset": 61,
+            "meal_offset": 61,
+            "worker_id": 137
+          },
+          {
+            "drink_offset": 64,
+            "meal_offset": 64,
+            "worker_id": 138
+          },
+          {
+            "drink_offset": 67,
+            "meal_offset": 67,
+            "worker_id": 139
+          },
+          {
+            "drink_offset": 70,
+            "meal_offset": 70,
+            "worker_id": 140
+          },
+          {
+            "drink_offset": 73,
+            "meal_offset": 73,
+            "worker_id": 141
+          },
+          {
+            "drink_offset": 76,
+            "meal_offset": 76,
+            "worker_id": 142
+          },
+          {
+            "drink_offset": 79,
+            "meal_offset": 79,
+            "worker_id": 143
+          },
+          {
+            "drink_offset": 82,
+            "meal_offset": 82,
+            "worker_id": 144
+          },
+          {
+            "drink_offset": 85,
+            "meal_offset": 85,
+            "worker_id": 145
+          },
+          {
+            "drink_offset": 88,
+            "meal_offset": 88,
+            "worker_id": 146
+          },
+          {
+            "drink_offset": 91,
+            "meal_offset": 91,
+            "worker_id": 147
+          },
+          {
+            "drink_offset": 94,
+            "meal_offset": 94,
+            "worker_id": 148
+          },
+          {
+            "drink_offset": 97,
+            "meal_offset": 97,
+            "worker_id": 149
+          },
+          {
+            "drink_offset": 100,
+            "meal_offset": 100,
+            "worker_id": 150
+          },
+          {
+            "drink_offset": 103,
+            "meal_offset": 103,
+            "worker_id": 151
+          },
+          {
+            "drink_offset": 106,
+            "meal_offset": 106,
+            "worker_id": 152
+          },
+          {
+            "drink_offset": 109,
+            "meal_offset": 109,
+            "worker_id": 153
+          },
+          {
+            "drink_offset": 112,
+            "meal_offset": 112,
+            "worker_id": 154
+          },
+          {
+            "drink_offset": 115,
+            "meal_offset": 115,
+            "worker_id": 155
+          },
+          {
+            "drink_offset": 118,
+            "meal_offset": 118,
+            "worker_id": 156
+          }
+        ],
+        "preconditioning_ticks": 213,
+        "roles": {
+          "herder": 1,
+          "timber": 39
+        },
+        "seed": 401208,
+        "setup_exception": "Registry/stock APIs only before warmup; spawning/roles/pasture use commands. Completed fixture buildings are nonblocking pre-existing records.",
+        "storage_capacity": {
+          "fodder": 1000000,
+          "milk": 1000000,
+          "stone": 1000000,
+          "thatch": 1000000,
+          "timber": 1000000,
+          "water": 1000000,
+          "wild_food": 1000000
+        },
+        "supplies_added": {
+          "fodder": 10000,
+          "water": 10000,
+          "wild_food": 10000
+        },
+        "timber_per_extra_source": 100000,
+        "workers": 40
+      },
+      "frame_ms": {
+        "count": 21,
+        "max": 6315.245,
+        "median": 322.277,
+        "p95": 409.88
+      },
+      "godot": {
+        "build": "official",
+        "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+        "hex": 263938,
+        "major": 4,
+        "minor": 7,
+        "patch": 2,
+        "status": "stable",
+        "string": "4.7.2-stable (official)",
+        "timestamp": 0
+      },
+      "launch_screen": 0,
+      "logical_ticks": 693,
+      "minimum_active": 36,
+      "ok": true,
+      "pending_tick_backlog": 120,
+      "pending_tick_backlog_stats": {
+        "count": 387,
+        "max": 121,
+        "median": 74,
+        "p95": 116
+      },
+      "rendered_instances": {
+        "count": 22,
+        "max": 4362.0,
+        "median": 2592.0,
+        "p95": 4357.0
+      },
+      "renderer": "gl_compatibility",
+      "requested_tick_rate": 4.0,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "sampled_tick_count": 387,
+      "schema": 1,
+      "screen_refresh_rate": 120.0,
+      "screen_size": "(3024, 1964)",
+      "smoke": false,
+      "static_memory_bytes": {
+        "count": 22,
+        "max": 527735670.0,
+        "median": 527730398.0,
+        "p95": 527735638.0
+      },
+      "tick_ms": {
+        "count": 387,
+        "max": 445.381,
+        "median": 300.938,
+        "p95": 397.591
+      },
+      "tick_rate": 4.0,
+      "tick_rate_sustained": false,
+      "valid": true,
+      "vsync_actual": 0,
+      "vsync_requested": "off",
+      "warmup_seconds": 30.0,
+      "workload_valid": true,
+      "world_seed": 43129,
+      "revision": "aa85db5679d65f4ef45e762cddec0d1b3f83e2a5",
+      "wall_seconds": 222.76,
+      "log": "1920x1080-off-2.log",
+      "run": 2,
+      "baseline": true
+    },
+    {
+      "activity_definition": "Live collection/build task or carried goods or job movement; excludes NEED trips and mere assigned roles. Window minimum is strict per sampled tick.",
+      "activity_windows": [
+        {
+          "minimum_active": 37,
+          "window": 0
+        },
+        {
+          "minimum_active": 37,
+          "window": 1
+        },
+        {
+          "minimum_active": 36,
+          "window": 2
+        },
+        {
+          "minimum_active": 37,
+          "window": 3
+        },
+        {
+          "minimum_active": 37,
+          "window": 4
+        },
+        {
+          "minimum_active": 37,
+          "window": 5
+        },
+        {
+          "minimum_active": 36,
+          "window": 6
+        },
+        {
+          "minimum_active": 37,
+          "window": 7
+        },
+        {
+          "minimum_active": 37,
+          "window": 8
+        },
+        {
+          "minimum_active": 37,
+          "window": 9
+        },
+        {
+          "minimum_active": 36,
+          "window": 10
+        },
+        {
+          "minimum_active": 37,
+          "window": 11
+        }
+      ],
+      "actual_sampled_tick_rate": 3.03333333333333,
+      "adapter": "Apple M4 Pro",
+      "benchmark_screen": 0,
+      "benchmark_screen_refresh_rate": 120.0,
+      "benchmark_screen_size": "(3024, 1964)",
+      "camera_points": [
+        {
+          "pitch": -55.0,
+          "span": 0.400000005960464,
+          "target": "(-74.36, 2.265353, 12.3)",
+          "view": "camp",
+          "yaw": 45.0
+        },
+        {
+          "pitch": -55.0,
+          "span": 0.800000011920929,
+          "target": "(-74.32, 2.260739, 12.37)",
+          "view": "pasture",
+          "yaw": 45.0
+        }
+      ],
+      "captures": [
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1920x1080-off-3-camp.png",
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1920x1080-off-3-pasture.png"
+      ],
+      "collection_seconds": 120.0,
+      "display_driver": "macOS",
+      "draw_calls": {
+        "count": 364,
+        "max": 3158.0,
+        "median": 1774.0,
+        "p95": 3152.0
+      },
+      "driver": "At most one unchanged tick call per process frame; overdue ticks remain scheduled",
+      "elapsed_seconds": 150.024647,
+      "failures": [],
+      "fixture": {
+        "cattle": 2,
+        "completed_fixture_homes": 10,
+        "completed_fixture_shelters": 1,
+        "extra_sources": 40,
+        "initial_ledger": {
+          "fodder": 10000,
+          "stone": 50,
+          "thatch": 50,
+          "timber": 1006,
+          "water": 10018,
+          "wild_food": 10008
+        },
+        "initial_need_timer_offsets": [
+          {
+            "drink_offset": 1,
+            "meal_offset": 1,
+            "worker_id": 3
+          },
+          {
+            "drink_offset": 4,
+            "meal_offset": 4,
+            "worker_id": 65
+          },
+          {
+            "drink_offset": 7,
+            "meal_offset": 7,
+            "worker_id": 66
+          },
+          {
+            "drink_offset": 10,
+            "meal_offset": 10,
+            "worker_id": 67
+          },
+          {
+            "drink_offset": 13,
+            "meal_offset": 13,
+            "worker_id": 68
+          },
+          {
+            "drink_offset": 16,
+            "meal_offset": 16,
+            "worker_id": 69
+          },
+          {
+            "drink_offset": 19,
+            "meal_offset": 19,
+            "worker_id": 70
+          },
+          {
+            "drink_offset": 22,
+            "meal_offset": 22,
+            "worker_id": 71
+          },
+          {
+            "drink_offset": 25,
+            "meal_offset": 25,
+            "worker_id": 125
+          },
+          {
+            "drink_offset": 28,
+            "meal_offset": 28,
+            "worker_id": 126
+          },
+          {
+            "drink_offset": 31,
+            "meal_offset": 31,
+            "worker_id": 127
+          },
+          {
+            "drink_offset": 34,
+            "meal_offset": 34,
+            "worker_id": 128
+          },
+          {
+            "drink_offset": 37,
+            "meal_offset": 37,
+            "worker_id": 129
+          },
+          {
+            "drink_offset": 40,
+            "meal_offset": 40,
+            "worker_id": 130
+          },
+          {
+            "drink_offset": 43,
+            "meal_offset": 43,
+            "worker_id": 131
+          },
+          {
+            "drink_offset": 46,
+            "meal_offset": 46,
+            "worker_id": 132
+          },
+          {
+            "drink_offset": 49,
+            "meal_offset": 49,
+            "worker_id": 133
+          },
+          {
+            "drink_offset": 52,
+            "meal_offset": 52,
+            "worker_id": 134
+          },
+          {
+            "drink_offset": 55,
+            "meal_offset": 55,
+            "worker_id": 135
+          },
+          {
+            "drink_offset": 58,
+            "meal_offset": 58,
+            "worker_id": 136
+          },
+          {
+            "drink_offset": 61,
+            "meal_offset": 61,
+            "worker_id": 137
+          },
+          {
+            "drink_offset": 64,
+            "meal_offset": 64,
+            "worker_id": 138
+          },
+          {
+            "drink_offset": 67,
+            "meal_offset": 67,
+            "worker_id": 139
+          },
+          {
+            "drink_offset": 70,
+            "meal_offset": 70,
+            "worker_id": 140
+          },
+          {
+            "drink_offset": 73,
+            "meal_offset": 73,
+            "worker_id": 141
+          },
+          {
+            "drink_offset": 76,
+            "meal_offset": 76,
+            "worker_id": 142
+          },
+          {
+            "drink_offset": 79,
+            "meal_offset": 79,
+            "worker_id": 143
+          },
+          {
+            "drink_offset": 82,
+            "meal_offset": 82,
+            "worker_id": 144
+          },
+          {
+            "drink_offset": 85,
+            "meal_offset": 85,
+            "worker_id": 145
+          },
+          {
+            "drink_offset": 88,
+            "meal_offset": 88,
+            "worker_id": 146
+          },
+          {
+            "drink_offset": 91,
+            "meal_offset": 91,
+            "worker_id": 147
+          },
+          {
+            "drink_offset": 94,
+            "meal_offset": 94,
+            "worker_id": 148
+          },
+          {
+            "drink_offset": 97,
+            "meal_offset": 97,
+            "worker_id": 149
+          },
+          {
+            "drink_offset": 100,
+            "meal_offset": 100,
+            "worker_id": 150
+          },
+          {
+            "drink_offset": 103,
+            "meal_offset": 103,
+            "worker_id": 151
+          },
+          {
+            "drink_offset": 106,
+            "meal_offset": 106,
+            "worker_id": 152
+          },
+          {
+            "drink_offset": 109,
+            "meal_offset": 109,
+            "worker_id": 153
+          },
+          {
+            "drink_offset": 112,
+            "meal_offset": 112,
+            "worker_id": 154
+          },
+          {
+            "drink_offset": 115,
+            "meal_offset": 115,
+            "worker_id": 155
+          },
+          {
+            "drink_offset": 118,
+            "meal_offset": 118,
+            "worker_id": 156
+          }
+        ],
+        "preconditioning_ticks": 213,
+        "roles": {
+          "herder": 1,
+          "timber": 39
+        },
+        "seed": 401208,
+        "setup_exception": "Registry/stock APIs only before warmup; spawning/roles/pasture use commands. Completed fixture buildings are nonblocking pre-existing records.",
+        "storage_capacity": {
+          "fodder": 1000000,
+          "milk": 1000000,
+          "stone": 1000000,
+          "thatch": 1000000,
+          "timber": 1000000,
+          "water": 1000000,
+          "wild_food": 1000000
+        },
+        "supplies_added": {
+          "fodder": 10000,
+          "water": 10000,
+          "wild_food": 10000
+        },
+        "timber_per_extra_source": 100000,
+        "workers": 40
+      },
+      "frame_ms": {
+        "count": 363,
+        "max": 474.713,
+        "median": 324.7,
+        "p95": 425.104
+      },
+      "godot": {
+        "build": "official",
+        "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+        "hex": 263938,
+        "major": 4,
+        "minor": 7,
+        "patch": 2,
+        "status": "stable",
+        "string": "4.7.2-stable (official)",
+        "timestamp": 0
+      },
+      "launch_screen": 0,
+      "logical_ticks": 669,
+      "minimum_active": 36,
+      "ok": true,
+      "pending_tick_backlog": 144,
+      "pending_tick_backlog_stats": {
+        "count": 364,
+        "max": 144,
+        "median": 84,
+        "p95": 138
+      },
+      "rendered_instances": {
+        "count": 364,
+        "max": 3674.0,
+        "median": 2270.0,
+        "p95": 3649.0
+      },
+      "renderer": "gl_compatibility",
+      "requested_tick_rate": 4.0,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "sampled_tick_count": 364,
+      "schema": 1,
+      "screen_refresh_rate": 120.0,
+      "screen_size": "(3024, 1964)",
+      "smoke": false,
+      "static_memory_bytes": {
+        "count": 364,
+        "max": 527338392.0,
+        "median": 526912452.0,
+        "p95": 527320732.0
+      },
+      "tick_ms": {
+        "count": 364,
+        "max": 456.042,
+        "median": 307.64,
+        "p95": 405.857
+      },
+      "tick_rate": 4.0,
+      "tick_rate_sustained": false,
+      "valid": true,
+      "vsync_actual": 0,
+      "vsync_requested": "off",
+      "warmup_seconds": 30.0,
+      "workload_valid": true,
+      "world_seed": 43129,
+      "revision": "aa85db5679d65f4ef45e762cddec0d1b3f83e2a5",
+      "wall_seconds": 213.75,
+      "log": "1920x1080-off-3.log",
+      "run": 3,
+      "baseline": true
+    },
+    {
+      "activity_definition": "Live collection/build task or carried goods or job movement; excludes NEED trips and mere assigned roles. Window minimum is strict per sampled tick.",
+      "activity_windows": [
+        {
+          "minimum_active": 37,
+          "window": 0
+        },
+        {
+          "minimum_active": 37,
+          "window": 1
+        },
+        {
+          "minimum_active": 36,
+          "window": 2
+        },
+        {
+          "minimum_active": 37,
+          "window": 3
+        },
+        {
+          "minimum_active": 37,
+          "window": 4
+        },
+        {
+          "minimum_active": 37,
+          "window": 5
+        },
+        {
+          "minimum_active": 36,
+          "window": 6
+        },
+        {
+          "minimum_active": 37,
+          "window": 7
+        },
+        {
+          "minimum_active": 37,
+          "window": 8
+        },
+        {
+          "minimum_active": 37,
+          "window": 9
+        },
+        {
+          "minimum_active": 36,
+          "window": 10
+        },
+        {
+          "minimum_active": 37,
+          "window": 11
+        }
+      ],
+      "actual_sampled_tick_rate": 3.10833333333333,
+      "adapter": "Apple M4 Pro",
+      "benchmark_screen": 0,
+      "benchmark_screen_refresh_rate": 120.0,
+      "benchmark_screen_size": "(3024, 1964)",
+      "camera_points": [
+        {
+          "pitch": -55.0,
+          "span": 0.400000005960464,
+          "target": "(-74.36, 2.265353, 12.3)",
+          "view": "camp",
+          "yaw": 45.0
+        },
+        {
+          "pitch": -55.0,
+          "span": 0.800000011920929,
+          "target": "(-74.32, 2.260739, 12.37)",
+          "view": "pasture",
+          "yaw": 45.0
+        }
+      ],
+      "captures": [
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1920x1080-on-1-camp.png",
+        "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1920x1080-on-1-pasture.png"
+      ],
+      "collection_seconds": 120.0,
+      "display_driver": "macOS",
+      "draw_calls": {
+        "count": 373,
+        "max": 3158.0,
+        "median": 1774.0,
+        "p95": 3152.0
+      },
+      "driver": "At most one unchanged tick call per process frame; overdue ticks remain scheduled",
+      "elapsed_seconds": 150.04928,
+      "failures": [],
+      "fixture": {
+        "cattle": 2,
+        "completed_fixture_homes": 10,
+        "completed_fixture_shelters": 1,
+        "extra_sources": 40,
+        "initial_ledger": {
+          "fodder": 10000,
+          "stone": 50,
+          "thatch": 50,
+          "timber": 1006,
+          "water": 10018,
+          "wild_food": 10008
+        },
+        "initial_need_timer_offsets": [
+          {
+            "drink_offset": 1,
+            "meal_offset": 1,
+            "worker_id": 3
+          },
+          {
+            "drink_offset": 4,
+            "meal_offset": 4,
+            "worker_id": 65
+          },
+          {
+            "drink_offset": 7,
+            "meal_offset": 7,
+            "worker_id": 66
+          },
+          {
+            "drink_offset": 10,
+            "meal_offset": 10,
+            "worker_id": 67
+          },
+          {
+            "drink_offset": 13,
+            "meal_offset": 13,
+            "worker_id": 68
+          },
+          {
+            "drink_offset": 16,
+            "meal_offset": 16,
+            "worker_id": 69
+          },
+          {
+            "drink_offset": 19,
+            "meal_offset": 19,
+            "worker_id": 70
+          },
+          {
+            "drink_offset": 22,
+            "meal_offset": 22,
+            "worker_id": 71
+          },
+          {
+            "drink_offset": 25,
+            "meal_offset": 25,
+            "worker_id": 125
+          },
+          {
+            "drink_offset": 28,
+            "meal_offset": 28,
+            "worker_id": 126
+          },
+          {
+            "drink_offset": 31,
+            "meal_offset": 31,
+            "worker_id": 127
+          },
+          {
+            "drink_offset": 34,
+            "meal_offset": 34,
+            "worker_id": 128
+          },
+          {
+            "drink_offset": 37,
+            "meal_offset": 37,
+            "worker_id": 129
+          },
+          {
+            "drink_offset": 40,
+            "meal_offset": 40,
+            "worker_id": 130
+          },
+          {
+            "drink_offset": 43,
+            "meal_offset": 43,
+            "worker_id": 131
+          },
+          {
+            "drink_offset": 46,
+            "meal_offset": 46,
+            "worker_id": 132
+          },
+          {
+            "drink_offset": 49,
+            "meal_offset": 49,
+            "worker_id": 133
+          },
+          {
+            "drink_offset": 52,
+            "meal_offset": 52,
+            "worker_id": 134
+          },
+          {
+            "drink_offset": 55,
+            "meal_offset": 55,
+            "worker_id": 135
+          },
+          {
+            "drink_offset": 58,
+            "meal_offset": 58,
+            "worker_id": 136
+          },
+          {
+            "drink_offset": 61,
+            "meal_offset": 61,
+            "worker_id": 137
+          },
+          {
+            "drink_offset": 64,
+            "meal_offset": 64,
+            "worker_id": 138
+          },
+          {
+            "drink_offset": 67,
+            "meal_offset": 67,
+            "worker_id": 139
+          },
+          {
+            "drink_offset": 70,
+            "meal_offset": 70,
+            "worker_id": 140
+          },
+          {
+            "drink_offset": 73,
+            "meal_offset": 73,
+            "worker_id": 141
+          },
+          {
+            "drink_offset": 76,
+            "meal_offset": 76,
+            "worker_id": 142
+          },
+          {
+            "drink_offset": 79,
+            "meal_offset": 79,
+            "worker_id": 143
+          },
+          {
+            "drink_offset": 82,
+            "meal_offset": 82,
+            "worker_id": 144
+          },
+          {
+            "drink_offset": 85,
+            "meal_offset": 85,
+            "worker_id": 145
+          },
+          {
+            "drink_offset": 88,
+            "meal_offset": 88,
+            "worker_id": 146
+          },
+          {
+            "drink_offset": 91,
+            "meal_offset": 91,
+            "worker_id": 147
+          },
+          {
+            "drink_offset": 94,
+            "meal_offset": 94,
+            "worker_id": 148
+          },
+          {
+            "drink_offset": 97,
+            "meal_offset": 97,
+            "worker_id": 149
+          },
+          {
+            "drink_offset": 100,
+            "meal_offset": 100,
+            "worker_id": 150
+          },
+          {
+            "drink_offset": 103,
+            "meal_offset": 103,
+            "worker_id": 151
+          },
+          {
+            "drink_offset": 106,
+            "meal_offset": 106,
+            "worker_id": 152
+          },
+          {
+            "drink_offset": 109,
+            "meal_offset": 109,
+            "worker_id": 153
+          },
+          {
+            "drink_offset": 112,
+            "meal_offset": 112,
+            "worker_id": 154
+          },
+          {
+            "drink_offset": 115,
+            "meal_offset": 115,
+            "worker_id": 155
+          },
+          {
+            "drink_offset": 118,
+            "meal_offset": 118,
+            "worker_id": 156
+          }
+        ],
+        "preconditioning_ticks": 213,
+        "roles": {
+          "herder": 1,
+          "timber": 39
+        },
+        "seed": 401208,
+        "setup_exception": "Registry/stock APIs only before warmup; spawning/roles/pasture use commands. Completed fixture buildings are nonblocking pre-existing records.",
+        "storage_capacity": {
+          "fodder": 1000000,
+          "milk": 1000000,
+          "stone": 1000000,
+          "thatch": 1000000,
+          "timber": 1000000,
+          "water": 1000000,
+          "wild_food": 1000000
+        },
+        "supplies_added": {
+          "fodder": 10000,
+          "water": 10000,
+          "wild_food": 10000
+        },
+        "timber_per_extra_source": 100000,
+        "workers": 40
+      },
+      "frame_ms": {
+        "count": 372,
+        "max": 465.594,
+        "median": 316.273,
+        "p95": 409.495
+      },
+      "godot": {
+        "build": "official",
+        "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+        "hex": 263938,
+        "major": 4,
+        "minor": 7,
+        "patch": 2,
+        "status": "stable",
+        "string": "4.7.2-stable (official)",
+        "timestamp": 0
+      },
+      "launch_screen": 0,
+      "logical_ticks": 680,
+      "minimum_active": 36,
+      "ok": true,
+      "pending_tick_backlog": 133,
+      "pending_tick_backlog_stats": {
+        "count": 373,
+        "max": 133,
+        "median": 78,
+        "p95": 128
+      },
+      "rendered_instances": {
+        "count": 373,
+        "max": 3680.0,
+        "median": 2270.0,
+        "p95": 3651.0
+      },
+      "renderer": "gl_compatibility",
+      "requested_tick_rate": 4.0,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "sampled_tick_count": 373,
+      "schema": 1,
+      "screen_refresh_rate": 120.0,
+      "screen_size": "(3024, 1964)",
+      "smoke": false,
+      "static_memory_bytes": {
+        "count": 373,
+        "max": 526978604.0,
+        "median": 526912936.0,
+        "p95": 526960132.0
+      },
+      "tick_ms": {
+        "count": 373,
+        "max": 444.883,
+        "median": 298.409,
+        "p95": 394.9
+      },
+      "tick_rate": 4.0,
+      "tick_rate_sustained": false,
+      "valid": true,
+      "vsync_actual": 1,
+      "vsync_requested": "on",
+      "warmup_seconds": 30.0,
+      "workload_valid": true,
+      "world_seed": 43129,
+      "revision": "aa85db5679d65f4ef45e762cddec0d1b3f83e2a5",
+      "wall_seconds": 214.49,
+      "log": "1920x1080-on-1.log",
+      "run": 1,
+      "baseline": true
+    }
+  ],
+  "regression_budget_percent": 5,
+  "regression_status": "Baseline only; comparison requires matching fixture, machine, resolution, vsync and camera protocol."
+}

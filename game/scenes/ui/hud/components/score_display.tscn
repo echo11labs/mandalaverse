@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj7k2m4v6b8n9"]
+
+[ext_resource type="Script" path="res://scenes/ui/hud/components/score_display.gd" id="1_score_display"]
+
+[node name="ScoreDisplay" type="Label"]
+script = ExtResource("1_score_display")
+text = "0"
+horizontal_alignment = 2

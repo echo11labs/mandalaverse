@@ -1,114 +1,121 @@
 {
-  "source_pack": "Quaternius Stylized Nature MegaKit Standard",
+  "source_pack": "KayKit Forest Nature 1.0 (CC0, Kay Lousberg)",
   "seed": 43129,
   "regional_spacing_m": 70,
   "detail_spacing_m": 18,
   "chunk_size_units": 20,
   "variants": [
     {
-      "id": "Pine_1",
-      "path": "res://assets/models/trees/QuaterniusMegaKit/Pine_1.gltf",
+      "id": "Fir_Tall_A",
+      "path": "res://assets/models/nature/kaykit/Tree_2_A.glb",
       "kind": "conifer",
       "height_min_m": 20,
-      "height_max_m": 32
+      "height_max_m": 30
     },
     {
-      "id": "Pine_2",
-      "path": "res://assets/models/trees/QuaterniusMegaKit/Pine_2.gltf",
+      "id": "Fir_Tall_B",
+      "path": "res://assets/models/nature/kaykit/Tree_2_B.glb",
       "kind": "conifer",
-      "height_min_m": 20,
-      "height_max_m": 32
+      "height_min_m": 12,
+      "height_max_m": 19
     },
     {
-      "id": "Pine_3",
-      "path": "res://assets/models/trees/QuaterniusMegaKit/Pine_3.gltf",
+      "id": "Fir_Young_C",
+      "path": "res://assets/models/nature/kaykit/Tree_2_B.glb",
       "kind": "conifer",
-      "height_min_m": 20,
-      "height_max_m": 32
+      "height_min_m": 15,
+      "height_max_m": 24
     },
     {
-      "id": "Pine_4",
-      "path": "res://assets/models/trees/QuaterniusMegaKit/Pine_4.gltf",
+      "id": "Pine_Open_A",
+      "path": "res://assets/models/nature/kaykit/Tree_2_A.glb",
       "kind": "conifer",
-      "height_min_m": 20,
-      "height_max_m": 32
+      "height_min_m": 9,
+      "height_max_m": 16
     },
     {
-      "id": "Pine_5",
-      "path": "res://assets/models/trees/QuaterniusMegaKit/Pine_5.gltf",
+      "id": "Pine_Open_B",
+      "path": "res://assets/models/nature/kaykit/Tree_2_B.glb",
       "kind": "conifer",
-      "height_min_m": 20,
-      "height_max_m": 32
+      "height_min_m": 8,
+      "height_max_m": 15
     },
     {
-      "id": "CommonTree_1",
-      "path": "res://assets/models/trees/QuaterniusMegaKit/CommonTree_1.gltf",
-      "kind": "broadleaf",
-      "height_min_m": 14,
-      "height_max_m": 24
+      "id": "Pine_Dense_C",
+      "path": "res://assets/models/nature/kaykit/Tree_2_A.glb",
+      "kind": "conifer",
+      "height_min_m": 7,
+      "height_max_m": 13
     },
     {
-      "id": "CommonTree_2",
-      "path": "res://assets/models/trees/QuaterniusMegaKit/CommonTree_2.gltf",
+      "id": "Broad_Oak_A",
+      "path": "res://assets/models/nature/kaykit/Tree_1_A.glb",
       "kind": "broadleaf",
-      "height_min_m": 14,
-      "height_max_m": 24
+      "height_min_m": 9,
+      "height_max_m": 16
     },
     {
-      "id": "CommonTree_3",
-      "path": "res://assets/models/trees/QuaterniusMegaKit/CommonTree_3.gltf",
+      "id": "Broad_Oak_B",
+      "path": "res://assets/models/nature/kaykit/Tree_1_B.glb",
       "kind": "broadleaf",
-      "height_min_m": 14,
-      "height_max_m": 24
+      "height_min_m": 8,
+      "height_max_m": 15
     },
     {
-      "id": "CommonTree_4",
-      "path": "res://assets/models/trees/QuaterniusMegaKit/CommonTree_4.gltf",
+      "id": "Broad_Oak_C",
+      "path": "res://assets/models/nature/kaykit/Tree_3_A.glb",
       "kind": "broadleaf",
-      "height_min_m": 14,
-      "height_max_m": 24
+      "height_min_m": 9,
+      "height_max_m": 16
     },
     {
-      "id": "CommonTree_5",
-      "path": "res://assets/models/trees/QuaterniusMegaKit/CommonTree_5.gltf",
+      "id": "Broad_Oak_D",
+      "path": "res://assets/models/nature/kaykit/Tree_3_B.glb",
       "kind": "broadleaf",
-      "height_min_m": 14,
-      "height_max_m": 24
+      "height_min_m": 10,
+      "height_max_m": 18
     },
     {
-      "id": "TwistedTree_1",
-      "path": "res://assets/models/trees/QuaterniusMegaKit/TwistedTree_1.gltf",
+      "id": "Broad_Round_A",
+      "path": "res://assets/models/nature/kaykit/Tree_4_A.glb",
       "kind": "broadleaf",
-      "height_min_m": 14,
-      "height_max_m": 24
+      "height_min_m": 7,
+      "height_max_m": 13
     },
     {
-      "id": "TwistedTree_2",
-      "path": "res://assets/models/trees/QuaterniusMegaKit/TwistedTree_2.gltf",
+      "id": "Broad_Round_B",
+      "path": "res://assets/models/nature/kaykit/Tree_4_B.glb",
       "kind": "broadleaf",
-      "height_min_m": 14,
-      "height_max_m": 24
+      "height_min_m": 8,
+      "height_max_m": 14
     },
     {
-      "id": "TwistedTree_3",
-      "path": "res://assets/models/trees/QuaterniusMegaKit/TwistedTree_3.gltf",
+      "id": "Broad_Round_C",
+      "path": "res://assets/models/nature/kaykit/Tree_3_B.glb",
       "kind": "broadleaf",
-      "height_min_m": 14,
-      "height_max_m": 24
+      "height_min_m": 6,
+      "height_max_m": 12
     },
     {
-      "id": "TwistedTree_4",
-      "path": "res://assets/models/trees/QuaterniusMegaKit/TwistedTree_4.gltf",
+      "id": "Broad_Scrub_A",
+      "path": "res://assets/models/nature/kaykit/Tree_4_A.glb",
       "kind": "broadleaf",
-      "height_min_m": 14,
-      "height_max_m": 24
+      "height_min_m": 5,
+      "height_max_m": 10
     },
     {
-      "id": "TwistedTree_5",
-      "path": "res://assets/models/trees/QuaterniusMegaKit/TwistedTree_5.gltf",
+      "id": "Broad_Scrub_B",
+      "path": "res://assets/models/nature/kaykit/Tree_4_B.glb",
       "kind": "broadleaf",
-      "height_min_m": 14,
-      "height_max_m": 24
+      "height_min_m": 6,
+      "height_max_m": 11
+    },
+    {
+      "id": "Broad_Scrub_C",
+      "path": "res://assets/models/nature/kaykit/Tree_1_B.glb",
+      "kind": "broadleaf",
+      "height_min_m": 6,
+      "height_max_m": 11
     }
   ],
   "detail_center": [

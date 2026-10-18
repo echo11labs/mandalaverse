@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-12",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "tests": {
+    "ui-headless": {
+      "checks": 251,
+      "failures": [],
+      "ok": true
+    },
+    "ui-rendered": {
+      "checks": 251,
+      "failures": [],
+      "ok": true
+    },
+    "component-gallery": {
+      "checks": 346,
+      "failures": [],
+      "ok": true
+    }
+  },
+  "full_gate": {
+    "ok": false,
+    "stages": [
+      {
+        "stage": "import",
+        "ok": false,
+        "exit_code": 0,
+        "timed_out": false,
+        "seconds": 6.54,
+        "log": "reports/local/import.log",
+        "warnings": [
+          "Case mismatch opening requested file '/Users/devendrashahithakuri/Work/Nep-All/game/scripts/gerstner_ocean_demo.gd', stored as '/Users/devendrashahithakuri/Work/Nep-All/game/Scripts/gerstner_ocean_demo.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.",
+          "Case mismatch opening requested file '/Users/devendrashahithakuri/Work/Nep-All/game/scripts/main.gd', stored as '/Users/devendrashahithakuri/Work/Nep-All/game/Scripts/main.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.",
+          "1 RID of type \"CanvasItem\" was leaked.",
+          "4 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+        ],
+        "known_engine_errors": {
+          "language_server_stop_without_started_thread": 1
+        }
+      }
+    ],
+    "skipped": "All stages after import, because the mandatory gate stops on inherited resource-leak errors."
+  },
+  "rendered_captures": [
+    "resources-1280x720.png",
+    "resources-1920x1080.png"
+  ],
+  "visual_review": {
+    "window": "Centered and bounded; all seven goods, detail text and Close are visible.",
+    "legacy_hud": "Existing side-panel clipping/overlap remains outside this first management slice.",
+    "device": "Apple M4 Pro, Godot GL Compatibility; layout inspection only, no performance benchmark."
+  },
+  "scope": "Initial gameplay-integrated resource overview and HUD load repair; remaining HUD rebuild stages are in docs/GOPALA-HUD-Research-and-Build.md."
+}

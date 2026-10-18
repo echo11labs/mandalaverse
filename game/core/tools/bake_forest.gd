@@ -1,6 +1,8 @@
 extends SceneTree
 ## Bake external tree models using ProtonScatter's placement modifiers.
 ## This script assembles imported meshes; it creates no tree geometry.
+## Regional forest only (70m spacing). Detail layer (18m) is now handled by
+## EZTreeDraw at runtime via ez_tree_profiles.json.
 const CONFIG := "res://data/forest/models.json"
 const OUTPUT := "res://data/forest/kathmandu_forest.scn"
 const RECEIPT := "res://data/forest/bake-receipt.json"
@@ -141,7 +143,7 @@ func build() -> void:
 		quit(1)
 		return
 	var inputs := {}
-	for path: String in [CONFIG, "res://assets/models/trees/QuaterniusMegaKit/source-receipt.json", "res://data/geography/kathmandu.json", "res://data/geography/kathmandu-source-height.f32", "res://data/geography/kathmandu-ground-height.f32", "res://data/geography/kathmandu-river-distance.f32", "res://core/landscape/kathmandu_terrain.gd", "res://core/landscape/forest_rules.gd", "res://core/tools/bake_forest.gd"]:
+	for path: String in [CONFIG, "res://assets/models/nature/kaykit/source-receipt.json", "res://data/geography/kathmandu.json", "res://data/geography/kathmandu-source-height.f32", "res://data/geography/kathmandu-ground-height.f32", "res://data/geography/kathmandu-river-distance.f32", "res://core/landscape/kathmandu_terrain.gd", "res://core/landscape/forest_rules.gd", "res://core/tools/bake_forest.gd"]:
 		inputs[path] = FileAccess.get_sha256(path)
 	var report := {"ok":true,"population":population,"chunks":chunks.size(),"variants":variant_counts,"sample_pine_height_m":sample_pine_height_m,"output":OUTPUT,"output_sha256":FileAccess.get_sha256(OUTPUT),"inputs":inputs,"placement_engine":"ProtonScatter 4.2.0","scope":"Externally authored models, art-directed forest proxy; not a vegetation survey or resource inventory."}
 	var file := FileAccess.open(RECEIPT, FileAccess.WRITE)

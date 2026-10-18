@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqjbfggru8kqg" path="res://scenes/landscape/kathmandu_valley.gd" id="1"]
 [ext_resource type="Script" uid="uid://cwfl2v85k37xf" path="res://scenes/landscape/kathmandu_camera.gd" id="2"]
+[ext_resource type="PackedScene" path="res://core/simulation/settlement_simulation.tscn" id="4_simulation"]
 
 [sub_resource type="ProceduralSkyMaterial" id="SkyMaterial"]
 sky_top_color = Color(0.3, 0.44, 0.51, 1)
@@ -27,6 +28,16 @@ fog_density = 0.00015
 
 [node name="KathmanduValley" type="Node3D" unique_id=1586659905]
 script = ExtResource("1")
+mvp_enabled = null
+vegetation_seed = null
+
+[node name="SettlementSimulation" parent="." unique_id=749886704 instance=ExtResource("4_simulation")]
+
+[node name="DetailForest" type="Node3D" parent="." unique_id=1586659906]
+
+[node name="DetailStones" type="Node3D" parent="." unique_id=1586659920]
+
+[node name="HeroTrees" type="Node3D" parent="." unique_id=1586659912]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1396291843]
 current = true

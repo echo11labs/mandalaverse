@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="GopalaCropDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://core/content/crop_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"cereal"
+display_name = "Cereal (prototype)"
+harvest_resource = &"grain"
+growth_ticks = 1200
+yield_amount = 8
+minimum_fertility = 0.25
+minimum_moisture = 0.2
+work_ticks = 12

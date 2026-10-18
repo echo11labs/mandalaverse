@@ -1,0 +1,566 @@
+{
+  "ok": false,
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "stages": [
+    {
+      "stage": "import",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 5.05,
+      "log": "reports/local/import.log",
+      "warnings": [
+        "Instantiated TerrainNetworkConfig used as default value for TerrainStreamer's \"network\" property.",
+        "Instantiated TerrainRenderingConfig used as default value for TerrainStreamer's \"rendering\" property.",
+        "Instantiated TerrainStreamingConfig used as default value for TerrainStreamer's \"streaming\" property.",
+        "Instantiated TerrainWorldConfig used as default value for TerrainStreamer's \"world\" property."
+      ],
+      "known_engine_errors": {
+        "language_server_stop_without_started_thread": 1
+      }
+    },
+    {
+      "stage": "parse-gopala_extension",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.29,
+      "log": "reports/local/parse-gopala_extension.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-gopala_theme",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-gopala_theme.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-ui_events",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-ui_events.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-building_definition",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-building_definition.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-content_audit",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-content_audit.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-resource_definition",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-resource_definition.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-zone_definition",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-zone_definition.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-forest_rules",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-forest_rules.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-kathmandu_terrain",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-kathmandu_terrain.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-sculpted_valley",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-sculpted_valley.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-terrain_river",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-terrain_river.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-water_network",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-water_network.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-valley_terrain",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-valley_terrain.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-bake_forest",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-bake_forest.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-bake_waterways",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-bake_waterways.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-thumbnail_generator",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-thumbnail_generator.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-content_lab",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-content_lab.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-kathmandu_camera",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-kathmandu_camera.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-kathmandu_hud",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-kathmandu_hud.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-kathmandu_valley",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.29,
+      "log": "reports/local/parse-kathmandu_valley.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-map_overlay_drawer",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-map_overlay_drawer.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-scenic_camera",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-scenic_camera.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-scenic_valley",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-scenic_valley.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-gopala_minimap",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-gopala_minimap.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-terrain_overlay",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-terrain_overlay.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-valley",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.19,
+      "log": "reports/local/parse-valley.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-valley_camera",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-valley_camera.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-bake_landscape",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-bake_landscape.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-generate_prototypes",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-generate_prototypes.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-measure_ui",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-measure_ui.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_content_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_content_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_forest_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_forest_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_kathmandu_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_kathmandu_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_landscape_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_landscape_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_scenic_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_scenic_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_ui_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_ui_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "parse-run_waterways_tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18,
+      "log": "reports/local/parse-run_waterways_tests.log",
+      "warnings": []
+    },
+    {
+      "stage": "content-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.39,
+      "log": "reports/local/content-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 19,
+        "content": {
+          "counts": {
+            "buildings": 6,
+            "resources": 7,
+            "zones": 1
+          },
+          "errors": [],
+          "ok": true,
+          "production_art_approved": false,
+          "prototype_assets": 20
+        },
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "ui-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.45,
+      "log": "reports/local/ui-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 111,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "landscape-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.39,
+      "log": "reports/local/landscape-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 4931,
+        "failures": [],
+        "ok": true,
+        "river_cells": 192,
+        "terrain_surfaces": 8
+      }
+    },
+    {
+      "stage": "scenic-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 1.26,
+      "log": "reports/local/scenic-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 3451,
+        "failures": [],
+        "ok": true
+      }
+    },
+    {
+      "stage": "kathmandu-tests",
+      "ok": false,
+      "exit_code": 1,
+      "timed_out": false,
+      "seconds": 4.95,
+      "log": "reports/local/kathmandu-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 30896,
+        "failures": [
+          "Mesh matches ground model"
+        ],
+        "ok": false,
+        "territory": {
+          "borders_on_river": {
+            "bhakata": {
+              "Bagmati": 528,
+              "Balkhu": 0,
+              "Hanumante": 237,
+              "contour_vertices": 6504
+            },
+            "kirtipur": {
+              "Bagmati": 422,
+              "Balkhu": 455,
+              "Hanumante": 0,
+              "contour_vertices": 1304
+            },
+            "lalitapur": {
+              "Bagmati": 1045,
+              "Balkhu": 64,
+              "Hanumante": 224,
+              "contour_vertices": 4664
+            },
+            "yambu": {
+              "Bagmati": 665,
+              "Balkhu": 383,
+              "Hanumante": 353,
+              "contour_vertices": 5328
+            }
+          },
+          "chiefdoms": {
+            "bhakata": {
+              "cells": 5447,
+              "fraction": 0.360656823147719,
+              "seat": "(53.2251, 26.7168)"
+            },
+            "kirtipur": {
+              "cells": 320,
+              "fraction": 0.0211878434748063,
+              "seat": "(-95.11523, 18.14516)"
+            },
+            "lalitapur": {
+              "cells": 3323,
+              "fraction": 0.220022512083692,
+              "seat": "(-49.2825, 20.5942)"
+            },
+            "yambu": {
+              "cells": 6013,
+              "fraction": 0.398132821293783,
+              "seat": "(-66.43281, -10.79804)"
+            }
+          },
+          "land_cells": 15103,
+          "mode": 2,
+          "snapped": {
+            "bagmati_core": 4,
+            "bagmati_west_reach": 3,
+            "balkhu_line": 4,
+            "chandragiri_rim": 4,
+            "hanumante_march": 2,
+            "kantipur_divide": 2
+          }
+        }
+      }
+    },
+    {
+      "stage": "waterways-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.77,
+      "log": "reports/local/waterways-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 20353,
+        "failures": [],
+        "ok": true,
+        "reaches": 249,
+        "vertices_sampled": 5545,
+        "visible_reaches": 203
+      }
+    },
+    {
+      "stage": "forest-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 1.37,
+      "log": "reports/local/forest-tests.log",
+      "warnings": [],
+      "tests": {
+        "checks": 14797,
+        "detail_count": 8305,
+        "failures": [],
+        "ok": true,
+        "physical_height_m": [
+          5.00037822528001,
+          29.9996647557334
+        ],
+        "population": 100940,
+        "scope": "Saved-source integrity and placement checks; artistic replacement acceptance is separate.",
+        "source_review_status": "pending_visual_review"
+      }
+    },
+    {
+      "stage": "coordinate-tests",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.67,
+      "log": "reports/local/coordinate-tests.log",
+      "warnings": [],
+      "tests": {
+        "ok": true,
+        "checks": 13824,
+        "failures": [],
+        "maximum_horizontal_serialization_drift_m": 7.049151491251367e-06,
+        "scope": "Projection/serialization agreement only; not absolute OSM or DEM survey accuracy"
+      }
+    },
+    {
+      "stage": "main-scene",
+      "ok": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 3.88,
+      "log": "reports/local/main-scene.log",
+      "warnings": []
+    }
+  ],
+  "scope": "Development import, authored scripts, content invariants and headless scene execution. No export, simulation, GPU performance or final art claim."
+}

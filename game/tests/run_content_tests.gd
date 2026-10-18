@@ -12,7 +12,7 @@ func expect(condition: bool, label: String) -> void:
 func _initialize() -> void:
 	var report := GopalaContentAudit.run()
 	expect(report.ok, "Authored catalog and asset hashes must load cleanly.")
-	expect(report.counts == {"resources": 7, "buildings": 6, "zones": 1}, "P0 definition counts.")
+	expect(report.counts == {"resources": 8, "buildings": 6, "zones": 2}, "P0 definition counts.")
 	expect(report.prototype_assets >= 19 and not report.production_art_approved, "Prototype art must remain visibly provisional.")
 	var good: GopalaResourceDefinition = load("res://data/resources/timber.tres")
 	var building: GopalaBuildingDefinition = load("res://data/buildings/dwelling.tres")
