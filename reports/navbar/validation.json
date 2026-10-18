@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-12",
+  "tests": {
+    "navbar": {
+      "checks": 112,
+      "failures": [],
+      "ok": true
+    },
+    "ui": {
+      "checks": 241,
+      "failures": [],
+      "ok": true
+    }
+  },
+  "full_gate_ok": false,
+  "full_gate_limit": "Import stops on inherited leaked-resource errors; later full-gate stages skipped. Case-mismatched demo script paths also warn.",
+  "renderer": "Apple M4 Pro / GL Compatibility",
+  "scope": "Navbar geometry, normal and long-value fixtures at 720p, 1080p, ultrawide and 4K; real mouse actions/input blocking; actual MVP capture. No export or performance claim."
+}

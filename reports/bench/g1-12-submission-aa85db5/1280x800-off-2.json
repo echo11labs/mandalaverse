@@ -1,0 +1,398 @@
+{
+  "activity_definition": "Live collection/build task or carried goods or job movement; excludes NEED trips and mere assigned roles. Window minimum is strict per sampled tick.",
+  "activity_windows": [
+    {
+      "minimum_active": 37,
+      "window": 0
+    },
+    {
+      "minimum_active": 37,
+      "window": 1
+    },
+    {
+      "minimum_active": 36,
+      "window": 2
+    },
+    {
+      "minimum_active": 37,
+      "window": 3
+    },
+    {
+      "minimum_active": 37,
+      "window": 4
+    },
+    {
+      "minimum_active": 37,
+      "window": 5
+    },
+    {
+      "minimum_active": 36,
+      "window": 6
+    },
+    {
+      "minimum_active": 37,
+      "window": 7
+    },
+    {
+      "minimum_active": 37,
+      "window": 8
+    },
+    {
+      "minimum_active": 37,
+      "window": 9
+    },
+    {
+      "minimum_active": 36,
+      "window": 10
+    },
+    {
+      "minimum_active": 37,
+      "window": 11
+    }
+  ],
+  "actual_sampled_tick_rate": 3.13333333333333,
+  "adapter": "Apple M4 Pro",
+  "benchmark_screen": 0,
+  "benchmark_screen_refresh_rate": 120.0,
+  "benchmark_screen_size": "(3024, 1964)",
+  "camera_points": [
+    {
+      "pitch": -55.0,
+      "span": 0.400000005960464,
+      "target": "(-74.36, 2.265353, 12.3)",
+      "view": "camp",
+      "yaw": 45.0
+    },
+    {
+      "pitch": -55.0,
+      "span": 0.800000011920929,
+      "target": "(-74.32, 2.260739, 12.37)",
+      "view": "pasture",
+      "yaw": 45.0
+    }
+  ],
+  "captures": [
+    "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1280x800-off-2-camp.png",
+    "/Users/devendrashahithakuri/.codex/worktrees/g1-12-baseline/Nep-All/reports/bench/g1-12-submission-aa85db5/1280x800-off-2-pasture.png"
+  ],
+  "collection_seconds": 120.0,
+  "display_driver": "macOS",
+  "draw_calls": {
+    "count": 231,
+    "max": 2943.0,
+    "median": 1668.0,
+    "p95": 2937.0
+  },
+  "driver": "At most one unchanged tick call per process frame; overdue ticks remain scheduled",
+  "elapsed_seconds": 150.114208,
+  "failures": [],
+  "fixture": {
+    "cattle": 2,
+    "completed_fixture_homes": 10,
+    "completed_fixture_shelters": 1,
+    "extra_sources": 40,
+    "initial_ledger": {
+      "fodder": 10000,
+      "stone": 50,
+      "thatch": 50,
+      "timber": 1006,
+      "water": 10018,
+      "wild_food": 10008
+    },
+    "initial_need_timer_offsets": [
+      {
+        "drink_offset": 1,
+        "meal_offset": 1,
+        "worker_id": 3
+      },
+      {
+        "drink_offset": 4,
+        "meal_offset": 4,
+        "worker_id": 65
+      },
+      {
+        "drink_offset": 7,
+        "meal_offset": 7,
+        "worker_id": 66
+      },
+      {
+        "drink_offset": 10,
+        "meal_offset": 10,
+        "worker_id": 67
+      },
+      {
+        "drink_offset": 13,
+        "meal_offset": 13,
+        "worker_id": 68
+      },
+      {
+        "drink_offset": 16,
+        "meal_offset": 16,
+        "worker_id": 69
+      },
+      {
+        "drink_offset": 19,
+        "meal_offset": 19,
+        "worker_id": 70
+      },
+      {
+        "drink_offset": 22,
+        "meal_offset": 22,
+        "worker_id": 71
+      },
+      {
+        "drink_offset": 25,
+        "meal_offset": 25,
+        "worker_id": 125
+      },
+      {
+        "drink_offset": 28,
+        "meal_offset": 28,
+        "worker_id": 126
+      },
+      {
+        "drink_offset": 31,
+        "meal_offset": 31,
+        "worker_id": 127
+      },
+      {
+        "drink_offset": 34,
+        "meal_offset": 34,
+        "worker_id": 128
+      },
+      {
+        "drink_offset": 37,
+        "meal_offset": 37,
+        "worker_id": 129
+      },
+      {
+        "drink_offset": 40,
+        "meal_offset": 40,
+        "worker_id": 130
+      },
+      {
+        "drink_offset": 43,
+        "meal_offset": 43,
+        "worker_id": 131
+      },
+      {
+        "drink_offset": 46,
+        "meal_offset": 46,
+        "worker_id": 132
+      },
+      {
+        "drink_offset": 49,
+        "meal_offset": 49,
+        "worker_id": 133
+      },
+      {
+        "drink_offset": 52,
+        "meal_offset": 52,
+        "worker_id": 134
+      },
+      {
+        "drink_offset": 55,
+        "meal_offset": 55,
+        "worker_id": 135
+      },
+      {
+        "drink_offset": 58,
+        "meal_offset": 58,
+        "worker_id": 136
+      },
+      {
+        "drink_offset": 61,
+        "meal_offset": 61,
+        "worker_id": 137
+      },
+      {
+        "drink_offset": 64,
+        "meal_offset": 64,
+        "worker_id": 138
+      },
+      {
+        "drink_offset": 67,
+        "meal_offset": 67,
+        "worker_id": 139
+      },
+      {
+        "drink_offset": 70,
+        "meal_offset": 70,
+        "worker_id": 140
+      },
+      {
+        "drink_offset": 73,
+        "meal_offset": 73,
+        "worker_id": 141
+      },
+      {
+        "drink_offset": 76,
+        "meal_offset": 76,
+        "worker_id": 142
+      },
+      {
+        "drink_offset": 79,
+        "meal_offset": 79,
+        "worker_id": 143
+      },
+      {
+        "drink_offset": 82,
+        "meal_offset": 82,
+        "worker_id": 144
+      },
+      {
+        "drink_offset": 85,
+        "meal_offset": 85,
+        "worker_id": 145
+      },
+      {
+        "drink_offset": 88,
+        "meal_offset": 88,
+        "worker_id": 146
+      },
+      {
+        "drink_offset": 91,
+        "meal_offset": 91,
+        "worker_id": 147
+      },
+      {
+        "drink_offset": 94,
+        "meal_offset": 94,
+        "worker_id": 148
+      },
+      {
+        "drink_offset": 97,
+        "meal_offset": 97,
+        "worker_id": 149
+      },
+      {
+        "drink_offset": 100,
+        "meal_offset": 100,
+        "worker_id": 150
+      },
+      {
+        "drink_offset": 103,
+        "meal_offset": 103,
+        "worker_id": 151
+      },
+      {
+        "drink_offset": 106,
+        "meal_offset": 106,
+        "worker_id": 152
+      },
+      {
+        "drink_offset": 109,
+        "meal_offset": 109,
+        "worker_id": 153
+      },
+      {
+        "drink_offset": 112,
+        "meal_offset": 112,
+        "worker_id": 154
+      },
+      {
+        "drink_offset": 115,
+        "meal_offset": 115,
+        "worker_id": 155
+      },
+      {
+        "drink_offset": 118,
+        "meal_offset": 118,
+        "worker_id": 156
+      }
+    ],
+    "preconditioning_ticks": 213,
+    "roles": {
+      "herder": 1,
+      "timber": 39
+    },
+    "seed": 401208,
+    "setup_exception": "Registry/stock APIs only before warmup; spawning/roles/pasture use commands. Completed fixture buildings are nonblocking pre-existing records.",
+    "storage_capacity": {
+      "fodder": 1000000,
+      "milk": 1000000,
+      "stone": 1000000,
+      "thatch": 1000000,
+      "timber": 1000000,
+      "water": 1000000,
+      "wild_food": 1000000
+    },
+    "supplies_added": {
+      "fodder": 10000,
+      "water": 10000,
+      "wild_food": 10000
+    },
+    "timber_per_extra_source": 100000,
+    "workers": 40
+  },
+  "frame_ms": {
+    "count": 230,
+    "max": 18364.226,
+    "median": 316.99,
+    "p95": 414.35
+  },
+  "godot": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "launch_screen": 0,
+  "logical_ticks": 683,
+  "minimum_active": 36,
+  "ok": true,
+  "pending_tick_backlog": 130,
+  "pending_tick_backlog_stats": {
+    "count": 376,
+    "max": 131,
+    "median": 76,
+    "p95": 126
+  },
+  "rendered_instances": {
+    "count": 231,
+    "max": 3438.0,
+    "median": 2164.0,
+    "p95": 3432.0
+  },
+  "renderer": "gl_compatibility",
+  "requested_tick_rate": 4.0,
+  "resolution": [
+    1280,
+    800
+  ],
+  "sampled_tick_count": 376,
+  "schema": 1,
+  "screen_refresh_rate": 120.0,
+  "screen_size": "(3024, 1964)",
+  "smoke": false,
+  "static_memory_bytes": {
+    "count": 231,
+    "max": 527253640.0,
+    "median": 527220200.0,
+    "p95": 527247136.0
+  },
+  "tick_ms": {
+    "count": 376,
+    "max": 455.213,
+    "median": 303.141,
+    "p95": 399.006
+  },
+  "tick_rate": 4.0,
+  "tick_rate_sustained": false,
+  "valid": true,
+  "vsync_actual": 0,
+  "vsync_requested": "off",
+  "warmup_seconds": 30.0,
+  "workload_valid": true,
+  "world_seed": 43129,
+  "revision": "aa85db5679d65f4ef45e762cddec0d1b3f83e2a5",
+  "wall_seconds": 303.89,
+  "log": "1280x800-off-2.log",
+  "run": 2,
+  "baseline": true
+}

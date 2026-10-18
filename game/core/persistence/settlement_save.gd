@@ -32,10 +32,12 @@ func capture(sim: GopalaSettlementSimulation, context: Dictionary, drain := true
 		"registry_sequence": sim._entity_registry._sequence, "next_entity": sim._entity_ids._next_id,
 		"next_command": sim._queue._next_command_id, "claims": claims,
 		"occupancy_sequence": sim._occupancy_service._sequence,
-		"gather": sim._gather_delivery_service._tasks.duplicate(true),
-		"next_gather": sim._gather_delivery_service._next_task_id,
-		"construction": sim._construction_labor_service._tasks.duplicate(true),
-		"next_construction": sim._construction_labor_service._next_task_id}
+		"gather": sim._gather_delivery_service._tasks.duplicate(true),		"next_gather":sim._gather_delivery_service._next_task_id,
+		"construction":sim._construction_labor_service._tasks.duplicate(true),
+		"next_construction":sim._construction_labor_service._next_task_id,
+		"field_tasks":sim._field_service._tasks.duplicate(true),
+		"next_field":sim._field_service._next_task_id}
+
 
 func write(path: String, state: Dictionary) -> bool:
 	if state.is_empty(): return false
@@ -149,11 +151,15 @@ func restore(state: Dictionary, current: GopalaSettlementSimulation, context: Di
 func _populate(s: Dictionary, sim: GopalaSettlementSimulation, current: GopalaSettlementSimulation, context: Dictionary) -> bool:
 	var template := capture(current, context, false)
 	if template.is_empty(): return _fail("Invalid settlement state at validation 144")
+	# Schema 2 saves created before fields had no agriculture task counter/state.
+	if not s.has("field_tasks") and not s.has("next_field"):
+		s["field_tasks"] = {}
+		s["next_field"] = 1
 	if s.size() != template.size(): return _fail("Invalid settlement state at validation 145")
 	for key in template:
 		if not s.has(key) or typeof(s[key]) != typeof(template[key]): return _fail("Invalid settlement state at validation 147")
 	if s.context != context or s.grid != template.grid or s.located_storage != current._storage_service.located: return _fail("Save belongs to a different world or scale standard")
-	for key in ["registry_sequence", "occupancy_sequence", "next_entity", "next_command", "next_gather", "next_construction"]:
+	for key in ["registry_sequence", "occupancy_sequence", "next_entity", "next_command", "next_gather", "next_construction", "next_field"]:
 		if not _integer(s[key], 1 if key.begins_with("next_") else 0): return _fail("Invalid settlement state at validation 150")
 	if s.clock.size() != 6 or not s.clock[0] is bool: return _fail("Invalid settlement state at validation 151")
 	for i in range(1,6):
@@ -207,7 +213,17 @@ func _populate(s: Dictionary, sim: GopalaSettlementSimulation, current: GopalaSe
 		imported.revision = claim.revision
 		imported.created_tick = claim.created_tick
 	sim._occupancy_service._sequence = s.occupancy_sequence
+	for record in s.records:
+		var attributes: Dictionary = record[6]
+		if attributes.has("workforce_policy") and (str(record[1]) != str(GopalaEntityKind.SETTLEMENT) or not GopalaWorkforceService.valid_policy(attributes.workforce_policy)): return _fail("Invalid workforce policy")
+		for key in ["workforce_managed","workforce_excluded"]:
+			if attributes.has(key) and typeof(attributes[key]) != TYPE_BOOL: return _fail("Invalid worker automation")
+		for key in ["workforce_role","workforce_pending_role"]:
+			if attributes.has(key) and str(attributes[key]) not in GopalaWorkforceService.ROLES + ["NONE",""]: return _fail("Invalid workforce role")
+	if not _roads_valid(s,sim): return _fail("Invalid road construction state")
+	if not _fields_valid(sim): return _fail("Invalid field state")
 	if not _tasks_valid(s.gather, sim, true, s.next_gather) or not _tasks_valid(s.construction,sim,false,s.next_construction): return _fail("Invalid settlement state at validation 202")
+	if not _field_tasks_valid(s.field_tasks, sim, s.next_field): return _fail("Invalid field work state")
 	sim._storage_service.located = s.located_storage
 	sim._storage_service.stocks = s.store_stocks.duplicate(true)
 	if not _located_stocks_valid(s,sim): return _fail("Invalid per-store stock or construction origin")
@@ -217,6 +233,7 @@ func _populate(s: Dictionary, sim: GopalaSettlementSimulation, current: GopalaSe
 	sim._gather_delivery_service._next_task_id = s.next_gather
 	sim._construction_labor_service._tasks = s.construction.duplicate(true)
 	sim._construction_labor_service._next_task_id = s.next_construction
+	sim._field_service.restore_tasks(s.field_tasks,s.next_field)
 	# Rebuild navigation from the current terrain predicate and restored claims.
 	if current._route_service.enabled:
 		sim._route_service.enable(current._route_service._grid.region,current._route_service._walkable)
@@ -231,6 +248,7 @@ func _populate(s: Dictionary, sim: GopalaSettlementSimulation, current: GopalaSe
 	# A blocked task must retry against the rebuilt navigation revision.
 	for task in sim._gather_delivery_service._tasks.values(): task["blocked_revision"] = -1
 	for task in sim._construction_labor_service._tasks.values(): task["blocked_revision"] = -1
+	for task in sim._field_service._tasks.values(): task["blocked_revision"] = -1
 	return true
 
 func _attributes_valid(attrs: Dictionary) -> bool:
@@ -247,6 +265,20 @@ func _attributes_valid(attrs: Dictionary) -> bool:
 			for resource in attrs[key]:
 				if typeof(resource) not in [TYPE_STRING,TYPE_STRING_NAME] or not StringName(resource) in GopalaSimulationConfig.RESOURCE_IDS or not _amount(attrs[key][resource]): return false
 	if attrs.has(&"work_role") and (typeof(attrs.work_role) != TYPE_STRING_NAME or (attrs.work_role not in [&"NONE",&"herder"] and not attrs.work_role in GopalaSimulationCommand.COLLECTIBLE_RESOURCES)): return false
+	for key in [&"fertility",&"moisture",&"base_moisture"]:
+		if attrs.has(key) and (typeof(attrs[key]) not in [TYPE_INT,TYPE_FLOAT] or not is_finite(float(attrs[key])) or float(attrs[key]) < 0.0 or float(attrs[key]) > 1.0): return false
+	for key in [&"slope_degrees",&"elevation_metres",&"river_distance_metres"]:
+		if attrs.has(key) and (typeof(attrs[key]) not in [TYPE_INT,TYPE_FLOAT] or not is_finite(float(attrs[key]))): return false
+	for key in [&"growth_started_tick",&"harvest_ready_tick",&"growth_progress_ticks",&"last_growth_tick",&"harvest_count","terrace_riser_count"]:
+		if attrs.has(key) and not _integer(attrs[key]): return false
+	if attrs.has(&"field_stage") and (typeof(attrs.field_stage) != TYPE_STRING_NAME or attrs.field_stage not in [&"FALLOW",&"PREPARING",&"PLANTED",&"GROWING",&"TENDING",&"DROUGHT",&"MATURE",&"HARVESTED"]): return false
+	if attrs.has(&"crop_id") and (typeof(attrs.crop_id) != TYPE_STRING_NAME or attrs.crop_id not in [&"",&"cereal",&"fodder_crop"]): return false
+	if attrs.has(&"zone_cells") and not _cell_rows_valid(attrs.zone_cells,16): return false
+	if attrs.has(&"terrace_cells") and not _cell_rows_valid(attrs.terrace_cells,16): return false
+	if attrs.has(&"terrace_levels"):
+		if not attrs.terrace_levels is Array or attrs.terrace_levels.size() != GopalaFieldService.FIELD_CELLS.y: return false
+		for level in attrs.terrace_levels:
+			if typeof(level) not in [TYPE_INT,TYPE_FLOAT] or not is_finite(float(level)): return false
 	return true
 
 func _survival_valid(sim: GopalaSettlementSimulation) -> bool:
@@ -349,7 +381,7 @@ func _cross_references_valid(s: Dictionary, sim: GopalaSettlementSimulation) -> 
 		var task: Dictionary = s.construction[id]
 		if str(task.state) != "RETURNING_TO_CAMP":
 			var blueprint := sim._entity_queries.snapshot(task.blueprint_id)
-			if blueprint.kind != GopalaEntityKind.BUILDING or blueprint.attributes.get("assigned_builder_id") != id: return false
+			if blueprint == null or blueprint.kind not in [GopalaEntityKind.BUILDING,GopalaEntityKind.ROAD] or blueprint.attributes.get("assigned_builder_id") != id: return false
 	return true
 
 func _amount(value: Variant) -> bool:
@@ -376,7 +408,7 @@ func _located_stocks_valid(s: Dictionary, sim: GopalaSettlementSimulation) -> bo
 		sim._storage_service._cache_position(id)
 	for resource in GopalaSimulationConfig.RESOURCE_IDS:
 		if int(totals.get(resource,0)) != int(s.balances.get(resource,0)): return false
-	for blueprint in sim._entity_queries.snapshots_by_kind(GopalaEntityKind.BUILDING):
+	for blueprint in (sim._entity_queries.snapshots_by_kind(GopalaEntityKind.BUILDING) + sim._entity_queries.snapshots_by_kind(GopalaEntityKind.ROAD)):
 		var origins: Variant = blueprint.attributes.get("material_origins",{})
 		if not origins is Dictionary: return false
 		for resource in origins:
@@ -451,4 +483,137 @@ func _herd_valid(sim: GopalaSettlementSimulation) -> bool:
 		var feeding: bool = attrs.task_state == &"HERD_FEED"
 		if int(attrs.get(&"carried_amount",0)) != (1 if feeding else 0): return false
 		if feeding and attrs.get(&"carried_resource_id") != attrs.herd_resource: return false
+	return true
+
+func _cell_rows_valid(rows: Variant, expected_count: int) -> bool:
+	if not rows is Array or expected_count < 1 or rows.size() != expected_count: return false
+	var seen := {}
+	for pair in rows:
+		if not pair is Array or pair.size() != 2 or not _integer(pair[0],-1000000) or not _integer(pair[1],-1000000): return false
+		var cell := Vector2i(pair[0],pair[1])
+		if seen.has(cell): return false
+		seen[cell] = true
+	return true
+
+func _field_tasks_valid(tasks: Dictionary, sim: GopalaSettlementSimulation, next_id: int) -> bool:
+	var staffed_fields := {}
+	for worker_id in tasks:
+		if not _integer(worker_id,1) or not tasks[worker_id] is Dictionary: return false
+		var task: Dictionary = tasks[worker_id]
+		if task.size() < 8 or task.size() > 9: return false
+		var worker := sim.entity_queries().snapshot(worker_id)
+		var field_id: Variant = task.get("field_id",0)
+		if not _integer(field_id,1): return false
+		var field := sim.entity_queries().snapshot(field_id)
+		if worker == null or worker.kind != GopalaEntityKind.VILLAGER or field == null or field.kind != GopalaEntityKind.ZONE or field.attributes.get(&"definition_id") != &"field": return false
+		if task.get("worker_id") != worker_id or not _integer(task.get("task_id"),1) or task.task_id >= next_id: return false
+		if worker.attributes.get(&"active_task_id") != task.task_id or worker.attributes.get(&"task_kind") != &"FIELD" or worker.attributes.get(&"target_building_id") != field_id: return false
+		if worker.attributes.get(&"task_state") not in [&"MOVING_TO_FIELD",&"WORKING_FIELD"] or int(worker.attributes.get(&"carried_amount",0)) != 0: return false
+		if task.get("state") not in [&"MOVING_TO_FIELD",&"WORKING"]: return false
+		if (task.state == &"MOVING_TO_FIELD") != (worker.attributes.get(&"task_state") == &"MOVING_TO_FIELD"): return false
+		if task.get("action") not in [&"PLANT",&"TEND",&"HARVEST"] or typeof(task.get("start_stage")) != TYPE_STRING_NAME: return false
+		if not _integer(task.get("work")) or not _integer(task.get("created_tick")) or task.created_tick > sim.logical_tick: return false
+		if task.has("blocked_revision") and not _integer(task.blocked_revision,-1): return false
+		var crop := sim._field_service.crop_definition(field.attributes.get(&"crop_id",&""))
+		if crop == null or task.work >= maxi(1,int(field.attributes.get(&"work_required",0))): return false
+		if task.action == &"PLANT" and (field.attributes.get(&"field_stage") != &"PREPARING" or task.start_stage != &"PREPARING"): return false
+		if task.action == &"TEND" and (field.attributes.get(&"field_stage") not in [&"TENDING",&"GROWING",&"DROUGHT",&"MATURE"] or task.start_stage not in [&"GROWING",&"TENDING",&"DROUGHT"]): return false
+		if task.action == &"HARVEST" and (field.attributes.get(&"field_stage") != &"MATURE" or task.start_stage != &"MATURE"): return false
+		if staffed_fields.has(field_id): return false
+		staffed_fields[field_id] = worker_id
+	for worker in sim.entity_queries().snapshots_by_kind(GopalaEntityKind.VILLAGER):
+		if worker.attributes.get(&"task_kind") == &"FIELD" and not tasks.has(worker.entity_id): return false
+	return true
+
+func _fields_valid(sim: GopalaSettlementSimulation) -> bool:
+	var claimed_fields := {}
+	for field in sim.entity_queries().snapshots_by_kind(GopalaEntityKind.ZONE):
+		if field.attributes.get(&"definition_id") != &"field": continue
+		var attrs := field.attributes
+		for key in [&"fertility",&"moisture",&"base_moisture"]:
+			if typeof(attrs.get(key)) not in [TYPE_FLOAT,TYPE_INT] or not is_finite(float(attrs[key])) or float(attrs[key]) < 0.0 or float(attrs[key]) > 1.0: return false
+		for key in [&"slope_degrees",&"elevation_metres",&"river_distance_metres"]:
+			if typeof(attrs.get(key)) not in [TYPE_FLOAT,TYPE_INT] or not is_finite(float(attrs[key])): return false
+		for key in [&"growth_started_tick",&"harvest_ready_tick",&"growth_progress_ticks",&"last_growth_tick",&"harvest_count","terrace_riser_count"]:
+			if not _integer(attrs.get(key,-1)): return false
+		var rows: Variant = attrs.get(&"zone_cells",null)
+		if not _cell_rows_valid(rows,16) or not _cell_rows_valid(attrs.get(&"terrace_cells",null),16): return false
+		if attrs.zone_cells != attrs.terrace_cells: return false
+		var anchor := Vector2i(1000000,1000000)
+		for pair in rows:
+			var cell := Vector2i(pair[0],pair[1])
+			if not sim.coordinate_service().is_in_bounds(cell): return false
+			anchor.x = mini(anchor.x,cell.x)
+			anchor.y = mini(anchor.y,cell.y)
+		var expected := sim._field_service.cells(anchor)
+		if expected.size() != rows.size(): return false
+		for index in expected.size():
+			if rows[index] != [expected[index].x,expected[index].y]: return false
+		var claim := sim.occupancy_service().claim_for_owner(field.entity_id)
+		if claim == null or claim.state != GopalaOccupancyState.OCCUPIED or claim.cells.size() != expected.size(): return false
+		for cell in expected:
+			if not claim.cells.has(cell): return false
+		claimed_fields[field.entity_id] = true
+		for other in sim.entity_queries().snapshots_by_kind(GopalaEntityKind.ZONE):
+			if other.entity_id != field.entity_id and other.attributes.get(&"zone_cells",[]).any(func(pair): return rows.has(pair)): return false
+		for road in sim.road_service().road_cells():
+			if expected.has(road): return false
+		if not attrs.get("terrace_levels") is Array or attrs.terrace_levels.size() != GopalaFieldService.FIELD_CELLS.y: return false
+		for level in attrs.terrace_levels:
+			if typeof(level) not in [TYPE_INT,TYPE_FLOAT] or not is_finite(float(level)): return false
+		var crop_id: StringName = attrs.get(&"crop_id",&"")
+		var stage: StringName = attrs.get(&"field_stage",&"FALLOW")
+		if crop_id == &"":
+			if stage not in [&"FALLOW",&"HARVESTED"] or int(attrs.get(&"growth_progress_ticks",0)) != 0 or int(attrs.get(&"work_required",0)) != 0: return false
+		else:
+			var crop := sim._field_service.crop_definition(crop_id)
+			if crop == null or int(attrs.get(&"work_required",0)) != crop.work_ticks: return false
+			if stage not in [&"PREPARING",&"PLANTED",&"GROWING",&"TENDING",&"DROUGHT",&"MATURE"]: return false
+			var progress := int(attrs.get(&"growth_progress_ticks",0))
+			if progress > crop.growth_ticks or (stage == &"MATURE" and progress < crop.growth_ticks): return false
+			if stage != &"PREPARING" and int(attrs.get(&"growth_started_tick",0)) > sim.logical_tick: return false
+			if stage == &"PREPARING" and (progress != 0 or int(attrs.get(&"growth_started_tick",0)) != 0): return false
+			if stage in [&"PLANTED",&"GROWING",&"TENDING",&"DROUGHT",&"MATURE"] and int(attrs.get(&"harvest_ready_tick",0)) < int(attrs.get(&"growth_started_tick",0)): return false
+	return true
+
+func _roads_valid(state: Dictionary, sim: GopalaSettlementSimulation) -> bool:
+	var used := {}
+	for road in sim._entity_queries.snapshots_by_kind(GopalaEntityKind.ROAD):
+		var attrs := road.attributes
+		var cells: Variant = attrs.get("road_cells",null)
+		if not cells is Array or cells.is_empty(): return false
+		for pair in cells:
+			if not pair is Array or pair.size() != 2 or not _integer(pair[0],-1000000) or not _integer(pair[1],-1000000): return false
+			var cell := Vector2i(pair[0],pair[1])
+			if used.has(cell) or not sim.coordinate_service().is_in_bounds(cell): return false
+			used[cell] = true
+		for pair in attrs.get("cobbled_cells",[]):
+			if not cells.has(pair): return false
+		var built: Variant = attrs.get("built_cell_count",cells.size())
+		if not _amount(built) or built > cells.size(): return false
+		if attrs.has("auto_build") and typeof(attrs.auto_build) != TYPE_BOOL: return false
+		if not attrs.has("road_job") or attrs.road_job == "": continue # Legacy completed roads.
+		if not str(attrs.get("construction_state")) in ["BLUEPRINT","WAITING_FOR_MATERIALS","READY_FOR_LABOR","DELIVERING_MATERIALS","UNDER_CONSTRUCTION","COMPLETED"]: return false
+		if attrs.road_job == "cobbled" and built != cells.size(): return false
+		if not str(attrs.road_job) in ["dirt","cobbled"]: return false
+		var work: Variant = attrs.get("road_work_cells",null)
+		if not work is Array or work.is_empty(): return false
+		for index in work.size():
+			if not cells.has(work[index]) or work.slice(0,index).has(work[index]): return false
+			if attrs.road_job == "cobbled" and index > 0 and absi(work[index][0]-work[index-1][0])+absi(work[index][1]-work[index-1][1]) != 1: return false
+		var costs := {&"stone":work.size()*2,&"timber":work.size()} if attrs.road_job == "cobbled" else {}
+		if attrs.get("required_materials") != costs or attrs.get("work_required") != work.size()*GopalaRoadPlacementService.work_per_cell(road): return false
+		if not _amount(attrs.get("work_completed")) or attrs.work_completed > attrs.work_required: return false
+		var builder: int = attrs.get("assigned_builder_id",0)
+		if builder > 0 and (not state.construction.has(builder) or state.construction[builder].blueprint_id != road.entity_id): return false
+		for resource in costs:
+			var total: int = int(attrs.get("reserved_materials",{}).get(resource,0)) + int(attrs.get("delivered_materials",{}).get(resource,0))
+			if builder > 0:
+				var worker := sim._entity_queries.snapshot(builder)
+				if worker != null and worker.attributes.get("carried_resource_id") == resource: total += int(worker.attributes.get("carried_amount",0))
+			if total > costs[resource]: return false
+		if attrs.work_completed > 0:
+			for resource in costs:
+				if int(attrs.get("delivered_materials",{}).get(resource,0)) != costs[resource]: return false
+		if str(attrs.get("construction_state")) == "COMPLETED" and attrs.work_completed != attrs.work_required: return false
 	return true

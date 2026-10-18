@@ -11,8 +11,11 @@ func assign(command: GopalaSimulationCommand, tick: int) -> GopalaCommandResult:
 	var worker := simulation.entity_queries().snapshot(payload.villager_id)
 	if worker == null or worker.kind != GopalaEntityKind.VILLAGER:
 		return GopalaCommandResult.new(command.command_id,GopalaCommandResult.Status.REJECTED,&"INVALID_VILLAGER",tick)
-	if worker.attributes.get(&"task_kind") == &"BUILD":
+	if worker.attributes.get(&"task_kind") in [&"BUILD", &"FIELD"]:
 		return GopalaCommandResult.new(command.command_id,GopalaCommandResult.Status.REJECTED,&"VILLAGER_BUSY",tick)
+	if simulation._field_service._tasks.has(worker.entity_id):
+		simulation._field_service.cancel_worker_for_other_job(worker.entity_id,tick)
+		worker = simulation.entity_queries().snapshot(worker.entity_id)
 	if simulation.gather_delivery_service()._tasks.has(worker.entity_id):
 		var stop := GopalaSimulationCommand._from_queue(command.command_id,GopalaSimulationCommand.REQUEST_STOP_GATHERING,tick,{"villager_id":worker.entity_id},&"role_change")
 		simulation.gather_delivery_service().handle_stop_gathering(stop,tick)

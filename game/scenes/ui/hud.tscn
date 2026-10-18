@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cb3v3j4f8b2m2"]
+[gd_scene load_steps=2 format=3 uid="uid://hq3r5s7t9u1w3"]
 
 [ext_resource type="Script" path="res://scenes/landscape/kathmandu_hud.gd" id="1_hud"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_hud")
+layer = 2

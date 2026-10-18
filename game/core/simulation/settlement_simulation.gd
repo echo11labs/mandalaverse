@@ -24,14 +24,17 @@ var _selection_service: GopalaSelectionService
 var _coordinate_service: GopalaSettlementCoordinateService
 var _occupancy_service: GopalaSettlementOccupancyService
 var _placement_service: GopalaConstructionPlacementService
+var _road_service: GopalaRoadPlacementService
 var _route_service: GopalaSettlementRouteService
 var _villager_service: GopalaVillagerService
 var _gather_delivery_service: GopalaGatherDeliveryService
 var _construction_labor_service: GopalaConstructionLaborService
 var _storage_service: GopalaStorageService
+var _workforce_service: GopalaWorkforceService
 var _worker_job_service: GopalaWorkerJobService
 var _herd_service: GopalaHerdService
 var _survival_service: GopalaSurvivalService
+var _field_service: GopalaFieldService
 var _capabilities: Dictionary = {}
 var _snapshot_sequence: int = 0
 var _session_epoch: int = 0
@@ -82,6 +85,12 @@ func _init() -> void:
 	_route_service.configure(_coordinate_service, _occupancy_service, _entity_queries)
 	add_child(_route_service)
 	_placement_service.routes = _route_service
+	_road_service = GopalaRoadPlacementService.new()
+	_road_service.name = "RoadPlacementService"
+	_road_service.configure(_coordinate_service, _occupancy_service, _entity_queries, _entity_registry, _route_service)
+	add_child(_road_service)
+	_route_service.configure_roads(_road_service)
+	_placement_service.road_service = _road_service
 	_villager_service = GopalaVillagerService.new()
 	_villager_service.name = "VillagerService"
 	_villager_service.configure(_entity_queries, _entity_registry, _coordinate_service, _config, _route_service)
@@ -101,9 +110,15 @@ func _init() -> void:
 	_worker_job_service = GopalaWorkerJobService.new(self)
 	_survival_service = GopalaSurvivalService.new(self)
 	_herd_service = GopalaHerdService.new(self)
+	_field_service = GopalaFieldService.new(self)
+	_field_service.configure_entity_removal()
+	_workforce_service = GopalaWorkforceService.new(self)
 	_gather_delivery_service.storage = _storage_service
 	_construction_labor_service.storage = _storage_service
 	_placement_service.storage = _storage_service
+	_road_service.storage = _storage_service
+	_road_service.labor = _construction_labor_service
+	_construction_labor_service.roads = _road_service
 	_entity_registry.entity_removed.connect(_storage_service.on_removed)
 
 func bootstrap_session() -> bool:
@@ -126,15 +141,19 @@ func _physics_process(delta: float) -> void:
 	var advanced := _clock.advance_frame(delta)
 	for i in range(advanced):
 		logical_tick_advanced.emit(logical_tick - advanced + i + 1)
+		_schedule_road_builders()
+		_field_service.tick(logical_tick - advanced + i + 1)
 		_survival_service.tick(logical_tick - advanced + i + 1)
 		_villager_service.tick(logical_tick - advanced + i + 1)
 		_gather_delivery_service.tick(logical_tick - advanced + i + 1)
 		_construction_labor_service.tick(logical_tick - advanced + i + 1)
 		_herd_service.tick(logical_tick - advanced + i + 1)
+		_workforce_service.tick(logical_tick - advanced + i + 1)
 		_worker_job_service.tick(logical_tick - advanced + i + 1)
 		GopalaMvpScenario.tick(self,logical_tick - advanced + i + 1)
 		_commit_snapshot()
 		fixed_tick_completed.emit(logical_tick - advanced + i + 1)
+
 	_advancing_ticks = false
 	process_pending_commands()
 
@@ -200,11 +219,14 @@ func advance_ticks(count: int) -> bool:
 			return false
 		logical_tick_advanced.emit(logical_tick)
 		_storage_service.flush_removed()
+		_schedule_road_builders()
+		_field_service.tick(logical_tick)
 		_survival_service.tick(logical_tick)
 		_villager_service.tick(logical_tick)
 		_gather_delivery_service.tick(logical_tick)
 		_construction_labor_service.tick(logical_tick)
 		_herd_service.tick(logical_tick)
+		_workforce_service.tick(logical_tick)
 		_worker_job_service.tick(logical_tick)
 		GopalaMvpScenario.tick(self,logical_tick)
 		_commit_snapshot()
@@ -246,6 +268,24 @@ func placement_service() -> GopalaConstructionPlacementService:
 
 func villager_service() -> GopalaVillagerService:
 	return _villager_service
+
+func road_service() -> GopalaRoadPlacementService:
+	return _road_service
+
+func field_service() -> GopalaFieldService:
+	return _field_service
+
+func request_road(cells: Array[Vector2i]) -> int:
+	var rows: Array = []
+	for cell in cells:
+		rows.append([cell.x, cell.y])
+	return submit_command(GopalaSimulationCommand.REQUEST_ROAD, {"cells": rows})
+
+func request_cobbled_path(cells: Array[Vector2i]) -> int:
+	var rows: Array = []
+	for cell in cells:
+		rows.append([cell.x, cell.y])
+	return submit_command(GopalaSimulationCommand.REQUEST_COBBLED_PATH, {"cells": rows})
 
 func gather_delivery_service() -> GopalaGatherDeliveryService:
 	return _gather_delivery_service
@@ -300,6 +340,8 @@ func reset() -> bool:
 		_gather_delivery_service.reset()
 	if _construction_labor_service != null:
 		_construction_labor_service.reset()
+	if _field_service != null:
+		_field_service.reset()
 	_snapshot_sequence = 0
 	if not was_paused:
 		pause_changed.emit(true)
@@ -346,6 +388,16 @@ func _apply_command(command: GopalaSimulationCommand) -> GopalaCommandResult:
 			if result.status == GopalaCommandResult.Status.APPLIED:
 				_commit_snapshot()
 			return result
+		GopalaSimulationCommand.REQUEST_ROAD:
+			var result := _road_service.handle_request_road(command, logical_tick)
+			if result.status == GopalaCommandResult.Status.APPLIED:
+				_commit_snapshot()
+			return result
+		GopalaSimulationCommand.REQUEST_COBBLED_PATH:
+			var result := _road_service.handle_request_cobbled_path(command, logical_tick)
+			if result.status == GopalaCommandResult.Status.APPLIED:
+				_commit_snapshot()
+			return result
 		GopalaSimulationCommand.REQUEST_SPAWN_VILLAGER:
 			if not payload.has("x") or not payload.has("z") or typeof(payload["x"]) != TYPE_FLOAT or typeof(payload["z"]) != TYPE_FLOAT:
 				return _result(command, GopalaCommandResult.Status.REJECTED, GopalaCommandResult.REASON_INVALID_PAYLOAD)
@@ -363,6 +415,7 @@ func _apply_command(command: GopalaSimulationCommand) -> GopalaCommandResult:
 			var target := Vector2(payload["x"], payload["z"])
 			var success := _villager_service.assign_move_task(villager_id, target)
 			if success:
+				_workforce_service.manual_override(villager_id,logical_tick)
 				return _result(command, GopalaCommandResult.Status.APPLIED, GopalaCommandResult.REASON_APPLIED, {"changed": true})
 			else:
 				return _result(command, GopalaCommandResult.Status.REJECTED, _villager_service.last_failure if _villager_service.last_failure != &"" else GopalaCommandResult.REASON_INVALID_PAYLOAD)
@@ -370,21 +423,39 @@ func _apply_command(command: GopalaSimulationCommand) -> GopalaCommandResult:
 			return _herd_service.assign_pasture(command,logical_tick)
 		GopalaSimulationCommand.CREATE_PASTURE:
 			return _herd_service.create_pasture(command,logical_tick)
+		GopalaSimulationCommand.CREATE_FIELD:
+			return _field_service.create_field(command,logical_tick)
+		GopalaSimulationCommand.SET_FIELD_CROP:
+			return _field_service.set_crop(command,logical_tick)
+		GopalaSimulationCommand.REQUEST_FIELD_WORK:
+			return _field_service.request_work(command,logical_tick)
+		GopalaSimulationCommand.HARVEST_FIELD:
+			return _field_service.harvest_field(command,logical_tick)
+		GopalaSimulationCommand.SET_WORKFORCE_POLICY:
+			return _workforce_service.configure(command,logical_tick)
+		GopalaSimulationCommand.SET_WORKER_AUTOMATION:
+			return _workforce_service.set_automatic(command,logical_tick)
 		GopalaSimulationCommand.SET_WORK_ROLE:
-			return _worker_job_service.assign(command,logical_tick)
+			var result := _worker_job_service.assign(command,logical_tick)
+			if result.status == GopalaCommandResult.Status.APPLIED: _workforce_service.manual_override(int(payload.get("villager_id",0)),logical_tick)
+			return result
 		GopalaSimulationCommand.REQUEST_STOP_GATHERING:
 			return _gather_delivery_service.handle_stop_gathering(command, logical_tick)
 		GopalaSimulationCommand.REQUEST_GATHER_TIMBER, GopalaSimulationCommand.REQUEST_GATHER_STONE, GopalaSimulationCommand.REQUEST_GATHER_RESOURCE:
 			var result = _gather_delivery_service.handle_request_gather_timber(command, logical_tick)
 			if result.status == GopalaCommandResult.Status.APPLIED:
+				_workforce_service.manual_override(int(payload.get("villager_id",0)),logical_tick)
 				_commit_snapshot()
 			return result
 		GopalaSimulationCommand.REQUEST_ASSIGN_BUILDER:
 			var result = _construction_labor_service.handle_request_assign_builder(command, logical_tick)
 			if result.status == GopalaCommandResult.Status.APPLIED:
+				_workforce_service.manual_override(int(payload.get("villager_id",0)),logical_tick)
 				_commit_snapshot()
 			return result
 		GopalaSimulationCommand.REQUEST_CANCEL_CONSTRUCTION:
+			var target := _entity_queries.snapshot(int(payload.get("entity_id",0)))
+			if target != null and target.kind == GopalaEntityKind.ROAD: return _road_service.cancel_work(command,logical_tick)
 			var result = _placement_service.handle_request_cancel_construction(command, logical_tick)
 			if result.status == GopalaCommandResult.Status.APPLIED:
 				_commit_snapshot()
@@ -402,7 +473,7 @@ func _make_capabilities() -> Dictionary:
 	for capability in GopalaSimulationConfig.CAPABILITY_NAMES:
 		map[capability] = capability in [
 			&"simulation_clock", &"command_queue", &"resource_ledger", &"snapshots",
-			&"entity_registry", &"selection", &"placement", &"occupancy", &"construction"
+			&"entity_registry", &"selection", &"placement", &"occupancy", &"construction", &"roads", &"workforce_management"
 		]
 	return map
 
@@ -468,3 +539,15 @@ func _entity_allocator_for_tests() -> GopalaEntityIdAllocator:
 
 func _advance_runtime_delta_for_tests(delta: float) -> void:
 	_physics_process(delta)
+
+func _schedule_road_builders() -> void:
+	var owner := _workforce_service.settlement()
+	if owner != null and owner.attributes.has("workforce_policy"): return
+	var selected := {}
+	for road in _entity_queries.snapshots_by_kind(GopalaEntityKind.ROAD):
+		if str(road.attributes.get("construction_state","COMPLETED")) in ["COMPLETED","CANCELLED"] or int(road.attributes.get("assigned_builder_id",0)) != 0 or not road.attributes.get("auto_build",false): continue
+		for worker in _entity_queries.snapshots_by_kind(GopalaEntityKind.VILLAGER):
+			if selected.has(worker.entity_id) or int(worker.attributes.get("active_task_id",0)) != 0 or int(worker.attributes.get("carried_amount",0)) > 0 or str(worker.attributes.get("work_role","NONE")) != "NONE" or str(worker.attributes.get("task_kind","NONE")) != "NONE": continue
+			selected[worker.entity_id] = true
+			submit_command(GopalaSimulationCommand.REQUEST_ASSIGN_BUILDER,{"villager_id":worker.entity_id,"blueprint_id":road.entity_id},&"road_dispatcher")
+			break

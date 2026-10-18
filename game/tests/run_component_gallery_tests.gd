@@ -575,6 +575,28 @@ func _test_components() -> void:
 	shell.queue_free()
 	await process_frame
 
+	# Collapsible HUD section: visible heading, accessible state, live body and events.
+	var collapsible := (load("res://scenes/ui/components/collapsible_section/collapsible_section.tscn") as PackedScene).instantiate() as GopalaCollapsibleSection
+	expect(collapsible != null, "collapsible section scene instantiates")
+	root.add_child(collapsible)
+	await process_frame
+	expect(collapsible.body() != null and collapsible.title_label() != null, "collapsible section exposes its body and title")
+	collapsible.set_title("Construction")
+	var changes: Array[bool] = []
+	collapsible.collapsed_changed.connect(func(value: bool): changes.append(value))
+	collapsible.get_node("Header/Collapse").pressed.emit()
+	expect(collapsible.collapsed and not collapsible.body().visible, "collapse button hides content")
+	expect(collapsible.title_label().visible and collapsible.get_node("Header/Collapse").visible, "header controls remain visible while folded")
+	expect(collapsible.get_node("Header/Collapse").accessibility_name == "Expand Construction", "collapse control has an accessible expanding name")
+	collapsible.get_node("Header/Collapse").pressed.emit()
+	expect(not collapsible.collapsed and collapsible.body().visible, "collapse button restores content")
+	expect(changes == [true, false], "collapse state changes emit once")
+	collapsible.set_collapsible(false)
+	collapsible.set_collapsed(true)
+	expect(not collapsible.collapsed and collapsible.body().visible and not collapsible.get_node("Header/Collapse").visible, "non-collapsible section stays expanded")
+	collapsible.queue_free()
+	await process_frame
+
 	# Shortcut tooltip: structure, binding updates, unbound/disabled states,
 	# long text, mouse routing, focus ring and UI scaling.
 	var hint := (load("res://scenes/ui/components/shortcut_tooltip/shortcut_tooltip.tscn") as PackedScene).instantiate() as GopalaShortcutTooltip
@@ -590,8 +612,9 @@ func _test_components() -> void:
 		"shortcut tooltip required nodes exist")
 	expect(hint.mouse_filter == Control.MOUSE_FILTER_STOP,
 		"shortcut root stops the mouse to prevent world-click leakage")
-	_expect_control_descendants_ignore(hint)
 	expect(hint.focus_mode == Control.FOCUS_NONE, "passive shortcut hint is not focusable by default")
+	for decorative_child in hint.find_children("*", "Control", true, false):
+		expect((decorative_child as Control).mouse_filter == Control.MOUSE_FILTER_IGNORE, "decorative child %s ignores the mouse" % String(decorative_child.get_path()))
 
 	# Route two actual viewport clicks through GUI dispatch: first prove the
 	# receiver sees an unblocked click, then click the tooltip's visible area.

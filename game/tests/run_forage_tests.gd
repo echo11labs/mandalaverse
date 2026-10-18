@@ -80,8 +80,8 @@ func run():
 		check(sim.resource_amount(resource) == initial+4,"Repeated forage order delivers both units without switching to timber")
 		sim.advance_ticks(5)
 		check(sim.resource_amount(resource) == initial+4,"Completed forage cannot credit twice")
-		var command := GopalaSimulationCommand._from_queue(0,GopalaSimulationCommand.REQUEST_GATHER_RESOURCE,sim.logical_tick,{"resource_id":&"grain","villager_id":worker,"source_entity_id":manual},&"test")
-		check(sim.gather_delivery_service().handle_request_gather_timber(command,sim.logical_tick).reason_code == &"INVALID_RESOURCE","Unsupported grain collection rejected")
+		var command := GopalaSimulationCommand._from_queue(0,GopalaSimulationCommand.REQUEST_GATHER_RESOURCE,sim.logical_tick,{"resource_id":&"iron","villager_id":worker,"source_entity_id":manual},&"test")
+		check(sim.gather_delivery_service().handle_request_gather_timber(command,sim.logical_tick).reason_code == &"INVALID_RESOURCE","Unsupported resource collection rejected")
 		sim.free()
 	# The actual landscape seeds distinct, gatherable patches and exposes role buttons.
 	var valley = load("res://scenes/landscape/kathmandu_valley.tscn").instantiate()

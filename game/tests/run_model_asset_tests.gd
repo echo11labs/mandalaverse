@@ -16,6 +16,12 @@ func run() -> void:
 		check(receipt.license == "CC0-1.0", "Admitted CC0 source: " + pack)
 		for path in receipt.files:
 			check(FileAccess.get_sha256(folder + path) == receipt.files[path], "Unmodified source/dependency/license: " + str(path))
+	var extension_root := "res://assets/models/nature/kaykit/"
+	var extension: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(extension_root + "resource-refresh-receipt.json"))
+	check(extension.license == "CC0-1.0", "Resource refresh retains admitted CC0 license")
+	check(FileAccess.get_sha256(extension_root + "LICENSE.txt") == extension.license_sha256,"Resource refresh license matches original archive")
+	for path in extension.files:
+		check(FileAccess.get_sha256(extension_root + path) == extension.files[path],"Resource refresh copied-byte integrity: " + path)
 	var cow := GopalaCattleView.new()
 	root.add_child(cow)
 	check(cow.player.has_animation("iddle") and cow.player.has_animation("walk"),"Styloo source idle and walk animations retained")
@@ -52,13 +58,13 @@ func run() -> void:
 	worker.queue_free()
 	for definition in ["stockpile", "dwelling", "timber_camp", "gatherer_shelter", "water_point", "cattle_shelter"]:
 		var source = load("res://data/buildings/%s.tres" % definition)
-		for turn in [0, 1]:
+		for turn in [0, 1, 2, 3]:
 			var size := Vector3(source.footprint.x * GopalaScaleStandard.metres_to_world(GopalaScaleStandard.number("units", "logical_meters_per_cell")), GopalaScaleStandard.number("building", "height"), source.footprint.y * GopalaScaleStandard.metres_to_world(GopalaScaleStandard.number("units", "logical_meters_per_cell")))
-			if turn == 1:
+			if turn % 2 == 1:
 				size = Vector3(size.z, size.y, size.x)
 			var building := GopalaBuildingModelView.new()
 			root.add_child(building)
-			building.build(size, definition)
+			building.build(size, definition, turn, turn)
 			var bounds := building.measured_bounds
 			check(bounds.size.x <= size.x + 0.000001 and bounds.size.z <= size.z + 0.000001 and bounds.size.y <= size.y + 0.000001, "Model fits actual footprint and height: " + definition)
 			check(absf(bounds.position.y) < 0.000001, "Building bottom anchor: " + definition)

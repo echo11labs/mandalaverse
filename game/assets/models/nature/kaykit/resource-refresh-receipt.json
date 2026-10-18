@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-12",
+  "license": "CC0-1.0",
+  "license_file": "LICENSE.txt",
+  "author": "Kay Lousberg",
+  "source_url": "https://kaylousberg.itch.io/kaykit-forest",
+  "source_archive": "Resources/KayKit_Forest_Nature_Pack_1.0_FREE.zip",
+  "archive_sha256": "2ee83e63bb7695f2d884ec27ddf6fce020789a452e7d5c5b0bbdfc4f6ea1fc8c",
+  "license_sha256": "987811fa42c7548ad487324531813b0210ee6d1ebd410089e881820630e3be54",
+  "models": [
+    "Bush_3_A",
+    "Bush_4_A",
+    "Grass_2_A",
+    "Grass_2_B",
+    "Rock_1_B",
+    "Rock_3_B"
+  ],
+  "conversion": "Original glTF/bin/PNG repacked into self-contained GLB. Geometry, UVs and embedded atlas unchanged. Runtime fits existing metre profiles; thatch receives an instance-only straw material.",
+  "source_sha256": {
+    "KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_3_A_Color1.gltf": "c1806cb5331a53bbd57a57fa678dce6484ac45e8b609caf4c619d3dae0fcd7b8",
+    "KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_3_A_Color1.bin": "7f4893327535d30c255da52eac62d1feb2b5688ed9b4f79a48787acdd0cfa6fe",
+    "KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/forest_texture.png": "406c01e0ac1d3368fc7b26ff5fb0d3335ba5e48bd19a703540ed92ee3971ea39",
+    "KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_4_A_Color1.gltf": "56b56b9187350ad1222a4bd61112ed3c2a839a49ad876ca6e01ef17b426f3d02",
+    "KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Bush_4_A_Color1.bin": "e6716cb3d232d0f24f719ef9edf61fb1218e570f3767228c4dc155eaf7e2f56f",
+    "KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_A_Color1.gltf": "fa822543a17721c40b3386557ed37af6c44fd6d4ce6b4fc16f9187d69cde8fe1",
+    "KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_A_Color1.bin": "07fc84eda0b374b3fd4afed280452f0be21f75c0e53fbf6778d3997c09832a64",
+    "KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_B_Color1.gltf": "c95c9aa402330cb1f1950a5c6fa467f9714d5ebeb257731bc4e0567951e08032",
+    "KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Grass_2_B_Color1.bin": "8a8a00efc28a7ea1fa735579b72c55ee6d0de7cea4672afa82a378dcadc70487",
+    "KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_B_Color1.gltf": "749f2de085a5cee1c91c5953cf04cf243d9b61d847e6006cf3d4eeef5a35985a",
+    "KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_B_Color1.bin": "782cef58cf202c5ed3f121219aa7492c36857f1d00c9bd2bce13c8c6c8147d7e",
+    "KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_B_Color1.gltf": "ab3aafc815c562c4b96fc4ca4bb9cd359a8f0fedeb9775caa19cf116f031fe74",
+    "KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_B_Color1.bin": "fc36ba2b662b90cd61f9ca6a7ca65dbd6176f2984102433053df7d786b6b707d"
+  },
+  "files": {
+    "Bush_3_A.glb": "ea52e35e7189d2995a938d472dd41a92973fe5447fe6bfd4044bf7431bf9248b",
+    "Bush_4_A.glb": "9d3dc92932dda0594df9fe5c61c8dd57270e72867be3882dbc82a300d648f41f",
+    "Grass_2_A.glb": "a9d2fcebbe3e14d3a1a370bc1268883326172e34302f82c52343574d99f42413",
+    "Grass_2_B.glb": "a019e7490785aa10cec14d712dee7ff07400af7a9cf6a68ebccf517ab402ece8",
+    "Rock_1_B.glb": "7d18b72e1cbfca5d0e509129c1d41e13fe4971cbb280691a24bdbd79ee68629d",
+    "Rock_3_B.glb": "556bc33ccc4c8024f6462550182e7aa5bd8b0cbdc7b0b7d77ede0b6e8c544e74"
+  }
+}

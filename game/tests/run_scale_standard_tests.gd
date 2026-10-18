@@ -16,19 +16,30 @@ func check(value: bool, label: String) -> void:
 func run() -> void:
 	var standard := GopalaScaleStandard.settings()
 	check(standard.schema_version == 1 and int(standard.revision) > 0, "Versioned scale standard")
-	for profile in ["units", "villager", "stone_piece", "stone_patch", "stone_scenery", "stone_carry", "timber_carry", "forage_patch", "forage_carry", "water_source", "water_carry", "cattle", "milk_carry", "pasture", "fence_prop", "axe_prop"]:
+	for profile in ["units", "villager", "stone_piece", "stone_patch", "stone_scenery", "stone_carry", "timber_carry", "forage_patch", "forage_carry", "water_source", "water_carry", "cattle", "milk_carry", "pasture", "fence_prop", "axe_prop", "dirt_path", "cobbled_path", "terrace_field", "building_presentation"]:
 		for key in standard[profile]:
 			if typeof(standard[profile][key]) in [TYPE_FLOAT, TYPE_INT]:
 				check(is_finite(float(standard[profile][key])) and float(standard[profile][key]) > 0.0, "Positive finite scale value: %s.%s" % [profile, key])
+	check(GopalaScaleStandard.number("terrace_field", "width") <= GopalaScaleStandard.number("units", "logical_meters_per_cell") * 4.0, "Terrace width occupies exactly four logical cells")
+	check(GopalaScaleStandard.number("terrace_field", "length") <= GopalaScaleStandard.number("units", "logical_meters_per_cell") * 4.0, "Terrace length occupies exactly four logical cells")
 	check(GopalaScaleStandard.number("stone_piece", "width_max") <= GopalaScaleStandard.number("villager", "height") * 0.2, "Hand-sized stones relative to villager")
 	check(GopalaScaleStandard.number("stone_patch", "pick_width") >= GopalaScaleStandard.number("stone_patch", "width_max"), "Picking bounds cover stone patch")
 	check(is_equal_approx(GopalaScaleStandard.number("units", "regional_meters_per_world_unit"), GopalaKathmanduTerrain.METRES_PER_UNIT), "Scale conversion matches actual terrain")
 	check(is_equal_approx(GopalaScaleStandard.number("villager", "height"), 1.75 / GopalaKathmanduTerrain.METRES_PER_UNIT), "Human uses metre conversion, not map marker units")
+	check(is_equal_approx(GopalaScaleStandard.number("dirt_path", "width"),1.2/GopalaKathmanduTerrain.METRES_PER_UNIT),"Path width uses authored metre dimensions")
+	check(is_equal_approx(GopalaScaleStandard.number("dirt_path", "depth"),0.04/GopalaKathmanduTerrain.METRES_PER_UNIT),"Path depth is converted consistently into terrain units")
+	check(is_equal_approx(GopalaScaleStandard.number("cobbled_path", "width"),1.5/GopalaKathmanduTerrain.METRES_PER_UNIT),"Cobbled paths use their measured metre width")
+	check(is_equal_approx(GopalaScaleStandard.number("cobbled_path", "depth"),0.08/GopalaKathmanduTerrain.METRES_PER_UNIT),"Cobbled pavers rise above the ground by the authored metre profile")
+	check(is_equal_approx(GopalaScaleStandard.number("terrace_field", "width"),8.0/GopalaKathmanduTerrain.METRES_PER_UNIT),"Terrace field width converts its authored eight metres")
+	check(is_equal_approx(GopalaScaleStandard.number("terrace_field", "length"),8.0/GopalaKathmanduTerrain.METRES_PER_UNIT),"Terrace field length converts its authored eight metres")
+	check(is_equal_approx(GopalaScaleStandard.number("terrace_field", "bed_lift"),0.08/GopalaKathmanduTerrain.METRES_PER_UNIT),"Terrace bed lift converts its authored metre dimension")
+	check(is_equal_approx(GopalaScaleStandard.number("terrace_field", "riser_height"),0.3/GopalaKathmanduTerrain.METRES_PER_UNIT),"Terrace retaining riser converts its authored metre dimension")
+	check(is_equal_approx(float(standard.terrace_field.riser_threshold),0.25),"Terrace riser threshold remains a metre-valued measurement")
 	var river_script = load("res://core/landscape/terrain_river.gd")
 	for reach in [{"name": "Bagmati", "kind": "river"}, {"name": "Bishnumati", "kind": "river"}, {"name": "stream", "kind": "stream"}]:
 		var river_width: float = river_script.half_width(reach) * 2.0
 		check(river_width > GopalaScaleStandard.number("villager", "height") * 10.0, "Human remains much smaller than flowing river: %s" % reach.name)
-	for name in ["Rock_3_A", "Rock_1_A"]:
+	for name in ["Rock_3_A", "Rock_1_A", "Rock_1_B", "Rock_3_B"]:
 		var path := "res://assets/models/nature/kaykit/%s.glb" % name
 		var source: PackedScene = load(path)
 		for yaw in [0.0, 0.7, 1.6, 2.7]:
@@ -109,7 +120,32 @@ func run() -> void:
 		measurements.append({"variant":variant.id,"asset":path,"sha256":FileAccess.get_sha256(path),"target_height_metres":target_m,"fitted_size":[tree_bounds.size.x,tree_bounds.size.y,tree_bounds.size.z]})
 		tree.free()
 
-	var report := {"ok": failures.is_empty(), "checks": checks, "failures": failures, "standard_path": GopalaScaleStandard.PATH, "standard_sha256": FileAccess.get_sha256(GopalaScaleStandard.PATH), "revision": standard.revision, "units": standard.units, "profiles": standard, "mesh_measurements": measurements,"forage_measurements":forage_measurements, "patch_size": [bounds.size.x, bounds.size.y, bounds.size.z], "scope": "Regenerated on verification: standard values, imported mesh bounds, export-scale/yaw/nested-pivot normalization, patch footprint and depletion. Live terrain patches are checked in stone-resource-tests."}
+	for definition in ["dwelling","stockpile","timber_camp","gatherer_shelter","water_point","cattle_shelter"]:
+		for turn in 4:
+			var building := GopalaBuildingModelView.new()
+			building.build(Vector3(0.04,GopalaScaleStandard.number("building","height"),0.04),definition,turn,turn)
+			var fitted := building.measured_bounds
+			check(fitted.size.x <= 0.04001 and fitted.size.z <= 0.04001 and fitted.size.y <= GopalaScaleStandard.number("building","height")+0.00001,"New facility and dressing fit existing plot in all rotations: " + definition)
+			check(absf(fitted.position.y) < 0.00001,"New facility ground anchor: " + definition)
+			measurements.append({"definition":definition,"rotation":turn,"asset":building.model_path,"sha256":FileAccess.get_sha256(building.model_path),"view_sha256":FileAccess.get_sha256("res://core/presentation/building_model_view.gd"),"size_metres":[fitted.size.x*100,fitted.size.y*100,fitted.size.z*100]})
+			building.free()
+	for seed in 6:
+		var worker := GopalaWorkerModelView.new()
+		worker.build(seed)
+		check(is_equal_approx(worker.measured_bounds.size.y,GopalaScaleStandard.number("villager","height")),"All settler variants retain 1.75m height")
+		check(absf(worker.measured_bounds.position.y) < 0.00001,"All settler variants retain ground anchor")
+		check(worker.player.has_animation("walk") and worker.player.has_animation("pick-up"),"All settler variants retain work animations")
+		measurements.append({"asset":worker.model_path,"sha256":FileAccess.get_sha256(worker.model_path),"size_metres":[worker.measured_bounds.size.x*100,worker.measured_bounds.size.y*100,worker.measured_bounds.size.z*100]})
+		worker.free()
+	for resource in [&"stone",&"timber",&"water",&"milk",&"thatch",&"fodder",&"wild_food"]:
+		var goods := GopalaCarriedGoodsView.new()
+		goods.build(resource)
+		var target := GopalaScaleStandard.carry_size(GopalaCarriedGoodsView.profile(resource))
+		var fitted := goods.measured_bounds
+		check(fitted.size.x <= target.x+0.00001 and fitted.size.y <= target.y+0.00001 and fitted.size.z <= target.z+0.00001,"Goods models fit carry dimensions: " + resource)
+		measurements.append({"resource":resource,"asset":"res://core/presentation/carried_goods_view.gd","sha256":FileAccess.get_sha256("res://core/presentation/carried_goods_view.gd"),"size_metres":[fitted.size.x*100,fitted.size.y*100,fitted.size.z*100]})
+		goods.free()
+	var report := {"ok": failures.is_empty(), "checks": checks, "failures": failures, "standard_path": GopalaScaleStandard.PATH, "standard_sha256": FileAccess.get_sha256(GopalaScaleStandard.PATH), "revision": standard.revision, "units": standard.units, "profiles": standard, "mesh_measurements": measurements,"forage_measurements":forage_measurements, "patch_size": [bounds.size.x, bounds.size.y, bounds.size.z], "scope": "Regenerated on verification: standard values, imported mesh bounds, export-scale/yaw/nested-pivot normalization, patch footprint and depletion. Live terrain patches are checked in stone-resource-tests; path dimensions are checked against the terrain units contract."}
 	var file := FileAccess.open("res://../reports/scale-audit.json", FileAccess.WRITE)
 	if file == null:
 		check(false, "Scale audit file could be written")

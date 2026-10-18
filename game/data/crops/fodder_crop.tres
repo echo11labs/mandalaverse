@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="GopalaCropDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://core/content/crop_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"fodder_crop"
+display_name = "Fodder crop (prototype)"
+harvest_resource = &"fodder"
+growth_ticks = 900
+yield_amount = 7
+minimum_fertility = 0.2
+minimum_moisture = 0.15
+work_ticks = 10

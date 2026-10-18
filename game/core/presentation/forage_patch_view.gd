@@ -27,18 +27,37 @@ func build(entity_id: int, world_seed: int, resource: StringName, ground_height:
 		var offset := Vector2(cos(angle),sin(angle)) * GopalaScaleStandard.number("forage_patch","radius") * sqrt(rng.randf())
 		plant.position = Vector3(offset.x,float(ground_height.call(world_xz.x+offset.x,world_xz.y+offset.y))-base_y,offset.y)
 		var height := GopalaScaleStandard.number("forage_patch","plant_height") * rng.randf_range(0.65,1.0)
-		var path := "res://assets/models/nature/kaykit/Bush_1_A.glb" if resource == &"wild_food" and i % 2 == 0 else "res://assets/models/nature/kaykit/Bush_2_A.glb" if resource == &"wild_food" else "res://assets/models/nature/kaykit/Grass_1_A.glb"
+		var names: Array = ["Bush_1_A","Bush_3_A","Bush_2_A","Bush_4_A"] if resource == &"wild_food" else (["Grass_2_A","Grass_2_B"] if resource == &"thatch" else ["Grass_1_A","Grass_2_B"])
+		var path := "res://assets/models/nature/kaykit/%s.glb" % names[i % names.size()]
 		var model: Node3D = (load(path) as PackedScene).instantiate()
 		plant.add_child(model)
+		plant.set_meta("source_model",path)
 		GopalaScaleStandard.normalize_height(model,height)
-		# Same deterministic scatter points and density; distinguish forage by existing berry markers.
+		# Fit broad bush variants within the existing shrub-width contract.
 		if resource == &"wild_food":
+			var bounds := GopalaScaleStandard.bounds_in_parent(model)
+			var width := GopalaScaleStandard.horizontal_width(bounds)
+			model.scale *= minf(1.0,GopalaScaleStandard.number("forage_patch","shrub_width")/width)
+			bounds = GopalaScaleStandard.bounds_in_parent(model)
+			model.position -= Vector3(bounds.get_center().x,bounds.position.y,bounds.get_center().z)
+		plant.rotation.y = float(i)*2.39996323
+		var foliage := StandardMaterial3D.new()
+		foliage.roughness = 1.0
+		foliage.cull_mode = BaseMaterial3D.CULL_DISABLED
+		# Per-instance materials preserve shared imported resources. Mature straw
+		# and fresh fodder have distinct silhouettes and colors at the game camera.
+		var tones: Array = [Color("b6924b"),Color("c5a763"),Color("a98d48")] if resource == &"thatch" else [Color("4e7437"),Color("638442"),Color("3f672e")]
+		foliage.albedo_color = tones[i % tones.size()]
+		for mesh: MeshInstance3D in model.find_children("*","MeshInstance3D",true,false): mesh.material_override = foliage
+		# Place berries on the fitted canopy edge instead of burying them inside it.
+		if resource == &"wild_food":
+			var canopy := GopalaScaleStandard.bounds_in_parent(model)
 			for berry in 4:
 				var fruit := SphereMesh.new()
 				fruit.radius = GopalaScaleStandard.number("forage_patch","berry_width") * 0.5
 				fruit.height = fruit.radius * 2
 				var yaw := float(berry) * TAU / 4.0
-				mesh_part(plant,fruit,Vector3(cos(yaw)*GopalaScaleStandard.number("forage_patch","shrub_width")*0.5,height*0.65,sin(yaw)*GopalaScaleStandard.number("forage_patch","shrub_width")*0.5),resource_color(resource))
+				mesh_part(plant,fruit,Vector3(cos(yaw)*canopy.size.x*0.5,canopy.size.y*0.65,sin(yaw)*canopy.size.z*0.5),resource_color(resource))
 		if resource != &"wild_food":
 			for unused_blade in 4: rng.randf() # Preserve the original scatter RNG sequence.
 		plants.append(plant)

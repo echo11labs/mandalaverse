@@ -1,0 +1,19 @@
+{
+	"checks": 120,
+	"failures": [],
+	"measurements": [
+		{
+			"default_hud_fraction": 0.138478732638889,
+			"resolution": "(1280, 720)"
+		},
+		{
+			"default_hud_fraction": 0.0775954861111111,
+			"resolution": "(1920, 1080)"
+		},
+		{
+			"default_hud_fraction": 0.0702336516203704,
+			"resolution": "(2560, 1080)"
+		}
+	],
+	"ok": true
+}

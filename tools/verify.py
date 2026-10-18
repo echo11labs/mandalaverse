@@ -40,7 +40,7 @@ def run_stage(name, arguments, timeout=60, external=False):
         if line.startswith(marker):
             result["tests"] = json.loads(line[len(marker):])
             result["ok"] = result["ok"] and result["tests"]["ok"]
-    if name in ["content-tests", "landscape-tests", "scenic-tests", "kathmandu-tests", "coordinate-tests", "waterways-tests", "forest-tests", "entity-registry-tests", "selection-tests", "spatial-grid-tests", "simulation-spine-tests", "ui-tests", "component-gallery-tests", "gather-delivery-tests", "placement-slice-tests", "villager-movement-tests", "construction-labor-tests", "stone-resource-tests", "scale-standard-tests", "model-asset-tests", "local-view-tests", "route-tests", "save-tests", "worker-job-tests", "stockpile-inventory-tests", "forage-tests", "survival-tests", "herd-tests", "mvp-scenario-tests", "bench-smoke", "alert-tests", "alert-ui-tests", "front-door-tests", "debug-overlay-tests", "nature-model-tests"] and "tests" not in result:
+    if name in ["content-tests", "landscape-tests", "scenic-tests", "kathmandu-tests", "coordinate-tests", "waterways-tests", "forest-tests", "entity-registry-tests", "selection-tests", "spatial-grid-tests", "simulation-spine-tests", "ui-tests", "component-gallery-tests", "gather-delivery-tests", "placement-slice-tests", "villager-movement-tests", "construction-labor-tests", "stone-resource-tests", "scale-standard-tests", "model-asset-tests", "local-view-tests", "route-tests", "save-tests", "worker-job-tests", "stockpile-inventory-tests", "forage-tests", "survival-tests", "herd-tests", "mvp-scenario-tests", "bench-smoke", "alert-tests", "alert-ui-tests", "front-door-tests", "debug-overlay-tests", "nature-model-tests", "road-placement-tests", "path-construction-tests", "workforce-tests", "field-tests"] and "tests" not in result:
         result["ok"] = False
     print(f"{name}: {'PASS' if result['ok'] else 'FAIL'}", flush=True)
     return result
@@ -76,6 +76,10 @@ def main():
             stages.append(run_stage("selection-tests", ["--script", "tests/run_selection_tests.gd"]))
         if (ROOT / "game/tests/run_spatial_grid_tests.gd").exists():
             stages.append(run_stage("spatial-grid-tests", ["--script", "tests/run_spatial_grid_tests.gd"]))
+        if (ROOT / "game/tests/run_road_placement_tests.gd").exists():
+            stages.append(run_stage("road-placement-tests", ["--script", "tests/run_road_placement_tests.gd"]))
+            stages.append(run_stage("path-construction-tests", ["--script", "tests/run_path_construction_tests.gd"]))
+            stages.append(run_stage("workforce-tests", ["--script", "tests/run_workforce_tests.gd"]))
         if (ROOT / "game/tests/run_placement_slice_tests.gd").exists():
             stages.append(run_stage("placement-slice-tests", ["--script", "tests/run_placement_slice_tests.gd"]))
         if (ROOT / "game/tests/run_villager_movement_tests.gd").exists():
@@ -86,6 +90,7 @@ def main():
         stages.append(run_stage("herd-tests", ["--script", "tests/run_herd_tests.gd"]))
         stages.append(run_stage("survival-tests", ["--script", "tests/run_survival_tests.gd"]))
         stages.append(run_stage("forage-tests", ["--script", "tests/run_forage_tests.gd"]))
+        stages.append(run_stage("field-tests", ["--script", "tests/run_field_tests.gd"]))
         stages.append(run_stage("stockpile-inventory-tests", ["--script", "tests/run_stockpile_inventory_tests.gd"]))
         stages.append(run_stage("worker-job-tests", ["--script", "tests/run_worker_job_tests.gd"]))
         stages.append(run_stage("save-tests", ["--script", "tests/run_save_tests.gd"]))

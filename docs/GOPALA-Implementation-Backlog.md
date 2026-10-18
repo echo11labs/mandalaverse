@@ -12,6 +12,8 @@ The separate `scenes/mvp.tscn` starts eight settlers with protected food/water r
 
 The individual stockpile-inventory and persistent collection job slices reserve room in specific stores, pause at full storage and switch depleted sources. Builders fetch all required materials from recorded stores; cancellation and store removal preserve goods at physical locations. Schema 2 validates and saves inventory partitions and construction origins. [Storage and worker jobs](GOPALA-Storage-and-Worker-Jobs.md) records coverage and remaining store-to-store transport/filter/general-dispatcher requirements.
 
+The settlement-wide [worker management](GOPALA-Worker-Management.md) slice adds staffing targets, priority dispatch, safe automatic/manual ownership, blocked-job reasons and saved policy state for existing gathering, building/path and herd work. Store-to-store hauling, per-store filters and processing remain separate requirements.
+
 The local worker-routing slice now uses four-neighbour paths around occupied/reserved plots and displayed water, with access cells beside buildings, occupancy-change replanning and conservation-safe blocked delivery retries. [Worker routes](GOPALA-Worker-Routes.md) records coverage and remaining routing requirements.
 
 The local camera now frames current workers/buildings at a 40 m default span. The visible 2 m planning grid matches logical occupancy, and terrain/scenery rendering is spatially culled with a bounded local scenery cache. GPU comparison and regression scope are recorded in [Local settlement view](GOPALA-Local-Settlement-View.md); this does not implement disk streaming or general worker routes.

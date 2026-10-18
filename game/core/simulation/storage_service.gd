@@ -18,6 +18,10 @@ func capacity(resource: StringName) -> int:
 		elif building.attributes.get("definition_id") == &"stockpile":
 			var definition := simulation.placement_service().get_building(&"stockpile")
 			total = mini(GopalaSimulationConfig.MAX_BALANCE,total + int(definition.inventory_limits.get(resource,0)))
+	if resource == &"grain":
+		for building in simulation.entity_queries().snapshots_by_kind(GopalaEntityKind.BUILDING):
+			if str(building.attributes.get("construction_state","COMPLETED")) == "COMPLETED" and building.attributes.get(&"definition_id") == &"stockpile":
+				total = mini(GopalaSimulationConfig.MAX_BALANCE,total+int(building.attributes.get(&"storage_capacity",{}).get(resource,0)))
 	return total
 
 func incoming(resource: StringName) -> int:
@@ -28,7 +32,7 @@ func incoming(resource: StringName) -> int:
 
 func staged(resource: StringName) -> int:
 	var total := 0
-	for building in simulation.entity_queries().snapshots_by_kind(GopalaEntityKind.BUILDING):
+	for building in (simulation.entity_queries().snapshots_by_kind(GopalaEntityKind.BUILDING) + simulation.entity_queries().snapshots_by_kind(GopalaEntityKind.ROAD)):
 		total += int(building.attributes.get("reserved_materials",{}).get(resource,0))
 	return total
 
@@ -83,7 +87,7 @@ func consume_at(id: int, resource: StringName, amount: int) -> bool:
 
 func reserved_at(id: int, resource: StringName) -> int:
 	var total := 0
-	for building in simulation.entity_queries().snapshots_by_kind(GopalaEntityKind.BUILDING):
+	for building in (simulation.entity_queries().snapshots_by_kind(GopalaEntityKind.BUILDING) + simulation.entity_queries().snapshots_by_kind(GopalaEntityKind.ROAD)):
 		total += int(building.attributes.get("material_origins",{}).get(resource,{}).get(id,0))
 	return total
 
@@ -195,9 +199,10 @@ func cancel_blueprint(blueprint: GopalaEntitySnapshot, tick: int) -> void:
 	for resource in blueprint.attributes.get("delivered_materials",{}):
 		drop(resource,blueprint.attributes.delivered_materials[resource],point,tick)
 
-func drop(resource: StringName, amount: int, point: Vector2, tick: int) -> void:
-	if amount <= 0: return
-	simulation.entity_registry().create_entity(GopalaEntityKind.RESOURCE_SOURCE,{&"resource_id":resource,&"available_amount":amount,&"initial_amount":amount,&"reserved_amount":0,&"gatherable":true,&"position_x":point.x,&"position_z":point.y,&"recovered_goods":true}, {}, tick)
+func drop(resource: StringName, amount: int, point: Vector2, tick: int) -> int:
+	if amount <= 0: return 0
+	var source := simulation.entity_registry().create_entity(GopalaEntityKind.RESOURCE_SOURCE,{&"resource_id":resource,&"available_amount":amount,&"initial_amount":amount,&"reserved_amount":0,&"gatherable":true,&"position_x":point.x,&"position_z":point.y,&"recovered_goods":true}, {}, tick)
+	return source.entity_id
 
 func on_removed(id: int, _kind: StringName, _sequence: int) -> void:
 	if located and stocks.has(id):
@@ -212,7 +217,7 @@ func flush_removed() -> void:
 		var delta: Dictionary[StringName,int] = {}
 		for resource in goods: delta[StringName(resource)] = -int(goods[resource])
 		simulation._ledger.apply_authorized_transaction(delta)
-		for building in simulation.entity_queries().snapshots_by_kind(GopalaEntityKind.BUILDING):
+		for building in (simulation.entity_queries().snapshots_by_kind(GopalaEntityKind.BUILDING) + simulation.entity_queries().snapshots_by_kind(GopalaEntityKind.ROAD)):
 			var origins: Dictionary = building.attributes.get("material_origins",{}).duplicate(true)
 			var reserved: Dictionary = building.attributes.get("reserved_materials",{}).duplicate(true)
 			var changed := false

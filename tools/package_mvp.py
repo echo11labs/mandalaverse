@@ -36,7 +36,7 @@ def main():
     shutil.copytree(SOURCE / "core", STAGE / "core", ignore=ignore)
     shutil.rmtree(STAGE / "core/tools")
     shutil.copytree(SOURCE / "data", STAGE / "data", ignore=ignore)
-    for folder in ["fonts", "materials", "prototype", "terrain", "ui"]:
+    for folder in ["fonts", "materials", "prototype", "terrain", "ui", "shaders"]:
         shutil.copytree(SOURCE / "assets" / folder, STAGE / "assets" / folder, ignore=ignore)
     for folder in ["kenney_survival", "kenney_workers", "stone_scatter", "trees/PolyHavenFoliage", "nature/kaykit", "animals/styloo", "buildings/highlands"]:
         shutil.copytree(SOURCE / "assets/models" / folder, STAGE / "assets/models" / folder, ignore=ignore)

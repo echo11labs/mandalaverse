@@ -70,5 +70,7 @@ static func normalize_stone(model: Node3D, width: float) -> void:
 	model.position -= Vector3(bounds.get_center().x, bounds.position.y, bounds.get_center().z)
 
 static func within_profile(bounds: AABB, profile: String) -> bool:
-	return horizontal_width(bounds) <= number(profile, "width_max") + 0.0001 \
-		and bounds.size.y <= number(profile, "height_max") + 0.0001
+	var width_limit_key := "width_max" if settings().get(profile, {}).has("width_max") else "width"
+	var height_limit_key := "height_max" if settings().get(profile, {}).has("height_max") else "depth"
+	return horizontal_width(bounds) <= number(profile, width_limit_key) + 0.0001 \
+		and bounds.size.y <= number(profile, height_limit_key) + 0.0001

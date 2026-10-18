@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 11,
+  "revision": 15,
   "axis_convention": "+Y up; XZ ground; model ground anchor at bottom centre",
   "units": {
     "regional_meters_per_world_unit": 100.0,
@@ -56,13 +56,16 @@
     "settlement planning grid borders and ghost ground anchor",
     "chunked terrain and camera-local shadow reach",
     "two-metre worker routes with eighty-metre navigation margin",
+    "dirt paths with metre-sized ground patches and faster worker travel",
+    "cobbled path upgrades with metre-sized pavers and stronger worker travel",
     "thatch, fodder and wild-food patches and depletion",
     "forage carry bundles",
     "water point collection barrels and carried water",
     "prototype cattle body and ground anchors",
     "eight-metre pasture footprint and milk vessels",
     "Imported Styloo cattle rest pose, moving/idle animation and bottom anchor",
-    "Highlands cattle-shelter fence and timber-camp axe metre profiles"
+    "Highlands cattle-shelter fence and timber-camp axe metre profiles",
+    "Distinct local houses and CC0 facility fallbacks, 4m building height cap, rotated plot fitting and dressing"
   ],
   "legacy_scope": "Forest models retain their existing metre-height normalization. Rivers retain existing artistic widths, not surveyed banks; regression checks enforce actor-to-river proportions. Buildings retain logical footprint sizing.",
   "dimensions_unit": "metres",
@@ -77,7 +80,7 @@
     "focus_padding": 8
   },
   "building": {
-    "height": 2.5,
+    "height": 4.0,
     "blueprint_height": 0.25,
     "foundation_height": 0.35,
     "frame_height": 0.4,
@@ -102,6 +105,16 @@
   },
   "planning": {
     "grid_lift": 0.03
+  },
+  "dirt_path": {
+    "width": 1.2,
+    "depth": 0.04
+  },
+  "cobbled_path": {
+    "width": 1.5,
+    "depth": 0.08,
+    "paver_width": 0.3,
+    "joint_width": 0.025
   },
   "rendering": {
     "terrain_chunk_quads": 32,
@@ -169,5 +182,20 @@
     "height": 0.5,
     "width_max": 0.5,
     "offset_z": 0.25
+  },
+  "terrace_field": {
+    "width": 8.0,
+    "length": 8.0,
+    "bed_lift": 0.08,
+    "riser_height": 0.3,
+    "riser_threshold": 0.25
+  },
+  "building_presentation": {
+    "plot_inset": 0.15,
+    "shelter_width": 3.2,
+    "shelter_depth": 3.0,
+    "shelter_height": 2.5,
+    "water_cover_width": 2.2,
+    "water_cover_height": 2.0
   }
 }

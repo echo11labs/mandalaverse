@@ -10,6 +10,9 @@ var _queries: GopalaEntityQueryService
 var _grid := AStarGrid2D.new()
 var _terrain_solid := {}
 var _claim_cells := {}
+var _road_cells := {}
+var _road_quality := {}
+var _roads: GopalaRoadPlacementService
 var _dirty := true
 var _walkable: Callable
 
@@ -34,9 +37,19 @@ func enable(bounds: Rect2i, walkable: Callable = Callable()) -> void:
 		for x in range(bounds.position.x, bounds.end.x):
 			var cell := Vector2i(x,y)
 			var solid: bool = walkable.is_valid() and not walkable.call(_coordinates.settlement_cell_to_world_xz(cell))
+			_grid.set_point_weight_scale(cell, 1.25)
 			_grid.set_point_solid(cell,solid)
 			if solid: _terrain_solid[cell] = true
 	enabled = true
+	_dirty = true
+	revision += 1
+
+func configure_roads(roads: GopalaRoadPlacementService) -> void:
+	_roads = roads
+	if roads != null:
+		roads.roads_changed.connect(_on_roads_changed)
+
+func _on_roads_changed() -> void:
 	_dirty = true
 	revision += 1
 
@@ -44,12 +57,23 @@ func _refresh() -> void:
 	if not _dirty: return
 	for cell in _claim_cells: _grid.set_point_solid(cell, _terrain_solid.has(cell))
 	_claim_cells.clear()
+	for cell in _road_cells: _grid.set_point_weight_scale(cell, 1.25)
+	_road_cells.clear()
+	_road_quality.clear()
 	for claim in _occupancy.grid_snapshot().claims:
 		for pair in claim.cells:
 			var cell := Vector2i(pair[0],pair[1])
 			if _grid.region.has_point(cell):
 				_claim_cells[cell] = true
 				_grid.set_point_solid(cell)
+	if _roads != null:
+		for cell in _roads.road_quality_cells():
+			if _grid.region.has_point(cell) and not _terrain_solid.has(cell) and not _claim_cells.has(cell):
+				var quality: StringName = _roads.road_quality_at(cell)
+				_road_cells[cell] = true
+				_road_quality[cell] = quality
+				var multiplier: float = 1.6 if quality == &"cobbled" else 1.25
+				_grid.set_point_weight_scale(cell, 1.0 / multiplier)
 	_dirty = false
 
 func is_open(cell: Vector2i) -> bool:
@@ -85,10 +109,15 @@ func plan(position: Vector2, destination: Vector2, purpose: StringName) -> Dicti
 			)
 	if goals.is_empty(): return _failure(&"NO_ACCESS_CELL")
 	var chosen: Array[Vector2i] = []
+	var chosen_cost := INF
 	for candidate in goals:
 		if not is_open(candidate): continue
 		var path: Array[Vector2i] = _grid.get_id_path(start,candidate)
-		if not path.is_empty() and (chosen.is_empty() or path.size() < chosen.size()): chosen = path
+		if path.is_empty(): continue
+		var path_cost := _path_cost(path)
+		if chosen.is_empty() or path_cost < chosen_cost:
+			chosen = path
+			chosen_cost = path_cost
 	if chosen.is_empty(): return _failure(&"NO_ROUTE")
 	var points: Array[Vector2] = []
 	# First reach the current cell centre, preventing a diagonal corner cut from
@@ -97,6 +126,17 @@ func plan(position: Vector2, destination: Vector2, purpose: StringName) -> Dicti
 	var final := points[-1] if access else destination
 	if final.distance_to(points[-1]) > 0.000001: points.append(final)
 	return {"ok":true,"points":points,"destination":final,"revision":revision}
+
+func movement_multiplier(cell: Vector2i) -> float:
+	_refresh()
+	if not _road_cells.has(cell): return 1.0
+	return 1.6 if _road_quality.get(cell, &"dirt") == &"cobbled" else 1.25
+
+func _path_cost(path: Array[Vector2i]) -> float:
+	var total := 0.0
+	for index in range(1, path.size()):
+		total += _grid.get_point_weight_scale(path[index])
+	return total
 
 func _failure(reason: StringName) -> Dictionary:
 	last_failure = reason

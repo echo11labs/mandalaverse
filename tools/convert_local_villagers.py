@@ -6,7 +6,7 @@ root=Path(__file__).resolve().parents[1]
 stage=Path.home()/'Work/gopala-assets/characters/craftpix-medieval-people__LOCAL-ONLY'
 out=root/'game/assets/models/local_villagers';out.mkdir(parents=True,exist_ok=True)
 report=[]
-for name in ['peasant_4','peasant_5']:
+for name in ['peasant_4','peasant_5','peasant_1','peasant_2','peasant_3','peasant_6']:
  bpy.ops.wm.read_factory_settings(use_empty=True)
  source=stage/'fbx/people_unity'/(name+'.fbx');bpy.ops.import_scene.fbx(filepath=str(source))
  bpy.ops.object.select_all(action='SELECT')

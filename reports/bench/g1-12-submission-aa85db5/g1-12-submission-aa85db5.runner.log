@@ -1,0 +1,16 @@
+Starting 1280x800-off-1
+Finished 1280x800-off-1: valid=True active_min=36 frame_p95=434.06ms tick_p95=400.38ms
+Starting 1280x800-off-2
+Finished 1280x800-off-2: valid=True active_min=36 frame_p95=414.35ms tick_p95=399.01ms
+Starting 1280x800-off-3
+Finished 1280x800-off-3: valid=True active_min=36 frame_p95=26560.69ms tick_p95=396.57ms
+Starting 1280x800-on-1
+Finished 1280x800-on-1: valid=True active_min=36 frame_p95=461.00ms tick_p95=399.36ms
+Starting 1920x1080-off-1
+Finished 1920x1080-off-1: valid=True active_min=36 frame_p95=465.19ms tick_p95=445.97ms
+Starting 1920x1080-off-2
+Finished 1920x1080-off-2: valid=True active_min=36 frame_p95=409.88ms tick_p95=397.59ms
+Starting 1920x1080-off-3
+Finished 1920x1080-off-3: valid=True active_min=36 frame_p95=425.10ms tick_p95=405.86ms
+Starting 1920x1080-on-1
+Finished 1920x1080-on-1: valid=True active_min=36 frame_p95=409.50ms tick_p95=394.90ms

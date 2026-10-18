@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/components/collapsible_section/collapsible_section.gd" id="1_section"]
+
+[node name="CollapsibleSection" type="VBoxContainer"]
+script = ExtResource("1_section")
+
+[node name="Header" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Section"
+
+[node name="Collapse" type="Button" parent="Header"]
+layout_mode = 2
+focus_mode = 0
+text = "−"
+toggle_mode = true
+
+[node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 2

@@ -73,7 +73,7 @@ func _tick_worker(original: GopalaEntitySnapshot, tick_value: int) -> void:
 		var task: Dictionary = simulation._construction_labor_service._tasks[id]
 		if task.state != &"RETURNING_TO_CAMP":
 			update(id,{&"resume_blueprint_id":task.blueprint_id},tick_value)
-			simulation._construction_labor_service.cancel_task(id,tick_value)
+			simulation._construction_labor_service.cancel_task(id,tick_value,&"NEEDS_BREAK")
 	worker = simulation.entity_queries().snapshot(id)
 	if worker.attributes.get(&"active_task_id",0) > 0 or worker.attributes.get(&"carried_amount",0) > 0:
 		update(id,{&"need_state":&"FINISHING_DELIVERY"},tick_value)

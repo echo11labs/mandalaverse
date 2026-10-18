@@ -7,6 +7,7 @@ var _villagers: GopalaVillagerService
 var _ledger: GopalaResourceLedger
 var _coordinate_service: GopalaSettlementCoordinateService
 
+var roads: GopalaRoadPlacementService
 var storage: GopalaStorageService
 var _tasks: Dictionary = {}
 var _next_task_id: int = 1
@@ -24,6 +25,7 @@ func _camp_position() -> Vector2:
 	return Vector2.ZERO
 
 func _blueprint_position(blueprint: GopalaEntitySnapshot) -> Vector2:
+	if blueprint.kind == GopalaEntityKind.ROAD and roads != null: return roads.work_position(blueprint)
 	if blueprint.attributes.has("position_x") and blueprint.attributes.has("position_z"):
 		return Vector2(blueprint.attributes["position_x"], blueprint.attributes["position_z"])
 	if _coordinate_service != null:
@@ -39,19 +41,19 @@ func handle_request_assign_builder(command: GopalaSimulationCommand, current_tic
 	var blueprint = _queries.snapshot(blueprint_id)
 	
 	if builder == null or builder.kind != &"villager":
-		return _result(command, GopalaCommandResult.Status.REJECTED, &"INVALID_PAYLOAD", command.submitted_tick)
+		return _result(command, GopalaCommandResult.Status.REJECTED, &"INVALID_PAYLOAD", command.submitted_tick, {"command_type": command.command_type})
 		
-	if blueprint == null or blueprint.kind != &"building" or blueprint.attributes.get("construction_state", "") == "COMPLETED" or blueprint.attributes.get("construction_state", "") == "CANCELLED":
-		return _result(command, GopalaCommandResult.Status.REJECTED, &"INVALID_PAYLOAD", command.submitted_tick)
+	if blueprint == null or blueprint.kind not in [GopalaEntityKind.BUILDING,GopalaEntityKind.ROAD] or blueprint.attributes.get("construction_state", "") == "COMPLETED" or blueprint.attributes.get("construction_state", "") == "CANCELLED":
+		return _result(command, GopalaCommandResult.Status.REJECTED, &"INVALID_PAYLOAD", command.submitted_tick, {"command_type": command.command_type})
 		
 	var active_task_id = builder.attributes.get("active_task_id", 0)
 	var carried = builder.attributes.get("carried_amount", 0)
 	if active_task_id != 0 or carried > 0 or builder.attributes.get(&"task_kind") == &"NEED":
-		return _result(command, GopalaCommandResult.Status.REJECTED, &"INVALID_PAYLOAD", command.submitted_tick)
+		return _result(command, GopalaCommandResult.Status.REJECTED, &"INVALID_PAYLOAD", command.submitted_tick, {"command_type": command.command_type})
 		
 	var current_assigned = blueprint.attributes.get("assigned_builder_id", 0)
 	if current_assigned != 0:
-		return _result(command, GopalaCommandResult.Status.REJECTED, &"INVALID_PAYLOAD", command.submitted_tick)
+		return _result(command, GopalaCommandResult.Status.REJECTED, &"INVALID_PAYLOAD", command.submitted_tick, {"command_type": command.command_type})
 
 	var required_materials = blueprint.attributes.get("required_materials", {})
 	var reserved_materials = GopalaPlainData.copy_dictionary(blueprint.attributes.get("reserved_materials", {}))
@@ -59,7 +61,7 @@ func handle_request_assign_builder(command: GopalaSimulationCommand, current_tic
 	
 	var transaction: Dictionary[StringName, int] = {}
 	for mat in required_materials:
-		if StringName(mat) != &"timber" and (storage == null or not storage.located):
+		if blueprint.kind != GopalaEntityKind.ROAD and StringName(mat) != &"timber" and (storage == null or not storage.located):
 			continue
 		var req = int(required_materials[mat])
 		var del = int(delivered_materials.get(mat, 0))
@@ -88,7 +90,7 @@ func handle_request_assign_builder(command: GopalaSimulationCommand, current_tic
 				bp_patch["material_origins"] = origins
 		else: applied = _ledger.apply_authorized_transaction(transaction)
 		if not applied:
-			return _result(command, GopalaCommandResult.Status.REJECTED, &"INVALID_PAYLOAD", command.submitted_tick)
+			return _result(command, GopalaCommandResult.Status.REJECTED, &"INVALID_PAYLOAD", command.submitted_tick, {"command_type": command.command_type})
 		bp_patch["reserved_materials"] = reserved_materials
 			
 	var bp_res = _registry.update_entity(blueprint_id, bp_patch, {}, current_tick, blueprint.revision)
@@ -100,7 +102,7 @@ func handle_request_assign_builder(command: GopalaSimulationCommand, current_tic
 				rollback[k] = -transaction[k]
 			_ledger.apply_authorized_transaction(rollback)
 			if storage != null and storage.located: storage.stocks = old_stocks
-		return _result(command, GopalaCommandResult.Status.REJECTED, &"INVALID_PAYLOAD", command.submitted_tick)
+		return _result(command, GopalaCommandResult.Status.REJECTED, &"INVALID_PAYLOAD", command.submitted_tick, {"command_type": command.command_type})
 	
 	var task_id = _next_task_id
 	_next_task_id += 1
@@ -111,13 +113,27 @@ func handle_request_assign_builder(command: GopalaSimulationCommand, current_tic
 		"state": &"EVALUATING"
 	}
 	
-	_registry.update_entity(builder_id, {
+	var worker_update := _registry.update_entity(builder_id, {
 		&"active_task_id": task_id,
+		&"target_building_id": blueprint_id,
 		&"task_kind": &"BUILD",
 		&"task_state": &"EVALUATING"
 	}, {}, current_tick, builder.revision)
+	if worker_update.status != GopalaEntityOperationResult.Status.APPLIED:
+		_tasks.erase(builder_id)
+		var latest_blueprint := _queries.snapshot(blueprint_id)
+		if latest_blueprint != null:
+			_registry.update_entity(blueprint_id, {"assigned_builder_id": 0}, {}, current_tick, latest_blueprint.revision)
+			if not transaction.is_empty():
+				var rollback: Dictionary[StringName, int] = {}
+				for resource in transaction: rollback[resource] = -transaction[resource]
+				if storage != null and storage.located:
+					storage.stocks = old_stocks
+				else:
+					_ledger.apply_authorized_transaction(rollback)
+		return _result(command, GopalaCommandResult.Status.REJECTED, &"VILLAGER_BUSY", command.submitted_tick)
 	
-	return _result(command, GopalaCommandResult.Status.APPLIED, &"SUCCESS", command.submitted_tick, {"changed": true})
+	return _result(command, GopalaCommandResult.Status.APPLIED, &"SUCCESS", command.submitted_tick, {"changed": true, "command_type": command.command_type, "villager_id": builder_id, "blueprint_id": blueprint_id})
 
 func _result(command: GopalaSimulationCommand, status: GopalaCommandResult.Status, reason: StringName, logical_tick: int, details: Dictionary = {}) -> GopalaCommandResult:
 	return GopalaCommandResult.new(command.command_id, status, reason, logical_tick, details)
@@ -147,7 +163,9 @@ func _fail_task(villager_id: int, reason: StringName, logical_tick: int) -> void
 	if task.has("blueprint_id"):
 		var bp = _queries.snapshot(task.blueprint_id)
 		if bp != null:
-			_registry.update_entity(task.blueprint_id, {"assigned_builder_id": 0}, {}, logical_tick, bp.revision)
+			var patch := {"assigned_builder_id":0}
+			if bp.kind == GopalaEntityKind.ROAD and reason == &"CANCELLED": patch["auto_build"] = false
+			_registry.update_entity(task.blueprint_id, patch, {}, logical_tick, bp.revision)
 			
 	var villager = _queries.snapshot(villager_id)
 	if villager != null:
@@ -155,7 +173,8 @@ func _fail_task(villager_id: int, reason: StringName, logical_tick: int) -> void
 		if carried > 0:
 			task.state = &"RETURNING_TO_CAMP"
 			task.arrived_at_camp = false
-			_update_villager_task_state(villager_id, &"RETURNING_TO_CAMP", logical_tick, villager.revision)
+			_registry.update_entity(villager_id, {&"target_building_id": 0}, {}, logical_tick, villager.revision)
+			_update_villager_task_state(villager_id, &"RETURNING_TO_CAMP", logical_tick)
 			if storage != null and storage.located:
 				task.return_store_id = storage.return_store(villager,StringName(villager.attributes.get("carried_resource_id","")))
 				if task.return_store_id == 0:
@@ -169,15 +188,16 @@ func _fail_task(villager_id: int, reason: StringName, logical_tick: int) -> void
 			var v_refreshed = _queries.snapshot(villager_id)
 			_registry.update_entity(villager_id, {
 				&"active_task_id": 0,
+				&"target_building_id": 0,
 				&"task_kind": &"NONE",
 				&"task_state": &"NONE"
 			}, {}, logical_tick, v_refreshed.revision if v_refreshed else villager.revision)
 	
 	_tasks.erase(villager_id)
 
-func cancel_task(villager_id: int, logical_tick: int) -> void:
+func cancel_task(villager_id: int, logical_tick: int, reason: StringName = &"CANCELLED") -> void:
 	if not _tasks.has(villager_id): return
-	_fail_task(villager_id, &"CANCELLED", logical_tick)
+	_fail_task(villager_id, reason, logical_tick)
 
 func reset() -> void:
 	_tasks.clear()
@@ -233,6 +253,7 @@ func _tick_build_task(villager_id: int, task: Dictionary, villager: GopalaEntity
 			&"carried_amount": 0,
 			&"task_state": &"NONE",
 			&"active_task_id": 0,
+			&"target_building_id": 0,
 			&"task_kind": &"NONE"
 		}, {}, logical_tick, villager.revision)
 		_tasks.erase(villager_id)
@@ -341,21 +362,33 @@ func _tick_build_task(villager_id: int, task: Dictionary, villager: GopalaEntity
 				_registry.update_entity(blueprint.entity_id, {"construction_state": "UNDER_CONSTRUCTION"}, {}, logical_tick, blueprint.revision)
 				
 		&"PERFORMING_LABOR":
+			if blueprint.kind == GopalaEntityKind.ROAD:
+				for resource in required:
+					if int(delivered.get(resource,0)) < int(required[resource]):
+						task.state = &"EVALUATING"
+						_update_villager_task_state(villager_id, &"WAITING_FOR_MATERIALS", logical_tick)
+						return
 			var work_completed = blueprint.attributes.get("work_completed", 0) + 1
 			var work_required = blueprint.attributes.get("work_required", 100)
 			
 			if work_completed < work_required:
 				_registry.update_entity(blueprint.entity_id, {"work_completed": work_completed}, {}, logical_tick, blueprint.revision)
+				if blueprint.kind == GopalaEntityKind.ROAD and work_completed % GopalaRoadPlacementService.work_per_cell(blueprint) == 0:
+					task.state = &"MOVING_TO_BLUEPRINT"
+					_update_villager_task_state(villager_id, &"MOVING_TO_BLUEPRINT", logical_tick)
+					_villagers.set_destination(villager_id, _blueprint_position(_queries.snapshot(blueprint.entity_id)), &"BUILD", task.task_id)
 			else:
-				_registry.update_entity(blueprint.entity_id, {
+				var completion := GopalaRoadPlacementService.completion_patch(blueprint) if blueprint.kind == GopalaEntityKind.ROAD else {}
+				completion.merge({
 					"construction_state": "COMPLETED",
 					"work_completed": work_required,
 					"completed_tick": logical_tick,
 					"assigned_builder_id": 0
-				}, {}, logical_tick, blueprint.revision)
-				
+				})
+				_registry.update_entity(blueprint.entity_id, completion, {}, logical_tick, blueprint.revision)
 				_registry.update_entity(villager_id, {
 					&"active_task_id": 0,
+					&"target_building_id": 0,
 					&"task_kind": &"NONE",
 					&"task_state": &"NONE"
 				}, {}, logical_tick, villager.revision)

@@ -81,3 +81,22 @@ game/assets/models/local_villagers/
 
 # User-requested Vegetation/Forest Scene trees: local use, rights unverified.
 game/assets/models/local_nature/
+
+# Downloaded Craftpix houses: local game use; no public source redistribution.
+game/assets/models/local_buildings/
+reports/building-refresh/source-stage/
+
+# Local raw resource archives (size > 1.7GB)
+/Resources/
+
+# Unmanaged third-party addons and demos
+game/addons/simplegrasstextured/
+game/addons/simplex_terrain/
+game/addons/sky_3d/
+game/addons/terrain_3d/
+game/demo/
+game/scenes/GrassDemo.tscn
+game/scenes/GrassSpectrum.tscn
+game/Unarmed*
+game/RPG*
+game/explosive*

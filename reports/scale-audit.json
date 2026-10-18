@@ -1,36 +1,36 @@
 {
-  "checks": 174,
+  "checks": 323,
   "failures": [],
   "forage_measurements": [
     {
       "bounds_bottom": 0.0,
       "resource": "thatch",
       "size_metres": [
-        2.10197661072016,
+        1.99391432106495,
         0.959182623773813,
-        1.81227140128613
+        1.94070842117071
       ],
-      "source_sha256": "ac3e704131381c952cc6f8933bbb2fdf5a776a17193283e2b1746968bce8f9b2"
+      "source_sha256": "2b9a1f4885b2a3bd6b4d888a50a43326799482dcdc316053133cbdf3ae783ea9"
     },
     {
       "bounds_bottom": 0.0,
       "resource": "wild_food",
       "size_metres": [
-        2.55927704274654,
-        0.959182623773813,
-        1.60167366266251
+        2.46850848197937,
+        0.549999997019768,
+        1.48457959294319
       ],
-      "source_sha256": "ac3e704131381c952cc6f8933bbb2fdf5a776a17193283e2b1746968bce8f9b2"
+      "source_sha256": "2b9a1f4885b2a3bd6b4d888a50a43326799482dcdc316053133cbdf3ae783ea9"
     },
     {
       "bounds_bottom": 0.0,
       "resource": "fodder",
       "size_metres": [
-        2.10197661072016,
+        2.03521456569433,
         0.959182623773813,
-        1.81227140128613
+        1.96718405932188
       ],
-      "source_sha256": "ac3e704131381c952cc6f8933bbb2fdf5a776a17193283e2b1746968bce8f9b2"
+      "source_sha256": "2b9a1f4885b2a3bd6b4d888a50a43326799482dcdc316053133cbdf3ae783ea9"
     }
   ],
   "mesh_measurements": [
@@ -419,6 +419,390 @@
       "yaw": 2.7
     },
     {
+      "asset": "res://assets/models/nature/kaykit/Rock_1_B.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00265223672613502,
+        0.00260000000707805,
+        0.00278064259327948
+      ],
+      "sha256": "7d18b72e1cbfca5d0e509129c1d41e13fe4971cbb280691a24bdbd79ee68629d",
+      "source_size": [
+        0.00551122520118952,
+        0.00540267955511808,
+        0.00577804632484913
+      ],
+      "yaw": 0.0
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_1_B.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.00265223672613502,
+        0.00260000000707805,
+        0.00278064259327948
+      ],
+      "sha256": "7d18b72e1cbfca5d0e509129c1d41e13fe4971cbb280691a24bdbd79ee68629d",
+      "source_size": [
+        0.551122546195984,
+        0.540267944335938,
+        0.577804625034332
+      ],
+      "yaw": 0.0
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_1_B.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00265223672613502,
+        0.00260000000707805,
+        0.00278064259327948
+      ],
+      "sha256": "7d18b72e1cbfca5d0e509129c1d41e13fe4971cbb280691a24bdbd79ee68629d",
+      "source_size": [
+        55.1122550964355,
+        54.0267944335938,
+        57.7804641723633
+      ],
+      "yaw": 0.0
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_1_B.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00298788491636515,
+        0.00203370186500251,
+        0.00300000002607703
+      ],
+      "sha256": "7d18b72e1cbfca5d0e509129c1d41e13fe4971cbb280691a24bdbd79ee68629d",
+      "source_size": [
+        0.00793753750622272,
+        0.00540267955511808,
+        0.00796972215175629
+      ],
+      "yaw": 0.7
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_1_B.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.00298788445070386,
+        0.00203370163217187,
+        0.00300000002607703
+      ],
+      "sha256": "7d18b72e1cbfca5d0e509129c1d41e13fe4971cbb280691a24bdbd79ee68629d",
+      "source_size": [
+        0.793753743171692,
+        0.540267944335938,
+        0.796972274780273
+      ],
+      "yaw": 0.7
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_1_B.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00298788491636515,
+        0.00203370186500251,
+        0.00300000002607703
+      ],
+      "sha256": "7d18b72e1cbfca5d0e509129c1d41e13fe4971cbb280691a24bdbd79ee68629d",
+      "source_size": [
+        79.375373840332,
+        54.0267944335938,
+        79.6972274780273
+      ],
+      "yaw": 0.7
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_1_B.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.0028569009155035,
+        0.00260000000707805,
+        0.00273229950107634
+      ],
+      "sha256": "7d18b72e1cbfca5d0e509129c1d41e13fe4971cbb280691a24bdbd79ee68629d",
+      "source_size": [
+        0.00593650713562965,
+        0.00540267955511808,
+        0.00567759107798338
+      ],
+      "yaw": 1.6
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_1_B.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.0028569009155035,
+        0.00260000000707805,
+        0.00273229950107634
+      ],
+      "sha256": "7d18b72e1cbfca5d0e509129c1d41e13fe4971cbb280691a24bdbd79ee68629d",
+      "source_size": [
+        0.593650758266449,
+        0.540267944335938,
+        0.567759156227112
+      ],
+      "yaw": 1.6
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_1_B.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.0028569009155035,
+        0.00260000000707805,
+        0.00273229950107634
+      ],
+      "sha256": "7d18b72e1cbfca5d0e509129c1d41e13fe4971cbb280691a24bdbd79ee68629d",
+      "source_size": [
+        59.3650741577148,
+        54.0267944335938,
+        56.7759170532227
+      ],
+      "yaw": 1.6
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_1_B.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00294965459033847,
+        0.00213850126601756,
+        0.00300000002607703
+      ],
+      "sha256": "7d18b72e1cbfca5d0e509129c1d41e13fe4971cbb280691a24bdbd79ee68629d",
+      "source_size": [
+        0.00745196593925357,
+        0.00540267955511808,
+        0.00757915759459138
+      ],
+      "yaw": 2.7
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_1_B.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.00294965505599976,
+        0.0021385014988482,
+        0.00300000002607703
+      ],
+      "sha256": "7d18b72e1cbfca5d0e509129c1d41e13fe4971cbb280691a24bdbd79ee68629d",
+      "source_size": [
+        0.745196580886841,
+        0.540267944335938,
+        0.757915735244751
+      ],
+      "yaw": 2.7
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_1_B.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00294965459033847,
+        0.00213850126601756,
+        0.00300000002607703
+      ],
+      "sha256": "7d18b72e1cbfca5d0e509129c1d41e13fe4971cbb280691a24bdbd79ee68629d",
+      "source_size": [
+        74.5196533203125,
+        54.0267944335938,
+        75.7915802001953
+      ],
+      "yaw": 2.7
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_3_B.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00207247794605792,
+        0.00259999977424741,
+        0.00214229128323495
+      ],
+      "sha256": "556bc33ccc4c8024f6462550182e7aa5bd8b0cbdc7b0b7d77ede0b6e8c544e74",
+      "source_size": [
+        0.00819164514541626,
+        0.0102767199277878,
+        0.00846758857369423
+      ],
+      "yaw": 0.0
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_3_B.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.00207247794605792,
+        0.00259999977424741,
+        0.00214229128323495
+      ],
+      "sha256": "556bc33ccc4c8024f6462550182e7aa5bd8b0cbdc7b0b7d77ede0b6e8c544e74",
+      "source_size": [
+        0.819164514541626,
+        1.02767205238342,
+        0.846758842468262
+      ],
+      "yaw": 0.0
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_3_B.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00207247794605792,
+        0.00259999977424741,
+        0.00214229128323495
+      ],
+      "sha256": "556bc33ccc4c8024f6462550182e7aa5bd8b0cbdc7b0b7d77ede0b6e8c544e74",
+      "source_size": [
+        81.9164505004883,
+        102.767204284668,
+        84.6758880615234
+      ],
+      "yaw": 0.0
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_3_B.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00296522071585059,
+        0.00259999977424741,
+        0.00297364173457026
+      ],
+      "sha256": "556bc33ccc4c8024f6462550182e7aa5bd8b0cbdc7b0b7d77ede0b6e8c544e74",
+      "source_size": [
+        0.0117202866822481,
+        0.0102767199277878,
+        0.0117535721510649
+      ],
+      "yaw": 0.7
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_3_B.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.00296522071585059,
+        0.00259999977424741,
+        0.00297364173457026
+      ],
+      "sha256": "556bc33ccc4c8024f6462550182e7aa5bd8b0cbdc7b0b7d77ede0b6e8c544e74",
+      "source_size": [
+        1.17202866077423,
+        1.02767205238342,
+        1.17535710334778
+      ],
+      "yaw": 0.7
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_3_B.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00296522071585059,
+        0.00259999977424741,
+        0.00297364173457026
+      ],
+      "sha256": "556bc33ccc4c8024f6462550182e7aa5bd8b0cbdc7b0b7d77ede0b6e8c544e74",
+      "source_size": [
+        117.202865600586,
+        102.767204284668,
+        117.535720825195
+      ],
+      "yaw": 0.7
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_3_B.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00220189336687326,
+        0.00259999977424741,
+        0.0021341482643038
+      ],
+      "sha256": "556bc33ccc4c8024f6462550182e7aa5bd8b0cbdc7b0b7d77ede0b6e8c544e74",
+      "source_size": [
+        0.00870316941291094,
+        0.0102767199277878,
+        0.00843540206551552
+      ],
+      "yaw": 1.6
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_3_B.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.00220189336687326,
+        0.00259999977424741,
+        0.0021341482643038
+      ],
+      "sha256": "556bc33ccc4c8024f6462550182e7aa5bd8b0cbdc7b0b7d77ede0b6e8c544e74",
+      "source_size": [
+        0.870316982269287,
+        1.02767205238342,
+        0.843540191650391
+      ],
+      "yaw": 1.6
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_3_B.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00220189336687326,
+        0.00259999977424741,
+        0.0021341482643038
+      ],
+      "sha256": "556bc33ccc4c8024f6462550182e7aa5bd8b0cbdc7b0b7d77ede0b6e8c544e74",
+      "source_size": [
+        87.0317001342773,
+        102.767204284668,
+        84.3540191650391
+      ],
+      "yaw": 1.6
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_3_B.glb",
+      "export_scale_probe": 0.01,
+      "fitted_size": [
+        0.00278924172744155,
+        0.00259999977424741,
+        0.00282252160832286
+      ],
+      "sha256": "556bc33ccc4c8024f6462550182e7aa5bd8b0cbdc7b0b7d77ede0b6e8c544e74",
+      "source_size": [
+        0.0110247153788805,
+        0.0102767199277878,
+        0.0111562553793192
+      ],
+      "yaw": 2.7
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_3_B.glb",
+      "export_scale_probe": 1.0,
+      "fitted_size": [
+        0.00278924172744155,
+        0.00259999977424741,
+        0.00282252160832286
+      ],
+      "sha256": "556bc33ccc4c8024f6462550182e7aa5bd8b0cbdc7b0b7d77ede0b6e8c544e74",
+      "source_size": [
+        1.10247159004211,
+        1.02767205238342,
+        1.11562561988831
+      ],
+      "yaw": 2.7
+    },
+    {
+      "asset": "res://assets/models/nature/kaykit/Rock_3_B.glb",
+      "export_scale_probe": 100.0,
+      "fitted_size": [
+        0.00278924172744155,
+        0.00259999977424741,
+        0.00282252160832286
+      ],
+      "sha256": "556bc33ccc4c8024f6462550182e7aa5bd8b0cbdc7b0b7d77ede0b6e8c544e74",
+      "source_size": [
+        110.24715423584,
+        102.767204284668,
+        111.562561035156
+      ],
+      "yaw": 2.7
+    },
+    {
       "asset": "res://assets/models/buildings/highlands/SM_Barrel.glb",
       "fitted_size": [
         0.00722239771857858,
@@ -611,13 +995,425 @@
       "sha256": "abddb9af518ff91019330885e25ab63d4ddb54bcabb579f7e2a87a163c8f1c82",
       "target_height_metres": 8.5,
       "variant": "Broad_Scrub_C"
+    },
+    {
+      "asset": "res://assets/models/local_buildings/house_05.glb",
+      "definition": "dwelling",
+      "rotation": 0,
+      "sha256": "721b99272cb55a67d75d25d6581919c5f34b8c9ba0fdfbd65c9592517c185cb1",
+      "size_metres": [
+        2.92134657502174,
+        3.06099075824022,
+        3.70000004768372
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/local_buildings/house_06.glb",
+      "definition": "dwelling",
+      "rotation": 1,
+      "sha256": "1eb56d456f0f367c7784c17e42dd584d8b4d8064f714355e914b8ad47d475aa9",
+      "size_metres": [
+        3.0682846903801,
+        3.17737944424152,
+        3.70000004768372
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/local_buildings/house_11.glb",
+      "definition": "dwelling",
+      "rotation": 2,
+      "sha256": "fbb06a4c7797915d7f7e2b252ea885cc5e6b981b739e7bcf6619768b1492c8f4",
+      "size_metres": [
+        3.70000004768372,
+        3.21397595107555,
+        3.65428850054741
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/local_buildings/house_05.glb",
+      "definition": "dwelling",
+      "rotation": 3,
+      "sha256": "721b99272cb55a67d75d25d6581919c5f34b8c9ba0fdfbd65c9592517c185cb1",
+      "size_metres": [
+        3.70000004768372,
+        3.06099075824022,
+        2.92134657502174
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/local_buildings/house_02.glb",
+      "definition": "stockpile",
+      "rotation": 0,
+      "sha256": "1ed42938e7df267bb9122cce056328a0d1e32a369eb00b62ac4e6bca97527a5b",
+      "size_metres": [
+        3.70000004768372,
+        3.28444130718708,
+        3.67924347519875
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/local_buildings/house_03.glb",
+      "definition": "stockpile",
+      "rotation": 1,
+      "sha256": "c4a53fc9edf4d803902fe5b144af0cbd9209ec5350e77b1930b91d7227f46be1",
+      "size_metres": [
+        3.70000004768372,
+        3.13696563243866,
+        3.69999967515469
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/local_buildings/house_02.glb",
+      "definition": "stockpile",
+      "rotation": 2,
+      "sha256": "1ed42938e7df267bb9122cce056328a0d1e32a369eb00b62ac4e6bca97527a5b",
+      "size_metres": [
+        3.70000042021275,
+        3.28444093465805,
+        3.67924384772778
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/local_buildings/house_03.glb",
+      "definition": "stockpile",
+      "rotation": 3,
+      "sha256": "c4a53fc9edf4d803902fe5b144af0cbd9209ec5350e77b1930b91d7227f46be1",
+      "size_metres": [
+        3.70000004768372,
+        3.13696563243866,
+        3.69999930262566
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/kenney_survival/structure-canvas.glb",
+      "definition": "timber_camp",
+      "rotation": 0,
+      "sha256": "f450f215599f8962b63737825c7d55d7be498742551ba21e5633d6459b194134",
+      "size_metres": [
+        2.49999985098839,
+        2.5000000372529,
+        2.77348831295967
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/kenney_survival/structure-canvas.glb",
+      "definition": "timber_camp",
+      "rotation": 1,
+      "sha256": "f450f215599f8962b63737825c7d55d7be498742551ba21e5633d6459b194134",
+      "size_metres": [
+        2.77348831295967,
+        2.5000000372529,
+        2.50000022351742
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/kenney_survival/structure-canvas.glb",
+      "definition": "timber_camp",
+      "rotation": 2,
+      "sha256": "f450f215599f8962b63737825c7d55d7be498742551ba21e5633d6459b194134",
+      "size_metres": [
+        2.50000022351742,
+        2.5000000372529,
+        2.77348831295967
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/kenney_survival/structure-canvas.glb",
+      "definition": "timber_camp",
+      "rotation": 3,
+      "sha256": "f450f215599f8962b63737825c7d55d7be498742551ba21e5633d6459b194134",
+      "size_metres": [
+        2.77348812669516,
+        2.5000000372529,
+        2.49999985098839
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/local_buildings/house_15.glb",
+      "definition": "gatherer_shelter",
+      "rotation": 0,
+      "sha256": "838df30ca04b7fb5c3b4e34ac5c460d4b43947e2bf46312cca2f22c57bc45b6c",
+      "size_metres": [
+        3.30767221748829,
+        3.71629483997822,
+        3.70000004768372
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/local_buildings/house_15.glb",
+      "definition": "gatherer_shelter",
+      "rotation": 1,
+      "sha256": "838df30ca04b7fb5c3b4e34ac5c460d4b43947e2bf46312cca2f22c57bc45b6c",
+      "size_metres": [
+        3.70000004768372,
+        3.71629483997822,
+        3.30767221748829
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/local_buildings/house_15.glb",
+      "definition": "gatherer_shelter",
+      "rotation": 2,
+      "sha256": "838df30ca04b7fb5c3b4e34ac5c460d4b43947e2bf46312cca2f22c57bc45b6c",
+      "size_metres": [
+        3.30767259001732,
+        3.71629446744919,
+        3.70000004768372
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/local_buildings/house_15.glb",
+      "definition": "gatherer_shelter",
+      "rotation": 3,
+      "sha256": "838df30ca04b7fb5c3b4e34ac5c460d4b43947e2bf46312cca2f22c57bc45b6c",
+      "size_metres": [
+        3.70000004768372,
+        3.71629483997822,
+        3.30767221748829
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/kenney_survival/structure-roof.glb",
+      "definition": "water_point",
+      "rotation": 0,
+      "sha256": "645e0454780d0b07084e3d5ffc6c5b164742f62b07b810e1cb838897c7ca83ac",
+      "size_metres": [
+        1.9190626218915,
+        1.99999995529652,
+        1.85092091560364
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/kenney_survival/structure-roof.glb",
+      "definition": "water_point",
+      "rotation": 1,
+      "sha256": "645e0454780d0b07084e3d5ffc6c5b164742f62b07b810e1cb838897c7ca83ac",
+      "size_metres": [
+        1.85092091560364,
+        1.99999995529652,
+        1.91906280815601
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/kenney_survival/structure-roof.glb",
+      "definition": "water_point",
+      "rotation": 2,
+      "sha256": "645e0454780d0b07084e3d5ffc6c5b164742f62b07b810e1cb838897c7ca83ac",
+      "size_metres": [
+        1.9190626218915,
+        1.99999995529652,
+        1.85092110186815
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/kenney_survival/structure-roof.glb",
+      "definition": "water_point",
+      "rotation": 3,
+      "sha256": "645e0454780d0b07084e3d5ffc6c5b164742f62b07b810e1cb838897c7ca83ac",
+      "size_metres": [
+        1.85092091560364,
+        1.99999995529652,
+        1.9190626218915
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/kenney_survival/structure-roof.glb",
+      "definition": "cattle_shelter",
+      "rotation": 0,
+      "sha256": "645e0454780d0b07084e3d5ffc6c5b164742f62b07b810e1cb838897c7ca83ac",
+      "size_metres": [
+        3.14697660505772,
+        2.5000000372529,
+        2.99894846975803
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/kenney_survival/structure-roof.glb",
+      "definition": "cattle_shelter",
+      "rotation": 1,
+      "sha256": "645e0454780d0b07084e3d5ffc6c5b164742f62b07b810e1cb838897c7ca83ac",
+      "size_metres": [
+        2.99894884228706,
+        2.5000000372529,
+        3.14697697758675
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/kenney_survival/structure-roof.glb",
+      "definition": "cattle_shelter",
+      "rotation": 2,
+      "sha256": "645e0454780d0b07084e3d5ffc6c5b164742f62b07b810e1cb838897c7ca83ac",
+      "size_metres": [
+        3.14697623252869,
+        2.5000000372529,
+        2.99894884228706
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/kenney_survival/structure-roof.glb",
+      "definition": "cattle_shelter",
+      "rotation": 3,
+      "sha256": "645e0454780d0b07084e3d5ffc6c5b164742f62b07b810e1cb838897c7ca83ac",
+      "size_metres": [
+        2.99894846975803,
+        2.5000000372529,
+        3.14697697758675
+      ],
+      "view_sha256": "3406a9d0fb07301cda39e6902a17b170fca0780f7f57bd09cfb86efb88f8123d"
+    },
+    {
+      "asset": "res://assets/models/local_villagers/peasant_4.glb",
+      "sha256": "f6895f89c8f79db8baa7dbfca6f5c8973f050e8c5038511680132b52d5887e46",
+      "size_metres": [
+        1.67120806872845,
+        1.75000000745058,
+        0.319334212690592
+      ]
+    },
+    {
+      "asset": "res://assets/models/local_villagers/peasant_5.glb",
+      "sha256": "eafec5677600192f63241f5ac202a52ec0168b4762bcee83b3525776d049e388",
+      "size_metres": [
+        1.6186598688364,
+        1.74999982118607,
+        0.348128168843687
+      ]
+    },
+    {
+      "asset": "res://assets/models/local_villagers/peasant_1.glb",
+      "sha256": "7890171cfe450d64232ed0b9abc63d739170d0204659dcb21c199457b77cc802",
+      "size_metres": [
+        1.63931809365749,
+        1.75000000745058,
+        0.333788385614753
+      ]
+    },
+    {
+      "asset": "res://assets/models/local_villagers/peasant_2.glb",
+      "sha256": "4b8b76159de0dddcb9b83f63a5a7aeafc27a5b428b543764eeae1cdd22d57d23",
+      "size_metres": [
+        1.69978439807892,
+        1.75000000745058,
+        0.361381564289331
+      ]
+    },
+    {
+      "asset": "res://assets/models/local_villagers/peasant_3.glb",
+      "sha256": "fa291fa4aa13d6aa40d8c548ae79f3108179c0917aee0320694922bfcd60c36e",
+      "size_metres": [
+        1.69976633042097,
+        1.75000000745058,
+        0.330512458458543
+      ]
+    },
+    {
+      "asset": "res://assets/models/local_villagers/peasant_6.glb",
+      "sha256": "8977406c66a8982ce5616f93a1dc5cabaed1d8d4a8448e30af7ea0af899dcc44",
+      "size_metres": [
+        1.51788163930178,
+        1.75000000745058,
+        0.491341762244701
+      ]
+    },
+    {
+      "asset": "res://core/presentation/carried_goods_view.gd",
+      "resource": "stone",
+      "sha256": "e39b3dc2136de350888a7356bf9137f89e8c700f3d761593867edf5d2699c2e8",
+      "size_metres": [
+        0.224420055747032,
+        0.219999998807907,
+        0.235285121016204
+      ]
+    },
+    {
+      "asset": "res://core/presentation/carried_goods_view.gd",
+      "resource": "timber",
+      "sha256": "e39b3dc2136de350888a7356bf9137f89e8c700f3d761593867edf5d2699c2e8",
+      "size_metres": [
+        0.270000007003546,
+        0.180000066757202,
+        1.20000001043081
+      ]
+    },
+    {
+      "asset": "res://core/presentation/carried_goods_view.gd",
+      "resource": "water",
+      "sha256": "e39b3dc2136de350888a7356bf9137f89e8c700f3d761593867edf5d2699c2e8",
+      "size_metres": [
+        0.285317003726959,
+        0.276531279087067,
+        0.300000002607703
+      ]
+    },
+    {
+      "asset": "res://core/presentation/carried_goods_view.gd",
+      "resource": "milk",
+      "sha256": "e39b3dc2136de350888a7356bf9137f89e8c700f3d761593867edf5d2699c2e8",
+      "size_metres": [
+        0.285317003726959,
+        0.276531279087067,
+        0.300000002607703
+      ]
+    },
+    {
+      "asset": "res://core/presentation/carried_goods_view.gd",
+      "resource": "thatch",
+      "sha256": "e39b3dc2136de350888a7356bf9137f89e8c700f3d761593867edf5d2699c2e8",
+      "size_metres": [
+        0.153701973613352,
+        0.350000010803342,
+        0.151376985013485
+      ]
+    },
+    {
+      "asset": "res://core/presentation/carried_goods_view.gd",
+      "resource": "fodder",
+      "sha256": "e39b3dc2136de350888a7356bf9137f89e8c700f3d761593867edf5d2699c2e8",
+      "size_metres": [
+        0.153701973613352,
+        0.350000010803342,
+        0.151376985013485
+      ]
+    },
+    {
+      "asset": "res://core/presentation/carried_goods_view.gd",
+      "resource": "wild_food",
+      "sha256": "e39b3dc2136de350888a7356bf9137f89e8c700f3d761593867edf5d2699c2e8",
+      "size_metres": [
+        0.44999998062849,
+        0.271007651463151,
+        0.309459306299686
+      ]
     }
   ],
   "ok": true,
   "patch_size": [
     0.0095340721309185,
     0.00213017710484564,
-    0.00913961417973042
+    0.00914221350103617
   ],
   "profiles": {
     "axe_prop": {
@@ -630,10 +1426,18 @@
       "blueprint_height": 0.25,
       "foundation_height": 0.35,
       "frame_height": 0.4,
-      "height": 2.5,
+      "height": 4.0,
       "prop_height": 0.6,
       "prop_offset_x": 0.45,
       "prop_offset_z": 0.25
+    },
+    "building_presentation": {
+      "plot_inset": 0.15,
+      "shelter_depth": 3.0,
+      "shelter_height": 2.5,
+      "shelter_width": 3.2,
+      "water_cover_height": 2.0,
+      "water_cover_width": 2.2
     },
     "camera": {
       "culling_padding": 2.0,
@@ -652,6 +1456,12 @@
       "pick_width": 0.8,
       "width_max": 2.05
     },
+    "cobbled_path": {
+      "depth": 0.08,
+      "joint_width": 0.025,
+      "paver_width": 0.3,
+      "width": 1.5
+    },
     "coverage": [
       "Kathmandu grid conversion",
       "villager reference and ground anchor",
@@ -668,15 +1478,22 @@
       "settlement planning grid borders and ghost ground anchor",
       "chunked terrain and camera-local shadow reach",
       "two-metre worker routes with eighty-metre navigation margin",
+      "dirt paths with metre-sized ground patches and faster worker travel",
+      "cobbled path upgrades with metre-sized pavers and stronger worker travel",
       "thatch, fodder and wild-food patches and depletion",
       "forage carry bundles",
       "water point collection barrels and carried water",
       "prototype cattle body and ground anchors",
       "eight-metre pasture footprint and milk vessels",
       "Imported Styloo cattle rest pose, moving/idle animation and bottom anchor",
-      "Highlands cattle-shelter fence and timber-camp axe metre profiles"
+      "Highlands cattle-shelter fence and timber-camp axe metre profiles",
+      "Distinct local houses and CC0 facility fallbacks, 4m building height cap, rotated plot fitting and dressing"
     ],
     "dimensions_unit": "metres",
+    "dirt_path": {
+      "depth": 0.04,
+      "width": 1.2
+    },
     "fence_prop": {
       "height": 0.8,
       "offset_z": 0.7,
@@ -727,7 +1544,7 @@
       "shadow_padding": 10.0,
       "terrain_chunk_quads": 32.0
     },
-    "revision": 11.0,
+    "revision": 15.0,
     "scenario": {
       "bank_search_radius": 150.0,
       "bank_search_step": 5.0,
@@ -759,6 +1576,13 @@
       "satellite_width_min": 0.04,
       "width_max": 0.18,
       "width_min": 0.06
+    },
+    "terrace_field": {
+      "bed_lift": 0.08,
+      "length": 8.0,
+      "riser_height": 0.3,
+      "riser_threshold": 0.25,
+      "width": 8.0
     },
     "timber_carry": {
       "depth": 1.2,
@@ -792,10 +1616,10 @@
       "width_max": 0.8
     }
   },
-  "revision": 11.0,
-  "scope": "Regenerated on verification: standard values, imported mesh bounds, export-scale/yaw/nested-pivot normalization, patch footprint and depletion. Live terrain patches are checked in stone-resource-tests.",
+  "revision": 15.0,
+  "scope": "Regenerated on verification: standard values, imported mesh bounds, export-scale/yaw/nested-pivot normalization, patch footprint and depletion. Live terrain patches are checked in stone-resource-tests; path dimensions are checked against the terrain units contract.",
   "standard_path": "res://data/standards/world_scale.json",
-  "standard_sha256": "e33fc21ffc2773913d1b37dfed0f53d654e43bdb05bb443b2404fd8100ccafb8",
+  "standard_sha256": "9ff452b6645e16604ae9ced1a6944710453e713fc7d09702f6587bc6bf07b3aa",
   "units": {
     "logical_meters_per_cell": 2.0,
     "presentation_reference": "Physical dimensions are in metres and converted to world units by regional_meters_per_world_unit. No enlarged actor or prop meshes.",

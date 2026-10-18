@@ -10,7 +10,7 @@ func build(entity_id: int, ground_height: Callable, world_xz: Vector2) -> void:
 	add_child(visual)
 	var rng := RandomNumberGenerator.new()
 	rng.seed = entity_id * 7919 + 43129
-	var scenes := [preload("res://assets/models/nature/kaykit/Rock_1_A.glb"), preload("res://assets/models/nature/kaykit/Rock_3_A.glb")]
+	var scenes := [preload("res://assets/models/nature/kaykit/Rock_1_A.glb"), preload("res://assets/models/nature/kaykit/Rock_3_A.glb"), preload("res://assets/models/nature/kaykit/Rock_1_B.glb"), preload("res://assets/models/nature/kaykit/Rock_3_B.glb")]
 	var base_y: float = ground_height.call(world_xz.x, world_xz.y)
 	for i in int(GopalaScaleStandard.number("stone_patch", "piece_count")):
 		var piece: Node3D = scenes[i % scenes.size()].instantiate()

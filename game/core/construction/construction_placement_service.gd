@@ -7,6 +7,7 @@ var _occupancy: GopalaSettlementOccupancyService
 var _registry: GopalaEntityRegistry
 var _coordinates: GopalaSettlementCoordinateService
 var routes: GopalaSettlementRouteService
+var road_service: GopalaRoadPlacementService
 var _labor_service: GopalaConstructionLaborService
 var _buildings: Dictionary = {}
 
@@ -47,6 +48,12 @@ func validate_placement(building_id: StringName, anchor_cell: Vector2i, rotation
 
 	if not _coordinates.cells_in_bounds(cells):
 		return GopalaConstructionValidationResult.new(false, &"OUT_OF_BOUNDS", anchor_cell, cells, [])
+
+	if road_service != null:
+		var road_cells := road_service.road_cells()
+		for cell in cells:
+			if road_cells.has(cell):
+				return GopalaConstructionValidationResult.new(false, &"ROAD_OCCUPIED", anchor_cell, cells, [cell])
 
 	for zone in _registry.snapshots_by_kind(GopalaEntityKind.ZONE):
 		for cell in cells:

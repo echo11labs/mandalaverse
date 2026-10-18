@@ -19,8 +19,8 @@ const CAPABILITY_NAMES: Array[StringName] = [
 	&"simulation_clock", &"command_queue", &"resource_ledger", &"snapshots",
 	&"entity_registry", &"population", &"villagers", &"households", &"housing",
 	&"buildings", &"tasks", &"inventory", &"weather", &"seasons", &"selection",
-	&"placement", &"occupancy", &"construction", &"professions", &"production",
-	&"logistics", &"alerts", &"save_load",
+	&"placement", &"occupancy", &"construction", &"roads", &"professions", &"production",
+	&"logistics", &"alerts", &"save_load", &"workforce_management",
 ]
 const MAX_RUNTIME_FRAME_SECONDS: float = 86_400.0
 const MAX_MANUAL_TICK_ADVANCE: int = 100_000
@@ -29,7 +29,7 @@ const MAX_COMMANDS_PER_DRAIN: int = 10_000
 ## IDs mirror the resource entries in res://data/catalog.json. Balances remain
 ## empty until an authorized future system supplies them.
 const RESOURCE_IDS: Array[StringName] = [
-	&"timber", &"stone", &"thatch", &"water", &"wild_food", &"fodder", &"milk",
+	&"timber", &"stone", &"thatch", &"water", &"wild_food", &"fodder", &"milk", &"grain",
 ]
 
 var tick_interval_seconds: float = DEFAULT_TICK_INTERVAL_SECONDS

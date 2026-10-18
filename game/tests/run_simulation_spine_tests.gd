@@ -275,7 +275,7 @@ func _capabilities_are_exact(value: Dictionary) -> bool:
 		"population": false, "villagers": false, "households": false, "buildings": false,
 		"tasks": false, "inventory": false,
 		"housing": false, "weather": false, "seasons": false,
-		"selection": true, "placement": true, "occupancy": true, "construction": true,
+		"selection": true, "placement": true, "occupancy": true, "construction": true, "roads": true, "workforce_management": true,
 		"professions": false, "production": false, "logistics": false, "alerts": false, "save_load": false,
 	}
 	return value == expected

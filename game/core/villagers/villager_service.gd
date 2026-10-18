@@ -158,12 +158,14 @@ func tick(logical_tick: int) -> void:
 			while route.index < route.points.size() and budget > 0.0:
 				var waypoint: Vector2 = route.points[route.index]
 				var distance := pos.distance_to(waypoint)
-				if distance <= budget:
+				var cell := _coordinates.world_to_settlement_cell(pos.lerp(waypoint, 0.5))
+				var segment_budget := budget / _navigation.movement_multiplier(cell)
+				if distance <= segment_budget:
 					pos = waypoint
-					budget -= distance
+					budget -= distance * _navigation.movement_multiplier(cell)
 					route.index += 1
 				else:
-					pos = pos.move_toward(waypoint,budget)
+					pos = pos.move_toward(waypoint,segment_budget)
 					budget = 0.0
 			var finished: bool = route.index >= route.points.size()
 			var waypoint: Vector2 = route.destination if finished else route.points[route.index]

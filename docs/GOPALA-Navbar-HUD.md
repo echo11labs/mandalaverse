@@ -1,9 +1,28 @@
-# Navbar-based gameplay HUD
+# Gameplay navbar
 
-The accepted top navbar is the design reference: 52 px height, dark brown/black surface, brass rules, 16 px display headings, 13 px resource counters and 16–18 px resource icons. Its seven resource IDs remain timber, stone, thatch, water, wild_food, fodder and milk.
+The top navbar is 52 px high, with 12 px outer horizontal margins and 6 px vertical
+padding. It uses three container-managed regions: settlement identity on the left,
+resource counters centered, and simulation clock plus Save/Load/Menu on the right.
+Equal 272 px side slots keep the resource rail centered even when the settlement
+name or tick text changes. Group spacing is 12 px; resources and actions use 8 px.
 
-`GopalaTheme.navbar()` defines the common gameplay palette and compact control styles. `NAV_*` values are the single source for dark surfaces, text, borders, radius, title/body sizing and 32 px desktop controls. The original reference navbar preserves its dimensions and resource rail. Survey, tempo, survival, inspection, building cards, categories, camera tools, alerts and the help dialog use the same visual language. Supply-role buttons reuse the navbar's actual icon paths; text labels and tooltips keep every action identifiable. Keyboard focus remains visible.
+All three action buttons have 32×32 px hit targets, 18 px icons, accessible names,
+tooltips and keyboard focus outlines. Floppy disk, folder and cog icons identify
+Save, Load and Menu. The hourglass denotes simulation time. The clock shows actual
+pause/speed and tick state; it does not imply an implemented calendar or seasons.
 
-The build strip is 157 px high in the measured 1280×800 layout. Camera controls occupy a separate row above it. Left panels align at 300 px width; the compact inspection starts below the navbar. Inspection fields render as valid coloured BBCode instead of exposing custom tag text.
+Seven resource counters remain timber, stone, thatch, water, wild_food, fodder and
+milk. Amounts below 10,000 remain exact; larger values use K/M/B labels to keep the
+rail bounded. Tooltips and resource management retain exact quantities. Names
+ellipsize inside the identity slot, with their full value in a tooltip. Clicking a
+resource opens its overview. Navbar controls and background block world input.
 
-Rendered captures are `reports/mvp-1280x800.png` and `reports/mvp-1920x1080.png`; measurement and device scope are in `reports/mvp-render-review.json`. Those captures review the active desktop gameplay HUD. The content laboratory/component gallery remain engineering fixtures rather than additional player-facing MVP screens. Future historical art and forest approval remain separate from this UI update.
+`game/tools/review_navbar.gd` checks alignment, bounds, equal action sizing, long
+names, large balances, exact tooltips, and actual mouse request routing at
+1280×720, 1920×1080, 2560×1080 and 3840×2160. Cropped normal/stress images are
+controlled UI fixtures; `reports/navbar/gameplay-1920.png` captures the actual
+paused MVP with real starting balances. Results live in `reports/navbar/`.
+
+The shared warm charcoal/brass theme and licensed fonts remain unchanged. Icon
+sources, hashes and MIT license are in `game/assets/ui/icons/`. See
+[GOPALA HUD layout](GOPALA-HUD-Layout.md) for the rest of the gameplay interface.

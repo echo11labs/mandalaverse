@@ -7,7 +7,7 @@ var simulation: GopalaSettlementSimulation
 func _init(sim: GopalaSettlementSimulation): simulation = sim
 func update(id: int, attrs: Dictionary, tick_value: int): simulation._survival_service.update(id,attrs,tick_value)
 func point(entity: GopalaEntitySnapshot) -> Vector2: return Vector2(entity.attributes.position_x,entity.attributes.position_z)
-func pastures() -> Array[GopalaEntitySnapshot]: return simulation.entity_queries().snapshots_by_kind(GopalaEntityKind.ZONE)
+func pastures() -> Array[GopalaEntitySnapshot]: return simulation.entity_queries().snapshots_by_kind(GopalaEntityKind.ZONE).filter(func(zone): return zone.attributes.get(&"definition_id") == &"pasture")
 func animals() -> Array[GopalaEntitySnapshot]: return simulation.entity_queries().snapshots_by_kind(GopalaEntityKind.ANIMAL)
 func cells(anchor: Vector2i) -> Array[Vector2i]:
 	var result: Array[Vector2i] = []
@@ -16,11 +16,17 @@ func cells(anchor: Vector2i) -> Array[Vector2i]:
 func validate_pasture(anchor: Vector2i) -> GopalaConstructionValidationResult:
 	var area := cells(anchor)
 	var reason: StringName = &"VALID"
-	if not simulation.coordinate_service().cells_in_bounds(area): reason = &"OUT_OF_BOUNDS"
+	if not simulation.coordinate_service().cells_in_bounds(area):
+		return GopalaConstructionValidationResult.new(false, &"OUT_OF_BOUNDS", anchor, area, [])
+	var road_cells := simulation.road_service().road_cells()
 	for cell in area:
-		if not simulation._route_service.is_open(cell): reason = &"UNBUILDABLE_GROUND"
+		if road_cells.has(cell):
+			return GopalaConstructionValidationResult.new(false, &"ROAD_OCCUPIED", anchor, area, [cell])
+		if not simulation._route_service.is_open(cell):
+			return GopalaConstructionValidationResult.new(false, &"UNBUILDABLE_GROUND", anchor, area, [cell])
 		for zone in pastures():
-			if zone.attributes.zone_cells.has([cell.x,cell.y]): reason = &"PASTURE_OVERLAP"
+			if zone.attributes.zone_cells.has([cell.x,cell.y]):
+				return GopalaConstructionValidationResult.new(false, &"PASTURE_OVERLAP", anchor, area, [cell])
 	return GopalaConstructionValidationResult.new(reason == &"VALID",reason,anchor,area,[])
 func create_pasture(command: GopalaSimulationCommand, tick_value: int) -> GopalaCommandResult:
 	var p := command.payload
